@@ -1,5 +1,5 @@
 <?php
-    public class Register()
+    class Register
     {
         private $_id;
         private $_login;
@@ -8,18 +8,18 @@
         private $_lastName;
         private $_email;
         private $_gender;
-        private $_placeFamily;
-        private $_dateBirth;
+        private $_familyPlace;
+        private $_birthDate;
 
-        public function __construct(string $login, string $password, string $firstName, string $lastName, string $email, string $gender, string $placeFamily, string $dateBirth)
+        public function __construct(string $login, string $password, string $firstName, string $lastName, string $email, string $gender, string $familyPlace, string $birthDate)
         {
             $this->_login = $login;
             $this->_firstName = $firstName;
             $this->_lastName = $lastName;
             $this->_email = $email;
             $this->_gender = $gender;
-            $this->_placeFamily = $placeFamily;
-            $this->_dateBirth = $dateBirth;
+            $this->_familyPlace = $familyPlace;
+            $this->_birthDate = $birthDate;
             $this->_hash = hash("sha256", $password);
         }
 
@@ -83,24 +83,24 @@
             $this->_gender = $gender;
         }
 
-        // Getter for $_placeFamily
-        public function getPlaceFamily() {
-            return $this->_placeFamily;
+        // Getter for $_familyPlace
+        public function getFamilyPlace() {
+            return $this->_familyPlace;
         }
 
-        // Setter for $_placeFamily
-        public function setPlaceFamily($placeFamily) {
-            $this->_placeFamily = $placeFamily;
+        // Setter for $_familyPlace
+        public function setFamilyPlace($familyPlace) {
+            $this->_familyPlace = $familyPlace;
         }
 
-        // Getter for $_dateBirth
-        public function getDateBirth() {
-            return $this->_dateBirth;
+        // Getter for $_birthDate
+        public function getBirthDate() {
+            return $this->_birthDate;
         }
 
         // Setter for $_dateBirth
-        public function setDateBirth($dateBirth) {
-            $this->_dateBirth = $dateBirth;
+        public function setBirthDate($birthDate) {
+            $this->_birthDate = $birthDate;
         }
         
     }

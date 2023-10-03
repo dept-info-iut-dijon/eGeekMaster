@@ -1,14 +1,15 @@
 <?php
-    public class Login()
+    class Login
     {
-        $_id;
-        $_login;
-        $_hash;
+        private $_id;
+        private $_login;
+        private $_hash;
 
         public function __construct(string $login, string $password)
         {
             
         }
     }
+    
 
 ?>
