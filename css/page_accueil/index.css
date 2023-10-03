@@ -1,3 +1,179 @@
+/*gestion globale*/
+body{
+    font-family: "Comic Sans MS", sans-serif;
+}
+
+/*image du début*/
+#Debut{
+    background-color: #E0EEF1;
+	display: flex;
+    flex-direction: column;
+	justify-content:space-around;
+	align-items: center;
+}
+#Debut p{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+#imageDebut{
+    /*display: flex;
+    justify-content: space-around;*/
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 800px;
+    height: 400px;
+    margin-top: 30px;
+	margin-bottom: 30px;
+}
+.imageDuDeb.haut{
+    align-self: flex-end;
+}
+.imageDuDeb.bas{
+    align-self: flex-start;
+}
+.imageDuDeb:nth-child(4n+1) {
+	background-image: url(/image/page_accueil/Family_Dinner.jpg);
+    
+}
+
+.imageDuDeb:nth-child(4n+2) {
+	background-image: url(/image/page_accueil/Family_HomeWork.jpg);
+   
+}
+
+.imageDuDeb:nth-child(4n+3) {
+	background-image: url(/image/page_accueil/Family_Playing.jpg);
+    
+}
+
+.imageDuDeb:nth-child(4n+4) {
+	background-image: url(/image/page_accueil/Women_Kitchen.jpg);
+    background-position-x: -120px;
+    
+}
+
+
+.imageDuDeb
+{
+   
+    border-radius: 30px;
+    width: 20%;
+    height: 80%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+
+/*Chiffre */
+#SomeChiffre{
+    background-color: #81ACB5;
+    color: #E0EEF1;
+    display: grid;
+    grid-template-rows: 1fr 1fr; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    gap: 10px; 
+    justify-content: center;
+    
+}
+#SomeChiffre img{
+    max-width: 50px;
+    max-height: 50px;
+    
+}
+#SomeChiffreTexte{
+    padding: 7%;
+    grid-column: span 2/4;
+    padding-left: 25%;
+}
+.SmileyChiffre{
+    justify-self: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 15vw;
+}
+.SmileyChiffre.a{
+    grid-row: 2;
+    grid-column: 1;
+   
+}
+.SmileyChiffre.b{
+    grid-row: 2;
+    grid-column: 2;
+}
+.SmileyChiffre.c{
+    grid-row: 2;
+    grid-column: 3;
+}
+#SomeChiffre h3{
+    color: #FFFF;
+    font-size: 300%;
+}
+.SomeChiffreTexte{
+    grid-column: 3;
+
+}
+.nbWrite{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+.nbWrite *{
+    margin: -5%;
+}
+/*Faq*/
+#FAQ{
+    background-color: #226979;
+
+}
+#FAQ img{
+    max-width: 500px;
+}
+#FAQcontainer{
+    padding: 10%;
+}
+#PixiPresentation fieldset{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+    width: 5vw;
+    border:none;
+    border-radius: 10px ;
+    
+
+}
+#PixiPresentation fieldset *{
+    justify-self: center;
+    align-self: center;
+}
+#PixiPresentation fieldset img{
+    max-width: 70px;
+    border-radius: 100px;
+    
+}
+#PixiPresentation{
+    position: absolute;
+    background-position-x: -100;
+    align-self: center;
+}
+#Faq_Pixi{
+    display: flex;
+
+}
+/*Tuto*/
+#Tuto{
+    background-color: #FFFF;
+}
+/*Publication*/
+#Publication{
+    background-color: #ECE4E3;
+}
 /* gestion du carrousel */
 .slider {
     position: relative;
@@ -27,7 +203,7 @@
 
 .slider-controls {
     width: 100%;
-    position: absolute;
+    
     bottom: 0px;
     text-align: center;
 }
