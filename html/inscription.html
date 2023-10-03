@@ -29,10 +29,10 @@
                         <div>
                             <input id="password" name="Password" placeholder="Password" class="inputs enterText"> 
                         </div>         
-                        <div>
+                        <div id="birthdate">
                             <label>Birthdate</label>
-                            <div>
-                                <select id="dayOfBirth" name="Day of birth" class="inputs">
+                            <div class="dates">
+                                <select class="inputs date" id="dayOfBirth" name="Day of birth">
                                     <option value="1">1</option>  
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -65,7 +65,7 @@
                                     <option value="30">30</option>
                                     <option value="31">31</option>  
                                 </select> 
-                                <select id="monthOfBirth" name="Month of birth" class="inputs">
+                                <select id="monthOfBirth" name="Month of birth" class="inputs date">
                                     <option value="Jan">Jan</option>
                                     <option value="Feb">Feb</option>
                                     <option value="Mar">Mar</option>
@@ -79,7 +79,7 @@
                                     <option value="Nov">Nov</option>
                                     <option value="Dec">Dec</option>
                                 </select>  
-                                <select id="yearOfBirth" name="Year of birth" class="inputs">
+                                <select id="yearOfBirth" name="Year of birth" class="inputs date">
                                     <option value="2023">2023</option>
                                     <option value="2022">2022</option>
                                     <option value="2021">2021</option>
@@ -89,16 +89,16 @@
                         </div>
                         <div>
                             <label>Gender</label>
-                            <div>
-                                <div>
+                            <div class="gen">
+                                <div class="gender">
                                     <label for="woman">Woman</label>
                                     <input type="radio" id="woman" name="Gender" value="woman" class="inputs">
                                 </div>
-                                <div>
+                                <div class="gender">
                                     <label for="Man">Man</label>
                                     <input type="radio" id="man" name="Gender" value="man" class="inputs">
                                 </div>
-                                <div>
+                                <div class="gender">
                                     <label for="other">Other</label>
                                     <input type="radio" id="other" name="Gender" value="other" class="inputs">
                                 </div>                
