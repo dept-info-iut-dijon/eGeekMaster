@@ -4,9 +4,39 @@ body{
 
 #form{
     background-color: #E0EEF1;
-    width: 40%;
+    width: 25%;
+    padding: 1%;
+    border-radius: 2%;
+}
+
+/*Page's title*/
+h1{
+    text-align: center;
+}
+
+/*Page's subtitle*/
+#subtitle{
+    text-align: center;
 }
 
 .inputs{
     background-color: #E0EEF1;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#formulaire{
+    border-right-style: none;
+    border-left-style: none;
+    border-bottom-style: none;
+}
+
+.enterText{
+    margin: 1%;
+    padding: 2%;
+    border-radius: 1%;
 }
