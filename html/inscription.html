@@ -7,25 +7,27 @@
     <title>Inscription</title>
 </head>
 <body>
-    <div>
+    <!--Form + Title-->
+    <div id="form">
         <h1>Create a new account</h1>
         <p>It's easy and fast</p>
+        <!--Form to register-->
         <form>
             <fieldset>
                 <div>
-                    <input id="lastname" name="Lastname" placeholder="Lastname">
-                    <input id="firstname" name="Firstname" placeholder="Firstname">
+                    <input id="lastname" name="Lastname" placeholder="Lastname" class="inputs">
+                    <input id="firstname" name="Firstname" placeholder="Firstname" class="inputs">
                 </div> 
                 <div>
-                    <input id="email" name="Email" placeholder="Email">
+                    <input id="email" name="Email" placeholder="Email" class="inputs">
                 </div>      
                 <div>
-                    <input id="password" name="Password" placeholder="Password">
+                    <input id="password" name="Password" placeholder="Password" class="inputs"> 
                 </div>         
                 <div>
                     <label>Birthdate</label>
                     <div>
-                        <select id="dayOfBirth" name="Day of birth">
+                        <select id="dayOfBirth" name="Day of birth" class="inputs">
                             <option value="1">1</option>  
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -58,7 +60,7 @@
                             <option value="30">30</option>
                             <option value="31">31</option>  
                         </select> 
-                        <select id="monthOfBirth" name="Month of birth">
+                        <select id="monthOfBirth" name="Month of birth" class="inputs">
                             <option value="Jan">Jan</option>
                             <option value="Feb">Feb</option>
                             <option value="Mar">Mar</option>
@@ -72,7 +74,7 @@
                             <option value="Nov">Nov</option>
                             <option value="Dec">Dec</option>
                         </select>  
-                        <select id="yearOfBirth" name="Year of birth">
+                        <select id="yearOfBirth" name="Year of birth" class="inputs">
                             <option value="2023">2023</option>
                             <option value="2022">2022</option>
                             <option value="2021">2021</option>
@@ -85,15 +87,15 @@
                     <div>
                         <div>
                             <label for="woman">Woman</label>
-                            <input type="radio" id="woman" name="Gender" value="woman">
+                            <input type="radio" id="woman" name="Gender" value="woman" class="inputs">
                         </div>
                         <div>
                             <label for="Man">Man</label>
-                            <input type="radio" id="man" name="Gender" value="man">
+                            <input type="radio" id="man" name="Gender" value="man" class="inputs">
                         </div>
                         <div>
                             <label for="other">Other</label>
-                            <input type="radio" id="other" name="Gender" value="other">
+                            <input type="radio" id="other" name="Gender" value="other" class="inputs">
                         </div>                
                     </div>
                 </div>
@@ -101,7 +103,7 @@
                     By clicking “Sign up”, you agree to our terms of service and acknowledge that you have read and understand our privacy policy and code of conduct.
                 </p>
                 <p>
-                    <input type="submit" value="Sign up">
+                    <input type="submit" value="Sign up" class="inputs"> 
                 </p>
             </fieldset>
         </form>
