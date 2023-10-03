@@ -1,12 +1,91 @@
 body{
-    background-image: url("/image/page_accueil/Family_Dinner.jpg");
+    background-image: url("/image/page_accueil/unsplash_kYh-O1Jk7EE.png");
+    font-family: "Comic sans MS";
 }
 
 #form{
     background-color: #E0EEF1;
-    width: 40%;
+    width: 25%;
+    padding: 1%;
+    border-radius: 2%;
+}
+
+/*Title*/
+h1{
+    text-align: center;
+}
+
+/*Subtitle*/
+#subtitle{
+    text-align: center;
 }
 
 .inputs{
     background-color: #E0EEF1;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    margin-top: 8%;
+}
+
+#formulaire{
+    border-right-style: none;
+    border-left-style: none;
+    border-bottom-style: none;
+}
+
+.enterText{
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding: 2%;
+    border-radius: 1%;
+}
+
+#email{
+    width: 85%;
+}
+
+/*Birthdate*/
+
+.date{
+    width: 30%;
+    border-radius: 1%;
+}
+
+#birthdate{
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+/*Gender*/
+
+.gender{
+    display: flex;
+    border: 1px;
+    border-style: solid;
+    padding: 1%;
+    border-radius: 3%;
+    margin: 1%;
+    align-items: center;
+}
+
+.gen{
+    display: flex;
+    justify-content: flex-start;
+}
+
+#submitDiv{
+    text-align: center;
+}
+
+#submit{
+    width: 30%;
+    color: white;
+    border-radius: 5%;
+    background-color: #226979;
+    font-weight: bold;
+    font-size: 15px;
 }

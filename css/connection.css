@@ -1,0 +1,43 @@
+body{
+    background-image: url("../image/page_accueil/Family_Dinner.jpg");
+}
+
+#form{
+    background-color: #E0EEF1;
+    
+    padding: 5%;
+    border-radius: 2%;
+}
+
+.container{
+    padding: 180px;
+    display : flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    text-align: center;
+}
+
+.inputs{
+    background-color: #E0EEF1;
+}
+
+fieldset{
+    display: flex;
+    justify-content: space-around;
+    padding: 30px;
+}
+
+#Connect{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.cc{
+    margin: 10px;
+}
