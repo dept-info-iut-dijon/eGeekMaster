@@ -1,36 +1,43 @@
 body{
     margin: 0px;
     display: flex;
+    font-family: "Comic Sans MS", sans-serif;
 }
 
 form{
     background-color: #E0EEF1;
-    height: 100vh;
-    width: 100vh;
-    border-radius: 2%;
+    height: 100%;
+    width: 100%;
 }
 
 .container{
     display : flex;
     justify-content: center;
     align-items: center;
-    width: 100vh;
+    width: 100%;
 }
 
 h1{
     text-align: center;
+    color: #226979;
 }
 
 .inputs{
-    background-color: #E0EEF1;
+    background-color: #e7e7e7;
+    margin: 2%;
+    width: 285px;
+    height: 25px;
+    border-radius: 10px;
+    border: #e7e7e7;
 }
 
 fieldset{
+    background-color: white;
     display: flex;
     justify-content: space-around;
-    padding: 30px;
-    margin-left: 50px;
-    margin-right: 50px;
+    padding: 5%;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
 #Connect{
@@ -38,18 +45,37 @@ fieldset{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 2%;
 }
 
 .cc{
-    margin: 10px;
+    margin: 5%;
 }
 
 #family{
-    height: 100vh;
+    height: 100%;
 }
 
 #logo{
-    height: 200px;
-    
+    height: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#submitbutton{
+    background-color: #226979;
+    color: white;
+    width: 125px;
+    height: 30px;
+    border-radius: 15px;
+}
+
+#divlogo{
+    height: 25%;
+}
+
+label{
+    font-size: 150%;
+    margin: 2%;
 }
