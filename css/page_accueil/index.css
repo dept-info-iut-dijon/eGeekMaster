@@ -262,6 +262,8 @@ input[value="Messages"]:active{
     background-color: #ECE4E3;
     display: grid;
     grid-template-columns: 1fr 1fr ;
+    grid-template-rows: 1fr 1fr;
+    color: white;
 }
 #PubliGauche{
     display: flex;
@@ -317,6 +319,11 @@ input[value="Messages"]:active{
 }
 #Publication h5{
     margin-top: 0;
+    color: #ccc;
+    font-size: 10px;
+}
+#Publication p{
+    color: #ccc;
 }
 
 
@@ -357,12 +364,13 @@ input[value="Messages"]:active{
 
 .slider-control {
     display: inline-block;
-    width: 10px;
-    height: 10px;
+    width: 30px;
+    height: 5px;
     margin: 10px;
-    background-color: #555;
-    border-radius: 50%;
-    cursor: pointer
+    background:none;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid #ccc;
 }
 
 .slider-control.active {
