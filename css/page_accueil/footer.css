@@ -1,0 +1,39 @@
+footer {
+    background-color: #E0EEF1;
+    padding: 40px;
+    text-align: center;
+}
+
+.footer-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-links {
+	width: 100%;
+	position:fixed;
+	z-index: 10;
+	left:0px; 
+}
+
+/* Style pour le logo */
+.footer-logo {
+    width: 100px;
+}
+
+.footer-right {
+    display: flex;
+    align-items: flex-end; /* Alignez les éléments en bas */
+    justify-content: flex-end; /* Alignez les éléments à droite */
+}
+
+/* Styles pour les images des logos */
+.footer-right img {
+    width: 40px; /* Définissez la largeur souhaitée pour les logos */
+    margin: 4px; /* Ajoutez de l'espace autour des logos si nécessaire */
+}
+
+
+
+

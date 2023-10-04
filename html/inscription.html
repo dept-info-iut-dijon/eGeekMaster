@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../css/inscription.css" rel="stylesheet">
-
+    <script src="/js/inscription.js"></script>
     <title>Inscription</title>
 </head>
 <body>
@@ -20,7 +20,7 @@
             </div>
             <div>  
                 <!--Form to register-->
-                <form action="/BackEnd/Script/Process.php" method="post">
+                <form action="../BackEnd/Script/Process.php" method="post">
                     <fieldset id="formulaire">
                         <div>
                             <input name="Lastname" type="text" id="lastname" class="inputs enterText" placeholder="Lastname" maxlength="60" autofocus>
@@ -205,26 +205,54 @@
                                 </div>                
                             </div>
                         </div>
-                        <div>
+                        <div class="multiselect">
                             <label for="placeFamily">What's your place in the family ?</label>
-                            <div>
-                                <select name="Place family" id="placeFamily" multiple>
-                                    <option value="Parent">Parent</option>
-                                    <option value="Child">Child</option>
+                            <div class="selectBox" onclick="showCheckboxes()">
+                                <select id="select">
+                                    <option>Select your place</option>
                                 </select>
+                                <div class="overSelect"></div>
+                            </div>
+                            <div id="checkboxes">
+                                <label for="parent">
+                                <input type="checkbox" id="parent" />Parent</label>
+                                <label for="child">
+                                <input type="checkbox" id="child" />Child</label>
+                                <label for="grandParent">
+                                <input type="checkbox" id="grandParent" />Grand parent</label>
+                                <label for="grandChild">
+                                <input type="checkbox" id="grandChild" />Grand child</label>
+                                <label for="uncle/aunt">
+                                <input type="checkbox" id="uncle/aunt" />Uncle/Aunt</label>
+                                <label for="cousin">
+                                <input type="checkbox" id="cousin" />Cousin</label>
+                                <label for="nephew/niece">
+                                <input type="checkbox" id="nephew/niece" />Nephew/Niece</label>
+                                <label for="stepchild">
+                                <input type="checkbox" id="stepchild" />Stepchild</label>
+                                <label for="in-law">
+                                <input type="checkbox" id="in-law" />In-law</label>
+                                <label for="step-parent">
+                                <input type="checkbox" id="step-parent" />Step-parent</label>
+                                <label for="half-sibling">
+                                <input type="checkbox" id="half-sibling" />Half-sibling</label>
+                                <label for="other">
+                                <input type="checkbox" id="other" />Other</label>
                             </div>
                         </div>
-                        <p id="conditions">
-                            By clicking “Sign up”, you agree to our terms of service and acknowledge that you have read and understand our privacy policy and code of conduct.
-                        </p>
+                        <div>
+                            <p id="conditions">
+                                By clicking “Sign up”, you agree to our terms of service and acknowledge that you have read and understand our <a href="">privacy policy</a> and <a href="">code of conduct</a>.
+                            </p>
+                        </div>       
                         <div id="submitDiv">
                             <input type="submit" value="Sign up" class="inputs" id="submit"> 
                         </div>
+                        <div id="haveAccount_global">
+                            <p><a href="../html/connection.html" id="haveAccount">Already have a account</a></p>
+                        </div>
                     </fieldset>
                 </form>
-                <div id="haveAccount_global">
-                    <button name="haveAccount" type="button" id="haveAccount">Already have a account</button>
-                </div>
             </div>
         </div>
     </div>
