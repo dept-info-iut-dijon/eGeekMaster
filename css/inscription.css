@@ -3,11 +3,25 @@ body{
     font-family: "Comic sans MS";
 }
 
+/*Logo*/
+
+#logo{
+    height: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#logo_global{
+    height: 20%;
+}
+
 #form{
     background-color: #E0EEF1;
     width: 25%;
     padding: 1%;
     border-radius: 2%;
+    margin-top: 8%;
 }
 
 /*Title*/
@@ -28,7 +42,6 @@ h1{
     display: flex;
     justify-content: center;
     align-items: center; 
-    margin-top: 8%;
 }
 
 #formulaire{
@@ -88,6 +101,13 @@ h1{
     background-color: #E0EEF1;
 }
 
+/*Conditions*/
+
+#conditions{
+    font-size: 70%;
+    text-align: center;
+}
+
 /*submit*/
 
 #submitDiv{
@@ -101,4 +121,16 @@ h1{
     background-color: #226979;
     font-weight: bold;
     font-size: 15px;
+}
+
+/*Already have a account*/
+
+#haveAccount{
+    background-color: #E0EEF1;
+    text-align: center;
+    border-style: none;
+}
+
+#haveAccount_global{
+    text-align: center;
 }
