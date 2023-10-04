@@ -1,6 +1,11 @@
 body{
     background-image: url("../image/page_accueil/unsplash_kYh-O1Jk7EE.png");
     font-family: "Comic sans MS";
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: left top;
+    width: 100%;
+    background-size: cover;
 }
 
 /*Logo*/
@@ -20,7 +25,7 @@ body{
     background-color: #E0EEF1;
     width: 25%;
     padding: 1%;
-    border-radius: 10px;
+    border-radius: 8px;
     margin-top: 3%;
 }
 
@@ -54,7 +59,7 @@ h1{
     margin-top: 1%;
     margin-bottom: 1%;
     padding: 2%;
-    border-radius: 10px;
+    border-radius: 8px;
 }
 
 #lastname{
@@ -82,12 +87,13 @@ h1{
 
 .date{
     width: 32%;
-    border-radius: 10px;
+    border-radius: 8px;
+    font-family: "Comic sans MS";
+    border-color: black;
 }
 
 #birthdate{
     padding-top: 2%;
-    padding-bottom: 2%;
 }
 
 /*Gender*/
@@ -99,7 +105,7 @@ h1{
     padding: 1%;
     padding-left: 2%;
     padding-right: 2%;
-    border-radius: 10px;
+    border-radius: 8px;
     margin: 1%;
     align-items: center;
     
@@ -125,6 +131,46 @@ h1{
     background-color: #E0EEF1;
 }
 
+.multiselect {
+    
+  }
+  
+  .selectBox {
+    position: relative;
+  }
+  
+  .selectBox select {
+    width: 100%;
+    font-weight: bold;
+  }
+  
+  .overSelect {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+  
+  #checkboxes {
+    display: none;
+    border: 1px #dadada solid;
+  }
+  
+  #checkboxes label {
+    display: block;
+  }
+  
+  #checkboxes label:hover {
+    background-color: gray;
+  }
+
+#select{
+    background-color: #E0EEF1;
+    border-radius: 8px;
+    font-family: "Comic sans MS";
+}
+
 /*Conditions*/
 
 #conditions{
@@ -139,22 +185,28 @@ h1{
 }
 
 #submit{
-    width: 30%;
+    width: 50%;
     color: white;
-    border-radius: 20px;
+    border-radius: 8px;
     background-color: #226979;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 17px;
+    padding-top: 1%;
+    padding-bottom: 1%;
 }
 
 /*Already have a account*/
 
 #haveAccount{
-    background-color: #E0EEF1;
     text-align: center;
-    border-style: none;
+    font-size: 90%;
+    color: black;
+}
+#haveAccount:hover{
+    color: #226979;
 }
 
 #haveAccount_global{
     text-align: center;
+    margin-top: 2%;
 }
