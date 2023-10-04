@@ -82,6 +82,12 @@ h1{
     padding: 1%;
 }
 
+/*Family place*/
+
+#placeFamily{
+    background-color: #E0EEF1;
+}
+
 /*submit*/
 
 #submitDiv{
