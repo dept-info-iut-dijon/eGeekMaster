@@ -8,40 +8,40 @@
 </head>
 <body>
     <div class="container">
-        <!--Form + Title-->
         <div id="form">
+            <!--Title and subtitle-->
             <div>
                 <h1>Create a new account</h1>
                 <p id="subtitle">It's easy and fast</p>
             </div>
             <div>  
                 <!--Form to register-->
-                <form><!-- action="/BackEnd/ConnectionBdd.php" method="session" -->
+                <form action="../BackEnd/Process.php" method="post">
                     <fieldset id="formulaire">
                         <div>
-                            <input id="lastname" name="Lastname" placeholder="Lastname" class="inputs enterText">
-                            <input id="firstname" name="Firstname" placeholder="Firstname" class="inputs enterText">
+                            <input name="Lastname" type="text" id="lastname" class="inputs enterText" placeholder="Lastname" maxlength="60" autofocus>
+                            <input name="Firstname" type="text" id="firstname" class="inputs enterText" placeholder="Firstname" maxlength="40">
                         </div> 
                         <div>
-                            <input id="email" name="Email" placeholder="Email" class="inputs enterText">
+                            <input name="Email" type="text" id="email" class="inputs enterText" placeholder="Email" maxlength="100" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$">
                         </div>  
                         <div>
-                            <input id="username" name="Username" placeholder="Username" class="inputs enterText">
-                            <input id="password" name="Password" placeholder="Password" class="inputs enterText"> 
+                            <input name="Username" type="text" id="username" class="inputs enterText" placeholder="Username" maxlength="20">
+                            <input name="Password" type="password" id="password" class="inputs enterText" placeholder="Password" maxlength="30" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"> 
                         </div>         
                         <div id="birthdate">
                             <label>Birthdate</label>
                             <div class="dates">
-                                <select class="inputs date" id="dayOfBirth" name="Day of birth">
-                                    <option value="1">1</option>  
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
+                                <select name="Day of birth" id="dayOfBirth" class="inputs date">
+                                    <option value="01">1</option>  
+                                    <option value="02">2</option>
+                                    <option value="03">3</option>
+                                    <option value="04">4</option>
+                                    <option value="05">5</option>
+                                    <option value="06">6</option>
+                                    <option value="07">7</option>
+                                    <option value="08">8</option>
+                                    <option value="09">9</option>
                                     <option value="10">10</option>
                                     <option value="11">11</option>
                                     <option value="12">12</option>
@@ -65,21 +65,21 @@
                                     <option value="30">30</option>
                                     <option value="31">31</option>  
                                 </select> 
-                                <select id="monthOfBirth" name="Month of birth" class="inputs date">
-                                    <option value="Jan">Jan</option>
-                                    <option value="Feb">Feb</option>
-                                    <option value="Mar">Mar</option>
-                                    <option value="Apr">Apr</option>
-                                    <option value="May">May</option>
-                                    <option value="Jun">Jun</option>
-                                    <option value="Jul">Jul</option>
-                                    <option value="Aug">Aug</option>
-                                    <option value="Sep">Sep</option>
-                                    <option value="Oct">Oct</option>
-                                    <option value="Nov">Nov</option>
-                                    <option value="Dec">Dec</option>
+                                <select name="Month of birth" id="monthOfBirth" class="inputs date">
+                                    <option value="01">Jan</option>
+                                    <option value="02">Feb</option>
+                                    <option value="03">Mar</option>
+                                    <option value="04">Apr</option>
+                                    <option value="05">May</option>
+                                    <option value="06">Jun</option>
+                                    <option value="07">Jul</option>
+                                    <option value="08">Aug</option>
+                                    <option value="09">Sep</option>
+                                    <option value="10">Oct</option>
+                                    <option value="11">Nov</option>
+                                    <option value="12">Dec</option>
                                 </select>  
-                                <select id="yearOfBirth" name="Year of birth" class="inputs date">
+                                <select name="Year of birth" id="yearOfBirth" class="inputs date">
                                     <option value="2023">2023</option>
                                     <option value="2022">2022</option>
                                     <option value="2021">2021</option>
@@ -89,7 +89,7 @@
                         </div>
                         <div>
                             <label>Gender</label>
-                            <div class="gen">
+                            <div class="gender_global">
                                 <div class="gender">
                                     <label for="woman">Woman</label>
                                     <input type="radio" id="woman" name="Gender" value="woman" class="inputs">
@@ -106,11 +106,12 @@
                         </div>
                         <div>
                             <label for="placeFamily">What's your place in the family ?</label>
-                            <br>
-                            <select name="Place family" id="placeFamily" multiple>
-                                <option value="Parent">Parent</option>
-                                <option value="Child">Child</option>
-                            </select>
+                            <div>
+                                <select name="Place family" id="placeFamily" multiple>
+                                    <option value="Parent">Parent</option>
+                                    <option value="Child">Child</option>
+                                </select>
+                            </div>
                         </div>
                         <p>
                             By clicking “Sign up”, you agree to our terms of service and acknowledge that you have read and understand our privacy policy and code of conduct.
