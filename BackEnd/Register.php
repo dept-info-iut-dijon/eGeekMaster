@@ -20,7 +20,7 @@
             $this->_gender = $gender;
             $this->_familyPlace = $familyPlace;
             $this->_birthDate = $birthDate;
-            $this->_hash = hash("sha256", $password);
+            $this->_hash = $password;
         }
 
         // Getter for $_login
@@ -29,7 +29,7 @@
         }
 
         // Setter for $_login
-        public function setLogin($login) {
+        public function setLogin(string $login) {
             $this->_login = $login;
         }
 
@@ -39,7 +39,7 @@
         }
 
         // Setter for $_hash
-        public function setHash($hash) {
+        public function setHash(string $hash) {
             $this->_hash = $hash;
         }
 
@@ -49,7 +49,7 @@
         }
 
         // Setter for $_firstName
-        public function setFirstName($firstName) {
+        public function setFirstName(string $firstName) {
             $this->_firstName = $firstName;
         }
 
@@ -59,7 +59,7 @@
         }
 
         // Setter for $_lastName
-        public function setLastName($lastName) {
+        public function setLastName(string $lastName) {
             $this->_lastName = $lastName;
         }
 
@@ -69,7 +69,7 @@
         }
 
         // Setter for $_email
-        public function setEmail($email) {
+        public function setEmail(string $email) {
             $this->_email = $email;
         }
 
@@ -79,7 +79,7 @@
         }
 
         // Setter for $_gender
-        public function setGender($gender) {
+        public function setGender(string $gender) {
             $this->_gender = $gender;
         }
 
@@ -89,7 +89,7 @@
         }
 
         // Setter for $_familyPlace
-        public function setFamilyPlace($familyPlace) {
+        public function setFamilyPlace(string $familyPlace) {
             $this->_familyPlace = $familyPlace;
         }
 
@@ -99,8 +99,13 @@
         }
 
         // Setter for $_dateBirth
-        public function setBirthDate($birthDate) {
+        public function setBirthDate(string $birthDate) {
             $this->_birthDate = $birthDate;
+        }
+
+        // Hash password and set hash
+        public function setPassword(string $password) {
+            $this->setHash(hash("sha256", $password));
         }
         
     }
