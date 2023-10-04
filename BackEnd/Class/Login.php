@@ -41,7 +41,7 @@
 
         // Compare parameter hash password with the attribut hash
         public function verifyPassword(string $password) {
-            return $this->getHash() == hash("sha256", $password);
+            return $this->getHash() == $password;
         }
 
         public function hydrate(array $data)

@@ -1,15 +1,15 @@
 <?php
-
-    session_start();
     declare(strict_types=1);
-    require_once('Register.php');
-    require_once('RegisterManager.php');
+    session_start();
+
+    require_once('../Class/Register.php');
+    require_once('../Class/RegisterManager.php');
     $reg = new Register($_SESSION['Username'], $_SESSION['Password'], $_SESSION['FirstName'], $_SESSION['LastName'], $_SESSION['Email'], $_SESSION['Gender'], $_SESSION['FamilyPlace'], $_SESSION['BirthDate']);
     $reg->setPassword($reg->getHash());
     
-    $dsn = "mysql:host=localhost;dbname=grp-307_s2_prjtut";
-    $utilisateur = "grp-307";
-    $mot_de_passe = "zIcshT24";
+    $dsn = "mysql:host=localhost;dbname=SAE3_soupape";
+    $utilisateur = "root";
+    $mot_de_passe = "";
     
     try {
         $pdo = new PDO($dsn, $utilisateur, $mot_de_passe);
@@ -23,4 +23,6 @@
     $regMan->deleteAll();
     
     $regMan->add($reg);
+    header("Location: ../../html/connection.html");
+    exit;
 ?>
