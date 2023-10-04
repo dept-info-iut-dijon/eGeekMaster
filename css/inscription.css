@@ -8,19 +8,18 @@ body{
     background-size: cover;
 }
 
-/*Logo*/
-
+/*LOGO*/
 #logo{
     height: 100%;
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
-
 #logo_global{
     height: 20%;
 }
 
+/*REGISTRATION FORM*/
 #form{
     background-color: #E0EEF1;
     width: 25%;
@@ -29,16 +28,17 @@ body{
     margin-top: 3%;
 }
 
-/*Title*/
+/*TITLE*/
 h1{
     text-align: center;
 }
 
-/*Subtitle*/
+/*SUBTITLE*/
 #subtitle{
     text-align: center;
 }
 
+/*FORM*/
 .inputs{
     background-color: #E0EEF1;  
 }

@@ -13,18 +13,55 @@ header{
     width: 40px;
 }
 
+#bars{
+    position: fixed;
+    top: 0;
+    background-image: url(../image/header/bars-staggered-solid.svg);
+    transition: left 0.2s ease-in-out;
+}
+
 #user{
+    background-image: url(../image/header/circle-user-regular.svg);
     position: absolute; right: 0.5%;
 }
 
 #search{
+    background-image: url(../image/header/magnifying-glass-solid.svg);
     position: absolute; right: 60px;
 }
 
 #logo{
+    background-image: url(../image/page_connection/logo_soupape2.png);
     margin: 0.5%;
     height: 40px;
     width: auto;
     margin-left: 40%;
     margin-right: 40%;
+}
+
+/*Menu*/
+
+#menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    transition: left 0.2s ease-in-out;
+    background-color: #226979;
+}
+
+#menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+#menu ul li {
+    padding: 15px;
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    color: #e0eef1;
 }

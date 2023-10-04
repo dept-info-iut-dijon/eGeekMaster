@@ -1,4 +1,6 @@
 <?php
+
+    session_start();
     declare(strict_types=1);
     require_once('Register.php');
     require_once('RegisterManager.php');

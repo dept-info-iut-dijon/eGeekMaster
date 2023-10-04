@@ -11,4 +11,4 @@ function showCheckboxes() {
     expanded = false;
   }
 }
-window.onload = main;
+window.onload;

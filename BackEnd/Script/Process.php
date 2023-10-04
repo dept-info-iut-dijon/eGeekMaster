@@ -12,7 +12,7 @@ if(isset($_POST['Firstname']))
     $Email = $_POST['Email'];
     $BirthDate = $_POST['Year of birth']."-".$_POST['Month of birth']."-".$_POST['Day of birth'];
     $Gender = $_POST['Gender'];
-    $FamilyPlace = $_POST['Place family'];
+    //$FamilyPlace = $_POST['Place family'];
 }
 
 
@@ -26,17 +26,19 @@ if(isset($_POST['Firstname']))
     $_SESSION['Email'] = $Email;
     $_SESSION['BirthDate'] = $BirthDate;
     $_SESSION['Gender'] = $Gender;
-    $_SESSION['FamilyPlace'] = $FamilyPlace;
+    //$_SESSION['FamilyPlace'] = $FamilyPlace;
     
     // Redirect the user to RegisterScript.php
-    header("Location: ../eGeekMaster/BackEnd/Script/RegisterScript.php");
+    header("Location: RegisterScript.php");
+    exit;
 }
 else
 {
     // Redirect the user to LoginScript.php
-    header("Location: ../eGeekMaster/BackEnd/Script/LoginScript.php");
+    header("Location: LoginScript.php");
+    exit;
 }
     //header("Location: ../html/page_accueil/index.html");
 
-exit;
+
 ?>
