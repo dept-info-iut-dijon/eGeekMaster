@@ -67,6 +67,7 @@ body{
     
 }
 
+
 /*Chiffre */
 #SomeChiffre{
     background-color: #81ACB5;
@@ -239,11 +240,81 @@ input[value="Messages"]:active{
 /*Tuto*/
 #Tuto{
     background-color: #FFFF;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    align-items: center;
 }
+#Tuto video{
+    margin :10%;
+    width: 80vw;
+    height: 50vh;
+}
+#Tuto p{
+    color: #ccc;
+}
+
+
+
+
 /*Publication*/
 #Publication{
     background-color: #ECE4E3;
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
 }
+#PubliGauche{
+    display: flex;
+    flex-direction: column;
+    grid-column: 1;
+}
+#PubliGauche h4{
+    margin-bottom: 0%;
+    margin-left: 1%;
+}
+
+#slider_1{
+    grid-column: 2;
+}
+
+#imgA{
+    background-image: url(/image/page_accueil/ppMan.jpg);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position-x: -5px ;
+}
+#imgB{
+    background-image: url(/image/page_accueil/ppWomen.jpg);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-size: cover;
+}
+#imgC{
+    background-image: url(/image/page_accueil/ppMan2.jpg);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position-x: -20px ;
+}
+#imgD{
+    background-image: url(/image/page_accueil/ppWomen2.jpg);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position-x: -10px ;
+}
+.people{
+    display: flex;
+    align-items: center;
+}
+
+
+
 /* gestion du carrousel */
 .slider {
     position: relative;
@@ -275,7 +346,7 @@ input[value="Messages"]:active{
     width: 100%;
     
     bottom: 0px;
-    text-align: center;
+    
 }
 
 .slider-control {
@@ -292,22 +363,6 @@ input[value="Messages"]:active{
     background-color: #fff;
 }
 
-/* CSS pour les switchs plus jolis
-    vu sur https://www.w3schools.com/howto/howto_css_switch.asp
-*/
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-}
-
-/* Hide default HTML checkbox */
-.switch input {
-	opacity: 0;
-	width: 0;
-	height: 0;
-}
 
 /* The slider */
 .slide {
