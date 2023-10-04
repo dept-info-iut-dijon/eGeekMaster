@@ -29,14 +29,16 @@ if(isset($_POST['Firstname']))
     $_SESSION['FamilyPlace'] = $FamilyPlace;
     
     // Redirect the user to RegisterScript.php
-    header("Location: ../eGeekMaster/BackEnd/Script/RegisterScript.php");
+    header("Location: RegisterScript.php");
+    exit;
 }
 else
 {
     // Redirect the user to LoginScript.php
-    header("Location: ../eGeekMaster/BackEnd/Script/LoginScript.php");
+    header("Location: LoginScript.php");
+    exit;
 }
     //header("Location: ../html/page_accueil/index.html");
 
-exit;
+
 ?>
