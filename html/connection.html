@@ -12,20 +12,28 @@
     </div>
     <div class="container">
         <form>
-            <img id="logo" src="../image/page_connection/logo_soupape.png" alt="">
+            <div id="divlogo">
+                <img id="logo" src="../image/page_connection/logo_soupape.png" alt="">
+            </div>
             <fieldset>
                 <div id="Connect">   
                     <div>
-                        <h1>Log to your account</h1>
+                        <h1>LOG IN</h1>
+                        <p>Log to your account to access your workspace</p>
                     </div>
                     <div class="cc">
-                        <input type="text" id="login" name="Login" placeholder="Login" class="inputs">
+                        <label for="login">Login :</label><br>
+                        <input type="text" id="login" name="Login" class="inputs">
                     </div>
                     <div class="cc">
-                        <input type="password" id="password" name="Password" placeholder="Password" class="inputs"> 
+                        <label for="password">Password :</label><br>
+                        <input type="password" id="password" name="Password" class="inputs"> 
                     </div >         
                     <div class="cc">
-                        <input type="submit" value="Log in" class="inputs">
+                        <input type="submit" value="Log in" id="submitbutton">
+                    </div>
+                    <div>
+                        <p>Don't have an account ? <a href="../html/inscription.html">Create one here</a></p>
                     </div>
                 </div>
             </fieldset>
