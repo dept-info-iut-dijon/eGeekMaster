@@ -1,0 +1,30 @@
+body{
+    margin: 0;
+}
+
+header{
+    background-color: #226979;
+    display: flex;
+}
+
+#bars, #search, #user{
+    margin: 0.5%;
+    height: 40px;
+    width: 40px;
+}
+
+#user{
+    position: absolute; right: 0.5%;
+}
+
+#search{
+    position: absolute; right: 60px;
+}
+
+#logo{
+    margin: 0.5%;
+    height: 40px;
+    width: auto;
+    margin-left: 40%;
+    margin-right: 40%;
+}
