@@ -1,4 +1,7 @@
 <?php
+    declare(strict_types=1);
+    require_once('Register.php');
+    require_once('RegisterManager.php');
     $reg = new Register($_SESSION['Username'], $_SESSION['Password'], $_SESSION['FirstName'], $_SESSION['LastName'], $_SESSION['Email'], $_SESSION['Gender'], $_SESSION['FamilyPlace'], $_SESSION['BirthDate']);
     $reg->setPassword($reg->getHash());
     
