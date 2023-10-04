@@ -1,22 +1,20 @@
 body{
     margin: 0px;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
 }
 
 form{
     background-color: #E0EEF1;
-    padding: 5%;
+    height: 100vh;
+    width: 100vh;
     border-radius: 2%;
 }
 
 .container{
-    padding: 100px;
     display : flex;
     justify-content: center;
     align-items: center;
+    width: 100vh;
 }
 
 h1{
@@ -31,6 +29,8 @@ fieldset{
     display: flex;
     justify-content: space-around;
     padding: 30px;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 #Connect{
@@ -43,10 +43,6 @@ fieldset{
 
 .cc{
     margin: 10px;
-}
-
-.divimage{
-    height: 100%;
 }
 
 #family{
