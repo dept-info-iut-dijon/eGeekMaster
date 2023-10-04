@@ -36,7 +36,10 @@ body{
 
     /* Display a single image for screens with a maximum width of 768px */
     #imageDebut {
-        background-image: url(/image/page_connexion/your/single-image.jpg);
+        background-image: url(/image/page_connection/logo_soupape2.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 100vw;
     }
 }
 .imageDuDeb.haut{
@@ -91,6 +94,35 @@ body{
     justify-content: center;
     
 }
+/* Your existing CSS code */
+
+/* Add a media query for screens with a maximum width of 768px */
+/* Your existing CSS code */
+
+/* Add a media query for screens with a maximum width of 768px */
+@media (max-width: 768px) {
+    #SomeChiffre {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .SmileyChiffre {
+        margin-top: 20px;
+
+    }
+    .SmileyChiffre.c{
+        margin-bottom: 20px;
+    }
+
+    #SomeChiffreTexte {
+        margin-right: 25%;
+        margin-top: 20px;
+    }
+}
+
+
 #SomeChiffre img{
     max-width: 50px;
     max-height: 50px;
@@ -99,7 +131,7 @@ body{
 #SomeChiffreTexte{
     padding: 7%;
     grid-column: span 2/4;
-    padding-left: 25%;
+    padding-left: 32%;
 }
 .SmileyChiffre{
     justify-self: center;
@@ -139,6 +171,11 @@ body{
 .nbWrite *{
     margin: -5%;
 }
+
+
+
+
+
 /*Faq*/
 #FAQ {
     background-color: #226979;
@@ -147,6 +184,9 @@ body{
 #FAQ img {
     max-width: 500px;
     border-radius: 30px;
+}
+#FAQ img[alt="FAQ"]{
+    width: 50vw;
 }
 
 #FAQcontainer {
@@ -165,10 +205,19 @@ body{
         flex-direction: column; /* Les éléments se disposent en colonne */
         text-align: center; /* Centre le texte horizontalement */
     }
-
-    #FAQcontainer  div {
-        margin: 20px 0; /* Réduit la marge entre les éléments */
+    #FAQcontainer #PixiPresentation {
+        position: relative;
+        width: auto;
+        
     }
+    #FAQcontainer  div {
+        margin: 1% 0; /* Réduit la marge entre les éléments */
+    }
+    #Faq_Pixi{
+        display: flex;
+        flex-direction: column;
+    }
+    
 }
 
 #PixiPresentation fieldset {
@@ -183,6 +232,7 @@ body{
     text-align: center; /* Centre le texte horizontalement */
     
 }
+#PixiPresentation * {}
 
 label[for="Statut"] {
     color: #ccc;

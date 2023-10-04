@@ -1,0 +1,72 @@
+/* Réinitialisation des marges et des paddings pour éviter les styles par défaut du navigateur */
+body, ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Style du footer */
+.footer {
+    background-color: #E0EEF1;
+    color: #fff;
+    padding: 40px 0;
+    position: absolute;
+    bottom: 0; /* Alignement en bas de la page */
+    width: 100%; /* Occupe toute la largeur de la page */
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Style du logo */
+
+.footer-logo img {
+    max-width: 150px;
+}
+
+/* Style des liens */
+.footer-links ul {
+    list-style-type: none;
+    display: flex;
+    height: 90px;
+}
+
+.footer-links li {
+    margin-right: 120px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #226979;
+}
+
+/* Style des icônes des réseaux sociaux */
+
+.footer-social ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.footer-social li {
+    margin-right: 10px;
+}
+
+.footer-social a img {
+    max-width: 30px;
+}
+
+.follow-text {
+    color: #000;
+    font-weight: bold;
+}
