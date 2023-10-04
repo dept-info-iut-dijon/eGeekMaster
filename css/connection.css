@@ -1,16 +1,19 @@
 body{
-    background-image: url("../image/page_accueil/Family_Dinner.jpg");
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
-#form{
+form{
     background-color: #E0EEF1;
-    
     padding: 5%;
     border-radius: 2%;
 }
 
 .container{
-    padding: 180px;
+    padding: 100px;
     display : flex;
     justify-content: center;
     align-items: center;
@@ -40,4 +43,17 @@ fieldset{
 
 .cc{
     margin: 10px;
+}
+
+.divimage{
+    height: 100%;
+}
+
+#family{
+    height: 100vh;
+}
+
+#logo{
+    height: 200px;
+    
 }
