@@ -312,6 +312,9 @@ input[value="Messages"]:active{
     display: flex;
     align-items: center;
 }
+#Publication h2{
+    margin-bottom: 0;
+}
 
 
 
