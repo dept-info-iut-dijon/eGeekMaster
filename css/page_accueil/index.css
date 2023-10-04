@@ -92,6 +92,7 @@ body{
     justify-self: center;
     display: flex;
     justify-content: space-around;
+    
     align-items: center;
     width: 15vw;
 }
@@ -126,46 +127,115 @@ body{
     margin: -5%;
 }
 /*Faq*/
-#FAQ{
+#FAQ {
     background-color: #226979;
+}
 
-}
-#FAQ img{
+#FAQ img {
     max-width: 500px;
+    border-radius: 30px;
 }
-#FAQcontainer{
+
+#FAQcontainer {
     padding: 10%;
+    display: flex;
+    justify-content: space-between; /* Permet de séparer les éléments à gauche et à droite */
+    
+    align-items: center; /* Centre verticalement les éléments */
 }
-#PixiPresentation fieldset{
+#FAQcontainer div{
+    margin: 50px;
+}
+
+#PixiPresentation fieldset {
     display: flex;
     flex-direction: column;
     background-color: white;
     align-items: center;
     justify-content: center;
     width: 5vw;
-    border:none;
-    border-radius: 10px ;
+    border: none;
+    border-radius: 10px;
+    text-align: center; /* Centre le texte horizontalement */
+    
+}
+
+label[for="Statut"] {
+    color: #ccc;
+    font-size: 12px;
+    margin-bottom: 5%;
+}  
+    
     
 
-}
-#PixiPresentation fieldset *{
-    justify-self: center;
-    align-self: center;
-}
-#PixiPresentation fieldset img{
+
+#PixiPresentation fieldset img {
     max-width: 70px;
-    border-radius: 100px;
-    
+    border-radius: 100%;
 }
-#PixiPresentation{
-    position: absolute;
-    background-position-x: -100;
-    align-self: center;
-}
-#Faq_Pixi{
-    display: flex;
 
+#Faq_Pixi {
+    position: relative;
+    width: 100%; /* Assurez-vous que le conteneur d'image occupe toute la largeur de son conteneur parent */
 }
+#PixiPresentation {
+    position: absolute;
+    display: inline-block;
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+    top: 25%;
+    right: 0;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    z-index: 5; /* Assurez-vous que z-index est supérieur aux autres éléments si nécessaire */
+}
+.relative-container {
+    position: relative; /* Position relative pour permettre le positionnement absolu de #PixiPresentation */
+}
+
+#FAQcontainer h2{
+    color: white;
+}
+#FAQcontainer p{
+    color: #ccc;
+}
+
+/*bouton more about us */
+#MAU{
+    background-color: #81ACB5;
+    border: none;
+    border-radius: 5px;
+    font-family: "Comic Sans MS", sans-serif;
+    padding : 1% 2% 1%;
+    color: white;
+}
+
+#MAU:hover{
+    background-color: #91B7BF;
+}
+#MAU:active{
+    background-color: #81ACB5;
+}
+
+/*bouton Messages */
+input[value="Messages"]{
+    background-color: #81ACB5;
+    border: none;
+    border-radius: 5px;
+    font-family: "Comic Sans MS", sans-serif;
+    padding : 10% 20% 10%;
+    color: white;
+}
+
+input[value="Messages"]:hover{
+    background-color: #91B7BF;
+}
+input[value="Messages"]:active{
+    background-color: #81ACB5;
+}
+
+
+
 /*Tuto*/
 #Tuto{
     background-color: #FFFF;
