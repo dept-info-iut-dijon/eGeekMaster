@@ -1,6 +1,7 @@
 /*gestion globale*/
 body{
     font-family: "Comic Sans MS", sans-serif;
+    width: 100%;
 }
 
 /*image du début*/
@@ -26,6 +27,17 @@ body{
     height: 400px;
     margin-top: 30px;
 	margin-bottom: 30px;
+}
+@media (max-width: 768px) {
+    /* Hide the individual imageDuDeb divs */
+    .imageDuDeb {
+        display: none;
+    }
+
+    /* Display a single image for screens with a maximum width of 768px */
+    #imageDebut {
+        background-image: url(/image/page_connexion/your/single-image.jpg);
+    }
 }
 .imageDuDeb.haut{
     align-self: flex-end;
@@ -147,6 +159,17 @@ body{
 #FAQcontainer div{
     margin: 50px;
 }
+/* Styles pour les écrans de petite taille */
+@media (max-width: 160vh) {
+    #FAQcontainer {
+        flex-direction: column; /* Les éléments se disposent en colonne */
+        text-align: center; /* Centre le texte horizontalement */
+    }
+
+    #FAQcontainer  div {
+        margin: 20px 0; /* Réduit la marge entre les éléments */
+    }
+}
 
 #PixiPresentation fieldset {
     display: flex;
@@ -200,6 +223,7 @@ label[for="Statut"] {
 #FAQcontainer p{
     color: #ccc;
 }
+
 
 /*bouton more about us */
 #MAU{
@@ -260,9 +284,10 @@ input[value="Messages"]:active{
 /*Publication*/
 #Publication{
     background-color: #ECE4E3;
+    
     display: grid;
     grid-template-columns: 1fr 1fr ;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 3fr 1fr;
     color: white;
 }
 #PubliGauche{
@@ -325,7 +350,14 @@ input[value="Messages"]:active{
 #Publication p{
     color: #ccc;
 }
-
+#ligneP{
+    justify-self: center;
+    grid-row: 2;
+    grid-column: span 2;
+    width: 70%; 
+    height: 1px; 
+    background-color: #000;
+}
 
 
 /* gestion du carrousel */
