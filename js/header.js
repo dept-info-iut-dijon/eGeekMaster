@@ -11,17 +11,14 @@ window.onload = function () {
     menuButton.addEventListener("click", function () {
         if (menu.style.left === "0px") {
             menu.style.left = "-250px";
-            menuButton.style.left = "0px";
         } else {
             menu.style.left = "0px";
-            menuButton.style.left = "250px";
         }
     });
 
     document.addEventListener("click", function (event) {
         if (event.target !== menuButton && event.target !== menu) {
             menu.style.left = "-250px";
-            menuButton.style.left = "0px";
         }
     });
 };

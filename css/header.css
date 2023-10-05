@@ -1,10 +1,15 @@
 body{
     margin: 0;
+    display: block;
 }
 
 header{
     background-color: #226979;
     display: flex;
+}
+
+h1{
+    text-align: center;
 }
 
 #bars, #search, #user{
@@ -14,8 +19,6 @@ header{
 }
 
 #bars{
-    position: fixed;
-    top: 0;
     background-image: url(../image/header/bars-staggered-solid.svg);
     transition: left 0.2s ease-in-out;
 }
@@ -48,7 +51,7 @@ header{
     width: 250px;
     height: 100%;
     transition: left 0.2s ease-in-out;
-    background-color: #226979;
+    background-color: #144d5a;
 }
 
 #menu ul {
