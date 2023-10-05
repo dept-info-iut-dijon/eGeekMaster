@@ -1,24 +1,22 @@
-/*gestion globale*/
-body{
+/* Gestion globale */
+body {
     font-family: "Comic Sans MS", sans-serif;
     width: 100%;
 }
 
-/*image du début*/
-#Debut{
+/* Image du début */
+#Debut {
     background-color: #E0EEF1;
-	display: flex;
+    display: flex;
     flex-direction: column;
-	justify-content:space-around;
-	align-items: center;
+    justify-content: space-around;
+    align-items: center;
 }
-#Debut p{
+#Debut p {
     margin-left: 10%;
     margin-right: 10%;
 }
-#imageDebut{
-    /*display: flex;
-    justify-content: space-around;*/
+#imageDebut {
     position: relative;
     display: flex;
     justify-content: space-around;
@@ -26,15 +24,15 @@ body{
     width: 800px;
     height: 400px;
     margin-top: 30px;
-	margin-bottom: 30px;
+    margin-bottom: 30px;
 }
 @media (max-width: 768px) {
-    /* Hide the individual imageDuDeb divs */
+    /* Masquer les éléments imageDuDeb individuels */
     .imageDuDeb {
         display: none;
     }
 
-    /* Display a single image for screens with a maximum width of 768px */
+    /* Afficher une seule image pour les écrans avec une largeur maximale de 768px */
     #imageDebut {
         background-image: url(/image/page_connection/logo_soupape2.png);
         background-repeat: no-repeat;
@@ -42,64 +40,44 @@ body{
         width: 100vw;
     }
 }
-.imageDuDeb.haut{
+.imageDuDeb.haut {
     align-self: flex-end;
 }
-.imageDuDeb.bas{
+.imageDuDeb.bas {
     align-self: flex-start;
 }
 .imageDuDeb:nth-child(4n+1) {
-	background-image: url(/image/page_accueil/Family_Dinner.jpg);
-    
+    background-image: url(/image/page_accueil/Family_Dinner.jpg);
 }
-
 .imageDuDeb:nth-child(4n+2) {
-	background-image: url(/image/page_accueil/Family_HomeWork.jpg);
-   
+    background-image: url(/image/page_accueil/Family_HomeWork.jpg);
 }
-
 .imageDuDeb:nth-child(4n+3) {
-	background-image: url(/image/page_accueil/Family_Playing.jpg);
-    
+    background-image: url(/image/page_accueil/Family_Playing.jpg);
 }
-
 .imageDuDeb:nth-child(4n+4) {
-	background-image: url(/image/page_accueil/Women_Kitchen.jpg);
+    background-image: url(/image/page_accueil/Women_Kitchen.jpg);
     background-position-x: -120px;
-    
 }
-
-
-.imageDuDeb
-{
-   
+.imageDuDeb {
     border-radius: 30px;
     width: 20%;
     height: 80%;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    
 }
 
-
-/*Chiffre */
-#SomeChiffre{
+/* Chiffre */
+#SomeChiffre {
     background-color: #81ACB5;
     color: #E0EEF1;
     display: grid;
-    grid-template-rows: 1fr 1fr; 
-    grid-template-columns: 1fr 1fr 1fr; 
-    gap: 10px; 
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
     justify-content: center;
-    
 }
-/* Your existing CSS code */
-
-/* Add a media query for screens with a maximum width of 768px */
-/* Your existing CSS code */
-
-/* Add a media query for screens with a maximum width of 768px */
 @media (max-width: 768px) {
     #SomeChiffre {
         display: flex;
@@ -107,119 +85,122 @@ body{
         align-items: center;
         text-align: center;
     }
-
     .SmileyChiffre {
         margin-top: 20px;
-
     }
-    .SmileyChiffre.c{
+    .SmileyChiffre.c {
         margin-bottom: 20px;
     }
-
     #SomeChiffreTexte {
         margin-right: 25%;
         margin-top: 20px;
     }
 }
-
-
-#SomeChiffre img{
+#SomeChiffre img {
     max-width: 50px;
     max-height: 50px;
-    
 }
-#SomeChiffreTexte{
+#SomeChiffreTexte {
     padding: 7%;
     grid-column: span 2/4;
     padding-left: 32%;
 }
-.SmileyChiffre{
+.SmileyChiffre {
     justify-self: center;
     display: flex;
     justify-content: space-around;
-    
     align-items: center;
     width: 15vw;
 }
-.SmileyChiffre.a{
+.SmileyChiffre.a {
     grid-row: 2;
     grid-column: 1;
-   
 }
-.SmileyChiffre.b{
+.SmileyChiffre.b {
     grid-row: 2;
     grid-column: 2;
 }
-.SmileyChiffre.c{
+.SmileyChiffre.c {
     grid-row: 2;
     grid-column: 3;
 }
-#SomeChiffre h3{
+#SomeChiffre h3 {
     color: #FFFF;
     font-size: 300%;
 }
-.SomeChiffreTexte{
+.SomeChiffreTexte {
     grid-column: 3;
-
 }
-.nbWrite{
+.nbWrite {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
 }
-.nbWrite *{
+.nbWrite * {
     margin: -5%;
 }
 
+@keyframes tremble {
+    0% {
+        transform: translate(0, 0);
+    }
+    20% {
+        transform: translate(-5px, -5px);
+    }
+    40% {
+        transform: translate(5px, -5px);
+    }
+    60% {
+        transform: translate(-5px, -5px);
+    }
+    80% {
+        transform: translate(5px, -5px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
 
-
-
-
-/*Faq*/
+/* FAQ */
 #FAQ {
     background-color: #226979;
 }
-
 #FAQ img {
     max-width: 500px;
     border-radius: 30px;
 }
-#FAQ img[alt="FAQ"]{
+#FAQ img[alt="FAQ"] {
     width: 50vw;
 }
-
 #FAQcontainer {
     padding: 10%;
     display: flex;
-    justify-content: space-between; /* Permet de séparer les éléments à gauche et à droite */
-    
-    align-items: center; /* Centre verticalement les éléments */
+    justify-content: space-between;
+    align-items: center;
 }
-#FAQcontainer div{
+#FAQcontainer div {
     margin: 50px;
 }
 /* Styles pour les écrans de petite taille */
 @media (max-width: 160vh) {
     #FAQcontainer {
-        flex-direction: column; /* Les éléments se disposent en colonne */
-        text-align: center; /* Centre le texte horizontalement */
+        flex-direction: column;
+        text-align: center;
     }
     #FAQcontainer #PixiPresentation {
         position: relative;
         width: auto;
-        
+        margin-top: 5%;
+        right: auto;
     }
-    #FAQcontainer  div {
-        margin: 1% 0; /* Réduit la marge entre les éléments */
+    #FAQcontainer div {
+        margin: 1% 0;
     }
-    #Faq_Pixi{
+    #Faq_Pixi {
         display: flex;
         flex-direction: column;
     }
-    
 }
-
 #PixiPresentation fieldset {
     display: flex;
     flex-direction: column;
@@ -229,28 +210,20 @@ body{
     width: 5vw;
     border: none;
     border-radius: 10px;
-    text-align: center; /* Centre le texte horizontalement */
-    
+    text-align: center;
 }
-#PixiPresentation * {}
-
 label[for="Statut"] {
     color: #ccc;
     font-size: 12px;
     margin-bottom: 5%;
-}  
-    
-    
-
-
+}
 #PixiPresentation fieldset img {
     max-width: 70px;
     border-radius: 100%;
 }
-
 #Faq_Pixi {
     position: relative;
-    width: 100%; /* Assurez-vous que le conteneur d'image occupe toute la largeur de son conteneur parent */
+    width: 100%;
 }
 #PixiPresentation {
     position: absolute;
@@ -259,158 +232,153 @@ label[for="Statut"] {
     border-radius: 10px;
     text-align: center;
     top: 25%;
-    right: 0;
+    right: -50px;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
-    z-index: 5; /* Assurez-vous que z-index est supérieur aux autres éléments si nécessaire */
+    z-index: 5;
+}
+#PixiPresentation .field {
+    margin: 10px;
+}
+#Faq_Pixi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .relative-container {
-    position: relative; /* Position relative pour permettre le positionnement absolu de #PixiPresentation */
+    position: relative;
 }
-
-#FAQcontainer h2{
+#FAQcontainer h2 {
     color: white;
 }
-#FAQcontainer p{
+#FAQcontainer p {
     color: #ccc;
 }
 
-
-/*bouton more about us */
-#MAU{
+/* Bouton More About Us */
+#MAU {
     background-color: #81ACB5;
     border: none;
     border-radius: 5px;
     font-family: "Comic Sans MS", sans-serif;
-    padding : 1% 2% 1%;
+    padding: 1% 2% 1%;
     color: white;
 }
-
-#MAU:hover{
+#MAU:hover {
     background-color: #91B7BF;
 }
-#MAU:active{
+#MAU:active {
     background-color: #81ACB5;
 }
 
-/*bouton Messages */
-input[value="Messages"]{
+/* Bouton Messages */
+input[value="Messages"] {
     background-color: #81ACB5;
     border: none;
     border-radius: 5px;
     font-family: "Comic Sans MS", sans-serif;
-    padding : 10% 20% 10%;
+    padding: 10% 20% 10%;
     color: white;
 }
-
-input[value="Messages"]:hover{
+input[value="Messages"]:hover {
     background-color: #91B7BF;
 }
-input[value="Messages"]:active{
+input[value="Messages"]:active {
     background-color: #81ACB5;
 }
 
-
-
-/*Tuto*/
-#Tuto{
+/* Tutoriel */
+#Tuto {
     background-color: #FFFF;
     display: flex;
     flex-direction: column;
     align-content: space-around;
     align-items: center;
 }
-#Tuto video{
-    margin :10%;
+#Tuto video {
+    margin: 10%;
     width: 80vw;
     height: 50vh;
 }
-#Tuto p{
+#Tuto p {
     color: #ccc;
 }
 
-
-
-
-/*Publication*/
-#Publication{
+/* Publication */
+#Publication {
     background-color: #ECE4E3;
-    
     display: grid;
-    grid-template-columns: 1fr 1fr ;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 3fr 1fr;
     color: white;
 }
-#PubliGauche{
+#PubliGauche {
     display: flex;
     flex-direction: column;
     grid-column: 1;
 }
-#PubliGauche h4{
+#PubliGauche h4 {
     margin-bottom: 0%;
     margin-left: 1%;
 }
-
-#slider_1{
+#slider_1 {
     grid-column: 2;
 }
-
-#imgA{
+#imgA {
     background-image: url(/image/page_accueil/ppMan.jpg);
     width: 50px;
     height: 50px;
     border-radius: 50%;
     background-size: cover;
-    background-position-x: -5px ;
+    background-position-x: -5px;
 }
-#imgB{
+#imgB {
     background-image: url(/image/page_accueil/ppWomen.jpg);
     width: 50px;
     height: 50px;
     border-radius: 50%;
     background-size: cover;
 }
-#imgC{
+#imgC {
     background-image: url(/image/page_accueil/ppMan2.jpg);
     width: 50px;
     height: 50px;
     border-radius: 50%;
     background-size: cover;
-    background-position-x: -20px ;
+    background-position-x: -20px;
 }
-#imgD{
+#imgD {
     background-image: url(/image/page_accueil/ppWomen2.jpg);
     width: 50px;
     height: 50px;
     border-radius: 50%;
     background-size: cover;
-    background-position-x: -10px ;
+    background-position-x: -10px;
 }
-.people{
+.people {
     display: flex;
     align-items: center;
 }
-#Publication h2{
+#Publication h2 {
     margin-bottom: 0;
 }
-#Publication h5{
+#Publication h5 {
     margin-top: 0;
     color: #ccc;
     font-size: 10px;
 }
-#Publication p{
+#Publication p {
     color: #ccc;
 }
-#ligneP{
+#ligneP {
     justify-self: center;
     grid-row: 2;
     grid-column: span 2;
-    width: 70%; 
-    height: 1px; 
+    width: 70%;
+    height: 1px;
     background-color: #000;
 }
 
-
-/* gestion du carrousel */
+/* Gestion du carrousel */
 .slider {
     position: relative;
     width: 100%;
@@ -418,30 +386,24 @@ input[value="Messages"]:active{
     margin-top: 30px;
 }
 
-.slider-panel
-{
-   
+.slider-panel {
     position: absolute;
     width: 100%;
     height: 100%;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    opacity:0;
-    transition:1s all;
+    opacity: 0;
+    transition: 1s all;
 }
 
-
-
-.slider-panel.active{    
-    opacity:1;
+.slider-panel.active {
+    opacity: 1;
 }
 
 .slider-controls {
     width: 100%;
-    
     bottom: 0px;
-    
 }
 
 .slider-control {
@@ -449,7 +411,7 @@ input[value="Messages"]:active{
     width: 30px;
     height: 5px;
     margin: 10px;
-    background:none;
+    background: none;
     border-radius: 5px;
     cursor: pointer;
     border: 1px solid #ccc;
@@ -459,8 +421,7 @@ input[value="Messages"]:active{
     background-color: #fff;
 }
 
-
-/* The slider */
+/* Le slider */
 .slide {
     position: absolute;
     cursor: pointer;
@@ -474,15 +435,15 @@ input[value="Messages"]:active{
 }
 
 .slide:before {
-	position: absolute;
-	content: "";
-	height: 26px;
-	width: 26px;
-	left: 4px;
-	bottom: 4px;
-	background-color: white;
-	-webkit-transition: .4s;
-	transition: .4s;
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
 }
 
 input:checked + .slide {
@@ -499,11 +460,32 @@ input:checked + .slide:before {
     transform: translateX(26px);
 }
 
-/* Rounded sliders */
+/* Curseurs arrondis */
 .slide.round {
     border-radius: 34px;
 }
 
 .slide.round:before {
-	border-radius: 50%;
+    border-radius: 50%;
+}
+
+/* Animation du cœur */
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    clip-path: polygon(50% 0%, 61.8% 35.4%, 100% 61.8%, 77.6% 100%, 50% 82.7%, 22.4% 100%, 0% 61.8%, 38.2% 35.4%);
+    animation: rise 3s linear;
+}
+
+@keyframes rise {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
 }
