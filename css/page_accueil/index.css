@@ -96,6 +96,19 @@ body {
         margin-top: 20px;
     }
 }
+#smiley3Div {
+
+    
+    position: relative;
+}
+#smiley3{
+    position: relative;
+    z-index: 10;
+    max-width: 60px !important;
+}
+.Smiley_Choked{
+    position: relative;
+}
 #SomeChiffre img {
     max-width: 50px;
     max-height: 50px;
@@ -471,11 +484,13 @@ input:checked + .slide:before {
 
 /* Animation du cœur */
 .heart {
+    z-index: 0;
     position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: red;
-    clip-path: polygon(50% 0%, 61.8% 35.4%, 100% 61.8%, 77.6% 100%, 50% 82.7%, 22.4% 100%, 0% 61.8%, 38.2% 35.4%);
+    width: 15px;
+    height: 15px;
+    background-image: url(/image/page_accueil/Coeur.png);
+    background-size: cover;
+    top: 10px;
     animation: rise 3s linear;
 }
 

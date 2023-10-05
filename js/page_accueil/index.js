@@ -4,6 +4,11 @@ var num_image = 0;
 var currentImage;
 var idSmiley = undefined;
 let isSmiley2Hovered = false;
+var heartInterval = undefined;
+
+var smiley3Div = undefined;
+// Récupérez le troisième smiley par son ID
+
 
 function main() {
     console.log("Hello, world");
@@ -15,9 +20,9 @@ function main() {
     id = setInterval(nextImage, 2000);
 
     // Récupérez les éléments img par leur id
-    const smiley1 = document.getElementById("smiley1");
-    const smiley2 = document.getElementById("smiley2");
-    const smiley3 = document.getElementById("smiley3");
+    var smiley1 = document.getElementById("smiley1");
+    var smiley2 = document.getElementById("smiley2");
+    var smiley3 = document.getElementById("smiley3");
 
     // Ajoutez un gestionnaire d'événement pour le survol de la souris sur smiley1
     smiley1.addEventListener("mouseover", () => {
@@ -54,45 +59,28 @@ function main() {
 
     // Ajoutez un gestionnaire d'événement pour le survol de la souris sur smiley3
     smiley3.addEventListener("mouseover", () => {
-        smiley3.style.transition = "transform 0.5s"; // Ajoutez une transition de 0.5 seconde
-        smiley3.style.transformOrigin = "center center"; // Définissez l'origine de la transformation au centre de l'image
-        smiley3.style.transform = "rotate(360deg)"; // Applique une rotation de 360 degrés
-    });
-
-    // Ajoutez un gestionnaire d'événement pour le départ de la souris sur smiley3
-    smiley3.addEventListener("mouseout", () => {
-        smiley3.style.transition = "transform 0.5s"; // Ajoutez une transition de 0.5 seconde
-        smiley3.style.transform = "rotate(0deg)"; // Réinitialise la rotation
-    });
-
-    // Récupérez le troisième smiley par son ID
-    
-
-    // Créez une fonction pour générer un cœur
-    
-
-    // Ajoutez un gestionnaire d'événement pour le survol de la souris sur smiley3
-    smiley3.addEventListener("mouseover", () => {
         // Créez un intervalle pour générer des cœurs à intervalles réguliers
-        const heartInterval = setInterval(createHeart, 200); // Génère un cœur toutes les 200 millisecondes (ajustez selon vos besoins)
-
-        // Ajoutez un gestionnaire d'événement pour le départ de la souris sur smiley3
-        smiley3.addEventListener("mouseout", () => {
-            // Arrêtez de générer des cœurs lorsque la souris quitte le smiley3
-            clearInterval(heartInterval);
-        });
+        heartInterval = setInterval(createHeart, 400); // Génère un cœur toutes les 200 millisecondes (ajustez selon vos besoins)
+       
+    });
+    smiley3.addEventListener("mouseout", () => {
+        // Arrêtez de générer des cœurs lorsque la souris quitte le smiley3
+        clearInterval(heartInterval);
     });
 }
-function createHeart() {
-    const heart = document.createElement("div");
-    heart.classList.add("heart");
-    heart.style.left = `${Math.random() * 100}%`; // Position horizontale aléatoire
-    smiley3.appendChild(heart);
 
-    // Supprimez le cœur après un délai
+// Créez une fonction pour générer un cœur
+function createHeart() {
+    console.log(smiley3);
+    var smiley3Div = document.getElementById("smiley3Div")
+    var heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.style.marginLeft = `${Math.random() * 80}%`;
+    smiley3Div.appendChild(heart);
     setTimeout(() => {
         heart.remove();
-    }, 3000); // Supprimez le cœur après 3 secondes (ajustez le délai selon vos besoins)
+    },3000);
+    
 }
 
 function nextImage() {
