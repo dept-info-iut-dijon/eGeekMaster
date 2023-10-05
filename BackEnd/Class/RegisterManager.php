@@ -62,6 +62,8 @@
             }
         }
 
+
+        // Only for testing
         public function deleteAll()
         {
             $connection  = $this->_db;
