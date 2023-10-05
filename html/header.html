@@ -4,26 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/header.css">
-    <script src="../js/header.js"></script>
+    <script src="/js/header.js"></script>
+    <!-- <script src="/js/page_accueil/index.js"></script> -->
     <title>header</title>
 </head>
 <body>
     <header>
         <div id="bars"></div>
-        <a href="../html/page_accueil/index.html">
+        <a class="lien-header" href="../html/page_accueil/index.html">
             <div id="logo"></div>
         </a>
-        <a href="">
+        <a class="lien-header" href="">
             <div id="search"></div>
         </a>
-        <a href="../html/connection.html">
+        <a class="lien-header" href="../html/connection.html" onclick="redirectionLien(event)"> <!-- Ajout de l'attribut onclick -->
             <div id="user"></div>
         </a>
     </header>
     <div id="menu">
         <ul>
-            <li><a href="../html/connection.html">Connexion</a></li>
-            <li><a href="../html/inscription.html">Inscription</a></li>
+            <li><a class="lien-header" href="../html/connection.html" onclick="redirectionLien(event)">Connexion</a></li> <!-- Ajout de l'attribut onclick -->
+            <li><a class="lien-header" href="../html/inscription.html" onclick="redirectionLien(event)">Inscription</a></li> <!-- Ajout de l'attribut onclick -->
         </ul>
     </div>
 </body>

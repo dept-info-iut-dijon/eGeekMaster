@@ -67,13 +67,17 @@ function main() {
         // Arrêtez de générer des cœurs lorsque la souris quitte le smiley3
         clearInterval(heartInterval);
     });
+    // Ajoutez des gestionnaires d'événements pour les liens du header
+    console.log("oui");
+    document.addEventListener("DOMContentLoaded", redirectionLien);
+    console.log("oui");
 }
 
 // Créez une fonction pour générer un cœur
 function createHeart() {
     console.log(smiley3);
     var smiley3Div = document.getElementById("smiley3Div")
-    var heart = document.createElement("div");
+    var heart = document.createElement("div"); 
     heart.classList.add("heart");
     heart.style.marginLeft = `${Math.random() * 80}%`;
     smiley3Div.appendChild(heart);
@@ -82,7 +86,22 @@ function createHeart() {
     },3000);
     
 }
+function redirectionLien(event) {
+    event.preventDefault(); // Empêche le comportement par défaut du lien
+    var url = event.target.getAttribute("href");
+    chargerContenu(url);
+}
 
+function chargerContenu(url) {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            document.getElementById("contenu").innerHTML = xhr.responseText;
+        }
+    };
+    xhr.open("GET", url, true);
+    xhr.send();
+}
 function nextImage() {
     currentImage = (currentImage + 1) % listecontrol.length;
     print(currentImage);
