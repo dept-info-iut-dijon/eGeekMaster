@@ -25,7 +25,6 @@ body{
     width: 25%;
     padding: 1%;
     border-radius: 8px;
-    margin-top: 3%;
 }
 
 /*TITLE*/
@@ -178,6 +177,14 @@ h1{
     text-align: center;
 }
 
+.chartes{
+    color: black;
+}
+
+.chartes:hover{
+    color: #226979;
+}
+
 /*submit*/
 
 #submitDiv{
@@ -202,6 +209,7 @@ h1{
     font-size: 90%;
     color: black;
 }
+
 #haveAccount:hover{
     color: #226979;
 }
@@ -210,3 +218,42 @@ h1{
     text-align: center;
     margin-top: 2%;
 }
+
+@media only screen and (max-width: 1400px){
+    #form{
+        width: 40%;
+    }
+}
+
+@media only screen and (max-width: 900px){
+    #logo{
+        width: 35%;
+    }
+
+    #form{
+        width: 88%;
+    }
+
+    .enterText{
+        margin-left: 2%;
+    }
+    
+    #lastname{
+        width: 88%;
+    }
+    #firstname{
+        width: 88%;
+    }
+    
+    #username{
+        width: 88%;
+    }
+    
+    #password{
+        width: 88%;
+    }
+    #email{
+        width: 88%;
+    }
+}
+
