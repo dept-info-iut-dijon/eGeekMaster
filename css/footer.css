@@ -1,4 +1,6 @@
-/* Réinitialisation des marges et des paddings pour éviter les styles par défaut du navigateur */
+body{
+    margin: 0;
+}
 .footer{
     font-family: "Comic Sans MS", sans-serif;
 }
@@ -12,8 +14,8 @@
     background-color: #E0EEF1;
     color: #fff;
     padding: 40px 0;
-    position: absolute;
-    bottom: 0; /* Alignement en bas de la page */
+    
+    height: 100%;
     width: 100%; /* Occupe toute la largeur de la page */
 }
 
