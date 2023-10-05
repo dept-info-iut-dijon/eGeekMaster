@@ -108,7 +108,6 @@ li{
     grid-column: 4;
     bottom: 0;
     right: 0;
-    
 }
 
 .footer-social ul {
@@ -136,4 +135,12 @@ li{
 
 #follow-text-div{
     margin-right:4.5%;
+}
+
+.Facebook{
+    margin-right: 10%;
+}
+
+.Instagram{
+    margin-right: 10%;
 }
