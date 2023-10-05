@@ -177,6 +177,14 @@ h1{
     text-align: center;
 }
 
+.chartes{
+    color: black;
+}
+
+.chartes:hover{
+    color: #226979;
+}
+
 /*submit*/
 
 #submitDiv{
@@ -201,6 +209,7 @@ h1{
     font-size: 90%;
     color: black;
 }
+
 #haveAccount:hover{
     color: #226979;
 }
@@ -209,7 +218,6 @@ h1{
     text-align: center;
     margin-top: 2%;
 }
-
 
 @media only screen and (max-width: 1400px){
     #form{
@@ -225,7 +233,6 @@ h1{
     #form{
         width: 88%;
     }
-
 
     .enterText{
         margin-left: 2%;
