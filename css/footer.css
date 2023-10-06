@@ -40,6 +40,11 @@ body{
     max-width: 180px;
 }
 
+.footer-logo a img:hover {
+    transform: scale(0.8); 
+    transition: transform 0.3s;
+}
+
 /* Style des liens */
 
 .footer-inner ul {
@@ -71,7 +76,7 @@ li::marker {
 }
 
 .lienSousTitre a:hover {
-    color: #9f9da3;
+    color: #cccace;
 }
 
 .lien {
