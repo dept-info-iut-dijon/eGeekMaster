@@ -6,6 +6,7 @@ body{
     background-position: left top;
     width: 100%;
     background-size: cover;
+    margin: 0%;
 }
 
 /*LOGO*/
@@ -14,9 +15,10 @@ body{
     display: block;
     margin-left: auto;
     margin-right: auto;
+    width: 10%;
 }
 #logo_global{
-    height: 20%;
+    height: 18%;
 }
 
 /*REGISTRATION FORM*/
