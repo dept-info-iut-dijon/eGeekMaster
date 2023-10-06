@@ -14,7 +14,7 @@ h1{
     text-align: center;
 }
 
-#bars, #search, #user{
+#bars, #search, #user, #logoH{
     margin: 8px;
     height: 40px;
     width: 40px;
@@ -30,15 +30,16 @@ h1{
     position: absolute; right: 60px;
 }
 
-#logo{
+#logoH{
     position: absolute;
     top: 0;
-    right: 49.2%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 9px;
-    height: 40px;
-    width: auto;
+    right: 48%;
+    
+    width: 45px;
+   
+    
+    background-image: url(/image/page_connection/logo_soupape2.png);
+    background-size: cover;
 }
 
 /*Menu*/
