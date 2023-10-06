@@ -28,7 +28,7 @@
             <!--FORM-->
             <div>  
                 <form action="../BackEnd/Script/Process.php" method="post">
-                    <fieldset id="formulaire">
+                    <fieldset>
                         <!--NAME-->
                         <div>
                             <input name="Lastname" type="text" id="lastname" class="inputs enterText" placeholder="Lastname" maxlength="60" autofocus>
@@ -49,7 +49,7 @@
                         <!--BIRTHDATE-->
                         <div id="birthdate">
                             <label>Birthdate</label>
-                            <div class="dates">
+                            <div>
                                 <select name="DayOfBirth" id="dayOfBirth" class="inputs date">
                                     <option value="01">1</option>  
                                     <option value="02">2</option>
@@ -223,7 +223,7 @@
                         </div>
 
                         <!--FAMILY PLACE-->
-                        <div class="multiselect">
+                        <div>
                             <label for="placeFamily">What's your place in the family ?</label>
                             <div class="selectBox" onclick="showCheckboxes()">
                                 <select id="select" name="selectPlaceFamily">
