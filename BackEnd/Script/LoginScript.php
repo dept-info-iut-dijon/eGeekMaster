@@ -22,6 +22,8 @@
 
     $log2->hydrate($logMan->get($log->getLogin()));
    
+    header("Location: ../../html/page_accueil/index.html");
+
     if($log2->verifyPassword($log->getHash()) == true)
     {
         header("Location: ../../html/page_accueil/index.html");
