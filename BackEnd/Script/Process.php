@@ -29,7 +29,7 @@ if(isset($_POST['Username']) and isset($_POST['Password']))
             'in-law',
             'step-parent',
             'half-sibling',
-            'other'
+            'otherPlace'
         );
 
         foreach ($fieldsToCheck as $field) {
