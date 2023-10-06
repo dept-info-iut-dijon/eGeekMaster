@@ -15,14 +15,9 @@ h1{
 }
 
 #bars, #search, #user{
-    margin: 0.5%;
+    margin: 8px;
     height: 40px;
     width: 40px;
-}
-
-#bars{
-    background-image: url(../image/header/bars-staggered-solid.svg);
-    transition: left 0.2s ease-in-out;
 }
 
 #user{
@@ -36,12 +31,9 @@ h1{
 }
 
 #logo{
-    background-image: url(../image/page_connection/logo_soupape2.png);
-    margin: 0.5%;
+    margin: 8px;
     height: 40px;
     width: auto;
-    margin-left: 40%;
-    margin-right: 40%;
 }
 
 /*Menu*/
