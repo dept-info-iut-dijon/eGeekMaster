@@ -45,6 +45,7 @@ h1{
 /*Menu*/
 
 #menu {
+    z-index: 10;
     position: fixed;
     top: 0;
     left: -250px;

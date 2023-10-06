@@ -1,4 +1,4 @@
-window.onload = function () {
+function BarreLateral () {
     const menuButton = document.getElementById("bars");
     const menu = document.getElementById("menu");
 
