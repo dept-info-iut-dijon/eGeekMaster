@@ -22,6 +22,11 @@ body{
 }
 
 /*REGISTRATION FORM*/
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
 #form{
     background-color: #E0EEF1;
     width: 25%;
@@ -40,22 +45,16 @@ h1{
 }
 
 /*FORM*/
-.inputs{
-    background-color: #E0EEF1;  
-}
-
-.container{
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-}
-
-#formulaire{
+fieldset{
     border-right-style: none;
     border-left-style: none;
     border-bottom-style: none;
 }
 
+/*INPUTS*/
+.inputs{
+    background-color: #E0EEF1;  
+}
 .enterText{
     margin-top: 1%;
     margin-bottom: 1%;
@@ -63,6 +62,7 @@ h1{
     border-radius: 8px;
 }
 
+/*NAME*/
 #lastname{
     width: 44%;
 }
@@ -70,35 +70,42 @@ h1{
     width: 44%;
 }
 
-#username{
-    width: 44%;
-}
-
-#password{
-    width: 44%;
-}
-
+/*EMAIL*/
 #email{
     display: block;
     margin-right: auto;
     width: 94%;
 }
 
-/*Birthdate*/
+/*LOGIN*/
+#username{
+    width: 44%;
+}
+#password{
+    width: 44%;
+}
 
+/*BIRTHDATE*/
 .date{
     width: 32%;
     border-radius: 8px;
     font-family: "Comic sans MS";
     border-color: black;
+    padding: 1%;
 }
-
 #birthdate{
     padding-top: 2%;
 }
 
-/*Gender*/
-
+/*GENDER*/
+.gender_global{
+    display: flex;
+    justify-content: space-around;
+}
+#gender_title{
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
 .gender{
     display: flex;
     border: 1px;
@@ -112,87 +119,56 @@ h1{
     
 }
 
-.gender_global{
-    display: flex;
-    justify-content: space-around;
-}
-
-#gender_title{
-    margin-top: 2%;
-    margin-bottom: 2%;
-}
-
-.date{
-    padding: 1%;
-}
-
-/*Family place*/
-
+/*FAMILY PLACE*/
 #placeFamily{
     background-color: #E0EEF1;
-}
-
-.multiselect {
-    
-  }
-  
-  .selectBox {
+} 
+.selectBox {
     position: relative;
-  }
-  
-  .selectBox select {
+} 
+.selectBox select {
     width: 100%;
     font-weight: bold;
-  }
-  
-  .overSelect {
+}  
+.overSelect {
     position: absolute;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
-  }
-  
-  #checkboxes {
+} 
+#checkboxes {
     display: none;
     border: 1px #dadada solid;
-  }
-  
-  #checkboxes label {
+} 
+#checkboxes label {
     display: block;
-  }
-  
-  #checkboxes label:hover {
+} 
+#checkboxes label:hover {
     background-color: gray;
-  }
-
+}
 #select{
     background-color: #E0EEF1;
     border-radius: 8px;
     font-family: "Comic sans MS";
 }
 
-/*Conditions*/
-
+/*CONDITIONS*/
 #conditions{
     font-size: 70%;
     text-align: center;
 }
-
 .chartes{
     color: black;
 }
-
 .chartes:hover{
     color: #226979;
 }
 
-/*submit*/
-
+/*SUBMIT*/
 #submitDiv{
     text-align: center;
 }
-
 #submit{
     width: 50%;
     color: white;
@@ -204,58 +180,63 @@ h1{
     padding-bottom: 1%;
 }
 
-/*Already have a account*/
-
+/*ALREADY HAVE A ACCOUNT*/
+#haveAccount_global{
+    text-align: center;
+    margin-top: 2%;
+}
 #haveAccount{
     text-align: center;
     font-size: 90%;
     color: black;
 }
-
 #haveAccount:hover{
     color: #226979;
 }
 
-#haveAccount_global{
-    text-align: center;
-    margin-top: 2%;
-}
 
+/*RESPONSIVE*/
 @media only screen and (max-width: 1400px){
+    /*REGISTRATION FORM*/
     #form{
         width: 40%;
     }
 }
 
 @media only screen and (max-width: 900px){
+    /*LOGO*/
     #logo{
         width: 35%;
     }
 
+    /*REGISTRATION FORM*/
     #form{
         width: 88%;
     }
 
+    /*INPUTS*/
     .enterText{
         margin-left: 2%;
     }
     
+    /*NAME*/
     #lastname{
         width: 88%;
     }
     #firstname{
         width: 88%;
     }
-    
-    #username{
-        width: 88%;
-    }
-    
-    #password{
-        width: 88%;
-    }
+
+    /*EMAIL*/
     #email{
         width: 88%;
     }
-}
 
+    /*LOGIN*/
+    #username{
+        width: 88%;
+    } 
+    #password{
+        width: 88%;
+    }
+}
