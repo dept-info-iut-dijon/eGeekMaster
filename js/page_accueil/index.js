@@ -1,6 +1,12 @@
 // JavaScript source code
-import accueil from "module-name";
 
+var id = undefined;
+var num_image = 0;
+var currentImage;
+var idSmiley = undefined;
+let isSmiley2Hovered = false;
+var heartInterval = undefined;
+var smiley3Div = undefined;
 
 function main() {
     console.log("Hello, world");
@@ -63,6 +69,60 @@ function main() {
     
 }
 
+    function createHeart() {
+        console.log(smiley3);
+        var smiley3Div = document.getElementById("smiley3Div")
+        var heart = document.createElement("div"); 
+        heart.classList.add("heart");
+        heart.style.marginLeft = `${Math.random() * 80}%`;
+        smiley3Div.appendChild(heart);
+        setTimeout(() => {
+            heart.remove();
+        },3000);
+        
+    }
+    
+    function nextImage() {
+        currentImage = (currentImage + 1) % listecontrol.length;
+        print(currentImage);
+    }
+    
+    function tremble() {
+        if (isSmiley2Hovered) {
+            smiley2.style.transform = `translate(${getRandomOffset()}px, ${getRandomOffset()}px) scale(2)`;
+            idSmiley = requestAnimationFrame(tremble); // Demande une nouvelle frame d'animation
+        }
+    }
+    
+    function getRandomOffset() {
+        return (Math.random() * 100) - 50;
+    }
+    
+    /**
+     * Active une image du slider
+     * @param {number} number - Le numéro de l'image à activer
+     */
+    function print(number) {
+        let listeimage = document.querySelectorAll(".slider-panel");
+        let listecontrol = document.querySelectorAll(".slider-control");
+        console.log(listecontrol);
+        for (let i = 0; i < listeimage.length; i++) {
+            listeimage[i].classList.remove("active");
+            listecontrol[i].classList.remove("active");
+        }
+        listeimage[number].classList.add("active");
+        listecontrol[number].classList.add("active");
+    }
+    
+    function click(evt) {
+        let button = evt.target;
+        let controls = document.querySelectorAll(".slider-control");
+        let pos = [].indexOf.call(controls, button);
+        print(pos);
+        currentImage = pos;
+        clearInterval(id);
+        id = setInterval(nextImage, 2000);
+    }
 // Créez une fonction pour générer un cœur
 
 
