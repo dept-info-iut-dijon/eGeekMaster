@@ -26,8 +26,8 @@ if(isset($_POST['Username']) and isset($_POST['Password']))
             'cousin',
             'nephew/niece',
             'stepchild',
-            'in-Law',
-            'step-Parent',
+            'in-law',
+            'step-parent',
             'half-sibling',
             'other'
         );
@@ -39,6 +39,7 @@ if(isset($_POST['Username']) and isset($_POST['Password']))
         }
         $FamilyPlace = substr($FamilyPlace, 0, -2);
         
+
         
     }
 
