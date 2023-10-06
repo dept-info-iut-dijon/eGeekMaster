@@ -14,7 +14,32 @@ if(isset($_POST['Username']) and isset($_POST['Password']))
         $Email = $_POST['Email'];
         $BirthDate = $_POST["YearOfBirth"]."-".$_POST["MonthOfBirth"]."-".$_POST["DayOfBirth"];
         $Gender = $_POST['Gender'];
-        $FamilyPlace = "Other"; //$_POST['Place family'];
+
+        $FamilyPlace = "";
+        $tempConcat = ", ";
+        $fieldsToCheck = array(
+            'parent',
+            'child',
+            'grandParent',
+            'grandChild',
+            'uncle/aunt',
+            'cousin',
+            'nephew/niece',
+            'stepchild',
+            'in-Law',
+            'step-Parent',
+            'half-sibling',
+            'other'
+        );
+
+        foreach ($fieldsToCheck as $field) {
+            if (isset($_POST[$field]) && $_POST[$field] !== null) {
+                $FamilyPlace .= $_POST[$field] . $tempConcat;
+            }
+        }
+        $FamilyPlace = substr($FamilyPlace, 0, -2);
+        
+        
     }
 
     // Store the data in the session
