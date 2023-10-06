@@ -70,8 +70,8 @@ li::marker {
     display: none;
 }
 
-.lien:hover {
-    color: #226979;
+.lienSousTitre a:hover {
+    color: #9f9da3;
 }
 
 .lien {
@@ -91,7 +91,7 @@ li{
 } 
 
 .lienSousTitre a{
-    color: gray;
+    color: rgb(95, 94, 94);
 }
 
 #ResLogo {
@@ -130,13 +130,9 @@ li{
     max-width: 30px;
 }
 
-#follow-text {
-    color: #000;
-    font-weight: bold;
-}
-
-#follow-text-div{
-    margin-right:4.5%;
+.footer-social a img:hover {
+    transform: scale(0.8); 
+    transition: transform 0.3s;
 }
 
 .Facebook{
@@ -146,3 +142,15 @@ li{
 .Instagram{
     margin-right: 10%;
 }
+
+/* Style du texte "suivez-nous!"*/
+
+#follow-text {
+    color: #000;
+    font-weight: bold;
+}
+
+#follow-text-div{
+    margin-right:4.5%;
+}
+
