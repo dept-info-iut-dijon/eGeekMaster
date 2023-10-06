@@ -37,7 +37,7 @@ body {
 
     /* Afficher une seule image pour les écrans avec une largeur maximale de 768px */
     #imageDebut {
-        background-image: url(/image/page_connection/logo_soupape2.png);
+        background-image: url(../../image/page_connection/logo_soupape2.png);
         background-repeat: no-repeat;
         background-position: center;
         width: 100vw;
@@ -50,16 +50,16 @@ body {
     align-self: flex-start;
 }
 .imageDuDeb:nth-child(4n+1) {
-    background-image: url(/image/page_accueil/Family_Dinner.jpg);
+    background-image: url(../../image/page_accueil/Family_Dinner.jpg);
 }
 .imageDuDeb:nth-child(4n+2) {
-    background-image: url(/image/page_accueil/Family_HomeWork.jpg);
+    background-image: url(../../image/page_accueil/Family_HomeWork.jpg);
 }
 .imageDuDeb:nth-child(4n+3) {
-    background-image: url(/image/page_accueil/Family_Playing.jpg);
+    background-image: url(../../image/page_accueil/Family_Playing.jpg);
 }
 .imageDuDeb:nth-child(4n+4) {
-    background-image: url(/image/page_accueil/Women_Kitchen.jpg);
+    background-image: url(../../image/page_accueil/Women_Kitchen.jpg);
     background-position-x: -120px;
 }
 .imageDuDeb {
@@ -340,7 +340,7 @@ input[value="Messages"]:active {
     grid-column: 2;
 }
 #imgA {
-    background-image: url(/image/page_accueil/ppMan.jpg);
+    background-image: url(../../image/page_accueil/ppMan.jpg);
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -348,14 +348,14 @@ input[value="Messages"]:active {
     background-position-x: -5px;
 }
 #imgB {
-    background-image: url(/image/page_accueil/ppWomen.jpg);
+    background-image: url(../../image/page_accueil/ppWomen.jpg);
     width: 50px;
     height: 50px;
     border-radius: 50%;
     background-size: cover;
 }
 #imgC {
-    background-image: url(/image/page_accueil/ppMan2.jpg);
+    background-image: url(../../image/page_accueil/ppMan2.jpg);
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -363,7 +363,7 @@ input[value="Messages"]:active {
     background-position-x: -20px;
 }
 #imgD {
-    background-image: url(/image/page_accueil/ppWomen2.jpg);
+    background-image: url(../../image/page_accueil/ppWomen2.jpg);
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -491,7 +491,7 @@ input:checked + .slide:before {
     position: absolute;
     width: 15px;
     height: 15px;
-    background-image: url(/image/page_accueil/Coeur.png);
+    background-image: url(../../image/page_accueil/Coeur.png);
     background-size: cover;
     top: 10px;
     animation: rise 3s linear;
