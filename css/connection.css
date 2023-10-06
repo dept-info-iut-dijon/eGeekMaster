@@ -1,17 +1,16 @@
 body{
     margin: 0px;
-    display: flex;
     font-family: "Comic Sans MS", sans-serif;
+    height: 100%;
+    background-color: #E0EEF1;
 }
 
 form{
-    background-color: #E0EEF1;
     height: 100%;
     width: 100%;
 }
 
 .container{
-    display : flex;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -22,24 +21,26 @@ h1{
     color: #226979;
 }
 
-.inputs{
-    background-color: #e7e7e7;
-    margin: 2%;
-    width: 285px;
-    height: 25px;
-    border-radius: 10px;
-    border: none;
+p{
+    text-align: center;
 }
 
+.inputs{
+    border-radius: 8px;
+    border: none;
+    background-color: lightgrey;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    display:inline-block;
+}
+
+
 fieldset{
-    background-color: white;
     display: flex;
     justify-content: space-around;
-    padding: 5%;
-    margin-left: 20%;
-    margin-right: 20%;
     border: none;
-    border-radius: 30px;
 }
 
 #Connect{
@@ -47,15 +48,15 @@ fieldset{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 80%;
     padding: 2%;
 }
 
 .cc{
-    margin: 5%;
-}
-
-#family{
-    height: 100%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 100%;
+    text-align: center;
 }
 
 #logo{
@@ -68,17 +69,65 @@ fieldset{
 #submitbutton{
     background-color: #226979;
     color: white;
-    width: 150px;
-    height: 30px;
-    border-radius: 12px;
+    border-radius: 8px;
     border: none;
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    font-size: 15px;
+    display:inline-block;
+}
+
+#submitDiv{
+    width: 80%;
+    align-items: center;
+    text-align: center;
+    margin-top: 4%;
 }
 
 #divlogo{
-    height: 25%;
+    height: 18%;
+    padding: 2% ;
 }
 
 label{
     font-size: 150%;
     margin: 2%;
 }
+
+#rightPart{
+    background-color: white;    
+    padding: 2%;
+    border-radius: 10px;
+    width: 40%;
+    margin-left: 28%;
+}
+
+#family{
+    height: 95vh;
+}
+
+#familyGlobal{
+    height: 100%;  
+}
+
+#header{
+    margin: 0%;
+}
+
+#page{
+    display: flex;
+}
+
+@media only screen and (max-width: 1200px){
+    #familyGlobal{
+        display: none;
+    }
+
+        #rightPart{
+            width: 70%;
+            margin-left: 15%;
+        }
+}
+
