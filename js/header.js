@@ -21,4 +21,16 @@ window.onload = function () {
             menu.style.left = "-250px";
         }
     });
+    document.addEventListener('DOMContentLoaded', function () {
+        const menuIcon = document.getElementById('bars');
+        const sideMenu = document.getElementById('menu');
+    
+        menuIcon.addEventListener('click', function () {
+            if (sideMenu.style.left === '-250px') {
+                sideMenu.style.left = '0';
+            } else {
+                sideMenu.style.left = '-250px';
+            }
+        });
+    });
 };
