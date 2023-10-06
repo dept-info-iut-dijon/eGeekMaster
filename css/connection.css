@@ -36,6 +36,13 @@ p{
     display:inline-block;
 }
 
+#login{
+    margin-top: 1%;
+}
+#password{
+    margin-top: 1%;
+}
+
 
 fieldset{
     display: flex;
