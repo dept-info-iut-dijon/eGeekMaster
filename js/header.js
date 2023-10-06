@@ -34,3 +34,5 @@ function BarreLateral () {
         });
     });
 };
+
+window.addEventListener('load', BarreLateral);

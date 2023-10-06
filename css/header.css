@@ -69,3 +69,11 @@ a{
     text-decoration: none;
     color: #e0eef1;
 }
+#bars:hover{
+    cursor: pointer;
+    
+}
+.icon:hover{
+    transform: scale(0.8); 
+    transition: transform 0.3s;
+}
