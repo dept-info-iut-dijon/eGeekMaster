@@ -12,7 +12,7 @@ if(isset($_POST['Username']) and isset($_POST['Password']))
         $LastName = $_POST['Lastname'];
         $FirstName = $_POST['Firstname'];
         $Email = $_POST['Email'];
-        $BirthDate = $_POST["Year of birth"]."-".$_POST["Month of birth"]."-".$_POST["Day of birth"];
+        $BirthDate = $_POST["YearOfBirth"]."-".$_POST["MonthOfBirth"]."-".$_POST["DayOfBirth"];
         $Gender = $_POST['Gender'];
         $FamilyPlace = "Other"; //$_POST['Place family'];
     }
