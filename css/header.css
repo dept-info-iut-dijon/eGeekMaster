@@ -38,13 +38,14 @@ h1{
     width: 45px;
    
     
-    background-image: url(/image/page_connection/logo_soupape2.png);
+    background-image: url(../image/page_connection/logo_soupape2.png);
     background-size: cover;
 }
 
 /*Menu*/
 
 #menu {
+    z-index: 10;
     position: fixed;
     top: 0;
     left: -250px;

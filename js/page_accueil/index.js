@@ -60,7 +60,7 @@ function main() {
     // Ajoutez un gestionnaire d'événement pour le survol de la souris sur smiley3
     smiley3.addEventListener("mouseover", () => {
         // Créez un intervalle pour générer des cœurs à intervalles réguliers
-        heartInterval = setInterval(createHeart, 400); // Génère un cœur toutes les 200 millisecondes (ajustez selon vos besoins)
+        heartInterval = setInterval(createHeart, 200); // Génère un cœur toutes les 200 millisecondes (ajustez selon vos besoins)
        
     });
     smiley3.addEventListener("mouseout", () => {
@@ -68,7 +68,7 @@ function main() {
         clearInterval(heartInterval);
     });
     // Ajoutez des gestionnaires d'événements pour les liens du header
-    
+    BarreLateral ();
 }
 
 // Créez une fonction pour générer un cœur
