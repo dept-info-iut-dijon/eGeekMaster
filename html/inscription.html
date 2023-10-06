@@ -4,11 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../css/inscription.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/header.css">
     <script src="../js/inscription.js"></script>
-    <title>Inscription</title>
+    <script src="../js/header.js"></script>
+    <script src="../js/page_accueil/index.js"></script>
+    <title>Register</title>
 </head>
 <body>
-    <iframe src="../html/header.html" frameborder="0" width="100%" height="100px"></iframe>
+    <!--HOTBAR-->
+    <header>
+        <div>
+            <img id="bars" src="../image/header/bars-staggered-solid.svg" alt="">
+        </div>
+        <a class="lien-header" href="../html/page_accueil/index.html" >         
+            <div id="logoH" ></div>   
+        </a>
+        <a class="lien-header" href="">
+            <div id="search"></div>
+        </a>
+        <a class="lien-header" href="../html/connection.html"  > <!-- Ajout de l'attribut onclick -->
+            <div id="user"></div>
+        </a>
+    </header>
+
+    <!--MENU-->
+    <div id="menu">
+        <ul>
+            <li><a class="lien-header" href="/html/connection.html">Login</a></li> <!-- Ajout de l'attribut onclick -->
+            <li><a class="lien-header" href="/html/inscription.html">Register</a></li> 
+        </ul>
+    </div>
 
     <!--LOGO-->
     <div id="logo_global">
@@ -254,8 +279,8 @@
                                 <input name="step-parent" value="step-parent" type="checkbox" id="step-parent" />Step-parent</label>
                                 <label for="half-sibling">
                                 <input name="half-sibling" value="half-sibling" type="checkbox" id="half-sibling" />Half-sibling</label>
-                                <label for="other">
-                                <input name="" value="" type="checkbox" id="other" />Other</label>
+                                <label for="otherPlace">
+                                <input name="otherPlace" value="otherPlace" type="checkbox" id="otherPlace" />OtherPlace</label>
                             </div>
                         </div>
 

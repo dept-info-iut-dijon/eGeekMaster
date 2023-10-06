@@ -4,11 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/connection.css">
-    <title>Connection</title>
+    
+    <link rel="stylesheet" href="../css/header.css">
+    <script src="../js/header.js"></script>
+    <script src="../js/page_accueil/index.js"></script>
+    <title>Login</title>
 </head>
 <body>
-    <div id="header">
-        <iframe src="../html/header.html" frameborder="0" width="100%" height="60px"></iframe>
+    <!-- header et bars -->
+    <header>
+        <div>
+            <img id="bars" src="../image/header/bars-staggered-solid.svg" alt="">
+        </div>
+        <a class="lien-header" href="../html/page_accueil/index.html" >
+            
+                <div id="logoH" ></div>
+            
+        </a>
+        <a class="lien-header" href="">
+            <div id="search"></div>
+        </a>
+        <a class="lien-header" href="../html/connection.html"  > <!-- Ajout de l'attribut onclick -->
+            <div id="user"></div>
+        </a>
+    </header>
+    <div id="menu">
+        <ul>
+            <li><a class="lien-header" href="/html/connection.html">Login</a></li> <!-- Ajout de l'attribut onclick -->
+            <li><a class="lien-header" href="/html/inscription.html" >Register</a></li> 
+        </ul>
     </div>
     <div id="page">
         <div id="familyGlobal">
@@ -29,11 +53,11 @@
                             <div id="Connect">   
                                 <div class="cc">
                                     <label for="login">Login :</label><br>
-                                    <input type="text" id="login" name="Username" class="inputs">
+                                    <input type="text" id="login" name="Username" class="inputs" autofocus required>
                                 </div>
                                 <div class="cc">
                                     <label for="password">Password :</label><br>
-                                    <input type="password" id="password" name="Password" class="inputs"> 
+                                    <input type="password" id="password" name="Password" class="inputs" required> 
                                 </div >         
                                 <div id="submitDiv">
                                     <input type="submit" value="Log in" id="submitbutton">
@@ -43,7 +67,7 @@
                     </form>
                 </div>
                 <div>
-                    <p>Don't have an account ? <a href="../html/inscription.html">Create one here</a></p>
+                    <p>Don't have an account ? <a id="lieninscription" href="../html/inscription.html">Create one here</a></p>
                 </div>    
             </div>
         </div>

@@ -11,8 +11,65 @@ var smiley3Div = undefined;
 
 
 function main() {
+    let verif;
     console.log("Hello, world");
+    if (verif = document.getElementById("SomeChiffreTexte") !== undefined){
+        // Créez une fonction pour générer un cœur
+function createHeart() {
+    console.log(smiley3);
+    var smiley3Div = document.getElementById("smiley3Div")
+    var heart = document.createElement("div"); 
+    heart.classList.add("heart");
+    heart.style.marginLeft = `${Math.random() * 80}%`;
+    smiley3Div.appendChild(heart);
+    setTimeout(() => {
+        heart.remove();
+    },3000);
+    
+}
+
+function nextImage() {
+    currentImage = (currentImage + 1) % listecontrol.length;
+    print(currentImage);
+}
+
+function tremble() {
+    if (isSmiley2Hovered) {
+        smiley2.style.transform = `translate(${getRandomOffset()}px, ${getRandomOffset()}px) scale(2)`;
+        idSmiley = requestAnimationFrame(tremble); // Demande une nouvelle frame d'animation
+    }
+}
+
+function getRandomOffset() {
+    return (Math.random() * 100) - 50;
+}
+
+/**
+ * Active une image du slider
+ * @param {number} number - Le numéro de l'image à activer
+ */
+function print(number) {
+    let listeimage = document.querySelectorAll(".slider-panel");
+    let listecontrol = document.querySelectorAll(".slider-control");
+    for (let i = 0; i < listeimage.length; i++) {
+        listeimage[i].classList.remove("active");
+        listecontrol[i].classList.remove("active");
+    }
+    listeimage[number].classList.add("active");
+    listecontrol[number].classList.add("active");
+}
+
+function click(evt) {
+    let button = evt.target;
+    let controls = document.querySelectorAll(".slider-control");
+    let pos = [].indexOf.call(controls, button);
+    print(pos);
+    currentImage = pos;
+    clearInterval(id);
+    id = setInterval(nextImage, 2000);
+}
     listecontrol = document.querySelectorAll(".slider-control");
+    
     for (let i = 0; i < listecontrol.length; i++) {
         listecontrol[i].onclick = click;
     }
@@ -60,87 +117,24 @@ function main() {
     // Ajoutez un gestionnaire d'événement pour le survol de la souris sur smiley3
     smiley3.addEventListener("mouseover", () => {
         // Créez un intervalle pour générer des cœurs à intervalles réguliers
-        heartInterval = setInterval(createHeart, 400); // Génère un cœur toutes les 200 millisecondes (ajustez selon vos besoins)
+        heartInterval = setInterval(createHeart, 200); // Génère un cœur toutes les 200 millisecondes (ajustez selon vos besoins)
        
     });
     smiley3.addEventListener("mouseout", () => {
         // Arrêtez de générer des cœurs lorsque la souris quitte le smiley3
         clearInterval(heartInterval);
+
     });
+    BarreLateral();
+    }
+    else{
+        BarreLateral();
     // Ajoutez des gestionnaires d'événements pour les liens du header
-    console.log("oui");
-    document.addEventListener("DOMContentLoaded", redirectionLien);
-    console.log("oui");
-}
-
-// Créez une fonction pour générer un cœur
-function createHeart() {
-    console.log(smiley3);
-    var smiley3Div = document.getElementById("smiley3Div")
-    var heart = document.createElement("div"); 
-    heart.classList.add("heart");
-    heart.style.marginLeft = `${Math.random() * 80}%`;
-    smiley3Div.appendChild(heart);
-    setTimeout(() => {
-        heart.remove();
-    },3000);
-    
-}
-function redirectionLien(event) {
-    event.preventDefault(); // Empêche le comportement par défaut du lien
-    var url = event.target.getAttribute("href");
-    chargerContenu(url);
-}
-
-function chargerContenu(url) {
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            document.getElementById("contenu").innerHTML = xhr.responseText;
-        }
-    };
-    xhr.open("GET", url, true);
-    xhr.send();
-}
-function nextImage() {
-    currentImage = (currentImage + 1) % listecontrol.length;
-    print(currentImage);
-}
-
-function tremble() {
-    if (isSmiley2Hovered) {
-        smiley2.style.transform = `translate(${getRandomOffset()}px, ${getRandomOffset()}px) scale(2)`;
-        idSmiley = requestAnimationFrame(tremble); // Demande une nouvelle frame d'animation
     }
 }
 
-function getRandomOffset() {
-    return (Math.random() * 100) - 50;
-}
 
-/**
- * Active une image du slider
- * @param {number} number - Le numéro de l'image à activer
- */
-function print(number) {
-    let listeimage = document.querySelectorAll(".slider-panel");
-    let listecontrol = document.querySelectorAll(".slider-control");
-    for (let i = 0; i < listeimage.length; i++) {
-        listeimage[i].classList.remove("active");
-        listecontrol[i].classList.remove("active");
-    }
-    listeimage[number].classList.add("active");
-    listecontrol[number].classList.add("active");
-}
 
-function click(evt) {
-    let button = evt.target;
-    let controls = document.querySelectorAll(".slider-control");
-    let pos = [].indexOf.call(controls, button);
-    print(pos);
-    currentImage = pos;
-    clearInterval(id);
-    id = setInterval(nextImage, 2000);
-}
+
 
 window.onload = main;
