@@ -19,8 +19,8 @@
     
     $regMan = new RegisterManager($pdo);
     
-    // Temp operation for test
-    $regMan->deleteAll();
+    // // Temp operation for test
+    //$regMan->deleteAll();
     
     $regMan->add($reg);
     header("Location: ../../html/connection.html");
