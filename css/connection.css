@@ -1,56 +1,57 @@
-body{
-    margin: 0px;
+body {
+    margin: 0;
     font-family: "Comic Sans MS", sans-serif;
     height: 100%;
     background-color: #e0eef1;
 }
 
-form{
+form {
     height: 100%;
     width: 100%;
 }
 
-.container{
+.container {
+    display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
+    flex-direction: column;
 }
 
-h1{
+h1 {
     text-align: center;
     color: #226979;
+    margin: 0;
+    padding: 10px;
 }
 
-p{
+p {
     text-align: center;
+    margin: 0;
+    padding: 10px;
 }
 
-.inputs{
+.inputs {
     border-radius: 8px;
     background-color: #E0EEF1;
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-top: 3%;
-    padding-bottom: 3%;
-    display:inline-block;
-}
-
-#login{
-    margin-top: 1%;
-}
-#password{
+    padding: 3% 10%;
+    display: inline-block;
+    width: 100%;
     margin-top: 1%;
 }
 
-fieldset{
+#login,
+#password {
+    margin-top: 1%;
+}
+
+fieldset {
     display: flex;
     justify-content: space-around;
-    border-left: none;
-    border-right: none;
-    border-bottom: none;
+    border: none;
 }
 
-#Connect{
+#Connect {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -59,92 +60,87 @@ fieldset{
     padding: 2%;
 }
 
-.cc{
-    margin-top: 5%;
-    margin-bottom: 5%;
+.cc {
+    margin: 5% 0;
     width: 100%;
     text-align: center;
 }
 
-#logo{
+#logo {
     height: 100%;
     border-radius: 10px;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
 }
 
-#submitbutton{
+#submitbutton {
     background-color: #226979;
     color: white;
     border-radius: 8px;
-    padding-left: 20%;
-    padding-right: 20%;
-    padding-top: 3%;
-    padding-bottom: 3%;
+    padding: 3% 20%;
     font-size: 15px;
-    display:inline-block;
+    display: inline-block;
 }
 
-#submitDiv{
+#submitDiv {
     width: 80%;
-    align-items: center;
     text-align: center;
     margin-top: 4%;
 }
 
-#divlogo{
+#divlogo {
     height: 18%;
-    padding: 2% ;
+    padding: 2%;
 }
 
-label{
+label {
     font-size: 150%;
     margin: 2%;
 }
 
-#rightPart{
-    background-color: white; 
-    box-shadow: 0px 0px 1.5em rgb(199, 199, 199);  
+#rightPart {
+    background-color: white;
+    box-shadow: 0px 0px 1.5em rgb(199, 199, 199);
     padding: 2%;
     border-radius: 10px;
     width: 40%;
-    margin-left: 28%;
+    margin: 0 auto;
+    margin-top: 2%;
 }
 
-#family{
+#family {
     height: 93.2vh;
 }
 
-#familyGlobal{
-    height: 100%;  
+#familyGlobal {
+    height: 100%;
 }
 
-#header{
-    margin: 0%;
+#header {
+    margin: 0;
 }
 
-#page{
+#page {
     display: flex;
 }
 
-#lieninscription{
+#lieninscription {
     color: #226979;
 }
 
-@media only screen and (max-width: 1200px){
-    #familyGlobal{
+@media only screen and (max-width: 1200px) {
+    #familyGlobal {
         display: none;
     }
 
-        #rightPart{
-            width: 70%;
-            margin-left: 15%;
-        }
+    #rightPart {
+        width: 70%;
+        margin: 0 auto;
+        margin-top: 2%;
+    }
 
-        .inputs{
-            width: 70%;
-            height: auto;
-        }
+    .inputs {
+        width: 70%;
+        height: auto;
+    }
 }
-

@@ -1,4 +1,4 @@
-body{
+body {
     background-image: url(../image/page_accueil/unsplash_kYh-O1Jk7EE.png);
     font-family: "Comic sans MS";
     background-repeat: no-repeat;
@@ -6,237 +6,220 @@ body{
     background-position: left top;
     width: 100%;
     background-size: cover;
-    margin: 0%;
+    margin: 0;
 }
 
-/*LOGO*/
-#logo{
+/* LOGO */
+#logo {
     height: 100%;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
     width: 10%;
 }
-#logo_global{
+
+#logo_global {
     height: 18%;
 }
 
-/*REGISTRATION FORM*/
-.container{
+/* REGISTRATION FORM */
+.container {
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
 }
-#form{
+
+#form {
     background-color: #E0EEF1;
     width: 25%;
     padding: 1%;
     border-radius: 8px;
 }
 
-/*TITLE*/
-h1{
+/* TITLE */
+h1 {
     text-align: center;
 }
 
-/*SUBTITLE*/
-#subtitle{
+/* SUBTITLE */
+#subtitle {
     text-align: center;
 }
 
-/*FORM*/
-fieldset{
-    border-right-style: none;
-    border-left-style: none;
-    border-bottom-style: none;
+/* FORM */
+fieldset {
+    border: none;
 }
 
-/*INPUTS*/
-.inputs{
-    background-color: #E0EEF1;  
+/* INPUTS */
+.inputs {
+    background-color: #E0EEF1;
 }
-.enterText{
-    margin-top: 1%;
-    margin-bottom: 1%;
+
+.enterText {
+    margin: 1% 0;
     padding: 2%;
     border-radius: 8px;
 }
 
-/*NAME*/
-#lastname{
-    width: 44%;
-}
-#firstname{
+/* NAME */
+#lastname,
+#firstname {
     width: 44%;
 }
 
-/*EMAIL*/
-#email{
-    display: block;
-    margin-right: auto;
+/* EMAIL */
+#email {
     width: 94%;
+    display: block;
+    margin: 0 auto;
 }
 
-/*LOGIN*/
-#username{
-    width: 44%;
-}
-#password{
+/* LOGIN */
+#username,
+#password {
     width: 44%;
 }
 
-/*BIRTHDATE*/
-.date{
+/* BIRTHDATE */
+.date {
     width: 32%;
     border-radius: 8px;
     font-family: "Comic sans MS";
-    border-color: black;
+    border: 1px solid black;
     padding: 1%;
 }
-#birthdate{
+
+#birthdate {
     padding-top: 2%;
 }
 
-/*GENDER*/
-.gender_global{
+/* GENDER */
+.gender_global {
     display: flex;
     justify-content: space-around;
 }
-#gender_title{
-    margin-top: 2%;
-    margin-bottom: 2%;
+
+#gender_title {
+    margin: 2% 0;
 }
-.gender{
+
+.gender {
     display: flex;
-    border: 1px;
-    border-style: solid;
-    padding: 1%;
-    padding-left: 2%;
-    padding-right: 2%;
+    border: 1px solid;
+    padding: 1% 2%;
     border-radius: 8px;
     margin: 1%;
     align-items: center;
-    
 }
 
-/*FAMILY PLACE*/
-#placeFamily{
+/* FAMILY PLACE */
+#placeFamily {
     background-color: #E0EEF1;
-} 
-.selectBox {
-    position: relative;
-} 
+}
+
 .selectBox select {
     width: 100%;
     font-weight: bold;
-}  
-.overSelect {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-} 
+}
+
 #checkboxes {
     display: none;
-    border: 1px #dadada solid;
-} 
-#checkboxes label {
-    display: block;
-} 
+    border: 1px solid #dadada;
+}
+
 #checkboxes label:hover {
     background-color: gray;
 }
-#select{
+
+#select {
     background-color: #E0EEF1;
     border-radius: 8px;
     font-family: "Comic sans MS";
 }
 
-/*CONDITIONS*/
-#conditions{
+/* CONDITIONS */
+#conditions {
     font-size: 70%;
     text-align: center;
 }
-.chartes{
+
+.chartes {
     color: black;
 }
-.chartes:hover{
+
+.chartes:hover {
     color: #226979;
 }
 
-/*SUBMIT*/
-#submitDiv{
+/* SUBMIT */
+#submitDiv {
     text-align: center;
 }
-#submit{
+
+#submit {
     width: 50%;
     color: white;
     border-radius: 8px;
     background-color: #226979;
     font-weight: bold;
     font-size: 17px;
-    padding-top: 1%;
-    padding-bottom: 1%;
+    padding: 1% 0;
 }
 
-/*ALREADY HAVE A ACCOUNT*/
-#haveAccount_global{
+/* ALREADY HAVE A ACCOUNT */
+#haveAccount_global {
     text-align: center;
     margin-top: 2%;
 }
-#haveAccount{
+
+#haveAccount {
     text-align: center;
     font-size: 90%;
     color: black;
 }
-#haveAccount:hover{
+
+#haveAccount:hover {
     color: #226979;
 }
 
-
-/*RESPONSIVE*/
-@media only screen and (max-width: 1400px){
-    /*REGISTRATION FORM*/
-    #form{
+/* RESPONSIVE */
+@media only screen and (max-width: 1400px) {
+    /* REGISTRATION FORM */
+    #form {
         width: 40%;
     }
 }
 
-@media only screen and (max-width: 900px){
-    /*LOGO*/
-    #logo{
+@media only screen and (max-width: 900px) {
+    /* LOGO */
+    #logo {
         width: 35%;
     }
 
-    /*REGISTRATION FORM*/
-    #form{
+    /* REGISTRATION FORM */
+    #form {
         width: 88%;
     }
 
-    /*INPUTS*/
-    .enterText{
+    /* INPUTS */
+    .enterText {
         margin-left: 2%;
     }
-    
-    /*NAME*/
-    #lastname{
-        width: 88%;
-    }
-    #firstname{
+
+    /* NAME */
+    #lastname,
+    #firstname {
         width: 88%;
     }
 
-    /*EMAIL*/
-    #email{
+    /* EMAIL */
+    #email {
         width: 88%;
     }
 
-    /*LOGIN*/
-    #username{
-        width: 88%;
-    } 
-    #password{
+    /* LOGIN */
+    #username,
+    #password {
         width: 88%;
     }
 }
