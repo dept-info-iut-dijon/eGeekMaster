@@ -1,7 +1,8 @@
 /* Gestion globale */
 body {
     font-family: "Comic Sans MS", sans-serif;
-    margin: 0;
+    width: 100%;
+    margin: 0 ;
     display: flex;
     flex-direction: column;
 }
@@ -14,13 +15,10 @@ body {
     justify-content: space-around;
     align-items: center;
 }
-
-/* Styles pour les paragraphes à l'intérieur de #Debut */
 #Debut p {
-    margin: 0 10%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
-
-/* Style pour la section d'images */
 #imageDebut {
     position: relative;
     display: flex;
@@ -28,12 +26,11 @@ body {
     align-items: center;
     width: 800px;
     height: 400px;
-    margin: 30px 0;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
-
-/* Styles pour les écrans de petite taille (<768px) */
 @media (max-width: 768px) {
-    /* Masquer les éléments .imageDuDeb individuels */
+    /* Masquer les éléments imageDuDeb individuels */
     .imageDuDeb {
         display: none;
     }
@@ -46,33 +43,25 @@ body {
         width: 95vw;
     }
 }
-
-/* Styles pour chaque image dans #imageDebut */
 .imageDuDeb.haut {
     align-self: flex-end;
 }
-
 .imageDuDeb.bas {
     align-self: flex-start;
 }
-
 .imageDuDeb:nth-child(4n+1) {
     background-image: url(../../image/page_accueil/Family_Dinner.jpg);
 }
-
 .imageDuDeb:nth-child(4n+2) {
     background-image: url(../../image/page_accueil/Family_HomeWork.jpg);
 }
-
 .imageDuDeb:nth-child(4n+3) {
     background-image: url(../../image/page_accueil/Family_Playing.jpg);
 }
-
 .imageDuDeb:nth-child(4n+4) {
     background-image: url(../../image/page_accueil/Women_Kitchen.jpg);
     background-position-x: -120px;
 }
-
 .imageDuDeb {
     border-radius: 30px;
     width: 20%;
@@ -88,12 +77,10 @@ body {
     color: #E0EEF1;
     display: grid;
     grid-template-rows: 1fr 1fr;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 10px;
     justify-content: center;
 }
-
-/* Styles pour les écrans de petite taille (<768px) */
 @media (max-width: 768px) {
     #SomeChiffre {
         display: flex;
@@ -101,47 +88,39 @@ body {
         align-items: center;
         text-align: center;
     }
-
     .SmileyChiffre {
-        margin: 20px 0;
+        margin-top: 20px;
     }
-
     .SmileyChiffre.c {
         margin-bottom: 20px;
     }
-
     #SomeChiffreTexte {
         margin-right: 25%;
         margin-top: 20px;
     }
 }
-
-/* Styles pour les éléments de chiffres et de smileys */
 #smiley3Div {
+
+    
     position: relative;
 }
-
-#smiley3 {
+#smiley3{
     position: relative;
     z-index: 10;
     max-width: 60px !important;
 }
-
-.Smiley_Choked {
+.Smiley_Choked{
     position: relative;
 }
-
 #SomeChiffre img {
     max-width: 50px;
     max-height: 50px;
 }
-
 #SomeChiffreTexte {
     padding: 7%;
     grid-column: span 2/4;
     padding-left: 32%;
 }
-
 .SmileyChiffre {
     justify-self: center;
     display: flex;
@@ -149,41 +128,34 @@ body {
     align-items: center;
     width: 15vw;
 }
-
 .SmileyChiffre.a {
     grid-row: 2;
     grid-column: 1;
 }
-
 .SmileyChiffre.b {
     grid-row: 2;
     grid-column: 2;
 }
-
 .SmileyChiffre.c {
     grid-row: 2;
     grid-column: 3;
 }
-
 #SomeChiffre h3 {
     color: #FFFF;
     font-size: 300%;
 }
-
 .SomeChiffreTexte {
     grid-column: 3;
 }
-
 .nbWrite {
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
-
 .nbWrite * {
     margin: -5%;
 }
 
-/* Animation tremblement */
 @keyframes tremble {
     0% {
         transform: translate(0, 0);
@@ -209,52 +181,42 @@ body {
 #FAQ {
     background-color: #226979;
 }
-
 #FAQ img {
     max-width: 500px;
     border-radius: 30px;
 }
-
 #FAQ img[alt="FAQ"] {
     width: 50vw;
 }
-
 #FAQcontainer {
     padding: 10%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-
 #FAQcontainer div {
     margin: 50px;
 }
-
-/* Styles pour les écrans de petite taille (<160vh) */
+/* Styles pour les écrans de petite taille */
 @media (max-width: 160vh) {
     #FAQcontainer {
         flex-direction: column;
         text-align: center;
     }
-
     #FAQcontainer #PixiPresentation {
         position: relative;
         width: auto;
         margin-top: 5%;
         right: auto;
     }
-
     #FAQcontainer div {
         margin: 1% 0;
     }
-
     #Faq_Pixi {
         display: flex;
         flex-direction: column;
     }
 }
-
-/* Styles pour les éléments de PixiPresentation */
 #PixiPresentation fieldset {
     display: flex;
     flex-direction: column;
@@ -266,23 +228,19 @@ body {
     border-radius: 10px;
     text-align: center;
 }
-
 label[for="Statut"] {
     color: #ccc;
     font-size: 12px;
     margin-bottom: 5%;
 }
-
 #PixiPresentation fieldset img {
     max-width: 70px;
     border-radius: 100%;
 }
-
 #Faq_Pixi {
     position: relative;
     width: 100%;
 }
-
 #PixiPresentation {
     position: absolute;
     display: inline-block;
@@ -294,47 +252,52 @@ label[for="Statut"] {
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
     z-index: 5;
 }
-
 #PixiPresentation .field {
     margin: 10px;
 }
-
 #Faq_Pixi {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 .relative-container {
     position: relative;
 }
-
 #FAQcontainer h2 {
     color: white;
 }
-
 #FAQcontainer p {
     color: #ccc;
 }
 
 /* Bouton More About Us */
-#MAU,
+#MAU {
+    background-color: #81ACB5;
+    border: none;
+    border-radius: 5px;
+    font-family: "Comic Sans MS", sans-serif;
+    padding: 1% 2% 1%;
+    color: white;
+}
+#MAU:hover {
+    background-color: #91B7BF;
+}
+#MAU:active {
+    background-color: #81ACB5;
+}
+
+/* Bouton Messages */
 input[value="Messages"] {
     background-color: #81ACB5;
     border: none;
     border-radius: 5px;
     font-family: "Comic Sans MS", sans-serif;
+    padding: 10% 20% 10%;
     color: white;
-    cursor: pointer;
-    padding: 1% 2% 1%;
 }
-
-#MAU:hover,
 input[value="Messages"]:hover {
     background-color: #91B7BF;
 }
-
-#MAU:active,
 input[value="Messages"]:active {
     background-color: #81ACB5;
 }
@@ -347,13 +310,11 @@ input[value="Messages"]:active {
     align-content: space-around;
     align-items: center;
 }
-
 #Tuto video {
     margin: 10%;
     width: 80vw;
     height: 50vh;
 }
-
 #Tuto p {
     color: #ccc;
 }
@@ -366,70 +327,64 @@ input[value="Messages"]:active {
     grid-template-rows: 3fr 1fr;
     color: white;
 }
-
 #PubliGauche {
     display: flex;
     flex-direction: column;
     grid-column: 1;
 }
-
 #PubliGauche h4 {
-    margin: 0;
+    margin-bottom: 0%;
     margin-left: 1%;
 }
-
 #slider_1 {
     grid-column: 2;
 }
-
-#imgA,
-#imgB,
-#imgC,
-#imgD {
+#imgA {
+    background-image: url(../../image/page_accueil/ppMan.jpg);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position-x: -5px;
+}
+#imgB {
+    background-image: url(../../image/page_accueil/ppWomen.jpg);
     width: 50px;
     height: 50px;
     border-radius: 50%;
     background-size: cover;
 }
-
-#imgA {
-    background-image: url(../../image/page_accueil/ppMan.jpg);
-    background-position-x: -5px;
-}
-
-#imgB {
-    background-image: url(../../image/page_accueil/ppWomen.jpg);
-}
-
 #imgC {
     background-image: url(../../image/page_accueil/ppMan2.jpg);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-size: cover;
     background-position-x: -20px;
 }
-
 #imgD {
     background-image: url(../../image/page_accueil/ppWomen2.jpg);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-size: cover;
     background-position-x: -10px;
 }
-
 .people {
     display: flex;
     align-items: center;
 }
-
 #Publication h2 {
-    margin: 0;
+    margin-bottom: 0;
 }
-
 #Publication h5 {
-    margin: 0;
+    margin-top: 0;
     color: #ccc;
     font-size: 10px;
 }
-
 #Publication p {
     color: #ccc;
 }
-
 #ligneP {
     justify-self: center;
     grid-row: 2;
@@ -491,6 +446,7 @@ input[value="Messages"]:active {
     right: 0;
     bottom: 0;
     background-color: #ccc;
+    -webkit-transition: .4s;
     transition: .4s;
 }
 
@@ -502,6 +458,7 @@ input[value="Messages"]:active {
     left: 4px;
     bottom: 4px;
     background-color: white;
+    -webkit-transition: .4s;
     transition: .4s;
 }
 
@@ -514,6 +471,8 @@ input:focus + .slide {
 }
 
 input:checked + .slide:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
     transform: translateX(26px);
 }
 

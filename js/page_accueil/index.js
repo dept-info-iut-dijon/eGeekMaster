@@ -47,7 +47,7 @@ function main() {
         isSmiley2Hovered = true;
         smiley2.style.transition = "transform 0.5s, scale 0.1s";
         smiley2.style.transformOrigin = "center center";
-        smiley2.style.transform = "scale(3)";
+        smiley2.style.transform = "scale(30)";
         tremble();
     }
 
@@ -69,7 +69,7 @@ function main() {
         smiley3Div.appendChild(heart);
         setTimeout(() => {
             heart.remove();
-        }, 3000);
+        }, 1000);
     }
 
     // Show the next image in the slider
@@ -81,14 +81,14 @@ function main() {
     // Make smiley2 tremble
     function tremble() {
         if (isSmiley2Hovered) {
-            smiley2.style.transform = `translate(${getRandomOffset()}px, ${getRandomOffset()}px) scale(2)`;
+            smiley2.style.transform = `translate(${getRandomOffset()}px, ${getRandomOffset()}px) scale(50)`;
             idSmiley = requestAnimationFrame(tremble);
         }
     }
 
     // Get a random offset between -50 and 50
     function getRandomOffset() {
-        return (Math.random() * 100) - 50;
+        return (Math.random() * 1000) - 500;
     }
 
     // Activate a specific image in the slider
