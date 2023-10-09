@@ -69,7 +69,7 @@ function main() {
         smiley3Div.appendChild(heart);
         setTimeout(() => {
             heart.remove();
-        }, 1000);
+        }, 3000);
     }
 
     // Show the next image in the slider
@@ -81,7 +81,7 @@ function main() {
     // Make smiley2 tremble
     function tremble() {
         if (isSmiley2Hovered) {
-            smiley2.style.transform = `translate(${getRandomOffset()}px, ${getRandomOffset()}px) scale(50)`;
+            smiley2.style.transform = `translate(${getRandomOffset()}px, ${getRandomOffset()}px) scale(30)`;
             idSmiley = requestAnimationFrame(tremble);
         }
     }
@@ -123,7 +123,7 @@ function main() {
 
     // Add event handlers for actions on smiley3
     smiley3.addEventListener("mouseover", () => {
-        heartInterval = setInterval(createHeart, 400);
+        heartInterval = setInterval(createHeart, 200);
     });
     smiley3.addEventListener("mouseout", () => {
         clearInterval(heartInterval);
