@@ -81,7 +81,7 @@ function main() {
     // Make smiley2 tremble
     function tremble() {
         if (isSmiley2Hovered) {
-            smiley2.style.transform = `translate(${getRandomOffset()}px, ${getRandomOffset()}px) scale(30)`;
+            smiley2.style.transform = `translate(${getRandomOffset()}px, ${getRandomOffset()}px) scale(10)`;
             idSmiley = requestAnimationFrame(tremble);
         }
     }
