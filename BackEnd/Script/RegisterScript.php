@@ -7,9 +7,9 @@
     $reg = new Register($_SESSION['Username'], $_SESSION['Password'], $_SESSION['FirstName'], $_SESSION['LastName'], $_SESSION['Email'], $_SESSION['Gender'], $_SESSION['FamilyPlace'], $_SESSION['BirthDate']);
     $reg->setPassword($reg->getHash());
     
-    $dsn = "mysql:host=localhost;dbname=SAE3_soupape";
-    $utilisateur = "root";
-    $mot_de_passe = "";
+    $dsn = "mysql:host=localhost;dbname=grp-431_s3_sae";
+    $utilisateur = "grp-431";
+    $mot_de_passe = "uxWx3uql";
     
     try {
         $pdo = new PDO($dsn, $utilisateur, $mot_de_passe);

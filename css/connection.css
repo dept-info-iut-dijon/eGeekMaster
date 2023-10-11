@@ -24,7 +24,9 @@ h1{
 p{
     text-align: center;
 }
-
+p{
+    text-align: center;
+}
 .inputs{
     border-radius: 8px;
     background-color: #E0EEF1;
