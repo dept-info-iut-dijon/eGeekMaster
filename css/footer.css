@@ -49,6 +49,7 @@ footer {
     flex-direction: column;
 }
 
+
 .footer-links li {
     margin-right: 120px;
 }
@@ -86,6 +87,12 @@ footer {
 #follow-text-div p {
     margin: 0 0 10%;
 }
+/* Gére la montée en haut de page */
+.scroll-to-top {
+    cursor: pointer;
+    
+}
+
 
 /* Style of social media icons */
 .footer-social {

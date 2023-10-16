@@ -102,6 +102,7 @@ function main() {
         sliderPanels[number].classList.add("active");
         sliderControls[number].classList.add("active");
     }
+    
 
     // Handle click on a slider control
     function click(evt) {
@@ -111,6 +112,14 @@ function main() {
         currentImage = pos;
         clearInterval(id);
         id = setInterval(nextImage, 2000);
+    }
+
+    function scrollTop() {
+        window.scrollTo({
+            behavior: "smooth",
+            top: 0
+            
+        });
     }
 
     // Add event handlers for actions on smiley1
@@ -133,7 +142,17 @@ function main() {
     sliderControls.forEach((control) => {
         control.addEventListener("click", click);
     });
+
+
+
+
+    // Sélectionnez le bouton pour remonter en haut
+    const scrollToTopButton = document.querySelector(".scroll-to-top");
+
+// Ajoutez un gestionnaire d'événement pour le clic sur le bouton
+    scrollToTopButton.addEventListener("click", scrollTop);
+    
 }
 
 // Execute the main function when the page is fully loaded
-window.addEventListener('load', main);
+window.addEventListener("load", main);
