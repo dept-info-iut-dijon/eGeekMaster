@@ -47,7 +47,7 @@ function main() {
         isSmiley2Hovered = true;
         smiley2.style.transition = "transform 0.5s, scale 0.1s";
         smiley2.style.transformOrigin = "center center";
-        smiley2.style.transform = "scale(30)";
+        smiley2.style.transform = "scale(5)";
         tremble();
     }
 
