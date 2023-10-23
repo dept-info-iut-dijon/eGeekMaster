@@ -1,0 +1,92 @@
+body{
+    margin: 0;
+    
+    display: block;
+}
+
+header{
+    
+    background-color: #226979;
+    display: flex;
+}
+
+h1{
+    text-align: center;
+}
+
+#bars, #search, #user, #logoH{
+    margin: 8px;
+    height: 40px;
+    width: 40px;
+}
+
+#user{
+    background-image: url(../image/header/circle-user-regular.svg);
+    position: absolute; right: 0.5%;
+}
+
+#search{
+    background-image: url(../image/header/magnifying-glass-solid.svg);
+    position: absolute; right: 60px;
+}
+
+#logoH{
+    position: absolute;
+    top: 0;
+    right: 48%;
+    
+    width: 45px;
+   
+    
+    background-image: url(../image/page_connection/logo_soupape2.png);
+    background-size: cover;
+}
+
+/*Menu*/
+
+#menu {
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    transition: left 0.2s ease-in-out;
+    background-color: #144d5a;
+    box-shadow: 0px 0px 30px black;
+}
+#menuF{
+    z-index: 9;
+    position: fixed;
+    top: 0;
+    left: -800vw;
+    width: 800vw;
+    height: 100%;
+    background-color: transparent; 
+    backdrop-filter: blur(5px); 
+    
+    transition: left 0.4s ease-in-out;
+    
+}
+#menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+#menu ul li {
+    padding: 15px;
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    color: #e0eef1;
+}
+#bars:hover{
+    cursor: pointer;
+    
+}
+.icon:hover{
+    transform: scale(0.8); 
+    transition: transform 0.3s;
+}

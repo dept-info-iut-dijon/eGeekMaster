@@ -1,0 +1,18 @@
+body{
+    font-family: "Comic Sans MS", sans-serif;
+    background-color: #e0eef1;
+}
+
+#divChoixMembre{
+    background-color: #81acb5;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0px 5px 10px #3b3b3b;
+    border-radius: 12px;
+}
+
+#memberFamily{
+    padding: 10px;
+    box-shadow: 0px 2.5px 5px #3b3b3b; 
+    border-radius: 8px;
+}
