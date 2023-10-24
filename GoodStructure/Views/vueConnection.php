@@ -1,11 +1,11 @@
 <div id="page">
-    <link rel="stylesheet" href="../css/connection.css">
+    <link rel="stylesheet" href="Public/css/connection.css">
     <div id="familyGlobal">
-        <img id="family" src="../image/page_connection/image_connection.png" alt="">
+        <img id="family" src="Public/image/page_connection/image_connection.png" alt="">
     </div>
     <div class="container">
         <div id="divlogo">
-            <img id="logo" src="../image/page_connection/logo_soupape2.png" alt="">
+            <img id="logo" src="Public/image/page_connection/logo_soupape2.png" alt="">
         </div>
         <div id="rightPart">
             <div>
@@ -13,7 +13,7 @@
                 <p>Log to your account to access your workspace</p>
             </div>
             <div>
-                <form action="../BackEnd/Script/Process.php" method="post">
+                <form action="Public/BackEnd/Script/Process.php" method="post">
                     <fieldset>
                         <div id="Connect">   
                             <div class="cc">

@@ -5,6 +5,10 @@ body{
     background-color: #e0eef1;
 }
 
+footer{
+    display: none;
+}
+
 form{
     height: 100%;
     width: 100%;
