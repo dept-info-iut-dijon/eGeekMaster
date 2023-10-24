@@ -1,5 +1,5 @@
     <script src="Public/Animation_js/inscription.js"></script>
-    <link href="Public/css/inscription1.css" rel="stylesheet">
+    <link href="Public/css/inscription.css" rel="stylesheet">
     <!--LOGO-->
     <div id="logo_global">
         <img src="Public/image/page_connection/logo_soupape2.png" alt="logo" id="logo">
@@ -17,7 +17,7 @@
 
             <!--FORM-->
             <div>  
-                <form action="../BackEnd/Script/Process.php" method="post">
+                <form action="index.php?action=AddRegister" method="post">
                     <fieldset>
                         <!--NAME-->
                         <div>

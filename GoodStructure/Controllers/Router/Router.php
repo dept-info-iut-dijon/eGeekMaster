@@ -35,11 +35,11 @@ class Router {
         "Search" => new RouteSearch($this->ctrlList["MainController"]),
         "Connection" => new RouteConnection($this->ctrlList["MainController"]),
         "Registration" => new RouteRegistration($this->ctrlList["MainController"]),
-         "AddLogin" => new RouteAddLogin($this->ctrlList["LoginController"]),
-         "DeleteLogin" => new RouteDeleteLogin($this->ctrlList["LoginController"]),
-         "AddRegister" => new RouteAddRegister($this->ctrlList["RegisterController"]),
-         "DeleteRegister" => new RouteDeleteRegister($this->ctrlList["RegisterController"]),
-         "EditRegister" => new RouteEditRegister($this->ctrlList["RegisterController"])];
+        "AddLogin" => new RouteAddLogin($this->ctrlList["LoginController"]),
+        "DeleteLogin" => new RouteDeleteLogin($this->ctrlList["LoginController"]),
+        "AddRegister" => new RouteAddRegister($this->ctrlList["RegisterController"]),
+        "DeleteRegister" => new RouteDeleteRegister($this->ctrlList["RegisterController"]),
+        "EditRegister" => new RouteEditRegister($this->ctrlList["RegisterController"])];
     }
 
     public function routing($get, $post) {

@@ -5,15 +5,9 @@ require_once 'Register.php';
 
     class RegisterManager extends Model
     {
-        private PDO $_db;
-
-        public function __construct()
-        {
-           
-        }
 
         // Renvoie la liste des Register
-        public function getAll() : array{
+        public function GetAll() : array{
             $sql = 'SELECT * FROM register';
             $registers = [];
             $resultat = $this->executerRequete($sql);
@@ -35,19 +29,19 @@ require_once 'Register.php';
         }
 
         // Delete un Register par son id
-        public function deleteByID(int $id) : void{
+        public function DeleteByID(int $id) : void{
             $sql = 'DELETE FROM register WHERE id = ?';
             $this->executerRequete($sql, [$id]);
         }
 
         // Update un Register par son id
-        public function updateById(int $id, string $username, string $password) : void{
+        public function UpdateById(int $id, string $username, string $password) : void{
             $sql = 'UPDATE register SET username = ?, password = ? WHERE id = ?';
             $this->executerRequete($sql,[$username, $password, $id]);
         }
 
         // Add un Register
-        public function add(Register $register) : void{
+        public function Add(Register $register) : void{
             $sql = ("INSERT INTO users (LastName, FirstName, Gender, BirthDate, Email, FamilyPlace, LoginidLogin) VALUES (:value1, :value2, :value3, :value4, :value5, :value6, (SELECT idLogin from login where id = :value7))");
                 
             $value1 = $register->getLastName();

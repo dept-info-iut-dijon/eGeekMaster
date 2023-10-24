@@ -3,16 +3,8 @@ require_once 'Config.php';
 abstract class Model {
     private PDO $db;
 
-    // Exécute une requête SQL éventuellement paramétrée
-    protected function executerRequete(string $sql, array $params = null) : PDOStatement|false{
-        if ($params == null) {
-            $resultat = $this->getDB()->query($sql);    // exécution directe
-        }
-        else {
-            $resultat = $this->getDB()->prepare($sql);  // requête préparée
-            $resultat->execute($params);
-        }
-        return $resultat;
+    public function __construct() {
+        $this->db = null;
     }
 
     // Renvoie un objet de connexion à la BD en initialisant la connexion au besoin
@@ -29,4 +21,18 @@ abstract class Model {
         }
         return $this->db;
     }
+
+    // Exécute une requête SQL éventuellement paramétrée
+    protected function executerRequete(string $sql, array $params = null) : PDOStatement|false{
+        if ($params == null) {
+            $resultat = $this->getDB()->query($sql);    // exécution directe
+        }
+        else {
+            $resultat = $this->getDB()->prepare($sql);  // requête préparée
+            $resultat->execute($params);
+        }
+        return $resultat;
+    }
+
+    
 }

@@ -10,8 +10,7 @@ class RegisterController{
         $registerManager = new RegisterManager();
         $mainController = new MainController();
 
-        $registerManager->Add(new Register($_POST["login"], $_POST["password"], $_POST["firstName"], $_POST["lastName"], $_POST["email"], $_POST["gender"], $_POST["familyPlace"], $_POST["birthDate"]));
-
+        $registerManager->Add(new Register($_POST["Username"], $_POST["Password"], $_POST["Firstname"], $_POST["Lastname"], $_POST["Email"], $_POST["Gender"], $_POST["selectPlaceFamily"], $_POST["DayOfBirth"] . "-" . $_POST["MonthOfBirth"] . "-" . $_POST["YearOfBirth"]));
         $mainController->Index("Register ajouté");
     }
 

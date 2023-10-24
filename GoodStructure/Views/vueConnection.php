@@ -13,7 +13,7 @@
                 <p>Log to your account to access your workspace</p>
             </div>
             <div>
-                <form action="Public/BackEnd/Script/Process.php" method="post">
+                <form action="index.php?action=AddLogin" method="post">
                     <fieldset>
                         <div id="Connect">   
                             <div class="cc">
