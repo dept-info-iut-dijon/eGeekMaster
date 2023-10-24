@@ -7,80 +7,9 @@ require_once 'Register.php';
     {
         private PDO $_db;
 
-        public function add(Register $register)
-        { 
-            $connection  = $this->_db;
-            $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-            try {
-
-                $request = $connection->prepare("INSERT INTO login (id, hash) VALUES (:value1, :value2)");
-                
-                $value1 = $register->getLogin();
-                $value2 = $register->getHash();
-
-                $request->bindParam(':value1', $value1);
-                $request->bindParam(':value2', $value2);
-                
-                $request->execute();
-                
-            } catch (PDOException $e) {
-                echo "error during insertion of login: " . $e->getMessage() . "<br>";
-            }
-
-            try {
-
-                $request = $connection->prepare("INSERT INTO users (LastName, FirstName, Gender, BirthDate, Email, FamilyPlace, LoginidLogin) VALUES (:value1, :value2, :value3, :value4, :value5, :value6, (SELECT idLogin from login where id = :value7))");
-                
-                $value1 = $register->getLastName();
-                $value2 = $register->getFirstName();
-                $value3 = $register->getGender();
-                $value4 = $register->getBirthDate();
-                $value5 = $register->getEmail();
-                $value6 = $register->getFamilyPlace();
-                $value7 = $register->getLogin();
-
-                $request->bindParam(':value1', $value1);
-                $request->bindParam(':value2', $value2);
-                $request->bindParam(':value3', $value3);
-                $request->bindParam(':value4', $value4);
-                $request->bindParam(':value5', $value5);
-                $request->bindParam(':value6', $value6);
-                $request->bindParam(':value7', $value7);
-
-                $request->execute();
-                
-            } catch (PDOException $e) {
-                echo "error during insertion of users: " . $e->getMessage() . "<br>";
-            }
-        }
-
-
-        // Only for testing
-        public function deleteAll()
+        public function __construct()
         {
-            $connection  = $this->_db;
-            $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-            try {
-
-                $request = $connection->prepare("DELETE FROM users");
-                
-                $request->execute();
-                
-            } catch (PDOException $e) {
-                echo "error during deletion of users: " . $e->getMessage() . "<br>";
-            }
-
-            try {
-
-                $request = $connection->prepare("DELETE FROM login");
-                
-                $request->execute();
-                
-            } catch (PDOException $e) {
-                echo "error during deletion of login: " . $e->getMessage() . "<br>";
-            }
+           
         }
 
         // Renvoie la liste des Register
@@ -103,6 +32,33 @@ require_once 'Register.php';
                 $registers[] = $register;
             }
             return $registers;
+        }
+
+        // Delete un Register par son id
+        public function deleteByID(int $id) : void{
+            $sql = 'DELETE FROM register WHERE id = ?';
+            $this->executerRequete($sql, [$id]);
+        }
+
+        // Update un Register par son id
+        public function updateById(int $id, string $username, string $password) : void{
+            $sql = 'UPDATE register SET username = ?, password = ? WHERE id = ?';
+            $this->executerRequete($sql,[$username, $password, $id]);
+        }
+
+        // Add un Register
+        public function add(Register $register) : void{
+            $sql = ("INSERT INTO users (LastName, FirstName, Gender, BirthDate, Email, FamilyPlace, LoginidLogin) VALUES (:value1, :value2, :value3, :value4, :value5, :value6, (SELECT idLogin from login where id = :value7))");
+                
+            $value1 = $register->getLastName();
+            $value2 = $register->getFirstName();
+            $value3 = $register->getGender();
+            $value4 = $register->getBirthDate();
+            $value5 = $register->getEmail();
+            $value6 = $register->getFamilyPlace();
+            $value7 = $register->getLogin();
+
+            $this->executerRequete($sql, [$value1, $value2, $value3, $value4, $value5, $value6, $value7]);
         }
         
     }

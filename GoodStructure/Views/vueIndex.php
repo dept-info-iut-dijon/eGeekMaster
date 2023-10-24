@@ -1,11 +1,14 @@
 <div id="contenu">
-    <link rel="stylesheet" href="../../css/footer.css">
-    <link rel="stylesheet" href="../../css/page_accueil/index.css">
+    <link rel="stylesheet" href="Public/css/footer.css">
+    <link rel="stylesheet" href="Public/css/page_accueil/index.css">
 
-    <script src="../../js/page_accueil/index.js"></script>
-    <script src="../../js/header.js"></script>
+    <script src="Public/Animation_js/page_accueil/index.js"></script>
+    
     
     <div id="Debut">
+        <?php if (isset($message)) : ?>
+            <p><?= $message ?></p>
+        <?php endif; ?>
         <div id="imageDebut">
 
             
@@ -42,7 +45,7 @@
         </div>
         <div class="SmileyChiffre a">
             <div>
-                <img id="smiley1" src="../../image/page_accueil/Smiley_Familly.png" alt="Smiley_Familly">
+                <img id="smiley1" src="Public/image/page_accueil/Smiley_Familly.png" alt="Smiley_Familly">
             </div>
             <div class="nbWrite">
                 <h3>
@@ -55,7 +58,7 @@
         </div>
         <div class="SmileyChiffre b">
             <div>
-                <img id="smiley2" src="../../image/page_accueil/Smiley_Choked.png" alt="Smiley_Choked">
+                <img id="smiley2" src="Public/image/page_accueil/Smiley_Choked.png" alt="Smiley_Choked">
             </div>
             <div class="nbWrite">
                 <h3>
@@ -68,7 +71,7 @@
         </div>
         <div id="Smiley_Choked" class="SmileyChiffre c">
             <div id="smiley3Div">
-                <img id="smiley3" src="../../image/page_accueil/Smiley_HearthEyes.png" alt="Smiley_HearthEyes">
+                <img id="smiley3" src="Public/image/page_accueil/Smiley_HearthEyes.png" alt="Smiley_HearthEyes">
             </div>
             <div class="nbWrite">
                 <h3>
@@ -87,11 +90,11 @@
         <div id="FAQcontainer">
             <div>
                 <div id="Faq_Pixi" class="relative-container"> <!-- Ajoutez une classe pour le positionnement relatif -->
-                    <img src="../../image/page_accueil/FAQ.jpg" alt="FAQ">
+                    <img src="Public/image/page_accueil/FAQ.jpg" alt="FAQ">
                     <div id="PixiPresentation">
                         <div class="field">
                             <fieldset>
-                                <img src="../../image/page_accueil/Pixy_Helper.png" alt="Pixy_Helper">
+                                <img src="Public/image/page_accueil/Pixy_Helper.png" alt="Pixy_Helper">
                                 <label for="pixi">Pixi</label>
                                 <label for="Statut">Helper Agent</label>
                                 <input type="button" value="Messages">

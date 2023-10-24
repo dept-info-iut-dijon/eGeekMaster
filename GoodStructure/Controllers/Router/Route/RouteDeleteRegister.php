@@ -1,23 +1,23 @@
 <?php
 require_once 'Controllers/Router/Route.php';
 
-class RouteEditPokemon extends Route {
-    private PokemonController $controller;
+class RouteDeleteRegister extends Route {
+    private RegisterController $controller;
 
-    public function __construct(PokemonController $controller) {
+    public function __construct(RegisterController $controller) {
         parent::__construct();
         $this->controller = $controller;
     }
 
     public function get($params = []) {
-        return $this->controller->Update();
+        return $this->controller->Delete();
     }
 
     public function post($params = []) {
-        return $this->controller->Update();
+        return $this->controller->Delete();
     }
 
     public function action($params = [], $method = 'POST') {
-        return $this->controller->Update();
+        return $this->controller->Delete();
     }
 }

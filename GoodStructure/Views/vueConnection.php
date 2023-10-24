@@ -32,7 +32,7 @@
                 </form>
             </div>
             <div>
-                <p>Don't have an account ? <a id="lieninscription" href="../html/inscription.html">Create one here</a></p>
+                <p>Don't have an account ? <a id="lieninscription" href="index.php?action=Registration">Create one here</a></p>
             </div>    
         </div>
     </div>

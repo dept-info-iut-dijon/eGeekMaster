@@ -1,7 +1,7 @@
 <?php
 require_once 'Config.php';
 abstract class Model {
-    private PDO $db = null;
+    private PDO $db;
 
     // Exécute une requête SQL éventuellement paramétrée
     protected function executerRequete(string $sql, array $params = null) : PDOStatement|false{

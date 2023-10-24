@@ -6,11 +6,14 @@ class LoginManager extends Model
 {
     private PDO $_db;
 
+    public function __construct() {
+        
+    }
     
     public function getAll() : array {
         $sql = 'SELECT * FROM login';
         $logins = [];
-        $resultat = $this->_db->query($sql);
+        $resultat = $this->executerRequete($sql);
         while ($ligne = $resultat->fetch(PDO::FETCH_ASSOC)) {
             $login = [
                 'id' => $ligne['id'],
@@ -25,8 +28,8 @@ class LoginManager extends Model
 
     public function getByID(int $id): ?Login {
         $sql = 'SELECT * FROM login WHERE id = ?';
-        $resultat = $this->_db->prepare($sql);
-        $resultat->execute([$id]);
+        $resultat = $this->executerRequete($sql, [$id]);
+        
         $ligne = $resultat->fetch();
         if ($ligne !== false) {
             $login = new Login( 
@@ -41,21 +44,19 @@ class LoginManager extends Model
         }
     }
 
-    public function deleteByID(int $id) : void {
+    public function DeleteByID(int $id) : void {
         $sql = 'DELETE FROM login WHERE id = ?';
-        $resultat = $this->_db->prepare($sql);
-        $resultat->execute([$id]);
+        $this->executerRequete($sql, [$id]);
     }
 
-    public function updateByID(int $id, string $username, string $password) : void {
+    public function UpdateById(int $id, string $username, string $password) : void {
         $sql = 'UPDATE login SET username = ?, password = ? WHERE id = ?';
-        $resultat = $this->_db->prepare($sql);
-        $resultat->execute([$username, $password, $id]);
+        $this->executerRequete($sql,[$username, $password, $id]);
     }
 
-    public function add(string $username, string $password) : void {
+    public function Add(string $username, string $password) : void {
         $sql = 'INSERT INTO login (username, password) VALUES (?, ?)';
-        $resultat = $this->_db->prepare($sql);
-        $resultat->execute([$username, $password]);
+        
+        $this->executerRequete($sql, [$username, $password]);
     }
 }

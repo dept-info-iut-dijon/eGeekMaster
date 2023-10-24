@@ -1,28 +1,17 @@
 <?php
 require_once 'views/View.php';
-require_once 'models/PokemonManager.php';
+
 
 
 class MainController {
-    private $indexView;
-    private $managerIndex;
-    private $listPokemon;
-    private $first;
-    private $other;
+    
     
 
     public function Index($message = null) {
-        $pokemonManager = new PokemonManager();
-        $listPokemon = $pokemonManager->getAll();
-        $first = $pokemonManager->getByID(1);
-        $other = $pokemonManager->getByID(999);
 
         $indexView = new View("Index");
         $data = array(
-            "nomDresseur" => "SachEEEEEEEEESH",
-            "listPokemon" => $listPokemon,
-            "first" => $first,
-            "other" => $other
+            //ajouter les données à afficher
         );
         if ($message !== null) {
             $data["message"] = $message;
@@ -30,12 +19,35 @@ class MainController {
         $indexView->generer($data);
     }
 
+
+
     public function Search() {
-        $pokemonManager = new PokemonManager();
+        
     
-        $view = new View('Search');
-        $view->generer(array(
-            "Search" => "La page de recherche",
-            "pokemonProperties" => $pokemonManager->getPokemonProperties()
-        ));}
+        $searchView = new View("Search");
+        $data = array(
+            //ajouter les données à afficher
+        );
+        $searchView->generer($data);
+    }
+
+    public function Connection() {
+        
+    
+        $connectionView = new View("Connection");
+        $data = array(
+            //ajouter les données à afficher
+        );
+        $connectionView->generer($data);
+    }
+
+    public function Registration() {
+        
+    
+        $registrationView = new View("Registration");
+        $data = array(
+            //ajouter les données à afficher
+        );
+        $registrationView->generer($data);
+    }
 }

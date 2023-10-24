@@ -7,16 +7,19 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= $titre ?></title>
-    <link rel="stylesheet" href="Public/css/cc.css"/>
+    <link rel="stylesheet" href="Public/css/header.css"/>
+    <link rel="stylesheet" href="Public/css/footer.css"/>
+    <script src="Public/Animation_js/header.js"></script>
 </head>
 
 <body>
 <!-- header et bars -->
 <header>
         <div>
-            <img class="icon" id="bars" src="image/header/bars-staggered-solid.svg" alt="">
+            <img class="icon" id="bars" src="Public/image/header/bars-staggered-solid.svg" alt="">
         </div>
-        <a class="lien-header" href="html/page_accueil/index.html" >
+        
+        <a class="lien-header" href="index.php?action=Index" >
             
             <div class="icon" id="logoH" ></div>
         
@@ -24,7 +27,7 @@
         <a class="lien-header" href="">
             <div class="icon" id="search"></div>
         </a>
-        <a class="lien-header" href="html/connection.html" > <!-- Ajout de l'attribut onclick -->
+        <a class="lien-header" href="index.php?action=Connection" > <!-- Ajout de l'attribut onclick -->
             <div class="icon" id="user"></div>
         </a>
 </header>
@@ -32,8 +35,8 @@
 <!-- Parti menu déroulant + Flou -->
 <div id="menu">
     <ul>
-        <li><a class="lien-header" href="html/connection.html"  >Login</a></li> <!-- Ajout de l'attribut onclick -->
-        <li><a class="lien-header" href="html/inscription.html"  >Register</a></li> 
+        <li><a class="lien-header" href="index.php?action=Connection"  >Login</a></li> <!-- Ajout de l'attribut onclick -->
+        <li><a class="lien-header" href="index.php?action=Registration"  >Register</a></li> 
     </ul>
 </div>
 <div id="menuF"></div>
@@ -50,7 +53,7 @@
     <div class="footer-inner">
         <div class="footer-logo">
             <a  class="scroll-to-top">
-                <img src="../../image/page_connection/logo_soupape2.png" alt="Logo">
+                <img src="Public/image/page_connection/logo_soupape2.png" alt="Logo">
             </a>                
         </div>
         <div id="shortcuts" class="link">
@@ -85,9 +88,9 @@
                 <p id="follow-text">Follow us !</p>
             </div>
             <div id="ResLogo">
-                <a class="Facebook" href="#"><img src="../../image/page_footer/facebook.png" alt="Facebook"></a>
-                <a class="Instagram" href="#"><img src="../../image/page_footer/instagram.png" alt="Instagram"></a>
-                <a href="#"><img src="../../image/page_footer/twitter.png" alt="Twitter"></a>
+                <a class="Facebook" href="#"><img src="Public/image/page_footer/facebook.png" alt="Facebook"></a>
+                <a class="Instagram" href="#"><img src="Public/image/page_footer/instagram.png" alt="Instagram"></a>
+                <a href="#"><img src="Public/image/page_footer/twitter.png" alt="Twitter"></a>
             </div>
         </div>
     </div>

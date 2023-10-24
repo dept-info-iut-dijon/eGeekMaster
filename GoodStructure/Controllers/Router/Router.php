@@ -25,17 +25,21 @@ class Router {
     public function createControllerList() {
         // Create the controller list
         $this->ctrlList = ['MainController' => new MainController(), 
-        'PokemonController' => new PokemonController()];
+        'LoginController' => new LoginController(),
+        'RegisterController' => new RegisterController()];
     }
 
     public function createRouteList() {
         // Create the route list
         $this->routeList = ["Index" => new RouteIndex($this->ctrlList["MainController"]),
-         "AddPokemon" => new RouteAddPokemon($this->ctrlList["PokemonController"]),
-         "DeletePokemon" => new RouteDeletePokemon($this->ctrlList["PokemonController"]),
-         "Search" => new RouteSearch($this->ctrlList["MainController"]),
-         "AddType" => new RouteAddType($this->ctrlList["PokemonController"]),
-         "EditPokemon" => new RouteEditPokemon($this->ctrlList["PokemonController"]),];
+        "Search" => new RouteSearch($this->ctrlList["MainController"]),
+        "Connection" => new RouteConnection($this->ctrlList["MainController"]),
+        "Registration" => new RouteRegistration($this->ctrlList["MainController"]),
+         "AddLogin" => new RouteAddLogin($this->ctrlList["LoginController"]),
+         "DeleteLogin" => new RouteDeleteLogin($this->ctrlList["LoginController"]),
+         "AddRegister" => new RouteAddRegister($this->ctrlList["RegisterController"]),
+         "DeleteRegister" => new RouteDeleteRegister($this->ctrlList["RegisterController"]),
+         "EditRegister" => new RouteEditRegister($this->ctrlList["RegisterController"])];
     }
 
     public function routing($get, $post) {

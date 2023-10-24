@@ -12,5 +12,10 @@ if (isset($_GET['action'] )) {
 }
 
 
+//ex de navigation grace à l'url
+/* <a href="index.php?action=EditPokemon&IdPokemon=<?= $pokemon->getIdPokemon() ?>"><button type="submit" name="update">Modifier</button></a>
+                    
+<a href="index.php?action=DeletePokemon&IdPokemon=<?= $pokemon->getIdPokemon() ?>"><button type="submit" name="supr">Supprimer</button></a>
+*/                    
 
 
