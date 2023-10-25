@@ -4,7 +4,9 @@
 
     <script src="Public/Animation_js/page_accueil/index.js"></script>
     
-    
+    <?php if (isset($message)) : ?>
+    <p><?= $message ?></p>
+    <?php endif; ?>
     <div id="Debut">
         <?php if (isset($message)) : ?>
             <p><?= $message ?></p>

@@ -42,7 +42,7 @@
                             <div>
                                 <select name="DayOfBirth" id="dayOfBirth" class="inputs date"> 
                                     <?php
-                                    for ($i = 0; $i <= 31; $i++) {
+                                    for ($i = 1; $i <= 31; $i++) {
                                         echo "<option value=\"$i\">$i</option>";
                                     }
                                     ?>

@@ -12,7 +12,7 @@
         private $_birthDate;
 
         
-        public function __construct(string $login, string $password, string $firstName, string $lastName, string $email, string $gender, string $familyPlace, string $birthDate)
+        public function __construct(string $login ='', string $password='', string $firstName='', string $lastName='', string $email='', string $gender='', string $familyPlace='', string $birthDate='')
         {
             $this->_login = $login;
             $this->_firstName = $firstName;
@@ -22,6 +22,16 @@
             $this->_familyPlace = $familyPlace;
             $this->_birthDate = $birthDate;
             $this->_hash = $password;
+        }
+
+        // Getter for $_id
+        public function getId() {
+            return $this->_id;
+        }
+
+        // Setter for $_id
+        public function setId(int $id) {
+            $this->_id = $id;
         }
 
         // Getter for $_login
@@ -102,6 +112,11 @@
         // Setter for $_dateBirth
         public function setBirthDate(string $birthDate) {
             $this->_birthDate = $birthDate;
+        }
+
+        // Getter password
+        public function getPassword() {
+            return $this->getHash();
         }
 
         // Hash password and set hash
