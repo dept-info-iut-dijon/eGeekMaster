@@ -11,8 +11,6 @@ class LoginController{
         $loginManager = new LoginManager();
         $mainController = new MainController();
 
-        print_r('coucou');
-
         var_dump($_POST["Username"], $_POST["Password"]);
         $loginManager->Add($_POST["Username"], $_POST["Password"]);
 

@@ -55,8 +55,8 @@ class LoginManager extends Model
     }
 
     public function Add(string $username, string $password) : void {
-        $sql = 'INSERT INTO login (username, password) VALUES (?, ?)';
-        
-        $this->executerRequete($sql, [$username, $password]);
+        $sql = 'INSERT INTO login (username, Hash) VALUES (?, ?)';
+        $login = new Login($username, $password);
+        $this->executerRequete($sql, [$username, $login->getHash()]);
     }
 }

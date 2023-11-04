@@ -13,14 +13,15 @@ class RegisterController{
         $addView = new View('Registration');
         if ($_SERVER["REQUEST_METHOD"] == "POST"){
             if (isset($_GET['IdRegister'])){
-                $updateRegister = $registerManager->GetByID(intval($_GET['Idregister']));
-                $updateRegister->setLogin($_POST['login']);
+                $updateRegister = $registerManager->GetByID(intval($_GET['IdRegister']));
+                
                 $updateRegister->setPassword($_POST['password']);
                 $updateRegister->setFirstName($_POST['Firstname']);
                 $updateRegister->setLastName($_POST['Lastname']);
                 $updateRegister->setEmail($_POST['Email']);
                 $updateRegister->setGender($_POST['Gender']);
                 $updateRegister->setFamilyPlace($_POST['selectPlaceFamily']);
+                $updateRegister->setLogin($_POST['login']);
                 $updateRegister->setBirthDate($_POST['DayOfBirth'] . "-" . $_POST['MonthOfBirth'] . "-" . $_POST['YearOfBirth']);
                 $registerManager->updateRegister($updateRegister);
                 $mainController->Index('Le Register '.$_POST['login'].' a bien été modifié !');
@@ -28,19 +29,19 @@ class RegisterController{
             }
             else {
                 $register = new register();
-                $updateRegister = $registerManager->GetByID(intval($_GET['Idregister']));
-                $updateRegister->setLogin($_POST['login']);
-                $updateRegister->setPassword($_POST['password']);
-                $updateRegister->setFirstName($_POST['Firstname']);
-                $updateRegister->setLastName($_POST['Lastname']);
-                $updateRegister->setEmail($_POST['Email']);
-                $updateRegister->setGender($_POST['Gender']);
-                $updateRegister->setFamilyPlace($_POST['selectPlaceFamily']);
-                $updateRegister->setBirthDate($_POST['DayOfBirth'] . "-" . $_POST['MonthOfBirth'] . "-" . $_POST['YearOfBirth']);
+                
+                $register->setPassword($_POST['Password']);
+                $register->setFirstName($_POST['Firstname']);
+                $register->setLastName($_POST['Lastname']);
+                $register->setEmail($_POST['Email']);
+                $register->setGender($_POST['Gender']);
+                $register->setFamilyPlace($_POST['selectPlaceFamily']);
+                $register->setBirthDate($_POST['DayOfBirth'] . "-" . $_POST['MonthOfBirth'] . "-" . $_POST['YearOfBirth']);
+                $register->setLogin($_POST['Username']);
                 $registerManager->addRegister($register);
                 $mainController = new MainController();
-                $mainController->Index('Le Pokémon '.$_POST['nomEspece'].' a bien été ajouté !');
-                var_dump($updateRegister);
+                $mainController->Index('Welcome among us '.$_POST['Username']);
+                var_dump($register);
             }        
         }
         else{
@@ -54,7 +55,7 @@ class RegisterController{
         $registerManager = new RegisterManager();
         $mainController = new MainController();
 
-        $registerManager->DeleteByID($_POST["id"]);
+        $registerManager->DeleteByID($_POST["idRegister"]);
 
         $mainController->Index("Register supprimé");
     }
@@ -63,7 +64,7 @@ class RegisterController{
         $registerManager = new RegisterManager();
         $mainController = new MainController();
 
-        $registerManager->UpdateById($_POST["id"],$_POST["username"], $_POST["password"]);
+        $registerManager->UpdateById($_POST["IdRegister"],$_POST["username"], $_POST["password"]);
 
         $mainController->Index("Register modifié");
     }

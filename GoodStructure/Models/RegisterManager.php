@@ -36,7 +36,7 @@ require_once 'Register.php';
         // Renvoie un Register spécifique par son id
         
         public function GetByID(int $id): ?Register {
-            $sql = 'SELECT * FROM users WHERE id = ?';
+            $sql = 'SELECT * FROM users WHERE idUsers = ?';
             $resultat = $this->executerRequete($sql, [$id]);
             $ligne = $resultat->fetch();
             if ($ligne !== false) {
@@ -59,19 +59,19 @@ require_once 'Register.php';
 
         // Delete un Register par son id
         public function DeleteByID(int $id) : void{
-            $sql = 'DELETE FROM users WHERE id = ?';
+            $sql = 'DELETE FROM users WHERE idUsers = ?';
             $this->executerRequete($sql, [$id]);
         }
 
         // Update un Register par son id
         public function UpdateById(int $id, string $username, string $password) : void{
-            $sql = 'UPDATE users SET username = ?, password = ? WHERE id = ?';
+            $sql = 'UPDATE users SET username = ?, password = ? WHERE idUsers = ?';
             $this->executerRequete($sql,[$username, $password, $id]);
         }
 
         // Add un Register
         public function AddRegister(Register $register) : void{
-            $sql = ("INSERT INTO users (LastName, FirstName, Gender, BirthDate, Email, FamilyPlace, LoginidLogin) VALUES (:value1, :value2, :value3, :value4, :value5, :value6, (SELECT idLogin from login where id = :value7))");
+            $sql = ("INSERT INTO users (LastName, FirstName, Gender, BirthDate, Email, FamilyPlace, idLogin) VALUES (:value1, :value2, :value3, :value4, :value5, :value6, (SELECT idLogin from login where idLogin = :value7))");
                 
             $value1 = $register->getLastName();
             $value2 = $register->getFirstName();
@@ -79,14 +79,21 @@ require_once 'Register.php';
             $value4 = $register->getBirthDate();
             $value5 = $register->getEmail();
             $value6 = $register->getFamilyPlace();
-            $value7 = $register->getLogin();
-            var_dump($value1, $value2, $value3, $value4, $value5, $value6, $value7);
-            $this->executerRequete($sql, [$value1, $value2, $value3, $value4, $value5, $value6, $value7]);
+            $value7 = $register->getId();
+            $this->executerRequete($sql, [
+                ':value1' => $value1,
+                ':value2' => $value2,
+                ':value3' => $value3,
+                ':value4' => $value4,
+                ':value5' => $value5,
+                ':value6' => $value6,
+                ':value7' => $value7
+            ]);
         }
 
         // Update un Register en prenant en compte un Register
         public function UpdateRegister(Register $register) : void {
-            $sql = 'UPDATE users SET login = ?, password = ?, firstName = ?, lastName = ?, email = ?, gender = ?, familyPlace = ?, birthDate = ? WHERE id = ?';
+            $sql = 'UPDATE users SET login = ?, password = ?, firstName = ?, lastName = ?, email = ?, gender = ?, familyPlace = ?, birthDate = ? WHERE idUsers = ?';
             $this->executerRequete($sql, [
                 $register->getLogin(),
                 $register->getPassword(),

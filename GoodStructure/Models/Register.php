@@ -1,7 +1,7 @@
 <?php
     class Register
     {
-        private $_id;
+        private $_idUsers;
         private $_login;
         private $_hash;
         private $_firstName;
@@ -24,14 +24,14 @@
             $this->_hash = $password;
         }
 
-        // Getter for $_id
+        // Getter for $_idUsers
         public function getId() {
-            return $this->_id;
+            return $this->_idUsers;
         }
 
-        // Setter for $_id
+        // Setter for $_idUsers
         public function setId(int $id) {
-            $this->_id = $id;
+            $this->_idUsers = $id;
         }
 
         // Getter for $_login
