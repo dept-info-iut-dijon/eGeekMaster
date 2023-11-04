@@ -11,7 +11,10 @@ class LoginController{
         $loginManager = new LoginManager();
         $mainController = new MainController();
 
-        $loginManager->Add($_POST["username"], $_POST["password"]);
+        print_r('coucou');
+
+        var_dump($_POST["Username"], $_POST["Password"]);
+        $loginManager->Add($_POST["Username"], $_POST["Password"]);
 
         $mainController->Index("Login ajouté");
     }
@@ -29,7 +32,7 @@ class LoginController{
         $loginManager = new LoginManager('localhost', 'root', '', 'mvc_login');
         $mainController = new MainController();
 
-        $loginManager->UpdateById($_POST["id"],$_POST["username"], $_POST["password"]);
+        $loginManager->UpdateById($_POST["id"],$_POST["Username"], $_POST["Password"]);
 
         $mainController->Index("Login modifié");
     }

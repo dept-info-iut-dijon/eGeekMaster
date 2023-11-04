@@ -3,6 +3,10 @@ require_once 'Config.php';
 abstract class Model {
     private ?PDO $db = null;
 
+    public function __construct() {
+        $this->getDB();
+    }
+
     // Exécute une requête SQL éventuellement paramétrée
     protected function executerRequete(string $sql, array $params = null) : PDOStatement|false{
         if ($params == null) {

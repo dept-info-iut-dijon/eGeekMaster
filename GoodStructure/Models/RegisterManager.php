@@ -6,9 +6,14 @@ require_once 'Register.php';
     class RegisterManager extends Model
     {
 
+        public function __construct()
+        {
+            parent::__construct();
+        }
+
         // Renvoie la liste des Register
         public function GetAll() : array{
-            $sql = 'SELECT * FROM register';
+            $sql = 'SELECT * FROM users';
             $registers = [];
             $resultat = $this->executerRequete($sql);
             while ($ligne = $resultat->fetch(PDO::FETCH_ASSOC)) {
@@ -31,7 +36,7 @@ require_once 'Register.php';
         // Renvoie un Register spécifique par son id
         
         public function GetByID(int $id): ?Register {
-            $sql = 'SELECT * FROM register WHERE id = ?';
+            $sql = 'SELECT * FROM users WHERE id = ?';
             $resultat = $this->executerRequete($sql, [$id]);
             $ligne = $resultat->fetch();
             if ($ligne !== false) {
@@ -54,13 +59,13 @@ require_once 'Register.php';
 
         // Delete un Register par son id
         public function DeleteByID(int $id) : void{
-            $sql = 'DELETE FROM register WHERE id = ?';
+            $sql = 'DELETE FROM users WHERE id = ?';
             $this->executerRequete($sql, [$id]);
         }
 
         // Update un Register par son id
         public function UpdateById(int $id, string $username, string $password) : void{
-            $sql = 'UPDATE register SET username = ?, password = ? WHERE id = ?';
+            $sql = 'UPDATE users SET username = ?, password = ? WHERE id = ?';
             $this->executerRequete($sql,[$username, $password, $id]);
         }
 
@@ -81,7 +86,7 @@ require_once 'Register.php';
 
         // Update un Register en prenant en compte un Register
         public function UpdateRegister(Register $register) : void {
-            $sql = 'UPDATE register SET login = ?, password = ?, firstName = ?, lastName = ?, email = ?, gender = ?, familyPlace = ?, birthDate = ? WHERE id = ?';
+            $sql = 'UPDATE users SET login = ?, password = ?, firstName = ?, lastName = ?, email = ?, gender = ?, familyPlace = ?, birthDate = ? WHERE id = ?';
             $this->executerRequete($sql, [
                 $register->getLogin(),
                 $register->getPassword(),

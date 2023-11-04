@@ -17,11 +17,11 @@
                     <fieldset>
                         <div id="Connect">   
                             <div class="cc">
-                                <label for="login">Login :</label><br>
+                                <label for="Username">Login :</label><br>
                                 <input type="text" id="login" name="Username" class="inputs" autofocus required>
                             </div>
                             <div class="cc">
-                                <label for="password">Password :</label><br>
+                                <label for="Password">Password :</label><br>
                                 <input type="password" id="password" name="Password" class="inputs" required> 
                             </div >         
                             <div id="submitDiv">
