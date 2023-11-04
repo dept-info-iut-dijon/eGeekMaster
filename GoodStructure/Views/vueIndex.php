@@ -23,7 +23,7 @@
             
         </div>
         <h1>
-            Lorem Ipsum dolor sit 
+            Lorem 
         </h1>
         <p>
             Lorem Ipsum dolor sit Lorem Ipsum dolor sit Lorem Ipsum dolor sit Lorem Ipsum dolor sit Lorem Ipsum dolor 
