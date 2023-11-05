@@ -1,96 +1,51 @@
-<?php
-//ce fichier gère tout ce qui traite des Register(enregistrement) directement.
+<?php 
+//ce fichier gère tout ce qui traite des Register(inscription) directement.
 require_once 'views/View.php';
 require_once 'models/RegisterManager.php';
 require_once 'Controllers/MainController.php';
 
 class RegisterController{
     
-    //Permet d'ajouter un Register et si il existe déjà, il le modifie.
+    private $registerManager;
+    private $mainController;
+    private $addView;
+
+    public function __construct() {
+        $this->registerManager = new RegisterManager();
+        $this->mainController = new MainController();
+        $this->addView = new View('Registration');
+    }
+
     public function Add() {
-        $registerManager = new RegisterManager();
-        $mainController = new MainController();
-        $addView = new View('Registration');
-        if ($_SERVER["REQUEST_METHOD"] == "POST"){
-            if (isset($_GET['IdRegister'])){
-                $updateRegister = $registerManager->GetByID(intval($_GET['IdRegister']));
-                
-                $updateRegister->setPassword($_POST['password']);
-                $updateRegister->setFirstName($_POST['Firstname']);
-                $updateRegister->setLastName($_POST['Lastname']);
-                $updateRegister->setEmail($_POST['Email']);
-                $updateRegister->setGender($_POST['Gender']);
-                $updateRegister->setFamilyPlace($this->FamilyPlaceToString());
-                $updateRegister->setLogin($_POST['login']);
-                $updateRegister->setBirthDate($_POST['DayOfBirth'] . "-" . $_POST['MonthOfBirth'] . "-" . $_POST['YearOfBirth']);
-                $registerManager->updateRegister($updateRegister);
-                $mainController->Index('Le Register '.$_POST['login'].' a bien été modifié !');
-                var_dump($updateRegister);
+        // Check if the request method is POST
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            // Determine whether to update or create a register
+            if (isset($_GET['IdRegister'])) {
+                $this->updateRegister();
+            } else {
+                $this->createRegister();
             }
-            else {
-                $register = new register();
-                
-                $register->setPassword($_POST['Password']);
-                $register->setFirstName($_POST['Firstname']);
-                $register->setLastName($_POST['Lastname']);
-                $register->setEmail($_POST['Email']);
-                $register->setGender($_POST['Gender']);
-                $register->setFamilyPlace($this->FamilyPlaceToString());
-                $register->setBirthDate($_POST['YearOfBirth'] . "-" . $_POST['MonthOfBirth'] . "-" . $_POST['DayOfBirth']);
-                $register->setLogin($_POST['Username']);
-                $registerManager->addRegister($register);
-                $mainController = new MainController();
-                $mainController->Index('Welcome among us '.$_POST['Username']);
-                var_dump($register);
-            }        
-        }
-        else{
-            $addView->generer(array(
-                
-            ));
+        } else {
+            // Display the registration form
+            $this->addView->generer([]);
         }
     }
 
-
-    //non fonctionnelle pour le moment
     public function Delete() {
-        $registerManager = new RegisterManager();
-        $mainController = new MainController();
-
-        $registerManager->DeleteByID($_POST["idRegister"]);
-
-        $mainController->Index("Register supprimé");
+        // Delete a register
+        $this->registerManager->DeleteByID($_POST["idRegister"]);
+        // Redirect to the main page
+        $this->mainController->Index("Register supprimé");
     }
 
-
-    //non fonctionnelle pour le moment
-    public function Update() {
-        $registerManager = new RegisterManager();
-        $mainController = new MainController();
-
-        $registerManager->UpdateById($_POST["IdRegister"],$_POST["username"], $_POST["password"]);
-
-        $mainController->Index("Register modifié");
-    }
-
-    //to string de la FamilyPlace
     public function FamilyPlaceToString(){
         $familyPlace = "";
         $tempConcat = ", ";
-        $fieldsToCheck = array(
-            'parent',
-            'child',
-            'grandParent',
-            'grandChild',
-            'uncle/aunt',
-            'cousin',
-            'nephew/niece',
-            'stepchild',
-            'in-law',
-            'step-parent',
-            'half-sibling',
-            'otherPlace'
-        );
+        $fieldsToCheck = [
+            'parent', 'child', 'grandParent', 'grandChild', 'uncle/aunt',
+            'cousin', 'nephew/niece', 'stepchild', 'in-law', 'step-parent',
+            'half-sibling', 'otherPlace'
+        ];
 
         foreach ($fieldsToCheck as $field) {
             if (isset($_POST[$field]) && $_POST[$field] !== null) {
@@ -101,5 +56,37 @@ class RegisterController{
         return $familyPlace;
     }
 
-}
+    private function updateRegister() {
+        // Retrieve the register to update
+        $updateRegister = $this->registerManager->GetByID(intval($_GET['IdRegister']));
+        $this->populateRegister($updateRegister);
+        // Update the register
+        $this->registerManager->updateRegister($updateRegister);
+        // Redirect to the main page
+        $this->mainController->Index('Le Register '.$_POST['login'].' a bien été modifié !');
+        var_dump($updateRegister);
+    }
 
+    private function createRegister() {
+        // Create a new register
+        $register = new Register();
+        $this->populateRegister($register);
+        // Add the new register
+        $this->registerManager->addRegister($register);
+        // Redirect to the main page
+        $this->mainController->Index('Welcome among us '.$_POST['Username']);
+        var_dump($register);
+    }
+
+    private function populateRegister(Register $register) {
+        // Set the properties of the Register object
+        $register->setPassword($_POST['Password']);
+        $register->setFirstName($_POST['Firstname']);
+        $register->setLastName($_POST['Lastname']);
+        $register->setEmail($_POST['Email']);
+        $register->setGender($_POST['Gender']);
+        $register->setFamilyPlace($this->FamilyPlaceToString());
+        $register->setBirthDate($_POST['YearOfBirth'] . "-" . $_POST['MonthOfBirth'] . "-" . $_POST['DayOfBirth']);
+        $register->setLogin($_POST['Username']);
+    }
+}
