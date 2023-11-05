@@ -20,7 +20,7 @@ class RegisterController{
                 $updateRegister->setLastName($_POST['Lastname']);
                 $updateRegister->setEmail($_POST['Email']);
                 $updateRegister->setGender($_POST['Gender']);
-                $updateRegister->setFamilyPlace($_POST['selectPlaceFamily']);
+                $updateRegister->setFamilyPlace($this->FamilyPlaceToString());
                 $updateRegister->setLogin($_POST['login']);
                 $updateRegister->setBirthDate($_POST['DayOfBirth'] . "-" . $_POST['MonthOfBirth'] . "-" . $_POST['YearOfBirth']);
                 $registerManager->updateRegister($updateRegister);
@@ -35,7 +35,7 @@ class RegisterController{
                 $register->setLastName($_POST['Lastname']);
                 $register->setEmail($_POST['Email']);
                 $register->setGender($_POST['Gender']);
-                $register->setFamilyPlace($_POST['selectPlaceFamily']);
+                $register->setFamilyPlace($this->FamilyPlaceToString());
                 $register->setBirthDate($_POST['YearOfBirth'] . "-" . $_POST['MonthOfBirth'] . "-" . $_POST['DayOfBirth']);
                 $register->setLogin($_POST['Username']);
                 $registerManager->addRegister($register);
@@ -71,6 +71,34 @@ class RegisterController{
         $registerManager->UpdateById($_POST["IdRegister"],$_POST["username"], $_POST["password"]);
 
         $mainController->Index("Register modifié");
+    }
+
+    //to string de la FamilyPlace
+    public function FamilyPlaceToString(){
+        $familyPlace = "";
+        $tempConcat = ", ";
+        $fieldsToCheck = array(
+            'parent',
+            'child',
+            'grandParent',
+            'grandChild',
+            'uncle/aunt',
+            'cousin',
+            'nephew/niece',
+            'stepchild',
+            'in-law',
+            'step-parent',
+            'half-sibling',
+            'otherPlace'
+        );
+
+        foreach ($fieldsToCheck as $field) {
+            if (isset($_POST[$field]) && $_POST[$field] !== null) {
+                $familyPlace .= $_POST[$field] . $tempConcat;
+            }
+        }
+        $familyPlace = substr($familyPlace, 0, -2);
+        return $familyPlace;
     }
 
 }
