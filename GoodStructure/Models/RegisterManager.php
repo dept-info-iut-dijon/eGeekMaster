@@ -2,6 +2,7 @@
 
 require_once 'Model.php';
 require_once 'Register.php';
+require_once 'Login.php';
 
     class RegisterManager extends Model
     {
@@ -71,7 +72,17 @@ require_once 'Register.php';
 
         // Add un Register
         public function AddRegister(Register $register) : void{
-            $sql = ("INSERT INTO users (LastName, FirstName, Gender, BirthDate, Email, FamilyPlace, idLogin) VALUES (:value1, :value2, :value3, :value4, :value5, :value6, (SELECT idLogin from login where idLogin = :value7))");
+
+            $sql = 'INSERT INTO login (username, Hash) VALUES (?, ?)';
+            $login = new Login($register->getLogin(), $register->getPassword());
+            $this->executerRequete($sql, [$login->getLogin(), $login->getHash()]);
+
+            // Get the ID of the last inserted row
+            $db = $this->parent::getBdd();
+            $loginId = $this->$db->lastInsertId();
+
+            $sql = ("INSERT INTO users (LastName, FirstName, Gender, BirthDate, Email, FamilyPlace, idLogin) 
+            VALUES (:value1, :value2, :value3, :value4, :value5, :value6, (SELECT idLogin from login where idLogin = :value7))");
                 
             $value1 = $register->getLastName();
             $value2 = $register->getFirstName();
@@ -79,7 +90,7 @@ require_once 'Register.php';
             $value4 = $register->getBirthDate();
             $value5 = $register->getEmail();
             $value6 = $register->getFamilyPlace();
-            $value7 = $register->getId();
+            $value7 = $login->getId();
             $this->executerRequete($sql, [
                 ':value1' => $value1,
                 ':value2' => $value2,
