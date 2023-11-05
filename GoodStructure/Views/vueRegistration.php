@@ -92,7 +92,7 @@
 
                         <!--FAMILY PLACE-->
                         <div>
-                            <label for="placeFamily">What's your place in the family ?</label>
+                            <label for="selectPlaceFamily">What's your place in the family ?</label>
                             <div class="selectBox" onclick="showCheckboxes()">
                                 <select id="select" name="selectPlaceFamily">
                                     <option>Select your place</option>

@@ -36,7 +36,7 @@ class RegisterController{
                 $register->setEmail($_POST['Email']);
                 $register->setGender($_POST['Gender']);
                 $register->setFamilyPlace($_POST['selectPlaceFamily']);
-                $register->setBirthDate($_POST['DayOfBirth'] . "-" . $_POST['MonthOfBirth'] . "-" . $_POST['YearOfBirth']);
+                $register->setBirthDate($_POST['YearOfBirth'] . "-" . $_POST['MonthOfBirth'] . "-" . $_POST['DayOfBirth']);
                 $register->setLogin($_POST['Username']);
                 $registerManager->addRegister($register);
                 $mainController = new MainController();

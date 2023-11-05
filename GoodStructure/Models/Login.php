@@ -13,6 +13,15 @@
             $this->_hash = $password;
         }
 
+        // Getter for $_id
+        public function getId() {
+            return $this->_id;
+        }
+
+        // Setter for $_id
+        public function setId(int $id) {
+            $this->_id = $id;
+        }
 
         // Getter for $_login
         public function getLogin() {

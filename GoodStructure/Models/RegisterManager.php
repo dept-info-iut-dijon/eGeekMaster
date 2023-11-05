@@ -77,11 +77,15 @@ require_once 'Login.php';
             $login = new Login($register->getLogin(), $register->getPassword());
             $this->executerRequete($sql, [$login->getLogin(), $login->getHash()]);
 
-            // Get the ID of the last inserted row
-            $db = $this->parent::getBdd();
-            $loginId = $this->$db->lastInsertId();
+            // Get the ID of the id of the last login added
+            $sql = 'SELECT idLogin FROM login ORDER BY idLogin DESC LIMIT 1';
+            $resultat = $this->executerRequete($sql);
+            $ligne = $resultat->fetch();
+            $login->setId($ligne['idLogin']);
+            
 
-            $sql = ("INSERT INTO users (LastName, FirstName, Gender, BirthDate, Email, FamilyPlace, idLogin) 
+
+            $sql = ("INSERT INTO users (LastName, FirstName, Gender, BirthDate, Email, FamilyPlace, LoginidLogin) 
             VALUES (:value1, :value2, :value3, :value4, :value5, :value6, (SELECT idLogin from login where idLogin = :value7))");
                 
             $value1 = $register->getLastName();
