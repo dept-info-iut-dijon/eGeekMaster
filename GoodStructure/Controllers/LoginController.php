@@ -7,6 +7,7 @@ require_once 'Controllers/MainController.php';
 
 class LoginController{
 
+    //Permet d'ajouter un Login
     public function Add() {
         $loginManager = new LoginManager();
         $mainController = new MainController();
@@ -27,7 +28,7 @@ class LoginController{
     }
 
     public function Edit() {
-        $loginManager = new LoginManager('localhost', 'root', '', 'mvc_login');
+        $loginManager = new LoginManager();
         $mainController = new MainController();
 
         $loginManager->UpdateById($_POST["id"],$_POST["Username"], $_POST["Password"]);

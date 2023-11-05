@@ -6,7 +6,7 @@ require_once 'Controllers/MainController.php';
 
 class RegisterController{
     
-    
+    //Permet d'ajouter un Register et si il existe déjà, il le modifie.
     public function Add() {
         $registerManager = new RegisterManager();
         $mainController = new MainController();
@@ -51,6 +51,8 @@ class RegisterController{
         }
     }
 
+
+    //non fonctionnelle pour le moment
     public function Delete() {
         $registerManager = new RegisterManager();
         $mainController = new MainController();
@@ -60,6 +62,8 @@ class RegisterController{
         $mainController->Index("Register supprimé");
     }
 
+
+    //non fonctionnelle pour le moment
     public function Update() {
         $registerManager = new RegisterManager();
         $mainController = new MainController();
