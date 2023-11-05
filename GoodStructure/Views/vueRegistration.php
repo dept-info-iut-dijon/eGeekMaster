@@ -7,6 +7,9 @@
 
     <!--REGISTRATION FORM-->
     <div class="container">
+        <?php if (isset($_GET['errorMessage'])) : ?>
+            <p><?= $_GET['errorMessage']?></p>
+        <?php endif; ?>
         <div id="form">
 
             <!--TITLE AND SUBTITLE-->
@@ -17,7 +20,7 @@
 
             <!--FORM-->
             <div>  
-                <form action="index.php?action=AddRegister" method="post">
+                <form action="index.php?action=AddRegister<?php if (isset($_GET['IdLogin'])) { print('&IdLogin='.$_GET['IdLogin']) ?><?php } ?>" method="post">
                     <fieldset>
                         <!--NAME-->
                         <div>

@@ -4,10 +4,10 @@ require_once 'Login.php';
 
 class LoginManager extends Model
 {
-    private PDO $_db;
+    
 
     public function __construct() {
-        
+        parent::__construct();
     }
     
     public function getAll() : array {
@@ -54,9 +54,10 @@ class LoginManager extends Model
         $this->executerRequete($sql,[$username, $password, $id]);
     }
 
-    public function Add(string $username, string $password) : void {
+    public function Add(string $username, string $password) : Login{
         $sql = 'INSERT INTO login (username, Hash) VALUES (?, ?)';
         $login = new Login($username, $password);
         $this->executerRequete($sql, [$username, $login->getHash()]);
+        return $login;
     }
 }

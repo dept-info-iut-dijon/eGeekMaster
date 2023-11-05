@@ -26,8 +26,10 @@ class RegisterController{
                 $this->createRegister();
             }
         } else {
-            // Display the registration form
-            $this->addView->generer([]);
+            // Check if there is an error message to display
+            $errorMessage = isset($_GET['errorMessage']) ? $_GET['errorMessage'] : null;
+            // Display the registration form with the error message
+            $this->addView->generer(['errorMessage' => $errorMessage]);
         }
     }
 
@@ -63,7 +65,7 @@ class RegisterController{
         // Update the register
         $this->registerManager->updateRegister($updateRegister);
         // Redirect to the main page
-        $this->mainController->Index('Le Register '.$_POST['login'].' a bien été modifié !');
+        $this->mainController->Index('Le Register '.$_POST['Username'].' a bien été modifié !');
         var_dump($updateRegister);
     }
 
@@ -76,6 +78,8 @@ class RegisterController{
         // Redirect to the main page
         $this->mainController->Index('Welcome among us '.$_POST['Username']);
         var_dump($register);
+        // Send in the url the id of the new login
+        header('Location: index.php?action=Index&IdLogin=' . $register->getId());
     }
 
     private function populateRegister(Register $register) {
