@@ -14,13 +14,15 @@ class MainController {
      */
     public function Index($message = null) {
 
-        header("Location: index.php?action=Index");
+        
         $indexView = new View("Index");
+        
         $data = array(
-            //ajouter les données à afficher
+            
         );
         if ($message !== null) {
             $data["message"] = $message;
+            
         }
         $indexView->generer($data);
     }

@@ -164,7 +164,7 @@ class RegisterManager extends Model
                 ':value7' => $value7
             ]);
 
-            header("Refresh : 1, Location: index.php?action=Index");
+            // header("Refresh : 1, Location: index.php?action=Index");
 
         } catch (PDOException $e) {
             // In case of an error, redirect to the error page with a message
@@ -173,7 +173,7 @@ class RegisterManager extends Model
                 $errorMessage = "The email address or username is already in use.";
             }
 
-            header("Location: index.php?action=Registration&errorMessage=".urlencode($errorMessage));
+            // header("Location: index.php?action=Registration&errorMessage=".urlencode($errorMessage));
             exit();
         }
     }
