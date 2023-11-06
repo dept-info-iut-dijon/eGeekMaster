@@ -20,7 +20,7 @@ class LoginController{
 
         var_dump($_POST["Username"], $_POST["Password"]);
         $loginManager->Add($_POST["Username"], $_POST["Password"]);
-
+        
         $mainController->Index("Login ajouté");
     }
 
@@ -52,7 +52,7 @@ class LoginController{
         $mainController = new MainController();
 
         $loginManager->UpdateById($_POST["id"],$_POST["Username"], $_POST["Password"]);
-
+        
         $mainController->Index("Login modifié");
     }
 
@@ -67,7 +67,7 @@ class LoginController{
         $mainController = new MainController();
 
         $loginManager->Connect($_POST["Username"], $_POST["Password"]);
-
+        
         $mainController->Index("Login connecté");
     }
 
@@ -82,7 +82,7 @@ class LoginController{
         $mainController = new MainController();
 
         $loginManager->Disconnect();
-
+        
         $mainController->Index("Login déconnecté");
     }
 }
