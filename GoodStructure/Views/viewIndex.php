@@ -118,12 +118,12 @@
         </video>
     </div>
 
-     <!-- block-->
+    <!-- block-->
 
-     <div id="Publication">
+    <div id="Publication">
         <div id="PubliGauche">
             <h4>
-                What client say
+                What Our Clients Say
             </h4>
             <div>
                 <div class="slider-controls">
@@ -135,67 +135,68 @@
             </div>
         </div>
         <div class="slider" id="slider_1">
-            <div class="slider-panel active" >
-                <p>Lorem Ipsum dolor sit Lorem Ipsum dolor sit Lorem Ipsum Lorem Ipsum dolor sit Lorem Ipsum um dolor sit Lorem Ipsum Lorem Ipsum dolor sit Lorem Ipsum dolor sit Lorem Ipsum 
+            <div class="slider-panel active">
+                <p>
+                    Family'Easy has transformed our family life. It's now easier to share responsibilities and maintain a balanced lifestyle.
                 </p>
                 <div class="people">
                     <div id="imgA"></div>
-                    
                     <div>
                         <h2>
-                            Joe Root
+                            Jane Doe
                         </h2>
-                        <h5>UI/UX Designer</h5>
+                        <h5>Happy User</h5>
                     </div>
                 </div>
             </div>
-            <div class="slider-panel" >
-                <p>Lorem Ipsum dolor sit Lorem Ipsum dolor sit Lorem Lorem Ipsum Lorem Ipsum dolor sit Lorem Ipsum dolor sit Lorem Ipsum Lorem Ipsum dolor sit Lorem Ipsum dolor sit Lorem Ipsum 
+            <div class="slider-panel">
+                <p>
+                    We can't imagine managing our household without Family'Easy. It's a game-changer for busy families like ours.
                 </p>
                 <div class="people">
                     <div id="imgB"></div>
-                    <div >
+                    <div>
                         <h2>
-                            Joe Root
+                            John Smith
                         </h2>
-                        <h5>UI/UX Designer</h5>
+                        <h5>Satisfied Customer</h5>
                     </div>
                 </div>
             </div>
-            <div class="slider-panel" >
-                <p>Lorem Ipsum dolor sit Lorem Ipsum dolor sit Lorem Ipsum Lorem Ipsum dolor sit Lorem Ipsum dolor sit Lorem Ipsum Lorem Ipsum doum dolor sit Lorem Ipsum dolor sit Lorem Ipsum 
+            <div class="slider-panel">
+                <p>
+                    Thanks to Family'Easy, our family is happier, and we have more quality time together. It's an essential tool for every home.
                 </p>
                 <div class="people">
                     <div id="imgC"></div>
                     <div>
                         <h2>
-                            Joe Root
+                            Emily Wilson
                         </h2>
-                        <h5>UI/UX Designer</h5>
+                        <h5>Grateful Parent</h5>
                     </div>
                 </div>
             </div>
-            <div class="slider-panel" >
-                <p>Lorempsum dolor sit Lorem Ipsum Lorem Ipsum dolor sit Lorem Ipsum dolor sit Lorem Ipsum 
+            <div class="slider-panel">
+                <p>
+                    Family'Easy has made our life easier and more enjoyable. We recommend it to all families looking for balance.
                 </p>
                 <div class="people">
                     <div id="imgD"></div>
                     <div>
                         <h2>
-                            Joe Root
+                            Mark Johnson
                         </h2>
-                        <h5>UI/UX Designer</h5>
+                        <h5>Delighted User</h5>
                     </div>
                 </div>
             </div>
-            
         </div>
         <div id="ligneP"></div>
         <div id="Réseaux">
-            
+            <!-- Add your social media links or content here -->
         </div>
-        
     </div>
-        
+
     <!-- block-->
 </div>

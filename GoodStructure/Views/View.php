@@ -11,7 +11,7 @@ class View {
      */
     public function __construct(string $action) {
         // Détermination du nom du fichier vue à partir de l'action
-        $this->fichier = "views/vue" . $action . ".php";
+        $this->fichier = "views/view" . $action . ".php";
         $this->titre = $action;
     }
 
