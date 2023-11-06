@@ -173,7 +173,7 @@ class RegisterManager extends Model
                 $errorMessage = "The email address or username is already in use.";
             }
 
-            // header("Location: index.php?action=Registration&errorMessage=".urlencode($errorMessage));
+            header("Location: index.php?action=Registration&errorMessage=".urlencode($errorMessage));
             exit();
         }
     }
