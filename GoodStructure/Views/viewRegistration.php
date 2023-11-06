@@ -27,7 +27,7 @@
 
         <!--FORM-->
         <div>  
-            <form action="index.php?action=AddUser<?php if (isset($_SESSION['login'])) { print('&IdLogin='.$_SESSION['login']->getId()) ?><?php } ?>" method="post">
+            <form action="index.php?action=AddUser&<?php if (isset($_GET['IdLogin'])) : ?>IdLogin=<?=$_GET['IdLogin'] ?><?php endif?>" method="post">
                 <fieldset>
                     <!--NAME-->
                     <div>

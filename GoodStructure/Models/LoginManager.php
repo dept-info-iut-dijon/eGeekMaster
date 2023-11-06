@@ -115,7 +115,8 @@ class LoginManager extends Model
                 );
                 if($login->getPassword() == $login->getHash($password)) {
                     
-                    $_SESSION["login"] = $login;
+                    $_SESSION["IdLogin"] = $ligne['idLogin'];
+                    
                 }
             }
         } catch (PDOException $e) {

@@ -82,10 +82,10 @@ class UserController{
      */
     public function UpdateUser() {
         // Retrieve the User to update
-        $updateUser = $this->UserManager->GetByID(intval($_GET['IdUser']));
+        $updateUser = $this->UserManager->GetByID(intval($_GET['IdLogin']));
         $this->populateUser($updateUser);
         // Update the User
-        $this->UserManager->updateUser($updateUser);
+        $this->UserManager->UpdateUser($updateUser);
         // Redirect to the main page
         $this->mainController->Index('Le User '.$_POST['Username'].' a bien été modifié !');
         var_dump($updateUser);

@@ -26,7 +26,7 @@ class RouteEditUser extends Route {
      * @return mixed The result of the update operation.
      */
     public function get($params = []) {
-        return $this->controller->UpdateUser();
+        return $this->controller->Add();
     }
 
     /**
@@ -36,7 +36,7 @@ class RouteEditUser extends Route {
      * @return mixed The result of the update operation.
      */
     public function post($params = []) {
-        return $this->controller->UpdateUser();
+        return $this->controller->Add();
     }
 
     /**
@@ -47,6 +47,6 @@ class RouteEditUser extends Route {
      * @return mixed The result of the update operation.
      */
     public function action($params = [], $method = 'POST') {
-        return $this->controller->UpdateUser();
+        return $this->controller->Add();
     }
 }
