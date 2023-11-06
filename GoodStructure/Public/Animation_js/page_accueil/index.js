@@ -158,7 +158,7 @@ function main() {
 window.addEventListener("load", main);
 window.addEventListener('scroll', function() {
     var scrollValue = window.scrollY;
-    var parallaxValue = scrollValue / 3; 
+    var parallaxValue = scrollValue / 15; 
 
     document.getElementById('FAQprincipal').style.backgroundPositionY = '-' + parallaxValue + 'px';
 });

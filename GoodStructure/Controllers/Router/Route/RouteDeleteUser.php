@@ -2,18 +2,18 @@
 require_once 'Controllers/Router/Route.php';
 
 /**
- * Class RouteDeleteRegister
+ * Class RouteDeleteUser
  * @package Controllers\Router\Route
  * @author Théo Cornu
  */
-class RouteDeleteRegister extends Route {
-    private RegisterController $controller;
+class RouteDeleteUser extends Route {
+    private UserController $controller;
 
     /**
-     * RouteDeleteRegister constructor.
-     * @param RegisterController $controller
+     * RouteDeleteUser constructor.
+     * @param UserController $controller
      */
-    public function __construct(RegisterController $controller) {
+    public function __construct(UserController $controller) {
         parent::__construct();
         $this->controller = $controller;
     }

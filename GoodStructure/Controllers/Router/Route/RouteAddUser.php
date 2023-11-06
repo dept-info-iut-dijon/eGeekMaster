@@ -2,21 +2,21 @@
 require_once 'Controllers/Router/Route.php';
 
 /**
- * Class RouteAddRegister
+ * Class RouteAddUser
  * @package Controllers\Router\Route
  * @author Théo Cornu
  */
-class RouteAddRegister extends Route {
+class RouteAddUser extends Route {
     /**
-     * @var RegisterController
+     * @var UserController
      */
-    private RegisterController $controller;
+    private UserController $controller;
 
     /**
-     * RouteAddRegister constructor.
-     * @param RegisterController $controller
+     * RouteAddUser constructor.
+     * @param UserController $controller
      */
-    public function __construct(RegisterController $controller) {
+    public function __construct(UserController $controller) {
         parent::__construct();
         $this->controller = $controller;
     }

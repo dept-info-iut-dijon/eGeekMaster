@@ -1,11 +1,11 @@
 <?php
     /**
-     * Class Register
+     * Class User
      *
      * @author Théo Cornu
      * @author Nicolas
      */
-    class Register
+    class User
     {
         private $_idUsers;
         private $_login;

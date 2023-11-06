@@ -1,10 +1,10 @@
 <?php
-// This file manages all operations related to Register (registration) directly with the database.
+// This file manages all operations related to User (registration) directly with the database.
 require_once 'Model.php';
-require_once 'Register.php';
+require_once 'User.php';
 require_once 'LoginManager.php';
 
-class RegisterManager extends Model
+class UserManager extends Model
 {
 
     public function __construct()
@@ -13,9 +13,9 @@ class RegisterManager extends Model
     }
 
     /**
-     * Retrieve a list of Registers from the database.
+     * Retrieve a list of Users from the database.
      *
-     * @return array An array of Register objects.
+     * @return array An array of User objects.
      * @author Théo Cornu
      */
     
@@ -23,10 +23,10 @@ class RegisterManager extends Model
     {
         try {
             $sql = 'SELECT * FROM users';
-            $registers = [];
+            $Users = [];
             $result = $this->executerRequete($sql);
             while ($line = $result->fetch(PDO::FETCH_ASSOC)) {
-                $register = new Register(
+                $User = new User(
                     $line['login'],
                     $line['password'],
                     $line['firstName'],
@@ -37,9 +37,9 @@ class RegisterManager extends Model
                     $line['birthDate']
                 );
 
-                $registers[] = $register;
+                $Users[] = $User;
             }
-            return $registers;
+            return $Users;
         } catch (PDOException $e) {
             // In case of an error, redirect to the error page with a message
             $errorMessage = "An error occurred while retrieving data.";
@@ -49,20 +49,20 @@ class RegisterManager extends Model
     }
 
     /**
-     * Retrieve a specific Register by its ID from the database.
+     * Retrieve a specific User by its ID from the database.
      *
-     * @param int $id The ID of the Register to retrieve.
-     * @return Register|null The Register object, or null if not found.
+     * @param int $id The ID of the User to retrieve.
+     * @return User|null The User object, or null if not found.
      * @author Théo Cornu
      */
-    public function GetByID(int $id): ?Register
+    public function GetByID(int $id): ?User
     {
         try {
             $sql = 'SELECT * FROM users WHERE idUsers = ?';
             $result = $this->executerRequete($sql, [$id]);
             $line = $result->fetch();
             if ($line !== false) {
-                $register = new Register(
+                $User = new User(
                     $line['login'],
                     $line['password'],
                     $line['firstName'],
@@ -73,22 +73,22 @@ class RegisterManager extends Model
                     $line['birthDate']
                 );
 
-                return $register;
+                return $User;
             } else {
                 return null;
             }
         } catch (PDOException $e) {
             // In case of an error, redirect to the error page with a message
-            $errorMessage = "An error occurred while retrieving the Register.";
+            $errorMessage = "An error occurred while retrieving the User.";
             header("Location: index.php?action=Registration&errorMessage=".urlencode($errorMessage));
             exit();
         }
     }
 
     /**
-     * Delete a Register by its ID.
+     * Delete a User by its ID.
      *
-     * @param int $id The ID of the Register to delete.
+     * @param int $id The ID of the User to delete.
      * @author Théo Cornu
      */
     public function DeleteByID(int $id): void
@@ -98,16 +98,16 @@ class RegisterManager extends Model
             $this->executerRequete($sql, [$id]);
         } catch (PDOException $e) {
             // In case of an error, redirect to the error page with a message
-            $errorMessage = "An error occurred while deleting the Register.";
+            $errorMessage = "An error occurred while deleting the User.";
             header("Location: index.php?action=Registration&errorMessage=".urlencode($errorMessage));
             exit();
         }
     }
 
     /**
-     * Update a Register by its ID with a new username and password.
+     * Update a User by its ID with a new username and password.
      *
-     * @param int $id The ID of the Register to update.
+     * @param int $id The ID of the User to update.
      * @param string $username The new username.
      * @param string $password The new password.
      * @author Théo Cornu
@@ -119,24 +119,24 @@ class RegisterManager extends Model
             $this->executerRequete($sql, [$username, $password, $id]);
         } catch (PDOException $e) {
             // In case of an error, redirect to the error page with a message
-            $errorMessage = "An error occurred while updating the Register.";
+            $errorMessage = "An error occurred while updating the User.";
             header("Location: index.php?action=Registration&errorMessage=".urlencode($errorMessage));
             exit();
         }
     }
 
     /**
-     * Add a new Register to the database.
+     * Add a new User to the database.
      *
-     * @param Register $register The Register to add.
+     * @param User $User The User to add.
      * @author Théo Cornu
      */
-    public function AddRegister(Register $register): void
+    public function AddUser(User $User): void
     {
         try {
-            // Add a login associated with the Register
+            // Add a login associated with the User
             $loginManager = new LoginManager();
-            $login = $loginManager->Add($register->getLogin(), $register->getPassword());
+            $login = $loginManager->Add($User->getLogin(), $User->getPassword());
 
             // Get the ID of the last login added
             $sql = 'SELECT idLogin FROM login ORDER BY idLogin DESC LIMIT 1';
@@ -147,12 +147,12 @@ class RegisterManager extends Model
             $sql = ("INSERT INTO users (LastName, FirstName, Gender, BirthDate, Email, FamilyPlace, LoginidLogin) 
             VALUES (:value1, :value2, :value3, :value4, :value5, :value6, (SELECT idLogin from login where idLogin = :value7))");
 
-            $value1 = $register->getLastName();
-            $value2 = $register->getFirstName();
-            $value3 = $register->getGender();
-            $value4 = $register->getBirthDate();
-            $value5 = $register->getEmail();
-            $value6 = $register->getFamilyPlace();
+            $value1 = $User->getLastName();
+            $value2 = $User->getFirstName();
+            $value3 = $User->getGender();
+            $value4 = $User->getBirthDate();
+            $value5 = $User->getEmail();
+            $value6 = $User->getFamilyPlace();
             $value7 = $login->getId();
             $this->executerRequete($sql, [
                 ':value1' => $value1,
@@ -168,7 +168,7 @@ class RegisterManager extends Model
 
         } catch (PDOException $e) {
             // In case of an error, redirect to the error page with a message
-            $errorMessage = "An error occurred while adding the Register.";
+            $errorMessage = "An error occurred while adding the User.";
             if (strpos($e->getMessage(), "Duplicate entry") !== false) {
                 $errorMessage = "The email address or username is already in use.";
             }
@@ -179,29 +179,29 @@ class RegisterManager extends Model
     }
 
     /**
-     * Update a Register in the database with new information.
+     * Update a User in the database with new information.
      *
-     * @param Register $register The updated Register.
+     * @param User $User The updated User.
      * @author Théo Cornu
      */
-    public function UpdateRegister(Register $register): void
+    public function UpdateUser(User $User): void
     {
         try {
             $sql = 'UPDATE users SET login = ?, password = ?, firstName = ?, lastName = ?, email = ?, gender = ?, familyPlace = ?, birthDate = ? WHERE idUsers = ?';
             $this->executerRequete($sql, [
-                $register->getLogin(),
-                $register->getPassword(),
-                $register->getFirstName(),
-                $register->getLastName(),
-                $register->getEmail(),
-                $register->getGender(),
-                $register->getFamilyPlace(),
-                $register->getBirthDate(),
-                $register->getId()
+                $User->getLogin(),
+                $User->getPassword(),
+                $User->getFirstName(),
+                $User->getLastName(),
+                $User->getEmail(),
+                $User->getGender(),
+                $User->getFamilyPlace(),
+                $User->getBirthDate(),
+                $User->getId()
             ]);
         } catch (PDOException $e) {
             // In case of an error, redirect to the error page with a message
-            $errorMessage = "An error occurred while updating the Register.";
+            $errorMessage = "An error occurred while updating the User.";
             header("Location: index.php?action=Registration&errorMessage=".urlencode($errorMessage));
             exit();
         }

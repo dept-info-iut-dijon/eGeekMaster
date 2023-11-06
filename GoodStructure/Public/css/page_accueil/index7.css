@@ -205,17 +205,19 @@ body {
 }
 #FAQ img {
     max-width: 500px;
-    border-radius: 30px;
+    
 }
 #FAQprincipal {
     
     border-radius: 30px;
-    width: 100%;
-    /* background-attachment: fixed; */
+    width: 50vw;
+    height: 70vh;
+    background-attachment: fixed;
     background-image: url(../../image/page_accueil/FAQ.jpg);
-    background-size: cover;
+    background-size: contain;
     background-position: center;
-    height: 50%; 
+    
+      
 }
 #FAQcontainer {
     padding: 10%;
@@ -232,6 +234,7 @@ body {
         flex-direction: column;
         text-align: center;
     }
+    
     #FAQcontainer #PixiPresentation {
         position: relative;
         width: auto;

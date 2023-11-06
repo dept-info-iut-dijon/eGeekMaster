@@ -50,7 +50,7 @@ class Router {
         // Create the controller list
         $this->ctrlList = ['MainController' => new MainController(), 
         'LoginController' => new LoginController(),
-        'RegisterController' => new RegisterController()];
+        'UserController' => new UserController()];
     }
 
     /**
@@ -65,9 +65,9 @@ class Router {
         "ConnectLogin" => new RouteConnectLogin($this->ctrlList["LoginController"]),
         "Disconnect" => new RouteDisconnect($this->ctrlList["LoginController"]),
         "DeleteLogin" => new RouteDeleteLogin($this->ctrlList["LoginController"]),
-        "AddRegister" => new RouteAddRegister($this->ctrlList["RegisterController"]),
-        "DeleteRegister" => new RouteDeleteRegister($this->ctrlList["RegisterController"]),
-        "EditRegister" => new RouteEditRegister($this->ctrlList["RegisterController"])];
+        "AddUser" => new RouteAddUser($this->ctrlList["UserController"]),
+        "DeleteUser" => new RouteDeleteUser($this->ctrlList["UserController"]),
+        "EditUser" => new RouteEditUser($this->ctrlList["UserController"])];
     }
 
     /**

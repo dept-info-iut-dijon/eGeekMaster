@@ -2,19 +2,19 @@
 require_once 'Controllers/Router/Route.php';
 
 /**
- * Represents a route for editing a register.
+ * Represents a route for editing a User.
  *
  * @author Théo Cornu
  */
-class RouteEditRegister extends Route {
-    private RegisterController $controller;
+class RouteEditUser extends Route {
+    private UserController $controller;
 
     /**
-     * Initializes a new instance of the RouteEditRegister class.
+     * Initializes a new instance of the RouteEditUser class.
      *
-     * @param RegisterController $controller The register controller.
+     * @param UserController $controller The User controller.
      */
-    public function __construct(RegisterController $controller) {
+    public function __construct(UserController $controller) {
         parent::__construct();
         $this->controller = $controller;
     }
@@ -26,7 +26,7 @@ class RouteEditRegister extends Route {
      * @return mixed The result of the update operation.
      */
     public function get($params = []) {
-        return $this->controller->UpdateRegister();
+        return $this->controller->UpdateUser();
     }
 
     /**
@@ -36,7 +36,7 @@ class RouteEditRegister extends Route {
      * @return mixed The result of the update operation.
      */
     public function post($params = []) {
-        return $this->controller->UpdateRegister();
+        return $this->controller->UpdateUser();
     }
 
     /**
@@ -47,6 +47,6 @@ class RouteEditRegister extends Route {
      * @return mixed The result of the update operation.
      */
     public function action($params = [], $method = 'POST') {
-        return $this->controller->UpdateRegister();
+        return $this->controller->UpdateUser();
     }
 }

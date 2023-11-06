@@ -1,7 +1,7 @@
 <!-- author: Théo Cornu -->
 <div id="contenu">
     <link rel="stylesheet" href="Public/css/footer.css">
-    <link rel="stylesheet" href="Public/css/page_accueil/index5.css">
+    <link rel="stylesheet" href="Public/css/page_accueil/index7.css">
 
     <script src="Public/Animation_js/page_accueil/index.js"></script>
 
@@ -76,7 +76,9 @@
 
     <div id="FAQ">
         <div id="FAQcontainer">
+        
             <div>
+                
                 <div id="Faq_Pixi" class="relative-container">
                     <div id='FAQprincipal'></div>
                     <div id="PixiPresentation">
