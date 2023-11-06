@@ -73,6 +73,13 @@ body {
     background-repeat: no-repeat;
 }
 
+
+
+
+
+
+
+
 /* Chiffre */
 #SomeChiffre {
     background-color: #81ACB5;
@@ -182,6 +189,16 @@ body {
     }
 }
 
+
+
+
+
+
+
+
+
+
+
 /* FAQ */
 #FAQ {
     background-color: #226979;
@@ -190,8 +207,15 @@ body {
     max-width: 500px;
     border-radius: 30px;
 }
-#FAQ img[alt="FAQ"] {
-    width: 50vw;
+#FAQprincipal {
+    
+    border-radius: 30px;
+    width: 100%;
+    /* background-attachment: fixed; */
+    background-image: url(../../image/page_accueil/FAQ.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 50%; 
 }
 #FAQcontainer {
     padding: 10%;

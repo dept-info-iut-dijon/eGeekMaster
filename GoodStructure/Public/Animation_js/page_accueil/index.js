@@ -156,3 +156,9 @@ function main() {
 
 // Execute the main function when the page is fully loaded
 window.addEventListener("load", main);
+window.addEventListener('scroll', function() {
+    var scrollValue = window.scrollY;
+    var parallaxValue = scrollValue / 3; 
+
+    document.getElementById('FAQprincipal').style.backgroundPositionY = '-' + parallaxValue + 'px';
+});

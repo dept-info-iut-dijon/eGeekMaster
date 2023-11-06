@@ -1,7 +1,7 @@
 <!-- author: Théo Cornu -->
 <div id="contenu">
     <link rel="stylesheet" href="Public/css/footer.css">
-    <link rel="stylesheet" href="Public/css/page_accueil/index.css">
+    <link rel="stylesheet" href="Public/css/page_accueil/index5.css">
 
     <script src="Public/Animation_js/page_accueil/index.js"></script>
 
@@ -78,11 +78,12 @@
         <div id="FAQcontainer">
             <div>
                 <div id="Faq_Pixi" class="relative-container">
-                    <img src="Public/image/page_accueil/FAQ.jpg" alt="FAQ">
+                    <div id='FAQprincipal'></div>
                     <div id="PixiPresentation">
+                        
                         <div class="field">
+                        
                             <fieldset>
-                                <img src="Public/image/page_accueil/Pixy_Helper.png" alt="Pixy_Helper">
                                 <label for="pixi">Pixi</label>
                                 <label for="Statut">Helper Agent</label>
                                 <input type="button" value="Messages">
