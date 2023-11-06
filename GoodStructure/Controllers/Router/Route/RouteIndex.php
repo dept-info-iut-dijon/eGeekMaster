@@ -43,7 +43,7 @@ class RouteIndex extends Route {
     }
     
 
-    public function action($params = [], $method = 'GET') {
+    public function action($params = [], $method = 'POST') {
         return $this->controller->Index();
     }
 }

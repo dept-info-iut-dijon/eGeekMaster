@@ -25,7 +25,7 @@ class MainController {
             
         }
         $indexView->generer($data);
-        header("Location: index.php?action=Index");
+        
     }
 
     /**

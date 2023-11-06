@@ -1,47 +1,34 @@
-<!-- author : Théo Cornu -->
+<!-- author: Théo Cornu -->
 <div id="contenu">
     <link rel="stylesheet" href="Public/css/footer.css">
     <link rel="stylesheet" href="Public/css/page_accueil/index.css">
 
     <script src="Public/Animation_js/page_accueil/index.js"></script>
-    
-    
+
     <div id="Debut">
         <?php if (isset($message)) : ?>
             <p><?= $message ?></p>
         <?php endif; ?>
         <div id="imageDebut">
-
-            
-            
             <div class="imageDuDeb haut"></div>
             <div class="imageDuDeb bas"></div>
             <div class="imageDuDeb haut"></div>
             <div class="imageDuDeb bas"></div>
-                
-            
         </div>
         <h1>
-            Lorem cccccccccccc
+            Welcome to Family'Easy
         </h1>
         <p>
-            Lorem Ipsum dolor sit Lorem Ipsum dolor sit Lorem Ipsum dolor sit Lorem Ipsum dolor sit Lorem Ipsum dolor 
-            sit Lorem Ipsum dolor sit Lorem Ipsum dolor sit Lorem Ipsum dolor sit 
+            Family'Easy is an application dedicated to calculating the monetary and time value of domestic and parental tasks within couples. Our goal is to highlight the unequal distribution of household and parenting work in a household.
         </p>
-
     </div>
-    
+
     <!-- block-->
 
     <div id="SomeChiffre">
         <div id="SomeChiffreTexte">
             <p>
-                Lorem Ipsum dolor sit Lorem Ipsum dolor sit Lorem Ipsum dolor sit Lorem Ipsum dolor sit Lorem Ipsum dolor 
-                sit Lorem Ipsum dolor sit Lorem Ipsum dolor sit Lorem Ipsum dolor sit Lorem Ipsum dolor sit Lorem Ipsum dolor sit Lorem 
-                Ipsum dolor sit Lorem Ipsum dolor sit Lorem Ipsum dolor 
-                sit Lorem Ipsum dolor sit Lorem Ipsum dolor sit Lorem Ipsum dolor sit Lorem Ipsum dolor sit Lorem Ipsum dolor sit Lorem Ipsum dolor sit Lorem
-                Ipsum dolor sit Lorem Ipsum dolor 
-                sit Lorem Ipsum dolor sit Lorem Ipsum dolor sit Lorem Ipsum dolor sit 
+                With Family'Easy, you can track and value your daily household and parenting tasks, bringing awareness to the fairness of these responsibilities.
             </p>
         </div>
         <div class="SmileyChiffre a">
@@ -53,7 +40,7 @@
                     100+
                 </h3>
                 <p>
-                    Lorem Ipsum 
+                    Satisfied Families
                 </p>
             </div>
         </div>
@@ -66,7 +53,7 @@
                     +23k
                 </h3>
                 <p>
-                    Lorem Ipsum 
+                    Downloads
                 </p>
             </div>
         </div>
@@ -79,7 +66,7 @@
                     95%
                 </h3>
                 <p>
-                    Lorem Ipsum 
+                    User Satisfaction
                 </p>
             </div>
         </div>
@@ -90,7 +77,7 @@
     <div id="FAQ">
         <div id="FAQcontainer">
             <div>
-                <div id="Faq_Pixi" class="relative-container"> <!-- Ajoutez une classe pour le positionnement relatif -->
+                <div id="Faq_Pixi" class="relative-container">
                     <img src="Public/image/page_accueil/FAQ.jpg" alt="FAQ">
                     <div id="PixiPresentation">
                         <div class="field">
@@ -100,42 +87,40 @@
                                 <label for="Statut">Helper Agent</label>
                                 <input type="button" value="Messages">
                             </fieldset>
-                    </div>
+                        </div>
                     </div>
                 </div>
             </div>
-    
+
             <div>
                 <h2>
-                    Lorem Ipsum dolor sit Lorem Ipsum dolor sit Lorem Ipsum dolor sit Lorem Ipsum
+                    Meet Pixi - Your Helper Agent
                 </h2>
                 <p>
-                    Lorem Ipsum dolor sit Lorem Ipsum dolor sit Lorem Ipsum dolor sit Lorem Ipsum Lorem Ipsum dolor sit Lorem Ipsum dolor sit Lorem Ipsum dolor sit Lorem Ipsum Lorem Ipsum dolor sit Lorem Ipsum dolor sit Lorem Ipsum dolor sit Lorem Ipsum
-                    Lorem Ipsum dolor sit Lorem Ipsum dolor sit Lorem Ipsum dolor sit Lorem Ipsum
+                    Pixi is here to assist you in managing your household and parenting tasks efficiently. Ask Pixi for guidance and support to make your family life easier.
                 </p>
-                <input id="MAU" type="button" value="More About Us">
+                <input id="MAU" type="button" value="Learn More About Us">
             </div>
         </div>
     </div>
-    
+
     <!-- block-->
 
     <div id="Tuto">
         <h2>
-            Curiculum
+            Getting Started with Family'Easy
         </h2>
         <p>
-            Lorem Ipsum dolor sit Lorem Ipsum dolor sit Lorem Ipsum dolor sit Lorem
+            Discover how to use Family'Easy to improve your family's organization and reduce the workload imbalance.
         </p>
         <video width="320" height="240" controls>
-            <source src="" type="video/mp4">
-            
+            <source src="tutorial_video.mp4" type="video/mp4">
         </video>
     </div>
-        
-    <!-- block-->
 
-    <div id="Publication">
+     <!-- block-->
+
+     <div id="Publication">
         <div id="PubliGauche">
             <h4>
                 What client say
