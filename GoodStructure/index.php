@@ -11,6 +11,7 @@
 require_once 'Controllers/MainController.php';
 require_once 'Controllers/Router/Router.php';
 
+session_start();
 if (isset($_GET['action'] )) {
     ob_clean();
     $router = new Router('action');

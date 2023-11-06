@@ -14,7 +14,7 @@
 
         public function __construct(string $login, string $password)
         {
-            $this->_id = 0;
+            
             $this->_login = $login;
             $this->_hash = $password;
         }
@@ -42,6 +42,11 @@
         // Hash password and set hash
         public function setPassword(string $password) {
             $this->setHash(hash("sha256", $password));
+        }
+
+        // Get the hash password
+        public function getPassword() {
+            return $this->getHash();
         }
 
         // Getter for $_hash

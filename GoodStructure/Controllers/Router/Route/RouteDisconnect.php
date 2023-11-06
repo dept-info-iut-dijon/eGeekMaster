@@ -2,15 +2,15 @@
 require_once 'Controllers/Router/Route.php';
 
 /**
- * Class RouteAddLogin
+ * Class RouteDisconnect
  * @package Controllers\Router\Route
  * @author Théo Cornu
  */
-class RouteAddLogin extends Route {
+class RouteDisconnect extends Route {
     private LoginController $controller;
 
     /**
-     * RouteAddLogin constructor.
+     * RouteDisconnect constructor.
      * @param LoginController $controller
      */
     public function __construct(LoginController $controller) {
@@ -19,28 +19,27 @@ class RouteAddLogin extends Route {
     }
 
     /**
-     * Get method for RouteAddLogin
      * @param array $params
      * @return mixed
      */
     public function get($params = []) {
-        return $this->controller->Add();
+        return $this->controller->Disconnect();
     }
 
     /**
-     * Post method for RouteAddLogin
      * @param array $params
+     * @return mixed
      */
     public function post($params = []) {
+        return $this->controller->Disconnect();
     }
 
     /**
-     * Action method for RouteAddLogin
      * @param array $params
      * @param string $method
      * @return mixed
      */
-    public function action($params = [], $method = 'GET') {
-        return $this->controller->Add();
+    public function action($params = [], $method = 'Get') {
+        return $this->controller->Disconnect();
     }
 }

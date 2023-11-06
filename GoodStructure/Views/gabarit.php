@@ -27,7 +27,7 @@
         <a class="lien-header" href="">
             <div class="icon" id="search"></div>
         </a>
-        <a class="lien-header" href="index.php?action=Connection" > <!-- Ajout de l'attribut onclick -->
+        <a class="lien-header" href="index.php?action=Connection" > 
             <div class="icon" id="user"></div>
         </a>
 </header>
@@ -35,8 +35,15 @@
 <!-- Parti menu déroulant + Flou -->
 <div id="menu">
     <ul>
-        <li><a class="lien-header" href="index.php?action=Connection"  >Login</a></li> <!-- Ajout de l'attribut onclick -->
-        <li><a class="lien-header" href="index.php?action=Registration"  >Register</a></li> 
+        <?php if (isset($_SESSION['login'])) : ?>
+            <li><a class="lien-header" href="index.php?action=Index" >Home</a></li>
+            <li><a class="lien-header" href="index.php?action=Registration"  >Upadte my account</a></li>
+            <li><a class="lien-header" href="index.php?action=Disconnect"  >Disconnect</a></li>
+            <li><a class="lien-header" href="index.php?action=DashBoard">DashBoard</a></li>
+        <?php else : ?>
+            <li><a class="lien-header" href="index.php?action=Connection"  >Login</a></li> 
+            <li><a class="lien-header" href="index.php?action=Registration"  >Register</a></li> 
+        <?php endif; ?>
     </ul>
 </div>
 <div id="menuF"></div>

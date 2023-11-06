@@ -12,6 +12,7 @@ class RegisterController{
     
     private $registerManager;
     private $mainController;
+    private $loginManager;
     private $addView;
 
     /**
@@ -20,6 +21,7 @@ class RegisterController{
     public function __construct() {
         $this->registerManager = new RegisterManager();
         $this->mainController = new MainController();
+        $this->loginManager = new LoginManager();
         $this->addView = new View('Registration');
     }
 
@@ -90,7 +92,7 @@ class RegisterController{
     }
 
     /**
-     * Create a new register.
+     * Create a new register and connect the user.
      */
     private function createRegister() {
         // Create a new register
@@ -100,9 +102,9 @@ class RegisterController{
         $this->registerManager->addRegister($register);
         // Redirect to the main page
         $this->mainController->Index('Welcome among us '.$_POST['Username']);
-        var_dump($register);
-        // Send in the url the id of the new login
-        header('Location: index.php?action=Index&IdLogin=' . $register->getId());
+        // header('Location: index.php?action=Index');
+        // Connect the user
+        $this->loginManager->Connect($_POST['Username'], $_POST['Password']);
     }
 
     /**

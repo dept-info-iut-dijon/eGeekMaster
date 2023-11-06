@@ -27,9 +27,9 @@ class LoginManager extends Model
         $resultat = $this->executerRequete($sql);
         while ($ligne = $resultat->fetch(PDO::FETCH_ASSOC)) {
             $login = [
-                'id' => $ligne['id'],
+                'idLogin' => $ligne['id'],
                 'username' => $ligne['username'],
-                'password' => $ligne['password']
+                'Hash' => $ligne['Hash']
             ];
 
             $logins[] = $login;
@@ -44,7 +44,7 @@ class LoginManager extends Model
      * @author Théo Cornu
      */
     public function getByID(int $id): ?Login {
-        $sql = 'SELECT * FROM login WHERE id = ?';
+        $sql = 'SELECT * FROM login WHERE idLogin = ?';
         $resultat = $this->executerRequete($sql, [$id]);
 
         $ligne = $resultat->fetch();
@@ -52,7 +52,7 @@ class LoginManager extends Model
             $login = new Login(
                 $ligne['id'],
                 $ligne['username'],
-                $ligne['password']
+                $ligne['Hash']
             );
 
             return $login;
@@ -68,7 +68,7 @@ class LoginManager extends Model
      * @author Théo Cornu
      */
     public function DeleteByID(int $id) : void {
-        $sql = 'DELETE FROM login WHERE id = ?';
+        $sql = 'DELETE FROM login WHERE idLogin = ?';
         $this->executerRequete($sql, [$id]);
     }
 
@@ -79,7 +79,7 @@ class LoginManager extends Model
      * @param string $password
      */
     public function UpdateById(int $id, string $username, string $password) : void {
-        $sql = 'UPDATE login SET username = ?, password = ? WHERE id = ?';
+        $sql = 'UPDATE login SET username = ?, Hash = ? WHERE idLogin = ?';
         $this->executerRequete($sql,[$username, $password, $id]);
     }
 
@@ -95,4 +95,46 @@ class LoginManager extends Model
         $this->executerRequete($sql, [$username, $login->getHash()]);
         return $login;
     }
+
+    /**
+     * Connect a login by its username and password
+     * @param string $username
+     * @param string $password
+     * @return void
+     */
+    public function Connect(string $username, string $password) : void {
+        try {
+            $sql = 'SELECT * FROM login WHERE username = ?';
+            $resultat = $this->executerRequete($sql, [$username]);
+
+            $ligne = $resultat->fetch();
+            if ($ligne !== false) {
+                $login = new Login(
+                    $ligne['username'],
+                    $ligne['Hash']
+                );
+                var_dump($login->getPassword(), $login->getHash($password));
+                if($login->getPassword() == $login->getHash($password)) {
+                    
+                    $_SESSION["login"] = $login;
+                }
+            }
+        } catch (PDOException $e) {
+            // In case of an error, redirect to the error page with a message
+            $errorMessage = "An error occurred while connecting the Login.";
+            header("Location: index.php?action=Connection&errorMessage=".urlencode($errorMessage));
+            exit();
+        }
+    }
+
+    /**
+     * Disconnect a login
+     * @return void
+     */
+    public function Disconnect() : void {
+        session_destroy();
+        header("Location: ".$_SERVER['PHP_SELF']);
+    }
+    
+    
 }

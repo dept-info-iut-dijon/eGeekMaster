@@ -164,6 +164,8 @@ class RegisterManager extends Model
                 ':value7' => $value7
             ]);
 
+            header("Refresh : 1, Location: index.php?action=Index");
+
         } catch (PDOException $e) {
             // In case of an error, redirect to the error page with a message
             $errorMessage = "An error occurred while adding the Register.";

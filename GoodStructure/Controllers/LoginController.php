@@ -55,4 +55,34 @@ class LoginController{
 
         $mainController->Index("Login modifié");
     }
+
+    /**
+     * Allows to connect a Login by ID
+     * @param int $id The ID of the Login to connect
+     * @return void
+     * @throws Exception If the Login could not be connected
+     */
+    public function Connect() {
+        $loginManager = new LoginManager();
+        $mainController = new MainController();
+
+        $loginManager->Connect($_POST["Username"], $_POST["Password"]);
+
+        $mainController->Index("Login connecté");
+    }
+
+    /**
+     * Allows to disconnect a Login
+     * @param int $id The ID of the Login to disconnect
+     * @return void
+     * @throws Exception If the Login could not be disconnected
+     */
+    public function Disconnect() {
+        $loginManager = new LoginManager();
+        $mainController = new MainController();
+
+        $loginManager->Disconnect();
+
+        $mainController->Index("Login déconnecté");
+    }
 }
