@@ -113,7 +113,6 @@ class LoginManager extends Model
                     $ligne['username'],
                     $ligne['Hash']
                 );
-                var_dump($login->getPassword(), $login->getHash($password));
                 if($login->getPassword() == $login->getHash($password)) {
                     
                     $_SESSION["login"] = $login;

@@ -18,7 +18,7 @@ class MainController {
         $indexView = new View("Index");
         
         $data = array(
-            
+            "action" => "action=Index"
         );
         if ($message !== null) {
             $data["message"] = $message;
