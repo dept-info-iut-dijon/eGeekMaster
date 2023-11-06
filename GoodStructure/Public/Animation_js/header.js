@@ -1,3 +1,8 @@
+
+/**
+ * @author Théo Cornu
+ * @author Théo Deguin
+*/
 function Sidebar() {
     // Get references to the menu button, menu, and the menu overlay
     const menuButton = document.getElementById("bars");

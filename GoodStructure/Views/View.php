@@ -1,17 +1,26 @@
 <?php
 
-
 class View {
     private $fichier;
     private $titre;
 
+    /**
+     * View constructor.
+     * @param string $action
+     * @author Théo Cornu
+     */
     public function __construct(string $action) {
         // Détermination du nom du fichier vue à partir de l'action
         $this->fichier = "views/vue" . $action . ".php";
         $this->titre = $action;
     }
 
-    // Génère et affiche la vue
+    /**
+     * Génère et affiche la vue
+     * @param array $donnees
+     * @throws Exception
+     * @author Théo Cornu
+     */
     public function generer(array $donnees) {
         // Génération de la partie spécifique de la vue
         $contenu = $this->genererFichier($this->fichier, $donnees);
@@ -22,7 +31,14 @@ class View {
         echo $vue;
     }
 
-    // Génère un fichier vue et renvoie le résultat produit
+    /**
+     * Génère un fichier vue et renvoie le résultat produit
+     * @param string $fichier
+     * @param array $donnees
+     * @return false|string
+     * @throws Exception
+     * @author Théo Cornu
+     */
     private function genererFichier(string $fichier, array $donnees) {
         if (file_exists($fichier)) {
             // Rend les éléments du tableau $donnees accessibles dans la vue

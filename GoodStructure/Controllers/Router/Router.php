@@ -1,4 +1,9 @@
 <?php
+/**
+ * Router class that handles routing of HTTP requests to appropriate controllers and actions.
+ *
+ * @author Théo Cornu
+ */
 foreach (glob("Controllers/*.php") as $filename) {
     require_once $filename;
 };
@@ -9,10 +14,26 @@ foreach (glob("Controllers/Router/Route/*.php") as $filename) {
 
 
 class Router {
+    /**
+     * @var array List of routes.
+     */
     private array $routeList = [];
+
+    /**
+     * @var array List of controllers.
+     */
     private array $ctrlList = [];
+
+    /**
+     * @var string Name of the action key in the GET data.
+     */
     private string $action_key;
 
+    /**
+     * Constructor for the Router class.
+     *
+     * @param string $name_of_action_key Name of the action key in the GET data.
+     */
     public function __construct($name_of_action_key = "action") {
         // Set the action key
         $this->action_key = $name_of_action_key;
@@ -22,6 +43,9 @@ class Router {
         $this->createRouteList();
     }
 
+    /**
+     * Creates the list of controllers.
+     */
     public function createControllerList() {
         // Create the controller list
         $this->ctrlList = ['MainController' => new MainController(), 
@@ -29,6 +53,9 @@ class Router {
         'RegisterController' => new RegisterController()];
     }
 
+    /**
+     * Creates the list of routes.
+     */
     public function createRouteList() {
         // Create the route list
         $this->routeList = ["Index" => new RouteIndex($this->ctrlList["MainController"]),
@@ -42,6 +69,14 @@ class Router {
         "EditRegister" => new RouteEditRegister($this->ctrlList["RegisterController"])];
     }
 
+    /**
+     * Routes the HTTP request to the appropriate controller and action.
+     *
+     * @param array $get The GET data of the HTTP request.
+     * @param array $post The POST data of the HTTP request.
+     *
+     * @throws Exception If no route is found for the action in the GET data.
+     */
     public function routing($get, $post) {
         // Check if the action key is present in the GET data
         if (isset($get[$this->action_key])) {

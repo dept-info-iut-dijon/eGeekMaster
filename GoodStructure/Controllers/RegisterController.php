@@ -1,5 +1,9 @@
-<?php 
-//ce fichier gère tout ce qui traite des Register(inscription) directement.
+<?php
+/**
+ * This file manages everything related to Register (registration) directly.
+ * @author Théo Cornu
+ */
+
 require_once 'views/View.php';
 require_once 'models/RegisterManager.php';
 require_once 'Controllers/MainController.php';
@@ -10,18 +14,24 @@ class RegisterController{
     private $mainController;
     private $addView;
 
+    /**
+     * RegisterController constructor.
+     */
     public function __construct() {
         $this->registerManager = new RegisterManager();
         $this->mainController = new MainController();
         $this->addView = new View('Registration');
     }
 
+    /**
+     * Add a new register or update an existing one.
+     */
     public function Add() {
         // Check if the request method is POST
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Determine whether to update or create a register
             if (isset($_GET['IdRegister'])) {
-                $this->updateRegister();
+                $this->UpdateRegister();
             } else {
                 $this->createRegister();
             }
@@ -33,6 +43,9 @@ class RegisterController{
         }
     }
 
+    /**
+     * Delete a register.
+     */
     public function Delete() {
         // Delete a register
         $this->registerManager->DeleteByID($_POST["idRegister"]);
@@ -40,6 +53,10 @@ class RegisterController{
         $this->mainController->Index("Register supprimé");
     }
 
+    /**
+     * Convert family place to string.
+     * @return string
+     */
     public function FamilyPlaceToString(){
         $familyPlace = "";
         $tempConcat = ", ";
@@ -58,7 +75,10 @@ class RegisterController{
         return $familyPlace;
     }
 
-    private function updateRegister() {
+    /**
+     * Update an existing register.
+     */
+    public function UpdateRegister() {
         // Retrieve the register to update
         $updateRegister = $this->registerManager->GetByID(intval($_GET['IdRegister']));
         $this->populateRegister($updateRegister);
@@ -69,6 +89,9 @@ class RegisterController{
         var_dump($updateRegister);
     }
 
+    /**
+     * Create a new register.
+     */
     private function createRegister() {
         // Create a new register
         $register = new Register();
@@ -82,6 +105,10 @@ class RegisterController{
         header('Location: index.php?action=Index&IdLogin=' . $register->getId());
     }
 
+    /**
+     * Set the properties of the Register object.
+     * @param Register $register
+     */
     private function populateRegister(Register $register) {
         // Set the properties of the Register object
         $register->setPassword($_POST['Password']);

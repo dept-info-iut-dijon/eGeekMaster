@@ -1,3 +1,4 @@
+<!-- author : Théo Cornu -->
 <div id="contenu">
     <link rel="stylesheet" href="Public/css/footer.css">
     <link rel="stylesheet" href="Public/css/page_accueil/index.css">

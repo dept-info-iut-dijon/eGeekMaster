@@ -1,4 +1,12 @@
+
+/* 
+ * Auteur: Théo Cornu et Enzo 
+ */
+
+
 body{
+    display: flex;
+    flex-direction: column;
     background-image: url(../image/page_accueil/unsplash_kYh-O1Jk7EE.png);
     font-family: 'Comic sans ms', sans-serif;
     background-repeat: no-repeat;
@@ -242,4 +250,22 @@ fieldset{
     #password{
         width: 88%;
     }
+}
+
+
+
+/* message d'erreur */
+#erreur{
+    color: red;
+    text-align: center;
+    font-size: 20px;
+    margin-top: 2%;
+}
+
+#fond-erreur{
+    background-color: #E0EEF1;
+    width: 50%;
+    padding: 1%;
+    border-radius: 8px;
+    margin: 2% auto;
 }

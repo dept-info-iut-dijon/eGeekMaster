@@ -1,3 +1,5 @@
+<!-- author: Théo Cornu
+author: Théo Deguin -->
 <div id="page">
     <link rel="stylesheet" href="Public/css/connection.css">
     <div id="familyGlobal">

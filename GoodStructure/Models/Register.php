@@ -1,4 +1,10 @@
 <?php
+    /**
+     * Class Register
+     *
+     * @author Théo Cornu
+     * @author Nicolas
+     */
     class Register
     {
         private $_idUsers;

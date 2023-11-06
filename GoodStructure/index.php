@@ -1,4 +1,13 @@
+
 <?php
+/**
+ * This file is the entry point of the application.
+ * It requires Router classes.
+ * If an action is set in the GET parameters, it uses the Router to route the request.
+ * Otherwise, it sets the action to 'Index' and routes the request.
+ * 
+ * @author Théo Cornu
+ */
 require_once 'Controllers/MainController.php';
 require_once 'Controllers/Router/Router.php';
 
@@ -7,8 +16,9 @@ if (isset($_GET['action'] )) {
     $router = new Router('action');
     $router->routing($_GET, $_POST);
 } else {
-    $mainController = new MainController();
-    $mainController->index();
+    $_GET['action'] = 'Index';
+    $router = new Router('action');
+    $router->routing($_GET, $_POST);
 }
 
 
@@ -16,6 +26,4 @@ if (isset($_GET['action'] )) {
 /* <a href="index.php?action=EditPokemon&IdPokemon=<?= $pokemon->getIdPokemon() ?>"><button type="submit" name="update">Modifier</button></a>
                     
 <a href="index.php?action=DeletePokemon&IdPokemon=<?= $pokemon->getIdPokemon() ?>"><button type="submit" name="supr">Supprimer</button></a>
-*/                    
-
-
+*/

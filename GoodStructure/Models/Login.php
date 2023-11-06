@@ -1,5 +1,11 @@
 <?php
 
+    /**
+     * Class Register
+     *
+     * @author Théo Cornu
+     * @author Nicolas
+     */
     class Login
     {
         private $_id;

@@ -1,13 +1,19 @@
 <?php
-//ce fichier gère tout ce qui traite des Login(connection) directement.
+/**
+ * This file manages everything related to Login (connection) directly.
+ * @author Théo Cornu
+ */
+
 require_once 'views/View.php';
 require_once 'models/LoginManager.php';
 require_once 'Controllers/MainController.php';
 
-
 class LoginController{
 
-    //Permet d'ajouter un Login
+    /**
+     * Allows to add a Login
+     * @author Théo Cornu
+     */
     public function Add() {
         $loginManager = new LoginManager();
         $mainController = new MainController();
@@ -18,6 +24,10 @@ class LoginController{
         $mainController->Index("Login ajouté");
     }
 
+    /**
+     * Allows to delete a Login by ID
+     * @author Théo Cornu
+     */
     public function Delete() {
         $loginManager = new LoginManager();
         $mainController = new MainController();
@@ -27,6 +37,16 @@ class LoginController{
         $mainController->Index("Login supprimé");
     }
 
+    /**
+     * Allows to edit a Login by ID
+     * @param int $id The ID of the Login to edit
+     * @param string $username The new username
+     * @param string $password The new password
+     * @return void
+     * @throws Exception If the Login ID is invalid
+     * @throws Exception If the Login could not be updated
+     * @author Théo Cornu
+     */
     public function Edit() {
         $loginManager = new LoginManager();
         $mainController = new MainController();
@@ -35,9 +55,4 @@ class LoginController{
 
         $mainController->Index("Login modifié");
     }
-
-    
-
-    
 }
-
