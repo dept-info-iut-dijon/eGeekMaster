@@ -1,1 +1,2 @@
 # eGeekMaster
+Famil'Easy est une application visant à calculer la valeur monétaire et temporelle des tâches domestiques et parentales au sein des couples. Elle a pour objectif de faire réaliser l'inégale répartition du travail domestique et parental dans un foyer. 
