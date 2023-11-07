@@ -104,7 +104,7 @@ class LoginManager extends Model
      */
     public function Connect(string $username, string $password) : void {
         try {
-            $sql = 'SELECT * FROM login WHERE username = ?';
+            $sql = 'SELECT * ROM login WHERE username = ?';
             $resultat = $this->executerRequete($sql, [$username]);
 
             $ligne = $resultat->fetch();
@@ -114,15 +114,9 @@ class LoginManager extends Model
                     $ligne['Hash']
                 );
                 if($login->getPassword() == $login->getHash($password)) {
-                    
                     $_SESSION["IdLogin"] = $ligne['idLogin'];
-                }  
-                elseif (!isset($_SESSION["IdLogin"])) {
-                    catch(PDOException $e){
-                    // In case of an error, redirect to the error page with a message
-                    $errorMessage = "An error occurred while connecting the Login.";
-                    header("Location: index.php?action=Connection&errorMessage=".urlencode($errorMessage));
-                    }
+                } elseif (!isset($_SESSION["IdLogin"])) {
+                    throw new PDOException("La variable de session IdLogin n'est pas définie.");
                 }
             }
         } catch (PDOException $e) {
