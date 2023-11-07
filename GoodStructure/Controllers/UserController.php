@@ -14,6 +14,7 @@ class UserController{
     private $mainController;
     private $loginManager;
     private $registrationView;
+    private $dashboardView;
 
     /**
      * UserController constructor.
@@ -23,7 +24,8 @@ class UserController{
         $this->mainController = new MainController();
         $this->loginManager = new LoginManager();
         $this->registrationView = new View('Registration');
-        $this
+        $this->dashboardView = new View('Dashboard');
+
     }
 
     /**
@@ -83,7 +85,7 @@ class UserController{
      */
     public function UpdateUser() {
         // Retrieve the User to update
-        $updateUser = $this->UserManager->GetByID(intval($_GET['IdLogin']));
+        $updateUser = $this->UserManager->GetByLoginID(intval($_GET['IdLogin']));
         $this->populateUser($updateUser);
         // Update the User
         $this->UserManager->UpdateUser($updateUser);
@@ -131,9 +133,9 @@ class UserController{
      */
     public function InfoDashBoard() {
         // Retrieve the user
-        $user = $this->UserManager->GetByID($_SESSION['IdLogin']);
+        $user = $this->UserManager->GetByLoginID(intval($_SESSION['IdLogin']));
         // Display the dashboard
-        $this->registrationView->generer(['user' => $user]);
+        $this->dashboardView->generer(['user' => $user]);
     }
         
 }
