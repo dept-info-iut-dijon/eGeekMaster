@@ -9,6 +9,7 @@
     <title><?= $titre ?></title>
     <link rel="stylesheet" href="Public/css/header.css"/>
     <link rel="stylesheet" href="Public/css/footer.css"/>
+    <link rel="stylesheet" href="Public/css/erreur.css"/>
     <script src="Public/Animation_js/header.js"></script>
 </head>
 

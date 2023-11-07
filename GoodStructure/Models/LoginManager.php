@@ -106,25 +106,32 @@ class LoginManager extends Model
         try {
             $sql = 'SELECT * ROM login WHERE username = ?';
             $resultat = $this->executerRequete($sql, [$username]);
-
+            var_dump($resultat);
             $ligne = $resultat->fetch();
             if ($ligne !== false) {
                 $login = new Login(
                     $ligne['username'],
                     $ligne['Hash']
+                    
                 );
+                
                 if($login->getPassword() == $login->getHash($password)) {
                     $_SESSION["IdLogin"] = $ligne['idLogin'];
-                } elseif (!isset($_SESSION["IdLogin"])) {
-                    throw new PDOException("La variable de session IdLogin n'est pas définie.");
+                } else {
+                    throw new PDOException("IdLogin not definied.");
                 }
             }
         } catch (PDOException $e) {
             // In case of an error, redirect to the error page with a message
-            $errorMessage = "An error occurred while connecting the Login.";
+            if (strpos($e->getMessage(), "IdLogin not definied.") !== false) {
+                $errorMessage = "The session variable IdLogin is not defined.";
+            } else {
+                $errorMessage = "An error occurred while connecting the Login.";
+            }
             header("Location: index.php?action=Connection&errorMessage=".urlencode($errorMessage));
             exit();
         }
+    
     }
 
     /**

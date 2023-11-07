@@ -58,7 +58,6 @@ class LoginController{
 
     /**
      * Allows to connect a Login by ID
-     * @param int $id The ID of the Login to connect
      * @return void
      * @throws Exception If the Login could not be connected
      */

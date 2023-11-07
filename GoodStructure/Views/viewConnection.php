@@ -2,6 +2,7 @@
 author: Théo Deguin -->
 <div id="page">
     <link rel="stylesheet" href="Public/css/connection.css">
+    
     <div id="familyGlobal">
         <img id="family" src="Public/image/page_connection/image_connection.png" alt="">
     </div>
@@ -10,6 +11,11 @@ author: Théo Deguin -->
             <img id="logo" src="Public/image/page_connection/logo_soupape2.png" alt="">
         </div>
         <div id="rightPart">
+            <?php if (isset($_GET['errorMessage'])) : ?>
+                <div id="fond-erreur">
+                    <p id="erreur"><?= $_GET['errorMessage']?></p>
+                </div>
+            <?php endif; ?>
             <div>
                 <h1>LOG IN</h1>
                 <p>Log to your account to access your workspace</p>
