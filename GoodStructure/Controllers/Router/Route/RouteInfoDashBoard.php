@@ -1,18 +1,17 @@
 <?php
-require_once 'Controllers/Router/Route.php';
-
 /**
- * Represents a route for editing a User.
- *
- * @author Théo Cornu
+ * Représente une route pour afficher le tableau de bord de l'utilisateur.
+ * Hérite de la classe Route.
+ * 
+ * @package Controllers\Router\Route
  */
 class RouteInfoDashBoard extends Route {
     private UserController $controller;
 
     /**
-     * Initializes a new instance of the RouteInfoDashBoard class.
+     * Initialise une nouvelle instance de la classe RouteInfoDashBoard.
      *
-     * @param UserController $controller The User controller.
+     * @param UserController $controller Le contrôleur d'utilisateur.
      */
     public function __construct(UserController $controller) {
         parent::__construct();
@@ -20,33 +19,33 @@ class RouteInfoDashBoard extends Route {
     }
 
     /**
-     * Handles GET requests for the route.
+     * Gère les requêtes GET pour la route.
      *
-     * @param array $params The route parameters.
-     * @return mixed The result of the update operation.
+     * @param array $params Les paramètres de la route.
+     * @return mixed Le résultat de l'opération d'affichage.
      */
     public function get($params = []) {
-        return $this->controller->Add();
+        return $this->controller->InfoDashBoard();
     }
 
     /**
-     * Handles POST requests for the route.
+     * Gère les requêtes POST pour la route.
      *
-     * @param array $params The route parameters.
-     * @return mixed The result of the update operation.
+     * @param array $params Les paramètres de la route.
+     * @return mixed Le résultat de l'opération d'affichage.
      */
     public function post($params = []) {
-        return $this->controller->Add();
+        return $this->controller->InfoDashBoard();
     }
 
     /**
-     * Handles requests for the route.
+     * Gère les requêtes pour la route.
      *
-     * @param array $params The route parameters.
-     * @param string $method The request method.
-     * @return mixed The result of the update operation.
+     * @param array $params Les paramètres de la route.
+     * @param string $method La méthode de la requête.
+     * @return mixed Le résultat de l'opération d'affichage.
      */
     public function action($params = [], $method = 'POST') {
-        return $this->controller->Add();
+        return $this->controller->InfoDashBoard();
     }
 }
