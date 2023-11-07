@@ -6,11 +6,9 @@
     <script src="Public/Animation_js/page_accueil/index.js"></script>
 
     <div id="Debut">
-        <?php if (isset($message) || isset($_GET['message'])) : ?>
-            <?php if (isset($_GET['message'])) : ?>
-                <?php $message = $_GET['message'] ?>
-            <?php endif; ?>
+        <?php if (isset($message)) : ?>
             
+
             <p><?= $message ?></p>
         <?php endif; ?>
         <div id="imageDebut">

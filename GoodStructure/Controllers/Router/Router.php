@@ -59,6 +59,7 @@ class Router {
     public function createRouteList() {
         // Create the route list
         $this->routeList = ["Index" => new RouteIndex($this->ctrlList["MainController"]),
+        "DashBoard" => new RouteDashBoard($this->ctrlList["MainController"]),
         "Search" => new RouteSearch($this->ctrlList["MainController"]),
         "Connection" => new RouteConnection($this->ctrlList["MainController"]),
         "Registration" => new RouteRegistration($this->ctrlList["MainController"]),
