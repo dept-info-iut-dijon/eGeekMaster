@@ -7,5 +7,12 @@
             <option value="member3">Family member n°3</option>
             <option value="member4">Family member n°4</option>
             <option value="member5">Family member n°5</option>
-          </select>
+        </select>
+        <button type="button">Register a new task</button>
+    </div>
+    <div>
+        <h1>Répartition des tâches</h1>
+    </div>
+    <div>
+        <h1>Durée moyenne pour chaque tâches</h1>
     </div>
