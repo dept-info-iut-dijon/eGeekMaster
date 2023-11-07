@@ -1,3 +1,7 @@
+/**
+ * @author Enzo
+*/
+
 // Variable to keep track of whether the checkboxes are expanded or not
 var expanded = false;
 
