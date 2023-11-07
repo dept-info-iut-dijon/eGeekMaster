@@ -1,12 +1,16 @@
 <!-- author: Théo Cornu -->
 <div id="contenu">
     <link rel="stylesheet" href="Public/css/footer.css">
-    <link rel="stylesheet" href="Public/css/page_accueil/index7.css">
+    <link rel="stylesheet" href="Public/css/page_accueil/index8.css">
 
     <script src="Public/Animation_js/page_accueil/index.js"></script>
 
     <div id="Debut">
-        <?php if (isset($message)) : ?>
+        <?php if (isset($message) || isset($_GET['message'])) : ?>
+            <?php if (isset($_GET['message'])) : ?>
+                <?php $message = $_GET['message'] ?>
+            <?php endif; ?>
+            
             <p><?= $message ?></p>
         <?php endif; ?>
         <div id="imageDebut">

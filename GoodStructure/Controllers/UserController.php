@@ -100,11 +100,13 @@ class UserController{
         $this->populateUser($User);
         // Add the new User
         $this->UserManager->addUser($User);
-        // Redirect to the main page
-        $this->mainController->Index('Welcome among us '.$_POST['Username']);
+        
         // header('Location: index.php?action=Index');
         // Connect the user
         $this->loginManager->Connect($_POST['Username'], $_POST['Password']);
+
+        // Redirect to the main page
+        $this->mainController->Index('Welcome among us '.$_POST['Username']);
     }
 
     /**

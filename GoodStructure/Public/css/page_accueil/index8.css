@@ -210,12 +210,16 @@ body {
 #FAQprincipal {
     
     border-radius: 30px;
+    /* width: 20%;
+    height: 80%; */
     width: 50vw;
-    height: 70vh;
+    height: 800px;
     background-attachment: fixed;
     background-image: url(../../image/page_accueil/FAQ.jpg);
-    background-size: contain;
+    background-size: cover;
+    
     background-position: center;
+    background-position-x: 60px;
     
       
 }

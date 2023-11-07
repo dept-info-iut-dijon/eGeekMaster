@@ -104,9 +104,9 @@ class LoginManager extends Model
      */
     public function Connect(string $username, string $password) : void {
         try {
-            $sql = 'SELECT * ROM login WHERE username = ?';
+            $sql = 'SELECT * FROM login WHERE username = ?';
             $resultat = $this->executerRequete($sql, [$username]);
-            var_dump($resultat);
+            
             $ligne = $resultat->fetch();
             if ($ligne !== false) {
                 $login = new Login(
