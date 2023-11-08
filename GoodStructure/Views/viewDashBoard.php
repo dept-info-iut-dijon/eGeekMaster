@@ -12,11 +12,12 @@
     <div id="titreDashboard">
         <div id="piechart">
             <h1>Tasks distribution</h1>
-            <canvas id="myChart"></canvas>
+            <canvas id="cv"></canvas>
         </div>
         <div id="separator"></div>
         <div id="barchart">
             <h1>Average duration for each task</h1>
+            <canvas id="coucou"></canvas>
         </div>
     </div>
 </div>
@@ -24,15 +25,15 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
-  const ctx = document.getElementById('myChart');
+  const ctx = document.getElementById('cv');
 
   new Chart(ctx, {
-    type: 'bar',
+    type: 'doughnut',
     data: {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange', 'prout'],
+      labels: ["A", "B"],
       datasets: [{
         label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3, 50],
+        data: [20, 30],
         borderWidth: 1
       }]
     },
@@ -44,4 +45,28 @@
       }
     }
   });
+</script>
+
+<script>
+    
+  const ctx = document.getElementById('coucou');
+
+    new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["A", "B"],
+        datasets: [{
+        label: '# of Votes',
+        data: [20, 30],
+        borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+        y: {
+            beginAtZero: true
+        }
+        }
+    }
+    });
 </script>
