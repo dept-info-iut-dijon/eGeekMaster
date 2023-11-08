@@ -132,6 +132,7 @@ fieldset{
 
 #cancel{
     background-color: white;
+    float: left;
 }
 
 /*SUBMIT*/
@@ -141,5 +142,6 @@ fieldset{
 
 #submit{
     background-color: white;
+    float: left;
 }
 

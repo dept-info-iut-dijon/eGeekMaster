@@ -57,7 +57,7 @@
                             </div>
                         </div>
                         <div>
-                            <input type="date" id="custom-date-input">
+                            <input type="date" class="custom-date-input">
                         </div>
                     </div> 
 
