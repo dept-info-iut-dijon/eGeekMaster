@@ -1,6 +1,6 @@
-body{
+#body{
     font-family: "Comic Sans MS", sans-serif;
-    background-color: #e0eef1;
+    background-color: white;
 }
 
 #divBoutonTache{
@@ -28,7 +28,7 @@ body{
 }
 
 #piechart{
-    background-color: #81acb5;
+    background-color: #e0eef1;
     padding: 20px;
     margin: 20px;
     margin-right: 10%;
@@ -37,11 +37,11 @@ body{
 #separator{
     width: 7px;
     height: 500px;
-    background-color: #81acb5;
+    background-color: #e0eef1;
     display: inline-block;
 }
 #barchart{
-    background-color: #81acb5;
+    background-color: #e0eef1;
     padding: 20px;
     margin: 20px;
     margin-left: 10%;
