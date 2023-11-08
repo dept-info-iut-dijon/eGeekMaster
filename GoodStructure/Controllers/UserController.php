@@ -13,7 +13,8 @@ class UserController{
     private $UserManager;
     private $mainController;
     private $loginManager;
-    private $addView;
+    private $registrationView;
+    private $dashboardView;
 
     /**
      * UserController constructor.
@@ -22,7 +23,9 @@ class UserController{
         $this->UserManager = new UserManager();
         $this->mainController = new MainController();
         $this->loginManager = new LoginManager();
-        $this->addView = new View('Registration');
+        $this->registrationView = new View('Registration');
+        $this->dashboardView = new View('Dashboard');
+
     }
 
     /**
@@ -41,7 +44,7 @@ class UserController{
             // Check if there is an error message to display
             $errorMessage = isset($_GET['errorMessage']) ? $_GET['errorMessage'] : null;
             // Display the registration form with the error message
-            $this->addView->generer(['errorMessage' => $errorMessage]);
+            $this->registrationView->generer(['errorMessage' => $errorMessage]);
         }
     }
 
@@ -82,7 +85,7 @@ class UserController{
      */
     public function UpdateUser() {
         // Retrieve the User to update
-        $updateUser = $this->UserManager->GetByID(intval($_GET['IdLogin']));
+        $updateUser = $this->UserManager->GetByLoginID(intval($_GET['IdLogin']));
         $this->populateUser($updateUser);
         // Update the User
         $this->UserManager->UpdateUser($updateUser);
@@ -124,4 +127,15 @@ class UserController{
         $User->setBirthDate($_POST['YearOfBirth'] . "-" . $_POST['MonthOfBirth'] . "-" . $_POST['DayOfBirth']);
         $User->setLogin($_POST['Username']);
     }
+
+    /**
+     * Display the dashboard of the user.
+     */
+    public function InfoDashBoard() {
+        // Retrieve the user
+        $user = $this->UserManager->GetByLoginID(intval($_SESSION['IdLogin']));
+        // Display the dashboard
+        $this->dashboardView->generer(['user' => $user]);
+    }
+        
 }

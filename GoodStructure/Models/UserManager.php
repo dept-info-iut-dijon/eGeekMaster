@@ -49,16 +49,16 @@ class UserManager extends Model
     }
 
     /**
-     * Retrieve a specific User by its ID from the database.
+     * Retrieve a specific User by its LoginID from the database.
      *
-     * @param int $id The ID of the User to retrieve.
+     * @param int $id The LoginID of the User to retrieve.
      * @return User|null The User object, or null if not found.
      * @author Théo Cornu
      */
-    public function GetByID(int $id): ?User
+    public function GetByLoginID(int $id): ?User
     {
         try {
-            $sql = 'SELECT * FROM users WHERE idUsers = ?';
+            $sql = 'SELECT * FROM users WHERE LoginidLogin = ?';
             $result = $this->executerRequete($sql, [$id]);
             $line = $result->fetch();
             if ($line !== false) {

@@ -63,4 +63,16 @@ class MainController {
         );
         $registrationView->generer($data);
     }
+
+    /**
+     * Displays the dashboard page.
+     */
+    public function DashBoard() {
+    
+        $dashBoardView = new View("DashBoard");
+        $data = array(
+            //ajouter les données à afficher
+        );
+        $dashBoardView->generer($data);
+    }
 }
