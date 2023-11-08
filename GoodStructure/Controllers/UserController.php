@@ -7,12 +7,15 @@
 require_once 'views/View.php';
 require_once 'models/UserManager.php';
 require_once 'Controllers/MainController.php';
+require_once 'models/LoginManager.php';
+require_once 'models/DashBoardManager.php';
 
 class UserController{
     
     private $UserManager;
     private $mainController;
     private $loginManager;
+    private $dashboardController;
     private $registrationView;
     private $dashboardView;
 
@@ -23,6 +26,7 @@ class UserController{
         $this->UserManager = new UserManager();
         $this->mainController = new MainController();
         $this->loginManager = new LoginManager();
+        $this->dashboardController = new DashBoardController();
         $this->registrationView = new View('Registration');
         $this->dashboardView = new View('Dashboard');
 
@@ -62,7 +66,7 @@ class UserController{
      * Convert family place to string.
      * @return string
      */
-    public function FamilyPlaceToString(){
+    private function FamilyPlaceToString(){
         $familyPlace = "";
         $tempConcat = ", ";
         $fieldsToCheck = [
@@ -129,13 +133,14 @@ class UserController{
     }
 
     /**
-     * Display the dashboard of the user.
+     * Get the User's dashboard.
      */
     public function InfoDashBoard() {
-        // Retrieve the user
+        // Retrieve the User
         $user = $this->UserManager->GetByLoginID(intval($_SESSION['IdLogin']));
-        // Display the dashboard
-        $this->dashboardView->generer(['user' => $user]);
+        // Retrieve the User's dashboard
+        $this->dashboardConroller->GetUser($user);
+        
     }
         
 }

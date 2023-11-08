@@ -1,6 +1,7 @@
 <?php
 require_once 'Model.php';
 require_once 'DashBoard.php';
+require_once 'TaskManager.php';
 
 /**
  * Class DashBoardManager
