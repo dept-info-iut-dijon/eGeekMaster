@@ -8,17 +8,16 @@
                 </div>
         </div>
 
-        <!-- Titre des graphiques -->
+        <!-- Graphiques -->
         <div id="titreDashboard">
-                <div id="piechart">
-                        <h1>Tasks distribution</h1>
-                        <canvas id="cv"></canvas>
-                </div>
-                <div id="separator"></div>
-                <div id="barchart">
-                        <h1>Average duration for each task</h1>
-                        <canvas id="coucou"></canvas>
-                </div>
+            <div id="piechart">
+                <h1>Tasks distribution</h1>
+                <canvas id="cv"></canvas>
+            </div>
+            <div id="barchart">
+                <h1>Average duration for each task</h1>
+                <canvas id="coucou"></canvas>
+            </div>
         </div>
 </div>
 

@@ -8,7 +8,7 @@
            "type": "shell",
             "command":"MicrosoftEdge",
            "args": [
-                "http://localhost/eGeekMasterXamp/GoodStructure/${fileBasename}"
+                "http://localhost/eGeekMaster/GoodStructure/${fileBasename}"
             
             ],
             "group": {
