@@ -56,7 +56,7 @@
 </main>
 
 
-
+<!-- author : Lola -->
 <footer>
     <div class="footer-inner">
         <div class="footer-logo">
