@@ -134,10 +134,10 @@ fieldset{
 #placeFamily{
     background-color: #E0EEF1;
 } 
-.selectBox {
+#selectBox {
     position: relative;
 } 
-.selectBox select {
+#selectBox select {
     width: 100%;
     font-weight: bold;
 }  

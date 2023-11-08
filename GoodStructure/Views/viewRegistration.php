@@ -4,7 +4,7 @@
 -->
 
 <script src="Public/Animation_js/inscription.js"></script>
-<link href="Public/css/inscription1.css" rel="stylesheet">
+<link href="Public/css/inscription2.css" rel="stylesheet">
 <!--LOGO-->
 <div id="logo_global">
     <img src="Public/image/page_connection/logo_soupape2.png" alt="logo" id="logo">
@@ -103,7 +103,7 @@
                     <!--FAMILY PLACE-->
                     <div>
                         <label for="selectPlaceFamily">What's your place in the family ?</label>
-                        <div class="selectBox" onclick="showCheckboxes()">
+                        <div id="selectBox" onclick="showCheckboxes()">
                             <select id="select" name="selectPlaceFamily">
                                 <option>Select your place</option>
                             </select>
