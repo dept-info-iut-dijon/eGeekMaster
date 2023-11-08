@@ -1,6 +1,8 @@
 #body{
+    display: flex;
+    flex-direction: column;
     font-family: "Comic Sans MS", sans-serif;
-    background-color: white;
+    background-color: #e0eef1;
 }
 
 #divBoutonTache{
@@ -14,9 +16,7 @@
 
 #titreDashboard{
     display: flex;
-    justify-content: space-around;
-    margin-left: 15%;
-    margin-right: 15%;
+    align-content: space-between;
 }
 
 #boutonTaches{
@@ -29,26 +29,18 @@
 
 #piechart{
     background-color: #e0eef1;
-    padding: 20px;
-    margin: 20px;
-    margin-right: 10%;
+    padding: 13%;
+    padding-top: 5%;
+    padding-bottom: 5%;
     width: 100%;
-}
-#separator{
-    width: 7px;
-    height: 500px;
-    background-color: #e0eef1;
-    display: inline-block;
-}
-#barchart{
-    background-color: #e0eef1;
-    padding: 20px;
-    margin: 20px;
-    margin-left: 10%;
-    width: 100%;
+    border-right: 2px solid #81acb5;
 }
 
-#divPiechart{
-    height: 400px;
+#barchart{
+    background-color: #e0eef1;
+    padding: 13%;
+    padding-top: 5%;
+    padding-bottom: 5%;
     width: 100%;
+    border-left: 2px solid #81acb5;
 }
