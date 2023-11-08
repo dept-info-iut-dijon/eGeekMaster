@@ -32,3 +32,26 @@ body{
     box-shadow: 1px 2.5px 10px #3b3b3b;
     border-radius: 5px;
 }
+
+#piechart{
+    background-color: #81acb5;
+    padding: 20px;
+    margin: 20px;
+    margin-right: 10%;
+    width: 100%;
+}
+
+#separator{
+    width: 7px;
+    height: 500px;
+    background-color: #81acb5;
+    display: inline-block;
+}
+
+#barchart{
+    background-color: #81acb5;
+    padding: 20px;
+    margin: 20px;
+    margin-left: 10%;
+    width: 100%;
+}

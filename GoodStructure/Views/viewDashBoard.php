@@ -9,10 +9,11 @@
 
     <!-- Titre des graphiques -->
     <div id="titreDashboard">
-        <div>
-            <h1>Répartition des tâches</h1>
+        <div id="piechart">
+            <h1>Tasks distribution</h1>
         </div>
-        <div>
-            <h1>Durée moyenne pour chaque tâches</h1>
+        <div id="separator"></div>
+        <div id="barchart">
+            <h1>Average duration for each task</h1>
         </div>
     </div>
