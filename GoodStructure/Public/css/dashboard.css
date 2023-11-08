@@ -12,12 +12,6 @@ body{
     width: fit-content;
 }
 
-#memberFamily{
-    padding: 10px;
-    box-shadow: 0px 2.5px 5px #3b3b3b; 
-    border-radius: 8px;
-}
-
 #titreDashboard{
     display: flex;
     justify-content: space-around;
@@ -31,4 +25,30 @@ body{
     width: 250px;
     box-shadow: 1px 2.5px 10px #3b3b3b;
     border-radius: 5px;
+}
+
+#piechart{
+    background-color: #81acb5;
+    padding: 20px;
+    margin: 20px;
+    margin-right: 10%;
+    width: 100%;
+}
+#separator{
+    width: 7px;
+    height: 500px;
+    background-color: #81acb5;
+    display: inline-block;
+}
+#barchart{
+    background-color: #81acb5;
+    padding: 20px;
+    margin: 20px;
+    margin-left: 10%;
+    width: 100%;
+}
+
+#divPiechart{
+    height: 400px;
+    width: 100%;
 }
