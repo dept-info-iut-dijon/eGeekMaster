@@ -6,9 +6,9 @@
         {
             "label": "Start Opera GX + Fichier Courrant",
            "type": "shell",
-            "command":"MicrosoftEdge.exe",
+            "command":"C:/Users/Public/Desktop/Microsoft Edge.lnk",
            "args": [
-                "http://localhost/eGeekMasterXamp/GoodStructure/${fileBasename}"
+                "http://localhost/eGeekMaster/GoodStructure/${fileBasename}"
             
             ],
             "group": {
