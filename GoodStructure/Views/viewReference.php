@@ -133,19 +133,27 @@ author : Lola Cohidon-->
             <tr>
                 <td>Gardening
                     <div>
-                        <img class="icon" id="imgGardening" src="Public/image/page_reference/img_gardening.png alt="">
+                        <img class="icon" id="imgGardening" src="Public/image/page_reference/img_gardening.png" alt="">
                     </div>
                 </td>
                 <td>Toute tâche extérieure nécessaire : tondre, élaguer, traiter, arroser, récolter.</td>
                 <td>1</td>
             </tr>
             <tr>
-                <td>DIY</td>
+                <td>DIY
+                    <div>
+                        <img class="icon" id="imgDIY" src="Public/image/page_reference/img_diy.png" alt="">
+                    </div>
+                </td>
                 <td>Repairs, necessary minor work (plaster, painting, plumbing, etc.).</td>
                 <td>1</td>
             </tr>
             <tr>
-                <td>Household Management</td>
+                <td>Household Management
+                    <div>
+                        <img class="icon" id="imgHouseholdManagement" src="Public/image/page_reference/img_householdManagement.png" alt="">
+                    </div>
+                </td>
                 <td>Service provider management (search, hiring, follow-up), availability management for parcel reception, leisure management.</td>
                 <td>1</td>
             </tr>
