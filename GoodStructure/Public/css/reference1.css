@@ -80,6 +80,12 @@ td {
     margin-right: 10px;
 }
 
+.action {
+    display: flex;
+    align-items: center;
+    
+}
+
 
  
   
