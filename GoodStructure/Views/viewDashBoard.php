@@ -74,7 +74,7 @@
                             </div>
                         </div>
                         <div id="dateDiv">
-                            <input type="date" name="Date" id="date">
+                            <input type="date" name="Date" id="date" pattern="\d{1,2}-\d{1,2}-\d{4}">
                         </div>
                     </div> 
 
@@ -86,7 +86,7 @@
 
                                     <!--CANCEL-->
                                     <div id="cancelDiv">
-                                        <input type="button" value="Cancel" id="cancel" class="buttonsEnd">    
+                                        <input type="button" value="Cancel" id="cancel" class="buttonsEnd" onclick="window.location.reload();">    
                                     </div>
                                 </td>
                                 <td class="cases">  
