@@ -18,7 +18,7 @@
         private $_birthDate;
 
         
-        public function __construct(string $login ='', string $password='', string $firstName='', string $lastName='', string $email='', string $gender='', string $familyPlace='', string $birthDate='')
+        public function __construct(string $firstName='', string $lastName='', string $email='', string $gender='', string $familyPlace='', string $birthDate='')
         {
             $this->_login = $login;
             $this->_firstName = $firstName;

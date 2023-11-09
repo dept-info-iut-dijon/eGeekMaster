@@ -11,6 +11,11 @@
 
             <p><?= $message ?></p>
         <?php endif; ?>
+        <?php if (isset($_GET['errorMessage'])) : ?>
+            
+            <p><?= $_GET['errorMessage']?></p>
+            
+        <?php endif; ?>
         <div id="imageDebut">
             <div class="imageDuDeb haut"></div>
             <div class="imageDuDeb bas"></div>

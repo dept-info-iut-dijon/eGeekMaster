@@ -40,7 +40,7 @@
             <li><a class="lien-header" href="index.php?action=Index" >Home</a></li>
             <li><a class="lien-header" href="index.php?action=Registration&IdLogin=<?=$_SESSION['IdLogin']?>"  >Upadte my account</a></li>
             <li><a class="lien-header" href="index.php?action=Disconnect"  >Disconnect</a></li>
-            <li><a class="lien-header" href="index.php?action=DashBoard">DashBoard</a></li>
+            <li><a class="lien-header" href="index.php?action=InfoDashBoard">DashBoard</a></li>
         <?php else : ?>
             <li><a class="lien-header" href="index.php?action=Connection"  >Login</a></li> 
             <li><a class="lien-header" href="index.php?action=Registration"  >Register</a></li> 

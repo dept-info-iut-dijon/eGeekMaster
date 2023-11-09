@@ -139,7 +139,10 @@ class UserController{
         // Retrieve the User
         $user = $this->UserManager->GetByLoginID(intval($_SESSION['IdLogin']));
         // Retrieve the User's dashboard
-        $this->dashboardConroller->GetUser($user);
+        $this->dashboardConroller->InfoDashBoard($user);
+
+        // Display the dashboard
+        $this->mainController->DashBoard();
         
     }
         

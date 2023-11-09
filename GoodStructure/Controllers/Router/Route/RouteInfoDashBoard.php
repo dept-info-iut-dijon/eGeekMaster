@@ -1,4 +1,6 @@
 <?php
+
+require_once 'Controllers/DashBoardController.php';
 /**
  * Représente une route pour afficher le tableau de bord de l'utilisateur.
  * Hérite de la classe Route.
@@ -6,14 +8,14 @@
  * @package Controllers\Router\Route
  */
 class RouteInfoDashBoard extends Route {
-    private UserController $controller;
+    private DashBoardController $controller;
 
     /**
      * Initialise une nouvelle instance de la classe RouteInfoDashBoard.
      *
-     * @param UserController $controller Le contrôleur d'utilisateur.
+     * @param DashBoardController $controller Le contrôleur de dashboard.
      */
-    public function __construct(UserController $controller) {
+    public function __construct(DashBoardController $controller) {
         parent::__construct();
         $this->controller = $controller;
     }

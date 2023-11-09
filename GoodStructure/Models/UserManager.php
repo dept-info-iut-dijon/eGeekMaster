@@ -62,17 +62,15 @@ class UserManager extends Model
             $sql = 'SELECT * FROM users WHERE LoginidLogin = ?';
             $result = $this->executerRequete($sql, [$id]);
             $line = $result->fetch();
-            if ($line !== false) {
+            if ($line !== false) { //(LastName, FirstName, Gender, BirthDate, Email, FamilyPlace, LoginidLogin, DashBoardidDashBoard)
                 $User = new User(
-                    $line['login'],
-                    $line['password'],
-                    $line['firstName'],
-                    $line['lastName'],
-                    $line['email'],
-                    $line['gender'],
-                    $line['familyPlace'],
-                    $line['birthDate']
-                );
+                    $ligne['LastName'],
+                    $ligne['FirstName'],
+                    $ligne['Gender'],
+                    $ligne['BirthDate'],
+                    $ligne['Email'],
+                    $ligne['FamilyPlace']
+                )
 
                 return $User;
             } else {

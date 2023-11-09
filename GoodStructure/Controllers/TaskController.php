@@ -1,5 +1,7 @@
 <?php
 require_once 'views/View.php';
+require_once 'models/TaskManager.php';
+require_once 'Controllers/MainController.php';
 
 /**
  * Class TaskController
@@ -7,10 +9,16 @@ require_once 'views/View.php';
  * @author Théo Cornu
  */
 class TaskController {
-    
-    private DashBoard $dashboard;
 
-    public function GetDashBoard(DashBoard $dashboard){
-        $this->dashboard = $dashboard;
+    private $TaskManager;
+    private $mainController;
+
+    /**
+     * TaskController constructor.
+     */
+    public function __construct() {
+        $this->TaskManager = new TaskManager();
+        $this->mainController = new MainController();
+
     }
 }
