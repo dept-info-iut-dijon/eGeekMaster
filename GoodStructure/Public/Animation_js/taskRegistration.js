@@ -60,3 +60,24 @@ document.addEventListener('DOMContentLoaded', function() {
         updateDisplay();
     });
 });
+
+
+function Sidebar() {
+    // Get references to the menu button, menu, and the menu overlay
+    const menuButton = document.getElementById("boutonTaches");
+    const menu = document.getElementById("divTaskRegistration");
+
+    // Toggle menu visibility when the menu button is clicked
+    menuButton.addEventListener("click", function () {
+        if (menu.style.right === "0px") {
+            // Close the menu and overlay
+            menu.style.right = "-350px";
+        } else {
+            // Open the menu and overlay, add box shadow
+            menu.style.right = "40px";
+        }
+    });
+}
+
+// Attach the Sidebar function to the 'load' event
+window.addEventListener('load', Sidebar);

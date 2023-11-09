@@ -5,16 +5,12 @@
 <link rel="stylesheet" href="Public/css/dashboard.css">
 <link rel="stylesheet" href="Public/css/taskRegistration.css">
 <script src="Public/Animation_js/taskRegistration.js"></script>
-    <div id="divBoutonTache">
-        <!-- Bouton d'ajout de tâches -->
-        <button id="boutonTaches" type="button">Register a new task</button>
-    </div>
-
+<div id="bar">
     <!--TASK REGISTRATION-->
     <div id="divTaskRegistration">
 
         <!--FORM-->
-        <div>
+        <div id="formDiv">
             <form action="index.php?action=" method="post" id="formTask">
                 <fieldset>
 
@@ -25,7 +21,7 @@
 
                     <!--TASK-->
                     <div id="task">
-                        <label>Task :</label>
+                        <label id="taskLabel">Task :</label>
                         <div id="chooseTask">
                             <input list="tasks" placeholder="Search a task" id="searchTask" autofocus required>
                             <datalist id="tasks">
@@ -50,7 +46,7 @@
                     <!--LIFETIME-->
                     <div id="lifetime">
                         <div id="titleLifetime">
-                            <label>Lifetime :</label>
+                            <label id="lifetimeLabel">Lifetime :</label>
                         </div>
                         <div class="incrementDecrement">
                             <div class="plus">
@@ -102,7 +98,14 @@
             </form>
         </div>
     </div>
+
+    <div id="divBoutonTache">
+        <!-- Bouton d'ajout de tâches -->
+        <button id="boutonTaches" type="button">Register a new task</button>
+    </div>
+
     
+</div> 
     <!-- Titre des graphiques -->
     <div id="titreDashboard">
         <div>
