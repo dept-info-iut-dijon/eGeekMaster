@@ -37,11 +37,7 @@
             }]
         },
         options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
+            
         }
     });
 
