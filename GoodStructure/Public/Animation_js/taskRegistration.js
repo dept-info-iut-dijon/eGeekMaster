@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
         minutesElement.textContent = formatNumber(minutes);
     }
     
-    // Handle increment and decrement
+    // Increment hours function
     incrementHoursButton.addEventListener('click', () => {
         hours++;
         if (hours > 99) {
@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
         updateDisplay();
     });
     
+    // Decrement hours function
     decrementHoursButton.addEventListener('click', () => {
         hours--;
         if (hours < 0) {
@@ -41,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
         updateDisplay();
     });
     
+    // Increment minutes function
     incrementMinutesButton.addEventListener('click', () => {
         minutes += 15;
         if (minutes > 59) {
@@ -49,6 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
         updateDisplay();
     });
     
+    // Decrement minutes function
     decrementMinutesButton.addEventListener('click', () => {
         minutes -= 15;
         if (minutes < 0) {

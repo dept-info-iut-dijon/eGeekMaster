@@ -27,21 +27,20 @@
                     <div id="task">
                         <label>Task :</label>
                         <div id="chooseTask">
-                            <input list="tasks" placeholder="Search a task" id="searchTask">
+                            <input list="tasks" placeholder="Search a task" id="searchTask" autofocus required>
                             <datalist id="tasks">
-                                <option value="Cleaning">                                <option value="Firefox">
+                                <option value="Cleaning">                                
                                 <option value="Shopping">
                                 <option value="Cooking">
                                 <option value="Dishes">
-                                <option value="Laundry">                                <option value="Firefox">
-                                <option value="ChildrensCare">
+                                <option value="Laundry">                                
                                 <option value="ChildsPlay">
                                 <option value="ChildrensJourney">                                
-                                <option value="ParentJourney">                                <option value="Firefox">
+                                <option value="ParentJourney">                                
                                 <option value="ParentCare">
                                 <option value="Administrative">
                                 <option value="PetCare">
-                                <option value="Gardening">                                <option value="Firefox">
+                                <option value="Gardening">                               
                                 <option value="DIY">
                                 <option value="HouseholdManagement">
                             </datalist> 
