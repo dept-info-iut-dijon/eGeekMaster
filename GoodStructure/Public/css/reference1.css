@@ -1,5 +1,6 @@
 /* 
 * Auteur : Lola Cohidon
+* Auteur : Théo Cornu
  */
 
 body{
@@ -23,25 +24,31 @@ body{
 
 /* Styles pour la barre de recherche */
 .search {
+  display: flex;
+  justify-content: center;
     --input-line: #808080;
     --input-text-color: #808080;
     --input-text-hover-color: transparent;
     --input-border-color: #808080;
     --input-border-hover-color: #999999;
     --input-bg-color: #b1cdd3;
-    --search-max-width: 50%;
+    --search-max-width: 70%;
     --search-min-width: 5%;
     --border-radius: 5px;
     --transition-cubic-bezier: 150ms cubic-bezier(0.4,0,0.2,1);
   }
   
   .search-box {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5%;
+    padding: 1%;
     max-width: var(--search-max-width);
     min-width: var(--search-min-width);
     height: 5vh;
-    border: 1px solid var(--input-border-color);
+    border: 2px solid var(--input-border-color);
     border-radius: var(--border-radius);
-    padding: 1% 2%;
+    
     background: var(--input-bg-color);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     transition: var(--transition-cubic-bezier);
@@ -53,22 +60,30 @@ body{
   
   /*Section input*/
   .search-field {
-    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
+
     
     border: 0;
   }
   
   .input {
+    margin: 0%;
     width: calc(100% - 29px);
     height: 100%;
     border: 0;
     border-color: transparent;
     font-size: 1rem;
-    padding-right: 0px;
+    
     color: var(--input-line);
     background: var(--input-bg-color);
     border-right: 2px solid var(--input-border-color);
+    border-radius: var(--border-radius);
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
     outline: none;
   }
   
@@ -98,11 +113,10 @@ body{
   
   /*Search button*/
   .search-box-icon {
-    width: 52px;
-    height: 35px;
-    position: absolute;
-    top: -2%;
-    right: -5%;
+    
+    
+    
+  
     background: transparent;
     border-bottom-right-radius: var(--border-radius);
     border-top-right-radius: var(--border-radius);
@@ -115,9 +129,11 @@ body{
   
   .btn-icon-content {
     width: 52px;
-    height: 35px;
-    top: -6px;
-    right: -21px;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    
     background: transparent;
     border: none;
     cursor: pointer;
@@ -133,7 +149,7 @@ body{
   
   .search-icon {
     width: 21px;
-    height: 21px;
+    height: 21px; 
     position: absolute;
     
   }
