@@ -7,6 +7,7 @@
 
  Class Task
  {
+    private $id;
     private $nameTask;
     private $duration;
     private $dateAdded;
@@ -21,6 +22,13 @@
         $this->dateAdded = $dateAdded;
     }
 
+    /**
+     * Getter for id
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
     /**
      * Getter for nameTask
      */
@@ -43,6 +51,14 @@
     public function getDateAdded(): DateTime
     {
         return $this->dateAdded;
+    }
+
+    /**
+     * Setter for id
+     */
+    public function setId(int $id)
+    {
+        $this->id = $id;
     }
 
     /**
