@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="Public/css/dashboard1.css">
+<link rel="stylesheet" href="Public/css/dashboard2.css">
 <div id="body">
     <div id="divBoutonTache">
             <!-- Bouton d'ajout de tâches -->
@@ -9,18 +9,14 @@
     </div>
 
     <!-- Graphiques -->
-    <div id="titreDashboard">
+    <div id="graphiques">
         <div id="piechart">
             <h1>Tasks distribution</h1>
-            <div style="position: relative; height: 380px">
-                <canvas id="myChart1"></canvas>
-            </div>
+            <canvas id="myChart1"></canvas>
         </div>
         <div id="barchart">
             <h1>Average duration for each task</h1>
-            <div style="position: relative">
-                <canvas id="myChart2"></canvas>
-            </div>
+            <canvas id="myChart2"></canvas>
         </div>
     </div>
 </div>
@@ -42,7 +38,6 @@
         },
         options: {
             responsive: true,
-            maintainAspectRatio: false
         }
     });
 
@@ -59,11 +54,8 @@
                 }]
         },
         options: {
-                scales: {
-                y: {
-                        beginAtZero: true
-                }
-                }
+                responsive: true,
+                indexAxis: 'y',
         }
     });
 </script>
