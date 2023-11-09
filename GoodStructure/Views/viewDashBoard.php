@@ -27,7 +27,7 @@
     const ctx1 = document.getElementById('cv');
 
     new Chart(ctx1, {
-        type: 'doughnut',
+        type: 'pie',
         data: {
             labels: ["A", "B"],
             datasets: [{

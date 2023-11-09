@@ -9,7 +9,7 @@ require_once 'models/TaskManager.php';
  * @author Théo Cornu
  */
 class DashBoardController {
-    private User $user = null;
+    private User $user;
 
     public function GetUser(User $user){
         $this->user = $user;

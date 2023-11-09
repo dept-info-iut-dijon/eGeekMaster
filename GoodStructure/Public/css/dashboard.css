@@ -29,18 +29,18 @@
 
 #piechart{
     background-color: #e0eef1;
-    padding: 13%;
+    padding: 8%;
     padding-top: 5%;
     padding-bottom: 5%;
-    width: 100%;
+    /* width: 100%; */
     border-right: 2px solid #81acb5;
 }
 
 #barchart{
     background-color: #e0eef1;
-    padding: 13%;
+    padding: 8%;
     padding-top: 5%;
     padding-bottom: 5%;
-    width: 100%;
+    /* width: 100%; */
     border-left: 2px solid #81acb5;
 }

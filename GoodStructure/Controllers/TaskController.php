@@ -8,7 +8,7 @@ require_once 'views/View.php';
  */
 class TaskController {
     
-    private DashBoard $dashboard = null;
+    private DashBoard $dashboard;
 
     public function GetDashBoard(DashBoard $dashboard){
         $this->dashboard = $dashboard;
