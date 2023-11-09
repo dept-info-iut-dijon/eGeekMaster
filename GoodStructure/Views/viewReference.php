@@ -23,67 +23,119 @@ author : Lola Cohidon-->
                 <th>Value 1/4</th>
             </tr>
             <tr>
-                <td>Cleaning</td>
+                <td>Cleaning
+                    <div>
+                        <img class="icon" id="imgCleaning" src="Public/image/page_reference/img_cleaning.png" alt="">
+                    </div>
+                </td>
                 <td>Cleaning surfaces, floors, sinks, toilets and household appliances.</td>
                 <td>1</td>
             </tr>
             <tr>
-                <td>Shopping</td>
+                <td>Shopping
+                    <div>
+                        <img class="icon" id="imgShopping" src="Public/image/page_reference/img_shopping.png" alt="">
+                    </div>
+                </td>
                 <td>Purchase of all supplies necessary for the household (food, medications, furniture, DIY and garden equipment, children's clothing, etc.).</td>
                 <td>1</td>
             </tr>
             <tr>
-                <td>Cooking</td>
+                <td>Cooking
+                    <div>
+                        <img class="icon" id="imgCooking" src="Public/image/page_reference/img_cooking.png" alt="">
+                    </div>
+                </td>
                 <td>Creation of weekly menus, Meal preparation, Table setting and clearing.</td>
                 <td>1</td>
             </tr>
             <tr>
-                <td>Dishes</td>
+                <td>Dishes
+                    <div>
+                        <img class="icon" id="imgDishes" src="Public/image/page_reference/img_dishes.png" alt="">
+                    </div>
+                </td>
                 <td>By hand or using the dishwasher (loading and unloading). Storage in cupboards.</td>
                 <td>1</td>
             </tr>
             <tr>
-                <td>Laundry</td>
+                <td>Laundry
+                    <div>
+                        <img class="icon" id="imgLaundry" src="Public/image/page_reference/img_laundry.png" alt="">
+                    </div>
+                </td>
                 <td>Collecting (putting in the basket), sorting, washing, drying, ironing, and storing.</td>
                 <td>1</td>
             </tr>
             <tr>
-                <td>ChildrensCare</td>
+                <td>ChildrensCare
+                    <div>
+                        <img class="icon" id="imgChildrenCare" src="Public/image/page_reference/img_childrenCare.png" alt="">
+                    </div>
+                </td>
                 <td>Physiological needs (getting up, washing, feeding, dressing, caring, and putting to bed).</td>
                 <td>1</td>
             </tr>
             <tr>
-                <td>ChildsPlay</td>
+                <td>ChildsPlay
+                    <div>
+                        <img class="icon" id="imgChildsPlay" src="Public/image/page_reference/img_childsPlay.png" alt="">
+                    </div>
+                </td>
                 <td>Organization (choosing the game, setting up), participation in activities (starting the game, overall participation, and cleaning up the game).</td>
                 <td>1</td>
             </tr>
             <tr>
-                <td>ChildrensJourney</td>
+                <td>ChildrensJourney
+                    <div>
+                        <img class="icon" id="imgChildrenJourney" src="Public/image/page_reference/img_childrensJourney.png" alt="">
+                    </div>
+                </td>
                 <td>To school, after-school care (recreation center + cafeteria), babysitter, friends, doctor, leisure activities (sports/culture).</td>
                 <td>1</td>
             </tr>
             <tr>
-                <td>ParentJourney</td>
+                <td>ParentJourney
+                    <div>
+                        <img class="icon" id="imgParentJourney" src="Public/image/page_reference/img_parentJourney.png" alt="">
+                    </div>
+                </td>
                 <td>For dependent parent.</td>
                 <td>1</td>
             </tr>
             <tr>
-                <td>ParentCare</td>
+                <td>ParentCare
+                    <div>
+                        <img class="icon" id="imgParentCare" src="Public/image/page_reference/img_parentCare.png" alt="">
+                    </div>
+                </td>
                 <td>Assistance, care for a dependent parent, administrative management of files (health, home care, etc.), transportation (health, leisure).</td>
                 <td>1</td>
             </tr>
             <tr>
-                <td>Administrative</td>
+                <td>Administrative
+                    <div>
+                        <img class="icon" id="imgAdministrative" src="Public/image/page_reference/img_administrative.png" alt="">
+                    </div>
+                </td>
                 <td>Taxes, bills, administrative registrations, health insurance management, bank account management, subscriptions, mail posting, and making reservations.</td>
                 <td>1</td>
             </tr>
             <tr>
-                <td>PetCare</td>
+                <td>PetCare
+                    <div>
+                        <img class="icon" id="imgPetCare" src="Public/image/page_reference/img_petCare.png" alt="">
+                    </div>
+                </td>
                 <td>Nourriture, Lavage/brossage, promenade, changement litière, RDV véto, soigner.</td>
                 <td>1</td>
             </tr>
             <tr>
-                <td>Gardening</td>
+                <td>Gardening
+                    <div>
+                        <img class="icon" id="imgGardening" src="Public/image/page_reference/img_gardening.png alt="">
+                    </div>
+                </td>
                 <td>Toute tâche extérieure nécessaire : tondre, élaguer, traiter, arroser, récolter.</td>
                 <td>1</td>
             </tr>
