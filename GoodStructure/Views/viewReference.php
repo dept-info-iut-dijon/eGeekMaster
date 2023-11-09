@@ -155,7 +155,7 @@ author : Lola Cohidon-->
                         <img class="icon" class="action" src="Public/image/page_reference/img_householdManagement.png" alt="">
                     </div>
                 </td>
-                <td>Service provider management (search, hiring, follow-up), availability management for parcel reception, leisure management.</td>
+                <td>Service provider management (search, hiring, follow-up), availability management for parcel reception, leisure management</td>
                 <td>1</td>
             </tr>
         </table>
