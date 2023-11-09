@@ -3,6 +3,7 @@
 require_once 'Model.php';
 require_once 'User.php';
 require_once 'LoginManager.php';
+require_once 'DashBoardManager.php';
 
 class UserManager extends Model
 {
@@ -134,6 +135,8 @@ class UserManager extends Model
     public function AddUser(User $User): void
     {
         try {
+            
+
             // Add a login associated with the User
             $loginManager = new LoginManager();
             $login = $loginManager->Add($User->getLogin(), $User->getPassword());
@@ -144,8 +147,18 @@ class UserManager extends Model
             $line = $result->fetch();
             $login->setId($line['idLogin']);
 
-            $sql = ("INSERT INTO users (LastName, FirstName, Gender, BirthDate, Email, FamilyPlace, LoginidLogin) 
-            VALUES (:value1, :value2, :value3, :value4, :value5, :value6, (SELECT idLogin from login where idLogin = :value7))");
+            //Add a dashboard associated with the User
+            $dashBoardManager = new DashBoardManager();
+            $dashBoard = $dashBoardManager->Add($login->getLogin() ."'s dashboard");
+
+            // Get the ID of the last dashboard added
+            $sql = 'SELECT idDashBoard FROM dashboard ORDER BY idDashBoard DESC LIMIT 1';
+            $result = $this->executerRequete($sql);
+            $line = $result->fetch();
+            $dashBoard->setId($line['idDashBoard']);
+
+            $sql = ("INSERT INTO users (LastName, FirstName, Gender, BirthDate, Email, FamilyPlace, LoginidLogin, DashBoardidDashBoard) 
+            VALUES (:value1, :value2, :value3, :value4, :value5, :value6, (SELECT idLogin from login where idLogin = :value7), (SELECT idDashBoard from dashboard where idDashBoard = :value8))");
 
             $value1 = $User->getLastName();
             $value2 = $User->getFirstName();
@@ -154,6 +167,7 @@ class UserManager extends Model
             $value5 = $User->getEmail();
             $value6 = $User->getFamilyPlace();
             $value7 = $login->getId();
+            $value8 = $dashBoard->getId();
             $this->executerRequete($sql, [
                 ':value1' => $value1,
                 ':value2' => $value2,
@@ -161,7 +175,8 @@ class UserManager extends Model
                 ':value4' => $value4,
                 ':value5' => $value5,
                 ':value6' => $value6,
-                ':value7' => $value7
+                ':value7' => $value7,
+                ':value8' => $value8
             ]);
 
             // header("Refresh : 1, Location: index.php?action=Index");
