@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="Public/css/dashboard.css">
+<link rel="stylesheet" href="Public/css/taskRegistration1.css">
     <div id="divBoutonTache">
         <!-- Bouton d'ajout de tâches -->
         <button id="boutonTaches" type="button">Register a new task</button>
@@ -6,7 +7,6 @@
 
     <!--TASK REGISTRATION-->
     <div id="divTaskRegistration">
-
 
         <!--FORM-->
         <div>
@@ -22,12 +22,23 @@
                     <div id="task">
                         <label>Task :</label>
                         <div id="chooseTask">
-                            <input list="tasks" placeholder="task" id="searchTask">
+                            <input list="tasks" placeholder="Search a task" id="searchTask">
                             <datalist id="tasks">
-                                <option value="Internet Explorer">                                <option value="Firefox">
-                                <option value="Chrome">
-                                <option value="Opera">
-                                <option value="Safari">
+                                <option value="Cleaning">                                <option value="Firefox">
+                                <option value="Shopping">
+                                <option value="Cooking">
+                                <option value="Dishes">
+                                <option value="Laundry">                                <option value="Firefox">
+                                <option value="ChildrensCare">
+                                <option value="ChildsPlay">
+                                <option value="ChildrensJourney">                                
+                                <option value="ParentJourney">                                <option value="Firefox">
+                                <option value="ParentCare">
+                                <option value="Administrative">
+                                <option value="PetCare">
+                                <option value="Gardening">                                <option value="Firefox">
+                                <option value="DIY">
+                                <option value="HouseholdManagement">
                             </datalist> 
                         </div>
                     </div>
@@ -57,22 +68,29 @@
                             </div>
                         </div>
                         <div>
-                            <input type="date" class="custom-date-input">
+                            <input type="date" name="Date" id="date">
                         </div>
                     </div> 
 
                     <!--CANCEL/SUBMIT-->
                     <div id="buttons">
+                        <table id="table">
+                            <tr>
+                                <td class="cases" id="caseCancel">
 
-                        <!--CANCEL-->
-                        <div id="cancelDiv">
-                            <input type="button" value="Cancel" id="cancel">
-                        </div>
-                        
-                        <!--SUBMIT-->
-                        <div id="submitDiv">
-                            <input type="submit" value="Register" id="submit"> 
-                        </div>
+                                    <!--CANCEL-->
+                                    <div id="cancelDiv">
+                                        <input type="button" value="Cancel" id="cancel" class="buttonsEnd">    
+                                    </div>
+                                </td>
+                                <td class="cases">  
+                                    <!--SUBMIT-->
+                                    <div id="submitDiv">
+                                        <input type="submit" value="Register" id="submit" class="buttonsEnd">  
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                 </fieldset>
             </form>
