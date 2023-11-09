@@ -1,0 +1,80 @@
+/* 
+* Auteur : Lola Cohidon
+ */
+
+body{
+    margin: 0px;
+    font-family: "Comic Sans MS", sans-serif; /*police ecriture*/
+    height: 100%;
+    background-color: #e0eef1; /*couleur du fond*/
+}
+
+/* Styles pour la barre de recherche */
+.InputContainer {
+    display: flex;
+    justify-content: center; /*centre la barre*/
+    align-items: center;
+    margin: 20px; /*marge de la barre*/
+
+}
+.input {
+    padding: 10px; /*largeur de la barre*/
+    width: 25%; /*longueur de la barre*/
+    border-radius: 5px; /*arrondi les bords*/
+}
+
+.searchIcon {
+    width: 30px; /* Espace entre la barre et l'icone*/
+    height: 25px; /* Taille de l'icone */
+    fill: #000; /* Couleur pour l'icône de recherche */
+}
+
+ /* Styles pour le tableau */
+ .ReferenceTable {
+    background-color: #e0eef1;
+    padding: 10px; /*espace entre la bordure et le tableau*/
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+  
+th, td {
+    padding: 10px;
+    border: 2px solid #ccc; /*Taille de la bordure du tableau*/
+}
+
+/* Styles pour le conteneur principal */
+#ContaintReference {
+    max-width: 1000px; /* Largeur maximale du conteneur */
+    margin: 0 auto; /* Centrer le conteneur */
+    padding: 20px; /*espace*/
+  }
+  
+/* Styles pour les bordures du tableau */
+table {
+    width: 100%;
+    border-collapse: separate; /*bordures du tableau séparées*/
+    margin-top: 20px;
+}
+  
+th, td {
+    padding: 10px;
+    border: 1px solid #000; /* Ajout de bordures noires */
+}
+ 
+/* Styles pour les cases th */
+th {
+    background-color: #B3938E; /* Couleur de fond bleue pour les cases th */
+    color: #000; /* Couleur du texte noir pour les cases th */
+    font-weight: bold; /* Texte en gras pour les cases th */
+  }
+  
+  
+/* Styles pour les images d'icônes */
+.icon {
+    width: 30px; /* Taille de l'icône */
+    height: 30px;
+    margin-right: 10px;
+}
+
+
+ 
+  

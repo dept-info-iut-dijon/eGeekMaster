@@ -3,7 +3,8 @@ author: Théo Cornu
 author : Lola Cohidon-->
 
 <div id = "ContaintReference">
-<link rel="stylesheet" href="Public/css/reference.css">
+<link rel="stylesheet" href="Public/css/reference1.css">
+
 <!--Search bar-->
     <div class="InputContainer">
         <input type="text" name="text" class="input" id="input" placeholder="Search">
