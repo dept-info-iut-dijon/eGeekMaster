@@ -66,7 +66,12 @@ th {
     color: #000; /* Couleur du texte noir pour les cases th */
     font-weight: bold; /* Texte en gras pour les cases th */
   }
-  
+
+/* Styles pour les cellules <td> */
+td {
+    text-align: center; /* Centrer le texte horizontalement */
+    background-color: #fff;
+}
   
 /* Styles pour les images d'icônes */
 .icon {
