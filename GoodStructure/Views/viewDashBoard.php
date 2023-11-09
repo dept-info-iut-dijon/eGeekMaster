@@ -1,5 +1,10 @@
+<!--
+    author : Enzo
+-->
+
 <link rel="stylesheet" href="Public/css/dashboard.css">
-<link rel="stylesheet" href="Public/css/taskRegistration1.css">
+<link rel="stylesheet" href="Public/css/taskRegistration.css">
+<script src="Public/Animation_js/taskRegistration.js"></script>
     <div id="divBoutonTache">
         <!-- Bouton d'ajout de tâches -->
         <button id="boutonTaches" type="button">Register a new task</button>
@@ -50,24 +55,26 @@
                         </div>
                         <div class="incrementDecrement">
                             <div class="plus">
-                                <input type="button" name="PlusHour" id="plusHour" value="+" class="styleButtons">
+                                <input type="button" name="IncrementHours" id="incrementHours" value="+" class="styleButtons">
                             </div>
                             <div class="moins">
-                                <input type="button" name="MoinsHour" id="moinsHour" value="-" class="styleButtons">
+                                <input type="button" name="DecrementHours" id="decrementHours" value="-" class="styleButtons">
                             </div>
                         </div>
                         <div id="time">
-                            <p id="timer">00 : 00</p>
+                            <p id="hours">00</p>
+                            <p id="a"> : </p>
+                            <p id="minutes">00</p>
                         </div>
                         <div class="incrementDecrement">
                             <div class="plus">
-                                <input type="button" name="PlusMinute" id="plusMinute" value="+" class="styleButtons">
+                                <input type="button" name="IncrementMinutes" id="incrementMinutes" value="+" class="styleButtons">
                             </div>
                             <div class="moins">
-                                <input type="button" name="MoinsMinute" id="moinsMinute" value="-" class="styleButtons">
+                                <input type="button" name="DecrementMinutes" id="decrementMinutes" value="-" class="styleButtons">
                             </div>
                         </div>
-                        <div>
+                        <div id="dateDiv">
                             <input type="date" name="Date" id="date">
                         </div>
                     </div> 

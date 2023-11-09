@@ -1,3 +1,7 @@
+/*
+    author : Enzo
+*/
+
 /*TASK REGISTRATION*/
 #divTaskRegistration{
     width: 35%;
@@ -67,23 +71,32 @@ fieldset{
 }
 
 #time{
-    margin-right: 5%;
-    margin-left: 1%;
-}
-
-#timer{
+    margin-right: 2%;
     border-width: 1px;
-    padding: 1%;
+    padding: 0%;
     border-radius: 5px;
     border-style: solid;
     width: 6vh;
     margin: 0px;
-    padding-left: 10%;
 }
 
 .plus{
     display: flex;
     flex-direction: column;
+}
+
+#hours{
+    display: inline-block;
+    margin: 0%;
+    padding-left: 2%;
+}
+#minutes{
+    display: inline-block;
+    margin: 0%;
+}
+#a{
+    display: inline-block;
+    margin: 0%;
 }
 
 .styleButtons{
@@ -93,6 +106,10 @@ fieldset{
 
 .styleButtons:hover{
     cursor: pointer;
+}
+
+#dateDiv{
+    margin-left: 3%;
 }
 
 #date{
@@ -169,3 +186,6 @@ fieldset{
     font-weight: bold;
 }
 
+#p{
+    
+}
