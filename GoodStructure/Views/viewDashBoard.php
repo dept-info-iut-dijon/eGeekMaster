@@ -50,23 +50,23 @@
                         </div>
                         <div class="incrementDecrement">
                             <div class="plus">
-                                <input type="button" name="IncrementHours" id="incrementHours" value="+" class="styleButtons">
+                                <input type="button" name="IncrementHours" id="incrementHours" value="+" class="styleButtons" onclick="incrementValue('hours')">
                             </div>
                             <div class="moins">
-                                <input type="button" name="DecrementHours" id="decrementHours" value="-" class="styleButtons">
+                                <input type="button" name="DecrementHours" id="decrementHours" value="-" class="styleButtons" onclick="decrementValue('hours')">
                             </div>
                         </div>
                         <div id="time">
-                            <p id="hours">00</p>
+                            <input type="text" id="hours" readonly>
                             <p id="a"> : </p>
-                            <p id="minutes">00</p>
+                            <input type="text" id="minutes" readonly>
                         </div>
                         <div class="incrementDecrement">
                             <div class="plus">
-                                <input type="button" name="IncrementMinutes" id="incrementMinutes" value="+" class="styleButtons">
+                                <input type="button" name="IncrementMinutes" id="incrementMinutes" value="+" class="styleButtons" onclick="incrementValue('minutes')">
                             </div>
                             <div class="moins">
-                                <input type="button" name="DecrementMinutes" id="decrementMinutes" value="-" class="styleButtons">
+                                <input type="button" name="DecrementMinutes" id="decrementMinutes" value="-" class="styleButtons" onclick="decrementValue('minutes')">
                             </div>
                         </div>
                         <div id="dateDiv">

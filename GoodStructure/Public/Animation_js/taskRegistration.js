@@ -1,97 +1,6 @@
 // author : Enzo
 // author : Nicolas
-// to increment and decrement the time you path on the task
-document.addEventListener('DOMContentLoaded', function() {
-    // Get DOM elements
-    const hoursElement = document.getElementById('hours');
-    const minutesElement = document.getElementById('minutes');
-    
-    const incrementHoursButton = document.getElementById('incrementHours');
-    const decrementHoursButton = document.getElementById('decrementHours');
-    
-    const incrementMinutesButton = document.getElementById('incrementMinutes');
-    const decrementMinutesButton = document.getElementById('decrementMinutes');
 
-    const RegisterTaskButton = document.getElementById('submit');
-    
-    // Initialize variables
-    let hours = 0;
-    let minutes = 0;
-    
-    // Function to format numbers with leading zero if needed
-    function formatNumber(number) {
-        return number.toString().padStart(2, '0');
-    }
-
-    // Update display
-    function updateDisplay() {
-        hoursElement.textContent = formatNumber(hours);
-        minutesElement.textContent = formatNumber(minutes);
-    }
-    
-    // Increment hours function
-    incrementHoursButton.addEventListener('click', () => {
-        hours++;
-        if (hours > 99) {
-            hours = 0;
-        }
-        updateDisplay();
-    });
-    
-    // Decrement hours function
-    decrementHoursButton.addEventListener('click', () => {
-        hours--;
-        if (hours < 0) {
-            hours = 0;
-        }
-        updateDisplay();
-    });
-    
-    // Increment minutes function
-    incrementMinutesButton.addEventListener('click', () => {
-        minutes += 15;
-        if (minutes > 59) {
-            minutes = 0;
-        }
-        updateDisplay();
-    });
-    
-    // Decrement minutes function
-    decrementMinutesButton.addEventListener('click', () => {
-        minutes -= 15;
-        if (minutes < 0) {
-            minutes = 0;
-        }
-        updateDisplay();
-    });
-
-    // author : Nicolas
-    // Register task function
-    RegisterTaskButton.addEventListener('click', () => {
-        // Creating a cookie after the document is ready
-        $(document).ready(function () {
-            createCookie("NewTask", (hours*4*15) + minutes, "1");
-        });
-    });
-
-    // author : Nicolas
-    // Function to create the cookie
-    function createCookie(name, value, days) {
-        var expires;
-        
-        if (days) {
-            var date = new Date();
-            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-            expires = "; expires=" + date.toGMTString();
-        }
-        else {
-            expires = "";
-        }
-        
-        document.cookie = escape(name) + "=" + 
-            escape(value) + expires + "; path=/";
-    }
-});
 
 // author : Enzo
 // to display or hide the task registration part
@@ -114,3 +23,51 @@ function DisplayTaskRegistration() {
 
 // Attach the DisplayTaskRegistration function to the 'load' event
 window.addEventListener('load', DisplayTaskRegistration);
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Initialize the values of the text fields
+    var hoursValue = 0;
+    var minutesValue = 0;
+
+    var hoursInput = document.getElementById('hours');
+    var minutesInput = document.getElementById('minutes');
+
+    // Function to format the value with leading zeros
+    function formatValue(value) {
+        return value < 10 ? '0' + value : value;
+    }
+
+    // Update the input values with the formatted values
+    function updateInputValues() {
+        hoursInput.value = formatValue(hoursValue);
+        minutesInput.value = formatValue(minutesValue);
+    }
+
+    // Initialize the input values
+    updateInputValues();
+
+    // Function to increment the value of the text field
+    window.incrementValue = function (type) {
+        if (type === 'hours') {
+            hoursValue = (hoursValue + 1); // Ensure hours stay between 0 and 23
+        } else if (type === 'minutes') {
+            minutesValue = (minutesValue + 15) % 60; // Ensure minutes stay between 0 and 59
+        }
+
+        // Update the input values
+        updateInputValues();
+    };
+
+    // Function to decrement the value of the text field
+    window.decrementValue = function (type) {
+        if (type === 'hours' && hoursValue > 0) {
+            hoursValue--;
+        } else if (type === 'minutes' && minutesValue > 0) {
+            minutesValue -= 15;
+        }
+
+        // Update the input values
+        updateInputValues();
+    };
+});
