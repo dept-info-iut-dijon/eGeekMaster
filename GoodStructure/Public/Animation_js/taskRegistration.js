@@ -3,7 +3,7 @@
 
 
 // author : Enzo
-// to display or hide the task registration part
+// To display or hide the task registration part
 function DisplayTaskRegistration() {
     // Get references to the button, the task registration part
     const buttonTask = document.getElementById("boutonTaches");
@@ -25,6 +25,9 @@ function DisplayTaskRegistration() {
 window.addEventListener('load', DisplayTaskRegistration);
 
 
+
+// author : Enzo
+// To increment and decrement the lifetime
 document.addEventListener('DOMContentLoaded', function () {
     // Initialize the values of the text fields
     var hoursValue = 0;
@@ -47,19 +50,19 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initialize the input values
     updateInputValues();
 
-    // Function to increment the value of the text field
+    // Function to increment the value
     window.incrementValue = function (type) {
         if (type === 'hours') {
-            hoursValue = (hoursValue + 1); // Ensure hours stay between 0 and 23
+            hoursValue++;
         } else if (type === 'minutes') {
-            minutesValue = (minutesValue + 15) % 60; // Ensure minutes stay between 0 and 59
+            minutesValue = (minutesValue + 15) % 60; 
         }
 
         // Update the input values
         updateInputValues();
     };
 
-    // Function to decrement the value of the text field
+    // Function to decrement the value
     window.decrementValue = function (type) {
         if (type === 'hours' && hoursValue > 0) {
             hoursValue--;
