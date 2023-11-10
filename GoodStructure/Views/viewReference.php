@@ -2,7 +2,7 @@
 author: Théo Cornu
 author : Lola Cohidon-->
 <div id="ContaintReference">
-    <link rel="stylesheet" href="Public/css/reference1.css">
+    <link rel="stylesheet" href="Public/css/reference2.css">
     <!--Search bar-->
     <div class="search">
         <div class="search-box">
