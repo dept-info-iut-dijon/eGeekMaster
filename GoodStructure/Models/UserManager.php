@@ -81,12 +81,10 @@ class UserManager extends Model
     public function GetIdDashBoardByUserId(int $id): ?int
     {
         try {
-            $sql = 'SELECT DashBoardidDashBoard FROM users WHERE idUsers = ?';
+            $sql = 'SELECT idDashBoard FROM users WHERE idUsers = ?';
             $result = $this->executerRequete($sql, [$id]);
-            
             $line = $result->fetch(PDO::FETCH_ASSOC);
-            return $line['DashBoardidDashBoard'];
-            
+            return $line['idDashBoard'];
         } catch (PDOException $e) {
             // In case of an error, redirect to the error page with a message
             $errorMessage = "An error occurred while retrieving data(idDashBoard).";
