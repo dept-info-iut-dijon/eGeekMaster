@@ -11,7 +11,7 @@
 
         <!--FORM-->
         <div id="formDiv">
-            <form action="index.php?action=" method="post" id="formTask">
+            <form action="index.php?action=TaskRegistration" method="post" id="formTask">
                 <fieldset>
 
                     <!--TITLE-->
