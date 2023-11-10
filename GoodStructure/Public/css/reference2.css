@@ -189,4 +189,44 @@ td {
   justify-content: center;
 }
 
-  
+/*RESPONSIVE*/
+
+/* Ajout de styles pour les écrans de taille plus petite */
+@media only screen and (max-width: 600px) {
+  .ReferenceTable th,
+  .ReferenceTable td,
+  .ReferenceTable tr,
+  .ReferenceTable table,
+  .ReferenceTable {
+      display: block;
+  }
+
+  .ReferenceTable th,
+  .ReferenceTable td {
+      text-align: left;
+      width: 100%;
+  }
+}
+
+/* Ajout de styles pour les boutons déroulants */
+.btn-dropdown {
+  display: none;
+}
+
+/* Styles pour le bouton déroulant actif */
+.active-dropdown {
+  display: block;
+}
+
+/* Ajout de styles pour les descriptions et valeurs */
+.description-value {
+  display: none;
+  padding: 10px;
+  background-color: #f9f9f9;
+  margin-top: 10px;
+}
+
+/* Styles pour le bouton déroulant actif */
+.active-dropdown .description-value {
+  display: block;
+}
