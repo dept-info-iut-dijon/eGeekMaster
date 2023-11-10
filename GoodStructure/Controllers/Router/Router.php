@@ -69,7 +69,8 @@ class Router {
         "AddUser" => new RouteAddUser($this->ctrlList["UserController"]),
         "DeleteUser" => new RouteDeleteUser($this->ctrlList["UserController"]),
         "EditUser" => new RouteEditUser($this->ctrlList["UserController"]),
-        "InfoDashBoard" => new RouteInfoDashBoard($this->ctrlList["UserController"]),];
+        "InfoDashBoard" => new RouteInfoDashBoard($this->ctrlList["UserController"]),
+        "TaskRegistration" => new RouteTaskRegistration($this->ctrlList["MainController"])];
     }
 
     /**
