@@ -50,9 +50,7 @@ class Router {
         // Create the controller list
         $this->ctrlList = ['MainController' => new MainController(), 
         'LoginController' => new LoginController(),
-        'UserController' => new UserController(),
-        'TaskController' => new TaskController(),
-        'DashBoardController' => new DashBoardController(),];
+        'UserController' => new UserController()];
     }
 
     /**
@@ -61,11 +59,7 @@ class Router {
     public function createRouteList() {
         // Create the route list
         $this->routeList = ["Index" => new RouteIndex($this->ctrlList["MainController"]),
-
         "Reference" => new RouteReference($this->ctrlList["MainController"]),
-
-        "DashBoard" => new RouteDashBoard($this->ctrlList["MainController"]),
-
         "Search" => new RouteSearch($this->ctrlList["MainController"]),
         "Connection" => new RouteConnection($this->ctrlList["MainController"]),
         "Registration" => new RouteRegistration($this->ctrlList["MainController"]),

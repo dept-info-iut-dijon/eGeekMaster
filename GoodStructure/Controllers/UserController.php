@@ -7,18 +7,13 @@
 require_once 'views/View.php';
 require_once 'models/UserManager.php';
 require_once 'Controllers/MainController.php';
-require_once 'models/LoginManager.php';
-require_once 'models/DashBoardManager.php';
 
 class UserController{
     
     private $UserManager;
     private $mainController;
     private $loginManager;
-    private $dashboardController;
-    private $registrationView;
-    private $dashboardView;
-    private $User;
+    private $addView;
 
     /**
      * UserController constructor.
@@ -27,11 +22,7 @@ class UserController{
         $this->UserManager = new UserManager();
         $this->mainController = new MainController();
         $this->loginManager = new LoginManager();
-        $this->dashboardController = new DashBoardController();
-        $this->registrationView = new View('Registration');
-        $this->dashboardView = new View('Dashboard');
-        $this->User = new User();
-
+        $this->addView = new View('Registration');
     }
 
     /**
@@ -50,7 +41,7 @@ class UserController{
             // Check if there is an error message to display
             $errorMessage = isset($_GET['errorMessage']) ? $_GET['errorMessage'] : null;
             // Display the registration form with the error message
-            $this->registrationView->generer(['errorMessage' => $errorMessage]);
+            $this->addView->generer(['errorMessage' => $errorMessage]);
         }
     }
 
@@ -68,7 +59,7 @@ class UserController{
      * Convert family place to string.
      * @return string
      */
-    private function FamilyPlaceToString(){
+    public function FamilyPlaceToString(){
         $familyPlace = "";
         $tempConcat = ", ";
         $fieldsToCheck = [
@@ -91,7 +82,7 @@ class UserController{
      */
     public function UpdateUser() {
         // Retrieve the User to update
-        $updateUser = $this->UserManager->GetByLoginID(intval($_GET['IdLogin']));
+        $updateUser = $this->UserManager->GetByID(intval($_GET['IdLogin']));
         $this->populateUser($updateUser);
         // Update the User
         $this->UserManager->UpdateUser($updateUser);
@@ -105,10 +96,10 @@ class UserController{
      */
     private function createUser() {
         // Create a new User
-        
-        $this->populateUser();
+        $User = new User();
+        $this->populateUser($User);
         // Add the new User
-        $this->UserManager->addUser($this->User );
+        $this->UserManager->addUser($User);
         
         // header('Location: index.php?action=Index');
         // Connect the user
@@ -122,18 +113,15 @@ class UserController{
      * Set the properties of the User object.
      * @param User $User
      */
-    private function populateUser() {
+    private function populateUser(User $User) {
         // Set the properties of the User object
-        $this->User ->setPassword($_POST['Password']);
-        $this->User ->setFirstName($_POST['Firstname']);
-        $this->User ->setLastName($_POST['Lastname']);
-        $this->User ->setEmail($_POST['Email']);
-        $this->User ->setGender($_POST['Gender']);
-        $this->User ->setFamilyPlace($this->FamilyPlaceToString());
-        $this->User ->setBirthDate($_POST['YearOfBirth'] . "-" . $_POST['MonthOfBirth'] . "-" . $_POST['DayOfBirth']);
-        $this->User ->setLogin($_POST['Username']);
+        $User->setPassword($_POST['Password']);
+        $User->setFirstName($_POST['Firstname']);
+        $User->setLastName($_POST['Lastname']);
+        $User->setEmail($_POST['Email']);
+        $User->setGender($_POST['Gender']);
+        $User->setFamilyPlace($this->FamilyPlaceToString());
+        $User->setBirthDate($_POST['YearOfBirth'] . "-" . $_POST['MonthOfBirth'] . "-" . $_POST['DayOfBirth']);
+        $User->setLogin($_POST['Username']);
     }
-
-    
-        
 }

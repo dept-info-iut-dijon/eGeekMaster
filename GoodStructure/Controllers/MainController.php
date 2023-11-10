@@ -65,7 +65,6 @@ class MainController {
     }
 
     /**
-
      * Displays the reference page.
      */
     public function Reference() {
@@ -75,16 +74,5 @@ class MainController {
             //ajouter les données à afficher
         );
         $referenceView->generer($data);
-
-     * Displays the dashboard page.
-     */
-    public function DashBoard() {
-    
-        $dashBoardView = new View("DashBoard");
-        $data = array(
-            //ajouter les données à afficher
-        );
-        $dashBoardView->generer($data);
-
     }
 }
