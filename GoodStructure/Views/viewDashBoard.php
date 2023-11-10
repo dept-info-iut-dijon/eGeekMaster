@@ -23,7 +23,7 @@
                     <div id="task">
                         <label id="taskLabel">Task :</label>
                         <div id="chooseTask">
-                            <input list="tasks" placeholder="Search a task" id="searchTask" autofocus required>
+                            <input list="tasks" placeholder="Search a task" name="searchTask" id="searchTask" autofocus required>
                             <datalist id="tasks">
                                 <option value="Cleaning">                                
                                 <option value="Shopping">
@@ -57,9 +57,9 @@
                             </div>
                         </div>
                         <div id="time">
-                            <input type="text" id="hours" class="inputsTime" readonly>
+                            <input type="text" name="hours" id="hours" class="inputsTime" readonly>
                             <p id="a"> : </p>
-                            <input type="text" id="minutes" class="inputsTime" readonly>
+                            <input type="text" name="minutes" id="minutes" class="inputsTime" readonly>
                         </div>
                         <div class="incrementDecrement">
                             <div class="plus">

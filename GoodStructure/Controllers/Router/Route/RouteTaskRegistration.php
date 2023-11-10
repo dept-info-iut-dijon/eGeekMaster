@@ -8,14 +8,16 @@ require_once 'Controllers/Router/Route.php';
  */
 
  class RouteTaskRegistration extends Route {
-    private MainController $controller;
+    private TaskController $controller;
+
 
     /**
      * RouteTaskRegistration constructor
-     * @param Maincontroller $controller
+     * @param TaskController $controller
     */
-    public function __construct(MainController $controller) {
+    public function __construct(TaskController $controller) {
         parent::__construct();
+
         $this->controller = $controller;
     }
 
@@ -25,7 +27,7 @@ require_once 'Controllers/Router/Route.php';
      * @return mixed
      */
     public function get($params = []) {
-        return $this->controller->DashBoard();
+        return $this->controller->addTask();
     }
 
     /**
@@ -34,7 +36,7 @@ require_once 'Controllers/Router/Route.php';
      * @return mixed
      */
     public function post($params = []) {
-        return $this->controller->DashBoard();
+        return $this->controller->addTask();
     }
 
     /**
@@ -44,6 +46,6 @@ require_once 'Controllers/Router/Route.php';
      * @return mixed
      */
     public function action($params = [], $method = 'GET') {
-        return $this->controller->DashBoard();
+        return $this->controller->addTask();
     }
  }

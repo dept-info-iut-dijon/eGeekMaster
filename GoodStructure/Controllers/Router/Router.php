@@ -50,7 +50,8 @@ class Router {
         // Create the controller list
         $this->ctrlList = ['MainController' => new MainController(), 
         'LoginController' => new LoginController(),
-        'UserController' => new UserController()];
+        'UserController' => new UserController(),
+        'TaskController' => new TaskController()];
     }
 
     /**
@@ -70,7 +71,7 @@ class Router {
         "DeleteUser" => new RouteDeleteUser($this->ctrlList["UserController"]),
         "EditUser" => new RouteEditUser($this->ctrlList["UserController"]),
         "InfoDashBoard" => new RouteInfoDashBoard($this->ctrlList["UserController"]),
-        "TaskRegistration" => new RouteTaskRegistration($this->ctrlList["MainController"])];
+        "TaskRegistration" => new RouteTaskRegistration($this->ctrlList["TaskController"])];
     }
 
     /**

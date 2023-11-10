@@ -99,10 +99,14 @@ require_once 'Models/DashboardManager.php';
     public function AddTask(Task $Task): Task
     {
         try {
-            $dashboardManager = new DashboardManager();
-            $sql = 'INSERT INTO task (Name, Duration, Date, DashBoardidDashboard) VALUES (?, ?, ?, ?)';
-            $this->executerRequete($sql, [$Task->getNameTask(), $Task->getDuration(), $Task->getDateAdded(), $dashboardManager->GetIdDashBoardByIdTask($Task->GetId()) ]);
-            $Task->setId($this->getLastInsertID());
+            $sql = 'INSERT INTO task (Name, Duration, Date, DashBoardidDashboard) VALUES (:value1, :value2, :value3, :value4)';
+            $this->executerRequete($sql, [
+                ':value1' => $Task->getNameTask(),
+                ':value2' => $Task->getDuration(),
+                ':value3' =>  $Task->getDateAdded(),
+                ':value4' =>  $Task->getIdDashBoard()
+            ]);
+            //$Task->setId($this->getLastInsertID());
             return $Task;
         } catch (PDOException $e) {
             // In case of an error, redirect to the error page with a message
