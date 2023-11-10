@@ -193,13 +193,18 @@ td {
 
 /* Ajout de styles pour les écrans de taille plus petite */
 @media only screen and (max-width: 600px) {
-  .ReferenceTable th,
+  .thToDisplay,
   .ReferenceTable td,
   .ReferenceTable tr,
   .ReferenceTable table,
   .ReferenceTable {
       display: block;
   }
+
+  .thToNotDisplay{
+    display: none;
+  }
+
 
   .ReferenceTable th,
   .ReferenceTable td {

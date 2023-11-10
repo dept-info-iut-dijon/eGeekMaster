@@ -22,12 +22,12 @@ author : Lola Cohidon-->
     <div class="ReferenceTable">
         <table>
             <tr>
-                <th>Activity</th>
-                <th>Descriptive</th>
-                <th>Value 1/4</th>
+                <th class="thToDisplay">Activity</th>
+                <th class="thToNotDisplay">Descriptive</th>
+                <th class="thToNotDisplay">Value 1/4</th>
             </tr>
             <tr>
-                <td>
+                <td class="tdToDisplay">
                     <div class="action">
                         <div>
                             <img class="icon" src="Public/image/page_reference/img_cleaning.png" alt="">
@@ -37,11 +37,11 @@ author : Lola Cohidon-->
                         </div>
                     </div>
                 </td>
-                <td>Cleaning surfaces, floors, sinks, toilets and household appliances.</td>
-                <td>1</td>
+                <td class="tdToNotDisplay">Cleaning surfaces, floors, sinks, toilets and household appliances.</td>
+                <td class="tdToNotDisplay">1</td>
             </tr>
             <tr>
-                <td>
+                <td class="tdToDisplay">
                     <div class="action">
                         <div>
                             <img class="icon" src="Public/image/page_reference/img_shopping.png" alt="">
@@ -51,11 +51,11 @@ author : Lola Cohidon-->
                         </div>
                     </div>
                 </td>
-                <td>Purchase of all supplies necessary for the household (food, medications, furniture, DIY and garden equipment, children's clothing, etc.).</td>
-                <td>1</td>
+                <td class="tdToNotDisplay">Purchase of all supplies necessary for the household (food, medications, furniture, DIY and garden equipment, children's clothing, etc.).</td>
+                <td class="tdToNotDisplay">1</td>
             </tr>
             <tr>
-                <td>
+                <td class="tdToDisplay">
                     <div class="action">
                         <div>
                             <img class="icon" src="Public/image/page_reference/img_cooking.png" alt="">
@@ -65,11 +65,11 @@ author : Lola Cohidon-->
                         </div>
                     </div>
                 </td>
-                <td>Creation of weekly menus, Meal preparation, Table setting and clearing.</td>
-                <td>1</td>
+                <td class="tdToNotDisplay">Creation of weekly menus, Meal preparation, Table setting and clearing.</td>
+                <td class="tdToNotDisplay">1</td>
             </tr>
             <tr>
-                <td>
+                <td class="tdToDisplay"> 
                     <div class="action">
                         <div>
                             <img class="icon" src="Public/image/page_reference/img_dishes.png" alt="">
@@ -79,11 +79,11 @@ author : Lola Cohidon-->
                         </div>
                     </div>
                 </td>
-                <td>By hand or using the dishwasher (loading and unloading). Storage in cupboards.</td>
-                <td>1</td>
+                <td class="tdToNotDisplay">By hand or using the dishwasher (loading and unloading). Storage in cupboards.</td>
+                <td class="tdToNotDisplay">1</td>
             </tr>
             <tr>
-                <td>
+                <td class="tdToDisplay">
                     <div class="action">
                         <div>
                             <img class="icon" src="Public/image/page_reference/img_laundry.png" alt="">
@@ -93,11 +93,11 @@ author : Lola Cohidon-->
                         </div>
                     </div>
                 </td>
-                <td>Collecting (putting in the basket), sorting, washing, drying, ironing, and storing.</td>
-                <td>1</td>
+                <td class="tdToNotDisplay">Collecting (putting in the basket), sorting, washing, drying, ironing, and storing.</td>
+                <td class="tdToNotDisplay">1</td>
             </tr>
             <tr>
-                <td>
+                <td class="tdToDisplay">
                     <div class="action">
                         <div>
                             <img class="icon" src="Public/image/page_reference/img_childrenCare.png" alt="">
@@ -107,11 +107,11 @@ author : Lola Cohidon-->
                         </div>
                     </div>
                 </td>
-                <td>Physiological needs (getting up, washing, feeding, dressing, caring, and putting to bed).</td>
-                <td>1</td>
+                <td class="tdToNotDisplay">Physiological needs (getting up, washing, feeding, dressing, caring, and putting to bed).</td>
+                <td class="tdToNotDisplay">1</td>
             </tr>
             <tr>
-                <td>
+                <td class="tdToDisplay">
                     <div class="action">
                         <div>
                             <img class="icon" src="Public/image/page_reference/img_childsPlay.png" alt="">
@@ -121,11 +121,11 @@ author : Lola Cohidon-->
                         </div>
                     </div>
                 </td>
-                <td>Organization (choosing the game, setting up), participation in activities (starting the game, overall participation, and cleaning up the game).</td>
-                <td>1</td>
+                <td class="tdToNotDisplay">Organization (choosing the game, setting up), participation in activities (starting the game, overall participation, and cleaning up the game).</td>
+                <td class="tdToNotDisplay">1</td>
             </tr>
             <tr>
-                <td>
+                <td class="tdToDisplay">
                     <div class="action">
                         <div>
                             <img class="icon" src="Public/image/page_reference/img_childrensJourney.png" alt="">
@@ -135,11 +135,11 @@ author : Lola Cohidon-->
                         </div>
                     </div>
                 </td>
-                <td>To school, after-school care (recreation center + cafeteria), babysitter, friends, doctor, leisure activities (sports/culture).</td>
-                <td>1</td>
+                <td class="tdToNotDisplay" >To school, after-school care (recreation center + cafeteria), babysitter, friends, doctor, leisure activities (sports/culture).</td>
+                <td class="tdToNotDisplay">1</td>
             </tr>
             <tr>
-                <td>
+                <td class="tdToDisplay">
                     <div class="action">
                         <div>
                             <img class="icon" src="Public/image/page_reference/img_parentJourney.png" alt="">
@@ -149,11 +149,11 @@ author : Lola Cohidon-->
                         </div>
                     </div>
                 </td>
-                <td>For dependent parent.</td>
-                <td>1</td>
+                <td class="tdToNotDisplay">For dependent parent.</td>
+                <td class="tdToNotDisplay">1</td>
             </tr>
             <tr>
-                <td>
+                <td class="tdToDisplay">
                     <div class="action">
                         <div>
                             <img class="icon" src="Public/image/page_reference/img_parentCare.png" alt="">
@@ -163,11 +163,11 @@ author : Lola Cohidon-->
                         </div>
                     </div>
                 </td>
-                <td>Assistance, care for a dependent parent, administrative management of files (health, home care, etc.), transportation (health, leisure).</td>
-                <td>1</td>
+                <td class="tdToNotDisplay">Assistance, care for a dependent parent, administrative management of files (health, home care, etc.), transportation (health, leisure).</td>
+                <td class="tdToNotDisplay">1</td>
             </tr>
             <tr>
-                <td>
+                <td class="tdToDisplay">
                     <div class="action">
                         <div>
                             <img class="icon" src="Public/image/page_reference/img_administrative.png" alt="">
@@ -177,11 +177,11 @@ author : Lola Cohidon-->
                         </div>
                     </div>
                 </td>
-                <td>Taxes, bills, administrative registrations, health insurance management, bank account management, subscriptions, mail posting, and making reservations.</td>
-                <td>1</td>
+                <td class="tdToNotDisplay">Taxes, bills, administrative registrations, health insurance management, bank account management, subscriptions, mail posting, and making reservations.</td>
+                <td class="tdToNotDisplay">1</td>
             </tr>
             <tr>
-                <td>
+                <td class="tdToDisplay">
                     <div class="action">
                         <div>
                             <img class="icon" src="Public/image/page_reference/img_petCare.png" alt="">
@@ -191,11 +191,11 @@ author : Lola Cohidon-->
                         </div>
                     </div>
                 </td>
-                <td>Food, Washing/Brushing, Walk, Litter change, Vet appointment, Care for.</td>
-                <td>1</td>
+                <td class="tdToNotDisplay">Food, Washing/Brushing, Walk, Litter change, Vet appointment, Care for.</td>
+                <td class="tdToNotDisplay">1</td>
             </tr>
             <tr>
-                <td>
+                <td class="tdToDisplay">
                     <div class="action">
                         <div>
                             <img class="icon" src="Public/image/page_reference/img_gardening.png" alt="">
@@ -205,11 +205,11 @@ author : Lola Cohidon-->
                         </div>
                     </div>
                 </td>
-                <td>Any necessary outdoor tasks: mow, prune, treat, water, harvest.</td>
-                <td>1</td>
+                <td class="tdToNotDisplay">Any necessary outdoor tasks: mow, prune, treat, water, harvest.</td>
+                <td class="tdToNotDisplay">1</td>
             </tr>
             <tr>
-                <td>
+                <td class="tdToDisplay">
                     <div class="action">
                         <div>
                             <img class="icon" src="Public/image/page_reference/img_diy.png" alt="">
@@ -219,11 +219,11 @@ author : Lola Cohidon-->
                         </div>
                     </div>
                 </td>
-                <td>Repairs, necessary minor work (plaster, painting, plumbing, etc.).</td>
-                <td>1</td>
+                <td class="tdToNotDisplay">Repairs, necessary minor work (plaster, painting, plumbing, etc.).</td>
+                <td class="tdToNotDisplay">1</td>
             </tr>
             <tr>
-                <td>
+                <td class="tdToDisplay">
                     <div class="action">
                         <div>
                             <img class="icon" src="Public/image/page_reference/img_householdManagement.png" alt="">
@@ -233,8 +233,8 @@ author : Lola Cohidon-->
                         </div>
                     </div>
                 </td>
-                <td>Service provider management (search, hiring, follow-up), availability management for parcel reception, leisure management.</td>
-                <td>1</td>
+                <td class="tdToNotDisplay">Service provider management (search, hiring, follow-up), availability management for parcel reception, leisure management.</td>
+                <td class="tdToNotDisplay">1</td>
             </tr>
         </table>
     </div>

@@ -1,4 +1,3 @@
-
 /**
  * @author Théo Cornu
 */
@@ -24,30 +23,24 @@ function Search() {
         }
     }
 
-    
-
-
     // Get the text from the input field
-    var input = document.getElementById("recherche").value;
+    var inputText = document.getElementById("recherche").value;
     // Get the location of the text
-    var location = document.getElementById(input).offsetTop;
-
+    var location = document.getElementById(inputText).offsetTop;
 
     function scrollToLocation() {
         window.scrollTo({
             behavior: "smooth",
             top: location
-            
         });
     }
 
     // Sélectionnez le bouton pour remonter en haut
     const scrollToTopButton = document.querySelector(".scroll-to-top");
 
-// Ajoutez un gestionnaire d'événement pour le clic sur le bouton
+    // Ajoutez un gestionnaire d'événement pour le clic sur le bouton
     scrollToTopButton.addEventListener("click", scrollToLocation);
 }
-
 
 // Attach the Sidebar function to the 'load' event
 window.addEventListener('load', Search);
