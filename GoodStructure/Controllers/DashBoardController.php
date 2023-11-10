@@ -66,7 +66,6 @@ class DashBoardController {
         $username = $this->loginManager->GetUsernameByIdLogin(intval($_SESSION['IdLogin']));
         
         $this->DashBoard->SetId($this->UserManager->GetIdDashboardByUserId($idUser));
-        print('pipi'.$this->DashBoard->GetId());
         $this->DashBoard->SetUsername($username);
         $this->DashBoard->SetIdUser($idUser);
     }

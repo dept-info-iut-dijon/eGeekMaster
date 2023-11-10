@@ -1,22 +1,8 @@
-<<<<<<< HEAD
-<link rel="stylesheet" href="Public/css/dashboard2.css">
-<div id="body">
-    <div id="divBoutonTache">
-        <!-- Bouton d'ajout de tâches -->
-        <button id="boutonTaches" type="button">Register a new task</button>
-    </div>
-
-    <!-- Graphiques -->
-    <div id="graphiques">
-        <div id="piechart">
-            <h1>Tasks distribution</h1>
-            <canvas id="myChart1"></canvas>
-=======
 <!--
     author : Enzo
 -->
 
-<link rel="stylesheet" href="Public/css/dashboard.css">
+<link rel="stylesheet" href="Public/css/dashboard2.css">
 <link rel="stylesheet" href="Public/css/taskRegistration.css">
 <script src="Public/Animation_js/taskRegistration.js"></script>
 <div id="bar">
@@ -118,21 +104,20 @@
         <button id="boutonTaches" type="button">Register a new task</button>
     </div>
 
-    
-</div> 
-    <!-- Titre des graphiques -->
-    <div id="titreDashboard">
-        <div>
-            <h1>Répartition des tâches</h1>
->>>>>>> TaskRegistration
+    <!-- Graphiques -->
+    <div id="graphiques">
+        <div id="piechart">
+            <h1>Tasks distribution</h1>
+            <canvas id="myChart1"></canvas>
         </div>
         <div id="barchart">
             <h1>Average duration for each task</h1>
             <canvas id="myChart2"></canvas>
         </div>
-<<<<<<< HEAD
     </div>
-</div>
+</div> 
+    
+
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -172,6 +157,5 @@
         }
     });
 </script>
-=======
-    </div>
+
 

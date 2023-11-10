@@ -4,7 +4,8 @@ require_once 'Controllers/Router/Route.php';
 /**
  * Class RouteTaskRegistration
  * @package Controllers\Router\Route
- * @author Nicolas
+ * @author Théo Cornu
+ * 
  */
 
  class RouteTaskRegistration extends Route {
