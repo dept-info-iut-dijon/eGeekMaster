@@ -12,7 +12,7 @@
         private $_login;
         private $_hash;
 
-        public function __construct(string $login, string $password)
+        public function __construct(string $login ='', string $password='')
         {
             
             $this->_login = $login;
@@ -46,7 +46,7 @@
 
         // Get the hash password
         public function getPassword() {
-            return $this->getHash();
+            return $this -> getHash();
         }
 
         // Getter for $_hash

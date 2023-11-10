@@ -3,7 +3,7 @@
 -->
 
 <link rel="stylesheet" href="Public/css/dashboard2.css">
-<link rel="stylesheet" href="Public/css/taskRegistration.css">
+<link rel="stylesheet" href="Public/css/taskRegistration1.css">
 <script src="Public/Animation_js/taskRegistration.js"></script>
 <div id="bar">
     <!--TASK REGISTRATION-->

@@ -16,7 +16,7 @@
     border-radius: 8px;
     flex-direction: row;
 
-    z-index: 10;
+    z-index: 5;
     position: fixed;
     right: -350px;
     width: 350px;
@@ -94,7 +94,7 @@ fieldset{
     align-items: center;
     margin-left: 3%;
     margin-right: 2%;
-    width: 35vh;
+    width: 45vh;
     margin-bottom: 3%;
 }
 
@@ -107,10 +107,13 @@ fieldset{
 }
 
 #time{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-right: 2%;
     padding: 0%;
     border-radius: 5px;
-    width: 6vh;
+    width: 6vw;
     margin: 0px;
     padding-bottom: 1%;
     border-style: solid;
