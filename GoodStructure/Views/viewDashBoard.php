@@ -57,9 +57,9 @@
                             </div>
                         </div>
                         <div id="time">
-                            <input type="text" id="hours" readonly>
+                            <input type="text" id="hours" class="inputsTime" readonly>
                             <p id="a"> : </p>
-                            <input type="text" id="minutes" readonly>
+                            <input type="text" id="minutes" class="inputsTime" readonly>
                         </div>
                         <div class="incrementDecrement">
                             <div class="plus">

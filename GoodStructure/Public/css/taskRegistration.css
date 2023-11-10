@@ -111,7 +111,7 @@ fieldset{
     border-style: solid;
     width: 6vh;
     margin: 0px;
-    margin-right: 1%;
+    padding-bottom: 1%;
 }
 
 .plus{
@@ -122,11 +122,13 @@ fieldset{
 #hours{
     display: inline-block;
     margin: 0%;
-    padding-left: 4%;
 }
 
-#incrementHours{
-    width: 20px;
+.inputsTime{
+    width: 30%;
+    border: none;
+    background-color: #ECE4E3;
+    font-size: 17px;
 }
 
 #minutes{
@@ -136,6 +138,7 @@ fieldset{
 #a{
     display: inline-block;
     margin: 0%;
+    font-size: 17px;
 }
 
 .styleButtons{
