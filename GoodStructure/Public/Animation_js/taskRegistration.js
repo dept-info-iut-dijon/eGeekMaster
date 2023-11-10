@@ -1,4 +1,5 @@
 // author : Enzo
+// author : Nicolas
 // to increment and decrement the time you path on the task
 document.addEventListener('DOMContentLoaded', function() {
     // Get DOM elements
@@ -10,6 +11,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const incrementMinutesButton = document.getElementById('incrementMinutes');
     const decrementMinutesButton = document.getElementById('decrementMinutes');
+
+    const RegisterTaskButton = document.getElementById('submit');
     
     // Initialize variables
     let hours = 0;
@@ -61,6 +64,33 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         updateDisplay();
     });
+
+    // author : Nicolas
+    // Register task function
+    RegisterTaskButton.addEventListener('click', () => {
+        // Creating a cookie after the document is ready
+        $(document).ready(function () {
+            createCookie("NewTask", (hours*4*15) + minutes, "1");
+        });
+    });
+
+    // author : Nicolas
+    // Function to create the cookie
+    function createCookie(name, value, days) {
+        var expires;
+        
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toGMTString();
+        }
+        else {
+            expires = "";
+        }
+        
+        document.cookie = escape(name) + "=" + 
+            escape(value) + expires + "; path=/";
+    }
 });
 
 // author : Enzo
