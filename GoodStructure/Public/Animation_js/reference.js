@@ -42,5 +42,48 @@ function Search() {
     scrollToTopButton.addEventListener("click", scrollToLocation);
 }
 
+// Variable to keep track of whether the checkboxes are expanded or not
+var expanded = false;
+
+// Function to show/hide the checkboxes
+function showDescription() {
+  // Get the element with the id "checkboxes"
+  var checkboxes = document.getElementsByClassName('tdToNotDisplay')
+  // Get the element with the id "selectbox"
+  var select = document.getElementsByClassName("tdToDisplay");
+  // If the checkboxes are not expanded
+  if (!expanded) {
+    select.style.borderBottomLeftRadius = "0px";
+    select.style.borderBottomRightRadius = "0px";
+
+    // Make checkboxes visible with animation
+    checkboxes.style.display = "block";
+    checkboxes.style.height = "0px";
+    checkboxes.style.transition = "height 0.3s ease-out";
+    var height = checkboxes.scrollHeight + "px";
+    checkboxes.style.height = height;
+    checkboxes.style.border = "1px solid #ccc";
+    checkboxes.style.overflow = "auto";
+   
+    expanded = true;
+  }
+  // If the checkboxes are already expanded 
+  else {
+    
+    // Make checkboxes invisible with animation
+    checkboxes.style.height = "0px";
+    checkboxes.style.transition = "height 0.3s ease-out";
+    setTimeout(function() {
+      checkboxes.style.display = "none";
+    }, 300);
+    expanded = false;
+    
+}
+
+    
+
+}
+
 // Attach the Sidebar function to the 'load' event
 window.addEventListener('load', Search);
+window.addEventListener('load',showDescription);

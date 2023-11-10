@@ -141,9 +141,7 @@ body {
 
 /* Styles for the table */
 .ReferenceTable {
-  background-color: #e0eef1;
-  padding: 10px; /* Space between border and table */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  
 }
 
 th, td {
@@ -153,12 +151,17 @@ th, td {
 
 /* Styles for table borders */
 table {
-  width: 100%;
+  align-self: center;
   border-collapse: separate; /* Separate table borders */
   margin-top: 20px;
+  background-color: #e0eef1;
+  padding: 10px; /* Space between border and table */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 85vw;
 }
 
 th, td {
+  width: 55vw;
   padding: 10px;
   border: 1px solid #000; /* Add black borders */
 }
@@ -180,7 +183,7 @@ td {
 .icon {
   width: 30px; /* Icon size */
   height: 30px;
-  margin-right: 10px;
+  margin-right: 10%;
 }
 
 .action {
@@ -194,15 +197,27 @@ td {
 /* Ajout de styles pour les écrans de taille plus petite */
 @media only screen and (max-width: 600px) {
   .thToDisplay,
-  .ReferenceTable td,
-  .ReferenceTable tr,
-  .ReferenceTable table,
-  .ReferenceTable {
+  .tdToDisplay,
+  .ReferenceTable tr
+  {
       display: block;
   }
 
-  .thToNotDisplay{
+  .thToNotDisplay,
+  .tdToNotDisplay{
     display: none;
+  }
+
+  .ReferenceTable{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  table{
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
 

@@ -19,7 +19,7 @@ author : Lola Cohidon-->
         </div>
     </div>
     <!--Reference table-->
-    <div class="ReferenceTable">
+    <!-- <div class="ReferenceTable"> -->
         <table>
             <tr>
                 <th class="thToDisplay">Activity</th>
@@ -237,5 +237,5 @@ author : Lola Cohidon-->
                 <td class="tdToNotDisplay">1</td>
             </tr>
         </table>
-    </div>
+    <!-- </div> -->
 </div>
