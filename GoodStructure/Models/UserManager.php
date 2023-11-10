@@ -81,10 +81,12 @@ class UserManager extends Model
     public function GetIdDashBoardByUserId(int $id): ?int
     {
         try {
-            $sql = 'SELECT idDashBoard FROM users WHERE idUsers = ?';
+            $sql = 'SELECT DashBoardidDashBoard FROM users WHERE idUsers = ?';
             $result = $this->executerRequete($sql, [$id]);
+            
             $line = $result->fetch(PDO::FETCH_ASSOC);
-            return $line['idDashBoard'];
+            return $line['DashBoardidDashBoard'];
+            
         } catch (PDOException $e) {
             // In case of an error, redirect to the error page with a message
             $errorMessage = "An error occurred while retrieving data(idDashBoard).";
@@ -279,6 +281,28 @@ class UserManager extends Model
             // In case of an error, redirect to the error page with a message
             $errorMessage = "An error occurred while updating the User.";
             header("Location: index.php?action=Registration&errorMessage=".urlencode($errorMessage));
+            exit();
+        }
+    }
+
+    /**
+     * Retrieve a specific idDashboard by its userID from the database.
+     *
+     * @param int $id The userID of the User to retrieve.
+     * @return int|null The id of the Dashboard, or null if not found.
+     * @throws Exception
+     */
+    public function GetIdDashBoardByUserId(int $id): ?int
+    {
+        try {
+            $sql = 'SELECT idDashBoard FROM users WHERE idUsers = ?';
+            $result = $this->executerRequete($sql, [$id]);
+            $line = $result->fetch(PDO::FETCH_ASSOC);
+            return $line['idDashBoard'];
+        } catch (PDOException $e) {
+            // In case of an error, redirect to the error page with a message
+            $errorMessage = "An error occurred while retrieving data(idDashBoard).";
+            header("Location: index.php?action=Index&errorMessage=".urlencode($errorMessage));
             exit();
         }
     }

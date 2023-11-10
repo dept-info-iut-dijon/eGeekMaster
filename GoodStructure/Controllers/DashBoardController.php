@@ -47,9 +47,10 @@ class DashBoardController {
      */
 
     private function UpdateDashBoard() {        
-        $this->populateDashBoard($this->DashBoard);
+        $this->populateDashBoard();
         // Update the DashBoard
         $this->DashBoardManager->UpdateDashBoard($this->DashBoard);
+        
         // Redirect to the main page
         $this->mainController->DashBoard("DashBoard updated");
         
@@ -60,13 +61,14 @@ class DashBoardController {
      * Set the properties of the DashBoard object.
      * @param DashBoard $DashBoard
      */
-    private function populateDashBoard(DashBoard $DashBoard) {
+    private function populateDashBoard() {
         $idUser = $this->UserManager->GetIdUserByLoginId(intval($_SESSION['IdLogin']));
         $username = $this->loginManager->GetUsernameByIdLogin(intval($_SESSION['IdLogin']));
         
-        $DashBoard->SetId($this->DashBoardManager->GetIdDashboardByUserId($idUser));
-        $DashBoard->SetUsername($username);
-        $DashBoard->SetIdUser($idUser);
+        $this->DashBoard->SetId($this->UserManager->GetIdDashboardByUserId($idUser));
+        print('pipi'.$this->DashBoard->GetId());
+        $this->DashBoard->SetUsername($username);
+        $this->DashBoard->SetIdUser($idUser);
     }
 
     /**
@@ -79,14 +81,14 @@ class DashBoardController {
             // Redirect to the main page with an error message
             $this->mainController->Index("Vous devez être connecté pour accéder à cette page");
         } else {
-            // Retrieve the idUser
-            $idUser = $this->UserManager->GetIdUserByLoginId(intval($_SESSION['IdLogin']));
-            // Retrieve the DashBoard
-            $idDashboard = $this->UserManager->GetIdDashBoardByUserId($idUser);
-            // Retrieve the DashBoard
-            var_dump($user->getId());
-            $this->UpdateDashBoard($this->DashBoard);
+            // // Retrieve the idUser
+            // $idUser = $this->UserManager->GetIdUserByLoginId(intval($_SESSION['IdLogin']));
+            // // Retrieve the DashBoard
+            // $idDashboard = $this->UserManager->GetIdDashBoardByUserId($idUser);
+            // // Retrieve the DashBoard
             
+            $this->UpdateDashBoard();
+            var_dump($this->DashBoard);
             
             
             // Retrieve the Tasks
