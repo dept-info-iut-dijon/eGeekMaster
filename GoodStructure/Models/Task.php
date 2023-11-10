@@ -16,9 +16,9 @@
     /**
      * Constructor of Task
      */
-    public function __construct(?int $id,string $nameTask, int $duration, DateTime $dateAdded, int $idDashBoard)
+    public function __construct(string $nameTask, int $duration, string $dateAdded, int $idDashBoard)
     {
-        $this->id = $id;
+        //$this->id = $id;
         $this->nameTask = $nameTask;
         $this->duration = $duration;
         $this->dateAdded = $dateAdded;
@@ -53,7 +53,7 @@
     /**
      * Getter for DateAdded
      */
-    public function getDateAdded(): DateTime
+    public function getDateAdded(): string
     {
         return $this->dateAdded;
     }
@@ -93,7 +93,7 @@
     /**
      * Setter for DateAdded
      */
-    public function setDateAdded(DateTime $dateAdded)
+    public function setDateAdded(string $dateAdded)
     {
         $this->dateAdded = $dateAdded;
     }
