@@ -63,7 +63,7 @@
     <div class="footer-inner">
         <div class="footer-logo">
             <a  class="scroll-to-top">
-                <img src="Public/image/page_connection/logo_soupape2.png" alt="Logo">
+                <img src="Public/image/page_connection/logo_F2.png" alt="Logo">
             </a>                
         </div>
         <div id="shortcuts" class="link">
