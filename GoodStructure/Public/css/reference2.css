@@ -140,10 +140,6 @@ body {
 }
 
 /* Styles for the table */
-.ReferenceTable {
-  
-}
-
 th, td {
   padding: 10px;
   border: 2px solid #ccc; /* Table border size */
@@ -220,33 +216,14 @@ td {
     align-items: center;
   }
 
-
   .ReferenceTable th,
   .ReferenceTable td {
       text-align: left;
       width: 100%;
   }
+  
+.tdToDisplay:focus{
+ display: block;
+}
 }
 
-/* Ajout de styles pour les boutons déroulants */
-.btn-dropdown {
-  display: none;
-}
-
-/* Styles pour le bouton déroulant actif */
-.active-dropdown {
-  display: block;
-}
-
-/* Ajout de styles pour les descriptions et valeurs */
-.description-value {
-  display: none;
-  padding: 10px;
-  background-color: #f9f9f9;
-  margin-top: 10px;
-}
-
-/* Styles pour le bouton déroulant actif */
-.active-dropdown .description-value {
-  display: block;
-}

@@ -1,5 +1,6 @@
 /**
  * @author Théo Cornu
+ * @author Lola Cohidon
 */
 
 // Get the text from the input field reserch and Displays suggestions under the input text as you type the text and cherch in the page the location of the text to move the user to the location

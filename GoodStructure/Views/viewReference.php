@@ -237,5 +237,5 @@ author : Lola Cohidon-->
                 <td class="tdToNotDisplay">1</td>
             </tr>
         </table>
-    <!-- </div> -->
+    </div>
 </div>
