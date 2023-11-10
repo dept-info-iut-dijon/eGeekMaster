@@ -79,14 +79,14 @@ class DashBoardController {
             // Redirect to the main page with an error message
             $this->mainController->Index("Vous devez être connecté pour accéder à cette page");
         } else {
-            // Retrieve the idUser
-            $idUser = $this->UserManager->GetIdUserByLoginId(intval($_SESSION['IdLogin']));
-            // Retrieve the DashBoard
-            $idDashboard = $this->UserManager->GetIdDashBoardByUserId($idUser);
-            // Retrieve the DashBoard
-            var_dump($user->getId());
-            $this->UpdateDashBoard($this->DashBoard);
-            
+            // // Retrieve the idUser
+            // $idUser = $this->UserManager->GetIdUserByLoginId(intval($_SESSION['IdLogin']));
+            // // Retrieve the DashBoard
+            // $idDashboard = $this->UserManager->GetIdDashBoardByUserId($idUser);
+            // // Retrieve the DashBoard
+            var_dump($this->DashBoard);
+            $this->UpdateDashBoard();
+            var_dump($this->DashBoard);
             
             
             // Retrieve the Tasks
