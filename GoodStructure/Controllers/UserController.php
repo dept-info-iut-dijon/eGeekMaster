@@ -97,7 +97,7 @@ class UserController{
         $this->UserManager->UpdateUser($updateUser);
         // Redirect to the main page
         $this->mainController->Index('Le User '.$_POST['Username'].' a bien été modifié !');
-        var_dump($updateUser);
+        
     }
 
     /**

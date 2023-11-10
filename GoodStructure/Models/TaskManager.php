@@ -26,10 +26,10 @@ class TaskManager extends Model
      * Retrieve a list of Tasks by its dashboard from the database.
      *
      * @param DashBoard $dashboards The dashboard to retrieve the tasks from.
-     * @return array An array of Task objects.
+     * @return array|null An array of Task objects, or null if no tasks are found.
      * @author Théo Cornu
      */
-    public function GetAllByDashBoard(DashBoard $dashboards): array
+    public function GetAllByDashBoard(DashBoard $dashboards): ?array
     {
         try {
             $sql = 'SELECT * FROM task WHERE dashboard = ?';
@@ -47,7 +47,7 @@ class TaskManager extends Model
 
                 $Tasks[] = $Task;
             }
-            return $Tasks;
+            return count($Tasks) > 0 ? $Tasks : null;
         } catch (PDOException $e) {
             // In case of an error, redirect to the error page with a message
             $errorMessage = "An error occurred while retrieving data.";

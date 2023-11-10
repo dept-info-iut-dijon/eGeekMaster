@@ -87,7 +87,6 @@ class DashBoardController {
             // // Retrieve the DashBoard
             
             $this->UpdateDashBoard();
-            var_dump($this->DashBoard);
             
             
             // Retrieve the Tasks

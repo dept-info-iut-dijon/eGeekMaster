@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= $titre ?></title>
     <link rel="stylesheet" href="Public/css/header2.css"/>
-    <link rel="stylesheet" href="Public/css/footer.css"/>
+    <link rel="stylesheet" href="Public/css/footer1.css"/>
     <link rel="stylesheet" href="Public/css/erreur.css"/>
     <script src="Public/Animation_js/header.js"></script>
 </head>
