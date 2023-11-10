@@ -81,6 +81,9 @@ fieldset{
     padding-left: 2%;
     padding-right: 2%;
     background-color: #ECE4E3;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
 }
 
 /*LIFETIME*/
@@ -105,13 +108,14 @@ fieldset{
 
 #time{
     margin-right: 2%;
-    border-width: 1px;
     padding: 0%;
     border-radius: 5px;
-    border-style: solid;
     width: 6vh;
     margin: 0px;
     padding-bottom: 1%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
 }
 
 .plus{
@@ -128,7 +132,7 @@ fieldset{
     width: 30%;
     border: none;
     background-color: #ECE4E3;
-    font-size: 17px;
+    font-size: 16px;
 }
 
 #minutes{
@@ -138,7 +142,7 @@ fieldset{
 #a{
     display: inline-block;
     margin: 0%;
-    font-size: 17px;
+    font-size: 16px;
 }
 
 .styleButtons{
@@ -159,6 +163,9 @@ fieldset{
     margin-left: 3;
     padding: 2%;
     background-color: #ECE4E3;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
 }
 
 /*CANCEL/SUBMIT*/
