@@ -3,12 +3,13 @@ body{
     background-color: #e0eef1;
 }
 
-#divChoixMembre{
+#divBoutonTache{
     background-color: #81acb5;
     padding: 20px;
     margin: 20px;
     box-shadow: 0px 5px 10px #3b3b3b;
     border-radius: 12px;
+    width: fit-content;
 }
 
 #memberFamily{
@@ -16,3 +17,21 @@ body{
     box-shadow: 0px 2.5px 5px #3b3b3b; 
     border-radius: 8px;
 }
+
+#titreDashboard{
+    display: flex;
+    justify-content: space-around;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+#boutonTaches{
+    background-color: #e0eef1;
+    height: 40px;
+    width: 250px;
+    box-shadow: 1px 2.5px 10px #3b3b3b;
+    border-radius: 5px;
+}
+
+
+
