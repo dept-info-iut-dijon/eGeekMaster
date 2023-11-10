@@ -3,6 +3,7 @@
 require_once 'Model.php';
 require_once 'User.php';
 require_once 'LoginManager.php';
+require_once 'DashBoardManager.php';
 
 class UserManager extends Model
 {
@@ -49,28 +50,94 @@ class UserManager extends Model
     }
 
     /**
-     * Retrieve a specific User by its ID from the database.
+     * Retrieve a specific idUser by its LoginID from the database.
      *
-     * @param int $id The ID of the User to retrieve.
+     * @param int $id The LoginID of the User to retrieve.
+     * @return int|null The id of the User, or null if not found.
+     * @throws Exception
+     */
+    public function GetIdUserByLoginId(int $id): ?int
+    {
+        try {
+            $sql = 'SELECT idUsers FROM users WHERE LoginidLogin = ?';
+            $result = $this->executerRequete($sql, [$id]);
+            $line = $result->fetch(PDO::FETCH_ASSOC);
+            return $line['idUsers'];
+        } catch (PDOException $e) {
+            // In case of an error, redirect to the error page with a message
+            $errorMessage = "An error occurred while retrieving data(lidUser).";
+            header("Location: index.php?action=Index&errorMessage=".urlencode($errorMessage));
+            exit();
+        }
+    }
+
+    /**
+     * Retrieve a specific idDashboard by its userID from the database.
+     *
+     * @param int $id The userID of the User to retrieve.
+     * @return int|null The id of the Dashboard, or null if not found.
+     * @throws Exception
+     */
+    public function GetIdDashBoardByUserId(int $id): ?int
+    {
+        try {
+            $sql = 'SELECT DashBoardidDashBoard FROM users WHERE idUsers = ?';
+            $result = $this->executerRequete($sql, [$id]);
+            
+            $line = $result->fetch(PDO::FETCH_ASSOC);
+            return $line['DashBoardidDashBoard'];
+            
+        } catch (PDOException $e) {
+            // In case of an error, redirect to the error page with a message
+            $errorMessage = "An error occurred while retrieving data(idDashBoard).";
+            header("Location: index.php?action=Index&errorMessage=".urlencode($errorMessage));
+            exit();
+        }
+    }
+
+   /**
+     * Retrieve a specific idUser by its DashBoardID from the database.
+     *
+     * @param int $id The DashBoardID of the User to retrieve.
+     * @return int|null The id of the User, or null if not found.
+     * @throws Exception
+     */
+    public function GetIdUserByDashBoardId(int $id): ?int
+    {
+        try {
+            $sql = 'SELECT idUser FROM users WHERE DashBoardidDashBoard = ?';
+            $result = $this->executerRequete($sql, [$id]);
+            $line = $result->fetch(PDO::FETCH_ASSOC);
+            return $line['idUser'];
+        } catch (PDOException $e) {
+            // In case of an error, redirect to the error page with a message
+            $errorMessage = "An error occurred while retrieving data(idUser).";
+            header("Location: index.php?action=Index&errorMessage=".urlencode($errorMessage));
+            exit();
+        }
+    }
+
+    /**
+     * Retrieve a specific User by its LoginID from the database.
+     *
+     * @param int $id The LoginID of the User to retrieve.
      * @return User|null The User object, or null if not found.
      * @author Théo Cornu
      */
-    public function GetByID(int $id): ?User
+    public function GetByLoginID(int $id): ?User
     {
         try {
-            $sql = 'SELECT * FROM users WHERE idUsers = ?';
+            $sql = 'SELECT * FROM users WHERE LoginidLogin = ?';
             $result = $this->executerRequete($sql, [$id]);
             $line = $result->fetch();
-            if ($line !== false) {
+            if ($line !== false) { //(LastName, FirstName, Gender, BirthDate, Email, FamilyPlace, LoginidLogin, DashBoardidDashBoard)
                 $User = new User(
-                    $line['login'],
-                    $line['password'],
-                    $line['firstName'],
-                    $line['lastName'],
-                    $line['email'],
-                    $line['gender'],
-                    $line['familyPlace'],
-                    $line['birthDate']
+                    $line['LastName'],
+                    $line['FirstName'],
+                    $line['Gender'],
+                    $line['BirthDate'],
+                    $line['Email'],
+                    $line['FamilyPlace']
                 );
 
                 return $User;
@@ -134,6 +201,8 @@ class UserManager extends Model
     public function AddUser(User $User): void
     {
         try {
+            
+
             // Add a login associated with the User
             $loginManager = new LoginManager();
             $login = $loginManager->Add($User->getLogin(), $User->getPassword());
@@ -144,8 +213,18 @@ class UserManager extends Model
             $line = $result->fetch();
             $login->setId($line['idLogin']);
 
-            $sql = ("INSERT INTO users (LastName, FirstName, Gender, BirthDate, Email, FamilyPlace, LoginidLogin) 
-            VALUES (:value1, :value2, :value3, :value4, :value5, :value6, (SELECT idLogin from login where idLogin = :value7))");
+            //Add a dashboard associated with the User
+            $dashBoardManager = new DashBoardManager();
+            $dashBoard = $dashBoardManager->Add($login->getLogin() ."'s dashboard");
+
+            // Get the ID of the last dashboard added
+            $sql = 'SELECT idDashBoard FROM dashboard ORDER BY idDashBoard DESC LIMIT 1';
+            $result = $this->executerRequete($sql);
+            $line = $result->fetch();
+            $dashBoard->setId($line['idDashBoard']);
+
+            $sql = ("INSERT INTO users (LastName, FirstName, Gender, BirthDate, Email, FamilyPlace, LoginidLogin, DashBoardidDashBoard) 
+            VALUES (:value1, :value2, :value3, :value4, :value5, :value6, (SELECT idLogin from login where idLogin = :value7), (SELECT idDashBoard from dashboard where idDashBoard = :value8))");
 
             $value1 = $User->getLastName();
             $value2 = $User->getFirstName();
@@ -154,6 +233,7 @@ class UserManager extends Model
             $value5 = $User->getEmail();
             $value6 = $User->getFamilyPlace();
             $value7 = $login->getId();
+            $value8 = $dashBoard->getId();
             $this->executerRequete($sql, [
                 ':value1' => $value1,
                 ':value2' => $value2,
@@ -161,7 +241,8 @@ class UserManager extends Model
                 ':value4' => $value4,
                 ':value5' => $value5,
                 ':value6' => $value6,
-                ':value7' => $value7
+                ':value7' => $value7,
+                ':value8' => $value8
             ]);
 
             // header("Refresh : 1, Location: index.php?action=Index");
@@ -187,17 +268,14 @@ class UserManager extends Model
     public function UpdateUser(User $User): void
     {
         try {
-            $sql = 'UPDATE users SET login = ?, password = ?, firstName = ?, lastName = ?, email = ?, gender = ?, familyPlace = ?, birthDate = ? WHERE idUsers = ?';
+            $sql = 'UPDATE users SET FirstName = ?, LastName = ?, Email = ?, Gender = ?, FamilyPlace = ?, BirthDate = ? WHERE idUsers = ?';
             $this->executerRequete($sql, [
-                $User->getLogin(),
-                $User->getPassword(),
                 $User->getFirstName(),
                 $User->getLastName(),
                 $User->getEmail(),
                 $User->getGender(),
                 $User->getFamilyPlace(),
-                $User->getBirthDate(),
-                $User->getId()
+                $User->getBirthDate()
             ]);
         } catch (PDOException $e) {
             // In case of an error, redirect to the error page with a message
