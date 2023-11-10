@@ -38,6 +38,26 @@ class LoginManager extends Model
     }
 
     /**
+     * Retrieve a specific username by its LoginID from the database.
+     *
+     * @param int $idLogin
+     * @return string|null
+     */
+    public function GetUsernameByIdLogin(int $idLogin) : ?string {
+        $sql = 'SELECT username FROM login WHERE idLogin = ?';
+        $resultat = $this->executerRequete($sql, [$idLogin]);
+
+        $ligne = $resultat->fetch();
+        if ($ligne !== false) {
+            $username = $ligne['username'];
+
+            return $username;
+        } else {
+            return null;
+        }
+    }
+
+    /**
      * Get a login by its ID
      * @param int $id
      * @return Login|null

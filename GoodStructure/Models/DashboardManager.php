@@ -68,6 +68,59 @@ class DashBoardManager extends Model
         }
     }
 
+    /**
+     * Retrieve a specific dashboard by its Useriduser from the database.
+     * 
+     * @param int $idUser The id of the user linked to the dashboard to retrieve.
+     * @return DashBoard|null The Dashboard object, or null if not found.
+     * @throws Exception
+     */
+    public function GetDashBoardByUserId(int $idUser): ?DashBoard
+    {
+        try {
+            $sql = 'SELECT * FROM dashboard WHERE UseridUser = ?';
+            $result = $this->executerRequete($sql, [$idUser]);
+            $line = $result->fetch(PDO::FETCH_ASSOC);
+            var_dump($line);
+            var_dump($idUser);
+            $this->dashboard->setId($line['idDashBoard']);
+            $this->dashboard->setUsername($line['username']);
+            $this->dashboard->setIdUser($line['UseridUser']);
+            
+            return $this->dashboard;
+        } catch (PDOException $e) {
+            // In case of an error, redirect to the error page with a message
+            $errorMessage = "An error occurred while retrieving data(DashBoard).";
+            header("Location: index.php?action=Index&errorMessage=".urlencode($errorMessage));
+            exit();
+        }
+    }
+
+    /**
+     * Retrieve a specific Dashboard its idDahsboard from the database.
+     *
+     * @param int $idDashboard The id of the dashboard to retrieve.
+     * @return DashBoard|null The Dashboard object, or null if not found.
+     * @throws Exception
+     */
+    public function GetById(int $idDashboard): ?DashBoard
+    {
+        try {
+            $sql = 'SELECT * FROM dashboard WHERE idDashBoard = ?';
+            $result = $this->executerRequete($sql, [$idDashboard]);
+            $line = $result->fetch(PDO::FETCH_ASSOC);
+            $this->dashboard->setId($line['idDashBoard']);
+            $this->dashboard->setUsername($line['username']);
+            $this->dashboard->setIdUser($line['UseridUser']);
+            
+            return $this->dashboard;
+        } catch (PDOException $e) {
+            // In case of an error, redirect to the error page with a message
+            $errorMessage = "An error occurred while retrieving data(DashBoard).";
+            header("Location: index.php?action=Index&errorMessage=".urlencode($errorMessage));
+            exit();
+        }
+    }
 
     /**
      * Retrieve a specific Dashboard by the id of the user linked from the database.
@@ -79,10 +132,6 @@ class DashBoardManager extends Model
     public function GetByUserId(int $idUser): ?DashBoard
     {
         try {
-            $idUser = $this->UserManager->GetIdUserByLoginId(intval($_SESSION["IdLogin"]));
-            
-            $sql = 'INSERT INTO dashboard (UseridUser) VALUES (?)';
-            $this->executerRequete($sql, [$idUser]);
             
             $sql = 'SELECT * FROM dashboard WHERE UseridUser = ?';
             $result = $this->executerRequete($sql, [$idUser]);
@@ -132,7 +181,7 @@ class DashBoardManager extends Model
         try {
             $idUser = $this->UserManager->GetIdUserByLoginId( intval($_SESSION["IdLogin"]))-1;
             
-            $sql = 'UPDATE dashboard SET username = ? UseridUser = ? WHERE idDashboard = ?';
+            $sql = 'UPDATE dashboard SET username = ?, UseridUser = ? WHERE idDashboard = ?';
             $this->executerRequete($sql, [
                 $dashboard->getUsername(),
                 $idUser,

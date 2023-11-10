@@ -15,6 +15,8 @@ class DashBoardController {
     private $DashBoardManager;
     private $TaskManager;
     private $mainController;
+    private $loginManager;
+    private $DashBoard;
 
     /**
      * DashBoardController constructor.
@@ -24,6 +26,8 @@ class DashBoardController {
         $this->DashBoardManager = new DashBoardManager();
         $this->TaskManager = new TaskManager();
         $this->mainController = new MainController();
+        $this->loginManager = new LoginManager();
+        $this->DashBoard = new DashBoard();
 
     }
 
@@ -42,13 +46,10 @@ class DashBoardController {
      * Update a DashBoard.
      */
 
-    private function UpdateDashBoard() {
-        $user = $this->UserManager->GetByLoginID(intval($_SESSION['IdLogin']));
-        // Retrieve the User to update
-        $updateDashBoard = $this->DashBoardManager->GetByUserID($this->UserManager->GetIdUserByLoginId(intval($_SESSION['IdLogin'])));
-        $this->populateDashBoard($updateDashBoard);
+    private function UpdateDashBoard() {        
+        $this->populateDashBoard($this->DashBoard);
         // Update the DashBoard
-        $this->DashBoardManager->UpdateDashBoard($updateDashBoard);
+        $this->DashBoardManager->UpdateDashBoard($this->DashBoard);
         // Redirect to the main page
         $this->mainController->DashBoard("DashBoard updated");
         
@@ -60,10 +61,12 @@ class DashBoardController {
      * @param DashBoard $DashBoard
      */
     private function populateDashBoard(DashBoard $DashBoard) {
-        $user = $this->UserManager->GetByLoginID(intval($_SESSION['IdLogin']));
-        $DashBoard->SetId($this->DashBoardManager->GetIdDashboardByUserId($this->UserManager->GetIdUserByLoginId(intval($_SESSION['IdLogin']))));
-        $DashBoard->SetUsername($user->getLogin());
-        $DashBoard->SetIdUser($user->getId());
+        $idUser = $this->UserManager->GetIdUserByLoginId(intval($_SESSION['IdLogin']));
+        $username = $this->loginManager->GetUsernameByIdLogin(intval($_SESSION['IdLogin']));
+        
+        $DashBoard->SetId($this->DashBoardManager->GetIdDashboardByUserId($idUser));
+        $DashBoard->SetUsername($username);
+        $DashBoard->SetIdUser($idUser);
     }
 
     /**
@@ -76,14 +79,18 @@ class DashBoardController {
             // Redirect to the main page with an error message
             $this->mainController->Index("Vous devez être connecté pour accéder à cette page");
         } else {
-            // Retrieve the User
-            $user = $this->UserManager->GetByLoginID(intval($_SESSION['IdLogin']));
+            // Retrieve the idUser
+            $idUser = $this->UserManager->GetIdUserByLoginId(intval($_SESSION['IdLogin']));
+            // Retrieve the DashBoard
+            $idDashboard = $this->UserManager->GetIdDashBoardByUserId($idUser);
             // Retrieve the DashBoard
             var_dump($user->getId());
-            $this->UpdateDashBoard();
-            $dashBoard = $this->DashBoardManager->GetByUserId($this->UserManager->GetIdUserByLoginId(intval($_SESSION['IdLogin'])));
+            $this->UpdateDashBoard($this->DashBoard);
+            
+            
+            
             // Retrieve the Tasks
-            $tasks = $this->TaskManager->GetAllByDashBoard($dashBoard);
+            $tasks = $this->TaskManager->GetAllByDashBoard($this->DashBoard);
             // Send to the session the list of Tasks
             $_SESSION['tasks'] = $tasks;
             // Display the view

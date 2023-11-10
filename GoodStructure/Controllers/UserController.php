@@ -18,6 +18,7 @@ class UserController{
     private $dashboardController;
     private $registrationView;
     private $dashboardView;
+    private $User;
 
     /**
      * UserController constructor.
@@ -29,6 +30,7 @@ class UserController{
         $this->dashboardController = new DashBoardController();
         $this->registrationView = new View('Registration');
         $this->dashboardView = new View('Dashboard');
+        $this->User = new User();
 
     }
 
@@ -103,10 +105,10 @@ class UserController{
      */
     private function createUser() {
         // Create a new User
-        $User = new User();
-        $this->populateUser($User);
+        
+        $this->populateUser();
         // Add the new User
-        $this->UserManager->addUser($User);
+        $this->UserManager->addUser($this->User );
         
         // header('Location: index.php?action=Index');
         // Connect the user
@@ -120,16 +122,16 @@ class UserController{
      * Set the properties of the User object.
      * @param User $User
      */
-    private function populateUser(User $User) {
+    private function populateUser() {
         // Set the properties of the User object
-        $User->setPassword($_POST['Password']);
-        $User->setFirstName($_POST['Firstname']);
-        $User->setLastName($_POST['Lastname']);
-        $User->setEmail($_POST['Email']);
-        $User->setGender($_POST['Gender']);
-        $User->setFamilyPlace($this->FamilyPlaceToString());
-        $User->setBirthDate($_POST['YearOfBirth'] . "-" . $_POST['MonthOfBirth'] . "-" . $_POST['DayOfBirth']);
-        $User->setLogin($_POST['Username']);
+        $this->User ->setPassword($_POST['Password']);
+        $this->User ->setFirstName($_POST['Firstname']);
+        $this->User ->setLastName($_POST['Lastname']);
+        $this->User ->setEmail($_POST['Email']);
+        $this->User ->setGender($_POST['Gender']);
+        $this->User ->setFamilyPlace($this->FamilyPlaceToString());
+        $this->User ->setBirthDate($_POST['YearOfBirth'] . "-" . $_POST['MonthOfBirth'] . "-" . $_POST['DayOfBirth']);
+        $this->User ->setLogin($_POST['Username']);
     }
 
     
