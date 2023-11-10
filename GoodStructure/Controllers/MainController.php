@@ -75,4 +75,17 @@ class MainController {
         );
         $dashBoardView->generer($data);
     }
+
+    /**
+     * Displays the reference page.
+     */
+    public function Reference() {
+    
+        $referenceView = new View("Reference");
+        $data = array(
+            //ajouter les données à afficher
+        );
+        $referenceView->generer($data);
+    
+    }
 }
