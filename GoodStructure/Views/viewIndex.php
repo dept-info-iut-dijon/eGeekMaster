@@ -87,7 +87,7 @@
             <div>
                 
                 <div id="Faq_Pixi" class="relative-container">
-                    <div id='FAQprincipal'></div>
+                    <div id='FAQprincipal'><div id='imageFAQ'></div></div>
                     <div id="PixiPresentation">
                         
                         <div class="field">

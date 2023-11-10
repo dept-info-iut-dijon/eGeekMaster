@@ -55,8 +55,9 @@
 <?= $contenu ?>
 </main>
 
-
-
+<!-- footer -->
+<!-- author : Théo Cornu -->
+<!-- author : Lola -->
 <footer>
     <div class="footer-inner">
         <div class="footer-logo">
