@@ -132,18 +132,6 @@ class UserController{
         $User->setLogin($_POST['Username']);
     }
 
-    /**
-     * Get the User's dashboard.
-     */
-    public function InfoDashBoard() {
-        // Retrieve the User
-        $user = $this->UserManager->GetByLoginID(intval($_SESSION['IdLogin']));
-        // Retrieve the User's dashboard
-        $this->dashboardConroller->InfoDashBoard($user);
-
-        // Display the dashboard
-        $this->mainController->DashBoard();
-        
-    }
+    
         
 }

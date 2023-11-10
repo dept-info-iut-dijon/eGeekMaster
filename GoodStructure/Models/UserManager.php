@@ -50,6 +50,50 @@ class UserManager extends Model
     }
 
     /**
+     * Retrieve a specific idUser by its LoginID from the database.
+     *
+     * @param int $id The LoginID of the User to retrieve.
+     * @return int|null The id of the User, or null if not found.
+     * @throws Exception
+     */
+    public function GetIdUserByLoginId(int $id): ?int
+    {
+        try {
+            $sql = 'SELECT idUsers FROM users WHERE LoginidLogin = ?';
+            $result = $this->executerRequete($sql, [$id]);
+            $line = $result->fetch(PDO::FETCH_ASSOC);
+            return $line['idUsers'];
+        } catch (PDOException $e) {
+            // In case of an error, redirect to the error page with a message
+            $errorMessage = "An error occurred while retrieving data(lidUser).";
+            header("Location: index.php?action=Index&errorMessage=".urlencode($errorMessage));
+            exit();
+        }
+    }
+
+   /**
+     * Retrieve a specific idUser by its DashBoardID from the database.
+     *
+     * @param int $id The DashBoardID of the User to retrieve.
+     * @return int|null The id of the User, or null if not found.
+     * @throws Exception
+     */
+    public function GetIdUserByDashBoardId(int $id): ?int
+    {
+        try {
+            $sql = 'SELECT idUser FROM users WHERE DashBoardidDashBoard = ?';
+            $result = $this->executerRequete($sql, [$id]);
+            $line = $result->fetch(PDO::FETCH_ASSOC);
+            return $line['idUser'];
+        } catch (PDOException $e) {
+            // In case of an error, redirect to the error page with a message
+            $errorMessage = "An error occurred while retrieving data(idUser).";
+            header("Location: index.php?action=Index&errorMessage=".urlencode($errorMessage));
+            exit();
+        }
+    }
+
+    /**
      * Retrieve a specific User by its LoginID from the database.
      *
      * @param int $id The LoginID of the User to retrieve.
@@ -64,13 +108,13 @@ class UserManager extends Model
             $line = $result->fetch();
             if ($line !== false) { //(LastName, FirstName, Gender, BirthDate, Email, FamilyPlace, LoginidLogin, DashBoardidDashBoard)
                 $User = new User(
-                    $ligne['LastName'],
-                    $ligne['FirstName'],
-                    $ligne['Gender'],
-                    $ligne['BirthDate'],
-                    $ligne['Email'],
-                    $ligne['FamilyPlace']
-                )
+                    $line['LastName'],
+                    $line['FirstName'],
+                    $line['Gender'],
+                    $line['BirthDate'],
+                    $line['Email'],
+                    $line['FamilyPlace']
+                );
 
                 return $User;
             } else {
@@ -200,17 +244,14 @@ class UserManager extends Model
     public function UpdateUser(User $User): void
     {
         try {
-            $sql = 'UPDATE users SET login = ?, password = ?, firstName = ?, lastName = ?, email = ?, gender = ?, familyPlace = ?, birthDate = ? WHERE idUsers = ?';
+            $sql = 'UPDATE users SET FirstName = ?, LastName = ?, Email = ?, Gender = ?, FamilyPlace = ?, BirthDate = ? WHERE idUsers = ?';
             $this->executerRequete($sql, [
-                $User->getLogin(),
-                $User->getPassword(),
                 $User->getFirstName(),
                 $User->getLastName(),
                 $User->getEmail(),
                 $User->getGender(),
                 $User->getFamilyPlace(),
-                $User->getBirthDate(),
-                $User->getId()
+                $User->getBirthDate()
             ]);
         } catch (PDOException $e) {
             // In case of an error, redirect to the error page with a message

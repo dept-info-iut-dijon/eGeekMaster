@@ -20,14 +20,14 @@
         
         public function __construct(string $firstName='', string $lastName='', string $email='', string $gender='', string $familyPlace='', string $birthDate='')
         {
-            $this->_login = $login;
+            
             $this->_firstName = $firstName;
             $this->_lastName = $lastName;
             $this->_email = $email;
             $this->_gender = $gender;
             $this->_familyPlace = $familyPlace;
             $this->_birthDate = $birthDate;
-            $this->_hash = $password;
+            
         }
 
         // Getter for $_idUsers

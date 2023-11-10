@@ -97,8 +97,8 @@ class TaskManager extends Model
         try {
             $dashboardManager =new DashboardManager();
             $sql = 'INSERT INTO task (Name, Duration, Date, DashBoardidDashboard) VALUES (?, ?, ?, ?)';
-            $this->executerRequete($sql, [$Task->getName(), $Task->getDuration(), $Task->getDate(), $dashboardManager->GetIdDashBoardByIdTask($Task->GetId()) ]);
-            $Task->setId($this->getLastInsertID());
+            // $this->executerRequete($sql, [$Task->getName(), $Task->getDuration(), $Task->getDate(), $dashboardManager->GetIdDashBoardByIdTask($Task->GetId()) ]);
+            // $Task->setId($this->getLastInsertID());
             return $Task;
         } catch (PDOException $e) {
             // In case of an error, redirect to the error page with a message
