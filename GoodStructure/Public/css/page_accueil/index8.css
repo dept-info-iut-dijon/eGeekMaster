@@ -207,27 +207,22 @@ body {
     max-width: 500px;
     
 }
-
-
-    #FAQprincipal {
-        border-radius: 30px;
-        width: 50vw;
-        height: 700px;
-        background-attachment: fixed;
-        background-image: url(../../image/page_accueil/FAQ.jpg);
-        background-size:70%;
-        background-position: center;
-        background-position-x: 40%;
-        position: relative;
-    }
-
-    #imageFAQ {
-        position: absolute;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        left: 10%;
-    }
-
+#FAQprincipal {
+    
+    border-radius: 30px;
+    /* width: 20%;
+    height: 80%; */
+    width: 50vw;
+    height: 800px;
+    background-attachment: fixed;
+    background-image: url(../../image/page_accueil/FAQ.jpg);
+    background-size: cover;
+    
+    background-position: center;
+    background-position-x: 60px;
+    
+      
+}
 #FAQcontainer {
     padding: 10%;
     display: flex;
@@ -239,12 +234,6 @@ body {
 }
 /* Styles pour les écrans de petite taille */
 @media (max-width: 160vh) {
-    #FAQprincipal {
-        width: 50vw;
-        height: 50vh;
-        background-position-x: 60%;
-       
-    }
     #FAQcontainer {
         flex-direction: column;
         text-align: center;

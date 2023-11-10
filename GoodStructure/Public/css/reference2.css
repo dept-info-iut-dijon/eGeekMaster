@@ -1,0 +1,229 @@
+/* 
+* Auteur : Lola Cohidon
+* Auteur : Théo Cornu
+ */
+
+/* Body Styles */
+body {
+  margin: 0px; /* No external margin */
+  font-family: "Comic Sans MS", sans-serif; /* Font style */
+  background-color: #e0eef1; /* Background color */
+}
+
+/* Styles for the main container */
+#ContaintReference {
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px; /* Maximum width of the container */
+  margin: 0 auto; /* Center the container */
+  padding: 20px; /* Space */
+}
+
+/* Styles for the search bar */
+.search {
+  display: flex;
+  justify-content: center;
+  --input-line: #000000; /* Input line color */
+  --input-text-color: #808080; /* Input text color */
+  --input-text-hover-color: transparent; /* Input text color on hover */
+  --input-border-color: #808080; /* Input border color */
+  --input-border-hover-color: #999999; /* Input border color on hover */
+  --input-bg-color: #b1cdd3; /* Background color */
+  --search-max-width: 70%; /* Maximum width of the search bar */
+  --search-min-width: 5%; /* Minimum width of the search bar */
+  --border-radius: 5px; /* Global border radius */
+  --transition-cubic-bezier: 150ms cubic-bezier(0.4,0,0.2,1); /* Cubic transition */
+}
+
+.search-box {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5%;
+  padding: 1%;
+  max-width: var(--search-max-width);
+  min-width: var(--search-min-width);
+  height: 5vh;
+  border: 2px solid var(--input-border-color); /* Search box border */
+  border-radius: var(--border-radius); /* Border radius */
+  background: var(--input-bg-color); /* Background color */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Shadow */
+  transition: var(--transition-cubic-bezier); /* Transition */
+}
+
+.search-box:hover {
+  border-color: var(--input-border-hover-color); /* Change border color on hover */
+}
+
+/* Input Section */
+.search-field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0; /* No border */
+}
+
+.input {
+  margin: 0%;
+  width: calc(100% - 29px);
+  height: 100%;
+  border: 0;
+  border-color: transparent;
+  font-size: 1rem; /* Text size */
+  color: var(--input-line); /* Input text color */
+  background: var(--input-bg-color); /* Input background color */
+  border-right: 2px solid var(--input-border-color); /* Right border */
+  border-radius: var(--border-radius); /* Border radius */
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  outline: none;
+}
+
+.input::-webkit-input-placeholder {
+  color: var(--input-text-color);
+}
+
+.input::-moz-input-placeholder {
+  color: var(--input-text-color);
+}
+
+.input::-ms-input-placeholder {
+  color: var(--input-text-color);
+}
+
+.input:focus::-webkit-input-placeholder {
+  color: var(--input-text-hover-color);
+}
+
+.input:focus::-moz-input-placeholder {
+  color: var(--input-text-hover-color);
+}
+
+.input:focus::-ms-input-placeholder {
+  color: var(--input-text-hover-color);
+}
+
+/* Search button */
+.search-box-icon {
+  background: transparent; /* Transparent background */
+  border-bottom-right-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+  transition: var(--transition-cubic-bezier);
+}
+
+.search-box-icon:hover {
+  background: var(--input-border-color); /* Change background on hover */
+}
+
+.btn-icon-content {
+  width: 52px;
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-bottom-right-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+  transition: var(--transition-cubic-bezier);
+  opacity: .4;
+}
+
+.btn-icon-content:hover {
+  opacity: .8;
+}
+
+.search-icon {
+  width: 21px;
+  height: 21px;
+  position: absolute;
+}
+
+/* Styles for the table */
+th, td {
+  padding: 10px;
+  border: 2px solid #ccc; /* Table border size */
+}
+
+/* Styles for table borders */
+table {
+  align-self: center;
+  border-collapse: separate; /* Separate table borders */
+  margin-top: 20px;
+  background-color: #e0eef1;
+  padding: 10px; /* Space between border and table */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 85vw;
+}
+
+th, td {
+  width: 55vw;
+  padding: 10px;
+  border: 1px solid #000; /* Add black borders */
+}
+
+/* Styles for th cells */
+th {
+  background-color: #B3938E; /* Blue background color for th cells */
+  color: #000; /* Black text color for th cells */
+  font-weight: bold; /* Bold text for th cells */
+}
+
+/* Styles for td cells */
+td {
+  text-align: center; /* Center text horizontally */
+  background-color: #fff;
+}
+
+/* Styles for icon images */
+.icon {
+  width: 30px; /* Icon size */
+  height: 30px;
+  margin-right: 10%;
+}
+
+.action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*RESPONSIVE*/
+
+/* Ajout de styles pour les écrans de taille plus petite */
+@media only screen and (max-width: 600px) {
+  .thToDisplay,
+  .tdToDisplay,
+  .ReferenceTable tr
+  {
+      display: block;
+  }
+
+  .thToNotDisplay,
+  .tdToNotDisplay{
+    display: none;
+  }
+
+  .ReferenceTable{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  table{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ReferenceTable th,
+  .ReferenceTable td {
+      text-align: left;
+      width: 100%;
+  }
+  
+.tdToDisplay:focus{
+ display: block;
+}
+}
+

@@ -8,7 +8,6 @@ require_once 'Models/DashboardManager.php';
 /**
  * Class DashBoardManager
  * @package GoodStructure\Models
- * @author Nicolas
  * @author Théo Cornu
  */
 class TaskManager extends Model
@@ -93,17 +92,13 @@ class TaskManager extends Model
      * @return Task The Task object, or null if not found.
      * @throws Exception
      */
-    public function AddTask(Task $Task): Task
+    public function Add(Task $Task): Task
     {
         try {
-            $sql = 'INSERT INTO task (Name, Duration, Date, DashBoardidDashboard) VALUES (:value1, :value2, :value3, :value4)';
-            $this->executerRequete($sql, [
-                ':value1' => $Task->getNameTask(),
-                ':value2' => $Task->getDuration(),
-                ':value3' =>  $Task->getDateAdded(),
-                ':value4' =>  $Task->getIdDashBoard()
-            ]);
-            //$Task->setId($this->getLastInsertID());
+            $dashboardManager =new DashboardManager();
+            $sql = 'INSERT INTO task (Name, Duration, Date, DashBoardidDashboard) VALUES (?, ?, ?, ?)';
+            // $this->executerRequete($sql, [$Task->getName(), $Task->getDuration(), $Task->getDate(), $dashboardManager->GetIdDashBoardByIdTask($Task->GetId()) ]);
+            // $Task->setId($this->getLastInsertID());
             return $Task;
         } catch (PDOException $e) {
             // In case of an error, redirect to the error page with a message
