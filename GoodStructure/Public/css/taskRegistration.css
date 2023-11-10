@@ -40,7 +40,7 @@
 fieldset{
     border-color: black    ;
     border-radius: 10px;
-    background-color: white;
+    background-color: #ECE4E3;
     border-style: solid;
     border-width: 5px;
     width: 100%;
@@ -48,6 +48,12 @@ fieldset{
     padding: 0px;
     margin: 0%;
 }
+
+
+#titleTask{
+    color: #226979;
+}
+
 
 /*TASK*/
 #task{
@@ -60,7 +66,7 @@ fieldset{
 }
 
 #taskLabel{
-    color: #528B97;
+    color: #226979;
 }
 
 #chooseTask{
@@ -74,6 +80,7 @@ fieldset{
     padding-bottom: 2%;
     padding-left: 2%;
     padding-right: 2%;
+    background-color: #ECE4E3;
 }
 
 /*LIFETIME*/
@@ -93,7 +100,7 @@ fieldset{
 }
 
 #lifetimeLabel{
-    color: #528B97;
+    color: #226979;
 }
 
 #time{
@@ -127,7 +134,7 @@ fieldset{
 }
 
 .styleButtons{
-    background-color: white;
+    background-color: #ECE4E3;
     border-style: none;
 }
 
@@ -143,6 +150,7 @@ fieldset{
     border-radius: 5px;
     margin-left: 3;
     padding: 2%;
+    background-color: #ECE4E3;
 }
 
 /*CANCEL/SUBMIT*/
@@ -157,6 +165,7 @@ fieldset{
     border-width: 2px;
     border-bottom-style: none;
     border-right-style: none;
+    background-color: #ECE4E3;
 }
 
 .buttonsEnd{
@@ -178,7 +187,7 @@ fieldset{
 }
 
 #cancel{
-    background-color: white;
+    background-color: #ECE4E3;
     float: left;
     padding: 0px;
     width: 100%;
@@ -201,7 +210,7 @@ fieldset{
 }
 
 #submit{
-    background-color: white;
+    background-color: #ECE4E3;
     float: left;
     padding: 0px;
     width: 100%;
@@ -214,6 +223,3 @@ fieldset{
     font-weight: bold;
 }
 
-#p{
-    
-}

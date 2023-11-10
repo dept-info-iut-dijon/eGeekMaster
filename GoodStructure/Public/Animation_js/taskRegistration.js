@@ -1,3 +1,5 @@
+// author : Enzo
+// to increment and decrement the time you path on the task
 document.addEventListener('DOMContentLoaded', function() {
     // Get DOM elements
     const hoursElement = document.getElementById('hours');
@@ -61,23 +63,24 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// author : Enzo
+// to display or hide the task registration part
+function DisplayTaskRegistration() {
+    // Get references to the button, the task registration part
+    const buttonTask = document.getElementById("boutonTaches");
+    const taskR = document.getElementById("divTaskRegistration");
 
-function Sidebar() {
-    // Get references to the menu button, menu, and the menu overlay
-    const menuButton = document.getElementById("boutonTaches");
-    const menu = document.getElementById("divTaskRegistration");
-
-    // Toggle menu visibility when the menu button is clicked
-    menuButton.addEventListener("click", function () {
-        if (menu.style.right === "0px") {
-            // Close the menu and overlay
-            menu.style.right = "-350px";
+    // The task button is clicked
+    buttonTask.addEventListener("click", function () {
+        if (taskR.style.right === "0px") {
+            // Close the task registration part
+            taskR.style.right = "-350px";
         } else {
-            // Open the menu and overlay, add box shadow
-            menu.style.right = "40px";
+            // Open the task registration part
+            taskR.style.right = "40px";
         }
     });
 }
 
-// Attach the Sidebar function to the 'load' event
-window.addEventListener('load', Sidebar);
+// Attach the DisplayTaskRegistration function to the 'load' event
+window.addEventListener('load', DisplayTaskRegistration);
