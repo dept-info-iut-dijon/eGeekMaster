@@ -7,8 +7,8 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= $titre ?></title>
-    <link rel="stylesheet" href="Public/css/header.css"/>
-    <link rel="stylesheet" href="Public/css/footer.css"/>
+    <link rel="stylesheet" href="Public/css/header3.css"/>
+    <link rel="stylesheet" href="Public/css/footer1.css"/>
     <link rel="stylesheet" href="Public/css/erreur.css"/>
     <script src="Public/Animation_js/header.js"></script>
 </head>
@@ -40,7 +40,8 @@
             <li><a class="lien-header" href="index.php?action=Index" >Home</a></li>
             <li><a class="lien-header" href="index.php?action=Registration&IdLogin=<?=$_SESSION['IdLogin']?>"  >Upadte my account</a></li>
             <li><a class="lien-header" href="index.php?action=Disconnect"  >Disconnect</a></li>
-            <li><a class="lien-header" href="index.php?action=DashBoard">DashBoard</a></li>
+            <li><a class="lien-header" href="index.php?action=InfoDashBoard">DashBoard</a></li>
+            <li><a class="lien-header" href="index.php?action=Reference">Reference</a></li>
         <?php else : ?>
             <li><a class="lien-header" href="index.php?action=Connection"  >Login</a></li> 
             <li><a class="lien-header" href="index.php?action=Registration"  >Register</a></li> 
@@ -55,13 +56,14 @@
 <?= $contenu ?>
 </main>
 
-
-
+<!-- footer -->
+<!-- author : Théo Cornu -->
+<!-- author : Lola -->
 <footer>
     <div class="footer-inner">
         <div class="footer-logo">
             <a  class="scroll-to-top">
-                <img src="Public/image/page_connection/logo_soupape2.png" alt="Logo">
+                <img src="Public/image/page_connection/logo_F.png" alt="Logo">
             </a>                
         </div>
         <div id="shortcuts" class="link">

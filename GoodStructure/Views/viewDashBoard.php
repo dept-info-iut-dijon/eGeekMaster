@@ -2,8 +2,8 @@
     author : Enzo
 -->
 
-<link rel="stylesheet" href="Public/css/dashboard.css">
-<link rel="stylesheet" href="Public/css/taskRegistration.css">
+<link rel="stylesheet" href="Public/css/dashboard2.css">
+<link rel="stylesheet" href="Public/css/taskRegistration1.css">
 <script src="Public/Animation_js/taskRegistration.js"></script>
 <div id="bar">
     <!--TASK REGISTRATION-->
@@ -104,14 +104,58 @@
         <button id="boutonTaches" type="button">Register a new task</button>
     </div>
 
-    
-</div> 
-    <!-- Titre des graphiques -->
-    <div id="titreDashboard">
-        <div>
-            <h1>Répartition des tâches</h1>
+    <!-- Graphiques -->
+    <div id="graphiques">
+        <div id="piechart">
+            <h1>Tasks distribution</h1>
+            <canvas id="myChart1"></canvas>
         </div>
-        <div>
-            <h1>Durée moyenne pour chaque tâches</h1>
+        <div id="barchart">
+            <h1>Average duration for each task</h1>
+            <canvas id="myChart2"></canvas>
         </div>
     </div>
+</div> 
+    
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    const ctx1 = document.getElementById('myChart1');
+
+    new Chart(ctx1, {
+        type: 'pie',
+        data: {
+            labels: ["A", "B"],
+            datasets: [{
+                label: '# of Votes',
+                data: [20, 30],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+        }
+    });
+
+    const ctx2 = document.getElementById('myChart2');
+
+    new Chart(ctx2, {
+        type: 'bar',
+        data: {
+                labels: ["A", "B"],
+                datasets: [{
+                label: '# of Votes',
+                data: [20, 30],
+                borderWidth: 1
+                }]
+        },
+        options: {
+                responsive: true,
+                indexAxis: 'y',
+        }
+    });
+</script>
+
+

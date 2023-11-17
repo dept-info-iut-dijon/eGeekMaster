@@ -10,8 +10,9 @@
         
         private int $id;
         private string $username;
+        private int $idUser;
 
-        public function __construct(string $username ='')
+        public function __construct(string $username =' ')
         {
             $this->username = $username;
         }
@@ -34,6 +35,16 @@
         public function SetUsername(string $username): void
         {
             $this->username = $username;
+        }
+
+        public function GetIdUser(): int
+        {
+            return $this->idUser;
+        }
+
+        public function SetIdUser(int $idUser): void
+        {
+            $this->idUser = $idUser;
         }
 
 

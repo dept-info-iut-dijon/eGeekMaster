@@ -3,6 +3,7 @@
 /**
  * class Task
  * @author Nicolas
+ * @author Théo Cornu
  */
 
  Class Task

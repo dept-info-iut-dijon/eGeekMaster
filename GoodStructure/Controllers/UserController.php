@@ -7,14 +7,18 @@
 require_once 'views/View.php';
 require_once 'models/UserManager.php';
 require_once 'Controllers/MainController.php';
+require_once 'models/LoginManager.php';
+require_once 'models/DashBoardManager.php';
 
 class UserController{
     
     private $UserManager;
     private $mainController;
     private $loginManager;
+    private $dashboardController;
     private $registrationView;
     private $dashboardView;
+    private $User;
 
     /**
      * UserController constructor.
@@ -23,8 +27,10 @@ class UserController{
         $this->UserManager = new UserManager();
         $this->mainController = new MainController();
         $this->loginManager = new LoginManager();
+        $this->dashboardController = new DashBoardController();
         $this->registrationView = new View('Registration');
         $this->dashboardView = new View('Dashboard');
+        $this->User = new User();
 
     }
 
@@ -62,7 +68,7 @@ class UserController{
      * Convert family place to string.
      * @return string
      */
-    public function FamilyPlaceToString(){
+    private function FamilyPlaceToString(){
         $familyPlace = "";
         $tempConcat = ", ";
         $fieldsToCheck = [
@@ -91,7 +97,7 @@ class UserController{
         $this->UserManager->UpdateUser($updateUser);
         // Redirect to the main page
         $this->mainController->Index('Le User '.$_POST['Username'].' a bien été modifié !');
-        var_dump($updateUser);
+        
     }
 
     /**
@@ -99,10 +105,10 @@ class UserController{
      */
     private function createUser() {
         // Create a new User
-        $User = new User();
-        $this->populateUser($User);
+        
+        $this->populateUser();
         // Add the new User
-        $this->UserManager->addUser($User);
+        $this->UserManager->addUser($this->User );
         
         // header('Location: index.php?action=Index');
         // Connect the user
@@ -116,26 +122,18 @@ class UserController{
      * Set the properties of the User object.
      * @param User $User
      */
-    private function populateUser(User $User) {
+    private function populateUser() {
         // Set the properties of the User object
-        $User->setPassword($_POST['Password']);
-        $User->setFirstName($_POST['Firstname']);
-        $User->setLastName($_POST['Lastname']);
-        $User->setEmail($_POST['Email']);
-        $User->setGender($_POST['Gender']);
-        $User->setFamilyPlace($this->FamilyPlaceToString());
-        $User->setBirthDate($_POST['YearOfBirth'] . "-" . $_POST['MonthOfBirth'] . "-" . $_POST['DayOfBirth']);
-        $User->setLogin($_POST['Username']);
+        $this->User ->setPassword($_POST['Password']);
+        $this->User ->setFirstName($_POST['Firstname']);
+        $this->User ->setLastName($_POST['Lastname']);
+        $this->User ->setEmail($_POST['Email']);
+        $this->User ->setGender($_POST['Gender']);
+        $this->User ->setFamilyPlace($this->FamilyPlaceToString());
+        $this->User ->setBirthDate($_POST['YearOfBirth'] . "-" . $_POST['MonthOfBirth'] . "-" . $_POST['DayOfBirth']);
+        $this->User ->setLogin($_POST['Username']);
     }
 
-    /**
-     * Display the dashboard of the user.
-     */
-    public function InfoDashBoard() {
-        // Retrieve the user
-        $user = $this->UserManager->GetByLoginID(intval($_SESSION['IdLogin']));
-        // Display the dashboard
-        $this->dashboardView->generer(['user' => $user]);
-    }
+    
         
 }
