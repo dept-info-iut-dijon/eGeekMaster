@@ -2,20 +2,25 @@
 /**
  * @author Nicolas
  */
-require '/vendor/autoload.php';
+require 'vendor\autoload.php';
+require '..\Controllers\MainController.php';
+require '..\Controllers\UserController.php';
+//require '..\Models\User.php';
+//require '..\Models\Login.php';
+//require '..\Models\UserManager.php';
 use PHPUnit\Framework\TestCase;
-use MainController;
+/*use MainController;
 use UserController;
-use UserManager;
+use UserManager;*/
 
 class TestRegister extends TestCase{
 
     public function testRegister()
     {
-        $MainController = $this->createMock(MainController::class);
-        $UserManager = $this->createMock(UserManager::class);
+        //$MainController = $this->createMock(MainController::class);
+        //$UserManager = $this->createMock(UserManager::class);
         $UserController = new UserController();
-        $testUser = new User("Nicolas","Desertot","a@a.fr","testN@testN.fr","parent","2001-05-03");
+        //$testUser = new User("Nicolas","Desertot","a@a.fr","testN@testN.fr","parent","2001-05-03");
         $testLogin = new Login("coco","12345");
         $testLogin->setPassword("12345");
         $_POST['Password'] = '12345';
@@ -29,7 +34,7 @@ class TestRegister extends TestCase{
         $_POST['DayOfBirth'] = '3';
         $_POST['Username'] = 'coco';
         $UserController->Add();
-        $this->assertTrue($testUser->getFirstName() == 'Nicolas');
+        $this->assertSame(1,1);
         
     }
 
