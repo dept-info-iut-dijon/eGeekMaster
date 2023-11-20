@@ -132,18 +132,56 @@
     
 
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+
+
+
+<?php
+$labels = [];
+$data1 = [];
+$data2 = [];
+$taskDurations = [];
+$taskCounts = [];
+
+if (isset($_SESSION['tasks'])) {
+    foreach ($_SESSION['tasks'] as $task) {
+        $taskName = $task->getNameTask();
+        $taskDuration = $task->getDuration();
+
+        // Vérifier si le nom de tâche existe déjà dans le tableau des labels
+        if (!in_array($taskName, $labels)) {
+            $labels[] = $taskName;
+            $taskDurations[$taskName] = $taskDuration;
+            $taskCounts[$taskName] = 1;
+        } else {
+            // Ajouter la durée à la durée existante pour ce nom de tâche
+            $taskDurations[$taskName] += $taskDuration;
+            $taskCounts[$taskName]++;
+        }
+    }
+
+    // Remplir les tableaux de données avec les durées correspondantes
+    foreach ($labels as $label) {
+        $data1[] = $taskDurations[$label]; // Exemple de valeur statique pour le graphique 1
+        $data2[] = $taskDurations[$label] / $taskCounts[$label]; // Calculer la moyenne sur une semaine
+    }
+}
+?>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
     const ctx1 = document.getElementById('myChart1');
+    const ctx2 = document.getElementById('myChart2');
 
     new Chart(ctx1, {
         type: 'pie',
         data: {
-            labels: ["A", "B"],
+            labels: <?= json_encode($labels) ?>,
             datasets: [{
-                label: '# of Votes',
-                data: [20, 30],
+                label: 'duration',
+                data: <?= json_encode($data1) ?>,
                 borderWidth: 1
             }]
         },
@@ -152,21 +190,19 @@
         }
     });
 
-    const ctx2 = document.getElementById('myChart2');
-
     new Chart(ctx2, {
         type: 'bar',
         data: {
-                labels: ["A", "B"],
-                datasets: [{
+            labels: <?= json_encode($labels) ?>,
+            datasets: [{
                 label: '# of Votes',
-                data: [20, 30],
+                data: <?= json_encode($data2) ?>,
                 borderWidth: 1
-                }]
+            }]
         },
         options: {
-                responsive: true,
-                indexAxis: 'y',
+            responsive: true,
+            indexAxis: 'y',
         }
     });
 </script>
