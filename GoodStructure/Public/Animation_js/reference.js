@@ -3,6 +3,8 @@
  * @author Lola Cohidon
 */
 
+const scrollToTopButton = document.getElementById("btn-icon-content");
+
 // Get the text from the input field reserch and Displays suggestions under the input text as you type the text and cherch in the page the location of the text to move the user to the location
 function Search() {
     // Get the text from the input field
@@ -26,7 +28,6 @@ function Search() {
     }
 
     // Sélectionnez le bouton pour remonter en haut
-    const scrollToTopButton = document.querySelector(".btn-icon-content");
 
     // Ajoutez un gestionnaire d'événement pour le clic sur le bouton
     scrollToTopButton.addEventListener("click", scrollToLocation);
@@ -75,42 +76,35 @@ function showDescription() {
     
 }
 
-// // Sélectionnez le champ de recherche
-// var input = document.querySelector('.input');
 
-// // Ajoutez un gestionnaire d'événements keyup
-// input.addEventListener('keyup', function(event) {
-//     // Récupérez la valeur de recherche
-//     var searchValue = event.target.value;
-
-//     // Parcourez tous les éléments de la page
-//     var elements = document.querySelectorAll('div, p, span, a, h1, h2, h3, h4, h5, h6');
-//     elements.forEach(function(element) {
-//         // Si l'élément contient la valeur de recherche, mettez-le en évidence
-//         if (element.textContent.includes(searchValue)) {
-//             element.style.backgroundColor = 'yellow';
-//         } else {
-//             element.style.backgroundColor = '';
-//         }
-//     });
-
-//     // Si l'utilisateur appuie sur Entrée, faites défiler jusqu'au premier élément mis en évidence
-//     if (event.key === 'Enter') {
-//         var highlightedElement = document.querySelector('[style="background-color: yellow;"]');
-//         if (highlightedElement) {
-//             highlightedElement.scrollIntoView();
-//         }
-//     }
-// });
 
     
 
 }
 
-    const scrollToTopButton = document.querySelector(".btn-icon-content");
+document.addEventListener("DOMContentLoaded", function () {
+    // Sélectionne tous les éléments tdToDisplay
+    var tdToDisplayElements = document.querySelectorAll('.tdToDisplay');
+  
+    // Ajoute un écouteur d'événement click à chaque élément tdToDisplay
+    tdToDisplayElements.forEach(function (element) {
+      element.addEventListener('click', function () {
+        // Récupère l'élément supplémentaire contenant le descriptif et la valeur
+        var extraInfo = element.querySelector('.extra-info');
+  
+        // Bascule la visibilité de l'élément supplémentaire
+        extraInfo.classList.toggle('visible');
+      });
+    });
+  });
 
-    // Ajoutez un gestionnaire d'événement pour le clic sur le bouton
-    scrollToTopButton.addEventListener("click", Search);
-// Attach the Sidebar function to the 'load' event
-// window.addEventListener('load', Search);
-// window.addEventListener('load',showDescription);
+
+// Ajoutez un gestionnaire d'événement pour le clic sur le bouton
+scrollToTopButton.addEventListener("click", Search);
+
+
+
+
+
+  
+
