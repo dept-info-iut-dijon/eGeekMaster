@@ -12,8 +12,9 @@ require_once 'Controllers/MainController.php';
 
 class TaskController
 {
-   private $mainController;
-   private $UserController;
+   private MainController $mainController;
+   private DashBoardManager $DashBoardManager;
+   private TaskManager $TaskManager;   
 
    /**
     * TaskController constructor.
@@ -21,13 +22,13 @@ class TaskController
    public function __construct()
    {
       $this->mainController = new MainController();
-      $this->UserController = new UserController();
+      $this->DashBoardManager = new DashBoardManager();
+      $this->TaskManager = new TaskManager();
+      
    }
 
    public function addTask()
    {
-      $TaskManager = new TaskManager();
-      $UserManager = new UserManager();
-      $TaskManager->AddTask(new task(null,$_POST['searchTask'],($_POST['hours']*4*15)+$_POST['minutes'],$_POST['Date'],$UserManager->GetIdDashBoardByUserId($_SESSION['IdLogin'])));
+      $this->$TaskManager->AddTask(new task(null,$_POST['searchTask'],($_POST['hours']*4*15)+$_POST['minutes'],$_POST['Date'],$DashBoardManager->GetIdDashBoardByUserId($_SESSION['IdLogin'])));
    }
 }
