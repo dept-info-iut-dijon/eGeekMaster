@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="Public/css/erreur.css"/>
     <link rel="stylesheet" href="Public/css/companion.css"/>
     <script src="Public/Animation_js/header.js"></script>
+    <script src="Public/Animation_js/companion.js"></script>
 </head>
 
 <body>
@@ -53,9 +54,13 @@
 
 <div id="companion">
     <?php if (isset($_SESSION['IdLogin'])) : ?>
-        <div id="logoC"></div>
+        <div>
+            <img src="Public/image/companion/companion1.png" alt="companion">
+        </div>
     <?php else : ?>
-        
+        <div>
+            <img src="Public/image/companion/companion1.png" alt="companion">
+        </div>
     <?php endif; ?>
 </div>
 

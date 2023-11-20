@@ -1,3 +1,11 @@
-#logoC{
-    background-image: url(../image/page_connection/logo_F.png);
+#companion{
+    position: fixed;
+    right: -20%;
+    top: 65px;
+    transition: right 0.3s ease-in-out;
+}
+
+#companion img{
+    height: 200px;
+    width: auto;
 }
