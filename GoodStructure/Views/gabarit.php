@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="Public/css/header3.css"/>
     <link rel="stylesheet" href="Public/css/footer1.css"/>
     <link rel="stylesheet" href="Public/css/erreur.css"/>
+    <link rel="stylesheet" href="Public/css/companion.css"/>
     <script src="Public/Animation_js/header.js"></script>
 </head>
 
@@ -50,6 +51,13 @@
 </div>
 <div id="menuF"></div>
 
+<div id="companion">
+    <?php if (isset($_SESSION['IdLogin'])) : ?>
+        <div id="logoC"></div>
+    <?php else : ?>
+        
+    <?php endif; ?>
+</div>
 
 <!-- #contenu -->
 <main id="contenu">
