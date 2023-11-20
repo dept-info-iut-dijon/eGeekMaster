@@ -74,7 +74,7 @@ class Router {
         "InfoDashBoard" => new RouteInfoDashBoard($this->ctrlList["DashBoardController"]),
         "Reference" => new RouteReference($this->ctrlList["MainController"]),
         "TaskRegistration" => new RouteTaskRegistration($this->ctrlList["TaskController"])
-        "FollowUp" => new RouteFollowUp(),];
+        "FollowUp" => new RouteFollowUp($this->crtlList["MainControler"]),];
     }
 
     /**
