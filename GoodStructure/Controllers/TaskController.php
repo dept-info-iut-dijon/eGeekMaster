@@ -14,6 +14,7 @@ require_once 'Controllers/DashBoardController.php';
 class TaskController
 {
    private DashBoardController $DashBoardController;
+   private MainController $MainController;
    private DashBoardManager $DashBoardManager;
    private TaskManager $TaskManager;  
    private Task $Task; 
@@ -25,6 +26,7 @@ class TaskController
    public function __construct()
    {
       $this->DashBoardController = new DashBoardController();
+      $this->MainController = new MainController();
       $this->DashBoardManager = new DashBoardManager();
       $this->TaskManager = new TaskManager();
       $this->Task = new Task();
@@ -48,7 +50,7 @@ class TaskController
          // Check if there is an error message to display
          $errorMessage = isset($_GET['errorMessage']) ? $_GET['errorMessage'] : null;
          // Display the registration form with the error message
-         $this->DashBoardController->DashBoard($errorMessage); 
+         $this->DashBoardController->infoDashBoard($errorMessage); 
      }
    }
 
@@ -80,11 +82,9 @@ class TaskController
          $this->DashBoardController->infoDashBoard("La tâche existe déjà");
       } else {
          // Add the new User
-         $this->TaskManager->addTask($this->Task);
+         $this->TaskManager->AddTask($this->Task);
          // Redirect to the main page
-         $main = new mainController();
-         $main->DashBoard("Tâche créée");
-         $this->DashBoardController->infoDashBoard();
+         $this->DashBoardController->infoDashBoard("Tâche créée");
          
       }
    }
@@ -95,7 +95,7 @@ class TaskController
     */
    private function UpdateTask()
    {
-      populateTask();
+      $this->populateTask();
       // Update an existing Task
       $this->TaskManager->UpdateTask($this->Task);
       // Redirect to the main page
@@ -119,9 +119,9 @@ class TaskController
    public function getAllTasks()
    {
       // Get all Tasks
-      $tasks = $this->TaskManager->GetAllTasks();
+      $tasks = $this->TaskManager->GetAllByDashBoard($this->DashBoardManager->GetIdDashBoardByLoginId($_SESSION['IdLogin']));
       // Display the main page with all Tasks
-      $this->DashBoardController->DashBoard($tasks);
+      $this->MainController->DashBoard($tasks);
    }
 
    /**

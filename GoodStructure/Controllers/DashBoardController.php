@@ -46,13 +46,12 @@ class DashBoardController {
      * Update a DashBoard.
      */
 
-    private function UpdateDashBoard($message = null) {        
+    private function UpdateDashBoard() {        
         $this->populateDashBoard();
         // Update the DashBoard
         $this->DashBoardManager->UpdateDashBoard($this->DashBoard);
         
-        // Redirect to the main page
-        $this->mainController->DashBoard($message);
+        
         
         
     }
@@ -86,13 +85,16 @@ class DashBoardController {
             // $idDashboard = $this->UserManager->GetIdDashBoardByUserId($idUser);
             // // Retrieve the DashBoard
             
-            $this->UpdateDashBoard($message);
+            $this->UpdateDashBoard();
             
             
             // Retrieve the Tasks
             $tasks = $this->TaskManager->GetAllByDashBoard($this->DashBoard->GetId());
             // Send to the session the list of Tasks
             $_SESSION['tasks'] = $tasks;
+
+            // Redirect to the main page
+            $this->mainController->DashBoard($message);
             
         }
 
