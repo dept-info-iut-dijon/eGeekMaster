@@ -46,13 +46,13 @@ class DashBoardController {
      * Update a DashBoard.
      */
 
-    private function UpdateDashBoard() {        
+    private function UpdateDashBoard($message = null) {        
         $this->populateDashBoard();
         // Update the DashBoard
         $this->DashBoardManager->UpdateDashBoard($this->DashBoard);
         
         // Redirect to the main page
-        $this->mainController->DashBoard("DashBoard updated");
+        $this->mainController->DashBoard($message);
         
         
     }
@@ -74,7 +74,7 @@ class DashBoardController {
      * Display the DashBoard page.
      */
 
-    public function infoDashBoard() {
+    public function infoDashBoard($message = null) {
         // Check if the user is connected
         if (!isset($_SESSION['IdLogin'])) {
             // Redirect to the main page with an error message
@@ -86,7 +86,7 @@ class DashBoardController {
             // $idDashboard = $this->UserManager->GetIdDashBoardByUserId($idUser);
             // // Retrieve the DashBoard
             
-            $this->UpdateDashBoard();
+            $this->UpdateDashBoard($message);
             
             
             // Retrieve the Tasks

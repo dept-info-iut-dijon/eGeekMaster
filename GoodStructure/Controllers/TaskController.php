@@ -2,7 +2,7 @@
 require_once 'views/View.php';
 require_once 'models/TaskManager.php';
 require_once 'models/UserManager.php';
-require_once 'Controllers/MainController.php';
+require_once 'Controllers/DashBoardController.php';
 
 /**
  * Class RouteTaskRegistration
@@ -13,7 +13,7 @@ require_once 'Controllers/MainController.php';
 
 class TaskController
 {
-   private MainController $mainController;
+   private DashBoardController $DashBoardController;
    private DashBoardManager $DashBoardManager;
    private TaskManager $TaskManager;  
    private Task $Task; 
@@ -24,7 +24,7 @@ class TaskController
     */
    public function __construct()
    {
-      $this->mainController = new MainController();
+      $this->DashBoardController = new DashBoardController();
       $this->DashBoardManager = new DashBoardManager();
       $this->TaskManager = new TaskManager();
       $this->Task = new Task();
@@ -48,7 +48,7 @@ class TaskController
          // Check if there is an error message to display
          $errorMessage = isset($_GET['errorMessage']) ? $_GET['errorMessage'] : null;
          // Display the registration form with the error message
-         $this->mainController->DashBoard($errorMessage); 
+         $this->DashBoardController->DashBoard($errorMessage); 
      }
    }
 
@@ -61,7 +61,7 @@ class TaskController
       // Delete a Task
       $this->TaskManager->DeleteByID($_POST["idTask"]);
       // Redirect to the main page
-      $this->mainController->DashBoard("Tâche supprimée");
+      $this->DashBoardController->infoDashBoard("Tâche supprimée");
    }
 
 
@@ -77,12 +77,14 @@ class TaskController
       // Check if the Task already exists
       if ($this->TaskManager->CheckIfTaskExists($this->Task)) {
          // Redirect to the registration page with an error message
-         $this->mainController->DashBoard("La tâche existe déjà");
+         $this->DashBoardController->infoDashBoard("La tâche existe déjà");
       } else {
          // Add the new User
          $this->TaskManager->addTask($this->Task);
          // Redirect to the main page
-         $this->mainController->DashBoard("Tâche créée");
+         $main = new mainController();
+         $main->DashBoard("Tâche créée");
+         $this->DashBoardController->infoDashBoard();
          
       }
    }
@@ -97,7 +99,7 @@ class TaskController
       // Update an existing Task
       $this->TaskManager->UpdateTask($this->Task);
       // Redirect to the main page
-      $this->mainController->DashBoard("Tâche modifiée");
+      $this->DashBoardController->infoDashBoard("Tâche modifiée");
    }
 
    private function populateTask()
@@ -119,7 +121,7 @@ class TaskController
       // Get all Tasks
       $tasks = $this->TaskManager->GetAllTasks();
       // Display the main page with all Tasks
-      $this->mainController->DashBoard($tasks);
+      $this->DashBoardController->DashBoard($tasks);
    }
 
    /**
@@ -131,7 +133,7 @@ class TaskController
       // Get all Tasks by idLogin
       $tasks = $this->TaskManager->GetAllTasksByIdLogin($_GET['idLogin']);
       // Display the main page with all Tasks by idLogin
-      $this->mainController->Dashboard($tasks);
+      $this->DashBoardController->Dashboard($tasks);
    }
 
 
