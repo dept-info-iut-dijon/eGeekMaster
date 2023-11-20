@@ -1,5 +1,7 @@
 <!--
     author : Enzo
+    author : Théo Cornu
+    author : Théo D
 -->
 
 <link rel="stylesheet" href="Public/css/dashboard2.css">
@@ -122,6 +124,7 @@
         <div id="piechart">
             <h1>Tasks distribution</h1>
             <canvas id="myChart1"></canvas>
+            <canvas id="myChart"></canvas>
         </div>
         <div id="barchart">
             <h1>Average duration for each task</h1>
@@ -170,8 +173,13 @@ if (isset($_SESSION['tasks'])) {
 
 
 
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+
 <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    
     const ctx1 = document.getElementById('myChart1');
     const ctx2 = document.getElementById('myChart2');
 
@@ -180,9 +188,26 @@ if (isset($_SESSION['tasks'])) {
         data: {
             labels: <?= json_encode($labels) ?>,
             datasets: [{
-                label: 'duration',
+                label: 'Distribution Duration',
                 data: <?= json_encode($data1) ?>,
-                borderWidth: 1
+                borderWidth: 0,
+                backgroundColor: (context) => {
+                    const index = context.dataIndex;
+                    const count = context.dataset.data.length;
+                    const startColor = [90, 74, 71]; // Couleur de départ (noir)
+                    const endColor = [236, 228, 227]; // Couleur de fin (blanc)
+                    const color = [];
+
+                    // Calculer les valeurs de couleur pour chaque canal (rouge, vert, bleu)
+                    for (let i = 0; i < 3; i++) {
+                        const startValue = startColor[i];
+                        const endValue = endColor[i];
+                        const value = Math.round(startValue + (endValue - startValue) * (index / (count - 1)));
+                        color.push(value);
+                    }
+
+                    return `rgb(${color.join(',')})`;
+                }
             }]
         },
         options: {
@@ -195,16 +220,101 @@ if (isset($_SESSION['tasks'])) {
         data: {
             labels: <?= json_encode($labels) ?>,
             datasets: [{
-                label: '# of Votes',
+                label: 'Average Duration',
                 data: <?= json_encode($data2) ?>,
-                borderWidth: 1
+                backgroundColor: (context) => {
+                    const index = context.dataIndex;
+                    const count = context.dataset.data.length;
+                    const startColor = [0, 0, 0]; // Couleur de départ (noir)
+                    const endColor = [236, 228, 227]; // Couleur de fin (blanc)
+                    const color = [];
+
+                    // Calculer les valeurs de couleur pour chaque canal (rouge, vert, bleu)
+                    for (let i = 0; i < 3; i++) {
+                        const startValue = startColor[i];
+                        const endValue = endColor[i];
+                        const value = Math.round(startValue + (endValue - startValue) * (index / (count - 1)));
+                        color.push(value);
+                    }
+
+                    return `rgb(${color.join(',')})`;
+                },
+                borderWidth: 1,
+                datalabels: {
+                    anchor: 'end',
+                    align: 'end',
+                    offset: -5, 
+                    color: 'black',
+                    font: {
+                        size: 12,
+                    },
+                    formatter: function(value, context) {
+                        return context.chart.data.labels[context.dataIndex];
+                    }
+                }
             }]
         },
         options: {
             responsive: true,
             indexAxis: 'y',
+            plugins: {
+                datalabels: {
+                    display: true,
+                    anchor: 'end',
+                    align: 'end',
+                    offset: -5,
+                    color: 'black',
+                    font: {
+                        size: 12,
+                    },
+                    formatter: function(value, context) {
+                        return context.chart.data.labels[context.dataIndex];
+                    }
+                },
+                legend: {
+                    display: false,
+                },
+                
+            }
         }
     });
+});
+</script>
+<!-- Votre code JavaScript ici -->
+<script>
+  // Exemple de configuration d'un graphique avec Datalabels
+  var ctx = document.getElementById('myChart').getContext('2d');
+  var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai'],
+      datasets: [{
+        label: 'Ventes mensuelles',
+        data: [12, 19, 3, 5, 2],
+        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+        borderColor: 'rgba(75, 192, 192, 1)',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      plugins: {
+        datalabels: {
+                    anchor: 'end',
+                    align: 'end',
+                    offset: -10, 
+                    color: 'black',
+                    font: {
+                        size: 12,
+                    },
+                    formatter: function(value, context) {
+                        return context.chart.data.labels[context.dataIndex];
+                    }
+                }
+      }
+    }
+  }); 
+
+  
 </script>
 
 
