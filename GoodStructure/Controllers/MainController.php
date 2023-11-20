@@ -88,4 +88,15 @@ class MainController {
         $referenceView->generer($data);
     
     }
+
+    /**
+     * Displays the Follow up page
+    */
+    public function FollowUp() {
+        $referenceView = new View("FollowUp");
+        $data = array(
+            //ajouter les données à afficher
+        );
+        $referenceView->generer($data);
+    }
 }

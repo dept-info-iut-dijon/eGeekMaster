@@ -73,7 +73,8 @@ class Router {
         "EditUser" => new RouteEditUser($this->ctrlList["UserController"]),
         "InfoDashBoard" => new RouteInfoDashBoard($this->ctrlList["DashBoardController"]),
         "Reference" => new RouteReference($this->ctrlList["MainController"]),
-        "TaskRegistration" => new RouteTaskRegistration($this->ctrlList["TaskController"]),];
+        "TaskRegistration" => new RouteTaskRegistration($this->ctrlList["TaskController"])
+        "FollowUp" => new RouteFollowUp(),];
     }
 
     /**
