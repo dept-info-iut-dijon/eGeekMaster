@@ -28,15 +28,13 @@ class TaskController
       $this->DashBoardManager = new DashBoardManager();
       $this->TaskManager = new TaskManager();
       $this->Task = new Task();
-
-      
    }
 
    /**
      * Add a new Task or update an existing one.
     * @author Théo
      */
-   public function addTask()
+   public function AddTask()
    {
       // Check if the request method is POST
       if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -58,7 +56,7 @@ class TaskController
     * Delete a Task.
     * @author Théo
     */
-   public function deleteTask()
+   public function DeleteTask()
    {
       // Delete a Task
       $this->TaskManager->DeleteByID($_POST["idTask"]);
@@ -73,13 +71,14 @@ class TaskController
     */
    private function createTask()
    {
+      // Create a new Task
+      $this->populateTask();
+
       // Check if the Task already exists
-      if ($this->TaskManager->CheckIfTaskExists($_POST["searchTask"])) {
+      if ($this->TaskManager->CheckIfTaskExists($this->Task)) {
          // Redirect to the registration page with an error message
          $this->mainController->DashBoard("La tâche existe déjà");
       } else {
-         // Create a new Task
-         $this->populateTask();
          // Add the new User
          $this->TaskManager->addTask($this->Task);
          // Redirect to the main page

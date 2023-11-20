@@ -6,11 +6,8 @@
 <link rel="stylesheet" href="Public/css/taskRegistration1.css">
 <script src="Public/Animation_js/taskRegistration.js"></script>
 <div id="bar">
-    <!--TASK REGISTRATION-->
-    <div id="divTaskRegistration">
-
-        <!--MESSAGE-->
-        <?php if (isset($message)) : ?>
+    <!--MESSAGE-->
+    <?php if (isset($message)) : ?>
             
 
             <p><?= $message ?></p>
@@ -20,6 +17,10 @@
             <p><?= $_GET['errorMessage']?></p>
             
         <?php endif; ?>
+        
+    <!--TASK REGISTRATION-->
+    <div id="divTaskRegistration">
+
         
         <!--FORM-->
         <div id="formDiv">

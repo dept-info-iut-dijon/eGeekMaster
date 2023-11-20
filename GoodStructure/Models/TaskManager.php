@@ -33,7 +33,7 @@ class TaskManager extends Model
      */
     public function GetAllByDashBoard(int $idDashBoard): ?array
     {
-        try {
+        // try {
 
             // Retrieve the tasks associated with the dashboard
             $sql = 'SELECT * FROM task WHERE DashBoardidDashBoard = ?';
@@ -52,12 +52,12 @@ class TaskManager extends Model
                 $Tasks[] = $Task;
             }
             return count($Tasks) > 0 ? $Tasks : null;
-        } catch (PDOException $e) {
-            // In case of an error, redirect to the error page with a message
-            $errorMessage = "An error occurred while retrieving data.";
-            header("Location: index.php?action=DashBoard&errorMessage=".urlencode($errorMessage));
-            exit();
-        }
+        // } catch (PDOException $e) {
+        //     // In case of an error, redirect to the error page with a message
+        //     $errorMessage = "An error occurred while retrieving data.";
+        //     header("Location: index.php?action=DashBoard&errorMessage=".urlencode($errorMessage));
+        //     exit();
+        // }
     }
 
     /**
@@ -85,7 +85,7 @@ class TaskManager extends Model
         } catch (PDOException $e) {
             // In case of an error, redirect to the error page with a message
             $errorMessage = "An error occurred while retrieving data.";
-            header("Location: index.php?action=Index&errorMessage=".urlencode($errorMessage));
+            header("Location: index.php?action=DashBoard&errorMessage=".urlencode($errorMessage));
             exit();
         }
     }
@@ -112,7 +112,7 @@ class TaskManager extends Model
         } catch (PDOException $e) {
             // In case of an error, redirect to the error page with a message
             $errorMessage = "An error occurred while adding the Task.";
-            header("Location: index.php?action=Index&errorMessage=".urlencode($errorMessage));
+            header("Location: index.php?action=DashBoard&errorMessage=".urlencode($errorMessage));
             exit();
         }
     }
@@ -139,7 +139,7 @@ class TaskManager extends Model
         } catch (PDOException $e) {
             // In case of an error, redirect to the error page with a message
             $errorMessage = "An error occurred while updating the Task.";
-            header("Location: index.php?action=Index&errorMessage=".urlencode($errorMessage));
+            header("Location: index.php?action=DashBoard&errorMessage=".urlencode($errorMessage));
             exit();
         }
     }
@@ -158,7 +158,7 @@ class TaskManager extends Model
         } catch (PDOException $e) {
             // In case of an error, redirect to the error page with a message
             $errorMessage = "An error occurred while deleting the Task.";
-            header("Location: index.php?action=Index&errorMessage=".urlencode($errorMessage));
+            header("Location: index.php?action=DashBoard&errorMessage=".urlencode($errorMessage));
             exit();
         }
     }
@@ -166,21 +166,21 @@ class TaskManager extends Model
     /**
      * Check if a Task already exists in the database.
      *
-     * @param string $nameTask The name of the Task to check.
+     * @param Task $Task The name of the Task to check.
      * @return bool True if the Task exists, false otherwise.
      * @throws Exception
      */
-    public function CheckIfTaskExists(string $nameTask): bool
+    public function CheckIfTaskExists(Task $Task): bool
     {
         try {
-            $sql = 'SELECT COUNT(*) FROM task WHERE Name = ?';
-            $result = $this->executerRequete($sql, [$nameTask]);
-            $line = $result->fetch(PDO::FETCH_ASSOC);
-            return $line['COUNT(*)'] > 0;
+            $sql = 'SELECT COUNT(*) FROM task WHERE Name = ? AND Date = ? AND Duration = ?';
+            $result = $this->executerRequete($sql, [$Task->getNameTask(), $Task->getDateAdded(), $Task->getDuration()]);
+            $line = $result->fetch(PDO::FETCH_NUM);
+            return $line[0] > 0;
         } catch (PDOException $e) {
             // In case of an error, redirect to the error page with a message
-            $errorMessage = "An error occurred while checking if the Task exists.";
-            header("Location: index.php?action=Index&errorMessage=".urlencode($errorMessage));
+            $errorMessage = "The Task already exists.";
+            header("Location: index.php?action=DashBoard&errorMessage=".urlencode($errorMessage));
             exit();
         }
     }

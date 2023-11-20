@@ -67,12 +67,16 @@ class MainController {
     /**
      * Displays the dashboard page.
      */
-    public function DashBoard() {
+    public function DashBoard($message = null) {
     
         $dashBoardView = new View("DashBoard");
         $data = array(
             //ajouter les données à afficher
         );
+        if ($message !== null) {
+            $data["message"] = $message;
+            
+        }
         $dashBoardView->generer($data);
     }
 
