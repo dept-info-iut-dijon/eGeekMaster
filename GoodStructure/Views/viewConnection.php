@@ -9,7 +9,7 @@ author : Enzo-->
     </div>
     <div class="container">
         <div id="divlogo">
-            <img id="logo" src="Public/image/page_connection/logo_soupape2.png" alt="">
+            <img id="logo" src="Public/image/page_connection/logo_F2.png" alt="">
         </div>
         <div id="rightPart">
             <?php if (isset($_GET['errorMessage'])) : ?>

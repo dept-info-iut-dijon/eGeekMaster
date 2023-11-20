@@ -10,18 +10,27 @@ require_once 'Controllers/MainController.php';
 
 class LoginController{
 
+    private $loginManager;
+    private $mainController;
+    
+    /**
+     * LoginController constructor.
+     */
+    public function __construct() {
+        $this->loginManager = new LoginManager();
+        $this->mainController = new MainController();
+    }
+
     /**
      * Allows to add a Login
      * @author Théo Cornu
      */
     public function Add() {
-        $loginManager = new LoginManager();
-        $mainController = new MainController();
-
-        var_dump($_POST["Username"], $_POST["Password"]);
-        $loginManager->Add($_POST["Username"], $_POST["Password"]);
         
-        $mainController->Index("Login ajouté");
+
+        $this->loginManager->Add($_POST["Username"], $_POST["Password"]);
+        
+        $this->mainController->Index("Login ajouté");
     }
 
     /**
@@ -29,12 +38,10 @@ class LoginController{
      * @author Théo Cornu
      */
     public function Delete() {
-        $loginManager = new LoginManager();
-        $mainController = new MainController();
 
-        $loginManager->DeleteByID($_POST["id"]);
+        $this->loginManager->DeleteByID($_POST["id"]);
 
-        $mainController->Index("Login supprimé");
+        $this->mainController->Index("Login supprimé");
     }
 
     /**
@@ -48,12 +55,11 @@ class LoginController{
      * @author Théo Cornu
      */
     public function Edit() {
-        $loginManager = new LoginManager();
-        $mainController = new MainController();
-
-        $loginManager->UpdateById($_POST["id"],$_POST["Username"], $_POST["Password"]);
         
-        $mainController->Index("Login modifié");
+
+        $this->loginManager->UpdateById($_POST["id"],$_POST["Username"], $_POST["Password"]);
+        
+        $this->mainController->Index("Login modifié");
     }
 
     /**
@@ -62,12 +68,11 @@ class LoginController{
      * @throws Exception If the Login could not be connected
      */
     public function Connect() {
-        $loginManager = new LoginManager();
-        $mainController = new MainController();
+       
 
-        $loginManager->Connect($_POST["Username"], $_POST["Password"]);
+        $this->loginManager->Connect($_POST["Username"], $_POST["Password"]);
         
-        $mainController->Index("Login connecté");
+        $this->mainController->Index("Login connecté");
     }
 
     /**
@@ -77,11 +82,10 @@ class LoginController{
      * @throws Exception If the Login could not be disconnected
      */
     public function Disconnect() {
-        $loginManager = new LoginManager();
-        $mainController = new MainController();
+       
 
-        $loginManager->Disconnect();
+        $this->loginManager->Disconnect();
         
-        $mainController->Index("Login déconnecté");
+        $this->mainController->Index("Login déconnecté");
     }
 }

@@ -1,17 +1,19 @@
 <!-- author: Théo Cornu -->
 <div id="contenu">
-    <link rel="stylesheet" href="Public/css/footer.css">
     <link rel="stylesheet" href="Public/css/page_accueil/index8.css">
 
     <script src="Public/Animation_js/page_accueil/index.js"></script>
 
     <div id="Debut">
-        <?php if (isset($message) || isset($_GET['message'])) : ?>
-            <?php if (isset($_GET['message'])) : ?>
-                <?php $message = $_GET['message'] ?>
-            <?php endif; ?>
+        <?php if (isset($message)) : ?>
             
+
             <p><?= $message ?></p>
+        <?php endif; ?>
+        <?php if (isset($_GET['errorMessage'])) : ?>
+            
+            <p><?= $_GET['errorMessage']?></p>
+            
         <?php endif; ?>
         <div id="imageDebut">
             <div class="imageDuDeb haut"></div>
@@ -84,7 +86,7 @@
             <div>
                 
                 <div id="Faq_Pixi" class="relative-container">
-                    <div id='FAQprincipal'></div>
+                    <div id='FAQprincipal'><div id='imageFAQ'></div></div>
                     <div id="PixiPresentation">
                         
                         <div class="field">

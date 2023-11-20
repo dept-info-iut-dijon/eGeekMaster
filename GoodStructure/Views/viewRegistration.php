@@ -7,7 +7,7 @@
 <link href="Public/css/inscription2.css" rel="stylesheet">
 <!--LOGO-->
 <div id="logo_global">
-    <img src="Public/image/page_connection/logo_soupape2.png" alt="logo" id="logo">
+    <img src="Public/image/page_connection/logo_F.png" alt="logo" id="logo">
 </div>
 <?php if (isset($_GET['errorMessage'])) : ?>
     <div id="fond-erreur">
