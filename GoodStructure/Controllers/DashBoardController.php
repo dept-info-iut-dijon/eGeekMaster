@@ -90,11 +90,10 @@ class DashBoardController {
             
             
             // Retrieve the Tasks
-            $tasks = $this->TaskManager->GetAllByDashBoard($this->DashBoard);
+            $tasks = $this->TaskManager->GetAllByDashBoard($this->DashBoard->GetId());
             // Send to the session the list of Tasks
             $_SESSION['tasks'] = $tasks;
-            // Display the view
-            $this->mainController->DashBoard();
+            
         }
 
     }

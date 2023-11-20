@@ -5,6 +5,7 @@ require_once 'DashBoard.php';
 require_once 'Controllers/MainController.php';
 require_once 'Models/DashboardManager.php';
 
+
 /**
  * Class DashBoardManager
  * @package GoodStructure\Models
@@ -22,19 +23,22 @@ class TaskManager extends Model
     {
         parent::__construct();
     }
+
     /**
      * Retrieve a list of Tasks by its dashboard from the database.
      *
-     * @param DashBoard $dashboards The dashboard to retrieve the tasks from.
+     * @param int $idDashBoard The ID of the dashboard to retrieve the tasks from.
      * @return array|null An array of Task objects, or null if no tasks are found.
      * @author Théo Cornu
      */
-    public function GetAllByDashBoard(DashBoard $dashboards): ?array
+    public function GetAllByDashBoard(int $idDashBoard): ?array
     {
         try {
-            $sql = 'SELECT * FROM task WHERE dashboard = ?';
+
+            // Retrieve the tasks associated with the dashboard
+            $sql = 'SELECT * FROM task WHERE DashBoardidDashboard = ?';
             $Tasks = [];
-            $result = $this->executerRequete($sql, [$dashboards->getUsername()]);
+            $result = $this->executerRequete($sql, [$idDashBoard]);
             while ($line = $result->fetch(PDO::FETCH_ASSOC)) {
                 $Task = new Task(
                     $line['idTask'],
@@ -51,7 +55,7 @@ class TaskManager extends Model
         } catch (PDOException $e) {
             // In case of an error, redirect to the error page with a message
             $errorMessage = "An error occurred while retrieving data.";
-            header("Location: index.php?action=Index&errorMessage=".urlencode($errorMessage));
+            header("Location: index.php?action=DashBoard&errorMessage=".urlencode($errorMessage));
             exit();
         }
     }
@@ -113,5 +117,71 @@ class TaskManager extends Model
         }
     }
 
-    
+    /**
+     * Update an existing Task in the database.
+     *
+     * @param Task $Task The Task to update.
+     * @return Task The Task object, or null if not found.
+     * @throws Exception
+     */
+    public function UpdateTask(Task $Task): Task
+    {
+        try {
+            $sql = 'UPDATE task SET Name = :value1, Duration = :value2, Date = :value3, DashBoardidDashboard = :value4 WHERE idTask = :value5';
+            $this->executerRequete($sql, [
+                ':value1' => $Task->getNameTask(),
+                ':value2' => $Task->getDuration(),
+                ':value3' =>  $Task->getDateAdded(),
+                ':value4' =>  $Task->getIdDashBoard(),
+                ':value5' =>  $Task->getId()
+            ]);
+            return $Task;
+        } catch (PDOException $e) {
+            // In case of an error, redirect to the error page with a message
+            $errorMessage = "An error occurred while updating the Task.";
+            header("Location: index.php?action=Index&errorMessage=".urlencode($errorMessage));
+            exit();
+        }
+    }
+
+    /**
+     * Delete a Task from the database.
+     *
+     * @param int $id The ID of the Task to delete.
+     * @throws Exception
+     */
+    public function DeleteByID(int $id)
+    {
+        try {
+            $sql = 'DELETE FROM task WHERE idTask = ?';
+            $this->executerRequete($sql, [$id]);
+        } catch (PDOException $e) {
+            // In case of an error, redirect to the error page with a message
+            $errorMessage = "An error occurred while deleting the Task.";
+            header("Location: index.php?action=Index&errorMessage=".urlencode($errorMessage));
+            exit();
+        }
+    }
+
+    /**
+     * Check if a Task already exists in the database.
+     *
+     * @param string $nameTask The name of the Task to check.
+     * @return bool True if the Task exists, false otherwise.
+     * @throws Exception
+     */
+    public function CheckIfTaskExists(string $nameTask): bool
+    {
+        try {
+            $sql = 'SELECT COUNT(*) FROM task WHERE Name = ?';
+            $result = $this->executerRequete($sql, [$nameTask]);
+            $line = $result->fetch(PDO::FETCH_ASSOC);
+            return $line['COUNT(*)'] > 0;
+        } catch (PDOException $e) {
+            // In case of an error, redirect to the error page with a message
+            $errorMessage = "An error occurred while checking if the Task exists.";
+            header("Location: index.php?action=Index&errorMessage=".urlencode($errorMessage));
+            exit();
+        }
+    }
 }
