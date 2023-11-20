@@ -9,6 +9,18 @@
     <!--TASK REGISTRATION-->
     <div id="divTaskRegistration">
 
+        <!--MESSAGE-->
+        <?php if (isset($message)) : ?>
+            
+
+            <p><?= $message ?></p>
+        <?php endif; ?>
+        <?php if (isset($_GET['errorMessage'])) : ?>
+            
+            <p><?= $_GET['errorMessage']?></p>
+            
+        <?php endif; ?>
+        
         <!--FORM-->
         <div id="formDiv">
             <form action="index.php?action=TaskRegistration" method="post" id="formTask">

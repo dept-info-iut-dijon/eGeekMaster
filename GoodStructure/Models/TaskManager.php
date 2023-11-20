@@ -36,7 +36,7 @@ class TaskManager extends Model
         try {
 
             // Retrieve the tasks associated with the dashboard
-            $sql = 'SELECT * FROM task WHERE DashBoardidDashboard = ?';
+            $sql = 'SELECT * FROM task WHERE DashBoardidDashBoard = ?';
             $Tasks = [];
             $result = $this->executerRequete($sql, [$idDashBoard]);
             while ($line = $result->fetch(PDO::FETCH_ASSOC)) {
@@ -45,7 +45,7 @@ class TaskManager extends Model
                     $line['Name'],
                     $line['Duration'],
                     $line['Date'],
-                    $line['DashBoardidDashboard'],
+                    $line['DashBoardidDashBoard'],
                     
                 );
 
