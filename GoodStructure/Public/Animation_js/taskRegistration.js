@@ -11,6 +11,7 @@ function DisplayTaskRegistration() {
     const taskR = document.getElementById("divTaskRegistration");
     const buttonTaskAdd = document.querySelector('.boutonTaches.Add');
     const titleTask = document.getElementById("titleTASK"); // Get reference to the h1 element
+    const submit = document.getElementById("submit"); // Get reference to the submit button
 
     // The task button is clicked
     buttonTaskAdd.addEventListener("click", function () {
@@ -45,6 +46,7 @@ function DisplayTaskRegistration() {
             // Open the task registration part
             taskR.style.right = "10%";
             titleTask.textContent = "DELETE A TASK"; // Change the content of the h1 element
+            submit.value = "Delete"; // Hide the submit button
         }
     });
 }

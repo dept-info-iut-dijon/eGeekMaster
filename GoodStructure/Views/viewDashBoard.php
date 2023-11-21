@@ -188,16 +188,20 @@ if (isset($_SESSION['tasks'])) {
 <script>
     document.addEventListener("DOMContentLoaded", function() {
     
+    const labels = <?= json_encode($labels) ?>;
+    const data1 = <?= json_encode($data1) ?>;
+    const data2 = <?= json_encode($data2) ?>;
+
     const ctx1 = document.getElementById('myChart1');
     const ctx2 = document.getElementById('myChart2');
 
     new Chart(ctx1, {
         type: 'pie',
         data: {
-            labels: <?= json_encode($labels) ?>,
+            labels: labels,
             datasets: [{
                 label: 'Distribution Duration',
-                data: <?= json_encode($data1) ?>,
+                data: data1,
                 borderWidth: 0,
                 backgroundColor: (context) => {
                     const index = context.dataIndex;
@@ -220,16 +224,24 @@ if (isset($_SESSION['tasks'])) {
         },
         options: {
             responsive: true,
+            onClick: (event, elements) => {
+                if (elements.length > 0) {
+                    const clickedIndex = elements[0].index;
+                    const clickedLabel = labels[clickedIndex];
+                    console.log(`Clicked label: ${clickedLabel}`);
+                }
+            }
+            
         }
     });
 
     new Chart(ctx2, {
         type: 'bar',
         data: {
-            labels: <?= json_encode($labels) ?>,
+            labels: labels,
             datasets: [{
                 label: 'Average Duration',
-                data: <?= json_encode($data2) ?>,
+                data: data2,
                 backgroundColor: (context) => {
                     const index = context.dataIndex;
                     const count = context.dataset.data.length;
