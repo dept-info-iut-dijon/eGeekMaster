@@ -4,11 +4,12 @@
  * @author Théo Cornu
  */
 
-require_once '../views/View.php';
-require_once '../models/UserManager.php';
-require_once '../Controllers/MainController.php';
-require_once '../models/LoginManager.php';
-require_once '../models/DashBoardManager.php';
+require_once 'views/View.php';
+require_once 'models/UserManager.php';
+require_once 'Controllers/MainController.php';
+require_once 'models/LoginManager.php';
+require_once 'models/DashBoardManager.php';
+require_once 'dashboardcontroller.php';
 
 class UserController{
     
