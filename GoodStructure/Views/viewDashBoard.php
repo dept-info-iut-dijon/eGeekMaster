@@ -5,7 +5,7 @@
 -->
 
 <link rel="stylesheet" href="Public/css/dashboard2.css">
-<link rel="stylesheet" href="Public/css/taskRegistration1.css">
+<link rel="stylesheet" href="Public/css/taskRegistration2.css">
 <script src="Public/Animation_js/taskRegistration.js"></script>
 <div id="bar">
     <!--MESSAGE-->
@@ -109,23 +109,24 @@
             </form>
         </div>
     </div>
-
-    <div class="divBoutonTache Add">
-        <!-- Bouton d'ajout de tâches -->
-        <button class="boutonTaches Add" type="button">Register a new task</button>
-    </div>
     
-    <div class="divBoutonTache Supr">
-        <!-- Bouton d'ajout de tâches -->
-        <a href="index.php?action=TaskSupression&IdTask=<?php if (isset($_SESSION['tasks']))  : ?> <?= $idLastTast ?> <?php endif; ?>"><button class="boutonTaches Supr" type="button">Delete a task</button></a>
+    <div id='BoutonAction'>
+        <div class="divBoutonTache Add">
+            <!-- Bouton d'ajout de tâches -->
+            <button class="boutonTaches Add" type="button">Register a new task</button>
+        </div>
         
-    </div>
+        <div class="divBoutonTache Supr">
+            <!-- Bouton d'ajout de tâches -->
+            <a href="index.php?action=TaskSupression&IdTask=<?php if (isset($_SESSION['tasks']))  : ?> <?= $idLastTast ?> <?php endif; ?>"><button class="boutonTaches Supr" type="button">Delete a task</button></a>
+            
+        </div>
 
-    <div class="divBoutonTache Modif">
-        <!-- Bouton d'ajout de tâches -->
-        <button class="boutonTaches Modif" type="button">Modify a task</button>
+        <div class="divBoutonTache Modif">
+            <!-- Bouton d'ajout de tâches -->
+            <button class="boutonTaches Modif" type="button">Modify a task</button>
+        </div>
     </div>
-
     <!-- Graphiques -->
     <div id="graphiques">
         <div id="piechart">
