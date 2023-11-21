@@ -28,7 +28,7 @@ require_once 'Controllers/Router/Route.php';
      * @return mixed
      */
     public function get($params = []) {
-        return $this->controller->ModifyTask();
+        return $this->controller->AddTask()();
     }
 
     /**
@@ -37,7 +37,7 @@ require_once 'Controllers/Router/Route.php';
      * @return mixed
      */
     public function post($params = []) {
-        return $this->controller->ModifyTask();
+        return $this->controller->AddTask()();
     }
 
     /**
@@ -47,6 +47,6 @@ require_once 'Controllers/Router/Route.php';
      * @return mixed
      */
     public function action($params = [], $method = 'GET') {
-        return $this->controller->ModifyTask();
+        return $this->controller->AddTask()();
     }
  }

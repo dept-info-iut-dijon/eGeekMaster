@@ -67,16 +67,18 @@ class MainController {
     /**
      * Displays the dashboard page.
      */
-    public function DashBoard($message = null) {
+    public function DashBoard($message = null, $idLastTast = null, $nameLastTask = null, $durationLastTask = null, $dateLastTask = null) {
     
         $dashBoardView = new View("DashBoard");
-        $data = array(
-            //ajouter les données à afficher
-        );
+        $data = array();
         if ($message !== null) {
             $data["message"] = $message;
             
         }
+        $data["idLastTast"] = $idLastTast;
+        $data["nameLastTask"] = $nameLastTask;
+        $data["durationLastTask"] = $durationLastTask;
+        $data["dateLastTask"] = $dateLastTask;
         $dashBoardView->generer($data);
     }
 

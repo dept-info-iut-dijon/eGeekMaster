@@ -8,7 +8,7 @@ require_once 'Controllers/Router/Route.php';
  * 
  */
 
- class RouteTaskSuppression extends Route {
+ class RouteTaskSupression extends Route {
     private TaskController $controller;
 
 

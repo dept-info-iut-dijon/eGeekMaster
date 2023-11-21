@@ -38,7 +38,7 @@
                     <div id="task">
                         <label id="taskLabel">Task :</label>
                         <div id="chooseTask">
-                            <input list="tasks" placeholder="Search a task" name="searchTask" id="searchTask" autofocus required>
+                            <input list="tasks" placeholder="Search a task" name="searchTask" id="searchTask" value="<?php if (isset($_SESSION['tasks'])) {  ?> <?= $nameLastTask ?> <?php } ?>" autofocus required>
                             <datalist id="tasks">
                                 <option value="Cleaning">                                
                                 <option value="Shopping">
@@ -85,7 +85,7 @@
                             </div>
                         </div>
                         <div id="dateDiv">
-                            <input type="date" name="Date" id="date" pattern="\d{1,2}-\d{1,2}-\d{4}">
+                            <input type="date" name="Date" id="date" pattern="\d{1,2}-\d{1,2}-\d{4}" value="<?php if (isset($_SESSION['tasks'])) { ?> <?= $dateLastTask ?> <?php } ?>">
                         </div>
                     </div> 
 
@@ -121,7 +121,7 @@
     
     <div class="divBoutonTache Supr">
         <!-- Bouton d'ajout de tâches -->
-        <button class="boutonTaches Supr" type="button">Delete a task</button>
+        <a href="index.php?action=TaskSupression&IdTask=<?= (end($_SESSION['tasks']))->getId() ?>"><button class="boutonTaches Supr" type="button">Delete a task</button></a>
         
     </div>
 

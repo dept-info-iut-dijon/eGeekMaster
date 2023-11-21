@@ -7,12 +7,12 @@
 function DisplayTaskRegistration() {
     // Get references to the buttons and the task registration part
     const buttonTaskModif = document.querySelector(".boutonTaches.Modif");
-    const buttonTaskSupr = document.querySelector(".boutonTaches.Supr");
     const taskR = document.getElementById("divTaskRegistration");
     const buttonTaskAdd = document.querySelector('.boutonTaches.Add');
     const titleTask = document.getElementById("titleTASK"); // Get reference to the h1 element
     const submit = document.getElementById("submit"); // Get reference to the submit button
     const formTask = document.getElementById("formTask"); // Get reference to the form element
+    const searchTask = document.getElementById("searchTask"); // Get reference to the searchTask element
 
     // The task button is clicked
     buttonTaskAdd.addEventListener("click", function () {
@@ -25,6 +25,7 @@ function DisplayTaskRegistration() {
             titleTask.textContent = "Registration A TASK"; // Change the content of the h1 element
             submit.value = "Register";
             formTask.action = "index.php?action=TaskRegistration";
+            searchTask.value = "";
         }
     });
 
@@ -38,23 +39,12 @@ function DisplayTaskRegistration() {
             taskR.style.right = "10%";
             titleTask.textContent = "MODIFY A TASK"; // Change the content of the h1 element
             submit.value = "Modify";
-            formTask.action = "index.php?action=TaskModification&IdTask=<?= (end($_SESSION['tasks']))->getId()?>";
+            formTask.action = "index.php?action=TaskModification&IdTask=<?= (end($_SESSION['tasks']))->getId() ?>";
+        
         }
     });
 
-    // The task button is clicked
-    buttonTaskSupr.addEventListener("click", function () {
-        if (taskR.style.right === "0px") {
-            // Close the task registration part
-            taskR.style.right = "-350px";
-        } else {
-            // Open the task registration part
-            taskR.style.right = "10%";
-            titleTask.textContent = "DELETE A TASK"; // Change the content of the h1 element
-            submit.value = "Delete"; 
-            formTask.action = "index.php?action=TaskSupression&IdTask=<?= (end($_SESSION['tasks']))->getId()?>"
-        }
-    });
+    
 }
 
 
