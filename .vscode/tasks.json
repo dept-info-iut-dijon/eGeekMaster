@@ -7,7 +7,7 @@
             "label": "Start Opera GX + Fichier Courrant",
            "type": "shell",
 
-            "command":"C:/Users/Public/Desktop/Microsoft Edge.lnk",//"C:/Users/ttmdu/OneDrive/Bureau/Navigateur/Navigateur Opera GX.lnk"
+            "command":"MicrosoftEdge",//"C:/Users/ttmdu/OneDrive/Bureau/Navigateur/Navigateur Opera GX.lnk"
 
            "args": [
                 "http://localhost/eGeekMaster/GoodStructure/index.php"

@@ -47,5 +47,16 @@
                 $this->MainController->FollowUp();
             }
         }
+
+        /**
+         * Update a Follow Up
+         */
+        public function UpdateFollowUp() {
+            $this->PopulateFollowUp();
+
+            $this->FollowUpManager->UpdateFollowUp($this->FollowUp());
+
+            $this->MainController->FollowUp("Follow up updated");
+        }
     }
 ?>
