@@ -130,6 +130,18 @@
             $this->setHash(hash("sha256", $password));
         }
         
+        // Compare two users
+        public function attributesEquals(User $otherUser) : bool
+        {
+            foreach (get_object_vars($this) as $attribute => $value) {
+                if ($this->$attribute != $otherUser->$attribute) {
+                    return false;
+                }
+            }
+    
+            return true;
+        }
+        
     }
 
 ?>
