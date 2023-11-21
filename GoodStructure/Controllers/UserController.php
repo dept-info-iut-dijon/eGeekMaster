@@ -4,7 +4,7 @@
  * @author Théo Cornu
  */
 
-require_once 'views/View.php';
+require_once 'Views/View.php';
 require_once 'models/UserManager.php';
 require_once 'Controllers/MainController.php';
 require_once 'models/LoginManager.php';
