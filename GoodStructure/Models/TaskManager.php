@@ -25,35 +25,28 @@ class TaskManager extends Model
     /**
      * Retrieve a list of Tasks by its dashboard from the database.
      *
-     * @param DashBoard $dashboards The dashboard to retrieve the tasks from.
+     * @param idDashBoard Id of the current dashboard
      * @return array|null An array of Task objects, or null if no tasks are found.
      * @author Théo Cornu
      */
-    public function GetAllByDashBoard(DashBoard $dashboards): ?array
+    public function GetAllByDashBoard(int $idDashBoard): ?array
     {
-        try {
-            $sql = 'SELECT * FROM task WHERE dashboard = ?';
-            $Tasks = [];
-            $result = $this->executerRequete($sql, [$dashboards->getUsername()]);
-            while ($line = $result->fetch(PDO::FETCH_ASSOC)) {
-                $Task = new Task(
-                    $line['idTask'],
-                    $line['Name'],
-                    $line['Duration'],
-                    $line['Date'],
-                    $line['DashBoardidDashboard'],
-                    
-                );
+        $sql = 'SELECT * FROM task WHERE DashBoardidDashBoard = ?';
+        $Tasks = [];
+        $result = $this->executerRequete($sql, [$idDashBoard]);
+        while ($line = $result->fetch(PDO::FETCH_ASSOC)) {
+            $Task = new Task(
+                $line['idTask'],
+                $line['Name'],
+                $line['Duration'],
+                $line['Date'],
+                $line['DashBoardidDashBoard'],
+                
+            );
 
-                $Tasks[] = $Task;
-            }
-            return count($Tasks) > 0 ? $Tasks : null;
-        } catch (PDOException $e) {
-            // In case of an error, redirect to the error page with a message
-            $errorMessage = "An error occurred while retrieving data.";
-            header("Location: index.php?action=Index&errorMessage=".urlencode($errorMessage));
-            exit();
+            $Tasks[] = $Task;
         }
+        return count($Tasks) > 0 ? $Tasks : null;
     }
 
     /**
