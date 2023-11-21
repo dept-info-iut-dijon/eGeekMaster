@@ -47,7 +47,7 @@
                 $_SESSION['tasks'] = $tasks;
 
                 // Display the view of Follow Up
-                $this->mainController->FollowUp();
+                $this->mainController->FollowUp($tasks);
             }
         }
 
@@ -56,11 +56,12 @@
          * @author Enzo
          */
         private function UpdateDashboard() {
+            // Set properties
             $this->PopulateDashboard();
 
+            // Update the dashboard in the database
             $this->dashboardManager->UpdateDashboard($this->dashboard);
 
-            $this->mainController->FollowUp("Follow up updated");
         }
 
         /**
@@ -68,9 +69,11 @@
          * @author Enzo
          */
         private function PopulateDashboard() {
+            // Get User Id, Username
             $idUser = $this->userManager->GetIdUserByLoginId(intval($_SESSION['IdLogin']));
             $username = $this->loginManager->GetUsernameByIdLogin(intval($_SESSION['IdLogin']));
             
+            // Set Id, Username, IdUser
             $this->dashboard->SetId($this->userManager->GetIdDashboardByUserId($idUser));
             $this->dashboard->SetUsername($username);
             $this->dashboard->SetIdUser($idUser);
