@@ -16,7 +16,6 @@
         private $_gender;
         private $_familyPlace;
         private $_birthDate;
-
         
         public function __construct(string $firstName='', string $lastName='', string $email='', string $gender='', string $familyPlace='', string $birthDate='')
         {
@@ -129,7 +128,7 @@
         public function setPassword(string $password) {
             $this->setHash(hash("sha256", $password));
         }
-        
+
         // Compare two users
         public function attributesEquals($otherUser) : bool
         {
