@@ -1,14 +1,25 @@
 <!--
     author : Enzo
+    author : Théo Cornu
+    author : Théo D
 -->
 
 <link rel="stylesheet" href="Public/css/dashboard2.css">
 <link rel="stylesheet" href="Public/css/taskRegistration1.css">
 <script src="Public/Animation_js/taskRegistration.js"></script>
 <div id="bar">
+    <!--MESSAGE-->
+    <?php if (isset($message)) : ?>
+        <p><?= $message ?></p>
+    <?php endif; ?>
+    <?php if (isset($_GET['errorMessage'])) : ?>
+        <p><?= $_GET['errorMessage']?></p>
+    <?php endif; ?>
+        
     <!--TASK REGISTRATION-->
     <div id="divTaskRegistration">
 
+        
         <!--FORM-->
         <div id="formDiv">
             <form action="index.php?action=TaskRegistration" method="post" id="formTask">
@@ -23,7 +34,7 @@
                     <div id="task">
                         <label id="taskLabel">Task :</label>
                         <div id="chooseTask">
-                            <input list="tasks" placeholder="Search a task" name="searchTask" id="searchTask" autofocus required>
+                            <input list="tasks" placeholder="Search a task" name="searchTask" id="searchTask" value="<?php if (isset($_SESSION['tasks']))  : ?> <?= $nameLastTask ?> <?php endif; ?>" autofocus required>
                             <datalist id="tasks">
                                 <option value="Cleaning">                                
                                 <option value="Shopping">
@@ -59,7 +70,7 @@
                         <div id="time">
                             <input type="text" name="hours" id="hours" class="inputsTime" readonly>
                             <p id="a"> : </p>
-                            <input type="text" name="minutes" id="minutes" class="inputsTime" readonly>
+                            <input type="text" name="minutes" id="minutes" class="inputsTime"  readonly>
                         </div>
                         <div class="incrementDecrement">
                             <div class="plus">
@@ -70,7 +81,7 @@
                             </div>
                         </div>
                         <div id="dateDiv">
-                            <input type="date" name="Date" id="date" pattern="\d{1,2}-\d{1,2}-\d{4}">
+                            <input type="date" name="Date" id="date" pattern="\d{1,2}-\d{1,2}-\d{4}" value="<?php if (isset($_SESSION['tasks'])) :  ?> <?= $dateLastTask ?> <?php endif; ?>">
                         </div>
                     </div> 
 
@@ -99,9 +110,20 @@
         </div>
     </div>
 
-    <div id="divBoutonTache">
+    <div class="divBoutonTache Add">
         <!-- Bouton d'ajout de tâches -->
-        <button id="boutonTaches" type="button">Register a new task</button>
+        <button class="boutonTaches Add" type="button">Register a new task</button>
+    </div>
+    
+    <div class="divBoutonTache Supr">
+        <!-- Bouton d'ajout de tâches -->
+        <a href="index.php?action=TaskSupression&IdTask=<?= (end($_SESSION['tasks']))->getId() ?>"><button class="boutonTaches Supr" type="button">Delete a task</button></a>
+        
+    </div>
+
+    <div class="divBoutonTache Modif">
+        <!-- Bouton d'ajout de tâches -->
+        <button class="boutonTaches Modif" type="button">Modify a task</button>
     </div>
 
     <!-- Graphiques -->
@@ -119,43 +141,134 @@
     
 
 
+
+
+
+
+<?php
+$labels = [];
+$data1 = [];
+$data2 = [];
+$taskDurations = [];
+$taskCounts = [];
+
+if (isset($_SESSION['tasks'])) {
+    foreach ($_SESSION['tasks'] as $task) {
+        $taskName = $task->getNameTask();
+        $taskDuration = $task->getDuration();
+
+        // Vérifier si le nom de tâche existe déjà dans le tableau des labels
+        if (!in_array($taskName, $labels)) {
+            $labels[] = $taskName;
+            $taskDurations[$taskName] = $taskDuration;
+            $taskCounts[$taskName] = 1;
+        } else {
+            // Ajouter la durée à la durée existante pour ce nom de tâche
+            $taskDurations[$taskName] += $taskDuration;
+            $taskCounts[$taskName]++;
+        }
+    }
+
+    // Remplir les tableaux de données avec les durées correspondantes
+    foreach ($labels as $label) {
+        $data1[] = $taskDurations[$label]; // Exemple de valeur statique pour le graphique 1
+        $data2[] = $taskDurations[$label] / $taskCounts[$label]; // Calculer la moyenne sur une semaine
+    }
+}
+?>
+
+
+
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    
+    const labels = <?= json_encode($labels) ?>;
+    const data1 = <?= json_encode($data1) ?>;
+    const data2 = <?= json_encode($data2) ?>;
+
     const ctx1 = document.getElementById('myChart1');
+    const ctx2 = document.getElementById('myChart2');
 
     new Chart(ctx1, {
         type: 'pie',
         data: {
-            labels: ["A", "B"],
+            labels: labels,
             datasets: [{
-                label: '# of Votes',
-                data: [20, 30],
+                label: 'Distribution Duration',
+                data: data1,
+                borderWidth: 0,
+                backgroundColor: (context) => {
+                    const index = context.dataIndex;
+                    const count = context.dataset.data.length;
+                    const startColor = [90, 74, 71]; // Couleur de départ (noir)
+                    const endColor = [236, 228, 227]; // Couleur de fin (blanc)
+                    const color = [];
+
+                    // Calculer les valeurs de couleur pour chaque canal (rouge, vert, bleu)
+                    for (let i = 0; i < 3; i++) {
+                        const startValue = startColor[i];
+                        const endValue = endColor[i];
+                        const value = Math.round(startValue + (endValue - startValue) * (index / (count - 1)));
+                        color.push(value);
+                    }
+
+                    return `rgb(${color.join(',')})`;
+                }
+            }]
+        },
+        options: {
+            responsive: true,
+            onClick: (event, elements) => {
+                if (elements.length > 0) {
+                    const clickedIndex = elements[0].index;
+                    const clickedLabel = labels[clickedIndex];
+                    console.log(`Clicked label: ${clickedLabel}`);
+                }
+            }
+            
+        }
+    });
+
+    new Chart(ctx2, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Average Duration',
+                data: data2,
+                backgroundColor: (context) => {
+                    const index = context.dataIndex;
+                    const count = context.dataset.data.length;
+                    const startColor = [0, 0, 0]; // Couleur de départ (noir)
+                    const endColor = [236, 228, 227]; // Couleur de fin (blanc)
+                    const color = [];
+
+                    // Calculer les valeurs de couleur pour chaque canal (rouge, vert, bleu)
+                    for (let i = 0; i < 3; i++) {
+                        const startValue = startColor[i];
+                        const endValue = endColor[i];
+                        const value = Math.round(startValue + (endValue - startValue) * (index / (count - 1)));
+                        color.push(value);
+                    }
+
+                    return `rgb(${color.join(',')})`;
+                },
                 borderWidth: 1
             }]
         },
         options: {
             responsive: true,
+            indexAxis: 'y',
+            plugins: {
+                
+                
+            }
         }
     });
-
-    const ctx2 = document.getElementById('myChart2');
-
-    new Chart(ctx2, {
-        type: 'bar',
-        data: {
-                labels: ["A", "B"],
-                datasets: [{
-                label: '# of Votes',
-                data: [20, 30],
-                borderWidth: 1
-                }]
-        },
-        options: {
-                responsive: true,
-                indexAxis: 'y',
-        }
-    });
+});
 </script>
 
 
