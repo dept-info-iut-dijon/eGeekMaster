@@ -93,13 +93,13 @@ class MainController {
      * Displays the Follow up page
      * @author Enzo
     */
-    public function FollowUp($tasks = null) {
+    public function FollowUp($message = null) {
         $referenceView = new View("FollowUp");
         $data = array(
             //ajouter les données à afficher
         );
-        if($tasks != null) {
-            $data = $tasks;
+        if($message != null) {
+            $data = $message;
         }
         $referenceView->generer($data);
     }
