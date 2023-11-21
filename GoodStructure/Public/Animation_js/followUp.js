@@ -8,20 +8,20 @@ function showDetailed() {
 
     // Remplacez les noms et les images selon vos besoins
     var boutonDetails = [
-        { id: "followCleaning", nom: "Cleaning", image: "Public/image/page_followUp/img_cleaning.png" },
-        { id: "followShopping", nom: "Shopping", image: "Public/image/page_followUp/img_shopping.png" },
-        { id: "followCooking", nom: "Cooking", image: "Public/image/page_followUp/img_cooking.png" },
-        { id: "followDishes", nom: "Dishes", image: "Public/image/page_followUp/img_dishes.png" },
-        { id: "followLaundry", nom: "Laundry", image: "Public/image/page_followUp/img_laundry.png" },
-        { id: "followChildrensCare", nom: "Children's Care", image: "Public/image/page_followUp/img_childrenCare.png" },
-        { id: "followChildsPlay", nom: "Child's Play", image: "Public/image/page_followUp/img_childsPlay.png" },
-        { id : "followChildrensJourney", nom: "Children's Journey", image: "Public/image/page_followUp/img_childrensJourney.png" },
-        { id : "followParentCare", nom: "Parent Care", image: "Public/image/page_followUp/img_parentCare.png" },
-        { id : "followAdministrative", nom: "Administrative", image: "Public/image/page_followUp/img_administrative.png" },
-        { id : "followPetCare", nom: "Pet Care", image: "Public/image/page_followUp/img_petCare.png" },
-        { id : "followGardening", nom: "Gardening", image: "Public/image/page_followUp/img_gardening.png" },
-        { id : "followdiy", nom: "DIY", image: "Public/image/page_followUp/img_diy.png" },
-        { id : "followhousehold", nom: "Household", image: "Public/image/page_followUp/img_householdManagement.png" },
+        { id: "followCleaning", nom: "Cleaning", image: "Public/image/page_followUp/img_cleaning2.png" },
+        { id: "followShopping", nom: "Shopping", image: "Public/image/page_followUp/img_shopping2.png" },
+        { id: "followCooking", nom: "Cooking", image: "Public/image/page_followUp/img_cooking2.png" },
+        { id: "followDishes", nom: "Dishes", image: "Public/image/page_followUp/img_dishes2.png" },
+        { id: "followLaundry", nom: "Laundry", image: "Public/image/page_followUp/img_laundry2.png" },
+        { id: "followChildrensCare", nom: "Children's Care", image: "Public/image/page_followUp/img_childrenCare2.png" },
+        { id: "followChildsPlay", nom: "Child's Play", image: "Public/image/page_followUp/img_childsPlay2.png" },
+        { id : "followChildrensJourney", nom: "Children's Journey", image: "Public/image/page_followUp/img_childrensJourney2.png" },
+        { id : "followParentCare", nom: "Parent Care", image: "Public/image/page_followUp/img_parentCare2.png" },
+        { id : "followAdministrative", nom: "Administrative", image: "Public/image/page_followUp/img_administrative2.png" },
+        { id : "followPetCare", nom: "Pet Care", image: "Public/image/page_followUp/img_petCare2.png" },
+        { id : "followGardening", nom: "Gardening", image: "Public/image/page_followUp/img_gardening2.png" },
+        { id : "followdiy", nom: "DIY", image: "Public/image/page_followUp/img_diy2.png" },
+        { id : "followhousehold", nom: "Household", image: "Public/image/page_followUp/img_householdManagement2.png" },
     ];
 
     // Ajouter des boutons personnalisés pour le suivi détaillé
