@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="Public/css/header3.css"/>
     <link rel="stylesheet" href="Public/css/footer1.css"/>
     <link rel="stylesheet" href="Public/css/erreur.css"/>
-    <link rel="stylesheet" href="Public/css/companion.css"/>
+    <link rel="stylesheet" href="Public/css/companion1.css"/>
     <script src="Public/Animation_js/header.js"></script>
     <script src="Public/Animation_js/companion.js"></script>
 </head>
@@ -55,21 +55,51 @@
 <!-- Partie Compagnon -->
 <!-- author : Théo Cornu -->
 <div id="companion">
-    <?php if (isset($_SESSION['IdLogin'])) : ?>
-        <div id="companionConnect">
-            <div class="bubble">
-                <p>Welcome back with us</p>
-            </div>
-            <img src="Public/image/companion/companion1.png" alt="companion">
+    <div id="companionConnect">
+        <div class="bubble">
+            <p><?php
+                if (isset($_SESSION['IdLogin'])) {
+                    switch ($_GET['action']) {
+                        case 'Index':
+                            print("You're on the Homepage. Explore information about the website, its usage, and read customer reviews here.");
+                            break;
+                        case 'ConnectLogin':
+                            print("You have just logged into your account. Welcome or welcome back among us.");
+                            break;
+                        case 'InfoDashBoard':
+                            print("You're on the Dashboard page. Here, you can view information about tasks completed in the last week.");
+                            break;
+                        case 'Reference':
+                            print("You're on the Reference page. Here, you can check the value reference for each possible task.");
+                            break;
+                        case 'Registration':
+                            print("You're on the 'Update My Account' page. Here, you can modify the information associated with your account.");
+                            break;
+                        default:
+                            print('Action non reconnue');
+                            break;
+                    }
+                }
+                else {
+                    switch ($_GET['action']) {
+                        case 'Index':
+                            print("Welcome to Family'Easy, your new tool for household task management. You're on the homepage. Explore information about the website, its usage, and read customer reviews here.");
+                            break;
+                        case 'Connection':
+                            print("You're on the Login page. Sign in here to access your account.");
+                            break;
+                        case 'Registration':
+                            print("You're on the Registration page. Create your account here to get started.");
+                            break;
+                        default:
+                            print('Action non reconnue');
+                            break;
+                    }
+                }
+                ?></p>
         </div>
-    <?php else : ?>
-        <div id="companionNotConnect">
-            <div class="bubble">
-                <p>Welcome to Family'Easy, your new tool for managing tasks at home</p>
-            </div>
-            <img src="Public/image/companion/companion1.png" alt="companion">
-        </div>
-    <?php endif; ?>
+        <img src="Public/image/companion/companion1.png" alt="companion">
+    </div>
 </div>
 
 <!-- #contenu -->

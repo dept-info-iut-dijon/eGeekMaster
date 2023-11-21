@@ -1,0 +1,40 @@
+#companion {
+    position: fixed;
+    right: -50%;
+    top: 70px;
+    transition: right 0.3s ease-in-out;
+    z-index: 100;
+}
+
+#companion img {
+    padding: 10px;
+    height: 150px;
+    width: auto;
+}
+
+.bubble {
+    max-width: 350px;
+    text-align: center;
+    align-self: flex-start;
+    background: #5dd1ff;
+    border-radius: 10px;
+}
+
+.bubble p{
+    padding: 10;
+}
+
+/* .bubble:before {
+    content: "";
+    position: absolute;
+    right: 32%;
+    top: 75px;
+    width: 0;
+    height: 0;
+    border-bottom: 30px solid transparent;
+    border-right: 30px solid #5dd1ff;
+} */
+
+#companionConnect, #companionNotConnect{
+    display: flex;
+}
