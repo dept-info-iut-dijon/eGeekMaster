@@ -53,7 +53,7 @@ class Router {
         'UserController' => new UserController(),
         'TaskController' => new TaskController(),
         'DashBoardController' => new DashBoardController(),
-    /*'FollowUpController => new FollowUpController()'*/ ];
+        'FollowUpController' => new FollowUpController()];
     }
 
     /**
@@ -76,7 +76,7 @@ class Router {
         "Reference" => new RouteReference($this->ctrlList["MainController"]),
         "TaskRegistration" => new RouteTaskRegistration($this->ctrlList["TaskController"]),
         "FollowUp" => new RouteFollowUp($this->ctrlList["MainController"]),
-    /*"InfoFollowUp" => new RouteInfoFollowUp($this->ctrlList["FollowUpController"])*/];
+        "InfoFollowUp" => new RouteInfoFollowUp($this->ctrlList["FollowUpController"])];
     }
 
     /**
