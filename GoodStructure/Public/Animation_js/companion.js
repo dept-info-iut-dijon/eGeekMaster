@@ -3,13 +3,10 @@
 */
 function openCompanion() {
     const companion = document.getElementById("companion");
-    if (companion.style.right !== "0%") {
-        companion.style.right = "0%";
-        
-    }
+    companion.style.right = "0%"; // Afficher le compagnon à droite
+    
     setTimeout(() => {
-        // Après 1 seconde, retournez à droite
-        companion.style.right = "-2000px";
+        companion.style.right = "-2000px"; // Masquer le compagnon après 3 secondes
     }, 3000);
 }
 
