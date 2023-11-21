@@ -16,9 +16,9 @@ class TestRegister extends TestCase
     public function testRegister()
     {
         //$MainController = $this->createMock(MainController::class);
-        //$UserManager = $this->createMock(UserManager::class);
+        $UserManager = $this->createMock(UserManager::class);
         $UserController = new UserController();
-        //$testUser = new User("Nicolas","Desertot","a@a.fr","testN@testN.fr","parent","2001-05-03");
+        $testUser = new User("Nicolas","Desertot","a@a.fr","testN@testN.fr","parent","2001-05-03");
         $testLogin = new Login("coco","12345");
         $testLogin->setPassword("12345");
         $_POST['Password'] = '12345';
@@ -33,14 +33,14 @@ class TestRegister extends TestCase
         $_POST['Username'] = 'coco';
         $_SERVER["REQUEST_METHOD"] = "POST";
         $UserController->Add();
-        //$listeUser = $UserManager->GetAll();
-        //$testUser = null;
-        /*foreach($listeUser as $user){
+        $listeUser = $UserManager->GetAll();
+        $testUser = null;
+        foreach($listeUser as $user){
             if($user == $testUser){
                 $testUser = $user;
             }
-        }*/
-        //$this->assertNotEquals(null, $testUser);
+        }
+        $this->assertNotEquals(null, $testUser);
 
         $this->assertSame($testLogin->getLogin(),"coco","testRegister");
         
