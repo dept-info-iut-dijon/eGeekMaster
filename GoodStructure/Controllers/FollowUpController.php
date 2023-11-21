@@ -1,8 +1,10 @@
 <?php
     require_once 'views/View.php';
+    require_once 'Controllers/MainController.php';
     require_once 'models/DashBoardManager.php';
     require_once 'models/UserManager.php';
     require_once 'models/TaskManager.php';
+    require_once 'models/LoginManager.php';
 
     /**
      * Class FollowUpController
@@ -16,10 +18,6 @@
         private $dashboardManager;
         private $dashboard;
 
-        /**
-         * FollowUpController constructor
-         * @author Enzo
-         */
         public function __construct() {
             $this->mainController = new MainController();
             $this->taskManager = new TaskManager();
@@ -54,13 +52,13 @@
         }
 
         /**
-         * Update a Follow Up
+         * Update a dashboard
          * @author Enzo
          */
         private function UpdateDashboard() {
             $this->PopulateDashboard();
 
-            $this->dashboardManager->UpdateDashBoard($this->dashboard);
+            $this->dashboardManager->UpdateDashboard($this->dashboard);
 
             $this->mainController->FollowUp("Follow up updated");
         }
