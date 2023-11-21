@@ -42,12 +42,12 @@
                 $this->UpdateDashboard();
 
                 // Retrieve the tasks
-                $tasks = $this->taskManager->GetAllByDashBoard($this->dashboard);
+                $tasks = $this->taskManager->GetAllByDashBoard($this->dashboard->GetId());
                 // Send to the session the list of tasks
                 $_SESSION['tasks'] = $tasks;
 
                 // Display the view of Follow Up
-                $this->mainController->FollowUp($tasks);
+                $this->mainController->FollowUp();
             }
         }
 
