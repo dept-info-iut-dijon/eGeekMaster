@@ -114,9 +114,19 @@
         </div>
     </div>
 
-    <div id="divBoutonTache">
+    <div class="divBoutonTache Add">
         <!-- Bouton d'ajout de tâches -->
-        <button id="boutonTaches" type="button">Register a new task</button>
+        <button class="boutonTaches Add" type="button">Register a new task</button>
+    </div>
+    
+    <div class="divBoutonTache Supr">
+        <!-- Bouton d'ajout de tâches -->
+        <button class="boutonTaches Supr" type="button">Delete a task</button>
+    </div>
+
+    <div class="divBoutonTache Modif">
+        <!-- Bouton d'ajout de tâches -->
+        <button class="boutonTaches Modif" type="button">Modify a task</button>
     </div>
 
     <!-- Graphiques -->
@@ -124,7 +134,6 @@
         <div id="piechart">
             <h1>Tasks distribution</h1>
             <canvas id="myChart1"></canvas>
-            <canvas id="myChart"></canvas>
         </div>
         <div id="barchart">
             <h1>Average duration for each task</h1>
@@ -175,7 +184,6 @@ if (isset($_SESSION['tasks'])) {
 
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
@@ -239,82 +247,19 @@ if (isset($_SESSION['tasks'])) {
 
                     return `rgb(${color.join(',')})`;
                 },
-                borderWidth: 1,
-                datalabels: {
-                    anchor: 'end',
-                    align: 'end',
-                    offset: -5, 
-                    color: 'black',
-                    font: {
-                        size: 12,
-                    },
-                    formatter: function(value, context) {
-                        return context.chart.data.labels[context.dataIndex];
-                    }
-                }
+                borderWidth: 1
             }]
         },
         options: {
             responsive: true,
             indexAxis: 'y',
             plugins: {
-                datalabels: {
-                    display: true,
-                    anchor: 'end',
-                    align: 'end',
-                    offset: -5,
-                    color: 'black',
-                    font: {
-                        size: 12,
-                    },
-                    formatter: function(value, context) {
-                        return context.chart.data.labels[context.dataIndex];
-                    }
-                },
-                legend: {
-                    display: false,
-                },
+                
                 
             }
         }
     });
 });
-</script>
-<!-- Votre code JavaScript ici -->
-<script>
-  // Exemple de configuration d'un graphique avec Datalabels
-  var ctx = document.getElementById('myChart').getContext('2d');
-  var myChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai'],
-      datasets: [{
-        label: 'Ventes mensuelles',
-        data: [12, 19, 3, 5, 2],
-        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-        borderColor: 'rgba(75, 192, 192, 1)',
-        borderWidth: 1
-      }]
-    },
-    options: {
-      plugins: {
-        datalabels: {
-                    anchor: 'end',
-                    align: 'end',
-                    offset: -10, 
-                    color: 'black',
-                    font: {
-                        size: 12,
-                    },
-                    formatter: function(value, context) {
-                        return context.chart.data.labels[context.dataIndex];
-                    }
-                }
-      }
-    }
-  }); 
-
-  
 </script>
 
 
