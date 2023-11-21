@@ -1,3 +1,4 @@
+/* Reset default styles and set the base styles for the body */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -5,24 +6,29 @@ body {
     background: linear-gradient(to bottom, #b3938e, white);
 }
 
+/* Styles for the main container */
 #viewFollowUp {
     margin: 20px;
 }
 
+/* Styles for the person information */
 #Person {
     position: absolute;
     top: 50px;
     left: 10px;
     color: white;
+    font-size: 24px; /* Increased font size for first and last name */
 }
 
+/* Styles for the buttons container */
 .buttons {
     text-align: center;
-    margin-top: 80px; 
+    margin-top: 120px;
     display: flex;
-    justify-content: space-around; 
+    justify-content: space-around;
 }
 
+/* Base styles for buttons */
 .button {
     display: inline-block;
     padding: 4px 10px;
@@ -32,14 +38,15 @@ body {
     background-color: #d9c9c7;
     color: rgb(0, 0, 0);
     border: 1px solid black;
-    border-radius: 5px;
 }
 
+/* Styles for the content area */
 .content {
     margin-top: 50px;
     text-align: center;
 }
 
+/* Styles for the container of detailed buttons */
 .button-container {
     display: flex;
     justify-content: space-between;
@@ -47,12 +54,20 @@ body {
     margin-top: 20px;
 }
 
+/* Styles for detailed buttons */
 .button-detail {
     width: 45%;
     margin-bottom: 10px;
     cursor: pointer;
 }
 
+/* Add the clickable effect when hovering */
+.button-detail:hover {
+    transform: scale(0.95); /* Scale down the button on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow on hover */
+}
+
+/* Styles for the container of button images */
 .image-container {
     margin-top: 10px;
     border: 1px solid #ccc;
@@ -60,6 +75,7 @@ body {
     padding: 10px;
 }
 
+/* Styles for button images */
 .image {
     width: 50px;
     height: 50px;
@@ -67,3 +83,46 @@ body {
     border-radius: 50%;
     margin-bottom: 5px;
 }
+
+
+
+/* Style for the horizontal line */
+.line {
+    position: absolute;
+    top: 31.5%;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: #ffffff; /* Change the color of the line */
+    z-index: -1; /* Place the line behind the buttons */
+}
+
+
+/* Additional styles for the detailed and global buttons */
+#suiviD, #suiviG {
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+    padding: 10px 20px; /* Increase button size */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Add transition for smooth animation */
+}
+
+/* Hover styles for the detailed and global buttons */
+#suiviD:hover, #suiviG:hover {
+    background-color: #876f6b; /* Change color on hover */
+}
+
+/* Active styles for the detailed and global buttons */
+#suiviD:active, #suiviG:active {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Lighter shadow when clicked */
+}
+
+/* Active styles for the detailed and global buttons with the 'active' class */
+#suiviD.active, #suiviG.active {
+    background-color: #6a2121; /* Change color when button is active */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add shadow when button is active */
+}
+
+
+
+
+

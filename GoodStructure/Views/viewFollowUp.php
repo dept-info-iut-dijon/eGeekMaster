@@ -4,12 +4,13 @@
 
     <!-- Header -->
     <div id="Person">
-        <h1>Prénom Nom</h1> <!--Displaying the user's first and last name-->
+        <h1>Surname Name</h1> <!--Displaying the user's first and last name-->
     </div>
     <!--Buttons-->
     <div class="buttons">
-        <button onclick="showDetailed()">Suivi détaillé</button>
-        <button onclick="showGlobal()">Suivi global</button>
+        <button id="suiviD" onclick="showDetailed()">Suivi détaillé</button>
+        <div class="line"></div>
+        <button id="suiviG" onclick="showGlobal()">Suivi global</button>
     </div>
     <!--Content-->
     <div class = "content" id = "content">

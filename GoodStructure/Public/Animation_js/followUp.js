@@ -35,5 +35,6 @@ function showDetailed() {
             ${bouton.nom}
         `;
         contentDiv.appendChild(buttonDiv);
+        
     });
 }
