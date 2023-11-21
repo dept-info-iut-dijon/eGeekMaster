@@ -2,8 +2,8 @@
 require_once 'Model.php';
 require_once 'Task.php';
 require_once 'DashBoard.php';
-require_once '../Controllers/MainController.php';
-require_once '../Models/DashboardManager.php';
+require_once 'Controllers/MainController.php';
+require_once 'Models/DashboardManager.php';
 
 /**
  * Class DashBoardManager
