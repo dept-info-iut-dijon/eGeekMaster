@@ -137,13 +137,13 @@
             if (!$otherUser instanceof User) {
                 return false;
             }
-            foreach (get_object_vars($this) as $attribute => $value) {
-                if ($this->$attribute != $otherUser->$attribute) {
-                    return false;
-                }
-            }
-            
-            return true;
+
+            return $this->getFirstName() == $otherUser->getFirstName() &&
+             $this->getLastName() == $otherUser->getLastName() &&
+              $this->getEmail() == $otherUser->getEmail() &&
+               $this->getGender() == $otherUser->getGender() &&
+                $this->getFamilyPlace() == $otherUser->getFamilyPlace() &&
+                 $this->getBirthDate() == $otherUser->getBirthDate();
         }
         
     }
