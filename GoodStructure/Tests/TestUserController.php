@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
 use SebastianBergmann\Type\VoidType;
 
 
-class TestRegister extends TestCase
+class TestUserController extends TestCase
 {
 
     public function testAdd()
