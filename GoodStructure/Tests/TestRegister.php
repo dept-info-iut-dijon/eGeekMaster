@@ -3,15 +3,12 @@
  * @author Nicolas
  */
 require 'vendor\autoload.php';
-require '..\Controllers\MainController.php';
-require '..\Controllers\UserController.php';
-//require '..\Models\User.php';
-//require '..\Models\Login.php';
-//require '..\Models\UserManager.php';
+require 'Controllers\MainController.php';
+require 'Controllers\UserController.php';
+
+
 use PHPUnit\Framework\TestCase;
-/*use MainController;
-use UserController;
-use UserManager;*/
+
 
 class TestRegister extends TestCase
 {
