@@ -1,5 +1,5 @@
 <?php
-    require_once 'Controllers/DashBoardController.php';
+    require_once 'Controllers/FollowUpController.php';
 
     /**
      * Représente une route pour afficher le suivi de l'utilisateur.
