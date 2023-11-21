@@ -12,6 +12,16 @@ class ComposerStaticInitfbee484fbcb98ba45566f17e8eb69e9b
     );
 
     public static $prefixLengthsPsr4 = array (
+        'e' => 
+        array (
+            'egeekmaster\\' => 12,
+            'eGeekMaster\\GoodStructure\\Views\\' => 32,
+            'eGeekMaster\\GoodStructure\\Models\\' => 33,
+            'eGeekMaster\\GoodStructure\\Controllers\\Router\\Route\\' => 51,
+            'eGeekMaster\\GoodStructure\\Controllers\\Router\\' => 45,
+            'eGeekMaster\\GoodStructure\\Controllers\\' => 38,
+            'eGeekMaster\\GoodStructure\\' => 26,
+        ),
         'P' => 
         array (
             'PhpParser\\' => 10,
@@ -23,6 +33,34 @@ class ComposerStaticInitfbee484fbcb98ba45566f17e8eb69e9b
     );
 
     public static $prefixDirsPsr4 = array (
+        'egeekmaster\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/egeekmaster',
+        ),
+        'eGeekMaster\\GoodStructure\\Views\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/eGeekMaster/GoodStructure/Views',
+        ),
+        'eGeekMaster\\GoodStructure\\Models\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/eGeekMaster/GoodStructure/Models',
+        ),
+        'eGeekMaster\\GoodStructure\\Controllers\\Router\\Route\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/eGeekMaster/GoodStructure/Controllers/Router/Route',
+        ),
+        'eGeekMaster\\GoodStructure\\Controllers\\Router\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/eGeekMaster/GoodStructure/Controllers/Router',
+        ),
+        'eGeekMaster\\GoodStructure\\Controllers\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/eGeekMaster/GoodStructure/Controllers',
+        ),
+        'eGeekMaster\\GoodStructure\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/eGeekMaster/GoodStructure',
+        ),
         'PhpParser\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',

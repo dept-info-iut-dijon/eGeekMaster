@@ -6,6 +6,13 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'egeekmaster\\' => array($baseDir . '/egeekmaster'),
+    'eGeekMaster\\GoodStructure\\Views\\' => array($baseDir . '/eGeekMaster/GoodStructure/Views'),
+    'eGeekMaster\\GoodStructure\\Models\\' => array($baseDir . '/eGeekMaster/GoodStructure/Models'),
+    'eGeekMaster\\GoodStructure\\Controllers\\Router\\Route\\' => array($baseDir . '/eGeekMaster/GoodStructure/Controllers/Router/Route'),
+    'eGeekMaster\\GoodStructure\\Controllers\\Router\\' => array($baseDir . '/eGeekMaster/GoodStructure/Controllers/Router'),
+    'eGeekMaster\\GoodStructure\\Controllers\\' => array($baseDir . '/eGeekMaster/GoodStructure/Controllers'),
+    'eGeekMaster\\GoodStructure\\' => array($baseDir . '/eGeekMaster/GoodStructure'),
     'PhpParser\\' => array($vendorDir . '/nikic/php-parser/lib/PhpParser'),
     'DeepCopy\\' => array($vendorDir . '/myclabs/deep-copy/src/DeepCopy'),
 );
