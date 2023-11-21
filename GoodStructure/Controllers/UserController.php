@@ -93,7 +93,7 @@ class UserController{
     public function UpdateUser() {
         // Retrieve the User to update
         $updateUser = $this->UserManager->GetByLoginID(intval($_GET['IdLogin']));
-        $this->populateUser($updateUser);
+        $this->populateUser();
         // Update the User
         $this->UserManager->UpdateUser($updateUser);
         // Redirect to the main page
@@ -109,7 +109,7 @@ class UserController{
         
         $this->populateUser();
         // Add the new User
-        $this->UserManager->addUser($this->User );
+        $this->UserManager->addUser($this->User);
         
         // header('Location: index.php?action=Index');
         // Connect the user
