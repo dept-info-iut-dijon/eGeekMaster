@@ -1,10 +1,10 @@
 <!-- autor : Lola Cohidon -->
-<link rel="stylesheet" href="">
+<link rel="stylesheet" href="Public/css/followUp.css">
 <div id = "viewFollowUp">
 
     <!-- Header -->
     <div id="Person">
-        <h1>Nom Prénom</h1> <!--Displaying the user's first and last name-->
+        <h1>Prénom Nom</h1> <!--Displaying the user's first and last name-->
     </div>
     <!--Buttons-->
     <div class="buttons">
