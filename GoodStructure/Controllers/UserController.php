@@ -28,8 +28,6 @@ class UserController{
         $this->mainController = new MainController();
         $this->loginManager = new LoginManager();
         $this->dashboardController = new DashBoardController();
-        $this->registrationView = new View('Registration');
-        $this->dashboardView = new View('Dashboard');
         $this->User = new User();
 
     }
@@ -88,6 +86,7 @@ class UserController{
 
     /**
      * Update an existing User.
+     * Non focntionnel
      */
     public function UpdateUser() {
         // Retrieve the User to update
@@ -132,8 +131,5 @@ class UserController{
         $this->User ->setFamilyPlace($this->FamilyPlaceToString());
         $this->User ->setBirthDate($_POST['YearOfBirth'] . "-" . $_POST['MonthOfBirth'] . "-" . $_POST['DayOfBirth']);
         $this->User ->setLogin($_POST['Username']);
-    }
-
-    
-        
+    } 
 }

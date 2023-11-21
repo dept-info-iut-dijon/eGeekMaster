@@ -51,8 +51,7 @@ class DashBoardController {
         // Update the DashBoard
         $this->DashBoardManager->UpdateDashBoard($this->DashBoard);
         
-        // Redirect to the main page
-        $this->mainController->DashBoard("DashBoard updated");
+        
         
         
     }
@@ -74,7 +73,7 @@ class DashBoardController {
      * Display the DashBoard page.
      */
 
-    public function infoDashBoard() {
+    public function infoDashBoard($message = null) {
         // Check if the user is connected
         if (!isset($_SESSION['IdLogin'])) {
             // Redirect to the main page with an error message
@@ -90,11 +89,18 @@ class DashBoardController {
             
             
             // Retrieve the Tasks
-            $tasks = $this->TaskManager->GetAllByDashBoard($this->DashBoard);
+            $tasks = $this->TaskManager->GetAllByDashBoard($this->DashBoard->GetId());
             // Send to the session the list of Tasks
             $_SESSION['tasks'] = $tasks;
-            // Display the view
-            $this->mainController->DashBoard();
+
+            // Redirect to the main page
+            if ($_SESSION['tasks'] != null){
+                $this->mainController->DashBoard($message, end($tasks)->getId(), end($tasks)->getNameTask(), end($tasks)->getDuration(), end($tasks)->getDateAdded());
+            }
+            else{
+                $this->mainController->DashBoard($message);
+            }
+            
         }
 
     }
