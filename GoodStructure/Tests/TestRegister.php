@@ -31,8 +31,18 @@ class TestRegister extends TestCase
         $_POST['MonthOfBirth'] = '5';
         $_POST['DayOfBirth'] = '3';
         $_POST['Username'] = 'coco';
+        $_SERVER["REQUEST_METHOD"] = "POST";
         $UserController->Add();
-        $this->assertSame(1,1,"testRegister");
+        //$listeUser = $UserManager->GetAll();
+        //$testUser = null;
+        /*foreach($listeUser as $user){
+            if($user == $testUser){
+                $testUser = $user;
+            }
+        }*/
+        //$this->assertNotEquals(null, $testUser);
+
+        $this->assertSame($testLogin->getLogin(),"coco","testRegister");
         
     }
 
