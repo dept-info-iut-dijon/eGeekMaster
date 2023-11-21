@@ -62,5 +62,20 @@
             // Redirect to the FollowUp page
             $this->MainController->FollowUp("Follow up updated");
         }
+
+        /**
+         * Set the properties of the DashBoard object.
+         * @param DashBoard $DashBoard
+         * @author Enzo
+         */
+        private function populateDashBoard() {
+            $idUser = $this->UserManager->GetIdUserByLoginId(intval($_SESSION['IdLogin']));
+            $username = $this->loginManager->GetUsernameByIdLogin(intval($_SESSION['IdLogin']));
+            
+            $this->DashBoard->SetId($this->UserManager->GetIdDashboardByUserId($idUser));
+            $this->DashBoard->SetUsername($username);
+            $this->DashBoard->SetIdUser($idUser);
+        }
+
     }
 ?>
