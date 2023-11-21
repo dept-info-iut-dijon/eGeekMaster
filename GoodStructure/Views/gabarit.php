@@ -59,7 +59,7 @@
 
 <!-- footer -->
 <!-- author : Théo Cornu -->
-<!-- author : Lola -->
+<!-- author : Lola Cohidon -->
 <footer>
     <div class="footer-inner">
         <div class="footer-logo">
