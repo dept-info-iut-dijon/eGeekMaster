@@ -20,6 +20,7 @@ class TestUserController extends TestCase
         $UserManager = new UserManager();
         $UserController = new UserController();
 
+        // Variable de test
         $testUser = new User("Nicolas","Desertot","testN@testN.fr","man","parent","2001-05-03");
         $testLogin = new Login("coco","12345");
         $testLogin->setPassword("12345");
@@ -58,5 +59,49 @@ class TestUserController extends TestCase
         $this->assertNotNull($pullUser, 'L\'utilisateur devrait être ajouté avec succès');
     }
     
+    public function testDelete()
+{
+        // Création d'instance
+        $UserManager = new UserManager();
+        $UserController = new UserController();
+
+        // Variable de test
+        $testUser = new User("Nicolas","Desertot","testN@testN.fr","man","parent","2001-05-03");
+        $testLogin = new Login("coco","12345");
+        $testLogin->setPassword("12345");
+
+        // La liste des utilisateurs après l'ajout
+        $listeUser = $UserManager->GetAll();
+
+        // Rechercher l'utilisateur correspondant à supprimer
+        $pullUser = null;
+        foreach($listeUser as $user){
+            if($user->attributesEquals($testUser)){
+                $pullUser = $user;
+            }
+        }
+
+        // Assertion test si l'utilisateur est bien présent dans la liste
+        $this->assertNotNull($pullUser, 'L\'utilisateur devrait être présent');
+
+        // Données de test
+        $_POST = [
+            'idUser' => $pullUser->getId()
+        ];
+
+        // Suppression de l'utilisateur
+        $UserController->Delete();
+
+        // Rechercher l'utilisateur correspondant à supprimer
+        $pullUser = null;
+        foreach($listeUser as $user){
+            if($user->attributesEquals($testUser)){
+                $pullUser = $user;
+            }
+        }
+
+        // Assertion test si l'utilisateur est bien absent dans la liste
+        $this->assertNull($pullUser, 'L\'utilisateur devrait être supprimé');
+    }
 }
 ?>
