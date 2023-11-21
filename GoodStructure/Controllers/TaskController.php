@@ -41,7 +41,7 @@ class TaskController
       // Check if the request method is POST
       if ($_SERVER["REQUEST_METHOD"] == "POST") {
          // Determine whether to update or create a Task
-         if (isset($_GET['IdLogin'])) {
+         if (isset($_GET['IdTask'])) {
              $this->UpdateTask();
          } else {
              $this->createTask();
@@ -54,6 +54,8 @@ class TaskController
      }
    }
 
+   
+
    /**
     * Delete a Task.
     * @author Théo
@@ -61,7 +63,7 @@ class TaskController
    public function DeleteTask()
    {
       // Delete a Task
-      $this->TaskManager->DeleteByID($_POST["idTask"]);
+      $this->TaskManager->DeleteByID($_POST["IdTask"]);
       // Redirect to the main page
       $this->DashBoardController->infoDashBoard("Tâche supprimée");
    }
@@ -104,7 +106,10 @@ class TaskController
 
    private function populateTask()
    {
-      
+      if (isset($_GET['IdTask'])) {
+         // Set the properties of the Task object
+         $this->Task->setIdTask($_GET['IdTask']);
+      }
       // Set the properties of the Task object
       $this->Task->setNameTask($_POST['searchTask']);
       $this->Task->setDuration($_POST['hours']*4+$_POST['minutes']/15);

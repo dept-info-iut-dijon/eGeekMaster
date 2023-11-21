@@ -122,6 +122,7 @@
     <div class="divBoutonTache Supr">
         <!-- Bouton d'ajout de tâches -->
         <button class="boutonTaches Supr" type="button">Delete a task</button>
+        
     </div>
 
     <div class="divBoutonTache Modif">

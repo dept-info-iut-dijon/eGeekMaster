@@ -127,12 +127,11 @@ class TaskManager extends Model
     public function UpdateTask(Task $Task): Task
     {
         try {
-            $sql = 'UPDATE task SET Name = :value1, Duration = :value2, Date = :value3, DashBoardidDashboard = :value4 WHERE idTask = :value5';
+            $sql = 'UPDATE task SET Name = :value1, Duration = :value2, Date = :value3 WHERE idTask = :value5';
             $this->executerRequete($sql, [
                 ':value1' => $Task->getNameTask(),
                 ':value2' => $Task->getDuration(),
                 ':value3' =>  $Task->getDateAdded(),
-                ':value4' =>  $Task->getIdDashBoard(),
                 ':value5' =>  $Task->getId()
             ]);
             return $Task;

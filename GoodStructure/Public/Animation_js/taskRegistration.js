@@ -12,6 +12,7 @@ function DisplayTaskRegistration() {
     const buttonTaskAdd = document.querySelector('.boutonTaches.Add');
     const titleTask = document.getElementById("titleTASK"); // Get reference to the h1 element
     const submit = document.getElementById("submit"); // Get reference to the submit button
+    const formTask = document.getElementById("formTask"); // Get reference to the form element
 
     // The task button is clicked
     buttonTaskAdd.addEventListener("click", function () {
@@ -21,7 +22,9 @@ function DisplayTaskRegistration() {
         } else {
             // Open the task registration part
             taskR.style.right = "10%";
-            titleTask.textContent = "ADD A TASK"; // Change the content of the h1 element
+            titleTask.textContent = "Registration A TASK"; // Change the content of the h1 element
+            submit.value = "Register";
+            formTask.action = "index.php?action=TaskRegistration";
         }
     });
 
@@ -34,6 +37,8 @@ function DisplayTaskRegistration() {
             // Open the task registration part
             taskR.style.right = "10%";
             titleTask.textContent = "MODIFY A TASK"; // Change the content of the h1 element
+            submit.value = "Modify";
+            formTask.action = "index.php?action=TaskModification&IdTask=<?= (end($_SESSION['tasks']))->getId()?>";
         }
     });
 
@@ -46,7 +51,8 @@ function DisplayTaskRegistration() {
             // Open the task registration part
             taskR.style.right = "10%";
             titleTask.textContent = "DELETE A TASK"; // Change the content of the h1 element
-            submit.value = "Delete"; // Hide the submit button
+            submit.value = "Delete"; 
+            formTask.action = "index.php?action=TaskSupression&IdTask=<?= (end($_SESSION['tasks']))->getId()?>"
         }
     });
 }
