@@ -34,8 +34,8 @@ class UserManager extends Model
                     $line['Gender'],
                     $line['FamilyPlace'],
                     $line['BirthDate'],
-
                 );
+                $User->setId($line['idUsers']);
 
                 $Users[] = $User;
             }
