@@ -1,12 +1,16 @@
 /**
  * @author Théo Deguin
 */
-function Companion() {
+function openCompanion() {
     const companion = document.getElementById("companion");
-    if (companion.style.right === "-20%") {
+    if (companion.style.right !== "0%") {
         companion.style.right = "0%";
-    } else {
-        companion.style.right = "0%";
+        
     }
-};
-window.addEventListener('load', Companion);
+    setTimeout(() => {
+        // Après 1 seconde, retournez à droite
+        companion.style.right = "-2000px";
+    }, 3000);
+}
+
+window.addEventListener('load', openCompanion);

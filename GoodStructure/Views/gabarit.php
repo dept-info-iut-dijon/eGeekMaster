@@ -52,13 +52,21 @@
 </div>
 <div id="menuF"></div>
 
+<!-- Partie Compagnon -->
+<!-- author : Théo Cornu -->
 <div id="companion">
     <?php if (isset($_SESSION['IdLogin'])) : ?>
-        <div>
+        <div id="companionConnect">
+            <div class="bubble">
+                <p>Welcome back with us</p>
+            </div>
             <img src="Public/image/companion/companion1.png" alt="companion">
         </div>
     <?php else : ?>
-        <div>
+        <div id="companionNotConnect">
+            <div class="bubble">
+                <p>Welcome to Family'Easy, your new tool for managing tasks at home</p>
+            </div>
             <img src="Public/image/companion/companion1.png" alt="companion">
         </div>
     <?php endif; ?>

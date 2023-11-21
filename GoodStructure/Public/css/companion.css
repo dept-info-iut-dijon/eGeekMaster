@@ -1,11 +1,27 @@
-#companion{
+#companion {
     position: fixed;
     right: -20%;
     top: 65px;
     transition: right 0.3s ease-in-out;
+    z-index: 1000;
 }
 
-#companion img{
-    height: 200px;
+#companion img {
+    padding: 10px;
+    height: 150px;
     width: auto;
+}
+
+.bubble {
+    align-self: flex-start;
+    background-color: #87CEEB;
+    border-radius: 25px;
+    padding: 5px;
+    max-width: 300px;
+    text-align: center;
+    box-shadow: 0 0 10px 0 black;
+}
+
+#companionConnect, #companionNotConnect{
+    display: flex;
 }
