@@ -13,6 +13,7 @@
 
         /**
          * FollowUpController constructor
+         * @author Enzo
          */
         public function __construct() {
             $this->MainController = new MainController();
@@ -21,6 +22,30 @@
             $this->LoginManager = new LoginManager();
             $this->FollowUpManager = new FollowUpManager();
             $this->FollowUp = new FollowUp();
+        }
+
+        /**
+         * Display the follow up page
+         * @author Enzo
+         */
+        public function InfoFollowUp() {
+            // Check if the user is connected
+            if(!isset($_SESSION['IdLogin'])) {
+                // Redirect to the main page with an error message
+                $this->MainController->Index("You must be connected to access to this page");
+            }
+            else {
+                // Update the Follow up  
+                $this->UpdateFollowUp();
+
+                // Retrieve the tasks
+                $tasks = $this->TaskManager->GetAllTasks($this->FollowUp);
+                // Send to the session the list of tasks
+                $_SESSION['tasks'] = $tasks;
+
+                // Display the view of Follow Up
+                $this->MainController->FollowUp();
+            }
         }
     }
 ?>
