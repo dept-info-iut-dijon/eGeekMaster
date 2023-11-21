@@ -135,7 +135,7 @@ class LoginManager extends Model
                     
                 );
                 
-                if($login->getPassword() == $login->getHash($password)) {
+                if($login->getPassword() == $login->getHash()) {
                     $_SESSION["IdLogin"] = $ligne['idLogin'];
                 } else {
                     throw new PDOException("IdLogin not definied.");
