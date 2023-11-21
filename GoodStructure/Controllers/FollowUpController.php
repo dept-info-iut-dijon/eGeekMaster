@@ -1,4 +1,10 @@
 <?php
+    require_once 'Model.php';
+    require_once 'Task.php';
+    require_once 'DashBoard.php';
+    require_once 'Controllers/MainController.php';
+    require_once 'Models/DashboardManager.php';
+
     /**
      * Class FollowUpController
      * @author Enzo
@@ -8,8 +14,8 @@
         private $TaskManager;
         private $UserManager;
         private $LoginManager;
-        private $FollowUpManager;
-        private $FollowUp;
+        private $DashboardManager;
+        private $Dashboard;
 
         /**
          * FollowUpController constructor
@@ -20,8 +26,8 @@
             $this->TaskManager = new TaskManager();
             $this->UserManager = new UserManager();
             $this->LoginManager = new LoginManager();
-            $this->FollowUpManager = new FollowUpManager();
-            $this->FollowUp = new FollowUp();
+            $this->DashboardManager = new DashboardManager();
+            $this->Dashboard = new Dashboard();
         }
 
         /**
@@ -39,7 +45,7 @@
                 $this->UpdateFollowUp();
 
                 // Retrieve the tasks
-                $tasks = $this->TaskManager->GetAllTasks($this->FollowUp);
+                $tasks = $this->TaskManager->GetAllByDashBoard($this->Dashboard);
                 // Send to the session the list of tasks
                 $_SESSION['tasks'] = $tasks;
 
@@ -49,14 +55,32 @@
         }
 
         /**
-         * Update a Follow Up
+         * Update a dashboard
+         * @author Enzo
          */
-        public function UpdateFollowUp() {
-            $this->PopulateFollowUp();
+        private function UpdateDashboard() {
+            // Set properties
+            $this->PopulateDashboard();
 
-            $this->FollowUpManager->UpdateFollowUp($this->FollowUp());
+            // Update the dashboard in the database
+            $this->DashboardManager->UpdateDashBoard($this->Dashboard());
 
+            // Redirect to the FollowUp page
             $this->MainController->FollowUp("Follow up updated");
         }
+
+        /**
+         * Set the properties of the DashBoard object.
+         * @author Enzo
+         */
+        private function PopulateDashboard() {
+            $idUser = $this->UserManager->GetIdUserByLoginId(intval($_SESSION['IdLogin']));
+            $username = $this->LoginManager->GetUsernameByIdLogin(intval($_SESSION['IdLogin']));
+            
+            $this->DashBoard->SetId($this->UserManager->GetIdDashboardByUserId($idUser));
+            $this->DashBoard->SetUsername($username);
+            $this->DashBoard->SetIdUser($idUser);
+        }
+
     }
 ?>
