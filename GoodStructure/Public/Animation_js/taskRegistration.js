@@ -39,7 +39,7 @@ function DisplayTaskRegistration() {
             taskR.style.right = "10%";
             titleTask.textContent = "MODIFY A TASK"; // Change the content of the h1 element
             submit.value = "Modify";
-            formTask.action = "index.php?action=TaskModification&IdTask=<?= (end($_SESSION['tasks']))->getId() ?>";
+            formTask.action = "index.php?action=TaskModification";
         
         }
     });

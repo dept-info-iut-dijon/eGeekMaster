@@ -41,7 +41,7 @@ class TaskController
       // Check if the request method is POST
       if ($_SERVER["REQUEST_METHOD"] == "POST") {
          // Determine whether to update or create a Task
-         if (isset($_SESSION['tasks'])) {
+         if ($_GET['action'] == "TaskModification") {
              $this->UpdateTask();
          } else {
              $this->createTask();

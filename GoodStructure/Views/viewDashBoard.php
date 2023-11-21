@@ -10,15 +10,11 @@
 <div id="bar">
     <!--MESSAGE-->
     <?php if (isset($message)) : ?>
-            
-
-            <p><?= $message ?></p>
-        <?php endif; ?>
-        <?php if (isset($_GET['errorMessage'])) : ?>
-            
-            <p><?= $_GET['errorMessage']?></p>
-            
-        <?php endif; ?>
+        <p><?= $message ?></p>
+    <?php endif; ?>
+    <?php if (isset($_GET['errorMessage'])) : ?>
+        <p><?= $_GET['errorMessage']?></p>
+    <?php endif; ?>
         
     <!--TASK REGISTRATION-->
     <div id="divTaskRegistration">
@@ -38,7 +34,7 @@
                     <div id="task">
                         <label id="taskLabel">Task :</label>
                         <div id="chooseTask">
-                            <input list="tasks" placeholder="Search a task" name="searchTask" id="searchTask" value="<?php if (isset($_SESSION['tasks'])) {  ?> <?= $nameLastTask ?> <?php } ?>" autofocus required>
+                            <input list="tasks" placeholder="Search a task" name="searchTask" id="searchTask" value="<?php if (isset($_SESSION['tasks']))  : ?> <?= $nameLastTask ?> <?php endif; ?>" autofocus required>
                             <datalist id="tasks">
                                 <option value="Cleaning">                                
                                 <option value="Shopping">
@@ -74,7 +70,7 @@
                         <div id="time">
                             <input type="text" name="hours" id="hours" class="inputsTime" readonly>
                             <p id="a"> : </p>
-                            <input type="text" name="minutes" id="minutes" class="inputsTime" readonly>
+                            <input type="text" name="minutes" id="minutes" class="inputsTime"  readonly>
                         </div>
                         <div class="incrementDecrement">
                             <div class="plus">
@@ -85,7 +81,7 @@
                             </div>
                         </div>
                         <div id="dateDiv">
-                            <input type="date" name="Date" id="date" pattern="\d{1,2}-\d{1,2}-\d{4}" value="<?php if (isset($_SESSION['tasks'])) { ?> <?= $dateLastTask ?> <?php } ?>">
+                            <input type="date" name="Date" id="date" pattern="\d{1,2}-\d{1,2}-\d{4}" value="<?php if (isset($_SESSION['tasks'])) :  ?> <?= $dateLastTask ?> <?php endif; ?>">
                         </div>
                     </div> 
 

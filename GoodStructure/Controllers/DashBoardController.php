@@ -94,7 +94,12 @@ class DashBoardController {
             $_SESSION['tasks'] = $tasks;
 
             // Redirect to the main page
-            $this->mainController->DashBoard($message, end($tasks)->getId(), end($tasks)->getNameTask(), end($tasks)->getDuration(), end($tasks)->getDateAdded());
+            if ($_SESSION['tasks'] != null){
+                $this->mainController->DashBoard($message, end($tasks)->getId(), end($tasks)->getNameTask(), end($tasks)->getDuration(), end($tasks)->getDateAdded());
+            }
+            else{
+                $this->mainController->DashBoard($message);
+            }
             
         }
 
