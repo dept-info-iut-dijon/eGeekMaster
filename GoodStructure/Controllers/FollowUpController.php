@@ -1,4 +1,10 @@
 <?php
+    require_once 'Model.php';
+    require_once 'Task.php';
+    require_once 'DashBoard.php';
+    require_once 'Controllers/MainController.php';
+    require_once 'Models/DashboardManager.php';
+
     /**
      * Class FollowUpController
      * @author Enzo
@@ -52,9 +58,9 @@
          * Update a dashboard
          * @author Enzo
          */
-        private function UpdateDashBoard() {
+        private function UpdateDashboard() {
             // Set properties
-            $this->populateDashBoard();
+            $this->PopulateDashboard();
 
             // Update the dashboard in the database
             $this->DashboardManager->UpdateDashBoard($this->Dashboard());
@@ -65,12 +71,11 @@
 
         /**
          * Set the properties of the DashBoard object.
-         * @param DashBoard $DashBoard
          * @author Enzo
          */
-        private function populateDashBoard() {
+        private function PopulateDashboard() {
             $idUser = $this->UserManager->GetIdUserByLoginId(intval($_SESSION['IdLogin']));
-            $username = $this->loginManager->GetUsernameByIdLogin(intval($_SESSION['IdLogin']));
+            $username = $this->LoginManager->GetUsernameByIdLogin(intval($_SESSION['IdLogin']));
             
             $this->DashBoard->SetId($this->UserManager->GetIdDashboardByUserId($idUser));
             $this->DashBoard->SetUsername($username);
