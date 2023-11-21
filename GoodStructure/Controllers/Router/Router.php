@@ -52,8 +52,7 @@ class Router {
         'LoginController' => new LoginController(),
         'UserController' => new UserController(),
         'TaskController' => new TaskController(),
-        'DashBoardController' => new DashBoardController(),
-    /*'FollowUpController' => new FollowUpController()*/];
+        'DashBoardController' => new DashBoardController(),];
     }
 
     /**
