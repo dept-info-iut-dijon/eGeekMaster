@@ -13,7 +13,8 @@ use PHPUnit\Framework\TestCase;
 use UserController;
 use UserManager;*/
 
-class TestRegister extends TestCase{
+class TestRegister extends TestCase
+{
 
     public function testRegister()
     {
@@ -34,7 +35,7 @@ class TestRegister extends TestCase{
         $_POST['DayOfBirth'] = '3';
         $_POST['Username'] = 'coco';
         $UserController->Add();
-        $this->assertSame(1,1);
+        $this->assertSame(1,1,"testRegister");
         
     }
 
