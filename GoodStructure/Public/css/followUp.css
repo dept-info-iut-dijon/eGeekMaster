@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#viewFollowUp {
+    margin: 20px;
+}
+
+#Person {
+    position: absolute;
+    top: 50px;
+    left: 10px;
+}
+
+.buttons {
+    text-align: center;
+    margin-top: 80px; 
+    display: flex;
+    justify-content: space-around; 
+}
+
+.button {
+    display: inline-block;
+    padding: 4px 10px;
+    margin: 0 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.content {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.button-detail {
+    width: 45%;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.image-container {
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 5px;
+}
