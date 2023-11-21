@@ -28,12 +28,13 @@ class UserManager extends Model
             $result = $this->executerRequete($sql);
             while ($line = $result->fetch(PDO::FETCH_ASSOC)) {
                 $User = new User(
-                    $line['firstName'],
-                    $line['lastName'],
-                    $line['email'],
-                    $line['gender'],
-                    $line['familyPlace'],
-                    $line['birthDate']
+                    $line['FirstName'],
+                    $line['LastName'],
+                    $line['Email'],
+                    $line['Gender'],
+                    $line['FamilyPlace'],
+                    $line['BirthDate'],
+
                 );
 
                 $Users[] = $User;
