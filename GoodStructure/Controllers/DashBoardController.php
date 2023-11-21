@@ -88,10 +88,10 @@ class DashBoardController {
             $this->UpdateDashBoard();
             
             
-            // // Retrieve the Tasks
-            // $tasks = $this->TaskManager->GetAllByDashBoard($this->DashBoard->GetId());
-            // // Send to the session the list of Tasks
-            // $_SESSION['tasks'] = $tasks;
+            // Retrieve the Tasks
+            $tasks = $this->TaskManager->GetAllByDashBoard($this->DashBoard->GetId());
+            // Send to the session the list of Tasks
+            $_SESSION['tasks'] = $tasks;
 
             // Redirect to the main page
             

@@ -2,7 +2,7 @@
     author : Enzo
 */
 
-#divBoutonsTaches{
+.divBoutonsTaches{
     display: flex;
     flex-direction: row;
 }
