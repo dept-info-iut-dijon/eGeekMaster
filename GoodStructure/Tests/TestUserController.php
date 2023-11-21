@@ -93,15 +93,15 @@ class TestUserController extends TestCase
         $UserController->Delete();
 
         // Rechercher l'utilisateur correspondant à supprimer
-        $pullUser = null;
+        $pullUser2 = null;
         foreach($listeUser as $user){
             if($user->attributesEquals($testUser)){
-                $pullUser = $user;
+                $pullUser2 = $user;
             }
         }
 
         // Assertion test si l'utilisateur est bien absent dans la liste
-        $this->assertNull($pullUser, 'L\'utilisateur devrait être supprimé');
+        $this->assertNull($pullUser2, 'L\'utilisateur devrait être supprimé');
     }
 }
 ?>
