@@ -8,8 +8,8 @@
         private $TaskManager;
         private $UserManager;
         private $LoginManager;
-        private $FollowUpManager;
-        private $FollowUp;
+        private $DashboardManager;
+        private $Dashboard;
 
         /**
          * FollowUpController constructor
@@ -20,8 +20,8 @@
             $this->TaskManager = new TaskManager();
             $this->UserManager = new UserManager();
             $this->LoginManager = new LoginManager();
-            $this->FollowUpManager = new FollowUpManager();
-            $this->FollowUp = new FollowUp();
+            $this->DashboardManager = new DashboardManager();
+            $this->Dashboard = new Dashboard();
         }
 
         /**
@@ -39,7 +39,7 @@
                 $this->UpdateFollowUp();
 
                 // Retrieve the tasks
-                $tasks = $this->TaskManager->GetAllTasks($this->FollowUp);
+                $tasks = $this->TaskManager->GetAllByDashBoard($this->Dashboard);
                 // Send to the session the list of tasks
                 $_SESSION['tasks'] = $tasks;
 
@@ -49,13 +49,17 @@
         }
 
         /**
-         * Update a Follow Up
+         * Update a dashboard
+         * @author Enzo
          */
-        public function UpdateFollowUp() {
-            $this->PopulateFollowUp();
+        private function UpdateDashBoard() {
+            // Set properties
+            $this->populateDashBoard();
 
-            $this->FollowUpManager->UpdateFollowUp($this->FollowUp());
+            // Update the dashboard in the database
+            $this->DashboardManager->UpdateDashBoard($this->Dashboard());
 
+            // Redirect to the FollowUp page
             $this->MainController->FollowUp("Follow up updated");
         }
     }
