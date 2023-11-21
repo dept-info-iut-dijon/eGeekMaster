@@ -131,14 +131,18 @@
         }
         
         // Compare two users
-        public function attributesEquals(User $otherUser) : bool
+        public function attributesEquals($otherUser) : bool
         {
+            // Vérifier que l'objet comparé est une instance de la classe Person
+            if (!$otherUser instanceof User) {
+                return false;
+            }
             foreach (get_object_vars($this) as $attribute => $value) {
                 if ($this->$attribute != $otherUser->$attribute) {
                     return false;
                 }
             }
-    
+            
             return true;
         }
         
