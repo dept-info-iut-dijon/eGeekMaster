@@ -1,5 +1,5 @@
 <!-- autor : Lola Cohidon -->
-<link rel="stylesheet" href="Public/css/followUp.css">
+<link rel="stylesheet" href="Public/css/followUp2.css">
 <div id = "viewFollowUp">
 
     <!-- Header -->
@@ -14,6 +14,8 @@
     </div>
     <!--Content-->
     <div class = "content" id = "content">
+    </div>
+
 </div>
 
 <script src="Public/Animation_js/followUp.js"></script>

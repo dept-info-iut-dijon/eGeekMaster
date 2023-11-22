@@ -22,19 +22,33 @@ function showDetailed() {
         { id : "followGardening", nom: "Gardening", image: "Public/image/page_followUp/img_gardening2.png" },
         { id : "followdiy", nom: "DIY", image: "Public/image/page_followUp/img_diy2.png" },
         { id : "followhousehold", nom: "Household", image: "Public/image/page_followUp/img_householdManagement2.png" },
+   
     ];
 
     // Ajouter des boutons personnalisés pour le suivi détaillé
-    boutonDetails.forEach(function (bouton) {
-        var buttonDiv = document.createElement("div");
-        buttonDiv.className = "button button-detail";
-        buttonDiv.innerHTML = `
-            <div class="image-container">
-                <img src="${bouton.image}" alt="${bouton.nom}" class="image">
-            </div>
-            ${bouton.nom}
-        `;
-        contentDiv.appendChild(buttonDiv);
-        
+boutonDetails.forEach(function (bouton) {
+    var buttonDiv = document.createElement("div");
+    buttonDiv.className = "button button-detail";
+    var originalHTML = `
+        <div class="image-container">
+            <img src="${bouton.image}" alt="${bouton.nom}" class="image">
+        </div>
+        ${bouton.nom}
+    `;
+
+    buttonDiv.innerHTML = originalHTML;
+    // Ajouter un gestionnaire d'événements 'click' au bouton
+    buttonDiv.addEventListener('click', function() {
+        // Si le texte personnalisé est déjà affiché, réaffichez le nom et l'image du bouton
+        if (this.innerHTML === "Texte personnalisé") {
+            this.innerHTML = originalHTML;
+        } else {
+            // Sinon, affichez le texte personnalisé
+            this.innerHTML = "Texte personnalisé";
+        }
     });
+    contentDiv.appendChild(buttonDiv);
+});
+
 }
+
