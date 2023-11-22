@@ -4,8 +4,8 @@
     author : Théo D
 -->
 
-<link rel="stylesheet" href="Public/css/dashboard2.css">
-<link rel="stylesheet" href="Public/css/taskRegistration2.css">
+<link rel="stylesheet" href="Public/css/dashboard3.css">
+<link rel="stylesheet" href="Public/css/taskRegistration7.css">
 <script src="Public/Animation_js/taskRegistration.js"></script>
 <div id="bar">
     <!--MESSAGE-->
