@@ -122,6 +122,13 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add shadow when button is active */
 }
 
+/* Styles for "Année 2023/2024" */
+#globalText {
+    position: absolute;
+    top: 250px; 
+    left: 20px; 
+    font-size: 18px; 
+}
 
 
 
