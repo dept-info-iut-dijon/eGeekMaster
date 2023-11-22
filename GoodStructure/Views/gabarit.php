@@ -53,7 +53,7 @@
 <div id="menuF"></div>
 
 <!-- Partie Compagnon -->
-<!-- author : Théo Cornu -->
+<!-- author : Théo Deguin -->
 <div id="companion">
     <div id="companionConnect">
         <div class="bubble">
