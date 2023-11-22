@@ -10,7 +10,7 @@ class MainController {
     
     /**
      * Displays the index page.
-     * @param null $message
+     * @param $message
      */
     public function Index($message = null) {
 
@@ -102,12 +102,34 @@ class MainController {
 
     /**
      * Displays the Follow up page
+     * @author Enzo
+     * @param $message 
+     * @param $idLastTast
+     * @param $nameLastTask
+     * @param $durationLastTask
+     * @param $dateLastTask 
     */
-    public function FollowUp() {
+    public function FollowUp($message = null, $idLastTast = null, $nameLastTask = null, $durationLastTask = null, $dateLastTask = null) {
+        // Separate the duration into hours and minutes
+        $durationLastTaskminutes = strval($durationLastTask*15%60);
+        $durationLastTaskhours = strval($durationLastTask*15%4);
+
+        // Create a view Follow up
         $referenceView = new View("FollowUp");
+        // Data to generate the page
         $data = array(
             //ajouter les données à afficher
         );
+        if($message != null) {
+            $data = $message;
+        }
+        $data["idLastTast"] = $idLastTast;
+        $data["nameLastTask"] = $nameLastTask;
+        $data["durationLastTaskhours"] = $durationLastTaskhours;
+        $data["durationLastTaskminutes"] = $durationLastTaskminutes;
+        $data["dateLastTask"] = $dateLastTask;
+
+        // Generate the view
         $referenceView->generer($data);
     }
 }

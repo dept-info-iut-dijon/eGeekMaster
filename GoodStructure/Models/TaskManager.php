@@ -33,7 +33,7 @@ class TaskManager extends Model
      */
     public function GetAllByDashBoard(int $idDashBoard): ?array
     {
-        // try {
+        try {
 
             // Retrieve the tasks associated with the dashboard
             $sql = 'SELECT * FROM task WHERE DashBoardidDashBoard = ?';
@@ -52,12 +52,12 @@ class TaskManager extends Model
                 $Tasks[] = $Task;
             }
             return count($Tasks) > 0 ? $Tasks : null;
-        // } catch (PDOException $e) {
-        //     // In case of an error, redirect to the error page with a message
-        //     $errorMessage = "An error occurred while retrieving data.";
-        //     header("Location: index.php?action=DashBoard&errorMessage=".urlencode($errorMessage));
-        //     exit();
-        // }
+        } catch (PDOException $e) {
+            // In case of an error, redirect to the error page with a message
+            $errorMessage = "An error occurred while retrieving data.";
+            header("Location: index.php?action=DashBoard&errorMessage=".urlencode($errorMessage));
+            exit();
+        }
     }
 
     /**

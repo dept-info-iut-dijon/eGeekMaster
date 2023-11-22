@@ -1,27 +1,30 @@
 <?php
+    require_once 'views/View.php';
+    require_once 'Controllers/MainController.php';
+    require_once 'models/DashBoardManager.php';
+    require_once 'models/UserManager.php';
+    require_once 'models/TaskManager.php';
+    require_once 'models/LoginManager.php';
+
     /**
      * Class FollowUpController
      * @author Enzo
      */
     class FollowUpController {
-        private $MainController;
-        private $TaskManager;
-        private $UserManager;
-        private $LoginManager;
-        private $FollowUpManager;
-        private $FollowUp;
+        private $mainController;
+        private $taskManager;
+        private $userManager;
+        private $loginManager;
+        private $dashboardManager;
+        private $dashboard;
 
-        /**
-         * FollowUpController constructor
-         * @author Enzo
-         */
         public function __construct() {
-            $this->MainController = new MainController();
-            $this->TaskManager = new TaskManager();
-            $this->UserManager = new UserManager();
-            $this->LoginManager = new LoginManager();
-            $this->FollowUpManager = new FollowUpManager();
-            $this->FollowUp = new FollowUp();
+            $this->mainController = new MainController();
+            $this->taskManager = new TaskManager();
+            $this->userManager = new UserManager();
+            $this->loginManager = new LoginManager();
+            $this->dashboardManager = new DashBoardManager();
+            $this->dashboard = new DashBoard();
         }
 
         /**
@@ -32,31 +35,48 @@
             // Check if the user is connected
             if(!isset($_SESSION['IdLogin'])) {
                 // Redirect to the main page with an error message
-                $this->MainController->Index("You must be connected to access to this page");
+                $this->mainController->Index("You must be connected to access to this page");
             }
             else {
                 // Update the Follow up  
-                $this->UpdateFollowUp();
+                $this->UpdateDashboard();
 
                 // Retrieve the tasks
-                $tasks = $this->TaskManager->GetAllTasks($this->FollowUp);
+                $tasks = $this->taskManager->GetAllByDashBoard($this->dashboard->GetId());
                 // Send to the session the list of tasks
                 $_SESSION['tasks'] = $tasks;
 
                 // Display the view of Follow Up
-                $this->MainController->FollowUp();
+                $this->mainController->FollowUp();
             }
         }
 
         /**
-         * Update a Follow Up
+         * Update a dashboard
+         * @author Enzo
          */
-        public function UpdateFollowUp() {
-            $this->PopulateFollowUp();
+        private function UpdateDashboard() {
+            // Set properties
+            $this->PopulateDashboard();
 
-            $this->FollowUpManager->UpdateFollowUp($this->FollowUp());
+            // Update the dashboard in the database
+            $this->dashboardManager->UpdateDashboard($this->dashboard);
 
-            $this->MainController->FollowUp("Follow up updated");
+        }
+
+        /**
+         * Set the properties of the DashBoard object
+         * @author Enzo
+         */
+        private function PopulateDashboard() {
+            // Get User Id, Username
+            $idUser = $this->userManager->GetIdUserByLoginId(intval($_SESSION['IdLogin']));
+            $username = $this->loginManager->GetUsernameByIdLogin(intval($_SESSION['IdLogin']));
+            
+            // Set Id, Username, IdUser
+            $this->dashboard->SetId($this->userManager->GetIdDashboardByUserId($idUser));
+            $this->dashboard->SetUsername($username);
+            $this->dashboard->SetIdUser($idUser);
         }
     }
 ?>
