@@ -96,6 +96,60 @@ class DashBoardManager extends Model
     }
 
     /**
+     * Retrieve a specific dashboard by its idLogin linked to a user .
+     * 
+     * @param int $idLogin The id of the login linked to the user that liked to the dashboard to retrieve.
+     * @return DashBoard|null The Dashboard object, or null if not found.
+     * @throws Exception
+     */
+    public function GetDashBoardByLoginId(int $idLogin): ?DashBoard
+    {
+        try {
+            $idUser = $this->UserManager->GetIdUserByLoginId($idLogin);
+            $sql = 'SELECT * FROM dashboard WHERE UseridUser = ?';
+            $result = $this->executerRequete($sql, [$idUser]);
+            $line = $result->fetch(PDO::FETCH_ASSOC);
+            
+            $this->dashboard->setId($line['idDashBoard']);
+            $this->dashboard->setUsername($line['username']);
+            $this->dashboard->setIdUser($line['UseridUser']);
+            
+            return $this->dashboard;
+        } catch (PDOException $e) {
+            // In case of an error, redirect to the error page with a message
+            $errorMessage = "An error occurred while retrieving data(DashBoard).";
+            header("Location: index.php?action=Index&errorMessage=".urlencode($errorMessage));
+            exit();
+        }
+    }
+
+    /**
+     * Retrieve a specific iddashboard by its idLogin linked to a user .
+     * 
+     * @param int $idLogin The id of the login linked to the user that liked to the dashboard to retrieve.
+     * @return DashBoard|null The idDashboard , or null if not found.
+     * @throws Exception
+     */
+    public function GetIdDashBoardByLoginId(int $idLogin): ?int
+    {
+        try {
+            $idUser = $this->UserManager->GetIdUserByLoginId($idLogin);
+            $sql = 'SELECT idDashBoard FROM dashboard WHERE UseridUser = ?';
+            $result = $this->executerRequete($sql, [$idUser]);
+            $line = $result->fetch(PDO::FETCH_ASSOC);
+            
+            return $line['idDashBoard'];
+        } catch (PDOException $e) {
+            // In case of an error, redirect to the error page with a message
+            $errorMessage = "An error occurred while retrieving data(DashBoard).";
+            header("Location: index.php?action=DashBoard&errorMessage=".urlencode($errorMessage));
+            exit();
+        }
+    }
+
+
+
+    /**
      * Retrieve a specific Dashboard its idDahsboard from the database.
      *
      * @param int $idDashboard The id of the dashboard to retrieve.
@@ -120,6 +174,7 @@ class DashBoardManager extends Model
             exit();
         }
     }
+    
 
     /**
      * Retrieve a specific Dashboard by the id of the user linked from the database.
