@@ -1,5 +1,5 @@
 <!-- autor : Lola Cohidon -->
-<link rel="stylesheet" href="Public/css/followUp2.css">
+<link rel="stylesheet" href="Public/css/followUp3.css">
 <script src="Public/Animation_js/followUp2.js"></script>
 <div id = "viewFollowUp">
 
