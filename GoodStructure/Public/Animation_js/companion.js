@@ -4,24 +4,24 @@
 function openCompanion() {
     const companion = document.getElementById("companion");
     companion.style.right = "0%"; // Afficher le compagnon à droite
-    window.addEventListener('click',VerifiedClicked);
+    window.addEventListener('click', VerifiedClicked);
     setTimeout(() => {
         companion.style.right = "-50%"; // Masquer le compagnon après 20 secondes
-    }, 2000);
-    
-    
-    
+    }, 4000);
 }
 
-function VerifiedClicked(){
+/**
+ * @author Théo Cornu
+ */
+function VerifiedClicked() {
     var divTaskRegistration = document.getElementById('divTaskRegistration');
+    var companio = document.getElementById("companion");
 
-    if(divTaskRegistration != null)
-    {
-        if(divTaskRegistration.style.right === "0px"){
-            companion.style.top = "300px";
+    if (divTaskRegistration != null) {
+        if (divTaskRegistration.style.right == "10%") {
+            companio.style.transition = "top 0.5s";
+            companio.style.top = "350px"; // Baisser le compagnon de 50px lorsque la divTaskRegistration est affichée
         }
-        
     }
 }
 
