@@ -162,18 +162,6 @@ class UserManager extends Model
         $LoginManager = new LoginManager();
 
         try {
-            $sql = 'SELECT LoginidLogin FROM users WHERE idUsers = ?';
-            $result = $this->executerRequete($sql, [$id]);
-            $line = $result->fetch();
-            $LoginManager->DeleteByID(85);
-        } catch (PDOException $e) {
-            // In case of an error, redirect to the error page with a message
-            $errorMessage = "An error occurred while deleting the User.";
-            header("Location: index.php?action=Registration&errorMessage=".urlencode($errorMessage));
-            exit();
-        }
-
-        try {
             $sql = 'DELETE FROM users WHERE idUsers = ?';
             $this->executerRequete($sql, [$id]);
         } catch (PDOException $e) {
@@ -182,7 +170,22 @@ class UserManager extends Model
             header("Location: index.php?action=Registration&errorMessage=".urlencode($errorMessage));
             exit();
         }
+        /*
+        try {
+            $sql = 'SELECT LoginidLogin FROM users WHERE idUsers = ?';
+            $result = $this->executerRequete($sql, [$id]);
+            $line = $result->fetch();
+            $LoginManager->DeleteByID($line["LoginidLogin"]);
+        } catch (PDOException $e) {
+            var_dump($e);
+            // In case of an error, redirect to the error page with a message
+            $errorMessage = "An error occurred while deleting the User.";
+            header("Location: index.php?action=Registration&errorMessage=".urlencode($errorMessage));
+            exit();
+        }*/
     }
+        
+        
 
     /**
      * Update a User by its ID with a new username and password.
