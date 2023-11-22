@@ -12,8 +12,11 @@ class TestLoginController extends TestCase
 
     public function testAdd()
     {
+        // Création d'instance
         $LoginManager = new LoginManager();
         $LoginController = new LoginController();
+
+        // Variable de test
         $testLogin = new Login("coco2","12345");
         $testLogin->setPassword("12345");
 
@@ -22,22 +25,24 @@ class TestLoginController extends TestCase
             'Password' => $testLogin->getPassword()
         ];
         
+        // Appeler la méthode à tester pour l'ajout d'un login
         $LoginController->Add();
 
+        // Récupérer la liste des utilisateurs après l'ajout
         $listeLogin = $LoginManager->getAll();
 
-        // Rechercher l'utilisateur correspondant
+        // Rechercher du login correspondant
         $pullLogin = null;
         foreach($listeLogin as $login){
-            if($login->attributesEquals($testLogin)){
-                $pullLogin = $login;
+            $log = new Login($login['username'],$login['Hash']);
+            $log->setId($login['idLogin']);
+            if($log->attributesEquals($testLogin)){
+                $pullLogin = $log;
             }
         }
 
-        // Assertion
+        // Assertion pour tester si le login a bien été ajouté
         $this->assertNotNull($pullLogin, 'Le login devrait être ajouté avec succès');
-
-        $this->assertSame(1,1);
         
     }
 
