@@ -5,9 +5,11 @@ require_once 'DashBoard.php';
 require_once 'Controllers/MainController.php';
 require_once 'Models/DashboardManager.php';
 
+
 /**
  * Class DashBoardManager
  * @package GoodStructure\Models
+ * @author Nicolas
  * @author Théo Cornu
  */
 class TaskManager extends Model
@@ -21,38 +23,41 @@ class TaskManager extends Model
     {
         parent::__construct();
     }
+
     /**
      * Retrieve a list of Tasks by its dashboard from the database.
      *
-     * @param DashBoard $dashboards The dashboard to retrieve the tasks from.
-     * @return array An array of Task objects.
+     * @param int $idDashBoard The ID of the dashboard to retrieve the tasks from.
+     * @return array|null An array of Task objects, or null if no tasks are found.
      * @author Théo Cornu
      */
-    public function GetAllByDashBoard(DashBoard $dashboards): array
+    public function GetAllByDashBoard(int $idDashBoard): ?array
     {
-        try {
-            $sql = 'SELECT * FROM task WHERE dashboard = ?';
+        // try {
+
+            // Retrieve the tasks associated with the dashboard
+            $sql = 'SELECT * FROM task WHERE DashBoardidDashBoard = ?';
             $Tasks = [];
-            $result = $this->executerRequete($sql, [$dashboards->getUsername()]);
+            $result = $this->executerRequete($sql, [$idDashBoard]);
             while ($line = $result->fetch(PDO::FETCH_ASSOC)) {
                 $Task = new Task(
                     $line['idTask'],
                     $line['Name'],
                     $line['Duration'],
                     $line['Date'],
-                    $line['DashBoardidDashboard'],
+                    $line['DashBoardidDashBoard'],
                     
                 );
 
                 $Tasks[] = $Task;
             }
-            return $Tasks;
-        } catch (PDOException $e) {
-            // In case of an error, redirect to the error page with a message
-            $errorMessage = "An error occurred while retrieving data.";
-            header("Location: index.php?action=Index&errorMessage=".urlencode($errorMessage));
-            exit();
-        }
+            return count($Tasks) > 0 ? $Tasks : null;
+        // } catch (PDOException $e) {
+        //     // In case of an error, redirect to the error page with a message
+        //     $errorMessage = "An error occurred while retrieving data.";
+        //     header("Location: index.php?action=DashBoard&errorMessage=".urlencode($errorMessage));
+        //     exit();
+        // }
     }
 
     /**
@@ -80,7 +85,7 @@ class TaskManager extends Model
         } catch (PDOException $e) {
             // In case of an error, redirect to the error page with a message
             $errorMessage = "An error occurred while retrieving data.";
-            header("Location: index.php?action=Index&errorMessage=".urlencode($errorMessage));
+            header("Location: index.php?action=DashBoard&errorMessage=".urlencode($errorMessage));
             exit();
         }
     }
@@ -92,21 +97,94 @@ class TaskManager extends Model
      * @return Task The Task object, or null if not found.
      * @throws Exception
      */
-    public function Add(Task $Task): Task
+    public function AddTask(Task $Task): Task
     {
         try {
-            $dashboardManager =new DashboardManager();
-            $sql = 'INSERT INTO task (Name, Duration, Date, DashBoardidDashboard) VALUES (?, ?, ?, ?)';
-            // $this->executerRequete($sql, [$Task->getName(), $Task->getDuration(), $Task->getDate(), $dashboardManager->GetIdDashBoardByIdTask($Task->GetId()) ]);
-            // $Task->setId($this->getLastInsertID());
+            $sql = 'INSERT INTO task (Name, Duration, Date, DashBoardidDashboard) VALUES (:value1, :value2, :value3, :value4)';
+            $this->executerRequete($sql, [
+                ':value1' => $Task->getNameTask(),
+                ':value2' => $Task->getDuration(),
+                ':value3' =>  $Task->getDateAdded(),
+                ':value4' =>  $Task->getIdDashBoard()
+            ]);
+            //$Task->setId($this->getLastInsertID());
             return $Task;
         } catch (PDOException $e) {
             // In case of an error, redirect to the error page with a message
             $errorMessage = "An error occurred while adding the Task.";
-            header("Location: index.php?action=Index&errorMessage=".urlencode($errorMessage));
+            header("Location: index.php?action=DashBoard&errorMessage=".urlencode($errorMessage));
             exit();
         }
     }
 
-    
+    /**
+     * Update an existing Task in the database.
+     *
+     * @param Task $Task The Task to update.
+     * @return Task The Task object, or null if not found.
+     * @throws Exception
+     */
+    public function UpdateTask(Task $Task): Task
+    {
+        try {
+            $sql = 'UPDATE task SET Name = :value1, Duration = :value2, Date = :value3 WHERE idTask = :value5';
+            $this->executerRequete($sql, [
+                ':value1' => $Task->getNameTask(),
+                ':value2' => $Task->getDuration(),
+                ':value3' =>  $Task->getDateAdded(),
+                ':value5' =>  $Task->getId()
+            ]);
+            return $Task;
+        } catch (PDOException $e) {
+            // In case of an error, redirect to the error page with a message
+            $errorMessage = "An error occurred while updating the Task.";
+            header("Location: index.php?action=DashBoard&errorMessage=".urlencode($errorMessage));
+            exit();
+        }
+    }
+
+    /**
+     * Delete a Task from the database.
+     *
+     * @param int $id The ID of the Task to delete.
+     * @throws Exception
+     */
+    public function DeleteByID(int $id)
+    {
+        try {
+            $sql = 'DELETE FROM task WHERE idTask = ?';
+            $this->executerRequete($sql, [$id]);
+        } catch (PDOException $e) {
+            // In case of an error, redirect to the error page with a message
+            $errorMessage = "An error occurred while deleting the Task.";
+            header("Location: index.php?action=DashBoard&errorMessage=".urlencode($errorMessage));
+            exit();
+        }
+    }
+
+    /**
+     * Check if a Task already exists in the database.
+     *
+     * @param Task $Task The name of the Task to check.
+     * @return bool True if the Task exists, false otherwise.
+     * @throws Exception
+     */
+    public function CheckIfTaskExists(Task $Task): bool
+    {
+        try {
+            if ($Task->getDuration() != null) {
+                $sql = 'SELECT COUNT(*) FROM task WHERE Name = ? AND Date = ? AND Duration = ? AND idTask != ?';
+                $result = $this->executerRequete($sql, [$Task->getNameTask(), $Task->getDateAdded(), $Task->getDuration(), $Task->getId()]);
+                $line = $result->fetch(PDO::FETCH_NUM);
+                return $line[0] > 0;
+            } else {
+                return false;
+            }
+        } catch (PDOException $e) {
+            // In case of an error, redirect to the error page with a message
+            $errorMessage = "The Task already exists.";
+            header("Location: index.php?action=DashBoard&errorMessage=".urlencode($errorMessage));
+            exit();
+        }
+    }
 }

@@ -1,6 +1,5 @@
 <!-- author: Théo Cornu -->
 <div id="contenu">
-    <link rel="stylesheet" href="Public/css/footer.css">
     <link rel="stylesheet" href="Public/css/page_accueil/index8.css">
 
     <script src="Public/Animation_js/page_accueil/index.js"></script>

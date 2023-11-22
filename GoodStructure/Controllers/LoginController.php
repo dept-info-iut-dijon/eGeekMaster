@@ -28,7 +28,6 @@ class LoginController{
     public function Add() {
         
 
-        var_dump($_POST["Username"], $_POST["Password"]);
         $this->loginManager->Add($_POST["Username"], $_POST["Password"]);
         
         $this->mainController->Index("Login ajouté");

@@ -71,7 +71,11 @@ class Router {
         "AddUser" => new RouteAddUser($this->ctrlList["UserController"]),
         "DeleteUser" => new RouteDeleteUser($this->ctrlList["UserController"]),
         "EditUser" => new RouteEditUser($this->ctrlList["UserController"]),
-        "InfoDashBoard" => new RouteInfoDashBoard($this->ctrlList["DashBoardController"]),];
+        "InfoDashBoard" => new RouteInfoDashBoard($this->ctrlList["DashBoardController"]),
+        "Reference" => new RouteReference($this->ctrlList["MainController"]),
+        "TaskRegistration" => new RouteTaskRegistration($this->ctrlList["TaskController"]),
+        "TaskSupression" => new RouteTaskSupression($this->ctrlList["TaskController"]),
+        "TaskModification" => new RouteTaskModification($this->ctrlList["TaskController"])];
     }
 
     /**

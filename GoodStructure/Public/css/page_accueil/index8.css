@@ -39,7 +39,7 @@ body {
 
     /* Afficher une seule image pour les écrans avec une largeur maximale de 768px */
     #imageDebut {
-        background-image: url(../../image/page_connection/logo_soupape2.png);
+        background-image: url(../../image/page_connection/logo_F.png);
         background-repeat: no-repeat;
         background-position: center;
         width: 95vw;

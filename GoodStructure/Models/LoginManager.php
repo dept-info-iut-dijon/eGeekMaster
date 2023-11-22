@@ -134,17 +134,23 @@ class LoginManager extends Model
                     $ligne['Hash']
                     
                 );
-                
-                if($login->getPassword() == $login->getHash()) {
-                    $_SESSION["IdLogin"] = $ligne['idLogin'];
+                $login->setId($ligne['idLogin']);
+                $login->setHash($ligne['Hash']);
+                $logintocompare = new Login();
+                $logintocompare->setPassword($password);
+                if($login->getPassword() == $logintocompare->getPassword()) {
+                    $_SESSION["IdLogin"] = $ligne['idLogin'];                    
                 } else {
                     throw new PDOException("IdLogin not definied.");
                 }
             }
+            
+            
+    
         } catch (PDOException $e) {
             // In case of an error, redirect to the error page with a message
             if (strpos($e->getMessage(), "IdLogin not definied.") !== false) {
-                $errorMessage = "The session variable IdLogin is not defined.";
+                $errorMessage = "The session variable idLogin is not defined.";
             } else {
                 $errorMessage = "An error occurred while connecting the Login.";
             }

@@ -67,12 +67,36 @@ class MainController {
     /**
      * Displays the dashboard page.
      */
-    public function DashBoard() {
+    public function DashBoard($message = null, $idLastTast = null, $nameLastTask = null, $durationLastTask = null, $dateLastTask = null) {
     
+        
+        $durationLastTaskminutes = strval($durationLastTask*15%60);
+        $durationLastTaskhours = strval($durationLastTask*15%4);
+        
         $dashBoardView = new View("DashBoard");
+        $data = array();
+        if ($message !== null) {
+            $data["message"] = $message;
+            
+        }
+        $data["idLastTast"] = $idLastTast;
+        $data["nameLastTask"] = $nameLastTask;
+        $data["durationLastTaskhours"] = $durationLastTaskhours;
+        $data["durationLastTaskminutes"] = $durationLastTaskminutes;
+        $data["dateLastTask"] = $dateLastTask;
+        $dashBoardView->generer($data);
+    }
+
+    /**
+     * Displays the reference page.
+     */
+    public function Reference() {
+    
+        $referenceView = new View("Reference");
         $data = array(
             //ajouter les données à afficher
         );
-        $dashBoardView->generer($data);
+        $referenceView->generer($data);
+    
     }
 }
