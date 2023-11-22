@@ -27,7 +27,7 @@ class LoginManager extends Model
         $resultat = $this->executerRequete($sql);
         while ($ligne = $resultat->fetch(PDO::FETCH_ASSOC)) {
             $login = [
-                'idLogin' => $ligne['id'],
+                'idLogin' => $ligne['idLogin'],
                 'username' => $ligne['username'],
                 'Hash' => $ligne['Hash']
             ];
