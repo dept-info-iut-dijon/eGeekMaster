@@ -130,6 +130,47 @@ body {
     font-size: 18px; 
 }
 
+/* Media queries for responsiveness */
+@media only screen and (max-width: 600px) {
+    #Person {
+        top: 50px; /* Move the person information down */
+        left: 70px; /* Move the person information to the right */
+        font-size: 18px; 
+    }
+    
+    .buttons {
+        margin-top: 80px; /* Move the buttons container down */
+    }
+    
+    .button {
+        font-size: 14px; /*Text size for buttons */
+    }
+
+    #suiviD, #suiviG {
+        font-size: 12px;
+        width: 150px;
+        padding: 5px 10px;
+    }
+    
+    .content {
+        margin-top: 30px; 
+    }
+    
+    .button-detail {
+        width: 200px; /*Size of detailed buttons */
+    }
+    
+    #globalText {
+        top: 175px;
+        left: 125px;
+        font-size: 16px;
+    }
+
+    .line {
+        top: 155px;
+    }
+    
+}
 
 
 
