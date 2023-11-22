@@ -62,10 +62,11 @@ class TaskController
     */
    public function DeleteTask()
    {
+      
       // Check if the Task exists
-      if ($this->TaskManager->CheckIfTaskExists($this->Task)) {
-         // Delete the Task
-         $this->TaskManager->DeleteByID($this->Task->getId());
+      if (isset($_SESSION['tasks']) && (end($_SESSION['tasks']))->getId() != null) {
+         // Delete a Task
+         $this->TaskManager->DeleteByID((end($_SESSION['tasks']))->getId());
          // Redirect to the main page
          $this->DashBoardController->infoDashBoard("Tâche supprimée");
       } else {
@@ -99,19 +100,16 @@ class TaskController
    }
 
    /**
-    * Update an existing Taskif it exists, otherwise display an error message.
+    * Update an existing Task.
     * @author Théo
     */
    private function UpdateTask()
    {
       // Check if the Task exists
-      if ($this->TaskManager->CheckIfTaskExists($this->Task)) {
-         // Update the Task
+      if (isset($_SESSION['tasks']) && (end($_SESSION['tasks']))->getId() != null ) {
          $this->populateTask();
-         
          // Update an existing Task
          $this->TaskManager->UpdateTask($this->Task);
-
          // Redirect to the main page
          $this->DashBoardController->infoDashBoard("Tâche modifiée");
       } else {
