@@ -34,7 +34,7 @@
                     <div id="task">
                         <label id="taskLabel">Task :</label>
                         <div id="chooseTask">
-                            <input list="tasks" placeholder="Search a task" name="searchTask" id="searchTask" value="<?php if ((end($_SESSION['tasks']))->getId() != null)  : ?> <?= $nameLastTask ?> <?php endif; ?>" autofocus required>
+                            <input list="tasks" placeholder="Search a task" name="searchTask" id="searchTask" value="<?php if (isset($_SESSION['tasks']) && (end($_SESSION['tasks']))->getId() != null)  : ?> <?= $nameLastTask ?> <?php endif; ?>" autofocus required>
                             <datalist id="tasks">
                                 <option value="Cleaning">                                
                                 <option value="Shopping">
@@ -70,10 +70,10 @@
                         
 
                         <div id="time">
-                            <input type="text" name="hours" id="hours" class="inputsTime" value="<?php if ((end($_SESSION['tasks']))->getId() != null) :  ?><?= $durationLastTaskhours ?><?php endif?>" readonly>
+                            <input type="text" name="hours" id="hours" class="inputsTime" value="<?php if (isset($_SESSION['tasks']) && (end($_SESSION['tasks']))->getId() != null) :  ?><?= $durationLastTaskhours ?><?php endif?>" readonly>
                             <p id="a"> : </p>
                             
-                            <input type="text" name="minutes" id="minutes" class="inputsTime" value="<?php if ((end($_SESSION['tasks']))->getId() != null) :  ?><?= $durationLastTaskminutes ?><?php endif?>" readonly>
+                            <input type="text" name="minutes" id="minutes" class="inputsTime" value="<?php if (isset($_SESSION['tasks']) && (end($_SESSION['tasks']))->getId() != null) :  ?><?= $durationLastTaskminutes ?><?php endif?>" readonly>
                         </div>
                         <div class="incrementDecrement">
                             <div class="plus">
@@ -86,7 +86,7 @@
                         
                         <div id="dateDiv">
                        
-                            <input type="date" name="Date" id="date" pattern="\d{1,2}-\d{1,2}-\d{4}" value="<?php if ((end($_SESSION['tasks']))->getId() != null) :  ?><?= date($dateLastTask) ?><?php endif?>">
+                            <input type="date" name="Date" id="date" pattern="\d{1,2}-\d{1,2}-\d{4}" value="<?php if (isset($_SESSION['tasks']) && (end($_SESSION['tasks']))->getId() != null) :  ?><?= date($dateLastTask) ?><?php endif?>">
                             
                         </div>
                     </div> 
@@ -124,7 +124,7 @@
         
         <div class="divBoutonTache Supr">
             <!-- Bouton d'ajout de tâches -->
-            <a href="index.php?action=TaskSupression&IdTask=<?php if (isset($_SESSION['tasks']))  : ?> <?= $idLastTast ?> <?php endif; ?>"><button class="boutonTaches Supr" type="button">Delete a task</button></a>
+            <a href="index.php?action=TaskSupression&IdTask=<?php if (isset($_SESSION['tasks']) && (end($_SESSION['tasks']))->getId() != null)  : ?> <?= $idLastTast ?> <?php endif; ?>"><button class="boutonTaches Supr" type="button">Delete a task</button></a>
             
         </div>
 
