@@ -48,6 +48,7 @@ function showDetailed() {
         });
         contentDiv.appendChild(buttonDiv);
     });
+    hideGlobal();
 }
 
 function showGlobal() {
@@ -60,6 +61,23 @@ function showGlobal() {
     globalText.innerText = "Année 2023/2024";
 }
 
+function hideGlobal() {
+    var globalText = document.getElementById("globalText");
+    globalText.innerText = "";
+}
+
+
+
+
+function ActionDetail() {
+    const suiviD = document.getElementById("suiviD");
+    const suiviG = document.getElementById("suiviG");
+    suiviD.addEventListener("click", showDetailed);
+    suiviG.addEventListener("click", showGlobal);
+}
+
+
+window.addEventListener('load', ActionDetail);
 
 
 

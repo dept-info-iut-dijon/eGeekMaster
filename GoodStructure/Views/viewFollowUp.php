@@ -1,5 +1,6 @@
 <!-- autor : Lola Cohidon -->
 <link rel="stylesheet" href="Public/css/followUp2.css">
+<script src="Public/Animation_js/followUp2.js"></script>
 <div id = "viewFollowUp">
 
     <!-- Header -->
@@ -8,9 +9,9 @@
     </div>
     <!--Buttons-->
     <div class="buttons">
-        <button id="suiviD" onclick="showDetailed()">Suivi détaillé</button>
+        <button id="suiviD" >Suivi détaillé</button>
         <div class="line"></div>
-        <button id="suiviG" onclick="showGlobal()">Suivi global</button>
+        <button id="suiviG" >Suivi global</button>
     </div>
     <!--Content-->
     <div class = "content" id = "content">
@@ -19,5 +20,5 @@
     <div id="globalText"></div>
 </div>
 
-<script src="Public/Animation_js/followUp2.js"></script>
+
     
