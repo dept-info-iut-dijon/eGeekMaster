@@ -15,8 +15,7 @@
     <!--Content-->
     <div class = "content" id = "content">
     </div>
-
 </div>
 
-<script src="Public/Animation_js/followUp.js"></script>
+<script src="Public/Animation_js/followUp2.js"></script>
     
