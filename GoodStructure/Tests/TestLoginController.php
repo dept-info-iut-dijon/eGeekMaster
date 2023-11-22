@@ -159,7 +159,6 @@ class TestLoginController extends TestCase
         $this->assertSame($_SESSION['IdLogin'], $testLogin->getId(), 'La connexion devrait être réussie');
 
         // Suppression du login ajouté pour le test
-        $_POST['id'] = $testLogin->getId();
         $LoginController->Delete();
     }
 
