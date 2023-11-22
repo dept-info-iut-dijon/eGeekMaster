@@ -60,7 +60,7 @@ class TestUserController extends TestCase
     }
     
     public function testDelete()
-{
+    {
         // Création d'instance
         $UserManager = new UserManager();
         $UserController = new UserController();
