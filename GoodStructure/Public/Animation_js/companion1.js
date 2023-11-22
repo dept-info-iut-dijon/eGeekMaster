@@ -20,7 +20,7 @@ function VerifiedClicked() {
     if (divTaskRegistration != null) {
         if (divTaskRegistration.style.right == "10%") {
             companio.style.transition = "top 0.5s";
-            companio.style.top = "350px"; // Baisser le compagnon de 50px lorsque la divTaskRegistration est affichée
+            companio.style.top = "320px"; // Baisser le compagnon de 50px lorsque la divTaskRegistration est affichée
         }
     }
 }

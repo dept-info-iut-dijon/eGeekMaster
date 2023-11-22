@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="Public/css/erreur.css"/>
     <link rel="stylesheet" href="Public/css/companion1.css"/>
     <script src="Public/Animation_js/header.js"></script>
-    <script src="Public/Animation_js/companion.js"></script>
+    <script src="Public/Animation_js/companion1.js"></script>
 </head>
 
 <body>
@@ -79,10 +79,20 @@
                             print("You've just added a completed task to the dashboard.");
                             break;
                         case 'TaskSupression':
-                            print("You've just removed the last added task.");
+                            if (!isset($_SESSION['tasks']) || (end($_SESSION['tasks']))->getId() == null){
+                                print("Unable to delete tasks as there are currently none recorded.");
+                            }
+                            else{
+                                print("You've just removed the last added task.");
+                            }
                             break;
                         case 'TaskModification':
-                            print("You've just modified the last added task.");
+                            if (!isset($_SESSION['tasks']) || (end($_SESSION['tasks']))->getId() == null){
+                                print("Unable to modify tasks as there are currently none recorded.");
+                            }
+                            else{
+                                print("You've just modified the last added task.");
+                            }
                             break;
                         default:
                             print('Action non reconnue');
