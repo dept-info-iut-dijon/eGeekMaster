@@ -75,6 +75,15 @@
                         case 'Registration':
                             print("You're on the 'Update My Account' page. Here, you can modify the information associated with your account.");
                             break;
+                        case 'TaskRegistration':
+                            print("You've just added a completed task to the dashboard.");
+                            break;
+                        case 'TaskSupression':
+                            print("You've just removed the last added task.");
+                            break;
+                        case 'TaskModification':
+                            print("You've just modified the last added task.");
+                            break;
                         default:
                             print('Action non reconnue');
                             break;
