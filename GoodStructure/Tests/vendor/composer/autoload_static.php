@@ -8,10 +8,18 @@ class ComposerStaticInitfbee484fbcb98ba45566f17e8eb69e9b
 {
     public static $files = array (
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
+        '9e7a8ca9c2c682ec2704dd873a0e3618' => __DIR__ . '/..' . '/php-mock/php-mock/autoload.php',
         'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
+        '125bba9b2a34259a2ab4c8f405781876' => __DIR__ . '/..' . '/php-mock/php-mock-phpunit/autoload.php',
     );
 
     public static $prefixLengthsPsr4 = array (
+        'p' => 
+        array (
+            'phpmock\\phpunit\\' => 16,
+            'phpmock\\integration\\' => 20,
+            'phpmock\\' => 8,
+        ),
         'e' => 
         array (
             'egeekmaster\\' => 12,
@@ -33,6 +41,19 @@ class ComposerStaticInitfbee484fbcb98ba45566f17e8eb69e9b
     );
 
     public static $prefixDirsPsr4 = array (
+        'phpmock\\phpunit\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-mock/php-mock-phpunit/classes',
+        ),
+        'phpmock\\integration\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-mock/php-mock-integration/classes',
+        ),
+        'phpmock\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-mock/php-mock/classes',
+            1 => __DIR__ . '/..' . '/php-mock/php-mock/tests',
+        ),
         'egeekmaster\\' => 
         array (
             0 => __DIR__ . '/../..' . '/egeekmaster',

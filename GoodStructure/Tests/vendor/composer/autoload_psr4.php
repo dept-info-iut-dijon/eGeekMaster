@@ -6,6 +6,9 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'phpmock\\phpunit\\' => array($vendorDir . '/php-mock/php-mock-phpunit/classes'),
+    'phpmock\\integration\\' => array($vendorDir . '/php-mock/php-mock-integration/classes'),
+    'phpmock\\' => array($vendorDir . '/php-mock/php-mock/classes', $vendorDir . '/php-mock/php-mock/tests'),
     'egeekmaster\\' => array($baseDir . '/egeekmaster'),
     'eGeekMaster\\GoodStructure\\Views\\' => array($baseDir . '/eGeekMaster/GoodStructure/Views'),
     'eGeekMaster\\GoodStructure\\Models\\' => array($baseDir . '/eGeekMaster/GoodStructure/Models'),

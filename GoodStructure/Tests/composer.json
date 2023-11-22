@@ -16,8 +16,8 @@
             "eGeekMaster\\GoodStructure\\Views\\": "eGeekMaster/GoodStructure/Views/"
         }
     },
-    "require": {},
     "require-dev": {
-        "phpunit/phpunit": "^10.4"
+        "phpunit/phpunit": "^10.4",
+        "php-mock/php-mock-phpunit": "^2.8"
     }
 }
