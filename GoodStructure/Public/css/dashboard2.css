@@ -12,7 +12,7 @@ body {
     background-color: #e0eef1;
 }
 
-#divBoutonTache{
+.divBoutonTache{
     background-color: #81acb5;
     padding: 20px;
     margin: 20px;
@@ -21,7 +21,7 @@ body {
     width: fit-content;
 }
 
-#boutonTaches{
+.boutonTaches{
     background-color: #e0eef1;
     height: 40px;
     width: 250px;
