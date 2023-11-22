@@ -5,7 +5,7 @@
 -->
 
 <link rel="stylesheet" href="Public/css/dashboard2.css">
-<link rel="stylesheet" href="Public/css/taskRegistration1.css">
+<link rel="stylesheet" href="Public/css/taskRegistration2.css">
 <script src="Public/Animation_js/taskRegistration.js"></script>
 <div id="bar">
     <!--MESSAGE-->
@@ -34,7 +34,7 @@
                     <div id="task">
                         <label id="taskLabel">Task :</label>
                         <div id="chooseTask">
-                            <input list="tasks" placeholder="Search a task" name="searchTask" id="searchTask" value="<?php if (isset($_SESSION['tasks']))  : ?> <?= $nameLastTask ?> <?php endif; ?>" autofocus required>
+                            <input list="tasks" placeholder="Search a task" name="searchTask" id="searchTask" value="<?php if (isset($_SESSION['tasks']) && (end($_SESSION['tasks']))->getId() != null)  : ?> <?= $nameLastTask ?> <?php endif; ?>" autofocus required>
                             <datalist id="tasks">
                                 <option value="Cleaning">                                
                                 <option value="Shopping">
@@ -67,10 +67,13 @@
                                 <input type="button" name="DecrementHours" id="decrementHours" value="-" class="styleButtons" onclick="decrementValue('hours')">
                             </div>
                         </div>
+                        
+
                         <div id="time">
-                            <input type="text" name="hours" id="hours" class="inputsTime" readonly>
+                            <input type="text" name="hours" id="hours" class="inputsTime" value="<?php if (isset($_SESSION['tasks']) && (end($_SESSION['tasks']))->getId() != null) :  ?><?= $durationLastTaskhours ?><?php endif?>" readonly>
                             <p id="a"> : </p>
-                            <input type="text" name="minutes" id="minutes" class="inputsTime"  readonly>
+                            
+                            <input type="text" name="minutes" id="minutes" class="inputsTime" value="<?php if (isset($_SESSION['tasks']) && (end($_SESSION['tasks']))->getId() != null) :  ?><?= $durationLastTaskminutes ?><?php endif?>" readonly>
                         </div>
                         <div class="incrementDecrement">
                             <div class="plus">
@@ -80,8 +83,11 @@
                                 <input type="button" name="DecrementMinutes" id="decrementMinutes" value="-" class="styleButtons" onclick="decrementValue('minutes')">
                             </div>
                         </div>
+                        
                         <div id="dateDiv">
-                            <input type="date" name="Date" id="date" pattern="\d{1,2}-\d{1,2}-\d{4}" value="<?php if (isset($_SESSION['tasks'])) :  ?> <?= $dateLastTask ?> <?php endif; ?>">
+                       
+                            <input type="date" name="Date" id="date" pattern="\d{1,2}-\d{1,2}-\d{4}" value="<?php if (isset($_SESSION['tasks']) && (end($_SESSION['tasks']))->getId() != null) :  ?><?= date($dateLastTask) ?><?php endif?>">
+                            
                         </div>
                     </div> 
 
@@ -109,23 +115,24 @@
             </form>
         </div>
     </div>
-
-    <div class="divBoutonTache Add">
-        <!-- Bouton d'ajout de tâches -->
-        <button class="boutonTaches Add" type="button">Register a new task</button>
-    </div>
     
-    <div class="divBoutonTache Supr">
-        <!-- Bouton d'ajout de tâches -->
-        <a href="index.php?action=TaskSupression&IdTask=<?= (end($_SESSION['tasks']))->getId() ?>"><button class="boutonTaches Supr" type="button">Delete a task</button></a>
+    <div id='BoutonAction'>
+        <div class="divBoutonTache Add">
+            <!-- Bouton d'ajout de tâches -->
+            <button class="boutonTaches Add" type="button">Register a new task</button>
+        </div>
         
-    </div>
+        <div class="divBoutonTache Supr">
+            <!-- Bouton d'ajout de tâches -->
+            <a href="index.php?action=TaskSupression&IdTask=<?php if (isset($_SESSION['tasks']) && (end($_SESSION['tasks']))->getId() != null)  : ?> <?= $idLastTast ?> <?php endif; ?>"><button class="boutonTaches Supr" type="button">Delete a task</button></a>
+            
+        </div>
 
-    <div class="divBoutonTache Modif">
-        <!-- Bouton d'ajout de tâches -->
-        <button class="boutonTaches Modif" type="button">Modify a task</button>
+        <div class="divBoutonTache Modif">
+            <!-- Bouton d'ajout de tâches -->
+            <button class="boutonTaches Modif" type="button">Modify a task</button>
+        </div>
     </div>
-
     <!-- Graphiques -->
     <div id="graphiques">
         <div id="piechart">

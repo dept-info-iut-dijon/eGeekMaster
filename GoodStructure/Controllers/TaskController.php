@@ -57,15 +57,23 @@ class TaskController
    
 
    /**
-    * Delete a Task.
+    * Delete a Task if it exists, otherwise display an error message.
     * @author Théo
     */
    public function DeleteTask()
    {
-      // Delete a Task
-      $this->TaskManager->DeleteByID((end($_SESSION['tasks']))->getId());
-      // Redirect to the main page
-      $this->DashBoardController->infoDashBoard("Tâche supprimée");
+      
+      // Check if the Task exists
+      if (isset($_SESSION['tasks']) && (end($_SESSION['tasks']))->getId() != null) {
+         // Delete a Task
+         $this->TaskManager->DeleteByID((end($_SESSION['tasks']))->getId());
+         // Redirect to the main page
+         $this->DashBoardController->infoDashBoard("Tâche supprimée");
+      } else {
+         // Redirect to the main page with an error message
+         $this->DashBoardController->infoDashBoard("La tâche n'existe pas");
+      }
+      
    }
 
 
@@ -97,11 +105,17 @@ class TaskController
     */
    private function UpdateTask()
    {
-      $this->populateTask();
-      // Update an existing Task
-      $this->TaskManager->UpdateTask($this->Task);
-      // Redirect to the main page
-      $this->DashBoardController->infoDashBoard("Tâche modifiée");
+      // Check if the Task exists
+      if (isset($_SESSION['tasks']) && (end($_SESSION['tasks']))->getId() != null ) {
+         $this->populateTask();
+         // Update an existing Task
+         $this->TaskManager->UpdateTask($this->Task);
+         // Redirect to the main page
+         $this->DashBoardController->infoDashBoard("Tâche modifiée");
+      } else {
+         // Redirect to the main page with an error message
+         $this->DashBoardController->infoDashBoard("La tâche n'existe pas");
+      }
    }
 
    private function populateTask()

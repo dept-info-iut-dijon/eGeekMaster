@@ -81,8 +81,7 @@ class DashBoardManager extends Model
             $sql = 'SELECT * FROM dashboard WHERE UseridUser = ?';
             $result = $this->executerRequete($sql, [$idUser]);
             $line = $result->fetch(PDO::FETCH_ASSOC);
-            var_dump($line);
-            var_dump($idUser);
+            
             $this->dashboard->setId($line['idDashBoard']);
             $this->dashboard->setUsername($line['username']);
             $this->dashboard->setIdUser($line['UseridUser']);
@@ -191,8 +190,7 @@ class DashBoardManager extends Model
             $sql = 'SELECT * FROM dashboard WHERE UseridUser = ?';
             $result = $this->executerRequete($sql, [$idUser]);
             $line = $result->fetch(PDO::FETCH_ASSOC);
-            var_dump($line);
-            var_dump($idUser);
+            
             $this->dashboard->setId($line['idDashBoard']);
             $this->dashboard->setUsername($line['username']);
             $this->dashboard->setIdUser($line['UseridUser']);
@@ -234,17 +232,17 @@ class DashBoardManager extends Model
     public function UpdateDashboard(Dashboard $dashboard): void
     {
         try {
-            $idUser = $this->UserManager->GetIdUserByLoginId( intval($_SESSION["IdLogin"]))-1;
-            
+            $idUser = $this->UserManager->GetIdUserByLoginId( intval($_SESSION["IdLogin"]));
+            $idDashboard = $this->UserManager->GetIdDashBoardByUserId($idUser);
+            $this->dashboard->setId($idDashboard);
+            $this->dashboard->setIdUser($idUser);
             $sql = 'UPDATE dashboard SET username = ?, UseridUser = ? WHERE idDashboard = ?';
             $this->executerRequete($sql, [
                 $dashboard->getUsername(),
                 $idUser,
                 $dashboard->getId()
             ]);
-            $id = $this->GetIdDashboardByUserId($idUser);
-            $this->dashboard->setId($id);
-            $this->dashboard->setIdUser($idUser);
+            
             
 
         } catch (PDOException $e) {

@@ -1,11 +1,14 @@
 /*
     author : Enzo
-    author : Théo C
 */
 
-#divBoutonsTaches{
+.divBoutonsTaches{
     display: flex;
     flex-direction: row;
+}
+
+#BoutonAction{
+    display: flex;
 }
 
 /*TASK REGISTRATION*/
