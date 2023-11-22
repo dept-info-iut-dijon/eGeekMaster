@@ -87,7 +87,7 @@ body {
 /* Style for the horizontal line */
 .line {
     position: absolute;
-    top: 31.5%;
+    top: 200px;
     left: 0;
     right: 0;
     height: 2px;
