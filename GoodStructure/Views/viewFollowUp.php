@@ -15,6 +15,8 @@
     <!--Content-->
     <div class = "content" id = "content">
     </div>
+    <!-- Global Text -->
+    <div id="globalText"></div>
 </div>
 
 <script src="Public/Animation_js/followUp2.js"></script>
