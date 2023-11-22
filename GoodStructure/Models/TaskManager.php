@@ -172,10 +172,14 @@ class TaskManager extends Model
     public function CheckIfTaskExists(Task $Task): bool
     {
         try {
-            $sql = 'SELECT COUNT(*) FROM task WHERE Name = ? AND Date = ? AND Duration = ?';
-            $result = $this->executerRequete($sql, [$Task->getNameTask(), $Task->getDateAdded(), $Task->getDuration()]);
-            $line = $result->fetch(PDO::FETCH_NUM);
-            return $line[0] > 0;
+            if ($Task->getDuration() != null) {
+                $sql = 'SELECT COUNT(*) FROM task WHERE Name = ? AND Date = ? AND Duration = ? AND idTask != ?';
+                $result = $this->executerRequete($sql, [$Task->getNameTask(), $Task->getDateAdded(), $Task->getDuration(), $Task->getId()]);
+                $line = $result->fetch(PDO::FETCH_NUM);
+                return $line[0] > 0;
+            } else {
+                return false;
+            }
         } catch (PDOException $e) {
             // In case of an error, redirect to the error page with a message
             $errorMessage = "The Task already exists.";

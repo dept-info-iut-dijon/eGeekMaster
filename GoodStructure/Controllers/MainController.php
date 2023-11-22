@@ -69,6 +69,10 @@ class MainController {
      */
     public function DashBoard($message = null, $idLastTast = null, $nameLastTask = null, $durationLastTask = null, $dateLastTask = null) {
     
+        
+        $durationLastTaskminutes = strval($durationLastTask*15%60);
+        $durationLastTaskhours = strval($durationLastTask*15%4);
+        
         $dashBoardView = new View("DashBoard");
         $data = array();
         if ($message !== null) {
@@ -77,7 +81,8 @@ class MainController {
         }
         $data["idLastTast"] = $idLastTast;
         $data["nameLastTask"] = $nameLastTask;
-        $data["durationLastTask"] = $durationLastTask;
+        $data["durationLastTaskhours"] = $durationLastTaskhours;
+        $data["durationLastTaskminutes"] = $durationLastTaskminutes;
         $data["dateLastTask"] = $dateLastTask;
         $dashBoardView->generer($data);
     }

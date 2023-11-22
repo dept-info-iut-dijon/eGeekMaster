@@ -13,6 +13,13 @@ function DisplayTaskRegistration() {
     const submit = document.getElementById("submit"); // Get reference to the submit button
     const formTask = document.getElementById("formTask"); // Get reference to the form element
     const searchTask = document.getElementById("searchTask"); // Get reference to the searchTask element
+    const date = document.getElementById("date"); // Get reference to the date element
+    const dateModif = date.valueAsDate;
+    const searchTaskModif = searchTask.value;
+    const hours = document.getElementById("hours"); // Get reference to the hours element
+    const minutes = document.getElementById("minutes"); // Get reference to the minutes element
+    const hoursModif = hours.value;
+    const minutesModif = minutes.value;
 
     // The task button is clicked
     buttonTaskAdd.addEventListener("click", function () {
@@ -26,6 +33,9 @@ function DisplayTaskRegistration() {
             submit.value = "Register";
             formTask.action = "index.php?action=TaskRegistration";
             searchTask.value = "";
+            date.valueAsDate = new Date();
+            hours.value = "00";
+            minutes.value = "00";
         }
     });
 
@@ -40,6 +50,10 @@ function DisplayTaskRegistration() {
             titleTask.textContent = "MODIFY A TASK"; // Change the content of the h1 element
             submit.value = "Modify";
             formTask.action = "index.php?action=TaskModification";
+            searchTask.value = searchTaskModif;
+            date.valueAsDate = new Date(dateModif);
+            hours.value = hoursModif;
+            minutes.value = minutesModif;
         
         }
     });
@@ -59,11 +73,13 @@ window.addEventListener('load', DisplayTaskRegistration);
 // To increment and decrement the lifetime
 document.addEventListener('DOMContentLoaded', function () {
     // Initialize the values of the text fields
-    var hoursValue = 0;
-    var minutesValue = 0;
+    
 
     var hoursInput = document.getElementById('hours');
     var minutesInput = document.getElementById('minutes');
+
+    var hoursValue = hoursInput.value;
+    var minutesValue = minutesInput.value ;
 
     // Function to format the value with leading zeros
     function formatValue(value) {
