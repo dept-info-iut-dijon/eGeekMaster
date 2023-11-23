@@ -1,3 +1,5 @@
+/* author: Théo Cornu */
+
 /* Reset default styles and set the base styles for the body */
 body {
     font-family: "Comic Sans MS", sans-serif;
@@ -9,12 +11,6 @@ body {
 /* Styles for the main container */
 #viewFollowUp {
     margin: 20px;
-}
-
-/* Styles for the person information */
-#Person {
-    
-    /* Increased font size for first and last name */
 }
 
 #PersonTitle{

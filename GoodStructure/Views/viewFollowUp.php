@@ -13,8 +13,6 @@
         <div class="line"></div>
         <button id="suiviG" >Overall tracking</button>
     </div>
-    
-    
 </div>
 
 

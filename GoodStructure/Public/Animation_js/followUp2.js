@@ -7,6 +7,8 @@
 function showDetailed() {
     hideGlobal();
     
+    var contentDiv;
+    if ((document.getElementById("content") == null)){
     var contentDiv = viewFollowUp.appendChild(document.createElement("div"));
 
     // Add id to contentDiv
@@ -55,7 +57,7 @@ function showDetailed() {
         });
         contentDiv.appendChild(buttonDiv);
     });
-    
+}
 }
 
 function showGlobal() {
