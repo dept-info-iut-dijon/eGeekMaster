@@ -162,16 +162,6 @@ class UserManager extends Model
         $LoginManager = new LoginManager();
 
         try {
-            $sql = 'DELETE FROM users WHERE idUsers = ?';
-            $this->executerRequete($sql, [$id]);
-        } catch (PDOException $e) {
-            // In case of an error, redirect to the error page with a message
-            $errorMessage = "An error occurred while deleting the User.";
-            header("Location: index.php?action=Registration&errorMessage=".urlencode($errorMessage));
-            exit();
-        }
-        /*
-        try {
             $sql = 'SELECT LoginidLogin FROM users WHERE idUsers = ?';
             $result = $this->executerRequete($sql, [$id]);
             $line = $result->fetch();
@@ -182,7 +172,17 @@ class UserManager extends Model
             $errorMessage = "An error occurred while deleting the User.";
             header("Location: index.php?action=Registration&errorMessage=".urlencode($errorMessage));
             exit();
-        }*/
+        }
+        
+        try {
+            $sql = 'DELETE FROM users WHERE idUsers = ?';
+            $this->executerRequete($sql, [$id]);
+        } catch (PDOException $e) {
+            // In case of an error, redirect to the error page with a message
+            $errorMessage = "An error occurred while deleting the User.";
+            header("Location: index.php?action=Registration&errorMessage=".urlencode($errorMessage));
+            exit();
+        }
     }
         
         
