@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="Public/css/taskRegistration7.css">
 <script src="Public/Animation_js/taskRegistration.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="Public/Animation_js/graphs.js"></script>
+<script src="Public/Animation_js/DashBoardgraphs.js"></script>
 <div id="bar">
     <!--MESSAGE-->
     <?php if (isset($message)) : ?>
