@@ -9,9 +9,9 @@
     </div>
     <!--Buttons-->
     <div class="buttons">
-        <button id="suiviD" >Suivi détaillé</button>
+        <button id="suiviD" >Detailed tracking</button>
         <div class="line"></div>
-        <button id="suiviG" >Suivi global</button>
+        <button id="suiviG" >Overall tracking</button>
     </div>
     <!--Content-->
     <div class = "content" id = "content">
