@@ -58,26 +58,49 @@
     <div id="companionConnect">
         <div class="bubble">
             <p><?php
+                $durationC = 0;
+                $imagePath = "Public/image/companion/companion1.png";
                 if (isset($_SESSION['IdLogin'])) {
                     switch ($_GET['action']) {
                         case 'Index':
                             print("You're on the Homepage. Explore information about the website, its usage, and read customer reviews here.");
+                            $imagePath = "Public/image/companion/companion5.png";
                             break;
                         case 'ConnectLogin':
                             print("You have just logged into your account. Welcome or welcome back among us.");
                             break;
                         case 'InfoDashBoard':
-                            foreach ($_SESSION['tasks'] as $task) {
-                                $taskDuration = $task->getDuration();
-                            }
-                            if($taskDuration >= 8){
-                                print("You've accomplished quite a few tasks this week. Great job!");
-                            }
-                            elseif($taskDuration <= 4){
-                                print("It seems like you haven't completed enough tasks this week. Consider taking on a few more to stay on track.");
+                            if ((isset($_SESSION['tasks'])) && ((end($_SESSION['tasks']))->getId() != null)) {
+                                $lastTaskDateS = end($_SESSION['tasks'])->getDateAdded();
+                                $lastTaskDate = new DateTime($lastTaskDateS);
+                                //$lastWeek = date('Y-m-d', strtotime('-1 week'));
+                                $now = new DateTime();
+                                $lastWeek = clone $now;
+                                $lastWeek->sub(new DateInterval('P1W'));
+                                foreach ($_SESSION['tasks'] as $task) {
+                                    $durationC += $task->getDuration();
+                                }
+                                if ($lastTaskDate <= $lastWeek && $durationC === 0) {
+                                    print("It seems you haven't recorded any tasks in a week or more. Consider updating your task log to stay organized.");
+                                    $imagePath = "Public/image/companion/companion7.png";
+                                }
+                                else{
+                                    if($durationC >= 8){
+                                        print("You've accomplished quite a few tasks this week. Great job!");
+                                        $imagePath = "Public/image/companion/companion4.png";
+                                    }
+                                    elseif($durationC <= 4){
+                                        print("It seems like you haven't completed enough tasks this week. Consider taking on a few more to stay on track.");
+                                        $imagePath = "Public/image/companion/companion6.png";
+                                    }
+                                    else{
+                                        print("It looks like you've completed a decent number of tasks this week. Keep it up!");
+                                        $imagePath = "Public/image/companion/companion8.png";
+                                    }
+                                }
                             }
                             else{
-                                print("It looks like you've completed a decent number of tasks this week. Keep it up!");
+                                print("You're on the dashboard page. Here, you can view information about tasks completed in the last week.");
                             }
                             break;
                         case 'Reference':
@@ -88,6 +111,7 @@
                             break;
                         case 'TaskRegistration':
                             print("You've just added a completed task to the dashboard.");
+                            $imagePath = "Public/image/companion/companion2.png";
                             break;
                         case 'TaskSupression':
                             if (!isset($_SESSION['tasks']) || (end($_SESSION['tasks']))->getId() == null){
@@ -114,6 +138,7 @@
                     switch ($_GET['action']) {
                         case 'Index':
                             print("Welcome to Family'Easy, your new tool for household task management. You're on the homepage. Explore information about the website, its usage, and read customer reviews here.");
+                            $imagePath = "Public/image/companion/companion5.png";
                             break;
                         case 'Connection':
                             print("You're on the Login page. Sign in here to access your account.");
@@ -126,9 +151,11 @@
                             break;
                     }
                 }
-                ?></p>
+            ?></p>
         </div>
-        <img src="Public/image/companion/companion1.png" alt="companion">
+        <?php
+            echo '<img src="' . $imagePath . '" alt="companion">';
+        ?>
     </div>
 </div>
 

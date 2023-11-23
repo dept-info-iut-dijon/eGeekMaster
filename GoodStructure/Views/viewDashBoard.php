@@ -7,7 +7,43 @@
 <link rel="stylesheet" href="Public/css/dashboard2.css">
 <link rel="stylesheet" href="Public/css/taskRegistration2.css">
 <script src="Public/Animation_js/taskRegistration.js"></script>
+
+<?php
+$labels = [];
+$data1 = [];
+$data2 = [];
+$taskDurations = [];
+$taskCounts = [];
+
+if (isset($_SESSION['tasks'])) {
+    foreach ($_SESSION['tasks'] as $task) {
+        $taskName = $task->getNameTask();
+        $taskDuration = $task->getDuration();
+
+        // Vérifier si le nom de tâche existe déjà dans le tableau des labels
+        if (!in_array($taskName, $labels)) {
+            $labels[] = $taskName;
+            $taskDurations[$taskName] = $taskDuration;
+            $taskCounts[$taskName] = 1;
+        } else {
+            // Ajouter la durée à la durée existante pour ce nom de tâche
+            $taskDurations[$taskName] += $taskDuration;
+            $taskCounts[$taskName]++;
+        }
+    }
+
+    // Remplir les tableaux de données avec les durées correspondantes
+    foreach ($labels as $label) {
+        $data1[] = $taskDurations[$label]; // Exemple de valeur statique pour le graphique 1
+        $data2[] = $taskDurations[$label] / $taskCounts[$label]; // Calculer la moyenne sur une semaine
+    }
+}
+?>
+
 <div id="bar">
+    <input type="hidden" id="labels" value="<?= json_encode($labels) ?>">
+    <input type="hidden" id="data1" value="<?= json_encode($data1) ?>">
+    <input type="hidden" id="data2" value="<?= json_encode($data2) ?>">
     <!--MESSAGE-->
     <?php if (isset($message)) : ?>
         <p><?= $message ?></p>
@@ -144,57 +180,20 @@
             <canvas id="myChart2"></canvas>
         </div>
     </div>
-</div> 
-    
-
-
-
-
-
-
-<?php
-$labels = [];
-$data1 = [];
-$data2 = [];
-$taskDurations = [];
-$taskCounts = [];
-
-if (isset($_SESSION['tasks'])) {
-    foreach ($_SESSION['tasks'] as $task) {
-        $taskName = $task->getNameTask();
-        $taskDuration = $task->getDuration();
-
-        // Vérifier si le nom de tâche existe déjà dans le tableau des labels
-        if (!in_array($taskName, $labels)) {
-            $labels[] = $taskName;
-            $taskDurations[$taskName] = $taskDuration;
-            $taskCounts[$taskName] = 1;
-        } else {
-            // Ajouter la durée à la durée existante pour ce nom de tâche
-            $taskDurations[$taskName] += $taskDuration;
-            $taskCounts[$taskName]++;
-        }
-    }
-
-    // Remplir les tableaux de données avec les durées correspondantes
-    foreach ($labels as $label) {
-        $data1[] = $taskDurations[$label]; // Exemple de valeur statique pour le graphique 1
-        $data2[] = $taskDurations[$label] / $taskCounts[$label]; // Calculer la moyenne sur une semaine
-    }
-}
-?>
-
-
-
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="Public/Animation_js/piechart.js"></script>
+
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
     
-    const labels = <?= json_encode($labels) ?>;
-    const data1 = <?= json_encode($data1) ?>;
-    const data2 = <?= json_encode($data2) ?>;
+    const labels = ;
+    const data1 = ;
+    const data2 = ;
 
     const ctx1 = document.getElementById('myChart1');
     const ctx2 = document.getElementById('myChart2');
@@ -275,7 +274,7 @@ if (isset($_SESSION['tasks'])) {
             }
         }
     });
-});
+}); -->
 </script>
 
 
