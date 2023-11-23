@@ -67,7 +67,18 @@
                             print("You have just logged into your account. Welcome or welcome back among us.");
                             break;
                         case 'InfoDashBoard':
-                            print("You're on the Dashboard page. Here, you can view information about tasks completed in the last week.");
+                            foreach ($_SESSION['tasks'] as $task) {
+                                $taskDuration = $task->getDuration();
+                            }
+                            if($taskDuration >= 8){
+                                print("You've accomplished quite a few tasks this week. Great job!");
+                            }
+                            elseif($taskDuration <= 4){
+                                print("It seems like you haven't completed enough tasks this week. Consider taking on a few more to stay on track.");
+                            }
+                            else{
+                                print("It looks like you've completed a decent number of tasks this week. Keep it up!");
+                            }
                             break;
                         case 'Reference':
                             print("You're on the Reference page. Here, you can check the value reference for each possible task.");
