@@ -9,9 +9,9 @@ use PHPUnit\Framework\TestCase;
 
 class TestTaskController extends TestCase
 {
-   public function testAddTask()
+   public function testAddTaskCreate()
    {
-    
+      
    }
 
    public function testDeleteTask()
@@ -19,7 +19,7 @@ class TestTaskController extends TestCase
     
    }
 
-   public function testUpdateTask()
+   public function testAddTaskUpdate()
    {
     
    }
