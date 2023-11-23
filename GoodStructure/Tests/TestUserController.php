@@ -65,7 +65,7 @@ class TestUserController extends TestCase
         ];
         $UserController->Delete();
     }
-/*
+
     public function testDelete()
     {
         // Création d'instance
@@ -77,9 +77,30 @@ class TestUserController extends TestCase
         $testLogin = new Login("coco","12345");
         $testLogin->setPassword("12345");
 
+        // Données de test
+        $_POST = [
+            'Password' => '12345',
+            'Firstname' => 'Nicolas',
+            'Lastname' => 'Desertot',
+            'Email' => 'testN@testN.fr',
+            'Gender' => 'man',
+            'parent' => 'parent',
+            'YearOfBirth' => '2001',
+            'MonthOfBirth' => '5',
+            'DayOfBirth' => '3',
+            'Username' => 'coco'
+        ];
+
+        $_SERVER["REQUEST_METHOD"] = "POST";
+
+        // Ajout de l'utilisateur pour tester la méthode de suppression
+        $UserController->Add();
+
         // La liste des utilisateurs après l'ajout
         $listeUser = $UserManager->GetAll();
 
+        var_dump("testtesttest");
+        var_dump($listeUser);
         // Rechercher l'utilisateur correspondant à supprimer
         $pullUser = null;
         foreach($listeUser as $user){
@@ -92,12 +113,13 @@ class TestUserController extends TestCase
         $this->assertNotNull($pullUser, 'L\'utilisateur devrait être présent');
 
         // Données de test
-        $_POST = [
-            'idUser' => $pullUser->getId()
-        ];
+        $_POST['idUser'] = $pullUser->getId();
 
         // Suppression de l'utilisateur
         $UserController->Delete();
+
+         // La liste des utilisateurs après la suppression
+         $listeUser = $UserManager->GetAll();
 
         // Rechercher l'utilisateur correspondant à supprimer
         $pullUser2 = null;
@@ -109,6 +131,6 @@ class TestUserController extends TestCase
 
         // Assertion test si l'utilisateur est bien absent dans la liste
         $this->assertNull($pullUser2, 'L\'utilisateur devrait être supprimé');
-    }*/
+    }
 }
 ?>
