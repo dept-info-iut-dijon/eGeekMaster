@@ -10,8 +10,9 @@
             "command":"start",//"C:/Users/ttmdu/OneDrive/Bureau/Navigateur/Navigateur Opera GX.lnk"
 
            "args": [
-                "microsoft-edge:http://localhost/eGeekMaster/GoodStructure/index.php"
-            
+                "msedge",
+                "http://localhost/eGeekMaster/GoodStructure/index.php"
+
             ],
             "group": {
                 "kind": "build",
