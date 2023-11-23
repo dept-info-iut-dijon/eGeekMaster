@@ -69,7 +69,37 @@ class MainController {
      */
     public function DashBoard($message = null, $idLastTast = null, $nameLastTask = null, $durationLastTask = null, $dateLastTask = null) {
     
-        
+        $labels = [];
+        $data1 = [];
+        $data2 = [];
+        $taskDurations = [];
+        $taskCounts = [];
+
+        if (isset($_SESSION['tasks'])) {
+            foreach ($_SESSION['tasks'] as $task) {
+                $taskName = $task->getNameTask();
+                $taskDuration = $task->getDuration();
+
+                // Vérifier si le nom de tâche existe déjà dans le tableau des labels
+                if (!in_array($taskName, $labels)) {
+                    $labels[] = $taskName;
+                    $taskDurations[$taskName] = $taskDuration;
+                    $taskCounts[$taskName] = 1;
+                } else {
+                    // Ajouter la durée à la durée existante pour ce nom de tâche
+                    $taskDurations[$taskName] += $taskDuration;
+                    $taskCounts[$taskName]++;
+                }
+            }
+
+            // Remplir les tableaux de données avec les durées correspondantes
+            foreach ($labels as $label) {
+                $data1[] = $taskDurations[$label]; // Exemple de valeur statique pour le graphique 1
+                $data2[] = $taskDurations[$label] / $taskCounts[$label]; // Calculer la moyenne sur une semaine
+            }
+        }
+
+
         $durationLastTaskminutes = strval($durationLastTask*15%60);
         $durationLastTaskhours = strval($durationLastTask*15%4);
         
@@ -84,6 +114,9 @@ class MainController {
         $data["durationLastTaskhours"] = $durationLastTaskhours;
         $data["durationLastTaskminutes"] = $durationLastTaskminutes;
         $data["dateLastTask"] = $dateLastTask;
+        $data["labels"] = $labels;
+        $data["data1"] = $data1;
+        $data["data2"] = $data2;
         $dashBoardView->generer($data);
     }
 

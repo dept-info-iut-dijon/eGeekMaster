@@ -7,6 +7,8 @@
 <link rel="stylesheet" href="Public/css/dashboard3.css">
 <link rel="stylesheet" href="Public/css/taskRegistration7.css">
 <script src="Public/Animation_js/taskRegistration.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="Public/Animation_js/graphs.js"></script>
 <div id="bar">
     <!--MESSAGE-->
     <?php if (isset($message)) : ?>
@@ -152,132 +154,11 @@
 
 
 
-<?php
-$labels = [];
-$data1 = [];
-$data2 = [];
-$taskDurations = [];
-$taskCounts = [];
 
-if (isset($_SESSION['tasks'])) {
-    foreach ($_SESSION['tasks'] as $task) {
-        $taskName = $task->getNameTask();
-        $taskDuration = $task->getDuration();
-
-        // Vérifier si le nom de tâche existe déjà dans le tableau des labels
-        if (!in_array($taskName, $labels)) {
-            $labels[] = $taskName;
-            $taskDurations[$taskName] = $taskDuration;
-            $taskCounts[$taskName] = 1;
-        } else {
-            // Ajouter la durée à la durée existante pour ce nom de tâche
-            $taskDurations[$taskName] += $taskDuration;
-            $taskCounts[$taskName]++;
-        }
-    }
-
-    // Remplir les tableaux de données avec les durées correspondantes
-    foreach ($labels as $label) {
-        $data1[] = $taskDurations[$label]; // Exemple de valeur statique pour le graphique 1
-        $data2[] = $taskDurations[$label] / $taskCounts[$label]; // Calculer la moyenne sur une semaine
-    }
-}
-?>
 
 <input type="hiden" id="labels" value="<?= htmlspecialchars(json_encode($labels)) ?>">
 <input type="hiden" id="data1" value="<?= htmlspecialchars(json_encode($data1)) ?>">
 <input type="hiden" id="data2" value="<?= htmlspecialchars(json_encode($data2)) ?>">
 
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-    
-    const labels = <?= json_encode($labels) ?>;
-    const data1 = <?= json_encode($data1) ?>;
-    const data2 = <?= json_encode($data2) ?>;
-
-    const ctx1 = document.getElementById('myChart1');
-    const ctx2 = document.getElementById('myChart2');
-
-    new Chart(ctx1, {
-        type: 'pie',
-        data: {
-            labels: labels,
-            datasets: [{
-                label: 'Distribution Duration',
-                data: data1,
-                borderWidth: 0,
-                backgroundColor: (context) => {
-                    const index = context.dataIndex;
-                    const count = context.dataset.data.length;
-                    const startColor = [90, 74, 71]; // Couleur de départ (noir)
-                    const endColor = [236, 228, 227]; // Couleur de fin (blanc)
-                    const color = [];
-
-                    // Calculer les valeurs de couleur pour chaque canal (rouge, vert, bleu)
-                    for (let i = 0; i < 3; i++) {
-                        const startValue = startColor[i];
-                        const endValue = endColor[i];
-                        const value = Math.round(startValue + (endValue - startValue) * (index / (count - 1)));
-                        color.push(value);
-                    }
-
-                    return `rgb(${color.join(',')})`;
-                }
-            }]
-        },
-        options: {
-            responsive: true,
-            onClick: (event, elements) => {
-                if (elements.length > 0) {
-                    const clickedIndex = elements[0].index;
-                    const clickedLabel = labels[clickedIndex];
-                    console.log(`Clicked label: ${clickedLabel}`);
-                }
-            }
-            
-        }
-    });
-
-    new Chart(ctx2, {
-        type: 'bar',
-        data: {
-            labels: labels,
-            datasets: [{
-                label: 'Average Duration',
-                data: data2,
-                backgroundColor: (context) => {
-                    const index = context.dataIndex;
-                    const count = context.dataset.data.length;
-                    const startColor = [0, 0, 0]; // Couleur de départ (noir)
-                    const endColor = [236, 228, 227]; // Couleur de fin (blanc)
-                    const color = [];
-
-                    // Calculer les valeurs de couleur pour chaque canal (rouge, vert, bleu)
-                    for (let i = 0; i < 3; i++) {
-                        const startValue = startColor[i];
-                        const endValue = endColor[i];
-                        const value = Math.round(startValue + (endValue - startValue) * (index / (count - 1)));
-                        color.push(value);
-                    }
-
-                    return `rgb(${color.join(',')})`;
-                },
-                borderWidth: 1
-            }]
-        },
-        options: {
-            responsive: true,
-            indexAxis: 'y',
-            plugins: {
-                
-                
-            }
-        }
-    });
-});
-</script>
 
 
