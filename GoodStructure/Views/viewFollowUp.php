@@ -18,11 +18,15 @@
 <script src="Public/Animation_js/followUp.js"></script>
     
 <?php
+    /**
+     * @author Enzo
+     */
     $taskDurations = [];
     $labels = [];
     $tempT = 0;
     $taskDates = [];
     $taskCountPerYearMonth = [];
+    $taskCountPerYear = [];
 
     if (isset($_SESSION['tasks'])) {                         
         foreach ($_SESSION['tasks'] as $task) {
@@ -43,6 +47,13 @@
                 $tempT += $taskDuration;
 
                 // For global part
+                // Per year
+                if (!isset($taskCountPerYear[$year][$taskName])) {
+                    $taskCountPerYear[$year][$taskName] = 1;
+                } else {
+                    $taskCountPerYear[$year][$taskName]++;
+                }
+                // Per month
                 if (!isset($taskCountPerYearMonth[$year][$month][$taskName])) {
                     $taskCountPerYearMonth[$year][$month][$taskName] = 1;
                 } else {
@@ -54,6 +65,13 @@
                 $tempT += $taskDuration;
 
                 // For global part
+                // Per year
+                if (!isset($taskCountPerYear[$year][$taskName])) {
+                    $taskCountPerYear[$year][$taskName] = 1;
+                } else {
+                    $taskCountPerYear[$year][$taskName]++;
+                }
+                // Per month
                 if (!isset($taskCountPerYearMonth[$year][$month][$taskName])) {
                     $taskCountPerYearMonth[$year][$month][$taskName] = 1;
                 } else {
@@ -67,10 +85,6 @@
             $taskPercent[$label] = ceil(($taskDurations[$label]*100) / $tempT);       
         }
     }
-
-    echo '<pre>';
-    print_r($taskCountPerYearMonth);
-    echo '</pre>';
 ?>
 
 <?= $taskPercent['Cleaning'] ?> 
