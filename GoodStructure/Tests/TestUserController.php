@@ -99,8 +99,6 @@ class TestUserController extends TestCase
         // La liste des utilisateurs après l'ajout
         $listeUser = $UserManager->GetAll();
 
-        var_dump("testtesttest");
-        var_dump($listeUser);
         // Rechercher l'utilisateur correspondant à supprimer
         $pullUser = null;
         foreach($listeUser as $user){
