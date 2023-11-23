@@ -1,5 +1,6 @@
 /**
  * @author Lola Cohidon
+ * @author Théo Cornu
 */
 
 
@@ -80,6 +81,7 @@ function showGlobal() {
     const labels = document.getElementById('labels').value;
     const data2 = document.getElementById('data2').value;
 
+    console.log(labels);
     
     const ctx2 = document.getElementById('myChart2');
 
