@@ -66,20 +66,25 @@ function showGlobal() {
     if(contentDiv = document.getElementById("content")) {
     // Supprimer l'élément contentDiv du parent
     contentDiv.parentNode.removeChild(contentDiv);
-
-    var globalText = viewFollowUp.appendChild(document.createElement("div"));
-    globalText.id = "globalText";
-
-    // Add text for Global View
     
+    var global = viewFollowUp.appendChild(document.createElement("div"));
+    global.id = "global";
+
+    var globalText = global.appendChild(document.createElement("p"));
+    globalText.id = "globalText";
     globalText.innerText = "Année 2023/2024";
+    
+    var GraphGlobal = global.appendChild(document.createElement("canvas"));
+    GraphGlobal.id = "myChart2";
+    
+    
     }
 }
 
 function hideGlobal() {
-    var globalText;
-    if(globalText = document.getElementById("globalText")) {
-        viewFollowUp.removeChild(globalText);
+    var global;
+    if(global = document.getElementById("global")) {
+        viewFollowUp.removeChild(global);
     }
 }
 
