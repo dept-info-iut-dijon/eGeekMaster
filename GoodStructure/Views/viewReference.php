@@ -1,5 +1,5 @@
 <!-- author: Théo Cornu
-autor : Lola Cohidon
+author : Lola Cohidon
 author: Théo Cornu-->
 <link rel="stylesheet" href="Public/css/reference3.css">
 <div id="ContaintReference">
