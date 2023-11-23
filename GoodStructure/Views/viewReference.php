@@ -1,7 +1,7 @@
 <!-- author: Théo Cornu
-author: Théo Cornu
-author : Lola Cohidon-->
-<link rel="stylesheet" href="Public/css/reference2.css">
+autor : Lola Cohidon
+author: Théo Cornu-->
+<link rel="stylesheet" href="Public/css/reference3.css">
 <div id="ContaintReference">
     <!--Search bar-->
     <div class="search">
