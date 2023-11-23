@@ -23,10 +23,10 @@
             <div class="imageDuDeb bas"></div>
         </div>
         <h1>
-            <?= $translations[$language]['welcome']?>
+            <?= $translations[$language]['index_title']?>
         </h1>
         <p>
-            Family'Easy is an application dedicated to calculating the monetary and time value of domestic and parental tasks within couples. Our goal is to highlight the unequal distribution of household and parenting work in a household.
+            <?= $translations[$language]['index_desc']?>
         </p>
     </div>
 
