@@ -76,7 +76,51 @@ function showGlobal() {
     
     var GraphGlobal = global.appendChild(document.createElement("canvas"));
     GraphGlobal.id = "myChart2";
+
+    const labels = document.getElementById('labels').value;
+    const data2 = document.getElementById('data2').value;
+
     
+    const ctx2 = document.getElementById('myChart2');
+
+
+    new Chart(ctx2, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Average Duration',
+                data: data2,
+                backgroundColor: (context) => {
+                    const index = context.dataIndex;
+                    const count = context.dataset.data.length;
+                    const startColor = [0, 0, 0]; // Couleur de départ (noir)
+                    const endColor = [236, 228, 227]; // Couleur de fin (blanc)
+                    const color = [];
+
+                    // Calculer les valeurs de couleur pour chaque canal (rouge, vert, bleu)
+                    for (let i = 0; i < 3; i++) {
+                        const startValue = startColor[i];
+                        const endValue = endColor[i];
+                        const value = Math.round(startValue + (endValue - startValue) * (index / (count - 1)));
+                        color.push(value);
+                    }
+
+                    return `rgb(${color.join(',')})`;
+                },
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            indexAxis: 'x',
+            plugins: {
+                
+                
+            }
+        }
+    });
+
     
     }
 }
@@ -93,6 +137,13 @@ function hideGlobal() {
 
 function ActionDetail() {
     const viewFollowUp = document.getElementById("viewFollowUp");
+
+
+    document.addEventListener("DOMContentLoaded", function() {
+    
+        
+    });
+
     const suiviD = document.getElementById("suiviD");
     const suiviG = document.getElementById("suiviG");
     suiviD.addEventListener("click", showDetailed);
