@@ -18,7 +18,7 @@
         
     <!--TASK REGISTRATION-->
     <div id="divTaskRegistration">
-
+    
         
         <!--FORM-->
         <div id="formDiv">
@@ -184,7 +184,9 @@ if (isset($_SESSION['tasks'])) {
 }
 ?>
 
-
+<input type="hiden" id="labels" value="<?= htmlspecialchars(json_encode($labels)) ?>">
+<input type="hiden" id="data1" value="<?= htmlspecialchars(json_encode($data1)) ?>">
+<input type="hiden" id="data2" value="<?= htmlspecialchars(json_encode($data2)) ?>">
 
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
