@@ -2,8 +2,15 @@
  * @author Lola Cohidon
 */
 
+
+
 function showDetailed() {
-    var contentDiv = document.getElementById("content");
+    hideGlobal();
+    
+    var contentDiv = viewFollowUp.appendChild(document.createElement("div"));
+
+    // Add id to contentDiv
+    contentDiv.id = "content";
     contentDiv.innerHTML = "";  
 
     // Add text for Detailed View
@@ -48,28 +55,37 @@ function showDetailed() {
         });
         contentDiv.appendChild(buttonDiv);
     });
-    hideGlobal();
+    
 }
 
 function showGlobal() {
-    var contentDiv = document.getElementById("content");
-    // Clear the existing content
-    contentDiv.innerHTML = "";
+
+    var contentDiv;
+    if(contentDiv = document.getElementById("content")) {
+    // Supprimer l'élément contentDiv du parent
+    contentDiv.parentNode.removeChild(contentDiv);
+
+    var globalText = viewFollowUp.appendChild(document.createElement("div"));
+    globalText.id = "globalText";
 
     // Add text for Global View
-    var globalText = document.getElementById("globalText");
+    
     globalText.innerText = "Année 2023/2024";
+    }
 }
 
 function hideGlobal() {
-    var globalText = document.getElementById("globalText");
-    globalText.innerText = "";
+    var globalText;
+    if(globalText = document.getElementById("globalText")) {
+        viewFollowUp.removeChild(globalText);
+    }
 }
 
 
 
 
 function ActionDetail() {
+    const viewFollowUp = document.getElementById("viewFollowUp");
     const suiviD = document.getElementById("suiviD");
     const suiviG = document.getElementById("suiviG");
     suiviD.addEventListener("click", showDetailed);

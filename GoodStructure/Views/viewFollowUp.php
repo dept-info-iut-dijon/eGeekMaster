@@ -13,11 +13,11 @@
         <div class="line"></div>
         <button id="suiviG" >Suivi global</button>
     </div>
-    <!--Content-->
-    <div class = "content" id = "content">
-    </div>
+    
     <!-- Global Text -->
-    <div id="globalText"></div>
+    <div id="globalText">
+        <canvas id="myChart2"></canvas>
+    </div>
 </div>
 
 
@@ -26,6 +26,7 @@
     /**
      * @author Enzo
      */
+    
     $taskDurations = [];
     $labels = [];
     $tempT = 0;
@@ -87,22 +88,59 @@
 
         foreach ($labels as $label) {
             // For detail part
-            $taskPercent[$label] = ceil(($taskDurations[$label]*100) / $tempT);       
+            $taskPercent[$label] = ceil(($taskDurations[$label]*100) / $tempT);      
+            
         }
     }
 ?>
 
-<?= $taskPercent['Cleaning'] ?> 
-<?= $taskPercent['Shopping'] ?>
-<?= $taskPercent['Cooking'] ?>
-<?= $taskPercent['Dishes'] ?>
-<?= $taskPercent['Laundry'] ?>
-<?= $taskPercent['ChildsPlay'] ?>
-<?= $taskPercent['ChildrensJourney'] ?>
-<?= $taskPercent['ParentJourney'] ?>
-<?= $taskPercent['ParentCare'] ?>
-<?= $taskPercent['Administrative'] ?>
-<?= $taskPercent['PetCare'] ?>  
-<?= $taskPercent['Gardening'] ?>
-<?= $taskPercent['DIY'] ?>
-<?= $taskPercent['HouseholdManagement'] ?>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    
+    const labels = <?= json_encode($labels) ?>;
+    const data2 = <?= json_encode($taskCountPerYearMonth) ?>;
+
+    
+    const ctx2 = document.getElementById('myChart2');
+
+
+    new Chart(ctx2, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Average Duration',
+                data: data2,
+                backgroundColor: (context) => {
+                    const index = context.dataIndex;
+                    const count = context.dataset.data.length;
+                    const startColor = [0, 0, 0]; // Couleur de départ (noir)
+                    const endColor = [236, 228, 227]; // Couleur de fin (blanc)
+                    const color = [];
+
+                    // Calculer les valeurs de couleur pour chaque canal (rouge, vert, bleu)
+                    for (let i = 0; i < 3; i++) {
+                        const startValue = startColor[i];
+                        const endValue = endColor[i];
+                        const value = Math.round(startValue + (endValue - startValue) * (index / (count - 1)));
+                        color.push(value);
+                    }
+
+                    return `rgb(${color.join(',')})`;
+                },
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            indexAxis: 'x',
+            plugins: {
+                
+                
+            }
+        }
+    });
+});
+</script>
