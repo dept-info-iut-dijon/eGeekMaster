@@ -1,11 +1,11 @@
 <!-- autor : Lola Cohidon -->
-<link rel="stylesheet" href="Public/css/followUp4.css">
+<link rel="stylesheet" href="Public/css/followUp15.css">
 <script src="Public/Animation_js/followUp2.js"></script>
 <div id = "viewFollowUp">
 
     <!-- Header -->
     <div id="Person">
-        <h1>Surname Name</h1> <!--Displaying the user's first and last name-->
+        <h1 id="PersonTitle">Surname Name</h1> <!--Displaying the user's first and last name-->
     </div>
     <!--Buttons-->
     <div class="buttons">
@@ -14,10 +14,7 @@
         <button id="suiviG" >Overall tracking</button>
     </div>
     
-    <!-- Global Text -->
-    <div id="globalText">
-        <canvas id="myChart2"></canvas>
-    </div>
+    
 </div>
 
 

@@ -13,17 +13,20 @@ body {
 
 /* Styles for the person information */
 #Person {
-    position: absolute;
-    top: 50px;
-    left: 10px;
+    
+    /* Increased font size for first and last name */
+}
+
+#PersonTitle{
     color: black;
-    font-size: 2px; /* Increased font size for first and last name */
+    font-size: 45px; 
+
+    text-align: left;
 }
 
 /* Styles for the buttons container */
 .buttons {
     text-align: center;
-    margin-top: 120px;
     display: flex;
     justify-content: space-around;
 }
@@ -40,11 +43,6 @@ body {
     border: 1px solid black;
 }
 
-/* Styles for the content area */
-.content {
-    margin-top: 50px;
-    text-align: center;
-}
 
 /* Styles for the container of detailed buttons */
 .button-container {
@@ -65,6 +63,11 @@ body {
 .button-detail:hover {
     transform: scale(0.95); /* Scale down the button on hover */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow on hover */
+}
+
+#content {
+    margin-top: 50px;
+    text-align: center;
 }
 
 /* Styles for the container of button images */
@@ -100,6 +103,7 @@ body {
 #suiviD, #suiviG {
     font-family: "Comic Sans MS", sans-serif;
     font-size: 15px;
+    top: 200px;
     width: 200px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
     padding: 10px 20px; /* Increase button size */
@@ -124,10 +128,8 @@ body {
 
 /* Styles for "Année 2023/2024" */
 #globalText {
-    position: absolute;
-    top: 250px; 
-    left: 20px; 
     font-size: 18px; 
+    margin-top: 20px;
 }
 
 /* Media queries for responsiveness */
@@ -152,7 +154,7 @@ body {
         padding: 5px 10px;
     }
     
-    .content {
+    #content {
         margin-top: 30px; 
     }
     
