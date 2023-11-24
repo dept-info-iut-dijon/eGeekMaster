@@ -27,7 +27,7 @@
                 return $myHome;
             } catch (Exception $e) {
                 // if error, we are redirect to the index page with an error
-                $errorMessage = "An error occured while adding a home";
+                $errorMessage = "An error occured while adding the home";
                 header("Location : index.php?action=MyHome&errorMessage".urlencode($errorMessage));
                 exit();
             }
@@ -49,7 +49,26 @@
                 return $myHome;
             } catch (Exception $e) {
                 // if error, we are redirect to the index page with an error
-                $errorMessage = "An error occured while updating a home";
+                $errorMessage = "An error occured while updating the home";
+                header("Location : index.php?action=MyHome&errorMessage".urlencode($errorMessage));
+                exit();
+            }
+        }
+
+        /**
+         * Delete a home in the database
+         * @author Enzo
+         * @param $idMyHome id of myHome
+         */
+        public function DeleteMyHome(int $idMyHome) : void {
+            try {
+                $sql = "DELETE FROM myhome WHERE idMyHome = :value1";   
+                $this->executerRequete($sql, [
+                    ":value1"=> $idMyHome
+                ]);
+            } catch (Exception $e) {
+                // if error, we are redirect to the index page with an error
+                $errorMessage = "An error occured while deleting the home";
                 header("Location : index.php?action=MyHome&errorMessage".urlencode($errorMessage));
                 exit();
             }
