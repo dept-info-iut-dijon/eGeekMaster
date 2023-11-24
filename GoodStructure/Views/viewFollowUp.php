@@ -20,7 +20,7 @@ author : Théo Cornu
     </div>
     <!--Detailed tracking-->
     <input type="hidden" id="data2" value="<?= htmlspecialchars(json_encode($taskCountPerYearMonth)) ?>">
-    <input type="text" id="data3" value="<?= htmlspecialchars(json_encode($taskPercent)) ?>">
+    <input type="hidden" id="data3" value="<?= htmlspecialchars(json_encode($taskPercent)) ?>">
 
     
 </div>
