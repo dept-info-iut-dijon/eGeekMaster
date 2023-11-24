@@ -1,6 +1,5 @@
-<!-- author: Théo Cornu
-author : Lola Cohidon
-author: Théo Cornu-->
+<!-- author : Lola Cohidon
+     author: Théo Cornu-->
 <link rel="stylesheet" href="Public/css/reference3.css">
 <div id="ContaintReference">
     <!--Search bar-->
@@ -110,8 +109,8 @@ author: Théo Cornu-->
                     <p class="description">Creation of weekly menus, Meal preparation, Table setting and clearing.</p>
                     <p class="value">4</p>
                     <p class="value">15€</p>
-                    <p class="exampleMinutes">1 (a quarter of an hour = 15 minutes)</p>
-                    <p class="exampleMoney">3,75€</p>
+                    <p class="exampleMinutes"> Example : 1 (a quarter of an hour = 15 minutes)</p>
+                    <p class="exampleMoney"> Example :3,75€</p>
                 </div>
             </td>
             <td class="tdToNotDisplay">Creation of weekly menus, Meal preparation, Table setting and clearing.</td>

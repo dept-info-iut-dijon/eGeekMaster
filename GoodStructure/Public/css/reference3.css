@@ -235,9 +235,9 @@ td {
     overflow: hidden; /* hide contents until expanded */
     transition: max-height 0.3s ease-out; /* approximate max height */
   }
-
+ 
   .extra-info.visible {
-    max-height: 200px; /* approximate max height */
+    max-height: 400px; /* approximate max height */
   }
 }
 
@@ -251,3 +251,6 @@ td {
     display: block; 
   }
 }
+
+
+

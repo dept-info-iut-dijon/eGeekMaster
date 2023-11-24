@@ -105,6 +105,3 @@ scrollToTopButton.addEventListener("click", Search);
 
 
 
-
-  
-
