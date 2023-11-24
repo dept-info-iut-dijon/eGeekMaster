@@ -17,7 +17,7 @@
          * @param $myHome add a MyHome object
          * @return MyHome return a MyHome object
          */
-        public function AddMyHome(MyHome $myHome) : MyHome {
+        public function CreateMyHome(MyHome $myHome) : MyHome {
             try {
                 $sql = 'INSERT INTO myhome (codeMyHome, nameMyHome) VALUES (:value1, :value2)';
                 $this->executerRequete($sql, [
