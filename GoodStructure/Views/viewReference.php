@@ -40,7 +40,10 @@ author: Théo Cornu-->
         <tr>
             <th class="thToDisplay">Activity</th>
             <th class="thToNotDisplay">Descriptive</th>
-            <th class="thToNotDisplay">Value 1/4</th>
+            <th class="thToNotDisplay">Quarter-hour value</th>
+            <th class="thToNotDisplay">Monetary value</th>
+            <th class="thToNotDisplay">Example : Quarter-hour value</th>
+            <th class="thToNotDisplay">Example : Monetary value</th>
         </tr>
         <!-- Cleaning -->
         <tr>
@@ -55,11 +58,17 @@ author: Théo Cornu-->
                 </div>
                 <div class="extra-info">
                     <p class="description">Cleaning surfaces, floors, sinks, toilets and household appliances.</p>
-                    <p class="value">1</p>
+                    <p class="value">4</p>
+                    <p class="money">15€</p>
+                    <p class="exampleMinutes">Cleaning will take 1 hour, so the value is 4 (because 15 minutes multiplied by 4 equals 60 minutes or 1 hour)</p>
+                    <p class="exampleMoney">The monetary value of one hour of cleaning is 15€</p>
                 </div>
             </td>
             <td class="tdToNotDisplay">Cleaning surfaces, floors, sinks, toilets and household appliances.</td>
-            <td class="tdToNotDisplay">1</td>
+            <td class="tdToNotDisplay">4</td>
+            <td class="tdToNotDisplay">15€</td>
+            <td class ="tdToNotDisplay">Cleaning will take 1 hour, so the value is 4 (because 15 minutes multiplied by 4 equals 60 minutes or 1 hour)</td>
+            <td class ="tdToNotDisplay">The monetary value of one hour of cleaning is 15€</td>
         </tr>
         <!-- Shopping -->
         <tr>
@@ -74,11 +83,17 @@ author: Théo Cornu-->
                 </div>
                 <div class="extra-info">
                     <p class="description">Purchase of all supplies necessary for the household (food, medications, furniture, DIY and garden equipment, children's clothing, etc.).</p>
-                    <p class="value">1</p>
+                    <p class="value">4</p>
+                    <p class="value">15€</p>
+                    <p class="exampleMinutes">4</p>
+                    <p class="exampleMoney">15€</p>
                 </div>
             </td>
             <td class="tdToNotDisplay">Purchase of all supplies necessary for the household (food, medications, furniture, DIY and garden equipment, children's clothing, etc.).</td>
-            <td class="tdToNotDisplay">1</td>
+            <td class="tdToNotDisplay">4</td>
+            <td class="tdToNotDisplay">15€</td>
+            <td class ="tdToNotDisplay">4</td>
+            <td class ="tdToNotDisplay">15€</td>
         </tr>
         <!-- Cooking -->
         <tr>
@@ -93,11 +108,17 @@ author: Théo Cornu-->
                 </div>
                 <div class="extra-info">
                     <p class="description">Creation of weekly menus, Meal preparation, Table setting and clearing.</p>
-                    <p class="value">1</p>
+                    <p class="value">4</p>
+                    <p class="value">15€</p>
+                    <p class="exampleMinutes">1 (a quarter of an hour = 15 minutes)</p>
+                    <p class="exampleMoney">3,75€</p>
                 </div>
             </td>
             <td class="tdToNotDisplay">Creation of weekly menus, Meal preparation, Table setting and clearing.</td>
-            <td class="tdToNotDisplay">1</td>
+            <td class="tdToNotDisplay">4</td>
+            <td class="tdToNotDisplay">15€</td>
+            <td class ="tdToNotDisplay">1 (a quarter of an hour = 15 minutes)</td>
+            <td class ="tdToNotDisplay">3,75€</td>
         </tr>
         <!-- Dishes -->
         <tr>
@@ -112,11 +133,17 @@ author: Théo Cornu-->
                 </div>
                 <div class="extra-info">
                     <p class="description">By hand or using the dishwasher (loading and unloading). Storage in cupboards.</p>
-                    <p class="value">1</p>
+                    <p class="value">4</p>
+                    <p class="value">15€</p>
+                    <p class="exampleMinutes">2 (30 minutes)</p>
+                    <p class="exampleMoney">7,5€</p>
                 </div>
             </td>
             <td class="tdToNotDisplay">By hand or using the dishwasher (loading and unloading). Storage in cupboards.</td>
-            <td class="tdToNotDisplay">1</td>
+            <td class="tdToNotDisplay">4</td>
+            <td class="tdToNotDisplay">15€</td>
+            <td class ="tdToNotDisplay">2 (30 minutes)</td>
+            <td class ="tdToNotDisplay">7,5€</td>
         </tr>
         <!-- Laundry -->
         <tr>
@@ -131,11 +158,17 @@ author: Théo Cornu-->
                 </div>
                 <div class="extra-info">
                     <p class="description">Collecting (putting in the basket), sorting, washing, drying, ironing, and storing.</p>
-                    <p class="value">1</p>
+                    <p class="value">4</p>
+                    <p class="value">15€</p>
+                    <p class="exampleMinutes">4</p>
+                    <p class="exampleMoney">15€</p>
                 </div>
             </td>
             <td class="tdToNotDisplay">Collecting (putting in the basket), sorting, washing, drying, ironing, and storing.</td>
-            <td class="tdToNotDisplay">1</td>
+            <td class="tdToNotDisplay">4</td>
+            <td class="tdToNotDisplay">15€</td>
+            <td class ="tdToNotDisplay">4</td>
+            <td class ="tdToNotDisplay">15€</td>
         </tr>
         <!-- ChildrensCare -->
         <tr>
@@ -150,11 +183,17 @@ author: Théo Cornu-->
                 </div>
                 <div class="extra-info">
                     <p class="description">Physiological needs (getting up, washing, feeding, dressing, caring, and putting to bed).</p>
-                    <p class="value">1</p>
+                    <p class="value">4</p>
+                    <p class="value">15€</p>
+                    <p class="exampleMinutes">8</p>
+                    <p class="exampleMoney">30€</p>
                 </div>
             </td>
             <td class="tdToNotDisplay">Physiological needs (getting up, washing, feeding, dressing, caring, and putting to bed).</td>
-            <td class="tdToNotDisplay">1</td>
+            <td class="tdToNotDisplay">4</td>
+            <td class="tdToNotDisplay">15€</td>
+            <td class ="tdToNotDisplay">8</td>
+            <td class ="tdToNotDisplay">30€</td>
         </tr>
         <!-- ChildsPlay -->
         <tr>
@@ -169,11 +208,17 @@ author: Théo Cornu-->
                 </div>
                 <div class="extra-info">
                     <p class="description">Organization (choosing the game, setting up), participation in activities (starting the game, overall participation, and cleaning up the game).</p>
-                    <p class="value">1</p>
+                    <p class="value">4</p>
+                    <p class="value">15€</p>
+                    <p class="exampleMinutes">4</p>
+                    <p class="exampleMoney">15€</p>
                 </div>
             </td>
             <td class="tdToNotDisplay">Organization (choosing the game, setting up), participation in activities (starting the game, overall participation, and cleaning up the game).</td>
-            <td class="tdToNotDisplay">1</td>
+            <td class="tdToNotDisplay">4</td>
+            <td class="tdToNotDisplay">15€</td>
+            <td class ="tdToNotDisplay">4</td>
+            <td class ="tdToNotDisplay">15€</td>
         </tr>
         <!-- ChildrensJourney -->
         <tr>
@@ -188,11 +233,17 @@ author: Théo Cornu-->
                 </div>
                 <div class="extra-info">
                     <p class="description">To school, after-school care (recreation center + cafeteria), babysitter, friends, doctor, leisure activities (sports/culture).</p>
-                    <p class="value">1</p>
+                    <p class="value">4</p>
+                    <p class="value">15€</p>
+                    <p class="exampleMinutes">8</p>
+                    <p class="exampleMoney">30€</p>
                 </div>
             </td>
             <td class="tdToNotDisplay">To school, after-school care (recreation center + cafeteria), babysitter, friends, doctor, leisure activities (sports/culture).</td>
-            <td class="tdToNotDisplay">1</td>
+            <td class="tdToNotDisplay">4</td>
+            <td class="tdToNotDisplay">15€</td>
+            <td class ="tdToNotDisplay">8</td>
+            <td class ="tdToNotDisplay">30€</td>
         </tr>
         <!-- ParentJourney -->
         <tr>
@@ -207,11 +258,17 @@ author: Théo Cornu-->
                 </div>
                 <div class="extra-info">
                     <p class="description">For dependent parent.</p>
-                    <p class="value">1</p>
+                    <p class="value">4</p>
+                    <p class="value">15€</p>
+                    <p class="exampleMinutes">3</p>
+                    <p class="exampleMoney">11,25€</p>
                 </div>
             </td>
             <td class="tdToNotDisplay">For dependent parent.</td>
-            <td class="tdToNotDisplay">1</td>
+            <td class="tdToNotDisplay">4</td>
+            <td class="tdToNotDisplay">15€</td>
+            <td class ="tdToNotDisplay">3</td>
+            <td class ="tdToNotDisplay">11,25€</td>
         </tr>
         <!-- ParentCare -->
         <tr>
@@ -226,11 +283,17 @@ author: Théo Cornu-->
                 </div>
                 <div class="extra-info">
                     <p class="description">Assistance, care for a dependent parent, administrative management of files (health, home care, etc.), transportation (health, leisure).</p>
-                    <p class="value">1</p>
+                    <p class="value">4</p>
+                    <p class="value">15€</p>
+                    <p class="exampleMinutes">5</p>
+                    <p class="exampleMoney">18,75€</p>
                 </div>
             </td>
             <td class="tdToNotDisplay">Assistance, care for a dependent parent, administrative management of files (health, home care, etc.), transportation (health, leisure).</td>
-            <td class="tdToNotDisplay">1</td>
+            <td class="tdToNotDisplay">4</td>
+            <td class="tdToNotDisplay">15€</td>
+            <td class ="tdToNotDisplay">5</td>
+            <td class ="tdToNotDisplay">18,75€</td>
         </tr>
         <!-- Administrative -->
         <tr>
@@ -245,11 +308,17 @@ author: Théo Cornu-->
                 </div>
                 <div class="extra-info">
                     <p class="description">Taxes, bills, administrative registrations, health insurance management, bank account management, subscriptions, mail posting, and making reservations.</p>
-                    <p class="value">1</p>
+                    <p class="value">4</p>
+                    <p class="value">15€</p>
+                    <p class="exampleMinutes">4</p>
+                    <p class="exampleMoney">15€</p>
                 </div>
             </td>
             <td class="tdToNotDisplay">Taxes, bills, administrative registrations, health insurance management, bank account management, subscriptions, mail posting, and making reservations.</td>
-            <td class="tdToNotDisplay">1</td>
+            <td class="tdToNotDisplay">4</td>
+            <td class="tdToNotDisplay">15€</td>
+            <td class ="tdToNotDisplay">4</td>
+            <td class ="tdToNotDisplay">15€</td>
         </tr>
         <!-- PetCare -->
         <tr>
@@ -264,11 +333,17 @@ author: Théo Cornu-->
                 </div>
                 <div class="extra-info">
                     <p class="description">Food, Washing/Brushing, Walk, Litter change, Vet appointment, Care for.</p>
-                    <p class="value">1</p>
+                    <p class="value">4</p>
+                    <p class="value">15€</p>
+                    <p class="exampleMinutes">4</p>
+                    <p class="exampleMoney">15€</p>
                 </div>
             </td>
             <td class="tdToNotDisplay">Food, Washing/Brushing, Walk, Litter change, Vet appointment, Care for.</td>
-            <td class="tdToNotDisplay">1</td>
+            <td class="tdToNotDisplay">4</td>
+            <td class="tdToNotDisplay">15€</td>
+            <td class ="tdToNotDisplay">4</td>
+            <td class ="tdToNotDisplay">15€</td>
         </tr>
         <!-- Gardening -->
         <tr>
@@ -283,11 +358,17 @@ author: Théo Cornu-->
                 </div>
                 <div class="extra-info">
                     <p class="description">Any necessary outdoor tasks: mow, prune, treat, water, harvest.</p>
-                    <p class="value">1</p>
+                    <p class="value">4</p>
+                    <p class="value">15€</p>
+                    <p class="exampleMinutes">6</p>
+                    <p class="exampleMoney">22,5€</p>
                 </div>
             </td>
             <td class="tdToNotDisplay">Any necessary outdoor tasks: mow, prune, treat, water, harvest.</td>
-            <td class="tdToNotDisplay">1</td>
+            <td class="tdToNotDisplay">4</td>
+            <td class="tdToNotDisplay">15€</td>
+            <td class ="tdToNotDisplay">6</td>
+            <td class ="tdToNotDisplay">22,5€</td>
         </tr>
         <!-- DIY -->
         <tr>
@@ -302,11 +383,17 @@ author: Théo Cornu-->
                 </div>
                 <div class="extra-info">
                     <p class="description">Repairs, necessary minor work (plaster, painting, plumbing, etc.).</p>
-                    <p class="value">1</p>
+                    <p class="value">4</p>
+                    <p class="value">15€</p>
+                    <p class="exampleMinutes">4</p>
+                    <p class="exampleMoney">15€</p>
                 </div>
             </td>
             <td class="tdToNotDisplay">Repairs, necessary minor work (plaster, painting, plumbing, etc.).</td>
-            <td class="tdToNotDisplay">1</td>
+            <td class="tdToNotDisplay">4</td>
+            <td class="tdToNotDisplay">15€</td>
+            <td class ="tdToNotDisplay">4</td>
+            <td class ="tdToNotDisplay">15€</td>
         </tr>
         <!-- HouseholdManagement -->
         <tr>
@@ -321,11 +408,17 @@ author: Théo Cornu-->
                 </div>
                 <div class="extra-info">
                     <p class="description">Service provider management (search, hiring, follow-up), availability management for parcel reception, leisure management.</p>
-                    <p class="value">1</p>
+                    <p class="value">4</p>
+                    <p class="value">15€</p>
+                    <p class="exampleMinutes">2</p>
+                    <p class="exampleMoney">7,5€</p>
                 </div>
             </td>
             <td class="tdToNotDisplay">Service provider management (search, hiring, follow-up), availability management for parcel reception, leisure management.</td>
-            <td class="tdToNotDisplay">1</td>
+            <td class="tdToNotDisplay">4</td>
+            <td class="tdToNotDisplay">15€</td>
+            <td class ="tdToNotDisplay">2</td>
+            <td class ="tdToNotDisplay">7,5€</td>
         </tr>
     </table>
     
