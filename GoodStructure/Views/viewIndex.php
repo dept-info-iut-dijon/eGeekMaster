@@ -23,10 +23,10 @@
             <div class="imageDuDeb bas"></div>
         </div>
         <h1>
-            Welcome to Family'Easy
+            <?= $translations[$language]['index_title']?>    
         </h1>
         <p>
-            Family'Easy is an application dedicated to calculating the monetary and time value of domestic and parental tasks within couples. Our goal is to highlight the unequal distribution of household and parenting work in a household.
+            <?= $translations[$language]['index_desc']?>
         </p>
     </div>
 
@@ -35,7 +35,7 @@
     <div id="SomeChiffre">
         <div id="SomeChiffreTexte">
             <p>
-                With Family'Easy, you can track and value your daily household and parenting tasks, bringing awareness to the fairness of these responsibilities.
+                <?= $translations[$language]['index_SomeChiffreTexte']?>
             </p>
         </div>
         <div class="SmileyChiffre a">
@@ -47,7 +47,7 @@
                     100+
                 </h3>
                 <p>
-                    Satisfied Families
+                    <?= $translations[$language]['index_Satisfied_Families']?>
                 </p>
             </div>
         </div>
@@ -60,7 +60,7 @@
                     +23k
                 </h3>
                 <p>
-                    Downloads
+                    <?= $translations[$language]['index_downloads']?>    
                 </p>
             </div>
         </div>
@@ -73,7 +73,7 @@
                     95%
                 </h3>
                 <p>
-                    User Satisfaction
+                    <?= $translations[$language]['index_User_Satisfaction']?>
                 </p>
             </div>
         </div>
@@ -94,8 +94,8 @@
                         
                             <fieldset>
                                 <label for="pixi">Pixi</label>
-                                <label for="Statut">Helper Agent</label>
-                                <input type="button" value="Messages">
+                                <label for="Statut"><?= $translations[$language]['index_pixi_status']?></label>
+                                <input type="button" value="<?=$translations[$language]['index_pixi_button_Messages']?>">
                             </fieldset>
                         </div>
                     </div>
@@ -104,12 +104,12 @@
 
             <div>
                 <h2>
-                    Meet Pixi - Your Helper Agent
+                    <?= $translations[$language]['index_pixi_meet_pixi']?>
                 </h2>
                 <p>
-                    Pixi is here to assist you in managing your household and parenting tasks efficiently. Ask Pixi for guidance and support to make your family life easier.
+                    <?= $translations[$language]['index_pixi_desc']?>
                 </p>
-                <input id="MAU" type="button" value="Learn More About Us">
+                <input id="MAU" type="button" value="<?=$translations[$language]['index_pixi_button_LearnMore']?>">
             </div>
         </div>
     </div>
@@ -118,10 +118,10 @@
 
     <div id="Tuto">
         <h2>
-            Getting Started with Family'Easy
+            <?= $translations[$language]['index_tuto_h2']?>
         </h2>
         <p>
-            Discover how to use Family'Easy to improve your family's organization and reduce the workload imbalance.
+            <?= $translations[$language]['index_tuto_p']?>
         </p>
         <video width="320" height="240" controls>
             <source src="tutorial_video.mp4" type="video/mp4">
@@ -133,7 +133,7 @@
     <div id="Publication">
         <div id="PubliGauche">
             <h4>
-                What Our Clients Say
+                <?= $translations[$language]['index_PubliGauche_h4']?>
             </h4>
             <div>
                 <div class="slider-controls">
@@ -147,7 +147,7 @@
         <div class="slider" id="slider_1">
             <div class="slider-panel active">
                 <p>
-                    Family'Easy has transformed our family life. It's now easier to share responsibilities and maintain a balanced lifestyle.
+                    <?= $translations[$language]['index_slider_slider-panel_active_p']?>
                 </p>
                 <div class="people">
                     <div id="imgA"></div>
@@ -155,13 +155,13 @@
                         <h2>
                             Jane Doe
                         </h2>
-                        <h5>Happy User</h5>
+                        <h5><?= $translations[$language]['index_slider_imgA_h5']?></h5>
                     </div>
                 </div>
             </div>
             <div class="slider-panel">
                 <p>
-                    We can't imagine managing our household without Family'Easy. It's a game-changer for busy families like ours.
+                    <?= $translations[$language]['index_slider_slider-panel_1_p']?>
                 </p>
                 <div class="people">
                     <div id="imgB"></div>
@@ -169,13 +169,13 @@
                         <h2>
                             John Smith
                         </h2>
-                        <h5>Satisfied Customer</h5>
+                        <h5><?= $translations[$language]['index_slider_imgB_h5']?></h5>
                     </div>
                 </div>
             </div>
             <div class="slider-panel">
                 <p>
-                    Thanks to Family'Easy, our family is happier, and we have more quality time together. It's an essential tool for every home.
+                    <?= $translations[$language]['index_slider_slider-panel_2_p']?>
                 </p>
                 <div class="people">
                     <div id="imgC"></div>
@@ -183,13 +183,13 @@
                         <h2>
                             Emily Wilson
                         </h2>
-                        <h5>Grateful Parent</h5>
+                        <h5><?= $translations[$language]['index_slider_imgC_h5']?></h5>
                     </div>
                 </div>
             </div>
             <div class="slider-panel">
                 <p>
-                    Family'Easy has made our life easier and more enjoyable. We recommend it to all families looking for balance.
+                <?= $translations[$language]['index_slider_slider-panel_3_p']?>
                 </p>
                 <div class="people">
                     <div id="imgD"></div>
@@ -197,7 +197,7 @@
                         <h2>
                             Mark Johnson
                         </h2>
-                        <h5>Delighted User</h5>
+                        <h5><?= $translations[$language]['index_slider_imgD_h5']?></h5>
                     </div>
                 </div>
             </div>
