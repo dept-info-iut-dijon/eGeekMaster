@@ -18,7 +18,7 @@ function VerifiedClicked() {
     var companio = document.getElementById("companion");
 
     if (divTaskRegistration != null) {
-        if (divTaskRegistration.style.right == "10%") {
+        if (divTaskRegistration.style.right == "4%") {
             companio.style.transition = "top 0.5s";
             companio.style.top = "320px"; // Baisser le compagnon de 50px lorsque la divTaskRegistration est affichée
         }
