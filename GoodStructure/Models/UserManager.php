@@ -1,10 +1,12 @@
 <?php
-// This file manages all operations related to User (registration) directly with the database.
 require_once 'Model.php';
 require_once 'User.php';
 require_once 'LoginManager.php';
 require_once 'DashBoardManager.php';
-
+/**
+ * This file manages all operations related to User (registration) directly with the database
+ * @author Théo Cornu
+ */
 class UserManager extends Model
 {
 
