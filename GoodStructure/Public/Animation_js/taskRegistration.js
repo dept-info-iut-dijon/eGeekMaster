@@ -25,10 +25,10 @@ function DisplayTaskRegistration() {
     buttonTaskAdd.addEventListener("click", function () {
         if (taskR.style.right === "0px") {
             // Close the task registration part
-            taskR.style.right = "-350px";
+            taskR.style.right = "-650px";
         } else {
             // Open the task registration part
-            taskR.style.right = "10%";
+            taskR.style.right = "4%";
             titleTask.textContent = "Registration A TASK"; // Change the content of the h1 element
             submit.value = "Register";
             formTask.action = "index.php?action=TaskRegistration";
@@ -43,10 +43,10 @@ function DisplayTaskRegistration() {
     buttonTaskModif.addEventListener("click", function () {
         if (taskR.style.right === "0px") {
             // Close the task registration part
-            taskR.style.right = "-350px";
+            taskR.style.right = "-650px";
         } else {
             // Open the task registration part
-            taskR.style.right = "10%";
+            taskR.style.right = "4%";
             titleTask.textContent = "MODIFY A TASK"; // Change the content of the h1 element
             submit.value = "Modify";
             formTask.action = "index.php?action=TaskModification";

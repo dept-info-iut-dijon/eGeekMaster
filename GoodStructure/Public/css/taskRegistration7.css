@@ -1,5 +1,6 @@
 /*
     author : Enzo
+    author : Théo C
 */
 
 .divBoutonsTaches{
@@ -13,17 +14,17 @@
 
 /*TASK REGISTRATION*/
 #divTaskRegistration{
-    width: 35%;
+    width: 300px;
     display: flex;
-    align-items: right;
+    margin-right: 60px;
     justify-content: center;
     border-radius: 8px;
     flex-direction: row;
 
     z-index: 5;
     position: fixed;
-    right: -350px;
-    width: 350px;
+    right: -650px;
+    
     transition: right 0.5s ease-in-out;
 }
 
@@ -37,8 +38,16 @@
 
 /*FORM*/
 #formDiv{
-    width: 100%;
-    height: 100%;
+    width: fit-content;
+    height: fit-content;
+}
+
+#formTask{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 fieldset{
@@ -92,13 +101,14 @@ fieldset{
 
 /*LIFETIME*/
 #lifetime{
-    height: 5vh;
+    left: 50%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: left;
     align-items: center;
     margin-left: 3%;
-    margin-right: 2%;
-    width: 45vh;
+    /* margin-right: 2%; */
+    /* width: 45vh; */
     margin-bottom: 3%;
 }
 
@@ -117,7 +127,7 @@ fieldset{
     margin-right: 2%;
     padding: 0%;
     border-radius: 5px;
-    width: 6vw;
+    width: 60px;
     margin: 0px;
     padding-bottom: 1%;
     border-style: solid;
@@ -164,13 +174,13 @@ fieldset{
 }
 
 #dateDiv{
-    margin-left: 3%;
+    margin-left: 30%;
 }
 
 #date{
     border-radius: 5px;
-    margin-left: 3;
-    padding: 2%;
+    
+   
     background-color: #ECE4E3;
     border-style: solid;
     border-width: 1px;
@@ -245,5 +255,23 @@ fieldset{
 #submit:hover{
     cursor: pointer;
     font-weight: bold;
+}
+
+/*responsive task registration*/
+@media only screen and (max-width: 960px){
+    #dateDiv{
+        flex-direction: column;
+        flex-wrap: wrap;
+        right: 90px;
+    }
+}
+
+@media only screen and (max-width: 1450px){
+    #BoutonAction{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
 }
 
