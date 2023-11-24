@@ -5,36 +5,34 @@
 
 const scrollToTopButton = document.getElementById("btn-icon-content");
 
-// Get the text from the input field reserch and Displays suggestions under the input text as you type the text and cherch in the page the location of the text to move the user to the location
+// Stockez les coordonnées de la recherche précédente
+var lastSearchRect = null;
+
 function Search() {
     // Get the text from the input field
     var inputText = document.getElementById("research").value;
-    
 
     // Get the location of the text on the page by the value of the input text si celle ci n'est pas null
-    if (inputText == "") {
-        var location = document.getElementById("HouseholdManagement");
-    }
-    else {
-        var location = document.getElementById(inputText);
-    }
+    var location = inputText == "" ? document.getElementById("HouseholdManagement") : document.getElementById(inputText);
 
-    var rect = location.getBoundingClientRect();
-    function scrollToLocation() {
-        window.scrollTo({
-            behavior: "smooth",
-            top: rect.y
-        });
-    }
+    // Stockez les coordonnées actuelles pour une utilisation ultérieure
+    lastSearchRect = location.getBoundingClientRect();
 
-    // Sélectionnez le bouton pour remonter en haut
-
-    // Ajoutez un gestionnaire d'événement pour le clic sur le bouton
-    scrollToTopButton.addEventListener("click", scrollToLocation);
-
-
+    // Effectuez le défilement vers la nouvelle position
+    scrollToLocation();
 }
 
+function scrollToLocation() {
+    if (lastSearchRect) {
+        window.scrollTo({
+            behavior: "smooth",
+            top: lastSearchRect.y
+        });
+    }
+}
+
+// Ajoutez un gestionnaire d'événement pour le clic sur le bouton
+scrollToTopButton.addEventListener("click", scrollToLocation);
 
 
 
@@ -47,6 +45,9 @@ function showDescription() {
   var checkboxes = document.getElementsByClassName('tdToNotDisplay')
   // Get the element with the id "selectbox"
   var select = document.getElementsByClassName("tdToDisplay");
+
+  
+
   // If the checkboxes are not expanded
   if (!expanded) {
     select.style.borderBottomLeftRadius = "0px";

@@ -188,6 +188,10 @@ td {
   justify-content: center; /* Justify content */
 }
 
+.extra-info h2 {
+  font-size: 1rem; /* Font size */
+}
+
 /*RESPONSIVE*/
 
 /* 
@@ -237,7 +241,7 @@ td {
   }
  
   .extra-info.visible {
-    max-height: 400px; /* approximate max height */
+    max-height: 700px; /* approximate max height */
   }
 }
 

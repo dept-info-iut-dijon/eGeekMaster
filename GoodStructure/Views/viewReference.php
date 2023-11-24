@@ -1,6 +1,6 @@
 <!-- author : Lola Cohidon
      author: Théo Cornu-->
-<link rel="stylesheet" href="Public/css/reference3.css">
+<link rel="stylesheet" href="Public/css/reference4.css">
 <div id="ContaintReference">
     <!--Search bar-->
     <div class="search">
@@ -56,11 +56,17 @@
                     </div>
                 </div>
                 <div class="extra-info">
+                <h2>Description:</h2>
                     <p class="description">Cleaning surfaces, floors, sinks, toilets and household appliances.</p>
+                    <h2>Quarter-hour value:</h2>
                     <p class="value">4</p>
+                    <h2>Monetary value:</h2>
                     <p class="money">15€</p>
+                    <h2>Example - Quarter-hour value:</h2>
                     <p class="exampleMinutes">Cleaning will take 1 hour, so the value is 4 (because 15 minutes multiplied by 4 equals 60 minutes or 1 hour)</p>
+                    <h2>Example - Monetary value:</h2>
                     <p class="exampleMoney">The monetary value of one hour of cleaning is 15€</p>
+                    </div>
                 </div>
             </td>
             <td class="tdToNotDisplay">Cleaning surfaces, floors, sinks, toilets and household appliances.</td>
@@ -81,11 +87,17 @@
                     </div>
                 </div>
                 <div class="extra-info">
+                    <h2>Description:</h2>
                     <p class="description">Purchase of all supplies necessary for the household (food, medications, furniture, DIY and garden equipment, children's clothing, etc.).</p>
+                    <h2>Quarter-hour value:</h2>
                     <p class="value">4</p>
-                    <p class="value">15€</p>
+                    <h2>Monetary value:</h2>
+                    <p class="money">15€</p>
+                    <h2>Example - Quarter-hour value:</h2>
                     <p class="exampleMinutes">4</p>
+                    <h2>Example - Monetary value:</h2>
                     <p class="exampleMoney">15€</p>
+                    </div>
                 </div>
             </td>
             <td class="tdToNotDisplay">Purchase of all supplies necessary for the household (food, medications, furniture, DIY and garden equipment, children's clothing, etc.).</td>
@@ -106,10 +118,15 @@
                     </div>
                 </div>
                 <div class="extra-info">
+                    <h2>Description:</h2>
                     <p class="description">Creation of weekly menus, Meal preparation, Table setting and clearing.</p>
+                    <h2>Quarter-hour value:</h2>
                     <p class="value">4</p>
-                    <p class="value">15€</p>
+                    <h2>Monetary value:</h2>
+                    <p class="money">15€</p>
+                    <h2>Example - Quarter-hour value:</h2>
                     <p class="exampleMinutes"> Example : 1 (a quarter of an hour = 15 minutes)</p>
+                    <h2>Example - Monetary value:</h2>
                     <p class="exampleMoney"> Example :3,75€</p>
                 </div>
             </td>
@@ -131,10 +148,15 @@
                     </div>
                 </div>
                 <div class="extra-info">
+                    <h2>Description:</h2>
                     <p class="description">By hand or using the dishwasher (loading and unloading). Storage in cupboards.</p>
+                    <h2>Quarter-hour value:</h2>
                     <p class="value">4</p>
-                    <p class="value">15€</p>
+                    <h2>Monetary value:</h2>
+                    <p class="money">15€</p>
+                    <h2>Example - Quarter-hour value:</h2>
                     <p class="exampleMinutes">2 (30 minutes)</p>
+                    <h2>Example - Monetary value:</h2>
                     <p class="exampleMoney">7,5€</p>
                 </div>
             </td>
@@ -156,10 +178,15 @@
                     </div>
                 </div>
                 <div class="extra-info">
+                    <h2>Description:</h2>
                     <p class="description">Collecting (putting in the basket), sorting, washing, drying, ironing, and storing.</p>
+                    <h2>Quarter-hour value:</h2>
                     <p class="value">4</p>
-                    <p class="value">15€</p>
+                    <h2>Monetary value:</h2>
+                    <p class="money">15€</p>
+                    <h2>Example - Quarter-hour value:</h2>
                     <p class="exampleMinutes">4</p>
+                    <h2>Example - Monetary value:</h2>
                     <p class="exampleMoney">15€</p>
                 </div>
             </td>
@@ -181,10 +208,15 @@
                     </div>
                 </div>
                 <div class="extra-info">
+                    <h2>Description:</h2>
                     <p class="description">Physiological needs (getting up, washing, feeding, dressing, caring, and putting to bed).</p>
+                    <h2>Quarter-hour value:</h2>
                     <p class="value">4</p>
-                    <p class="value">15€</p>
+                    <h2>Monetary value:</h2>
+                    <p class="money">15€</p>
+                    <h2>Example - Quarter-hour value:</h2>
                     <p class="exampleMinutes">8</p>
+                    <h2>Example - Monetary value:</h2>
                     <p class="exampleMoney">30€</p>
                 </div>
             </td>
@@ -206,10 +238,15 @@
                     </div>
                 </div>
                 <div class="extra-info">
+                    <h2>Description:</h2>
                     <p class="description">Organization (choosing the game, setting up), participation in activities (starting the game, overall participation, and cleaning up the game).</p>
+                    <h2>Quarter-hour value:</h2>
                     <p class="value">4</p>
-                    <p class="value">15€</p>
+                    <h2>Monetary value:</h2>
+                    <p class="money">15€</p>
+                    <h2>Example - Quarter-hour value:</h2>
                     <p class="exampleMinutes">4</p>
+                    <h2>Example - Monetary value:</h2>
                     <p class="exampleMoney">15€</p>
                 </div>
             </td>
@@ -231,11 +268,16 @@
                     </div>
                 </div>
                 <div class="extra-info">
-                    <p class="description">To school, after-school care (recreation center + cafeteria), babysitter, friends, doctor, leisure activities (sports/culture).</p>
+                    <h2>Description:</h2>
+                    <p class="description">Accompanying and collecting children from school, extracurricular activities, medical appointments, etc.</p>
+                    <h2>Quarter-hour value:</h2>
                     <p class="value">4</p>
-                    <p class="value">15€</p>
-                    <p class="exampleMinutes">8</p>
-                    <p class="exampleMoney">30€</p>
+                    <h2>Monetary value:</h2>
+                    <p class="money">15€</p>
+                    <h2>Example - Quarter-hour value:</h2>
+                    <p class="exampleMinutes">1</p>
+                    <h2>Example - Monetary value:</h2>
+                    <p class="exampleMoney">3,75€</p>
                 </div>
             </td>
             <td class="tdToNotDisplay">To school, after-school care (recreation center + cafeteria), babysitter, friends, doctor, leisure activities (sports/culture).</td>
@@ -256,10 +298,15 @@
                     </div>
                 </div>
                 <div class="extra-info">
-                    <p class="description">For dependent parent.</p>
+                    <h2>Description:</h2>
+                    <p class="description">For accompanying and supporting a dependent parent, including travel, medical appointments, etc.</p>
+                    <h2>Quarter-hour value:</h2>
                     <p class="value">4</p>
-                    <p class="value">15€</p>
+                    <h2>Monetary value:</h2>
+                    <p class="money">15€</p>
+                    <h2>Example - Quarter-hour value:</h2>
                     <p class="exampleMinutes">3</p>
+                    <h2>Example - Monetary value:</h2>
                     <p class="exampleMoney">11,25€</p>
                 </div>
             </td>
@@ -281,10 +328,15 @@
                     </div>
                 </div>
                 <div class="extra-info">
+                    <h2>Description:</h2>
                     <p class="description">Assistance, care for a dependent parent, administrative management of files (health, home care, etc.), transportation (health, leisure).</p>
+                    <h2>Quarter-hour value:</h2>
                     <p class="value">4</p>
-                    <p class="value">15€</p>
+                    <h2>Monetary value:</h2>
+                    <p class="money">15€</p>
+                    <h2>Example - Quarter-hour value:</h2>
                     <p class="exampleMinutes">5</p>
+                    <h2>Example - Monetary value:</h2>
                     <p class="exampleMoney">18,75€</p>
                 </div>
             </td>
@@ -306,10 +358,15 @@
                     </div>
                 </div>
                 <div class="extra-info">
+                    <h2>Description:</h2>
                     <p class="description">Taxes, bills, administrative registrations, health insurance management, bank account management, subscriptions, mail posting, and making reservations.</p>
+                    <h2>Quarter-hour value:</h2>
                     <p class="value">4</p>
-                    <p class="value">15€</p>
+                    <h2>Monetary value:</h2>
+                    <p class="money">15€</p>
+                    <h2>Example - Quarter-hour value:</h2>
                     <p class="exampleMinutes">4</p>
+                    <h2>Example - Monetary value:</h2>
                     <p class="exampleMoney">15€</p>
                 </div>
             </td>
@@ -331,10 +388,15 @@
                     </div>
                 </div>
                 <div class="extra-info">
+                    <h2>Description:</h2>
                     <p class="description">Food, Washing/Brushing, Walk, Litter change, Vet appointment, Care for.</p>
+                    <h2>Quarter-hour value:</h2>
                     <p class="value">4</p>
-                    <p class="value">15€</p>
+                    <h2>Monetary value:</h2>
+                    <p class="money">15€</p>
+                    <h2>Example - Quarter-hour value:</h2>
                     <p class="exampleMinutes">4</p>
+                    <h2>Example - Monetary value:</h2>
                     <p class="exampleMoney">15€</p>
                 </div>
             </td>
@@ -356,10 +418,15 @@
                     </div>
                 </div>
                 <div class="extra-info">
+                    <h2>Description:</h2>
                     <p class="description">Any necessary outdoor tasks: mow, prune, treat, water, harvest.</p>
+                    <h2>Quarter-hour value:</h2>
                     <p class="value">4</p>
-                    <p class="value">15€</p>
+                    <h2>Monetary value:</h2>
+                    <p class="money">15€</p>
+                    <h2>Example - Quarter-hour value:</h2>
                     <p class="exampleMinutes">6</p>
+                    <h2>Example - Monetary value:</h2>
                     <p class="exampleMoney">22,5€</p>
                 </div>
             </td>
@@ -381,10 +448,15 @@
                     </div>
                 </div>
                 <div class="extra-info">
+                    <h2>Description:</h2>
                     <p class="description">Repairs, necessary minor work (plaster, painting, plumbing, etc.).</p>
+                    <h2>Quarter-hour value:</h2>
                     <p class="value">4</p>
-                    <p class="value">15€</p>
+                    <h2>Monetary value:</h2>
+                    <p class="money">15€</p>
+                    <h2>Example - Quarter-hour value:</h2>
                     <p class="exampleMinutes">4</p>
+                    <h2>Example - Monetary value:</h2>
                     <p class="exampleMoney">15€</p>
                 </div>
             </td>
@@ -406,10 +478,15 @@
                     </div>
                 </div>
                 <div class="extra-info">
+                    <h2>Description:</h2>
                     <p class="description">Service provider management (search, hiring, follow-up), availability management for parcel reception, leisure management.</p>
+                    <h2>Quarter-hour value:</h2>
                     <p class="value">4</p>
-                    <p class="value">15€</p>
+                    <h2>Monetary value:</h2>
+                    <p class="money">15€</p>
+                    <h2>Example - Quarter-hour value:</h2>
                     <p class="exampleMinutes">2</p>
+                    <h2>Example - Monetary value:</h2>
                     <p class="exampleMoney">7,5€</p>
                 </div>
             </td>
