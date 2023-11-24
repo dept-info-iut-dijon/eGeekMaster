@@ -54,6 +54,7 @@
 
 <!-- Partie Compagnon -->
 <!-- author : Théo Deguin -->
+<!-- author : Lola Cohidon  -->
 <div id="companion">
     <div id="companionConnect">
         <div class="bubble">
@@ -165,8 +166,8 @@
 </main>
 
 <!-- footer -->
+<!-- author : Lola Cohidon -->
 <!-- author : Théo Cornu -->
-<!-- author : Lola -->
 <footer>
     <div class="footer-inner">
         <div class="footer-logo">
