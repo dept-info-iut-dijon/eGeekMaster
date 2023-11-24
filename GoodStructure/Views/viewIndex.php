@@ -1,4 +1,5 @@
 <!-- author: Théo Cornu -->
+<?php require_once 'translations.php' ?>
 <div id="contenu">
     <link rel="stylesheet" href="Public/css/page_accueil/index8.css">
 
