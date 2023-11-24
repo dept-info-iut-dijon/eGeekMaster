@@ -17,7 +17,7 @@
          * @param $myHome add a MyHome object
          * @return MyHome return a MyHome object
          */
-        public function CreateMyHome(MyHome $myHome) : MyHome {
+        public function AddMyHome(MyHome $myHome) : MyHome {
             try {
                 $sql = 'INSERT INTO myhome (codeMyHome, nameMyHome) VALUES (:value1, :value2)';
                 $this->executerRequete($sql, [
@@ -73,5 +73,17 @@
                 exit();
             }
         }
+
+        /**
+         * Join a home
+         * @author Enzo
+         * @param $code code to access to a home
+         */
+        // public function JoinMyHome(string $code) : void {
+        //    try {
+
+        //    } catch (Exception $e) {
+         //   }
+        //}
     }
 ?>

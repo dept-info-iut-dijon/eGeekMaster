@@ -285,6 +285,16 @@ class UserManager extends Model
         }
     }
 
-    
+    /**
+     * Add a user to a home
+     * @author Enzo
+     * @param $User
+     */
+    //public function AddUserToMyHome(User $User): void {
+    //    try {
+
+    //    } catch (PDOException $e) {
+    //    }
+    //}
 }
 ?>
