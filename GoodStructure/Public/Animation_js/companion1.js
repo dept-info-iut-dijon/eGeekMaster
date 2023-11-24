@@ -7,7 +7,7 @@ function openCompanion() {
     window.addEventListener('click', VerifiedClicked);
     setTimeout(() => {
         companion.style.right = "-50%"; // Masquer le compagnon après 20 secondes
-    }, 20000);
+    }, 5000);
 }
 
 /**

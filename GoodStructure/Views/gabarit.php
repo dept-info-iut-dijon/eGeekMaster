@@ -71,11 +71,16 @@
                             break;
                         case 'InfoDashBoard':
                             if ((isset($_SESSION['tasks'])) && ((end($_SESSION['tasks']))->getId() != null)) {
-                                
+                                $currentDateT = new DateTime();
+                                $currentDate = $currentDateT->format('Y-m-d');
+                                $lastTaskDate = end($_SESSION['tasks'])->getDateAdded();
+                                $lastTaskDateD = strtotime($lastTaskDate);
+                                $currentDateD = strtotime($currentDate);
+                                $oneWeekAgo = strtotime("-1 week", $currentDateD);
                                 foreach ($_SESSION['tasks'] as $task) {
                                     $durationC += $task->getDuration();
                                 }
-                                if ($lastTaskDate <= $oneWeekago && $durationC === 0) {
+                                if ($lastTaskDateD <= $oneWeekAgo) {
                                     print("It seems you haven't recorded any tasks in a week or more. Consider updating your task log to stay organized.");
                                     $imagePath = "Public/image/companion/companion7.png";
                                 }
