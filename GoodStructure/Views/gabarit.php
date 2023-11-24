@@ -1,4 +1,5 @@
 <!-- author : Théo Cornu -->
+<?php require_once 'translations.php' ?>
 <!DOCTYPE html>
 <html lang="fr">
 
