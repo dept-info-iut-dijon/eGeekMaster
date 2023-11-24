@@ -4,7 +4,7 @@
     right: -300%;
     top: 70px;
     transition: right 0.3s ease-in-out;
-    z-index: 100;
+    z-index: 7;
 }
 
 #companion img {
@@ -33,7 +33,7 @@
         right: -300%;
         top: 70px;
         transition: right 0.3s ease-in-out;
-        z-index: 100;
+        z-index: 7;
     }
 
     #companion img {
@@ -51,7 +51,7 @@
         right: -300%;
         top: 70px;
         transition: right 0.3s ease-in-out;
-        z-index: 100;
+        z-index: 7;
         font-size: 14px;
     }
 
@@ -70,7 +70,7 @@
         right: -300%;
         top: 70px;
         transition: right 0.3s ease-in-out;
-        z-index: 100;
+        z-index: 7;
         font-size: 12px;
     }
 
