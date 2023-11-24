@@ -1,5 +1,5 @@
 <!-- author : Théo Cornu -->
-<?php require_once 'translations.php' ?>
+<?php require 'translations.php' ?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -38,14 +38,14 @@
 <div id="menu">
     <ul>
         <?php if (isset($_SESSION['IdLogin'])) : ?>
-            <li><a class="lien-header" href="index.php?action=Index" >Home</a></li>
-            <li><a class="lien-header" href="index.php?action=Registration&IdLogin=<?=$_SESSION['IdLogin']?>"  >Upadte my account</a></li>
-            <li><a class="lien-header" href="index.php?action=Disconnect"  >Disconnect</a></li>
-            <li><a class="lien-header" href="index.php?action=InfoDashBoard">DashBoard</a></li>
-            <li><a class="lien-header" href="index.php?action=Reference">Reference</a></li>
+            <li><a class="lien-header" href="index.php?action=Index" ><?= $translations[$language]['gabarit_button_home']?></a></li>
+            <li><a class="lien-header" href="index.php?action=Registration&IdLogin=<?=$_SESSION['IdLogin']?>"  ><?= $translations[$language]['gabarit_button_update']?></a></li>
+            <li><a class="lien-header" href="index.php?action=Disconnect"  ><?= $translations[$language]['gabarit_button_disconnect']?></a></li>
+            <li><a class="lien-header" href="index.php?action=InfoDashBoard"><?= $translations[$language]['gabarit_button_reference']?></a></li>
+            <li><a class="lien-header" href="index.php?action=Reference"><?= $translations[$language]['gabarit_button_login']?></a></li>
         <?php else : ?>
-            <li><a class="lien-header" href="index.php?action=Connection"  >Login</a></li> 
-            <li><a class="lien-header" href="index.php?action=Registration"  >Register</a></li> 
+            <li><a class="lien-header" href="index.php?action=Connection"  ><?= $translations[$language]['home_title']?></a></li> 
+            <li><a class="lien-header" href="index.php?action=Registration"  ><?= $translations[$language]['home_title']?></a></li> 
         <?php endif; ?>
     </ul>
 </div>
@@ -69,7 +69,7 @@
         </div>
         <div id="shortcuts" class="link">
             <ul>
-                <li class="linkTitle" ><a href="#">Shortcuts</a></li>
+                <li class="linkTitle" ><a href="#"><?= $translations[$language]['gabarit_shortcuts']?></a></li>
                 <li class="linkSubstitle"><a href="#">New link 1</a></li>
                 <li class="linkSubstitle"><a href="#">New link 2</a></li>
                 <li class="linkSubstitle"><a href="#">New link 3</a></li>
@@ -78,7 +78,7 @@
         </div>
         <div id="services" class="link">
             <ul>
-                <li class="linkTitle"><a href="#">Services</a></li>
+                <li class="linkTitle"><a href="#"><?= $translations[$language]['home_title']?></a></li>
                 <li class="linkSubstitle"><a href="#">New link 1</a></li>
                 <li class="linkSubstitle"><a href="#">New link 2</a></li>
                 <li class="linkSubstitle"><a href="#">New link 3</a></li>
@@ -86,7 +86,7 @@
         </div>
         <div id="legalNotice" class="link">
             <ul>
-                <li class="linkTitle" ><a href="#">Legal notices</a></li>
+                <li class="linkTitle" ><a href="#"><?= $translations[$language]['home_title']?></a></li>
                 <li class="linkSubstitle" ><a href="#">New link 1</a></li>
                 <li class="linkSubstitle" ><a href="#">New link 2</a></li>
                 <li class="linkSubstitle" ><a href="#">New link 3</a></li>

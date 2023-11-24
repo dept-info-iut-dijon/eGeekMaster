@@ -35,6 +35,18 @@
             'index_slider_slider-panel_3_p' => 'Family\'Easy has made our life easier and more enjoyable. We recommend it to all families looking for balance.',
             'index_slider_imgD_h5' => 'Delighted User',
             
+            // gabarit.php
+            'gabarit_button_home' => 'Home',
+            'gabarit_button_update' => 'Update my account',
+            'gabarit_button_disconnect' => 'Disconnect',
+            'gabarit_button_dashboard' => 'Dashboard',
+            'gabarit_button_reference' => 'Reference',
+            'gabarit_button_login' => 'Login',
+            'gabarit_button_register' => 'Register',
+            'gabarit_shortcuts' => 'Shortcuts',
+            'gabarit_Services' => 'Services',
+            'gabarit_legalNotice' => 'Legal Notices',
+            'gabarit_followUs' => 'Follow us !',
         ],
         'fr' => [
             // viewIndex.php
@@ -60,6 +72,19 @@
             'index_slider_imgC_h5' => 'Parent reconnaissant',
             'index_slider_slider-panel_3_p' => 'Family\'Easy a rendu notre vie plus facile et plus agréable. Nous le recommandons à toutes les familles en quête d\'équilibre.',
             'index_slider_imgD_h5' => 'Utilisateur ravi',
+
+            // gabarit.php
+            'gabarit_button_home' => 'Accueil',
+            'gabarit_button_update' => 'Mettre à jour mon compte',
+            'gabarit_button_disconnect' => 'Déconnexion',
+            'gabarit_button_dashboard' => 'Tableau de bord',
+            'gabarit_button_reference' => 'Référence',
+            'gabarit_button_login' => 'Connexion',
+            'gabarit_button_register' => 'Inscription',
+            'gabarit_shortcuts' => 'Raccourcis',
+            'gabarit_Services' => 'Services',
+            'gabarit_legalNotice' => 'Mentions légales',
+            'gabarit_followUs' => 'Suivez-nous !',
         ],
     ];
     $preferredLanguage = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
