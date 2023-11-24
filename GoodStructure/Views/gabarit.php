@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="Public/css/footer1.css"/>
     <link rel="stylesheet" href="Public/css/erreur.css"/>
     <link rel="stylesheet" href="Public/css/companion2.css"/>
+    <link rel="stylesheet" href="Public/css/mentionLegal.css"/>
     <script src="Public/Animation_js/header.js"></script>
     <script src="Public/Animation_js/companion1.js"></script>
 </head>
@@ -193,11 +194,10 @@
         <div id="legalNotice" class="link">
             <ul>
                 <li class="linkTitle" ><a href="#">Legal notices</a></li>
-                <li class="linkSubstitle" ><a href="#">New link 1</a></li>
-                <li class="linkSubstitle" ><a href="#">New link 2</a></li>
-                <li class="linkSubstitle" ><a href="#">New link 3</a></li>
-                <li class="linkSubstitle" ><a href="#">New link 4</a></li>
-                <li class="linkSubstitle"><a href="#">New link 5</a></li>
+                <li class="linkSubstitle" ><a href="index.php?action=PrivacyPolicy">Privacy Policy</a></li>
+                <li class="linkSubstitle" ><a href="index.php?action=TermsConditions">Terms and Conditions</a></li>
+                <li class="linkSubstitle" ><a href="index.php?action=LegalNotice">Legal Notice</a></li>
+                <li class="linkSubstitle" ><a href="index.php?action=CookiePolicy">Cookie Policy</a></li>
             </ul>
         </div>
         <div class="footer-social">

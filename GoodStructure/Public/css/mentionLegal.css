@@ -1,0 +1,19 @@
+body{
+    background-color: #c3d9dd;
+}
+
+#privacyPolicy, #termsConditions{
+    margin: 20px;
+}
+
+#privacyPolicy, #termsConditions h3{
+    margin-left: 30px;
+}
+
+#privacyPolicy, #termsConditions p{
+    margin-left: 60px;
+}
+
+.legallink{
+    color: blue;
+}

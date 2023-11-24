@@ -75,7 +75,12 @@ class Router {
         "Reference" => new RouteReference($this->ctrlList["MainController"]),
         "TaskRegistration" => new RouteTaskRegistration($this->ctrlList["TaskController"]),
         "TaskSupression" => new RouteTaskSupression($this->ctrlList["TaskController"]),
-        "TaskModification" => new RouteTaskModification($this->ctrlList["TaskController"])];
+        "TaskModification" => new RouteTaskModification($this->ctrlList["TaskController"]),
+        "PrivacyPolicy" => new RoutePrivacyPolicy($this->ctrlList["MainController"]),
+        "CookiePolicy" => new RouteCookiePolicy($this->ctrlList["MainController"]),
+        "LegalNotice" => new RouteLegalNotice($this->ctrlList["MainController"]),
+        "TermsConditions" => new RouteTermsConditions($this->ctrlList["MainController"])
+    ];
     }
 
     /**
