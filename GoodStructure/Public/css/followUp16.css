@@ -1,4 +1,4 @@
-
+/* Author : Lola Cohidon */
 
 /* Reset default styles and set the base styles for the body */
 body {
@@ -120,6 +120,8 @@ body {
     font-size: 18px; 
     margin-top: 20px;
 }
+
+/*Author : Lola Cohidon */
 
 /* Media queries for responsiveness */
 @media only screen and (max-width: 600px) {

@@ -98,7 +98,7 @@ function showDetailed() {
 
 
 /**
- * @author Théo Cornu
+ * @author Lola Cohidon
 */
 function showGlobal() {
     var global;
@@ -118,7 +118,10 @@ function showGlobal() {
     
     var GraphGlobal = global.appendChild(document.createElement("canvas"));
     GraphGlobal.id = "myChart2";
-
+    
+    /**
+     * @author Théo Cornu
+     */
     
     // Récupérez la valeur de l'élément 'data2' et convertissez-la en objet
     const data2 = JSON.parse(document.getElementById('data2').value);
