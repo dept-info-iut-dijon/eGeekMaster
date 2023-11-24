@@ -43,7 +43,7 @@ class TestUserController extends TestCase
 
         // Appeler la méthode à tester
         $UserController->Add();
-        $this->assertsame(1,1);
+
         // Récupérer la liste des utilisateurs après l'ajout
         $listeUser = $UserManager->GetAll();
 
@@ -63,9 +63,10 @@ class TestUserController extends TestCase
             'idUser' => $pullUser->getId(),
             'idLogin' => $testLogin->getId()
         ];
+        var_dump($_POST);
         $UserController->Delete();
     }
-
+    
     public function testDelete()
     {
         // Création d'instance
@@ -95,7 +96,7 @@ class TestUserController extends TestCase
 
         // Ajout de l'utilisateur pour tester la méthode de suppression
         $UserController->Add();
-
+        
         // La liste des utilisateurs après l'ajout
         $listeUser = $UserManager->GetAll();
 
@@ -115,9 +116,9 @@ class TestUserController extends TestCase
 
         // Suppression de l'utilisateur
         $UserController->Delete();
-
-         // La liste des utilisateurs après la suppression
-         $listeUser = $UserManager->GetAll();
+        
+        // La liste des utilisateurs après la suppression
+        $listeUser = $UserManager->GetAll();
 
         // Rechercher l'utilisateur correspondant à supprimer
         $pullUser2 = null;
