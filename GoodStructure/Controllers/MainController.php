@@ -99,4 +99,16 @@ class MainController {
         $referenceView->generer($data);
     
     }
+
+    /**
+     * Displays the MyHome page.
+     */
+    public function MyHome() {
+    
+        $myHomeView = new View("MyHome");
+        $data = array(
+            //ajouter les données à afficher
+        );
+        $myHomeView->generer($data);
+    }
 }

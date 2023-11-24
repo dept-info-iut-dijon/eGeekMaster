@@ -75,7 +75,11 @@ class Router {
         "Reference" => new RouteReference($this->ctrlList["MainController"]),
         "TaskRegistration" => new RouteTaskRegistration($this->ctrlList["TaskController"]),
         "TaskSupression" => new RouteTaskSupression($this->ctrlList["TaskController"]),
-        "TaskModification" => new RouteTaskModification($this->ctrlList["TaskController"])];
+        "TaskModification" => new RouteTaskModification($this->ctrlList["TaskController"]),
+        "MyHome" => new RouteMyHome($this->ctrlList["MainController"]),
+        // "HomeConnect" => new RouteHomeConnect($this->ctrlList["HomeController"]),
+        // "HomeRegistration" => new RouteHomeRegistration($this->ctrlList["HomeController"]),
+    ];
     }
 
     /**
