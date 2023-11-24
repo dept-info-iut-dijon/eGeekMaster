@@ -240,4 +240,55 @@ class MainController {
         // Generate the view
         $referenceView->generer($data);
     }
+
+    /**
+     * Displays the CookiePolicy page.
+     */
+    public function CookiePolicy() {
+    
+        $cookiePolicyView = new View("CookiePolicy");
+        $data = array(
+            //ajouter les données à afficher
+        );
+        $cookiePolicyView->generer($data);
+    }
+
+    /**
+     * Displays the LegalNotice page.
+     */
+    public function LegalNotice() {
+    
+        $legalNoticeView = new View("LegalNotice");
+        $data = array(
+            //ajouter les données à afficher
+        );
+        $legalNoticeView->generer($data);
+    
+    }
+
+    /**
+     * Displays the PrivacyPolicy page.
+     */
+    public function PrivacyPolicy() {
+    
+        $privacyPolicyView = new View("PrivacyPolicy");
+        $data = array(
+            //ajouter les données à afficher
+        );
+        $privacyPolicyView->generer($data);
+    
+    }
+
+    /**
+     * Displays the TermsConditions page.
+     */
+    public function TermsConditions() {
+    
+        $termsConditionsView = new View("TermsConditions");
+        $data = array(
+            //ajouter les données à afficher
+        );
+        $termsConditionsView->generer($data);
+    
+    }
 }
