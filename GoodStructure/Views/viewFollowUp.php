@@ -2,9 +2,9 @@
 autor : Lola Cohidon
 author : Théo Cornu
 -->
-<link rel="stylesheet" href="Public/css/followUp15.css">
+<link rel="stylesheet" href="Public/css/followUp16.css">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="Public/Animation_js/followUp2.js"></script>
+<script src="Public/Animation_js/followUp3.js"></script>
 
 <div id = "viewFollowUp">
 
@@ -19,9 +19,10 @@ author : Théo Cornu
         <button id="suiviG" >Overall tracking</button>
     </div>
     <!--Detailed tracking-->
-    
-    <input type="hidden" id="labels" value="<?= htmlspecialchars(json_encode($labels)) ?>">
     <input type="hidden" id="data2" value="<?= htmlspecialchars(json_encode($taskCountPerYearMonth)) ?>">
+
+
+    
 </div>
 
 
