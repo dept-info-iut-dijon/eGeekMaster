@@ -1,6 +1,7 @@
 <!-- author: Théo Cornu
 author: Théo Cornu
 author : Lola Cohidon-->
+<?php require_once 'translations.php' ?>
 <link rel="stylesheet" href="Public/css/reference2.css">
 <div id="ContaintReference">
     <!--Search bar-->
