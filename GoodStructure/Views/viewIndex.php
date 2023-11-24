@@ -47,24 +47,6 @@
                     100+
                 </h3>
                 <p>
-
-<?php
-return [
-    'satisfied_families' => 'Satisfied Families',
-    'downloads' => '+23k Downloads',
-    'user_satisfaction' => '95% User Satisfaction',
-    'meet_pixi' => 'Meet Pixi - Your Helper Agent',
-    'pixi_description' => 'Pixi is here to assist you in managing your household and parenting tasks efficiently. Ask Pixi for guidance and support to make your family life easier.',
-    'learn_more' => 'Learn More About Us',
-    'getting_started' => 'Getting Started with Family\'Easy',
-    'getting_started_description' => 'Discover how to use Family\'Easy to improve your family\'s organization and reduce the workload imbalance.',
-    'what_clients_say' => 'What Our Clients Say',
-    'testimonial_1' => 'Family\'Easy has transformed our family life. It\'s now easier to share responsibilities and maintain a balanced lifestyle.',
-    'testimonial_2' => 'We can\'t imagine managing our household without Family\'Easy. It\'s a game-changer for busy families like ours.',
-    'testimonial_3' => 'Thanks to Family\'Easy, our family is happier, and we have more quality time together. It\'s an essential tool for every home.',
-    'testimonial_4' => 'Family\'Easy has made our life easier and more enjoyable. We recommend it to all families looking for balance.',
-];
-?>
                     Satisfied Families
                 </p>
             </div>

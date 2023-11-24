@@ -2,7 +2,7 @@
 autor : Lola Cohidon
 author : Théo Cornu
 -->
-<link rel="stylesheet" href="Public/css/followUp16.css">
+<link rel="stylesheet" href="Public/css/followUp23.css">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="Public/Animation_js/followUp3.js"></script>
 
@@ -14,13 +14,13 @@ author : Théo Cornu
     </div>
     <!--Buttons-->
     <div class="buttons">
-        <button id="suiviD" >Detailed tracking</button>
+        <button class=selectData id="suiviD" >Detailed tracking</button>
         <div class="line"></div>
-        <button id="suiviG" >Overall tracking</button>
+        <button class=selectData id="suiviG" >Overall tracking</button>
     </div>
     <!--Detailed tracking-->
     <input type="hidden" id="data2" value="<?= htmlspecialchars(json_encode($taskCountPerYearMonth)) ?>">
-
+    <input type="text" id="data3" value="<?= htmlspecialchars(json_encode($taskPercent)) ?>">
 
     
 </div>

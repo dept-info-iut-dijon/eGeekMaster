@@ -34,10 +34,16 @@ function showDetailed() {
             { id : "followhousehold", nom: "Household", image: "Public/image/page_followUp/img_householdManagement2.png" },
         ];
 
+        
 
         /**
          * @author Théo Cornu
         */
+
+        // Get the task percentages from the hidden input
+        const taskPercentages = JSON.parse(document.getElementById('data3').value);
+
+        // Create a flip card for each task
         boutonDetails.forEach(function (bouton) {
             var flipCard = document.createElement("div");
             flipCard.className = "flip-card";
@@ -45,44 +51,53 @@ function showDetailed() {
             var flipCardInner = document.createElement("div");
             flipCardInner.className = "flip-card-inner";
 
-
             // Front of the card
 
-            var flipCardFront = document.createElement("div");
-            flipCardFront.className = "flip-card-front";
+                var flipCardFront = document.createElement("div");
+                flipCardFront.className = "flip-card-front";
 
-            var heading = document.createElement("p");
-            heading.className = "heading_8264";
-            heading.innerText = "Task";
-            flipCardFront.appendChild(heading);
+                // Title of the card
+                var heading = document.createElement("p");
+                heading.className = "heading_8264";
+                heading.innerText = "Task";
+                flipCardFront.appendChild(heading);
 
-            var imageFront = document.createElement("img");
-            imageFront.src = bouton.image;
-            imageFront.alt = bouton.nom;
-            imageFront.className = "image";
-            flipCardFront.appendChild(imageFront);
+                // Image of the task
+                var imageFront = document.createElement("img");
+                imageFront.src = bouton.image;
+                imageFront.alt = bouton.nom;
+                imageFront.className = "image";
+                flipCardFront.appendChild(imageFront);
 
-            var nameTask = document.createElement("p");
-            nameTask.className = "nameTask";
-            nameTask.innerText = bouton.nom;
-            flipCardFront.appendChild(nameTask);
+                // Name of the task
+                var nameTask = document.createElement("p");
+                nameTask.className = "nameTask";
+                nameTask.innerText = bouton.nom;
+                flipCardFront.appendChild(nameTask);
 
             // Back of the card
+                flipCardInner.appendChild(flipCardFront);
 
-            flipCardInner.appendChild(flipCardFront);
+                var flipCardBack = document.createElement("div");
+                flipCardBack.className = "flip-card-back";
 
-            var flipCardBack = document.createElement("div");
-            flipCardBack.className = "flip-card-back";
+                // Percentage of the task
+                var taskPercentage = taskPercentages[bouton.nom] || 0; // Get the percentage for the task, or 0 if it doesn't exist
 
-            var data = document.createElement("div");
-            data.className = "data";
-            flipCardBack.appendChild(data);
+                var data = document.createElement("div");
+                data.className = "data";
+                flipCardBack.appendChild(data);
+                var pourcent = document.createElement("p");
+                pourcent.className = "pourcent";
+                pourcent.innerText = "Contribution : " + taskPercentage + "%"; // Display the task percentage
+                data.appendChild(pourcent);
 
-            var imageBack = document.createElement("img");
-            imageBack.src = bouton.image;
-            imageBack.alt = bouton.nom;
-            imageBack.className = "image";
-            flipCardBack.appendChild(imageBack);
+                // Image of the task
+                var imageBack = document.createElement("img");
+                imageBack.src = bouton.image;
+                imageBack.alt = bouton.nom;
+                imageBack.className = "image";
+                flipCardBack.appendChild(imageBack);
 
             flipCardInner.appendChild(flipCardBack);
 
@@ -90,7 +105,14 @@ function showDetailed() {
 
             contentDiv.appendChild(flipCard);
         });
+
+        // Change button color
+        var suiviDButton = document.getElementById("suiviD");
+        var suiviGButton = document.getElementById("suiviG");
+        suiviDButton.style.backgroundColor = "#b3938e";
+        suiviGButton.style.backgroundColor = "";
     }
+
 }
 
 
@@ -98,8 +120,8 @@ function showDetailed() {
 
 
 /**
- * @author Lola Cohidon
-*/
+ * @author Théo Cornu
+ */
 function showGlobal() {
     var global;
     var contentDiv;
@@ -118,10 +140,6 @@ function showGlobal() {
     
     var GraphGlobal = global.appendChild(document.createElement("canvas"));
     GraphGlobal.id = "myChart2";
-    
-    /**
-     * @author Théo Cornu
-     */
     
     // Récupérez la valeur de l'élément 'data2' et convertissez-la en objet
     const data2 = JSON.parse(document.getElementById('data2').value);
@@ -190,7 +208,10 @@ function showGlobal() {
         }
     });
 
-    
+    var suiviDButton = document.getElementById("suiviD");
+    var suiviGButton = document.getElementById("suiviG");
+    suiviDButton.style.backgroundColor = "";
+    suiviGButton.style.backgroundColor = "#b3938e";
     }
 }
 
