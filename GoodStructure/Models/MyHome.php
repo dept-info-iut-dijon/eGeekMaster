@@ -6,10 +6,12 @@
     class MyHome {
         private $idMyHome;
         private $codeMyHome;
+        private $usernameMyHome;
         
-        public function __construct(?int $idMyHome, ?string $codeMyHome) {
+        public function __construct(?int $idMyHome, ?string $codeMyHome, ?string $usernameMyHome) {
             $this->idMyHome = $idMyHome;
             $this->codeMyHome = $codeMyHome;
+            $this->usernameMyHome = $usernameMyHome;
         }
 
         /**
@@ -24,6 +26,7 @@
         /**
          * Get the value of idMyHome
          * @author Enzo
+         * @return ?int
          */
         public function GetIdMyHome(): ?int {
             return $this->idMyHome;
@@ -41,9 +44,28 @@
         /**
          * Get the value of codeMyHome
          * @author Enzo
+         * @return ?string
          */
         public function GetCodeMyHome(): ?string {
             return $this->codeMyHome;
+        }
+
+        /**
+         * Set the value of usernameMyHome
+         * @author Enzo
+         * @param $usernameMyHome username of myHome
+         */
+        public function SetUsernameMyHome(?string $usernameMyHome) {
+            $this->usernameMyHome = $usernameMyHome;
+        }
+
+        /**
+         * Get the value of usernameMyHome
+         * @author Enzo
+         * @return ?string 
+         */
+        public function GetUsernameMyHome(): ?string {
+            return $this->usernameMyHome;
         }
     }
 ?>
