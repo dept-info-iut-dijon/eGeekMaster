@@ -8,7 +8,7 @@
         private $codeMyHome;
         private $nameMyHome;
         
-        public function __construct(?int $idMyHome, ?string $codeMyHome, ?string $nameMyHome) {
+        public function __construct(?int $idMyHome = null, ?string $codeMyHome = null, ?string $nameMyHome = null) {
             $this->idMyHome = $idMyHome;
             $this->codeMyHome = $codeMyHome;
             $this->nameMyHome = $nameMyHome;
