@@ -126,13 +126,13 @@
         
         <div class="divBoutonTache Supr">
             <!-- Bouton d'ajout de tâches -->
-            <a href="index.php?action=TaskSupression&IdTask=<?php if (isset($_SESSION['tasks']) && (end($_SESSION['tasks']))->getId() != null)  : ?> <?= $idLastTast ?> <?php endif; ?>"><button class="boutonTaches Supr" type="button">Delete a task</button></a>
+            <a href="index.php?action=TaskSupression&IdTask=<?php if (isset($_SESSION['tasks']) && (end($_SESSION['tasks']))->getId() != null)  : ?> <?= $idLastTast ?> <?php endif; ?>"><button class="boutonTaches Supr" type="button">Delete the last task</button></a>
             
         </div>
 
         <div class="divBoutonTache Modif">
             <!-- Bouton d'ajout de tâches -->
-            <button class="boutonTaches Modif" type="button">Modify a task</button>
+            <button class="boutonTaches Modif" type="button">Modify the last task</button>
         </div>
     </div>
     <!-- Graphiques -->
