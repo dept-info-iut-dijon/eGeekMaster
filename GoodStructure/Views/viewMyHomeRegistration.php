@@ -1,7 +1,7 @@
 <!-- author: Théo Cornu-->
 
 <div id="page">
-    <link rel="stylesheet" href="Public/css/connection.css">
+    <link rel="stylesheet" href="Public/css/myhome2.css">
     
     <div id="familyGlobal">
         <img id="family" src="Public/image/page_connection/image_connection.png" alt="">
@@ -17,16 +17,19 @@
                 </div>
             <?php endif; ?>
             <div>
-                <h1>Join Home</h1>
-                <p>Join a home to be with your family</p>
+                <h1>Create Home</h1>
+                <p>Create a home to join your family</p>
             </div>
             <div>
-                <form action="index.php?action=HomeConnect" method="post">
+                <form action="index.php?action=HomeRegistration" method="post">
                     <fieldset>
                         <div id="Home">   
                             <div class="infoSend">
-                                <label for="CodeHome">Code Home</label><br>
-                                <input type="text" id="codeHome" name="CodeHome" class="inputs" autofocus required>
+                                <label for="NameHome">Name</label><br>
+                                <input type="text" id="nameHome" name="NameHome" class="inputs" autofocus required><br>
+
+                                <label for="CodeHome">Code</label><br>
+                                <input type="text" id="codeHome" name="CodeHome" class="inputs" required>
                             </div>
                                    
                             <div id="submitDiv">
@@ -37,7 +40,7 @@
                 </form>
             </div>
             <div>
-                <p>Don't have a home ? <a id="lienCreatHome" href="index.php?action=MyHomeRegistration">Create one here</a></p>
+                <p>Do you have a home ? <a id="lieninscription" href="index.php?action=MyHome">Connect to it</a></p>
             </div>    
         </div>
     </div>

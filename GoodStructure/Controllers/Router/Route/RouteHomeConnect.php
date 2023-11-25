@@ -7,13 +7,13 @@ require_once 'Controllers/Router/Route.php';
  * @author Théo Cornu
  */
 class RouteHomeConnect extends Route {
-    private LoginController $controller;
+    private MyHomeController $controller;
 
     /**
      * RouteAddLogin constructor.
-     * @param HomeController $controller
+     * @param MyHomeController $controller
      */
-    public function __construct(HomeController $controller) {
+    public function __construct(MyHomeController $controller) {
         parent::__construct();
         $this->controller = $controller;
     }
@@ -24,7 +24,7 @@ class RouteHomeConnect extends Route {
      * @return mixed
      */
     public function get($params = []) {
-        return $this->controller->Connect();
+        return $this->controller->AddUserToHome();
     }
 
     /**
@@ -32,7 +32,7 @@ class RouteHomeConnect extends Route {
      * @param array $params
      */
     public function post($params = []) {
-        return $this->controller->Connect();
+        return $this->controller->AddUserToHome();
     }
 
     /**
@@ -42,6 +42,6 @@ class RouteHomeConnect extends Route {
      * @return mixed
      */
     public function action($params = [], $method = 'GET') {
-        return $this->controller->Connect();
+        return $this->controller->AddUserToHome();
     }
 }

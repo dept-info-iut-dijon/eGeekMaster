@@ -286,15 +286,45 @@ class UserManager extends Model
     }
 
     /**
-     * Add a user to a home
-     * @author Enzo
-     * @param $User
+     * Retrieve a specific name of the user by its userID from the database.
+     *
+     * @param int $id The userID of the User to retrieve.
+     * @return string|null The name of the User, or null if not found.
+     * @throws Exception
      */
-    //public function AddUserToMyHome(User $User): void {
-    //    try {
+    public function GetNameById(int $id): ?string
+    {
+        try {
+            $sql = 'SELECT FirstName FROM users WHERE idUsers = ?';
+            $result = $this->executerRequete($sql, [$id]);
+            $line = $result->fetch(PDO::FETCH_ASSOC);
+            return $line['FirstName'];
+        } catch (PDOException $e) {
+            // In case of an error, redirect to the error page with a message
+            $errorMessage = "An error occurred while retrieving data(idUser).";
+            header("Location: index.php?action=Index&errorMessage=".urlencode($errorMessage));
+            exit();
+        }
+    }
 
-    //    } catch (PDOException $e) {
-    //    }
-    //}
+    /**
+     * Update a User in the database with new information.
+     *
+     * @param int $idUser The ID of the User to update.
+     * @param int $idMyHome The ID of the MyHome to update.
+     * @throws Exception
+     */
+    public function UpdateUserHome(int $idUser, int $idMyHome): void
+    {
+        try {
+            $sql = 'UPDATE users SET MyHomeidMyHome = ? WHERE idUsers = ?';
+            $this->executerRequete($sql, [$idMyHome, $idUser]);
+        } catch (PDOException $e) {
+            // In case of an error, redirect to the error page with a message
+            $errorMessage = "An error occurred while updating the User.";
+            header("Location: index.php?action=MyHome&errorMessage=".urlencode($errorMessage));
+            exit();
+        }
+    }
 }
 ?>

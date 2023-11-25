@@ -52,7 +52,9 @@ class Router {
         'LoginController' => new LoginController(),
         'UserController' => new UserController(),
         'TaskController' => new TaskController(),
-        'DashBoardController' => new DashBoardController(),];
+        'DashBoardController' => new DashBoardController(),
+        'HomeController' => new MyHomeController(),
+    ];
     }
 
     /**
@@ -77,8 +79,9 @@ class Router {
         "TaskSupression" => new RouteTaskSupression($this->ctrlList["TaskController"]),
         "TaskModification" => new RouteTaskModification($this->ctrlList["TaskController"]),
         "MyHome" => new RouteMyHome($this->ctrlList["MainController"]),
-        // "HomeConnect" => new RouteHomeConnect($this->ctrlList["HomeController"]),
-        // "HomeRegistration" => new RouteHomeRegistration($this->ctrlList["HomeController"]),
+        "HomeConnect" => new RouteHomeConnect($this->ctrlList["HomeController"]),
+        "HomeRegistration" => new RouteHomeRegistration($this->ctrlList["HomeController"]),
+        "MyHomeRegistration" => new RouteMyHomeRegistration($this->ctrlList["MainController"]),
     ];
     }
 

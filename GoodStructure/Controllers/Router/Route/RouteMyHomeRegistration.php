@@ -2,46 +2,47 @@
 require_once 'Controllers/Router/Route.php';
 
 /**
- * Class RouteHomeRegistration
+ * Class RouteMyHomeRegistration
  * @package Controllers\Router\Route
  * @author Théo Cornu
  */
-class RouteHomeRegistration extends Route {
-    private MyHomeController $controller;
+class RouteMyHomeRegistration extends Route {
+    private MainController $controller;
 
     /**
-     * RouteAddLogin constructor.
-     * @param MyHomeController $controller
+     * RouteMyHome constructor.
+     * @param MainController $controller
      */
-    public function __construct(MyHomeController $controller) {
+    public function __construct(MainController $controller) {
         parent::__construct();
         $this->controller = $controller;
     }
 
     /**
-     * Get method for RouteHomeRegistration
+     * Handle GET request for MyHome route
      * @param array $params
      * @return mixed
      */
     public function get($params = []) {
-        return $this->controller->AddHome();
+        return $this->controller->MyHomeRegistration();
     }
 
     /**
-     * Post method for RouteHomeRegistration
+     * Handle POST request for MyHome route
      * @param array $params
+     * @return mixed
      */
     public function post($params = []) {
-        return $this->controller->AddHome();
+        return $this->controller->MyHomeRegistration();
     }
 
     /**
-     * Action method for RouteHomeRegistration
+     * Handle action request for MyHome route
      * @param array $params
      * @param string $method
      * @return mixed
      */
     public function action($params = [], $method = 'GET') {
-        return $this->controller->AddHome();
+        return $this->controller->MyHomeRegistration();
     }
 }
