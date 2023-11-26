@@ -14,21 +14,41 @@
 
         /**
          * Add a new home to the database
+         * @author Théo Cornu
          * @author Enzo
-         * @param $myHome add a MyHome object
+         * @param $myHome the myHome object to add
          * @return MyHome return a MyHome object
          */
         public function AddMyHome(MyHome $myHome) : MyHome {
             try {
-                $sql = 'INSERT INTO myhome (codeMyHome, nameMyHome) VALUES (:value1, :value2)';
+                $sql = "INSERT INTO myhome (nameMyHome) VALUES (:value1)";
                 $this->executerRequete($sql, [
-                    ':value1'=> $myHome->GetCodeMyHome(),
-                    ':value2'=> $myHome->GetNameMyHome()
+                    ":value1"=> $myHome->GetNameMyHome()
                 ]);
+                $myHome->SetIdMyHome($this->GetLastIdMyHome());
                 return $myHome;
             } catch (Exception $e) {
                 // if error, we are redirect to the index page with an error
                 $errorMessage = "An error occured while adding the home";
+                header("Location : index.php?action=MyHome&errorMessage".urlencode($errorMessage));
+                exit();
+            }
+        }
+
+        /**
+         * Get the last id of the home added in the database
+         * @author Théo
+         * @return int return the last id of the home added in the database
+         */
+        public function GetLastIdMyHome() : int {
+            try {
+                $sql = "SELECT MAX(idMyHome) FROM myhome";
+                $result = $this->executerRequete($sql);
+                $lastIdMyHome = $result->fetch(PDO::FETCH_ASSOC);
+                return $lastIdMyHome;
+            } catch (Exception $e) {
+                // if error, we are redirect to the index page with an error
+                $errorMessage = "An error occured while getting the last id of the home";
                 header("Location : index.php?action=MyHome&errorMessage".urlencode($errorMessage));
                 exit();
             }

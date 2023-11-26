@@ -11,12 +11,14 @@
         private $mainController;
         private $userManager;
         private $myHomeManager;
+        private $myHome;
         
 
         public function __construct() {
             $this->mainController = new MainController();
             $this->myHomeManager = new MyHomeManager();
             $this->userManager = new UserManager();
+            $this->myHome = new MyHome();
         }
 
         /**
@@ -24,16 +26,17 @@
          * @author Théo Cornu
          */
         public function AddHome() {
-            // Add a home
-            $myHome = $this->myHomeManager->AddMyHome($_POST["NameHome"], $_POST["CodeHome"]);
+            // Set the properties of the MyHome object
+            $this->populateMyHome();
 
+            // Add a home
+            $this->myHome = $this->myHomeManager->AddMyHome($this->myHome);
 
             //get the id of the user by the id login
             $idUser = $this->userManager->GetIdUserByLoginId($_SESSION["IdLogin"]);
 
             // Update the user's home
-            $this->userManager->UpdateUserHome($idUser, $myHome->GetIdMyHome());
-
+            $this->userManager->UpdateUserHome($idUser, $this->myHome->GetIdMyHome());
 
             // Redirect to the main page
             $this->mainController->Index("Home create");
@@ -67,6 +70,8 @@
          * @throws Exception If the Home could not be updated
          */
         public function EditHome() {
+
+
             // Edit a Home
             $this->myHomeManager->UpdateMyHome($_POST["idHome"], $_POST["NameHome"], $_POST["CodeHome"]);
 
@@ -77,6 +82,7 @@
         /**
          * Allows to add a User to a Home
          * @author Théo Cornu
+         * 
          * @param int $idHome The ID of the Home to add the User to
          * @param int $idUser The ID of the User to add to the Home
          * @return void
@@ -120,7 +126,16 @@
             $this->mainController->Index("User deleted from home");
         }
 
+        /**
+         * Set the properties of the MyHome object.
+         * @param MyHome $MyHome The MyHome object to populate
+         */
+        private function populateMyHome() {
+            // Set the properties of the MyHome object
+            $this->myHome->SetNameMyHome($_POST["NameHome"]);
+            $this->myHome->SetCodeMyHome($_POST["CodeHome"]);
 
+        }
         
 
 
