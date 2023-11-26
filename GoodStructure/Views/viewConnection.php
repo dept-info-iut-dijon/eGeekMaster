@@ -2,7 +2,7 @@
 author: Théo Deguin 
 author : Enzo-->
 <div id="page">
-    <link rel="stylesheet" href="Public/css/myhome1.css">
+    <link rel="stylesheet" href="Public/css/connection.css">
     
     <div id="familyGlobal">
         <img id="family" src="Public/image/page_connection/image_connection.png" alt="">

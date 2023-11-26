@@ -38,6 +38,9 @@
             // Update the user's home
             $this->userManager->UpdateUserHome($idUser, $this->myHome->GetIdMyHome());
 
+            // set the session variable to the id of the home
+            $_SESSION["IdMyHome"] = $this->myHome->GetIdMyHome();
+
             // Redirect to the main page
             $this->mainController->Index("Home create");
         }

@@ -67,7 +67,7 @@ fieldset{
     padding: 2%;
 }
 
-.infoSend{
+#infoSend{
     flex-direction: column;
     margin-top: 5%;
     margin-bottom: 5%;

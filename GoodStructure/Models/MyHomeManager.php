@@ -40,16 +40,16 @@
          * @author Théo
          * @return int return the last id of the home added in the database
          */
-        public function GetLastIdMyHome() : int {
+        public function GetLastIdMyHome(): int {
             try {
-                $sql = "SELECT MAX(idMyHome) FROM myhome";
+                $sql = "SELECT MAX(idMyHome) as lastId FROM myhome";
                 $result = $this->executerRequete($sql);
-                $lastIdMyHome = $result->fetch(PDO::FETCH_ASSOC);
-                return $lastIdMyHome;
+                $lastIdMyHome = $result->fetch(PDO::FETCH_ASSOC)['lastId'];
+                return (int) $lastIdMyHome;
             } catch (Exception $e) {
                 // if error, we are redirect to the index page with an error
-                $errorMessage = "An error occured while getting the last id of the home";
-                header("Location : index.php?action=MyHome&errorMessage".urlencode($errorMessage));
+                $errorMessage = "An error occurred while getting the last id of the home";
+                header("Location: index.php?action=MyHome&errorMessage=" . urlencode($errorMessage));
                 exit();
             }
         }

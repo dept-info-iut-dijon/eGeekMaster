@@ -25,10 +25,10 @@
                     <fieldset>
                         <div id="Home">   
                             <div class="infoSend">
-                                <label for="NameHome">Name</label><br>
+                                <label id="labelname" for="NameHome">Name</label><br>
                                 <input type="text" id="nameHome" name="NameHome" class="inputs" autofocus required><br>
 
-                                <label for="CodeHome">Code</label><br>
+                                <label id="labelcode" for="CodeHome">Code</label><br>
                                 <input type="text" id="codeHome" name="CodeHome" class="inputs" required>
                             </div>
                                    

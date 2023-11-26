@@ -29,11 +29,11 @@
             <div class="icon" id="search"></div>
         </a>
         
-        <?php if (isset($_SESSION['IdLogin'])) : ?>
+        <?php if (isset($_SESSION['IdLogin']) && !isset($_SESSION["IdMyHome"])) : ?>
             <a class="lien-header" href="index.php?action=MyHome" > 
                 <div class="icon" id="user"></div>
             </a>
-        <?php else : ?>
+        <?php elseif(!isset($_SESSION['IdLogin'])) : ?>
             <a class="lien-header" href="index.php?action=Connection" > 
                 <div class="icon" id="user"></div>
             </a>

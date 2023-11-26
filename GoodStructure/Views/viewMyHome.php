@@ -1,7 +1,8 @@
 <!-- author: Théo Cornu-->
+<link rel="stylesheet" href="Public/css/connection.css">
+<script src="Public/Animation_js/myhome.js"></script>    
 
 <div id="page">
-    <link rel="stylesheet" href="Public/css/connection.css">
     
     <div id="familyGlobal">
         <img id="family" src="Public/image/page_connection/image_connection.png" alt="">
@@ -16,17 +17,17 @@
                     <p id="erreur"><?= $_GET['errorMessage']?></p>
                 </div>
             <?php endif; ?>
-            <div>
+            <div id="HeadForm">
                 <h1>Join Home</h1>
                 <p>Join a home to be with your family</p>
             </div>
             <div>
-                <form action="index.php?action=HomeConnect" method="post">
+                <form id="HomeForm" action="index.php?action=HomeConnect" method="post">
                     <fieldset>
                         <div id="Home">   
-                            <div class="infoSend">
-                                <label for="CodeHome">Code Home</label><br>
-                                <input type="text" id="codeHome" name="CodeHome" class="inputs" autofocus required>
+                            <div id="infoSend">
+                                <label id="labelcode" for="CodeHome">Code Home</label><br>
+                                <input type="text" id="codeHome" name="CodeHome" class="inputs" autofocus required><br>
                             </div>
                                    
                             <div id="submitDiv">
@@ -36,9 +37,10 @@
                     </fieldset>
                 </form>
             </div>
-            <div>
-                <p>Don't have a home ? <a id="lienCreatHome" href="index.php?action=MyHomeRegistration">Create one here</a></p>
+            <div id="FootForm">
+                <p >Don't have a home ? <input type="button" id="lienCreatHome" value="Create one here"></p>
             </div>    
         </div>
     </div>
 </div>
+
