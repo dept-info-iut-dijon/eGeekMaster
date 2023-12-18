@@ -47,6 +47,28 @@
             'gabarit_Services' => 'Services',
             'gabarit_legalNotice' => 'Legal Notices',
             'gabarit_followUs' => 'Follow us !',
+
+            // viewConnection.php
+            'connection_title' => 'LOG IN',
+            'connection_desc' => 'Log in to your account to access your workspace',
+            'connection_login_label' => 'Login :',
+            'connection_password_label' => 'Password :',
+            'connection_submit' => 'Log in',
+            'connection_noAccount' => 'Don\'t have an account ?',
+            'connection_createAccount' => 'Create one here',
+
+
+            // viewRegistration.php
+            'registration_title' => 'CREATE A TASK',
+            'registration_task_label' => 'Task :',
+            'registration_lifetime_label' => 'Lifetime :',
+            'registration_button_cancel' => 'cancel',
+            'registration_button_register' => 'register',
+            'registration_button_add' => 'Register a new task',
+            'registration_button_delete' => 'Delete a task',
+            'registration_button_modify' => 'Modify a task',
+            'registration_piechart_title' => 'Tasks distribution',
+            'registration_barchart_title' => 'Average duration for each task',
         ],
         'fr' => [
             // viewIndex.php
@@ -85,6 +107,27 @@
             'gabarit_Services' => 'Services',
             'gabarit_legalNotice' => 'Mentions légales',
             'gabarit_followUs' => 'Suivez-nous !',
+
+            // viewConnection.php
+            'connection_title' => 'CONNEXION',
+            'connection_desc' => 'Connectez-vous à votre compte pour accéder à votre espace de travail',
+            'connection_login_label' => 'Identifiant :',
+            'connection_password_label' => 'Mot de passe :',
+            'connection_submit' => 'Connexion',
+            'connection_noAccount' => 'Vous n\'avez pas de compte ?',
+            'connection_createAccount' => 'Créez-en un ici',
+
+            // viewRegistration.php
+            'registration_title' => 'CRÉER UNE TÂCHE',
+            'registration_task_label' => 'Tâche :',
+            'registration_lifetime_label' => 'Durée :',
+            'registration_button_cancel' => 'annuler',
+            'registration_button_register' => 'enregistrer',
+            'registration_button_add' => 'Enregistrer une nouvelle tâche',
+            'registration_button_delete' => 'Supprimer une tâche',
+            'registration_button_modify' => 'Modifier une tâche',
+            'registration_piechart_title' => 'Distribution des tâches',
+            'registration_barchart_title' => 'Durée moyenne pour chaque tâche',
         ],
     ];
     $preferredLanguage = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);

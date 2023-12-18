@@ -29,12 +29,12 @@
 
                     <!--TITLE-->
                     <div>
-                        <h1 id="titleTASK">CREATE A TASK</h1>
+                        <h1 id="titleTASK"><?= $translations[$language]['registration_title']?></h1>
                     </div>
 
                     <!--TASK-->
                     <div id="task">
-                        <label id="taskLabel">Task :</label>
+                        <label id="taskLabel"><?= $translations[$language]['registration_task_label']?></label>
                         <div id="chooseTask">
                             <input list="tasks" placeholder="Search a task" name="searchTask" id="searchTask" value="<?php if (isset($_SESSION['tasks']) && (end($_SESSION['tasks']))->getId() != null)  : ?> <?= $nameLastTask ?> <?php endif; ?>" autofocus required>
                             <datalist id="tasks">
@@ -59,7 +59,7 @@
                     <!--LIFETIME-->
                     <div id="lifetime">
                         <div id="titleLifetime">
-                            <label id="lifetimeLabel">Lifetime :</label>
+                            <label id="lifetimeLabel"><?= $translations[$language]['registration_lifetime_label']?></label>
                         </div>
                         <div class="incrementDecrement">
                             <div class="plus">
@@ -101,13 +101,13 @@
 
                                     <!--CANCEL-->
                                     <div id="cancelDiv">
-                                        <input type="button" value="Cancel" id="cancel" class="buttonsEnd" onclick="window.location.reload();">    
+                                        <input type="button" value="<?= $translations[$language]['registration_button_cancel']?>" id="cancel" class="buttonsEnd" onclick="window.location.reload();">    
                                     </div>
                                 </td>
                                 <td class="cases">  
                                     <!--SUBMIT-->
                                     <div id="submitDiv">
-                                        <input type="submit" value="Register" id="submit" class="buttonsEnd">  
+                                        <input type="submit" value="<?= $translations[$language]['registration_button_register']?>" id="submit" class="buttonsEnd">  
                                     </div>
                                 </td>
                             </tr>
@@ -121,28 +121,28 @@
     <div id='BoutonAction'>
         <div class="divBoutonTache Add">
             <!-- Bouton d'ajout de tâches -->
-            <button class="boutonTaches Add" type="button">Register a new task</button>
+            <button class="boutonTaches Add" type="button"><?= $translations[$language]['registration_button_add']?></button>
         </div>
         
         <div class="divBoutonTache Supr">
             <!-- Bouton d'ajout de tâches -->
-            <a href="index.php?action=TaskSupression&IdTask=<?php if (isset($_SESSION['tasks']) && (end($_SESSION['tasks']))->getId() != null)  : ?> <?= $idLastTast ?> <?php endif; ?>"><button class="boutonTaches Supr" type="button">Delete a task</button></a>
+            <a href="index.php?action=TaskSupression&IdTask=<?php if (isset($_SESSION['tasks']) && (end($_SESSION['tasks']))->getId() != null)  : ?> <?= $idLastTast ?> <?php endif; ?>"><button class="boutonTaches Supr" type="button"><?= $translations[$language]['registration_button_delete']?></button></a>
             
         </div>
 
         <div class="divBoutonTache Modif">
             <!-- Bouton d'ajout de tâches -->
-            <button class="boutonTaches Modif" type="button">Modify a task</button>
+            <button class="boutonTaches Modif" type="button"><?= $translations[$language]['registration_button_modify']?></button>
         </div>
     </div>
     <!-- Graphiques -->
     <div id="graphiques">
         <div id="piechart">
-            <h1>Tasks distribution</h1>
+            <h1><?= $translations[$language]['registration_piechart_title']?></h1>
             <canvas id="myChart1"></canvas>
         </div>
         <div id="barchart">
-            <h1>Average duration for each task</h1>
+            <h1><?= $translations[$language]['registration_barchart_title']?></h1>
             <canvas id="myChart2"></canvas>
         </div>
     </div>
