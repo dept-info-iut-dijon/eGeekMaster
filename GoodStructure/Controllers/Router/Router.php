@@ -82,6 +82,7 @@ class Router {
         "HomeConnect" => new RouteHomeConnect($this->ctrlList["HomeController"]),
         "HomeRegistration" => new RouteHomeRegistration($this->ctrlList["HomeController"]),
         "MyHomeRegistration" => new RouteMyHomeRegistration($this->ctrlList["MainController"]),
+        "MyHomeJoin" => new RouteMyHomeJoin($this->ctrlList["HomeController"]),
     ];
     }
 
