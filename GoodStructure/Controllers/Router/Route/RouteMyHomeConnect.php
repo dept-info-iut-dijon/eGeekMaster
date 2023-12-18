@@ -7,8 +7,8 @@ require_once 'Controllers/MyHomeController.php';
  * @package Controllers\Router\Route
  * @author Théo Cornu
  */
-class RouteMyHomeJoin extends Route {
-    private MainController $controller;
+class RouteMyHomeConnect extends Route {
+    private MyHomeController $controller;
 
     /**
      * RouteMyHome constructor.
@@ -25,7 +25,7 @@ class RouteMyHomeJoin extends Route {
      * @return mixed
      */
     public function get($params = []) {
-        return $this->controller->AddUser();
+        return $this->controller->AddUserToHome();
     }
 
     /**
@@ -34,7 +34,7 @@ class RouteMyHomeJoin extends Route {
      * @return mixed
      */
     public function post($params = []) {
-        return $this->controller->AddUser();
+        return $this->controller->AddUserToHome();
     }
 
     /**
@@ -44,6 +44,6 @@ class RouteMyHomeJoin extends Route {
      * @return mixed
      */
     public function action($params = [], $method = 'GET') {
-        return $this->controller->AddUser();
+        return $this->controller->AddUserToHome();
     }
 }

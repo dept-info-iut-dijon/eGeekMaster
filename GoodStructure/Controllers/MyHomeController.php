@@ -93,7 +93,7 @@
          * @throws Exception If the User ID is invalid
          * @throws Exception If the User could not be added to the Home
          */
-        public function AddUser() {
+        public function AddUserToHome() {
             // Get the id of the user by the id login
             $idUser = $this->userManager->GetIdUserByLoginId($_SESSION["IdLogin"]);
 
