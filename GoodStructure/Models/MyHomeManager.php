@@ -203,7 +203,31 @@
 
         }
 
-        
+        /**
+         * Verify if a user is in a home or not by its id
+         * @param int $idLogin
+         * @return bool
+         */
+        public function IsUserInMyHome(int $idLogin) : bool {
+            try {
+                $sql = "SELECT * FROM myhome WHERE idUser = :value1";
+                $result = $this->executerRequete($sql, [
+                    ":value1"=> $idLogin
+                ]);
+                $user = $result->fetch(PDO::FETCH_ASSOC);
+                if ($user == false) {
+                    return false;
+                } else {
+                    return true;
+                }
+            } catch (Exception $e) {
+                // if error, we are redirect to the index page with an error
+                $errorMessage = "An error occured while verifying if the user is in the home";
+                header("Location : index.php?action=Index&errorMessage".urlencode($errorMessage));
+                exit();
+            }
+
+        }
 
     }
 ?>
