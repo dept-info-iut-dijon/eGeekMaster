@@ -2,6 +2,7 @@
 author: Théo Cornu
 author : Lola Cohidon-->
 <link rel="stylesheet" href="Public/css/reference2.css">
+<?php include 'companion.php'; ?>
 <div id="ContaintReference">
     <!--Search bar-->
     <div class="search">

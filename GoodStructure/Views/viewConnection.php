@@ -1,6 +1,7 @@
 <!-- author: Théo Cornu
 author: Théo Deguin 
 author : Enzo-->
+<?php include 'companion.php'; ?>
 <div id="page">
     <link rel="stylesheet" href="Public/css/connection.css">
     

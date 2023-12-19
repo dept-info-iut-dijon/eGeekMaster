@@ -1,8 +1,10 @@
 <!-- author: Théo Cornu -->
+<?php include 'companion.php'; ?>
 <div id="contenu">
     <link rel="stylesheet" href="Public/css/page_accueil/index8.css">
 
     <script src="Public/Animation_js/page_accueil/index.js"></script>
+    
 
     <div id="Debut">
         <?php if (isset($message)) : ?>
