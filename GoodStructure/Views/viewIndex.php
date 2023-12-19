@@ -2,7 +2,7 @@
 <?php require_once 'translations.php' ?>
 <?php include 'companion.php'; ?>
 <div id="contenu">
-    <link rel="stylesheet" href="Public/css/page_accueil/index8.css">
+    <link rel="stylesheet" href="Public/css/page_accueil/index9.css">
 
     <script src="Public/Animation_js/page_accueil/index.js"></script>
     

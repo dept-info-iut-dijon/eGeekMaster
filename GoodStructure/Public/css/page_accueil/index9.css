@@ -210,9 +210,12 @@ body {
 
 
     #FAQprincipal {
+        max-width: 500px;
+        max-height: 500px;
+
         border-radius: 30px;
         width: 50vw;
-        height: 700px;
+        height: 100vh;
         background-attachment: fixed;
         background-image: url(../../image/page_accueil/FAQ.jpg);
         background-size:70%;
@@ -238,10 +241,11 @@ body {
     margin: 50px;
 }
 /* Styles pour les écrans de petite taille */
-@media (max-width: 160vh) {
+@media (max-width: 1180px) {
     #FAQprincipal {
         
-        height: 50vh;
+        height: 60vh;
+
         background-position-x: 60%;
        
     }
@@ -262,6 +266,11 @@ body {
     #Faq_Pixi {
         display: flex;
         flex-direction: column;
+    }
+}
+@media (max-width: 400px) {
+    #FAQprincipal {
+        height: 20vh;
     }
 }
 #PixiPresentation fieldset {
