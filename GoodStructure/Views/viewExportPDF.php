@@ -7,24 +7,23 @@
         <h1>Export PDF</h1>
     </div>
     <!--Form to choose the date-->
-    <p id="chooseDate">Choose the date :</p>
+    <label for="month">Mois :</label>
     <!--Select the month-->
-    <div class="selectMonth">
-        <select id="month">
-            <option value="01">Janvier</option>
-            <option value="02">Février</option>
-            <option value="03">Mars</option>
-            <option value="04">Avril</option>
-            <option value="05">Mai</option>
-            <option value="06">Juin</option>
-            <option value="07">Juillet</option>
-            <option value="08">Août</option>
-            <option value="09">Septembre</option>
-            <option value="10">Octobre</option>
-            <option value="11">Novembre</option>
-            <option value="12">Décembre</option>
-        </select>
-    </div>    
+    <select id="month">
+        <option value="01">Janvier</option>
+        <option value="02">Février</option>
+        <option value="03">Mars</option>
+        <option value="04">Avril</option>
+        <option value="05">Mai</option>
+        <option value="06">Juin</option>
+        <option value="07">Juillet</option>
+        <option value="08">Août</option>
+        <option value="09">Septembre</option>
+        <option value="10">Octobre</option>
+        <option value="11">Novembre</option>
+        <option value="12">Décembre</option>
+    </select>
+
     <label for="year">Année :</label>
     <select id="year">
         <option value="2024">2024</option>
