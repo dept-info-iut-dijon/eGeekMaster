@@ -139,7 +139,7 @@ class LoginManager extends Model
                 $logintocompare = new Login();
                 $logintocompare->setPassword($password);
                 if($login->getPassword() == $logintocompare->getPassword()) {
-                    $_SESSION["IdLogin"] = $ligne['idLogin'];                    
+                    $_SESSION["IdLogin"] = $ligne['idLogin']; 
                 } else {
                     throw new PDOException("IdLogin not definied.");
                 }
@@ -168,6 +168,7 @@ class LoginManager extends Model
         session_destroy();
         header("Location: ".$_SERVER['PHP_SELF']);
     }
+
     
     
 }

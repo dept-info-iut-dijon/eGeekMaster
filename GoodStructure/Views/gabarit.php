@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="Public/css/mentionLegal.css"/>
     <script src="Public/Animation_js/header.js"></script>
     <script src="Public/Animation_js/companion1.js"></script>
+    <script src="Public/Animation_js/scrollTop.js"></script>
 </head>
 
 <body>
@@ -31,9 +32,16 @@
         <a class="lien-header" href="">
             <div class="icon" id="search"></div>
         </a>
-        <a class="lien-header" href="index.php?action=Connection" > 
-            <div class="icon" id="user"></div>
-        </a>
+        
+        <?php if (isset($_SESSION['IdLogin']) && (($_SESSION["IdMyHome"]) == null))  : ?>
+            <a class="lien-header" href="index.php?action=MyHome" > 
+                <div class="icon" id="user"></div>
+            </a>
+        <?php elseif(!isset($_SESSION['IdLogin'])) : ?>
+            <a class="lien-header" href="index.php?action=Connection" > 
+                <div class="icon" id="user"></div>
+            </a>
+        <?php endif; ?>
 </header>
 
 <!-- Parti menu déroulant + Flou -->
