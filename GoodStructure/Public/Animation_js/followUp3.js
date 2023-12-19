@@ -1,6 +1,3 @@
-
-
-
 /**
  * @author Lola Cohidon
  * @author Théo Cornu

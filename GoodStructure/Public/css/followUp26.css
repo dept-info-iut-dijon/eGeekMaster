@@ -1,4 +1,4 @@
-/* Author : Lola Cohidon */
+/*Author : Lola Cohidon */
 
 /* Reset default styles and set the base styles for the body */
 body {
@@ -14,14 +14,11 @@ body {
 }
 
 #PersonTitle{
-    color: black;
+    color: rgb(0, 0, 0);
     font-size: 45px; 
 
     text-align: left;
 }
-
-
-
 
 
 /* Styles for the container of detailed buttons */
@@ -103,7 +100,7 @@ body {
 
 /* Active styles for the detailed and global buttons with the 'active' class */
 #suiviD:active, #suiviG:active {
-    background-color: #6a2121; /* Change color when button is active */
+    background-color: #5a4a47; /* Change color when button is active */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add shadow when button is active */
 }
 
@@ -115,43 +112,40 @@ body {
 
 /*Author : Lola Cohidon */
 
-/* Media queries for responsiveness */
-@media only screen and (max-width: 600px) {
-    #Person {
-        top: 50px; /* Move the person information down */
-        left: 70px; /* Move the person information to the right */
-        font-size: 18px; 
+/* Media query for smaller screens, such as phones */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 87,5%;
     }
-    
-    
-    
-    .button {
-        font-size: 14px; /*Text size for buttons */
+
+    #PersonTitle {
+        font-size: 187%;
+    }
+}
+
+/*Auhtor : Lola Cohidon */
+
+/* Media query for smaller screens, such as phones */
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 80%;
+    }
+    .line {
+        display: none; /* Hides the line on small screens */
+    }
+    #PersonTitle {
+        font-size: 150%;
+    }
+    .buttons {
+        flex-direction: column; /* Puts the buttons in a column */
+        align-items: center; /* Center the buttons */
     }
 
     #suiviD, #suiviG {
-        font-size: 12px;
-        width: 150px;
-        padding: 5px 10px;
+        width: 100%; /* Uses the full width for buttons */
+        margin-bottom: 3%;
     }
-    
-    #content {
-        margin-top: 30px; 
-    }
-    
-    .button-detail {
-        width: 200px; /*Size of detailed buttons */
-    }
-    
-    #globalText {
-        top: 175px;
-        left: 125px;
-        font-size: 16px;
-    }
-    
 }
-
-
 
 
 /* author: Théo Cornu */

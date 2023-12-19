@@ -1,8 +1,8 @@
 <!-- 
-autor : Lola Cohidon
+author : Lola Cohidon
 author : Théo Cornu
 -->
-<link rel="stylesheet" href="Public/css/followUp23.css">
+<link rel="stylesheet" href="Public/css/followUp26.css">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="Public/Animation_js/followUp3.js"></script>
 
