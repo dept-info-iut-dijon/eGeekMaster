@@ -1,7 +1,8 @@
-<div id="termsConditions">
+<link rel="stylesheet" href="Public/css/mentionLegal.css"/>
+<div class="mentionLegal">
     <h1>Terms & Conditions</h1>
     <p>
-        These Terms of Service ("Terms") govern your use of our website, Family'Easy, and the services provided by Family'Easy (collectively referred to as the "Service"). By accessing or using our Service, you agree to be bound by these Terms.
+        These Terms of Service ("Terms") govern your use of our website, Famil'Easy, and the services provided by Famil'Easy (collectively referred to as the "Service"). By accessing or using our Service, you agree to be bound by these Terms.
     </p>
     <h2>1. Use of the Service</h2>
     <h3>1.1 Eligibility</h3>
@@ -42,7 +43,7 @@
     </p>
     <h2>6. Limitation of Liability</h2>
     <p>
-        In no event shall Family'Easy be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly.
+        In no event shall Famil'Easy be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly.
     </p>
     <h2>7. Changes to Terms</h2>
     <p>

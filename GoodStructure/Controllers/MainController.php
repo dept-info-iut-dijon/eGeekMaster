@@ -17,9 +17,8 @@ class MainController {
         
         $indexView = new View("Index");
         
-        $data = array(
-            
-        );
+        $data = $this->initializeIndexData();
+        
         if ($message !== null) {
             $data["message"] = $message;
             
@@ -34,9 +33,7 @@ class MainController {
     public function Search() {
     
         $searchView = new View("Search");
-        $data = array(
-            //ajouter les données à afficher
-        );
+        $data = $this->initializeIndexData();
         $searchView->generer($data);
     }
 
@@ -46,9 +43,7 @@ class MainController {
     public function Connection() {
     
         $connectionView = new View("Connection");
-        $data = array(
-            //ajouter les données à afficher
-        );
+        $data = $this->initializeIndexData();
         $connectionView->generer($data);
     }
 
@@ -58,9 +53,7 @@ class MainController {
     public function Registration() {
     
         $registrationView = new View("Registration");
-        $data = array(
-            //ajouter les données à afficher
-        );
+        $data = $this->initializeIndexData();
         $registrationView->generer($data);
     }
 
@@ -104,7 +97,7 @@ class MainController {
         $durationLastTaskhours = strval($durationLastTask*15%4);
         
         $dashBoardView = new View("DashBoard");
-        $data = array();
+        $data = $this->initializeIndexData();
         if ($message !== null) {
             $data["message"] = $message;
             
@@ -126,11 +119,117 @@ class MainController {
     public function Reference() {
     
         $referenceView = new View("Reference");
+        $data = $this->initializeIndexData();
+        $referenceView->generer($data);
+    
+    }
+
+    /**
+     * Displays the Follow up page
+     * @author Enzo
+     * @param $message 
+     * @param $idLastTast
+     * @param $nameLastTask
+     * @param $durationLastTask
+     * @param $dateLastTask 
+    */
+    public function FollowUp($message = null, $idLastTast = null, $nameLastTask = null, $durationLastTask = null, $dateLastTask = null) {
+    
+    $taskDurations = [];
+    $labels = [];
+    $tempT = 0;
+    $taskDates = [];
+    $taskCountPerYearMonth = [];
+    $taskCountPerYear = [];
+
+    if (isset($_SESSION['tasks'])) {                         
+        foreach ($_SESSION['tasks'] as $task) {
+            // Get name, duration and date of the task
+            $taskName = $task->getNameTask();
+            $taskDuration = $task->getDuration();
+            $taskDate = $task->getDateAdded();
+
+            // Separate the date in year and month
+            $year = date('Y', strtotime($taskDate));
+            $month = date('n', strtotime($taskDate));
+
+            // If taskname is not in labels
+            if (!in_array($taskName, $labels)) {
+                // For detail part
+                $labels[] = $taskName;
+                $taskDurations[$taskName] = $taskDuration;
+                $tempT += $taskDuration;
+
+                // For global part
+                // Per year
+                if (!isset($taskCountPerYear[$year][$taskName])) {
+                    $taskCountPerYear[$year][$taskName] = 1;
+                } else {
+                    $taskCountPerYear[$year][$taskName]++;
+                }
+                // Per month
+                if (!isset($taskCountPerYearMonth[$year][$month][$taskName])) {
+                    $taskCountPerYearMonth[$year][$month][$taskName] = 1;
+                } else {
+                    $taskCountPerYearMonth[$year][$month][$taskName]++;
+                }
+            } else {
+                // For detail part
+                $taskDurations[$taskName] += $taskDuration;
+                $tempT += $taskDuration;
+
+                // For global part
+                // Per year
+                if (!isset($taskCountPerYear[$year][$taskName])) {
+                    $taskCountPerYear[$year][$taskName] = 1;
+                } else {
+                    $taskCountPerYear[$year][$taskName]++;
+                }
+                // Per month
+                if (!isset($taskCountPerYearMonth[$year][$month][$taskName])) {
+                    $taskCountPerYearMonth[$year][$month][$taskName] = 1;
+                } else {
+                    $taskCountPerYearMonth[$year][$month][$taskName]++;
+                }
+            }
+        }
+
+        foreach ($labels as $label) {
+            // For detail part
+            $taskPercent[$label] = ceil(($taskDurations[$label]*100) / $tempT);      
+            
+        }
+    }
+
+
+
+
+        // Separate the duration into hours and minutes
+        $durationLastTaskminutes = strval($durationLastTask*15%60);
+        $durationLastTaskhours = strval($durationLastTask*15%4);
+
+        // Create a view Follow up
+        $referenceView = new View("FollowUp");
+        // Data to generate the page
         $data = array(
             //ajouter les données à afficher
         );
+        if($message != null) {
+            $data = $message;
+        }
+        $data["idLastTast"] = $idLastTast;
+        $data["nameLastTask"] = $nameLastTask;
+        $data["durationLastTaskhours"] = $durationLastTaskhours;
+        $data["durationLastTaskminutes"] = $durationLastTaskminutes;
+        $data["dateLastTask"] = $dateLastTask;
+        $data["taskPercent"] = $taskPercent;
+        $data["taskDurations"] = $taskDurations;
+        $data["taskCountPerYearMonth"] = $taskCountPerYearMonth;
+        $data["taskCountPerYear"] = $taskCountPerYear;
+        $data["labels"] = $labels;
+
+        // Generate the view
         $referenceView->generer($data);
-    
     }
 
     /**
@@ -283,13 +382,124 @@ class MainController {
      * Displays the TermsConditions page.
      */
     public function TermsConditions() {
-    
+
+        
         $termsConditionsView = new View("TermsConditions");
         $data = array(
             //ajouter les données à afficher
         );
         $termsConditionsView->generer($data);
     
+    }
+
+    /**
+     * Displays the response of the companion
+     * @author Theo Cornu
+     * @author Theo Deguin
+     * @author Lola Cohidon
+     */
+    private function getResponse() : array{
+        $durationC = 0;
+        $imagePath = "Public/image/companion/companion1.png";
+        $prop = ""; 
+        $affiche = array();
+    
+        if (isset($_SESSION['IdLogin'])) {
+            switch ($_GET['action']) {
+                case 'Index':
+                    $prop = "You're on the Homepage. Explore information about the website, its usage, and read customer reviews here.";
+                    $imagePath = "Public/image/companion/companion5.png";
+                    break;
+                case 'ConnectLogin':
+                    $prop = "You have just logged into your account. Welcome or welcome back among us.";
+                    break;
+                case 'InfoDashBoard':
+                    if ((isset($_SESSION['tasks'])) && ((end($_SESSION['tasks']))->getId() != null)) {
+                        $currentDateT = new DateTime();
+                        $currentDate = $currentDateT->format('Y-m-d');
+                        $lastTaskDate = end($_SESSION['tasks'])->getDateAdded();
+                        $lastTaskDateD = strtotime($lastTaskDate);
+                        $currentDateD = strtotime($currentDate);
+                        $oneWeekAgo = strtotime("-1 week", $currentDateD);
+                        foreach ($_SESSION['tasks'] as $task) {
+                            $durationC += $task->getDuration();
+                        }
+                        if ($lastTaskDateD <= $oneWeekAgo) {
+                            $prop = "It seems you haven't recorded any tasks in a week or more. Consider updating your task log to stay organized.";
+                            $imagePath = "Public/image/companion/companion7.png";
+                        } elseif ($durationC >= 8) {
+                            $prop = "You've accomplished quite a few tasks this week. Great job!";
+                            $imagePath = "Public/image/companion/companion4.png";
+                        } elseif ($durationC <= 4) {
+                            $prop = "It seems like you haven't completed enough tasks this week. Consider taking on a few more to stay on track.";
+                            $imagePath = "Public/image/companion/companion6.png";
+                        } else {
+                            $prop = "It looks like you've completed a decent number of tasks this week. Keep it up!";
+                            $imagePath = "Public/image/companion/companion8.png";
+                        }
+                    } else {
+                        $prop = "You're on the dashboard page. Here, you can view information about tasks completed in the last week.";
+                    }
+                    break;
+                case 'Reference':
+                    $prop = "You're on the Reference page. Here, you can check the value reference for each possible task.";
+                    break;
+                case 'Registration':
+                    $prop = "You're on the 'Update My Account' page. Here, you can modify the information associated with your account.";
+                    break;
+                case 'TaskRegistration':
+                    $prop = "You've just added a completed task to the dashboard.";
+                    $imagePath = "Public/image/companion/companion2.png";
+                    break;
+                case 'TaskSupression':
+                    if (!isset($_SESSION['tasks']) || (end($_SESSION['tasks']))->getId() == null) {
+                        $prop = "Unable to delete tasks as there are currently none recorded.";
+                    } else {
+                        $prop = "You've just removed the last added task.";
+                    }
+                    break;
+                case 'TaskModification':
+                    if (!isset($_SESSION['tasks']) || (end($_SESSION['tasks']))->getId() == null) {
+                        $prop = "Unable to modify tasks as there are currently none recorded.";
+                    } else {
+                        $prop = "You've just modified the last added task.";
+                    }
+                    break;
+                default:
+                    $prop = 'Action non reconnue';
+                    break;
+            }
+        } else {
+            switch ($_GET['action']) {
+                case 'Index':
+                    $prop = "Welcome to Family'Easy, your new tool for household task management. You're on the homepage. Explore information about the website, its usage, and read customer reviews here.";
+                    $imagePath = "Public/image/companion/companion5.png";
+                    break;
+                case 'Connection':
+                    $prop = "You're on the Login page. Sign in here to access your account.";
+                    break;
+                case 'Registration':
+                    $prop = "You're on the Registration page. Create your account here to get started.";
+                    break;
+                default:
+                    $prop = 'Action non reconnue';
+                    break;
+            }
+        }
+    
+        $affiche[1] = $prop;
+        $affiche[2] = $imagePath;
+        return $affiche;
+    }
+
+    private function initializeIndexData() {
+        $data = array();
+        
+        $prop = $this->getResponse();
+        $data["prop"] = $prop[1];
+        $data["imagePath"] = $prop[2];
+
+        return $data;
     }
 
     /**
