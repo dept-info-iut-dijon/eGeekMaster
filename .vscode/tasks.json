@@ -6,11 +6,14 @@
         {
             "label": "Start Opera GX + Fichier Courrant",
            "type": "shell",
-            "command": "C:/Users/ttmdu/AppData/Local/Programs/Opera GX/launcher.exe",
-            "args": [
-                "http://localhost/eGeekMasterXamp/eGeekMaster/GoodStructure/${fileBasename}"
-            
-            ],
+           "command":"start",
+           //"C:/Users/ttmdu/OneDrive/Bureau/Navigateur/Navigateur Opera GX.lnk",
+
+          "args": [
+               "msedge",
+               "http://localhost/eGeekMaster/GoodStructure/index.php"
+           
+           ],
             "group": {
                 "kind": "build",
                 "isDefault": true
