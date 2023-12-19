@@ -1,12 +1,15 @@
-<div id="privacyPolicy">
-    <h1>Privacy Policy for Family'Easy</h1>
+<link rel="stylesheet" href="Public/css/mentionLegal.css"/>
+<div class="mentionLegal">
+    <h1>Privacy Policy for Famil'Easy</h1>
     <h2>1. Information Collection</h2>
     <h3>1.1 Information We Collect</h3>
     <p>
         When you use our website, we may collect the following types of information:
     </p>
     <p>
-        Personal Information: Name, email address, phone number, etc., when you create an account on Family'Easy.
+        Personal Information: Name, email address, phone number, etc., when you create an account on Famil'Easy.
+    </p>
+    <p>
         Household Tasks Information: Details of tasks you add or manage on the platform.
     </p>
     <h3>1.2 Automated Collection</h3>
@@ -19,7 +22,7 @@
         We use the personal information you provide to us to:
     </p>
     <p>
-    Create and manage your account on Family'Easy. Facilitate the management of household tasks within your home. Send you notifications related to tasks and activities on the platform.
+        Create and manage your account on Famil'Easy. Facilitate the management of household tasks within your home. Send you notifications related to tasks and activities on the platform.
     </p>
     <h3>2.2 Use of Automatically Collected Information</h3>
     <p>
