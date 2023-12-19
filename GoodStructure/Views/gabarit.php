@@ -56,8 +56,8 @@
             <li><a class="lien-header" href="index.php?action=Reference"><?= $translations[$language]['gabarit_button_login']?></a></li>
             <li><a class="lien-header" href="index.php?action=InfoFollowUp">Follow up</a></li>
         <?php else : ?>
-            <li><a class="lien-header" href="index.php?action=Connection"  ><?= $translations[$language]['home_title']?></a></li> 
-            <li><a class="lien-header" href="index.php?action=Registration"  ><?= $translations[$language]['home_title']?></a></li> 
+            <li><a class="lien-header" href="index.php?action=Connection"  ><?= $translations[$language]['gabarit_button_login']?></a></li> 
+            <li><a class="lien-header" href="index.php?action=Registration"  ><?= $translations[$language]['gabarit_button_register']?></a></li> 
         <?php endif; ?>
     </ul>
 </div>
@@ -195,7 +195,7 @@
         </div>
         <div id="services" class="link">
             <ul>
-                <li class="linkTitle"><a href="#"><?= $translations[$language]['home_title']?></a></li>
+                <li class="linkTitle"><a href="#"><?= $translations[$language]['gabarit_services']?></a></li>
                 <li class="linkSubstitle"><a href="#">New link 1</a></li>
                 <li class="linkSubstitle"><a href="#">New link 2</a></li>
                 <li class="linkSubstitle"><a href="#">New link 3</a></li>
@@ -212,7 +212,7 @@
         </div>
         <div class="footer-social">
             <div id="follow-text-div">
-                <p id="follow-text">Follow us !</p>
+                <p id="follow-text"><?= $translations[$language]['gabarit_followUs']?></p>
             </div>
             <div id="ResLogo">
                 <a class="Facebook" href="#"><img src="Public/image/page_footer/facebook.png" alt="Facebook"></a>
