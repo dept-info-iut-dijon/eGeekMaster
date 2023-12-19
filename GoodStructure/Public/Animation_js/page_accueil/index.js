@@ -1,3 +1,6 @@
+/**
+ * @author Théo Cornu
+*/
 function main() {
     console.log("Hello, world");
 
@@ -114,13 +117,7 @@ function main() {
         id = setInterval(nextImage, 2000);
     }
 
-    function scrollTop() {
-        window.scrollTo({
-            behavior: "smooth",
-            top: 0
-            
-        });
-    }
+    
 
     // Add event handlers for actions on smiley1
     smiley1.addEventListener("mouseover", rotateSmiley1);
@@ -144,14 +141,6 @@ function main() {
     });
 
 
-
-
-    // Sélectionnez le bouton pour remonter en haut
-    const scrollToTopButton = document.querySelector(".scroll-to-top");
-
-// Ajoutez un gestionnaire d'événement pour le clic sur le bouton
-    scrollToTopButton.addEventListener("click", scrollTop);
-    
 }
 
 // Execute the main function when the page is fully loaded

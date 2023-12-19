@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="Public/css/footer1.css"/>
     <link rel="stylesheet" href="Public/css/erreur.css"/>
     <script src="Public/Animation_js/header.js"></script>
+    <script src="Public/Animation_js/scrollTop.js"></script>
 </head>
 
 <body>
@@ -29,7 +30,7 @@
             <div class="icon" id="search"></div>
         </a>
         
-        <?php if (isset($_SESSION['IdLogin']) || (isset($_SESSION["IdMyHome"]) != null))  : ?>
+        <?php if (isset($_SESSION['IdLogin']) && (($_SESSION["IdMyHome"]) == null))  : ?>
             <a class="lien-header" href="index.php?action=MyHome" > 
                 <div class="icon" id="user"></div>
             </a>

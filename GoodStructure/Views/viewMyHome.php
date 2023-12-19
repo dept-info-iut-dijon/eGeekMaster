@@ -22,7 +22,7 @@
                 <p>Join a home to be with your family</p>
             </div>
             <div>
-                <form id="HomeForm" action="index.php?action=HomeConnect" method="post">
+                <form id="HomeForm" action="index.php?action=MyHomeConnect" method="post">
                     <fieldset>
                         <div id="Home">   
                             <div id="infoSend">

@@ -1,3 +1,7 @@
+/**
+ * @author Théo Cornu
+*/
+
 // Fonction pour changer le contenu de la page après un clic sur le bouton
 
 function DisplayHomeRegistration() {

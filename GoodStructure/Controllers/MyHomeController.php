@@ -76,7 +76,7 @@
 
 
             // Edit a Home
-            $this->myHomeManager->UpdateMyHome($_POST["idHome"], $_POST["NameHome"], $_POST["CodeHome"]);
+            $this->myHomeManager->UpdateMyHome($_POST["idHome"], $_POST["NameHome"], strval($_POST["CodeHome"]));
 
             // Redirect to the main page
             $this->mainController->Index("Home edited");
@@ -100,11 +100,21 @@
             //Get the name of the user by its id
             $username = $this->userManager->GetNameById($idUser);
 
-            // Add a user to a home
-            $this->myHomeManager->AddUserToMyHome($idUser, $_POST["CodeHome"]);
+            // Get the id of the home by the code of the home
+            $idHome = $this->myHomeManager->GetLastIdMyHomeByCode(strval($_POST["CodeHome"]));
 
-            // Redirect to the main page
-            $this->mainController->Index("Welcome to home $username");
+            if ($idHome == null) {
+                // Redirect to the main page
+                $this->mainController->Index("Home not found");
+            }
+
+            else {
+                // Add a user to a home
+                $this->userManager->UpdateUserHome($idUser, $idHome);
+
+                // Redirect to the main page
+                $this->mainController->Index("Welcome to home $username");
+            }
         }
 
 
@@ -136,7 +146,7 @@
         private function populateMyHome() {
             // Set the properties of the MyHome object
             $this->myHome->SetNameMyHome($_POST["NameHome"]);
-            $this->myHome->SetCodeMyHome($_POST["CodeHome"]);
+            $this->myHome->SetCodeMyHome(strval($_POST["CodeHome"]));
 
         }
         

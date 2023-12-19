@@ -118,22 +118,22 @@
         }
 
         /**
-         * Add a user to a home in the database
-         * @author Théo
-         * @param int $idUser id of user
-         * @param int $idMyHome id of myHome
+         * Get the last id of a home in the database by its code
+         * @param string $codeMyHome code of myHome
+         * @return int|null return the last id of the home
          */
-        public function AddUserToMyHome(int $idUser, int $idMyHome) : void {
+        public function GetLastIdMyHomeByCode(string $codeMyHome) : int|null{
             try {
-                $sql = "INSERT INTO usermyhome (idUser, idMyHome) VALUES (:value1, :value2)";
-                $this->executerRequete($sql, [
-                    ":value1"=> $idUser,
-                    ":value2"=> $idMyHome
+                $sql = "SELECT MAX(idMyHome) AS lastId FROM myhome WHERE codeMyHome = :value1";
+                $result = $this->executerRequete($sql, [
+                    ":value1"=> $codeMyHome
                 ]);
+                $lastIdMyHome = $result->fetch(PDO::FETCH_ASSOC)['lastId'];
+                return (int) $lastIdMyHome;
             } catch (Exception $e) {
                 // if error, we are redirect to the index page with an error
-                $errorMessage = "An error occured while adding the user to the home";
-                header("Location : index.php?action=MyHome&errorMessage".urlencode($errorMessage));
+                $errorMessage = "An error occurred while getting the last id of the home";
+                header("Location: index.php?action=MyHome&errorMessage=" . urlencode($errorMessage));
                 exit();
             }
         }
@@ -146,11 +146,8 @@
          */
         public function DeleteUserFromMyHome(int $idUser, int $idMyHome) : void {
             try {
-                $sql = "DELETE FROM usermyhome WHERE idUser = :value1 AND idMyHome = :value2";
-                $this->executerRequete($sql, [
-                    ":value1"=> $idUser,
-                    ":value2"=> $idMyHome
-                ]);
+                $sql = "DELETE FROM usermyhome WHERE idUser = ? AND idMyHome = ?";
+                $this->executerRequete($sql, [$idUser,$idMyHome]);
             } catch (Exception $e) {
                 // if error, we are redirect to the index page with an error
                 $errorMessage = "An error occured while deleting the user from the home";
@@ -188,9 +185,8 @@
          */
         public function GetNumberOfUsersInMyHome(int $idMyHome) : int {
             try {
-                $sql = "SELECT COUNT(*) FROM usermyhome WHERE idMyHome = :value1";
-                $result = $this->executerRequete($sql, [
-                    ":value1"=> $idMyHome
+                $sql = "SELECT COUNT(*) FROM myhome WHERE idMyHome = ?";
+                $result = $this->executerRequete($sql, [ $idMyHome
                 ]);
                 $numberOfUsers = $result->fetch(PDO::FETCH_ASSOC);
                 return $numberOfUsers;
@@ -203,31 +199,7 @@
 
         }
 
-        /**
-         * Verify if a user is in a home or not by its id
-         * @param int $idLogin
-         * @return bool
-         */
-        public function IsUserInMyHome(int $idLogin) : bool {
-            try {
-                $sql = "SELECT * FROM myhome WHERE idUser = :value1";
-                $result = $this->executerRequete($sql, [
-                    ":value1"=> $idLogin
-                ]);
-                $user = $result->fetch(PDO::FETCH_ASSOC);
-                if ($user == false) {
-                    return false;
-                } else {
-                    return true;
-                }
-            } catch (Exception $e) {
-                // if error, we are redirect to the index page with an error
-                $errorMessage = "An error occured while verifying if the user is in the home";
-                header("Location : index.php?action=Index&errorMessage".urlencode($errorMessage));
-                exit();
-            }
-
-        }
+        
 
     }
 ?>

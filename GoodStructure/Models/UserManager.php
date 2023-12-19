@@ -326,5 +326,26 @@ class UserManager extends Model
             exit();
         }
     }
+
+    /**
+     * Retrieve de id of the MyHome of the User if it exists.
+     * @param int $idUser The ID of the User to retrieve.
+     * @return int|null The ID of the MyHome, or null if not found.
+     * @throws Exception
+     */
+    public function GetIdMyHomeByIdUser(int $idUser): ?int
+    {
+        try {
+            $sql = 'SELECT MyHomeidMyHome FROM users WHERE idUsers = ?';
+            $result = $this->executerRequete($sql, [$idUser]);
+            $line = $result->fetch(PDO::FETCH_ASSOC);
+            return $line['MyHomeidMyHome'];
+        } catch (PDOException $e) {
+            // In case of an error, redirect to the error page with a message
+            $errorMessage = "An error occurred retrieving the MyHome.";
+            header("Location: index.php?action=MyHome&errorMessage=".urlencode($errorMessage));
+            exit();
+        }
+    }
 }
 ?>
