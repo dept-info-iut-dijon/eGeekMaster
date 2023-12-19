@@ -58,18 +58,18 @@
                                 ?>
                             </select> 
                             <select name="MonthOfBirth" id="monthOfBirth" class="inputs date" required>
-                                <option value="01">Jan</option>
-                                <option value="02">Feb</option>
-                                <option value="03">Mar</option>
-                                <option value="04">Apr</option>
-                                <option value="05">May</option>
-                                <option value="06">Jun</option>
-                                <option value="07">Jul</option>
-                                <option value="08">Aug</option>
-                                <option value="09">Sep</option>
-                                <option value="10">Oct</option>
-                                <option value="11">Nov</option>
-                                <option value="12">Dec</option>
+                                <option value="01"><?= $translations[$language]['registration_month_jan']?></option>
+                                <option value="02"><?= $translations[$language]['registration_month_feb']?></option>
+                                <option value="03"><?= $translations[$language]['registration_month_mar']?></option>
+                                <option value="04"><?= $translations[$language]['registration_month_apr']?></option>
+                                <option value="05"><?= $translations[$language]['registration_month_may']?></option>
+                                <option value="06"><?= $translations[$language]['registration_month_jun']?></option>
+                                <option value="07"><?= $translations[$language]['registration_month_jul']?></option>
+                                <option value="08"><?= $translations[$language]['registration_month_aug']?></option>
+                                <option value="09"><?= $translations[$language]['registration_month_sep']?></option>
+                                <option value="10"><?= $translations[$language]['registration_month_oct']?></option>
+                                <option value="11"><?= $translations[$language]['registration_month_nov']?></option>
+                                <option value="12"><?= $translations[$language]['registration_month_dec']?></option>
                             </select>  
                             <select name="YearOfBirth" id="yearOfBirth" class="inputs date" required>
                                 <?php
@@ -140,13 +140,13 @@
                     <!--CONDITIONS-->
                     <div>
                         <p id="conditions">
-                        <?= $translations[$language]['registration_placeFamily_conditions']?> <a href="" class="chartes"><?= $translations[$language]['registration_privacyPolicy']?></a> <?= $translations[$language]['registration_and']?> <a href="" class="chartes"><?= $translations[$language]['registration_codeOfConduct']?></a>.
+                        <?= $translations[$language]['registration_conditions']?> <a href="" class="chartes"><?= $translations[$language]['registration_privacyPolicy']?></a> <?= $translations[$language]['registration_and']?> <a href="" class="chartes"><?= $translations[$language]['registration_codeOfConduct']?></a>.
                         </p>
                     </div>   
                     
                     <!--SIGN UP-->
                     <div id="submitDiv">
-                        <input type="submit" value="Sign up" class="inputs" id="submit"><?= $translations[$language]['registration_submit']?></input>
+                        <input type="submit" value="Sign up" class="inputs" id="submit" text="<?= $translations[$language]['registration_submit']?>">
                     </div>
 
                     <!--HAVE A ACCOUNT-->
