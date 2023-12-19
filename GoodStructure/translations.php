@@ -104,6 +104,18 @@
             'registration_codeOfConduct' => 'code of conduct',
             'registration_submit' => 'Sign up',
             'registration_haveAccount' => 'Already have an account',
+            'registration_month_jan' => 'Jan',
+            'registration_month_feb' => 'Feb',
+            'registration_month_mar' => 'Mar',
+            'registration_month_apr' => 'Apr',
+            'registration_month_may' => 'May',
+            'registration_month_jun' => 'Jun',
+            'registration_month_jul' => 'Jul',
+            'registration_month_aug' => 'Aug',
+            'registration_month_sep' => 'Sep',
+            'registration_month_oct' => 'Oct',
+            'registration_month_nov' => 'Nov',
+            'registration_month_dec' => 'Dec',
 
         ],
         'fr' => [
@@ -164,9 +176,56 @@
             'dashboard_button_delete' => 'Supprimer la dernière tâche',
             'dashboard_button_modify' => 'Modifier la dernière tâche',
             'dashboard_piechart_title' => 'Distribution des tâches',
-            'dashboard_barchart_title' => 'Durée moyenne pour chaque tâche',7
+            'dashboard_barchart_title' => 'Durée moyenne pour chaque tâche',
 
-            //
+            // viewRegistration.php
+            'registration_title' => 'Créer un nouveau compte',
+            'registration_desc' => 'C\'est facile et rapide',
+            'registration_lastname_label' => 'Nom',
+            'registration_firstname_label' => 'Prénom',
+            'registration_email_label' => 'Email',
+            'registration_username_label' => 'Identifiant',
+            'registration_password_label' => 'Mot de passe',
+            'registration_birthdate_label' => 'Date de naissance',
+            'registration_gender_label' => 'Genre',
+            'registration_gender_woman' => 'Femme',
+            'registration_gender_man' => 'Homme',
+            'registration_gender_other' => 'Autre',
+            'registration_placeFamily_desc'=> 'Quelle est votre place dans votre famille ?',
+            'registration_placeFamily_option' => 'Sélectionnez votre place dans la famille',
+            'registration_placeFamily_parent' => 'Parent',
+            'registration_placeFamily_child' => 'Enfant',
+            'registration_placeFamily_grandparent' => 'Grand-parent',
+            'registration_placeFamily_grandchild' => 'Petit-enfant',
+            'registration_placeFamily_uncle' => 'Oncle/Tante',
+            'registration_placeFamily_cousin' => 'Cousin',
+            'registration_placeFamily_nephew' => 'Neveu/Nièce',
+            'registration_placeFamily_stepchild' => 'Beau-fils/Belle-fille',
+            'registration_placeFamily_inlaw' => 'Par alliance',
+            'registration_placeFamily_stepparent' => 'Beau-parent',
+            'registration_placeFamily_halfSibling' => 'Demi-frère/Demi-soeur',
+            'registration_placeFamily_otherPlace' => 'Autre',
+            'registration_conditions' => 'En cliquant sur “S\'inscrire”, vous acceptez nos conditions d\'utilisation et reconnaissez avoir lu et compris notre ',
+            'registration_privacyPolicy' => 'politique de confidentialité',
+            'registration_and'=> 'et',
+            'registration_codeOfConduct' => 'code de conduite',
+            'registration_submit' => 'S\'inscrire',
+            'registration_haveAccount' => 'Vous avez déjà un compte',
+            'registration_month_jan' => 'Jan',
+            'registration_month_feb' => 'Fév',
+            'registration_month_mar' => 'Mar',
+            'registration_month_apr' => 'Avr',
+            'registration_month_may' => 'Mai',
+            'registration_month_jun' => 'Juin',
+            'registration_month_jul' => 'Juil',
+            'registration_month_aug' => 'Aoû',
+            'registration_month_sep' => 'Sep',
+            'registration_month_oct' => 'Oct',
+            'registration_month_nov' => 'Nov',
+            'registration_month_dec' => 'Déc',
+
+            
+
         ],
     ];
     $preferredLanguage = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
@@ -181,28 +240,3 @@
     /**<?= $translations[$language]['home_title']?> */
     /**<?php require_once 'translations.php' ?>*/
 ?>
-
-<?php
-    $translations = [
-        'en' => [
-            'index_title' => 'Welcome to Family Easy',
-            'index_desc'=> 'Family Easy is an application dedicated to calculating the monetary and time value of domestic and parental tasks within couples. Our goal is to highlight the unequal distribution of household and parenting work in a household.',
-        ],
-        'fr' => [
-            'index_title' => 'Bienvenue sur Family Easy',
-            'index_desc'=> 'Family Easy est une application dédiée au calcul de la valeur monétaire et temporelle des tâches domestiques et parentales au sein des couples. Notre objectif est de mettre en lumière la répartition inégale du travail ménager et parental au sein d un foyer.',
-        ],
-    ];
-    $preferredLanguage = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
-    $allowedLanguages = ['en', 'fr'];
-    if (in_array($preferredLanguage, $allowedLanguages)) {
-        $language = $preferredLanguage;
-    } else {
-        $language = 'en';
-    }
-    
-    
-    /**<?= $translations[$language]['home_title']?> */
-    /**<?php require_once 'translations.php' ?>*/
-?>
-

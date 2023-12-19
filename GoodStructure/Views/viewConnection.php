@@ -32,12 +32,6 @@ author : Enzo-->
                             </div>
                             <div class="infoSend">
                                 <label for="Password"><?= $translations[$language]['connection_password_label']?></label><br>
-                            <div class="infoSend">
-                                <label for="Username">Login :</label><br>
-                                <input type="text" id="login" name="Username" class="inputs" autofocus required>
-                            </div>
-                            <div class="infoSend">
-                                <label for="Password"><?= $translations[$language]['connection_password_label']?></label><br>
                                 <input type="password" id="password" name="Password" class="inputs" required> 
                             </div >         
                             <div id="submitDiv">
@@ -48,7 +42,7 @@ author : Enzo-->
                 </form>
             </div>
             <div>
-                <p><?= $translations[$language]['connection_noAccount']?><a id="lieninscription" href="index.php?action=Registration"><?= $translations[$language]['connection_createAccount']?></a></p>
+                <p><?= $translations[$language]['connection_noAccount']?> <a id="lieninscription" href="index.php?action=Registration"><?= $translations[$language]['connection_createAccount']?></a></p>
             </div>    
         </div>
     </div>
