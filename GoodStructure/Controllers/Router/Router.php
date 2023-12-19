@@ -82,7 +82,8 @@ class Router {
         "PrivacyPolicy" => new RoutePrivacyPolicy($this->ctrlList["MainController"]),
         "CookiePolicy" => new RouteCookiePolicy($this->ctrlList["MainController"]),
         "LegalNotice" => new RouteLegalNotice($this->ctrlList["MainController"]),
-        "TermsConditions" => new RouteTermsConditions($this->ctrlList["MainController"])
+        "TermsConditions" => new RouteTermsConditions($this->ctrlList["MainController"]),
+        "ExportPDF" => new RouteExportPDF($this->ctrlList["MainController"])
     ];
     }
 

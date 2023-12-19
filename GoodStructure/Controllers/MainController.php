@@ -291,4 +291,19 @@ class MainController {
         $termsConditionsView->generer($data);
     
     }
+    public function ExportPDF($message = null) {
+
+        
+        $PDFView = new View("ExportPDF");
+        
+        $data = array(
+            
+        );
+        if ($message !== null) {
+            $data["message"] = $message;
+            
+        }
+        $PDFView->generer($data);
+        
+    }
 }
