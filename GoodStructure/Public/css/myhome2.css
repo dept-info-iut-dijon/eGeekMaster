@@ -1,0 +1,158 @@
+/* 
+ * Auteur: Théo Cornu
+ */
+ 
+
+ body{
+    margin: 0px;
+    font-family: "Comic Sans MS", sans-serif;
+    height: 100%;
+    background-color: #e0eef1;
+}
+
+footer{
+    display: none;
+}
+
+form{
+    height: 100%;
+    width: 100%;
+}
+
+.container{
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+h1{
+    text-align: center;
+    color: #226979;
+}
+
+p{
+    text-align: center;
+}
+
+.inputs{
+    border-radius: 8px;
+    background-color: #E0EEF1;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    
+}
+
+#codeHome {
+    margin-top: 1%;
+}
+#nameHome{
+    margin-top: 1%;
+}
+
+fieldset{
+    display: flex;
+    justify-content: space-around;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+
+#Home{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
+}
+
+#infoSend{
+    flex-direction: column;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    text-align: center;
+}
+
+#logo{
+    height: 100%;
+    border-radius: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#submitbutton{
+    background-color: #226979;
+    color: white;
+    border-radius: 8px;
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    font-size: 15px;
+    display:inline-block;
+}
+
+#submitDiv{
+    width: 80%;
+    align-items: center;
+    text-align: center;
+    margin-top: 4%;
+}
+
+#divlogo{
+    height: 18%;
+    padding: 2% ;
+}
+
+label{
+    font-size: 150%;
+    margin: 2%;
+}
+
+#rightPart{
+    background-color: white; 
+    box-shadow: 0px 0px 1.5em rgb(199, 199, 199);  
+    padding: 2%;
+    border-radius: 10px;
+    width: 40%;
+    margin-left: 28%;
+}
+
+#family{
+    height: 80%;
+}
+
+#familyGlobal{
+    height: 100%;  
+}
+
+#header{
+    margin: 0%;
+}
+
+#page{
+    display: flex;
+}
+
+#lienCreatHome{
+    color: #226979;
+}
+
+@media only screen and (max-width: 1200px){
+    #familyGlobal{
+        display: none;
+    }
+
+        #rightPart{
+            width: 70%;
+            margin-left: 15%;
+        }
+
+        .inputs{
+            width: 70%;
+            height: auto;
+        }
+}
+

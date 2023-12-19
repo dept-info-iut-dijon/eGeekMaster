@@ -156,9 +156,9 @@
 
 
 
-<input type="hiden" id="labels" value="<?= htmlspecialchars(json_encode($labels)) ?>">
-<input type="hiden" id="data1" value="<?= htmlspecialchars(json_encode($data1)) ?>">
-<input type="hiden" id="data2" value="<?= htmlspecialchars(json_encode($data2)) ?>">
+<input type="hidden" id="labels" value="<?= htmlspecialchars(json_encode($labels)) ?>">
+<input type="hidden" id="data1" value="<?= htmlspecialchars(json_encode($data1)) ?>">
+<input type="hidden" id="data2" value="<?= htmlspecialchars(json_encode($data2)) ?>">
 
 
 

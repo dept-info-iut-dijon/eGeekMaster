@@ -70,8 +70,17 @@ class LoginController{
     public function Connect() {
        
 
-        $this->loginManager->Connect($_POST["Username"], $_POST["Password"]);
         
+        
+        
+        
+        $this->loginManager->Connect($_POST["Username"], $_POST["Password"]);
+        if (isset($_SESSION["IdLogin"])) {
+            $userManager = new UserManager();
+            $_SESSION["IdMyHome"] = $userManager->GetIdMyHomeByIdUser($userManager->GetIdUserByLoginId($_SESSION["IdLogin"]));
+        }
+        
+
         $this->mainController->Index("Login connecté");
     }
 

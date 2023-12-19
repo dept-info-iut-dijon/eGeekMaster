@@ -45,7 +45,7 @@ function showDescription() {
   // Get the element with the id "checkboxes"
   var checkboxes = document.getElementsByClassName('tdToNotDisplay')
   // Get the element with the id "selectbox"
-  var select = document.getElementsByClassName("tdToDisplay");
+  var select = document.getElementsByClassName("tdToDisp    lay");
   // If the checkboxes are not expanded
   if (!expanded) {
     select.style.borderBottomLeftRadius = "0px";

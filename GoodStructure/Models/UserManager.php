@@ -1,10 +1,12 @@
 <?php
-// This file manages all operations related to User (registration) directly with the database.
 require_once 'Model.php';
 require_once 'User.php';
 require_once 'LoginManager.php';
 require_once 'DashBoardManager.php';
-
+/**
+ * This file manages all operations related to User (registration) directly with the database
+ * @author Théo Cornu
+ */
 class UserManager extends Model
 {
 
@@ -285,6 +287,67 @@ class UserManager extends Model
         }
     }
 
-    
+    /**
+     * Retrieve a specific name of the user by its userID from the database.
+     *
+     * @param int $id The userID of the User to retrieve.
+     * @return string|null The name of the User, or null if not found.
+     * @throws Exception
+     */
+    public function GetNameById(int $id): ?string
+    {
+        try {
+            $sql = 'SELECT FirstName FROM users WHERE idUsers = ?';
+            $result = $this->executerRequete($sql, [$id]);
+            $line = $result->fetch(PDO::FETCH_ASSOC);
+            return $line['FirstName'];
+        } catch (PDOException $e) {
+            // In case of an error, redirect to the error page with a message
+            $errorMessage = "An error occurred while retrieving data(idUser).";
+            header("Location: index.php?action=Index&errorMessage=".urlencode($errorMessage));
+            exit();
+        }
+    }
+
+    /**
+     * Update a User in the database with new information.
+     *
+     * @param int $idUser The ID of the User to update.
+     * @param int $idMyHome The ID of the MyHome to update.
+     * @throws Exception
+     */
+    public function UpdateUserHome(int $idUser, int $idMyHome): void
+    {
+        try {
+            $sql = 'UPDATE users SET MyHomeidMyHome = ? WHERE idUsers = ?';
+            $this->executerRequete($sql, [$idMyHome, $idUser]);
+        } catch (PDOException $e) {
+            // In case of an error, redirect to the error page with a message
+            $errorMessage = "An error occurred while updating the User.";
+            header("Location: index.php?action=MyHome&errorMessage=".urlencode($errorMessage));
+            exit();
+        }
+    }
+
+    /**
+     * Retrieve de id of the MyHome of the User if it exists.
+     * @param int $idUser The ID of the User to retrieve.
+     * @return int|null The ID of the MyHome, or null if not found.
+     * @throws Exception
+     */
+    public function GetIdMyHomeByIdUser(int $idUser): ?int
+    {
+        try {
+            $sql = 'SELECT MyHomeidMyHome FROM users WHERE idUsers = ?';
+            $result = $this->executerRequete($sql, [$idUser]);
+            $line = $result->fetch(PDO::FETCH_ASSOC);
+            return $line['MyHomeidMyHome'];
+        } catch (PDOException $e) {
+            // In case of an error, redirect to the error page with a message
+            $errorMessage = "An error occurred retrieving the MyHome.";
+            header("Location: index.php?action=MyHome&errorMessage=".urlencode($errorMessage));
+            exit();
+        }
+    }
 }
 ?>

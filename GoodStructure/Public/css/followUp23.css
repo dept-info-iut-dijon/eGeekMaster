@@ -1,0 +1,250 @@
+/* Author : Lola Cohidon */
+
+/* Reset default styles and set the base styles for the body */
+body {
+    font-family: "Comic Sans MS", sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #e0eef1, white);
+}
+
+/* Styles for the main container */
+#viewFollowUp {
+    margin: 20px;
+}
+
+#PersonTitle{
+    color: black;
+    font-size: 45px; 
+
+    text-align: left;
+}
+
+
+
+
+
+/* Styles for the container of detailed buttons */
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+/* Styles for detailed buttons */
+.button-detail {
+    width: 45%;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+/* Add the clickable effect when hovering */
+.button-detail:hover {
+    transform: scale(0.95); /* Scale down the button on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow on hover */
+}
+
+#content {
+    margin-top: 50px;
+    text-align: center;
+}
+
+/* Styles for the container of button images */
+.image-container {
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+/* Styles for button images */
+.image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 5px;
+}
+
+/* Style for the horizontal line */
+.line {
+    position: absolute;
+    top: 200px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: black; /* Change the color of the line */
+    z-index: -1; /* Place the line behind the buttons */
+}
+
+
+/* Additional styles for the detailed and global buttons */
+#suiviD, #suiviG {
+    font-family: "Comic Sans MS", sans-serif;
+    font-size: 15px;
+    top: 200px;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+    padding: 10px 20px; /* Increase button size */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Add transition for smooth animation */
+}
+
+
+/* Hover styles for the detailed and global buttons */
+#suiviD:hover, #suiviG:hover {
+    background-color: #685754; /* Change color on hover */
+}
+
+/* Active styles for the detailed and global buttons */
+#suiviD:active, #suiviG:active {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Lighter shadow when clicked */
+}
+
+/* Active styles for the detailed and global buttons with the 'active' class */
+#suiviD:active, #suiviG:active {
+    background-color: #6a2121; /* Change color when button is active */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add shadow when button is active */
+}
+
+/* Styles for "Année 2023/2024" */
+#globalText {
+    font-size: 18px; 
+    margin-top: 20px;
+}
+
+/*Author : Lola Cohidon */
+
+/* Media queries for responsiveness */
+@media only screen and (max-width: 600px) {
+    #Person {
+        top: 50px; /* Move the person information down */
+        left: 70px; /* Move the person information to the right */
+        font-size: 18px; 
+    }
+    
+    
+    
+    .button {
+        font-size: 14px; /*Text size for buttons */
+    }
+
+    #suiviD, #suiviG {
+        font-size: 12px;
+        width: 150px;
+        padding: 5px 10px;
+    }
+    
+    #content {
+        margin-top: 30px; 
+    }
+    
+    .button-detail {
+        width: 200px; /*Size of detailed buttons */
+    }
+    
+    #globalText {
+        top: 175px;
+        left: 125px;
+        font-size: 16px;
+    }
+    
+}
+
+
+
+
+/* author: Théo Cornu */
+
+.flip-card {
+background-color: transparent;
+width: 240px;
+height: 154px;
+perspective: 1000px;
+
+display: inline-block;
+padding: 4px 10px;
+margin: 0 10px;
+font-size: 16px;
+color: rgb(0, 0, 0);
+}
+
+.heading_8264 {
+position: absolute;
+letter-spacing: .2em;
+font-size: 0.5em;
+top: 2em;
+left: 25em;
+}
+
+.image{
+position: absolute;
+top: 20%;
+left: 40%;
+}
+
+.nameTask{
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+
+.data{
+position: absolute;
+top: 70%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+
+
+.flip-card-inner {
+position: relative;
+width: 100%;
+height: 100%;
+text-align: center;
+transition: transform 0.8s;
+transform-style: preserve-3d;
+}
+
+.flip-card:active .flip-card-inner {
+transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+box-shadow: 0 8px 14px 0 #d9c9c7;
+position: absolute;
+display: flex;
+flex-direction: column;
+justify-content: center;
+width: 100%;
+height: 100%;
+-webkit-backface-visibility: hidden;
+backface-visibility: hidden;
+border-radius: 1rem;
+}
+
+.flip-card-front {
+box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 2px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -1px 0px inset;
+background-color: #d9c9c7;
+}
+
+.flip-card-back {
+box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 2px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -1px 0px inset;
+background-color: #d9c9c7;
+transform: rotateY(180deg);
+}
+
+
+.buttons {
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+   
+
+}
+
+.selectData{
+    border-radius: 10px;
+}
+

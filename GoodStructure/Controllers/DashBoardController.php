@@ -58,7 +58,7 @@ class DashBoardController {
 
     /**
      * Set the properties of the DashBoard object.
-     * @param DashBoard $DashBoard
+     * 
      */
     private function populateDashBoard() {
         $idUser = $this->UserManager->GetIdUserByLoginId(intval($_SESSION['IdLogin']));
