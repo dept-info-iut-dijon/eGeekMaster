@@ -291,6 +291,30 @@ class MainController {
         $termsConditionsView->generer($data);
     
     }
+
+    /**
+     * Displays the MyHome page.
+     */
+    public function MyHome() {
+    
+        $myHomeView = new View("MyHome");
+        $data = array(
+            //ajouter les données à afficher
+        );
+        $myHomeView->generer($data);
+    }
+
+    /**
+     * Displays the MyHomeRegistration page.
+     */
+    public function MyHomeRegistration() {
+    
+        $myHomeRegistrationView = new View("MyHomeRegistration");
+        $data = array(
+            //ajouter les données à afficher
+        );
+        $myHomeRegistrationView->generer($data);
+    }
     public function ExportPDF($message = null) {
 
         

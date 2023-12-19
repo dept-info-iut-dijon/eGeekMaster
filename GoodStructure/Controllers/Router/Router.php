@@ -53,6 +53,8 @@ class Router {
         'UserController' => new UserController(),
         'TaskController' => new TaskController(),
         'DashBoardController' => new DashBoardController(),
+        'HomeController' => new MyHomeController(),
+    
         'FollowUpController' => new FollowUpController()];
     }
 
@@ -84,6 +86,11 @@ class Router {
         "LegalNotice" => new RouteLegalNotice($this->ctrlList["MainController"]),
         "TermsConditions" => new RouteTermsConditions($this->ctrlList["MainController"]),
         "ExportPDF" => new RouteExportPDF($this->ctrlList["MainController"])
+    ,
+        "MyHome" => new RouteMyHome($this->ctrlList["MainController"]),
+        "HomeRegistration" => new RouteHomeRegistration($this->ctrlList["HomeController"]),
+        "MyHomeRegistration" => new RouteMyHomeRegistration($this->ctrlList["MainController"]),
+        "MyHomeConnect" => new RouteMyHomeConnect($this->ctrlList["HomeController"]),
     ];
     }
 
