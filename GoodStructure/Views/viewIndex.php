@@ -89,12 +89,16 @@
             <div>
                 
                 <div id="Faq_Pixi" class="relative-container">
-                    <div id='FAQprincipal'><div id='imageFAQ'></div></div>
+                    <div id='FAQprincipal'>
+                        <div id='imageFAQ'>
+                        </div>
+                    </div>
                     <div id="PixiPresentation">
                         
                         <div class="field">
                         
                             <fieldset>
+                                <img src="Public/image/page_accueil/Pixy_Helper.png" alt="Pixy_Helper">
                                 <label for="pixi">Pixi</label>
                                 <label for="Statut">Helper Agent</label>
                                 <input type="button" value="Messages">
