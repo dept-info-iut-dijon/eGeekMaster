@@ -39,7 +39,7 @@ body {
 
     /* Afficher une seule image pour les écrans avec une largeur maximale de 768px */
     #imageDebut {
-        background-image: url(../../image/page_connection/logo_F.png);
+        background-image: url(../../image/page_connection/logo_soupape2.png);
         background-repeat: no-repeat;
         background-position: center;
         width: 95vw;
@@ -72,13 +72,6 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
 }
-
-
-
-
-
-
-
 
 /* Chiffre */
 #SomeChiffre {
@@ -189,45 +182,17 @@ body {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
 /* FAQ */
 #FAQ {
     background-color: #226979;
 }
 #FAQ img {
     max-width: 500px;
-    
+    border-radius: 30px;
 }
-
-
-    #FAQprincipal {
-        border-radius: 30px;
-        width: 50vw;
-        height: 700px;
-        background-attachment: fixed;
-        background-image: url(../../image/page_accueil/FAQ.jpg);
-        background-size:70%;
-        background-position: center;
-        background-position-x: 50%;
-        position: relative;
-    }
-
-    #imageFAQ {
-        
-        top: 50%;
-        transform: translate(-50%, -50%);
-        left: 10%;
-    }
-
+#FAQ img[alt="FAQ"] {
+    width: 50vw;  
+}
 #FAQcontainer {
     padding: 10%;
     display: flex;
@@ -239,17 +204,10 @@ body {
 }
 /* Styles pour les écrans de petite taille */
 @media (max-width: 160vh) {
-    #FAQprincipal {
-        
-        height: 50vh;
-        background-position-x: 60%;
-       
-    }
     #FAQcontainer {
         flex-direction: column;
         text-align: center;
     }
-    
     #FAQcontainer #PixiPresentation {
         position: relative;
         width: auto;
