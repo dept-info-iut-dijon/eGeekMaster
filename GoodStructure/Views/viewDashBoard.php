@@ -4,7 +4,7 @@
     author : Théo D
 -->
 <?php include 'companion.php'; ?>
-<link rel="stylesheet" href="Public/css/dashboard3.css">
+<link rel="stylesheet" href="Public/css/dashboard5.css">
 <link rel="stylesheet" href="Public/css/taskRegistration7.css">
 <script src="Public/Animation_js/taskRegistration.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -140,6 +140,7 @@
         <div id="piechart">
             <h1>Tasks distribution</h1>
             <canvas id="myChart1"></canvas>
+            <img id="imageContainer" alt=""/>
         </div>
         <div id="barchart">
             <h1>Average duration for each task</h1>

@@ -2,16 +2,33 @@
  * @author Théo Cornu
 */
 
+function getImageUrlForLabel(label) {
+    switch(label) {
+        case 'Dishes': return 'Public/image/page_reference/img_dishes.png';
+        case 'DIY': return 'Public/image/page_reference/img_diy.png';
+        case 'Cleaning': return 'Public/image/page_reference/img_cleaning.png';
+        case 'Shopping': return 'Public/image/page_reference/img_shopping.png';
+        case 'Cooking': return 'Public/image/page_reference/img_cooking.png';
+        case 'Laundry': return 'Public/image/page_reference/img_laundry.png';
+        case 'ChildsPlay': return 'Public/image/page_reference/img_childsPlay.png';
+        case 'ChildrensJourney': return 'Public/image/page_reference/img_childrensJourney.png';
+        case 'ParentJourney': return 'Public/image/page_reference/img_parentJourney.png';
+        case 'ParentCare': return 'Public/image/page_reference/img_parentCare.png';
+        case 'Administrative': return 'Public/image/page_reference/img_administrative.png';
+        case 'PetCare': return 'Public/image/page_reference/img_petCare.png';
+        case 'Gardening': return 'Public/image/page_reference/img_gardening.png';
+        case 'HouseholdManagement': return 'Public/image/page_reference/img_householdManagement.png';
+        default: return 'default-image.jpg';
+    }
+}
+
 function ShowGraph1() {
     const labels = JSON.parse(document.getElementById('labels').value);
-    
     const data1 = JSON.parse(document.getElementById('data1').value);
-    
-
     const ctx1 = document.getElementById('myChart1');
     
 
-    new Chart(ctx1, {
+    const chart = new Chart(ctx1, {
         type: 'pie',
         data: {
             labels: labels,
@@ -19,23 +36,6 @@ function ShowGraph1() {
                 label: 'Distribution Duration',
                 data: data1,
                 borderWidth: 0,
-                // backgroundColor: (context) => {
-                //     const index = context.dataIndex;
-                //     const count = context.dataset.data.length;
-                //     const startColor = [90, 74, 71]; // Couleur de départ (noir)
-                //     const endColor = [236, 228, 227]; // Couleur de fin (blanc)
-                //     const color = [];
-
-                //     // Calculer les valeurs de couleur pour chaque canal (rouge, vert, bleu)
-                //     for (let i = 0; i < 3; i++) {
-                //         const startValue = startColor[i];
-                //         const endValue = endColor[i];
-                //         const value = Math.round(startValue + (endValue - startValue) * (index / (count - 1)));
-                //         color.push(value);
-                //     }
-
-                //     return `rgb(${color.join(',')})`;
-                // }
             }]
         },
         options: {
@@ -44,20 +44,25 @@ function ShowGraph1() {
                 if (elements.length > 0) {
                     const clickedIndex = elements[0].index;
                     const clickedLabel = labels[clickedIndex];
-                    console.log(`Clicked label: ${clickedLabel}`);
-                }
-            }
             
+                    const imageUrl = getImageUrlForLabel(clickedLabel);
+                    const imageContainer = document.getElementById('imageContainer');
+                    imageContainer.src = imageUrl;
+                    imageContainer.style.display = 'flex';
+            
+                    setTimeout(() => {
+                        imageContainer.style.display = 'none';
+                    }, 5000);
+                }
+            },
         }
     });
-
-    
 };
 
 function ShowGraph2(){
     const labels = JSON.parse(document.getElementById('labels').value);
-    const ctx2 = document.getElementById('myChart2');
     const data2 = JSON.parse(document.getElementById('data2').value);
+    const ctx2 = document.getElementById('myChart2');
     
     const colors = ['36A2EB', 'FF6384', 'FF9F40', 'FFCD56', '4BC0C0', '9966FF'];
     const backgroundColors = colors.map((color, index) => {
@@ -80,8 +85,6 @@ function ShowGraph2(){
             responsive: true,
             indexAxis: 'y',
             plugins: {
-                
-                
             }
         }
     });
