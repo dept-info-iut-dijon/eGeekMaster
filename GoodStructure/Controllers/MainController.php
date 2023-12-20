@@ -146,6 +146,7 @@ class MainController {
 
     if (isset($_SESSION['tasks'])) {                         
         foreach ($_SESSION['tasks'] as $task) {
+            
             // Get name, duration and date of the task
             $taskName = $task->getNameTask();
             $taskDuration = $task->getDuration();
@@ -154,7 +155,7 @@ class MainController {
             // Separate the date in year and month
             $year = date('Y', strtotime($taskDate));
             $month = date('n', strtotime($taskDate));
-
+            if ($month == date('n')){
             // If taskname is not in labels
             if (!in_array($taskName, $labels)) {
                 // For detail part
@@ -195,6 +196,7 @@ class MainController {
                 }
             }
         }
+        }
 
         foreach ($labels as $label) {
             // For detail part
@@ -203,7 +205,7 @@ class MainController {
         }
     }
 
-
+    
 
 
         // Separate the duration into hours and minutes
