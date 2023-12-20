@@ -9,20 +9,20 @@
             <div class="search-field">
                 <input list="TaskProp" placeholder="Search..." id="research" class="input" type="text">
                 <datalist id="TaskProp">
-                    <option value="Cleaning">                                
-                    <option value="Shopping">
-                    <option value="Cooking">
-                    <option value="Dishes">
-                    <option value="Laundry">                                
-                    <option value="ChildsPlay">
-                    <option value="ChildrensJourney">                                
-                    <option value="ParentJourney">                                
-                    <option value="ParentCare">
-                    <option value="Administrative">
-                    <option value="PetCare">
-                    <option value="Gardening">                               
-                    <option value="DIY">
-                    <option value="HouseholdManagement">
+                    <option id="cleaningOption" value="Cleaning">                                
+                    <option id="shoppingOption" value="Shopping">
+                    <option id="cookingOption" value="Cooking">
+                    <option id="dishesOption" value="Dishes">
+                    <option id="laundryOption" value="Laundry">                                
+                    <option id="childsPlay" value="ChildsPlay">
+                    <option id="childrensJourneyOption" value="ChildrensJourney">                                
+                    <option id="parentJourneyOption" value="ParentJourney">                                
+                    <option id="parentCareOption" value="ParentCare">
+                    <option id="administrativeOption" value="Administrative">
+                    <option id="petCareOption" value="PetCare">
+                    <option id="gardeningOption" value="Gardening">                               
+                    <option id="DIYOption" value="DIY">
+                    <option id="househouldManagementOption" value="HouseholdManagement">
                 </datalist> 
                 <div class="search-box-icon">
                     <button id="btn-icon-content">
