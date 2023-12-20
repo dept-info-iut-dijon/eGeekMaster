@@ -137,7 +137,7 @@
                             print($translations[$language]['gabarit_companion_taskModification1']);
                         }
                         else{
-                            print("<?= $translations[$language]['gabarit_companion_taskModification2']?>");
+                            print($translations[$language]['gabarit_companion_taskModification2']);
                         }
                         break;
                     default:
@@ -148,17 +148,17 @@
             else {
                 switch ($_GET['action']) {
                     case 'Index':
-                        print("<?= $translations[$language]['gabarit_companion_else_index']?>");
+                        print($translations[$language]['gabarit_companion_else_index']);
                         $imagePath = "Public/image/companion/companion5.png";
                         break;
                     case 'Connection':
-                        print("<?= $translations[$language]['gabarit_companion_else_connection']?>");
+                        print($translations[$language]['gabarit_companion_else_connection']);
                         break;
                     case 'Registration':
-                        print("<?= $translations[$language]['gabarit_companion_else_registration']?>");
+                        print($translations[$language]['gabarit_companion_else_registration']);
                         break;
                     default:
-                        print("<?= $translations[$language]['gabarit_companion_unknownAction']?>");
+                        print($translations[$language]['gabarit_companion_unknownAction']);
                         break;
                 }
             }
