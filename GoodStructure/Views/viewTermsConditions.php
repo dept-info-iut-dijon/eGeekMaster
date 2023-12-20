@@ -1,55 +1,55 @@
 <div id="termsConditions">
-    <h1>Terms & Conditions</h1>
+    <h1><?= $translations[$language]['termsConditions_title']?></h1>
     <p>
-        These Terms of Service ("Terms") govern your use of our website, Family'Easy, and the services provided by Family'Easy (collectively referred to as the "Service"). By accessing or using our Service, you agree to be bound by these Terms.
+        <?= $translations[$language]['termsConditions_desc']?>
     </p>
-    <h2>1. Use of the Service</h2>
-    <h3>1.1 Eligibility</h3>
+    <h2><?= $translations[$language]['termsConditions_1_title']?></h2>
+    <h3><?= $translations[$language]['termsConditions_1.1_title']?></h3>
     <p>
-        You must be at least 13 years old to use our Service. By using the Service, you represent and warrant that you are at least 13 years old.
+        <?= $translations[$language]['termsConditions_1.1_desc']?>
     </p>
-    <h3>1.2 Your Account</h3>
+    <h3><?= $translations[$language]['termsConditions_1.2_title']?></h3>
     <p>
-        To access certain features of the Service, you may be required to create an account. You are responsible for maintaining the confidentiality of your account information and for all activities that occur under your account.
+        <?= $translations[$language]['termsConditions_1.2_desc']?>
     </p>
-    <h3>1.3 User Conduct</h3>
+    <h3><?= $translations[$language]['termsConditions_1.3_title']?></h3>
     <p>
-        You agree to use the Service in accordance with all applicable laws and regulations. You further agree not to:
+        <?= $translations[$language]['termsConditions_1.3_desc1']?>
     </p>
     <p>
-        Violate these Terms or any other applicable rules or policies. Use the Service for any illegal or unauthorized purpose. Post or transmit any content that is offensive, harmful, or violates the rights of others.
+        <?= $translations[$language]['termsConditions_1.3_desc2']?>
     </p>
-    <h2>2. Privacy</h2>
+    <h2><?= $translations[$language]['termsConditions_2_title']?></h2>
     <p>
-        Your use of the Service is also governed by our Privacy Policy, which can be found at <a class="legallink" href="index.php?action=PrivacyPolicy">Privacy Policy</a>. Please review our Privacy Policy to understand how we collect, use, and disclose information.
+        <?= $translations[$language]['termsConditions_2_desc1']?> <a class="legallink" href="index.php?action=PrivacyPolicy"><?= $translations[$language]['termsConditions_2_link']?></a><?= $translations[$language]['termsConditions_2_desc2']?>
     </p>
-    <h2>3. Intellectual Property</h2>
-    <h3>3.1 Ownership</h3>
+    <h2><?= $translations[$language]['termsConditions_3_title']?></h2>
+    <h3><?= $translations[$language]['termsConditions_3.1_title']?></h3>
     <p>
-        All content and materials available on the Service, including but not limited to text, graphics, logos, and images, are the property of [Your Company Name] or its licensors and are protected by intellectual property laws.
+        <?= $translations[$language]['termsConditions_3.1_desc']?>
     </p>
-    <h3>3.2 Restrictions</h3>
+    <h3><?= $translations[$language]['termsConditions_3.2_title']?></h3>
     <p>
-        You may not copy, reproduce, modify, distribute, or display any part of the Service without our prior written consent.
+        <?= $translations[$language]['termsConditions_3.2_desc']?>
     </p>
-    <h2>4. Termination</h2>
+    <h2><?= $translations[$language]['termsConditions_4_title']?></h2>
     <p>
-        We reserve the right to terminate or suspend your account and access to the Service at our sole discretion, without notice, for conduct that we believe violates these Terms or is harmful to other users of the Service or to us.
+        <?= $translations[$language]['termsConditions_4_desc']?>
     </p>
-    <h2>5. Disclaimer of Warranty</h2>
+    <h2><?= $translations[$language]['termsConditions_5_title']?></h2>
     <p>
-        The Service is provided "as is" and "as available" without any warranties, either expressed or implied, including but not limited to the implied warranties of merchantability, fitness for a particular purpose, or non-infringement.
+        <?= $translations[$language]['termsConditions_5_desc']?>
     </p>
-    <h2>6. Limitation of Liability</h2>
+    <h2><?= $translations[$language]['termsConditions_6_title']?></h2>
     <p>
-        In no event shall Family'Easy be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly.
+        <?= $translations[$language]['termsConditions_6_desc']?>
     </p>
-    <h2>7. Changes to Terms</h2>
+    <h2><?= $translations[$language]['termsConditions_7_title']?></h2>
     <p>
-        We reserve the right to modify these Terms at any time. Any changes will be effective immediately upon posting on this page.
+        <?= $translations[$language]['termsConditions_7_desc']?>
     </p>
-    <h2>8. Contact Us</h2>
+    <h2><?= $translations[$language]['termsConditions_8_title']?></h2>
     <p>
-        If you have any questions about these Terms, please contact us at [email address].
+        <?= $translations[$language]['termsConditions_8_desc']?>
     </p>
 </div>
