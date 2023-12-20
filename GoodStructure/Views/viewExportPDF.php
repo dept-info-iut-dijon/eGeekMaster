@@ -1,5 +1,5 @@
 <!-- author : Lola Cohidon-->
-<link rel="stylesheet" href="Public/css/exportPDF3.css">
+<link rel="stylesheet" href="Public/css/exportPDF4.css">
 <div id="PDFpage">
     <!--Title of the page-->
     <div id="titlePDF">

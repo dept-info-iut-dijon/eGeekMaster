@@ -1,5 +1,5 @@
 <!-- author: Théo Cornu-->
-<link rel="stylesheet" href="Public/css/connection.css">
+<link rel="stylesheet" href="Public/css/myhome2.css">
 <script src="Public/Animation_js/myhome.js"></script>    
 
 <div id="page">
