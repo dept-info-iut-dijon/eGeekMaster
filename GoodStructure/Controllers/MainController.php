@@ -336,7 +336,7 @@ class MainController {
      * Calculates the task data for the FollowUp.
      * @return array
      */
-    private function calculateTaskDataF() {
+    private function calculateTaskDataF( $monthChoose = null, $yearChoose = null) {
         $taskDurations = [];
         $labels = [];
         $tempT = 0;
@@ -353,49 +353,57 @@ class MainController {
                 $taskDate = $task->getDateAdded();
 
                 // Separate the date in year and month
-                $year = date('Y', strtotime($taskDate));
-                $month = date('n', strtotime($taskDate));
-                if ($month == date('n')){
-                // If taskname is not in labels
-                if (!in_array($taskName, $labels)) {
-                    // For detail part
-                    $labels[] = $taskName;
-                    $taskDurations[$taskName] = $taskDuration;
-                    $tempT += $taskDuration;
+                if ($monthChoose == null && $yearChoose == null){
+                    $year = date('Y', strtotime($taskDate));
+                    $month = date('n', strtotime($taskDate));
+                }
+                else{
+                    $year = $yearChoose;
+                    $month = $monthChoose;
+                }
 
-                    // For global part
-                    // Per year
-                    if (!isset($taskCountPerYear[$year][$taskName])) {
-                        $taskCountPerYear[$year][$taskName] = 1;
-                    } else {
-                        $taskCountPerYear[$year][$taskName]++;
-                    }
-                    // Per month
-                    if (!isset($taskCountPerYearMonth[$year][$month][$taskName])) {
-                        $taskCountPerYearMonth[$year][$month][$taskName] = 1;
-                    } else {
-                        $taskCountPerYearMonth[$year][$month][$taskName]++;
-                    }
-                } else {
-                    // For detail part
-                    $taskDurations[$taskName] += $taskDuration;
-                    $tempT += $taskDuration;
+                if (($month == date('n'))  || ($month == $monthChoose)){
+                    // If taskname is not in labels
+                    if (!in_array($taskName, $labels)) {
+                        // For detail part
+                        $labels[] = $taskName;
+                        $taskDurations[$taskName] = $taskDuration;
+                        $tempT += $taskDuration;
 
-                    // For global part
-                    // Per year
-                    if (!isset($taskCountPerYear[$year][$taskName])) {
-                        $taskCountPerYear[$year][$taskName] = 1;
-                    } else {
-                        $taskCountPerYear[$year][$taskName]++;
-                    }
-                    // Per month
-                    if (!isset($taskCountPerYearMonth[$year][$month][$taskName])) {
-                        $taskCountPerYearMonth[$year][$month][$taskName] = 1;
-                    } else {
-                        $taskCountPerYearMonth[$year][$month][$taskName]++;
+                        // For global part
+                        // Per year
+                        if (!isset($taskCountPerYear[$year][$taskName])) {
+                            $taskCountPerYear[$year][$taskName] = 1;
+                        } else {
+                            $taskCountPerYear[$year][$taskName]++;
+                        }
+                        // Per month
+                        if (!isset($taskCountPerYearMonth[$year][$month][$taskName])) {
+                            $taskCountPerYearMonth[$year][$month][$taskName] = 1;
+                        } else {
+                            $taskCountPerYearMonth[$year][$month][$taskName]++;
+                        }
+                    } 
+                    else {
+                        // For detail part
+                        $taskDurations[$taskName] += $taskDuration;
+                        $tempT += $taskDuration;
+
+                        // For global part
+                        // Per year
+                        if (!isset($taskCountPerYear[$year][$taskName])) {
+                            $taskCountPerYear[$year][$taskName] = 1;
+                        } else {
+                            $taskCountPerYear[$year][$taskName]++;
+                        }
+                        // Per month
+                        if (!isset($taskCountPerYearMonth[$year][$month][$taskName])) {
+                            $taskCountPerYearMonth[$year][$month][$taskName] = 1;
+                        } else {
+                            $taskCountPerYearMonth[$year][$month][$taskName]++;
+                        }
                     }
                 }
-            }
             }
 
             foreach ($labels as $label) {
