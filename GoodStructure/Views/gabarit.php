@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= $titre ?></title>
     <link rel="stylesheet" href="Public/css/header3.css"/>
-    <link rel="stylesheet" href="Public/css/footer1.css"/>
+    <link rel="stylesheet" href="Public/css/footer2.css"/>
     <link rel="stylesheet" href="Public/css/erreur.css"/>
     <link rel="stylesheet" href="Public/css/companion2.css"/>
     <link rel="stylesheet" href="Public/css/mentionLegal.css"/>
