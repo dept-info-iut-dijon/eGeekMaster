@@ -1,0 +1,48 @@
+body {
+    margin: 0px; /* No external margin */
+    font-family: "Comic Sans MS", sans-serif;/* Font style */
+    background-color: #e0eef1; /* Background color */
+}
+
+#PDFpage {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#titlePDF {
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+#month,
+#year {
+    margin-bottom: 4px;
+}
+
+select {
+    padding: 8px;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 5px;
+}
+
+#exportButton {
+    margin-top: 20px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+}
+
+#exportButton:hover {
+    background-color: #45a049;
+}
