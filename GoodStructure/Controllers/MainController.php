@@ -320,7 +320,7 @@ class MainController {
 
             // Fill the data arrays with the corresponding durations
             foreach ($labels as $label) {
-                $data1[] = $taskDurations[$label]; // Example static value for chart 1
+                $data1[] = $taskDurations[$label]; // Calculate total
                 $data2[] = $taskDurations[$label] / $taskCounts[$label]; // Calculate average over a week
             }
         }
