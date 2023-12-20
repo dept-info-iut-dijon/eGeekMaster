@@ -295,6 +295,14 @@
             'legalNotice_10_title'=> 'Contact Us:',
             'legalNotice_10_desc'=> 'For any questions regarding these legal notices, please contact us at contact@famileasy.com.',
         
+            // viewMyHome.php
+            'myHome_title'=> 'Join Home',
+            'myHome_desc'=> 'Join a home to be with your family',
+            'myHome_codeHome'=> 'Code Home',
+            'myHome_submit'=> 'Validate',
+            'myHome_noHome'=> 'Don\'t have a home ?',
+            'myHome_createHome'=> 'Create one here',
+
         ],
         'fr' => [
             // viewIndex.php
@@ -582,6 +590,13 @@
             'legalNotice_10_title'=> 'Contactez-nous :',
             'legalNotice_10_desc'=> 'Pour toute question concernant ces mentions légales, veuillez nous contacter à l\'adresse contact@famileasy.com.',
             
+            // viewMyHome.php
+            'myHome_title'=> 'Rejoindre un foyer',
+            'myHome_desc'=> 'Rejoignez un foyer pour être avec votre famille',
+            'myHome_codeHome'=> 'Code du foyer',
+            'myHome_submit'=> 'Valider',
+            'myHome_noHome'=> 'Vous n\'avez pas de foyer ?',
+            'myHome_createHome'=> 'Créez-en un ici',
             
         ],
     ];
