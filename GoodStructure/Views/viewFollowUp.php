@@ -2,6 +2,8 @@
 autor : Lola Cohidon
 author : Théo Cornu
 -->
+
+<?php include 'companion.php'; ?>
 <link rel="stylesheet" href="Public/css/followUp23.css">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="Public/Animation_js/followUp3.js"></script>
