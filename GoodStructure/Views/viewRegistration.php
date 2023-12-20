@@ -146,7 +146,7 @@
                     
                     <!--SIGN UP-->
                     <div id="submitDiv">
-                        <input type="submit" value="Sign up" class="inputs" id="submit" text="<?= $translations[$language]['registration_submit']?>">
+                        <input type="submit" value="<?= $translations[$language]['registration_submit']?>" class="inputs" id="submit">
                     </div>
 
                     <!--HAVE A ACCOUNT-->
