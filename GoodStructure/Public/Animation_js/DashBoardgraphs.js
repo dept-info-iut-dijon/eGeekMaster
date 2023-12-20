@@ -58,6 +58,13 @@ function ShowGraph2(){
     const labels = JSON.parse(document.getElementById('labels').value);
     const ctx2 = document.getElementById('myChart2');
     const data2 = JSON.parse(document.getElementById('data2').value);
+    
+    const colors = ['36A2EB', 'FF6384', 'FF9F40', 'FFCD56', '4BC0C0', '9966FF'];
+    const backgroundColors = colors.map((color, index) => {
+        const repeatedIndex = index % colors.length;
+        return `#${colors[repeatedIndex]}`;
+    });
+
     new Chart(ctx2, {
         type: 'bar',
         data: {
@@ -65,23 +72,7 @@ function ShowGraph2(){
             datasets: [{
                 label: 'Average Duration',
                 data: data2,
-                backgroundColor: (context) => {
-                    const index = context.dataIndex;
-                    const count = context.dataset.data.length;
-                    const startColor = [0, 0, 0]; // Couleur de départ (noir)
-                    const endColor = [236, 228, 227]; // Couleur de fin (blanc)
-                    const color = [];
-
-                    // Calculer les valeurs de couleur pour chaque canal (rouge, vert, bleu)
-                    for (let i = 0; i < 3; i++) {
-                        const startValue = startColor[i];
-                        const endValue = endColor[i];
-                        const value = Math.round(startValue + (endValue - startValue) * (index / (count - 1)));
-                        color.push(value);
-                    }
-
-                    return `rgb(${color.join(',')})`;
-                },
+                backgroundColor: backgroundColors,
                 borderWidth: 1
             }]
         },
