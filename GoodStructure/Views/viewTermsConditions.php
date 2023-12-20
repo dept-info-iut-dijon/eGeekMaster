@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="Public/css/mentionLegal.css"/>
+<link rel="stylesheet" href="Public/css/mentionLegal1.css"/>
 <div class="mentionLegal">
     <h1>Terms & Conditions</h1>
     <p>

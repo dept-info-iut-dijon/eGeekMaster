@@ -337,7 +337,7 @@ class MainController {
                     $prop = "You're on the Reference page. Here, you can check the value reference for each possible task.";
                     break;
                 case 'Registration':
-                    $prop = "You're on the 'Update My Account' page. Here, you can modify the information associated with your account.";
+                    $prop = "You're on the Update My Account page. Here, you can modify the information associated with your account.";
                     break;
                 case 'TaskRegistration':
                     $prop = "You've just added a completed task to the dashboard.";
@@ -356,6 +356,9 @@ class MainController {
                     } else {
                         $prop = "You've just modified the last added task.";
                     }
+                    break;
+                case 'InfoFollowUp':
+                    $prop = "You are on the Follow Up page. Here, you can access information about task tracking.";
                     break;
                 default:
                     $prop = 'Action non reconnue';

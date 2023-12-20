@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="Public/css/mentionLegal.css"/>
+<link rel="stylesheet" href="Public/css/mentionLegal1.css"/>
 <div class="mentionLegal">
     <h1>Privacy Policy for Famil'Easy</h1>
     <h2>1. Information Collection</h2>
