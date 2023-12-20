@@ -1,5 +1,8 @@
 <!-- author : Lola Cohidon-->
 <link rel="stylesheet" href="Public/css/exportPDF4.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="Public/Animation_js/ExportPDF1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 <div id="PDFpage">
     <!--Title of the page-->
     <div id="titlePDF">
@@ -37,3 +40,20 @@
     </select>
 
     <button id="exportButton">Export PDF</button>
+
+    <!-- Graphiques -->
+    <div id="graphiques" hidden>
+        <div id="piechart">
+            <canvas id="myChart1"></canvas>
+        </div>
+        <div id="barchart">
+            <canvas id="myChart2"></canvas>
+        </div>
+    </div>
+
+    <script>window.jsPDF = window.jspdf.jsPDF;</script>
+
+<input type="hidden" id="labels" value="<?= htmlspecialchars(json_encode($labels)) ?>">
+<input type="hidden" id="data1" value="<?= htmlspecialchars(json_encode($data1)) ?>">
+<input type="hidden" id="data2" value="<?= htmlspecialchars(json_encode($data2)) ?>">
+
