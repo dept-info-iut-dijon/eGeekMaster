@@ -26,8 +26,6 @@
         $this->idDashBoard = $idDashBoard;
     }
 
-
-
     /**
      * Get the value of id
      */

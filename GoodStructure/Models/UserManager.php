@@ -74,6 +74,40 @@ class UserManager extends Model
     }
 
     /**
+     * Retrieve a list of total duration by task done by all users in a home from the database.
+     *
+     * @param int $homeId The ID of the home.
+     * @return array An array of total durations by task.
+     * @throws Exception
+     */
+    public function GetTotalDurationByTask(int $homeId): array
+    {
+        try {
+            $sql = 'SELECT t.Name AS taskName, SUM(t.Duration) AS totalDuration
+                    FROM task AS t
+                    JOIN dashboard AS d ON t.DashBoardidDashBoard = d.idDashBoard
+                    JOIN users AS u ON d.UseridUser = u.idUsers
+                    JOIN myhome AS h ON u.MyHomeIdMyHome = h.idMyHome
+                    WHERE h.idMyHome = ?
+                    GROUP BY t.Name';
+
+            $result = $this->executerRequete($sql, [$homeId]);
+            $totalDurations = [];
+
+            while ($line = $result->fetch(PDO::FETCH_ASSOC)) {
+                $totalDurations[$line['taskName']] = $line['totalDuration'];
+            }
+
+            return $totalDurations;
+        } catch (PDOException $e) {
+            // In case of an error, redirect to the error page with a message
+            $errorMessage = "An error occurred while retrieving data(totalDuration).";
+            header("Location: index.php?action=Index&errorMessage=".urlencode($errorMessage));
+            exit();
+        }
+    }
+
+    /**
      * Retrieve a specific idDashboard by its userID from the database.
      *
      * @param int $id The userID of the User to retrieve.

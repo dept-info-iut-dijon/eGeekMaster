@@ -46,6 +46,11 @@
                 // Send to the session the list of tasks
                 $_SESSION['tasks'] = $tasks;
 
+                //récupere (temps pour le foyer, et le pourcentage de la personne dans cette durée)
+                $times = $this->userManager->GetTotalDurationByTask($this->userManager->GetIdMyHomeByIdUser($this->dashboard->GetIdUser()));
+                // Send to the session the time
+                $_SESSION['FoyerTimes'] = $times;
+
                 // Display the view of Follow Up
                 $this->mainController->FollowUp();
             }
@@ -53,7 +58,7 @@
 
         /**
          * Update a dashboard
-         * @author Enzo
+         * @author Théo
          */
         private function UpdateDashboard() {
             // Set properties
@@ -66,7 +71,7 @@
 
         /**
          * Set the properties of the DashBoard object
-         * @author Enzo
+         * @author Théo
          */
         private function PopulateDashboard() {
             // Get User Id, Username

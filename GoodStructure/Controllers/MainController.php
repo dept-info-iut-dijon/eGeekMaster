@@ -343,6 +343,7 @@ class MainController {
         $taskDates = [];
         $taskCountPerYearMonth = [];
         $taskCountPerYear = [];
+      
 
         if (isset($_SESSION['tasks'])) {                         
             foreach ($_SESSION['tasks'] as $task) {
@@ -411,7 +412,21 @@ class MainController {
                 $taskPercent[$label] = ceil(($taskDurations[$label]*100) / $tempT);      
                 
             }
+
+            if(isset($_SESSION['times'])){
+
+
+                // Vider la liste taskPercent
+                unset($taskPercent);
+    
+                foreach ($_SESSION['times'] as $time) {
+                    $taskPercent[$time->getNameTask()] = ceil(($time->getDuration()*100) / $tempT);
+                }
+            } 
         }
+
+        
+        
 
         return [
             "taskPercent" => $taskPercent,

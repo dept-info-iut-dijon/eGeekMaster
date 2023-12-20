@@ -46,7 +46,7 @@ class DashBoardController {
      * Update a DashBoard.
      */
 
-    private function UpdateDashBoard() {        
+    public function UpdateDashBoard() {        
         $this->populateDashBoard();
         // Update the DashBoard
         $this->DashBoardManager->UpdateDashBoard($this->DashBoard);
@@ -60,7 +60,7 @@ class DashBoardController {
      * Set the properties of the DashBoard object.
      * 
      */
-    private function populateDashBoard() {
+    public function populateDashBoard() {
         $idUser = $this->UserManager->GetIdUserByLoginId(intval($_SESSION['IdLogin']));
         $username = $this->loginManager->GetUsernameByIdLogin(intval($_SESSION['IdLogin']));
         
