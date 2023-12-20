@@ -90,6 +90,7 @@
                 <li class="linkSubstitle"><a href="index.php?action=Reference">Reference</a></li>
                 <li class="linkSubstitle"><a href="index.php?action=InfoFollowUp">Follow Up</a></li>
                 <li class="linkSubstitle"><a href="index.php?action=ExportPDF">Export PDF</a></li>
+                <li class="linkSubstitle"><a href="index.php?action=Registration&IdLogin=83">Update my account</a></li>
             </ul>
         </div>
         <div id="services" class="link">
