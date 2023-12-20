@@ -1,3 +1,5 @@
+document.addEventListener('DOMContentLoaded', function() {
+    
 /*
 function ShowGraph1() {
     const labels = JSON.parse(document.getElementById('labels').value);
@@ -97,7 +99,7 @@ function ShowGraphs(){
 window.addEventListener('load',ShowGraphs);
 */
 
-document.addEventListener('DOMContentLoaded', function() {
+
 document.getElementById('exportButton').addEventListener('click', function(event) {
     const selectedMonth = document.getElementById('monthPDF').value;
     const selectedYear = document.getElementById('yearPDF').value;
