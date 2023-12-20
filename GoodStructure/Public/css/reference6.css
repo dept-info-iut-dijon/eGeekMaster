@@ -164,7 +164,6 @@ th, td {
 
 /* Styles for th cells */
 th {
-  background-color: #B3938E; /*Table background color*/
   color: #000; /*Table color*/
   font-weight: bold; /*Table font weight*/
 }
@@ -173,6 +172,32 @@ th {
 td {
   text-align: center; /*Table text align*/
   background-color: #fff; /*Table background color*/
+}
+
+
+
+#activityColumn {
+  background-color: #9966ff; /* Couleur pour l'option Cleaning */
+}
+
+#descriptiveColumn {
+  background-color: #FF9F40; /* Couleur pour l'option Shopping */
+}
+
+#quarterHourValueColumn {
+  background-color: #36A2EB; /* Couleur pour l'option Cooking */
+}
+
+#monetaryValueColumn {
+  background-color: #FF6384; /* Couleur pour l'option Cooking */
+}
+
+#exampleQuarterHourColumn {
+  background-color: #FFCD56; /* Couleur pour l'option Cooking */
+}
+
+#exampleMonetaryColumn {
+  background-color: #4BC0C0; /* Couleur pour l'option Cooking */
 }
 
 /* Styles for icon images */
