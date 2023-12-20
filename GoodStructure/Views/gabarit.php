@@ -54,7 +54,7 @@
             <li><a class="lien-header" href="index.php?action=Disconnect"  ><?= $translations[$language]['gabarit_button_disconnect']?></a></li>
             <li><a class="lien-header" href="index.php?action=InfoDashBoard"><?= $translations[$language]['gabarit_button_reference']?></a></li>
             <li><a class="lien-header" href="index.php?action=Reference"><?= $translations[$language]['gabarit_button_login']?></a></li>
-            <li><a class="lien-header" href="index.php?action=InfoFollowUp">Follow up</a></li>
+            <li><a class="lien-header" href="index.php?action=InfoFollowUp"><?= $translations[$language]['gabarit_button_followUp']?></a></li>
         <?php else : ?>
             <li><a class="lien-header" href="index.php?action=Connection"  ><?= $translations[$language]['gabarit_button_login']?></a></li> 
             <li><a class="lien-header" href="index.php?action=Registration"  ><?= $translations[$language]['gabarit_button_register']?></a></li> 
@@ -74,11 +74,11 @@
             if (isset($_SESSION['IdLogin'])) {
                 switch ($_GET['action']) {
                     case 'Index':
-                        print("You're on the Homepage. Explore information about the website, its usage, and read customer reviews here.");
+                        print($translations[$language]['gabarit_companion_index']);
                         $imagePath = "Public/image/companion/companion5.png";
                         break;
                     case 'ConnectLogin':
-                        print("You have just logged into your account. Welcome or welcome back among us.");
+                        print($translations[$language]['gabarit_companion_connectLogin']);
                         break;
                     case 'InfoDashBoard':
                         if ((isset($_SESSION['tasks'])) && ((end($_SESSION['tasks']))->getId() != null)) {
@@ -92,73 +92,73 @@
                                 $durationC += $task->getDuration();
                             }
                             if ($lastTaskDateD <= $oneWeekAgo) {
-                                print("It seems you haven't recorded any tasks in a week or more. Consider updating your task log to stay organized.");
+                                print($translations[$language]['gabarit_companion_infoDashBoard1']);
                                 $imagePath = "Public/image/companion/companion7.png";
                             }
                             else{
                                 if($durationC >= 8){
-                                    print("You've accomplished quite a few tasks this week. Great job!");
+                                    print($translations[$language]['gabarit_companion_infoDashBoard2']);
                                     $imagePath = "Public/image/companion/companion4.png";
                                 }
                                 elseif($durationC <= 4){
-                                    print("It seems like you haven't completed enough tasks this week. Consider taking on a few more to stay on track.");
+                                    print($translations[$language]['gabarit_companion_infoDashBoard3']);
                                     $imagePath = "Public/image/companion/companion6.png";
                                 }
                                 else{
-                                    print("It looks like you've completed a decent number of tasks this week. Keep it up!");
+                                    print($translations[$language]['gabarit_companion_infoDashBoard4']);
                                     $imagePath = "Public/image/companion/companion8.png";
                                 }
                             }
                         }
                         else{
-                            print("You're on the dashboard page. Here, you can view information about tasks completed in the last week.");
+                            print($translations[$language]['gabarit_companion_infoDashBoard5']);
                         }
                         break;
                     case 'Reference':
-                        print("You're on the Reference page. Here, you can check the value reference for each possible task.");
+                        print($translations[$language]['gabarit_companion_reference']);
                         break;
                     case 'Registration':
-                        print("You're on the 'Update My Account' page. Here, you can modify the information associated with your account.");
+                        print($translations[$language]['gabarit_companion_registration']);
                         break;
                     case 'TaskRegistration':
-                        print("You've just added a completed task to the dashboard.");
+                        print($translations[$language]['gabarit_companion_taskRegistration']);
                         $imagePath = "Public/image/companion/companion2.png";
                         break;
                     case 'TaskSupression':
                         if (!isset($_SESSION['tasks']) || (end($_SESSION['tasks']))->getId() == null){
-                            print("Unable to delete tasks as there are currently none recorded.");
+                            print($translations[$language]['gabarit_companion_taskSuppresion1']);
                         }
                         else{
-                            print("You've just removed the last added task.");
+                            print($translations[$language]['gabarit_companion_taskSuppression2']);
                         }
                         break;
                     case 'TaskModification':
                         if (!isset($_SESSION['tasks']) || (end($_SESSION['tasks']))->getId() == null){
-                            print("Unable to modify tasks as there are currently none recorded.");
+                            print($translations[$language]['gabarit_companion_taskModification1']);
                         }
                         else{
-                            print("You've just modified the last added task.");
+                            print("<?= $translations[$language]['gabarit_companion_taskModification2']?>");
                         }
                         break;
                     default:
-                        print('Action non reconnue');
+                        print($translations[$language]['gabarit_companion_unknownAction']);
                         break;
                 }
             }
             else {
                 switch ($_GET['action']) {
                     case 'Index':
-                        print("Welcome to Family'Easy, your new tool for household task management. You're on the homepage. Explore information about the website, its usage, and read customer reviews here.");
+                        print("<?= $translations[$language]['gabarit_companion_else_index']?>");
                         $imagePath = "Public/image/companion/companion5.png";
                         break;
                     case 'Connection':
-                        print("You're on the Login page. Sign in here to access your account.");
+                        print("<?= $translations[$language]['gabarit_companion_else_connection']?>");
                         break;
                     case 'Registration':
-                        print("You're on the Registration page. Create your account here to get started.");
+                        print("<?= $translations[$language]['gabarit_companion_else_registration']?>");
                         break;
                     default:
-                        print('Action non reconnue');
+                        print("<?= $translations[$language]['gabarit_companion_unknownAction']?>");
                         break;
                 }
             }
@@ -203,11 +203,11 @@
         </div>
         <div id="legalNotice" class="link">
             <ul>
-                <li class="linkTitle" ><a href="#"><?= $translations[$language]['home_title']?></a></li>
-                <li class="linkSubstitle" ><a href="index.php?action=PrivacyPolicy">Privacy Policy</a></li>
-                <li class="linkSubstitle" ><a href="index.php?action=TermsConditions">Terms and Conditions</a></li>
-                <li class="linkSubstitle" ><a href="index.php?action=LegalNotice">Legal Notice</a></li>
-                <li class="linkSubstitle" ><a href="index.php?action=CookiePolicy">Cookie Policy</a></li>
+                <li class="linkTitle" ><a href="#"><?= $translations[$language]['gabarit_legalNotice']?></a></li>
+                <li class="linkSubstitle" ><a href="index.php?action=PrivacyPolicy"><?= $translations[$language]['gabarit_privacyPolicy']?></a></li>
+                <li class="linkSubstitle" ><a href="index.php?action=TermsConditions"><?= $translations[$language]['gabarit_termsConditions']?></a></li>
+                <li class="linkSubstitle" ><a href="index.php?action=LegalNotice"><?= $translations[$language]['gabarit_legalMention']?></a></li>
+                <li class="linkSubstitle" ><a href="index.php?action=CookiePolicy"><?= $translations[$language]['gabarit_cookiePolicy']?></a></li>
             </ul>
         </div>
         <div class="footer-social">
