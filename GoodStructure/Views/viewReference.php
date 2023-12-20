@@ -1,6 +1,6 @@
 <!-- author: Théo Cornu
 author : Lola Cohidon-->
-<?php require_once 'translations.php' ?>
+<?php require 'translations.php' ?>
 <link rel="stylesheet" href="Public/css/reference4.css">
 <?php include 'companion.php'; ?>
 <div id="ContaintReference">

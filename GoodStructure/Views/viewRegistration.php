@@ -2,7 +2,7 @@
     author:  Théo Cornu
     author:  Enzo 
 -->
-<?php require_once 'translations.php' ?>
+<?php require 'translations.php' ?>
 <?php include 'companion.php'; ?>
 <script src="Public/Animation_js/inscription.js"></script>
 <link href="Public/css/inscription2.css" rel="stylesheet">

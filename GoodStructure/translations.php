@@ -85,6 +85,7 @@
             // viewDashboard.php
             'dashboard_title' => 'CREATE A TASK',
             'dashboard_task_label' => 'Task :',
+            'dashboard_task_search'=> 'Search a task',
             'dashboard_lifetime_label' => 'Lifetime :',
             'dashboard_button_cancel' => 'cancel',
             'dashboard_button_register' => 'register',
@@ -93,6 +94,25 @@
             'dashboard_button_modify' => 'Modify last task',
             'dashboard_piechart_title' => 'Tasks distribution',
             'dashboard_barchart_title' => 'Average duration for each task',
+            'dashboard_datalist_cleaning' => 'Cleaning',
+            'dashboard_datalist_shopping' => 'Shopping',
+            'dashboard_datalist_cooking' => 'Cooking',
+            'dashboard_datalist_dishes' => 'Dishes',
+            'dashboard_datalist_laundry' => 'Laundry',
+            'dashboard_datalist_childrenCare'=> 'ChildrenCare',
+            'dashboard_datalist_childsPlay' => 'ChildsPlay',
+            'dashboard_datalist_childrensJourney' => 'ChildrensJourney',
+            'dashboard_datalist_parentJourney' => 'ParentJourney',
+            'dashboard_datalist_parentCare' => 'ParentCare',
+            'dashboard_datalist_administrative' => 'Administrative',
+            'dashboard_datalist_petCare' => 'PetCare',
+            'dashboard_datalist_gardening' => 'Gardening',
+            'dashboard_datalist_diy' => 'DIY',
+            'dashboard_datalist_householdManagement' => 'HouseholdManagement',
+
+            //taskRegistration.js
+            'taskRegistration_js_registration' => 'REGISTRATION A TASK',
+            'taskRegistration_js_modify' => 'MODIFY A TASK',
 
             // viewRegistration.php
             'registration_title' => 'Create a new account',
@@ -378,14 +398,35 @@
             // viewDashboard.php
             'dashboard_title' => 'CRÉER UNE TÂCHE',
             'dashboard_task_label' => 'Tâche :',
+            'dashboard_task_search'=> 'Rechercher une tâche',
             'dashboard_lifetime_label' => 'Durée :',
-            'dashboard_button_cancel' => 'annuler',
-            'dashboard_button_register' => 'enregistrer',
+            'dashboard_button_cancel' => 'Annuler',
+            'dashboard_button_register' => 'Enregistrer',
             'dashboard_button_add' => 'Enregistrer une nouvelle tâche',
             'dashboard_button_delete' => 'Supprimer la dernière tâche',
             'dashboard_button_modify' => 'Modifier la dernière tâche',
             'dashboard_piechart_title' => 'Distribution des tâches',
             'dashboard_barchart_title' => 'Durée moyenne pour chaque tâche',
+            'dashboard_datalist_cleaning' => 'Nettoyage',
+            'dashboard_datalist_shopping' => 'Courses',
+            'dashboard_datalist_cooking' => 'Cuisine',
+            'dashboard_datalist_dishes' => 'Vaisselle',
+            'dashboard_datalist_laundry' => 'Lessive',
+            'dashboard_datalist_childrenCare'=> 'SoinsEnfant',
+            'dashboard_datalist_childsPlay' => 'JeuEnfant',
+            'dashboard_datalist_childrensJourney' => 'ParcoursEnfant',
+            'dashboard_datalist_parentJourney' => 'ParcoursParent',
+            'dashboard_datalist_parentCare' => 'SoinsParent',
+            'dashboard_datalist_administrative' => 'Administratif',
+            'dashboard_datalist_petCare' => 'SoinsAnimal',
+            'dashboard_datalist_gardening' => 'Jardinage',
+            'dashboard_datalist_diy' => 'Bricolage',
+            'dashboard_datalist_householdManagement' => 'GestionFoyer',
+
+
+            //taskRegistration.js
+            'taskRegistration_js_registration' => 'ENREGISTREMENT D\'UNE TÂCHE',
+            'taskRegistration_js_registration2' => 'MODIFICATION D\'UNE TÂCHE',
 
             // viewRegistration.php
             'registration_title' => 'Créer un nouveau compte',
@@ -502,7 +543,7 @@
             'reference_searchbox_dishes'=> 'Vaisselle',
             'reference_searchbox_laundry'=> 'Lessive',
             'reference_searchbox_childrenCare'=> 'Soins des enfants',
-            'reference_searchbox_childsPlay' => 'Jeu d\'enfant',
+            'reference_searchbox_childsPlay' => 'Jeu enfant',
             'reference_searchbox_childrensJourney' => 'Parcours des enfants',
             'reference_searchbox_parentJourney' => 'Parcours des parents',
             'reference_searchbox_parentCare' => 'Soins parentaux',
@@ -597,7 +638,7 @@
             'myHome_submit'=> 'Valider',
             'myHome_noHome'=> 'Vous n\'avez pas de foyer ?',
             'myHome_createHome'=> 'Créez-en un ici',
-            
+
         ],
     ];
     $preferredLanguage = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);

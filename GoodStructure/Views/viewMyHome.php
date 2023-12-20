@@ -1,4 +1,5 @@
 <!-- author: Théo Cornu-->
+<?php require 'translations.php' ?>
 <link rel="stylesheet" href="Public/css/connection1.css">
 <script src="Public/Animation_js/myhome.js"></script>    
 

@@ -1,3 +1,4 @@
+<?php require 'translations.php' ?>
 <link rel="stylesheet" href="Public/css/mentionLegal.css"/>
 <div class="mentionLegal">
     <h1><?= $translations[$language]['privacyPolicy_title']?></h1>

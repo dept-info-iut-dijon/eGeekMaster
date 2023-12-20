@@ -126,7 +126,7 @@
                         break;
                     case 'TaskSupression':
                         if (!isset($_SESSION['tasks']) || (end($_SESSION['tasks']))->getId() == null){
-                            print($translations[$language]['gabarit_companion_taskSuppresion1']);
+                            print($translations[$language]['gabarit_companion_taskSuppression1']);
                         }
                         else{
                             print($translations[$language]['gabarit_companion_taskSuppression2']);

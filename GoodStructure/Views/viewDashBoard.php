@@ -3,11 +3,11 @@
     author : Théo Cornu
     author : Théo D
 -->
-<?php require_once 'translations.php' ?>
+<?php require 'translations.php' ?>
 <?php include 'companion.php'; ?>
 <link rel="stylesheet" href="Public/css/dashboard3.css">
 <link rel="stylesheet" href="Public/css/taskRegistration7.css">
-<script src="Public/Animation_js/taskRegistration.js"></script>
+<script src="Public/Animation_js/taskRegistration3.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="Public/Animation_js/DashBoardgraphs.js"></script>
 <div id="bar">
@@ -37,22 +37,23 @@
                     <div id="task">
                         <label id="taskLabel"><?= $translations[$language]['dashboard_task_label']?></label>
                         <div id="chooseTask">
-                            <input list="tasks" placeholder="Search a task" name="searchTask" id="searchTask" value="<?php if (isset($_SESSION['tasks']) && (end($_SESSION['tasks']))->getId() != null)  : ?> <?= $nameLastTask ?> <?php endif; ?>" autofocus required>
+                            <input list="tasks" placeholder="<?= $translations[$language]['dashboard_task_search']?>" name="searchTask" id="searchTask" value="<?php if (isset($_SESSION['tasks']) && (end($_SESSION['tasks']))->getId() != null)  : ?> <?= $nameLastTask ?> <?php endif; ?>" autofocus required>
                             <datalist id="tasks">
-                                <option value="Cleaning"></option>                                
-                                <option value="Shopping">
-                                <option value="Cooking">
-                                <option value="Dishes">
-                                <option value="Laundry">                                
-                                <option value="ChildsPlay">
-                                <option value="ChildrensJourney">                                
-                                <option value="ParentJourney">                                
-                                <option value="ParentCare">
-                                <option value="Administrative">
-                                <option value="PetCare">
-                                <option value="Gardening">                               
-                                <option value="DIY">
-                                <option value="HouseholdManagement">
+                                <option value="<?= $translations[$language]['dashboard_datalist_cleaning']?>">                               
+                                <option value="<?= $translations[$language]['dashboard_datalist_shopping']?>">
+                                <option value="<?= $translations[$language]['dashboard_datalist_cooking']?>">
+                                <option value="<?= $translations[$language]['dashboard_datalist_dishes']?>">
+                                <option value="<?= $translations[$language]['dashboard_datalist_laundry']?>">          
+                                <option value="<?= $translations[$language]['dashboard_datalist_childrenCare']?>">                      
+                                <option value="<?= $translations[$language]['dashboard_datalist_childsPlay']?>">
+                                <option value="<?= $translations[$language]['dashboard_datalist_childrensJourney']?>">                                
+                                <option value="<?= $translations[$language]['dashboard_datalist_parentJourney']?>">                                
+                                <option value="<?= $translations[$language]['dashboard_datalist_parentCare']?>">
+                                <option value="<?= $translations[$language]['dashboard_datalist_administrative']?>">
+                                <option value="<?= $translations[$language]['dashboard_datalist_petCare']?>">
+                                <option value="<?= $translations[$language]['dashboard_datalist_gardening']?>">                               
+                                <option value="<?= $translations[$language]['dashboard_datalist_diy']?>">
+                                <option value="<?= $translations[$language]['dashboard_datalist_householdManagement']?>">
                             </datalist> 
                         </div>
                     </div>

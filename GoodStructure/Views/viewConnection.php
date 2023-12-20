@@ -1,7 +1,7 @@
 <!-- author: Théo Cornu
 author: Théo Deguin 
 author : Enzo-->
-<?php require_once 'translations.php' ?>
+<?php require'translations.php' ?>
 <?php include 'companion.php'; ?>
 <div id="page">
     <link rel="stylesheet" href="Public/css/connection1.css">
