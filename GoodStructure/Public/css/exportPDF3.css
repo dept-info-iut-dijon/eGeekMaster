@@ -23,6 +23,7 @@ h1 {
 #month,
 #year {
     margin-bottom: 4px;
+    font-weight: bold;
 }
 
 select {
@@ -33,16 +34,12 @@ select {
 }
 
 #exportButton {
-    margin-top: 20px;
-    background-color: #4caf50;
+    margin-top: 20px; /* Space between the button and the select */
+    background-color: #B3938E;
     color: #fff;
-    border: none;
-    padding: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    width: 100%;
+    border: none; /* No border */
+    padding: 10px; 
+    font-size: 16px; 
+    width: 100%; 
 }
 
-#exportButton:hover {
-    background-color: #45a049;
-}

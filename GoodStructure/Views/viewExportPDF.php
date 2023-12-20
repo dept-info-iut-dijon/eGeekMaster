@@ -1,5 +1,5 @@
 <!-- author : Lola Cohidon-->
-<link rel="stylesheet" href="Public/css/exportPDF2.css">
+<link rel="stylesheet" href="Public/css/exportPDF3.css">
 <div id="PDFpage">
     <!--Title of the page-->
     <div id="titlePDF">
@@ -12,7 +12,7 @@
     <!--Form to choose the date-->
     <p id="month">Month :</p>
     <!--Select the month-->
-    <select id="month">
+    <select id="monthPDF">
         <option value="01">January</option>
         <option value="02">February</option>
         <option value="03">March</option>
@@ -28,7 +28,7 @@
     </select>
 
     <p id="year">Year :</p>
-    <select id="year">
+    <select id="yearPDF">
         <option value="2024">2024</option>
     </select>
 
