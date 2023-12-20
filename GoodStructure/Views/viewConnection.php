@@ -2,8 +2,9 @@
 author: Théo Deguin 
 author : Enzo-->
 <?php require_once 'translations.php' ?>
+<?php include 'companion.php'; ?>
 <div id="page">
-    <link rel="stylesheet" href="Public/css/connection.css">
+    <link rel="stylesheet" href="Public/css/connection1.css">
     
     <div id="familyGlobal">
         <img id="family" src="Public/image/page_connection/image_connection.png" alt="">
@@ -25,7 +26,7 @@ author : Enzo-->
             <div>
                 <form action="index.php?action=ConnectLogin" method="post">
                     <fieldset>
-                        <div id="Connect">   
+                        <div class="formConnect">   
                             <div class="infoSend">
                                 <label for="Username"><?= $translations[$language]['connection_login_label']?></label><br>
                                 <input type="text" id="login" name="Username" class="inputs" autofocus required>

@@ -1,4 +1,5 @@
-<div id="privacyPolicy">
+<link rel="stylesheet" href="Public/css/mentionLegal.css"/>
+<div class="mentionLegal">
     <h1><?= $translations[$language]['privacyPolicy_title']?></h1>
     <h2><?= $translations[$language]['privacyPolicy_1_title']?></h2>
     <h3><?= $translations[$language]['privacyPolicy_1.1_title']?></h3>

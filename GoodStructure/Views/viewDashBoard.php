@@ -4,6 +4,7 @@
     author : Théo D
 -->
 <?php require_once 'translations.php' ?>
+<?php include 'companion.php'; ?>
 <link rel="stylesheet" href="Public/css/dashboard3.css">
 <link rel="stylesheet" href="Public/css/taskRegistration7.css">
 <script src="Public/Animation_js/taskRegistration.js"></script>

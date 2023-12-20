@@ -1,5 +1,6 @@
-<div id="termsConditions">
-    <h1><?= $translations[$language]['termsConditions_title']?></h1>
+<link rel="stylesheet" href="Public/css/mentionLegal.css"/>
+<div class="mentionLegal">
+<h1><?= $translations[$language]['termsConditions_title']?></h1>
     <p>
         <?= $translations[$language]['termsConditions_desc']?>
     </p>

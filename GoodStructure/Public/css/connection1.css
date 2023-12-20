@@ -61,7 +61,7 @@ fieldset{
     border-bottom: none;
 }
 
-#Connect{
+.formConnect{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -70,7 +70,7 @@ fieldset{
     padding: 2%;
 }
 
-.cc{
+.infoSend{
     margin-top: 5%;
     margin-bottom: 5%;
     width: 100%;

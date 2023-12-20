@@ -1,0 +1,260 @@
+/* 
+* Auteur : Lola Cohidon
+* Auteur : Théo Cornu
+*/
+
+/* Body Styles */
+body {
+  margin: 0px; /*No External Margin*/
+  font-family: "Comic Sans MS", sans-serif; /*Font Family*/
+  background-color: #e0eef1; /*Color of the background*/
+}
+
+/* Styles for the main container */
+#ContaintReference {
+  display: flex; 
+  flex-direction: column; 
+  max-width: 1000px; /*Max width of the container*/
+  margin: 0 auto; /*Center the container*/
+  padding: 20px; /*Space*/
+}
+
+/* Styles for the search bar */
+.search {
+  display: flex;
+  justify-content: center;
+  --input-line: #000000; /*Color of the input line*/
+  --input-text-color: #808080; /*Color of the input text*/
+  --input-text-hover-color: transparent; /*Color of the input text when hover*/
+  --input-border-color: #808080; /*Color of the input border*/
+  --input-border-hover-color: #999999; /*Color of the input border when hover*/
+  --input-bg-color: #b1cdd3; /*Color of the input background*/
+  --search-max-width: 70%; /*Max width of the search bar*/
+  --search-min-width: 5%; /*Min width of the search bar*/
+  --border-radius: 5px; /*Border radius*/
+  --transition-cubic-bezier: 150ms cubic-bezier(0.4,0,0.2,1); /*Transition*/ 
+}
+
+.search-box {
+  display: flex; 
+  justify-content: center; /*Center the search bar*/
+  margin-bottom: 5%; /*Space*/
+  padding: 1%; /*Space*/
+  max-width: var(--search-max-width); /*Search bar max width*/
+  min-width: var(--search-min-width); /*Search bar min width*/
+  height: 5vh; /*Search bar height*/
+  border: 2px solid var(--input-border-color); /*Search bar border*/
+  border-radius: var(--border-radius); /*Search bar border radius*/
+  background: var(--input-bg-color); /*Search bar background*/
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);  /*Search bar shadow*/
+  transition: var(--transition-cubic-bezier); /*Search bar transition*/
+}
+
+.search-box:hover {
+  border-color: var(--input-border-hover-color); /*Search bar border color when hover*/
+}
+
+/* Input Section */
+.search-field {
+  display: flex; 
+  justify-content: center; /*Center the input*/
+  align-items: center; /*Center the input*/
+  border: 0; /*Input border*/
+}
+
+.input {
+  margin: 0%; /*Space*/
+  width: calc(100% - 29px); /*Input width*/
+  height: 100%; /*Input height*/
+  border: 0; /*Input border*/
+  border-color: transparent; /*Input border color*/
+  font-size: 1rem; /*Input font size*/
+  color: var(--input-line); /*Input color*/
+  background: var(--input-bg-color); /*Input background*/
+  border-right: 2px solid var(--input-border-color); /*Input border right*/
+  border-radius: var(--border-radius); /*Input border radius*/
+  border-bottom-right-radius: 0; /*Input border bottom right radius*/
+  border-top-right-radius: 0; /*Input border top right radius*/
+  outline: none; /*Input outline*/
+}
+
+.input::-webkit-input-placeholder {
+  color: var(--input-text-color); /*Input placeholder color*/
+}
+
+.input::-moz-input-placeholder {
+  color: var(--input-text-color); /*Input placeholder color*/
+}
+
+.input::-ms-input-placeholder {
+  color: var(--input-text-color); /*Input placeholder color*/
+}
+
+.input:focus::-webkit-input-placeholder {
+  color: var(--input-text-hover-color); /*Input placeholder color when hover*/
+}
+
+.input:focus::-moz-input-placeholder {
+  color: var(--input-text-hover-color); /*Input placeholder color when hover*/
+}
+
+.input:focus::-ms-input-placeholder {
+  color: var(--input-text-hover-color); /*Input placeholder color when hover*/
+}
+
+/* Search button */
+.search-box-icon {
+  background: transparent; /*Search button background*/
+  border-bottom-right-radius: var(--border-radius); /*Search button border bottom right radius*/
+  border-top-right-radius: var(--border-radius); /*Search button border top right radius*/
+  transition: var(--transition-cubic-bezier); /*Search button transition*/
+}
+
+.search-box-icon:hover {
+  background: var(--input-border-color); /*Search button background when hover*/
+}
+
+#btn-icon-content {
+  width: 52px; /*Search button width*/
+  height: 5vh; /*Search button height*/
+  display: flex; 
+  justify-content: center; /*Center the search button*/
+  align-items: center; /*Center the search button*/
+  background: transparent; /*Search button background*/
+  border: none; /*Search button border*/
+  cursor: pointer; /*Search button cursor*/
+  border-bottom-right-radius: var(--border-radius); /*Search button border bottom right radius*/
+  border-top-right-radius: var(--border-radius); /*Search button border top right radius*/
+  transition: var(--transition-cubic-bezier); /*Search button transition*/
+  opacity: .4; /*Search button opacity*/
+}
+
+#btn-icon-content:hover {
+  opacity: .8; /*Search button opacity when hover*/
+}
+
+.search-icon {
+  width: 21px; /*Search button width*/
+  height: 21px; /*Search button height*/
+  position: absolute; /*Search button position*/
+}
+
+/* Styles for the table */
+th, td {
+  padding: 10px; /*Space*/
+  border: 2px solid #ccc; /*Table border*/
+}
+
+/* Styles for table borders */
+table {
+  align-self: center; /*Center the table*/
+  border-collapse: separate; /*Table border collapse*/
+  margin-top: 20px; /*Space*/
+  background-color: #e0eef1; /*Table background color*/
+  padding: 10px; /*Space*/
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /*Table shadow*/
+  width: 85vw; /*Table width*/
+}
+
+th, td {
+  width: 55vw; /*Table width*/
+  padding: 10px; /*Space*/
+  border: 1px solid #000; /*Table border*/
+}
+
+/* Styles for th cells */
+th {
+  background-color: #B3938E; /*Table background color*/
+  color: #000; /*Table color*/
+  font-weight: bold; /*Table font weight*/
+}
+
+/* Styles for td cells */
+td {
+  text-align: center; /*Table text align*/
+  background-color: #fff; /*Table background color*/
+}
+
+/* Styles for icon images */
+.icon {
+  width: 30px; /* Icon width */
+  height: 30px; /* Icon height */
+  margin-right: 10%; /* Space */
+}
+
+.action {
+  display: flex; /* Display */
+  align-items: center; /* Align items */
+  justify-content: center; /* Justify content */
+}
+
+.extra-info h2 {
+  font-size: 1rem; /* Font size */
+}
+
+/*RESPONSIVE*/
+
+/* 
+* Autor : Lola Cohidon 
+*/
+
+/* Addition of styles for smaller screens */
+@media only screen and (max-width: 600px) {
+  .thToDisplay, 
+  .tdToDisplay,
+  .ReferenceTable tr {
+      display: block;
+  }
+
+  .thToNotDisplay,
+  .tdToNotDisplay {
+    display: none;
+  }
+
+  .ReferenceTable {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+  }
+
+  table {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+  }
+
+  .ReferenceTable th,
+  .ReferenceTable td {
+      text-align: left; /* left-align text */
+      width: 100%; /* full width for cells */
+  }
+  
+  .tdToDisplay:focus {
+    display: block;
+    visibility: visible; /* show contents when expanded */
+  }
+
+  .extra-info {
+    max-height: 0; /* collapsed; hide contents */
+    overflow: hidden; /* hide contents until expanded */
+    transition: max-height 0.3s ease-out; /* approximate max height */
+  }
+ 
+  .extra-info.visible {
+    max-height: 700px; /* approximate max height */
+  }
+}
+
+/* Styles for normal-sized screens */
+@media only screen and (min-width: 601px) {
+  .tdToDisplay .extra-info {
+    display: none;
+  }
+
+  .tdToDisplay .tdToNotDisplay {
+    display: block; 
+  }
+}
+
+
+
