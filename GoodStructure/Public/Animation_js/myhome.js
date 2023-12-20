@@ -25,6 +25,7 @@ function DisplayHomeRegistration() {
 
         HomeForm.setAttribute("action", "index.php?action=HomeRegistration");
 
+        infoSend.appendChild(document.createElement("br"));
         const labelname = document.createElement("label");
         labelname.setAttribute("id", "labelname");
         labelname.setAttribute("for", "NameHome");
