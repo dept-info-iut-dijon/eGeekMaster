@@ -2,7 +2,7 @@
 <?php require_once 'translations.php' ?>
 <?php include 'companion.php'; ?>
 <div id="contenu">
-    <link rel="stylesheet" href="Public/css/page_accueil/index9.css">
+    <link rel="stylesheet" href="Public/css/page_accueil/index10.css">
 
     <script src="Public/Animation_js/page_accueil/index.js"></script>
     
@@ -89,8 +89,10 @@
             <div>
                 
                 <div id="Faq_Pixi" class="relative-container">
-                    <div id='FAQprincipal'>
-                        <div id='imageFAQ'>
+                    <div id='FAQprParent'>
+                        <div id='FAQprincipal'>
+                            <div id='imageFAQ'>
+                            </div>
                         </div>
                     </div>
                     <div id="PixiPresentation">
