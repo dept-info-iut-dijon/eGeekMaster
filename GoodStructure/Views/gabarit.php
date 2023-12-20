@@ -86,10 +86,10 @@
         <div id="shortcuts" class="link">
             <ul>
                 <li class="linkTitle" ><a href="#">Shortcuts</a></li>
-                <li class="linkSubstitle"><a href="#">New link 1</a></li>
-                <li class="linkSubstitle"><a href="#">New link 2</a></li>
-                <li class="linkSubstitle"><a href="#">New link 3</a></li>
-                <li class="linkSubstitle"><a href="#">New link 4</a></li>
+                <li class="linkSubstitle"><a href="index.php?action=InfoDashBoard">DashBord</a></li>
+                <li class="linkSubstitle"><a href="index.php?action=Reference">Reference</a></li>
+                <li class="linkSubstitle"><a href="index.php?action=InfoFollowUp">Follow Up</a></li>
+                <li class="linkSubstitle"><a href="index.php?action=ExportPDF">Export PDF</a></li>
             </ul>
         </div>
         <div id="services" class="link">
