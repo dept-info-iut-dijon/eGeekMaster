@@ -7,7 +7,7 @@
     </div>
     <!--Text to explain the page-->
     <div id="textPDF">
-        <p>Export a summary of the chosen month to PDF:</p>
+        <p>Export a summary of the chosen month and year to PDF</p>
     </div>
     <!--Form to choose the date-->
     <p id="month">Month :</p>
@@ -28,10 +28,12 @@
     </select>
 
     <p id="year">Year :</p>
-    <select id="yearPDF">
-        <option value="2024">2024</option>
+    <select name="YearPDF" id="yearPDF"required>
+        <?php
+        for ($i = 2024; $i >= 2024; $i--) {
+            echo "<option value=\"$i\">$i</option>";
+        }
+        ?>
     </select>
 
     <button id="exportButton">Export PDF</button>
-
-    <script src="Public/Animation_js/exportPDF.js"></script>
