@@ -1,5 +1,5 @@
 <!-- author: Théo Cornu-->
-<link rel="stylesheet" href="Public/css/connection.css">
+<link rel="stylesheet" href="Public/css/myhome2.css">
 <script src="Public/Animation_js/myhome.js"></script>    
 
 <div id="page">
@@ -24,10 +24,10 @@
             <div>
                 <form id="HomeForm" action="index.php?action=MyHomeConnect" method="post">
                     <fieldset>
-                        <div id="Home">   
-                            <div id="infoSend">
+                        <div class="formConnect">   
+                            <div class="infoSend">
                                 <label id="labelcode" for="CodeHome">Code Home</label><br>
-                                <input type="text" id="codeHome" name="CodeHome" class="inputs" autofocus required><br>
+                                <input type="text" id="CodeHome" name="CodeHome" class="inputs" autofocus required>
                             </div>
                                    
                             <div id="submitDiv">

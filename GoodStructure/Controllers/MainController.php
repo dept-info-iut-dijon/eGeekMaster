@@ -61,38 +61,6 @@ class MainController {
      * Displays the dashboard page.
      */
     public function DashBoard($message = null, $idLastTast = null, $nameLastTask = null, $durationLastTask = null, $dateLastTask = null) {
-    
-        $labels = [];
-        $data1 = [];
-        $data2 = [];
-        $taskDurations = [];
-        $taskCounts = [];
-
-        if (isset($_SESSION['tasks'])) {
-            foreach ($_SESSION['tasks'] as $task) {
-                $taskName = $task->getNameTask();
-                $taskDuration = $task->getDuration();
-
-                // Vérifier si le nom de tâche existe déjà dans le tableau des labels
-                if (!in_array($taskName, $labels)) {
-                    $labels[] = $taskName;
-                    $taskDurations[$taskName] = $taskDuration;
-                    $taskCounts[$taskName] = 1;
-                } else {
-                    // Ajouter la durée à la durée existante pour ce nom de tâche
-                    $taskDurations[$taskName] += $taskDuration;
-                    $taskCounts[$taskName]++;
-                }
-            }
-
-            // Remplir les tableaux de données avec les durées correspondantes
-            foreach ($labels as $label) {
-                $data1[] = $taskDurations[$label]; // Exemple de valeur statique pour le graphique 1
-                $data2[] = $taskDurations[$label] / $taskCounts[$label]; // Calculer la moyenne sur une semaine
-            }
-        }
-
-
         $durationLastTaskminutes = strval($durationLastTask*15%60);
         $durationLastTaskhours = strval($durationLastTask*15%4);
         
@@ -107,11 +75,15 @@ class MainController {
         $data["durationLastTaskhours"] = $durationLastTaskhours;
         $data["durationLastTaskminutes"] = $durationLastTaskminutes;
         $data["dateLastTask"] = $dateLastTask;
-        $data["labels"] = $labels;
-        $data["data1"] = $data1;
-        $data["data2"] = $data2;
+
+        $taskData = $this->calculateTaskDataD();
+        $data["labels"] = $taskData["labels"];
+        $data["data1"] = $taskData["data1"];
+        $data["data2"] = $taskData["data2"];
+        
         $dashBoardView->generer($data);
     }
+
 
     /**
      * Displays the reference page.
@@ -135,81 +107,9 @@ class MainController {
      * @param $durationLastTask
      * @param $dateLastTask 
     */
-    public function FollowUp($message = null, $idLastTast = null, $nameLastTask = null, $durationLastTask = null, $dateLastTask = null) {
+    public function FollowUp($message = null) {
     
-    $taskDurations = [];
-    $labels = [];
-    $tempT = 0;
-    $taskDates = [];
-    $taskCountPerYearMonth = [];
-    $taskCountPerYear = [];
-
-    if (isset($_SESSION['tasks'])) {                         
-        foreach ($_SESSION['tasks'] as $task) {
-            // Get name, duration and date of the task
-            $taskName = $task->getNameTask();
-            $taskDuration = $task->getDuration();
-            $taskDate = $task->getDateAdded();
-
-            // Separate the date in year and month
-            $year = date('Y', strtotime($taskDate));
-            $month = date('n', strtotime($taskDate));
-
-            // If taskname is not in labels
-            if (!in_array($taskName, $labels)) {
-                // For detail part
-                $labels[] = $taskName;
-                $taskDurations[$taskName] = $taskDuration;
-                $tempT += $taskDuration;
-
-                // For global part
-                // Per year
-                if (!isset($taskCountPerYear[$year][$taskName])) {
-                    $taskCountPerYear[$year][$taskName] = 1;
-                } else {
-                    $taskCountPerYear[$year][$taskName]++;
-                }
-                // Per month
-                if (!isset($taskCountPerYearMonth[$year][$month][$taskName])) {
-                    $taskCountPerYearMonth[$year][$month][$taskName] = 1;
-                } else {
-                    $taskCountPerYearMonth[$year][$month][$taskName]++;
-                }
-            } else {
-                // For detail part
-                $taskDurations[$taskName] += $taskDuration;
-                $tempT += $taskDuration;
-
-                // For global part
-                // Per year
-                if (!isset($taskCountPerYear[$year][$taskName])) {
-                    $taskCountPerYear[$year][$taskName] = 1;
-                } else {
-                    $taskCountPerYear[$year][$taskName]++;
-                }
-                // Per month
-                if (!isset($taskCountPerYearMonth[$year][$month][$taskName])) {
-                    $taskCountPerYearMonth[$year][$month][$taskName] = 1;
-                } else {
-                    $taskCountPerYearMonth[$year][$month][$taskName]++;
-                }
-            }
-        }
-
-        foreach ($labels as $label) {
-            // For detail part
-            $taskPercent[$label] = ceil(($taskDurations[$label]*100) / $tempT);      
-            
-        }
-    }
-
-
-
-
-        // Separate the duration into hours and minutes
-        $durationLastTaskminutes = strval($durationLastTask*15%60);
-        $durationLastTaskhours = strval($durationLastTask*15%4);
-
+    
         // Create a view Follow up
         $referenceView = new View("FollowUp");
         // Data to generate the page
@@ -217,16 +117,12 @@ class MainController {
         if($message != null) {
             $data = $message;
         }
-        $data["idLastTast"] = $idLastTast;
-        $data["nameLastTask"] = $nameLastTask;
-        $data["durationLastTaskhours"] = $durationLastTaskhours;
-        $data["durationLastTaskminutes"] = $durationLastTaskminutes;
-        $data["dateLastTask"] = $dateLastTask;
-        $data["taskPercent"] = $taskPercent;
-        $data["taskDurations"] = $taskDurations;
-        $data["taskCountPerYearMonth"] = $taskCountPerYearMonth;
-        $data["taskCountPerYear"] = $taskCountPerYear;
-        $data["labels"] = $labels;
+        $taskData = $this->calculateTaskDataF();
+        $data["taskPercent"] = $taskData["taskPercent"];
+        $data["taskDurations"] = $taskData["taskDurations"];
+        $data["taskCountPerYearMonth"] = $taskData["taskCountPerYearMonth"];
+        $data["taskCountPerYear"] = $taskData["taskCountPerYear"];
+        $data["labels"] = $taskData["labels"];
 
         // Generate the view
         $referenceView->generer($data);
@@ -395,6 +291,138 @@ class MainController {
     }
 
     /**
+     * Calculates the task data for the dashboard.
+     * @return array
+     */
+    private function calculateTaskDataD() {
+        $labels = [];
+        $data1 = [];
+        $data2 = [];
+        $taskDurations = [];
+        $taskCounts = [];
+
+        if (isset($_SESSION['tasks'])) {
+            foreach ($_SESSION['tasks'] as $task) {
+                $taskName = $task->getNameTask();
+                $taskDuration = $task->getDuration();
+
+                // Check if the task name already exists in the labels array
+                if (!in_array($taskName, $labels)) {
+                    $labels[] = $taskName;
+                    $taskDurations[$taskName] = $taskDuration;
+                    $taskCounts[$taskName] = 1;
+                } else {
+                    // Add the duration to the existing duration for this task name
+                    $taskDurations[$taskName] += $taskDuration;
+                    $taskCounts[$taskName]++;
+                }
+            }
+
+            // Fill the data arrays with the corresponding durations
+            foreach ($labels as $label) {
+                $data1[] = $taskDurations[$label]; // Calculate total
+                $data2[] = $taskDurations[$label] / $taskCounts[$label]; // Calculate average over a week
+            }
+        }
+
+        return [
+            "labels" => $labels,
+            "data1" => $data1,
+            "data2" => $data2
+        ];
+    }
+
+    /**
+     * Calculates the task data for the FollowUp.
+     * @return array
+     */
+    private function calculateTaskDataF( $monthChoose = null, $yearChoose = null) {
+        $taskDurations = [];
+        $labels = [];
+        $tempT = 0;
+        $taskDates = [];
+        $taskCountPerYearMonth = [];
+        $taskCountPerYear = [];
+
+        if (isset($_SESSION['tasks'])) {                         
+            foreach ($_SESSION['tasks'] as $task) {
+                
+                // Get name, duration and date of the task
+                $taskName = $task->getNameTask();
+                $taskDuration = $task->getDuration();
+                $taskDate = $task->getDateAdded();
+
+                // Separate the date in year and month
+                if ($monthChoose == null && $yearChoose == null){
+                    $year = date('Y', strtotime($taskDate));
+                    $month = date('n', strtotime($taskDate));
+                }
+                else{
+                    $year = $yearChoose;
+                    $month = $monthChoose;
+                }
+
+                if (($month == date('n'))  || ($month == $monthChoose)){
+                    // If taskname is not in labels
+                    if (!in_array($taskName, $labels)) {
+                        // For detail part
+                        $labels[] = $taskName;
+                        $taskDurations[$taskName] = $taskDuration;
+                        $tempT += $taskDuration;
+
+                        // For global part
+                        // Per year
+                        if (!isset($taskCountPerYear[$year][$taskName])) {
+                            $taskCountPerYear[$year][$taskName] = 1;
+                        } else {
+                            $taskCountPerYear[$year][$taskName]++;
+                        }
+                        // Per month
+                        if (!isset($taskCountPerYearMonth[$year][$month][$taskName])) {
+                            $taskCountPerYearMonth[$year][$month][$taskName] = 1;
+                        } else {
+                            $taskCountPerYearMonth[$year][$month][$taskName]++;
+                        }
+                    } 
+                    else {
+                        // For detail part
+                        $taskDurations[$taskName] += $taskDuration;
+                        $tempT += $taskDuration;
+
+                        // For global part
+                        // Per year
+                        if (!isset($taskCountPerYear[$year][$taskName])) {
+                            $taskCountPerYear[$year][$taskName] = 1;
+                        } else {
+                            $taskCountPerYear[$year][$taskName]++;
+                        }
+                        // Per month
+                        if (!isset($taskCountPerYearMonth[$year][$month][$taskName])) {
+                            $taskCountPerYearMonth[$year][$month][$taskName] = 1;
+                        } else {
+                            $taskCountPerYearMonth[$year][$month][$taskName]++;
+                        }
+                    }
+                }
+            }
+
+            foreach ($labels as $label) {
+                // For detail part
+                $taskPercent[$label] = ceil(($taskDurations[$label]*100) / $tempT);      
+                
+            }
+        }
+
+        return [
+            "taskPercent" => $taskPercent,
+            "taskDurations" => $taskDurations,
+            "taskCountPerYearMonth" => $taskCountPerYearMonth,
+            "taskCountPerYear" => $taskCountPerYear,
+            "labels" => $labels
+        ];
+    }
+
+    /**
      * Displays the MyHome page.
      */
     public function MyHome() {
@@ -416,5 +444,20 @@ class MainController {
             //ajouter les données à afficher
         );
         $myHomeRegistrationView->generer($data);
+    }
+    public function ExportPDF($message = null) {
+
+        
+        $PDFView = new View("ExportPDF");
+        
+        $data = array(
+            
+        );
+        if ($message !== null) {
+            $data["message"] = $message;
+            
+        }
+        $PDFView->generer($data);
+        
     }
 }

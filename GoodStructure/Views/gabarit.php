@@ -33,7 +33,7 @@
             <div class="icon" id="search"></div>
         </a>
         
-        <?php if (isset($_SESSION['IdLogin']) && (($_SESSION["IdMyHome"]) == null))  : ?>
+        <?php if (isset($_SESSION['IdLogin']) && !isset(($_SESSION["IdMyHome"])))  : ?>
             <a class="lien-header" href="index.php?action=MyHome" > 
                 <div class="icon" id="user"></div>
             </a>
@@ -54,6 +54,7 @@
             <li><a class="lien-header" href="index.php?action=InfoDashBoard">DashBoard</a></li>
             <li><a class="lien-header" href="index.php?action=Reference">Reference</a></li>
             <li><a class="lien-header" href="index.php?action=InfoFollowUp">Follow up</a></li>
+            <li><a class="lien-header" href="index.php?action=ExportPDF">Export PDF</a></li>
         <?php else : ?>
             <li><a class="lien-header" href="index.php?action=Connection"  >Login</a></li> 
             <li><a class="lien-header" href="index.php?action=Registration"  >Register</a></li> 

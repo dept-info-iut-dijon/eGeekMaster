@@ -1,6 +1,6 @@
 <!-- author : Lola Cohidon
      author: Théo Cornu-->
-<link rel="stylesheet" href="Public/css/reference4.css">
+<link rel="stylesheet" href="Public/css/reference6.css">
 <?php include 'companion.php'; ?>
 <div id="ContaintReference">
     <!--Search bar-->
@@ -38,13 +38,12 @@
     <!-- <div class="ReferenceTable"> -->
     <table>
         <tr>
-            <th class="thToDisplay">Activity</th>
-            <th class="thToNotDisplay">Descriptive</th>
-            <th class="thToNotDisplay">Quarter-hour value</th>
-            <th class="thToNotDisplay">Monetary value</th>
-            <th class="thToNotDisplay">Example : Quarter-hour value</th>
-            <th class="thToNotDisplay">Example : Monetary value</th>
-        </tr>
+        <th class="thToDisplay" id="activityColumn">Activity</th>
+        <th class="thToNotDisplay" id="descriptiveColumn">Descriptive</th>
+        <th class="thToNotDisplay" id="quarterHourValueColumn">Quarter-hour value</th>
+        <th class="thToNotDisplay" id="monetaryValueColumn">Monetary value</th>
+        <th class="thToNotDisplay" id="exampleQuarterHourColumn">Example: Quarter-hour value</th>
+        <th class="thToNotDisplay" id="exampleMonetaryColumn">Example: Monetary value</th>
         <!-- Cleaning -->
         <tr>
             <td class="tdToDisplay">
