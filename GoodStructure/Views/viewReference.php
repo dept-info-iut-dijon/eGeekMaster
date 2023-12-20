@@ -1,6 +1,6 @@
 <!-- author : Lola Cohidon
      author: Théo Cornu-->
-<link rel="stylesheet" href="Public/css/reference4.css">
+<link rel="stylesheet" href="Public/css/reference6.css">
 <?php include 'companion.php'; ?>
 <div id="ContaintReference">
     <!--Search bar-->
@@ -9,20 +9,20 @@
             <div class="search-field">
                 <input list="TaskProp" placeholder="Search..." id="research" class="input" type="text">
                 <datalist id="TaskProp">
-                    <option id="cleaningOption" value="Cleaning">                                
-                    <option id="shoppingOption" value="Shopping">
-                    <option id="cookingOption" value="Cooking">
-                    <option id="dishesOption" value="Dishes">
-                    <option id="laundryOption" value="Laundry">                                
-                    <option id="childsPlay" value="ChildsPlay">
-                    <option id="childrensJourneyOption" value="ChildrensJourney">                                
-                    <option id="parentJourneyOption" value="ParentJourney">                                
-                    <option id="parentCareOption" value="ParentCare">
-                    <option id="administrativeOption" value="Administrative">
-                    <option id="petCareOption" value="PetCare">
-                    <option id="gardeningOption" value="Gardening">                               
-                    <option id="DIYOption" value="DIY">
-                    <option id="househouldManagementOption" value="HouseholdManagement">
+                    <option value="Cleaning">                                
+                    <option value="Shopping">
+                    <option value="Cooking">
+                    <option value="Dishes">
+                    <option value="Laundry">                                
+                    <option value="ChildsPlay">
+                    <option value="ChildrensJourney">                                
+                    <option value="ParentJourney">                                
+                    <option value="ParentCare">
+                    <option value="Administrative">
+                    <option value="PetCare">
+                    <option value="Gardening">                               
+                    <option value="DIY">
+                    <option value="HouseholdManagement">
                 </datalist> 
                 <div class="search-box-icon">
                     <button id="btn-icon-content">
@@ -38,13 +38,12 @@
     <!-- <div class="ReferenceTable"> -->
     <table>
         <tr>
-            <th class="thToDisplay">Activity</th>
-            <th class="thToNotDisplay">Descriptive</th>
-            <th class="thToNotDisplay">Quarter-hour value</th>
-            <th class="thToNotDisplay">Monetary value</th>
-            <th class="thToNotDisplay">Example : Quarter-hour value</th>
-            <th class="thToNotDisplay">Example : Monetary value</th>
-        </tr>
+        <th class="thToDisplay" id="activityColumn">Activity</th>
+        <th class="thToNotDisplay" id="descriptiveColumn">Descriptive</th>
+        <th class="thToNotDisplay" id="quarterHourValueColumn">Quarter-hour value</th>
+        <th class="thToNotDisplay" id="monetaryValueColumn">Monetary value</th>
+        <th class="thToNotDisplay" id="exampleQuarterHourColumn">Example: Quarter-hour value</th>
+        <th class="thToNotDisplay" id="exampleMonetaryColumn">Example: Monetary value</th>
         <!-- Cleaning -->
         <tr>
             <td class="tdToDisplay">
