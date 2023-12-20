@@ -7,7 +7,7 @@
 function DisplayHomeRegistration() {
     const HeadForm = document.getElementById("HeadForm");
     const HomeForm = document.getElementById("HomeForm");
-    const infoSend = document.getElementById("infoSend");
+    const infoSend = document.getElementsByClassName("infoSend")[0];
     const FootForm = document.getElementById("FootForm");
     const labelcode = document.getElementById("labelcode");
 
