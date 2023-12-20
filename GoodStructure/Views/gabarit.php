@@ -1,4 +1,5 @@
-<!-- author : Théo Cornu -->
+<!-- author : Théo Cornu 
+author : Lola Cohidon -->
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -93,14 +94,6 @@
                 <li class="linkSubstitle"><a href="index.php?action=Registration&IdLogin=83">Update my account</a></li>
             </ul>
         </div>
-        <div id="services" class="link">
-            <ul>
-                <li class="linkTitle"><a href="#">Services</a></li>
-                <li class="linkSubstitle"><a href="#">New link 1</a></li>
-                <li class="linkSubstitle"><a href="#">New link 2</a></li>
-                <li class="linkSubstitle"><a href="#">New link 3</a></li>
-            </ul>
-        </div>
         <div id="legalNotice" class="link">
             <ul>
                 <li class="linkTitle" ><a href="#">Legal notices</a></li>
@@ -108,6 +101,13 @@
                 <li class="linkSubstitle" ><a href="index.php?action=TermsConditions">Terms and Conditions</a></li>
                 <li class="linkSubstitle" ><a href="index.php?action=LegalNotice">Legal Notice</a></li>
                 <li class="linkSubstitle" ><a href="index.php?action=CookiePolicy">Cookie Policy</a></li>
+            </ul>
+        </div>
+        <div id="services" class="link">
+            <ul>
+                <li class="linkTitle"><a href="#">Services</a></li>
+                <li class="linkSubstitle"><a href="#">Contact</a></li>
+                <li class="linkSubstitle"><a href="#">Who are we?</a></li>
             </ul>
         </div>
         <div class="footer-social">
