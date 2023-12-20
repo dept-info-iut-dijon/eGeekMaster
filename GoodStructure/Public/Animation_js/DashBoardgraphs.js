@@ -19,23 +19,23 @@ function ShowGraph1() {
                 label: 'Distribution Duration',
                 data: data1,
                 borderWidth: 0,
-                backgroundColor: (context) => {
-                    const index = context.dataIndex;
-                    const count = context.dataset.data.length;
-                    const startColor = [90, 74, 71]; // Couleur de départ (noir)
-                    const endColor = [236, 228, 227]; // Couleur de fin (blanc)
-                    const color = [];
+                // backgroundColor: (context) => {
+                //     const index = context.dataIndex;
+                //     const count = context.dataset.data.length;
+                //     const startColor = [90, 74, 71]; // Couleur de départ (noir)
+                //     const endColor = [236, 228, 227]; // Couleur de fin (blanc)
+                //     const color = [];
 
-                    // Calculer les valeurs de couleur pour chaque canal (rouge, vert, bleu)
-                    for (let i = 0; i < 3; i++) {
-                        const startValue = startColor[i];
-                        const endValue = endColor[i];
-                        const value = Math.round(startValue + (endValue - startValue) * (index / (count - 1)));
-                        color.push(value);
-                    }
+                //     // Calculer les valeurs de couleur pour chaque canal (rouge, vert, bleu)
+                //     for (let i = 0; i < 3; i++) {
+                //         const startValue = startColor[i];
+                //         const endValue = endColor[i];
+                //         const value = Math.round(startValue + (endValue - startValue) * (index / (count - 1)));
+                //         color.push(value);
+                //     }
 
-                    return `rgb(${color.join(',')})`;
-                }
+                //     return `rgb(${color.join(',')})`;
+                // }
             }]
         },
         options: {
