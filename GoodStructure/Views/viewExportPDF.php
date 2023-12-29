@@ -1,4 +1,5 @@
 <!-- author : Lola Cohidon-->
+<?php require 'translations.php' ?>
 <link rel="stylesheet" href="Public/css/exportPDF3.css">
 <div id="PDFpage">
     <!--Title of the page-->
