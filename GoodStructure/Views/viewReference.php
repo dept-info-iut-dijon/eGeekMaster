@@ -40,12 +40,12 @@ author : Lola Cohidon-->
     <!-- <div class="ReferenceTable"> -->
     <table>
         <tr>
-            <th class="thToDisplay"><?= $translations[$language]['reference_table_activity']?></th>
-            <th class="thToNotDisplay"><?= $translations[$language]['reference_table_descriptive']?></th>
-            <th class="thToNotDisplay"><?= $translations[$language]['reference_table_quarter']?></th>
-            <th class="thToNotDisplay"><?= $translations[$language]['reference_table_monetary']?></th>
-            <th class="thToNotDisplay"><?= $translations[$language]['reference_table_exemple1']?></th>
-            <th class="thToNotDisplay"><?= $translations[$language]['reference_table_exemple2']?></th>
+            <th class="thToDisplay" id="activityColumn"><?= $translations[$language]['reference_table_activity']?></th>
+            <th class="thToNotDisplay" id="descriptiveColumn"><?= $translations[$language]['reference_table_descriptive']?></th>
+            <th class="thToNotDisplay" id="quarterHourValueColumn"><?= $translations[$language]['reference_table_quarter']?></th>
+            <th class="thToNotDisplay" id="monetaryValueColumn"><?= $translations[$language]['reference_table_monetary']?></th>
+            <th class="thToNotDisplay" id="exampleQuarterHourColumn"><?= $translations[$language]['reference_table_exemple1']?></th>
+            <th class="thToNotDisplay" id="exampleMonetaryColumn"><?= $translations[$language]['reference_table_exemple2']?></th>
         </tr>
         <!-- Cleaning -->
         <tr>
