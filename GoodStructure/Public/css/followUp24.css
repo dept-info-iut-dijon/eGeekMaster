@@ -1,4 +1,6 @@
-/* Author : Lola Cohidon */
+/* Author : Lola Cohidon 
+ Theo Cornu*/
+
 
 /* Reset default styles and set the base styles for the body */
 body {
@@ -246,5 +248,12 @@ transform: rotateY(180deg);
 
 .selectData{
     border-radius: 10px;
+}
+
+.HourGlobal{
+    position: absolute;
+    top: 10%;
+    left: 80%;
+    transform: translate(-50%, -50%);
 }
 

@@ -43,6 +43,9 @@ function showDetailed() {
         // Get the task percentages from the hidden input
         const taskPercentages = JSON.parse(document.getElementById('data3').value);
 
+        // Get the global percentage from the hidden input
+        const globalPercentages = JSON.parse(document.getElementById('data4').value);
+
         // Create a flip card for each task
         boutonDetails.forEach(function (bouton) {
             var flipCard = document.createElement("div");
@@ -91,6 +94,15 @@ function showDetailed() {
                 pourcent.className = "pourcent";
                 pourcent.innerText = "Contribution : " + taskPercentage + "%"; // Display the task percentage
                 data.appendChild(pourcent);
+
+                // Global percentage of the task for the home
+                var globalPercentage = globalPercentages[bouton.nom] || 0; // Get the percentage for the task, or 0 if it doesn't exist
+
+                
+                var pourcent2 = document.createElement("p");
+                pourcent2.className = "HourGlobal";
+                pourcent2.innerText = "Global " + globalPercentage + "h"; // Display the task hour
+                flipCardBack.appendChild(pourcent2);
 
                 // Image of the task
                 var imageBack = document.createElement("img");

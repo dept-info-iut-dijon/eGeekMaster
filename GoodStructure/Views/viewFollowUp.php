@@ -4,7 +4,7 @@ author : Théo Cornu
 -->
 
 <?php include 'companion.php'; ?>
-<link rel="stylesheet" href="Public/css/followUp23.css">
+<link rel="stylesheet" href="Public/css/followUp24.css">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="Public/Animation_js/followUp3.js"></script>
 
@@ -23,6 +23,7 @@ author : Théo Cornu
     <!--Detailed tracking-->
     <input type="hidden" id="data2" value="<?= htmlspecialchars(json_encode($taskCountPerYearMonth)) ?>">
     <input type="hidden" id="data3" value="<?= htmlspecialchars(json_encode($taskPercent)) ?>">
+    <input type="" id="data4" value="<?= htmlspecialchars(json_encode($hoursHomeGlobalPerTask)) ?>">
 
     
 </div>

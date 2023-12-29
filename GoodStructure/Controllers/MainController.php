@@ -123,6 +123,7 @@ class MainController {
         $data["taskCountPerYearMonth"] = $taskData["taskCountPerYearMonth"];
         $data["taskCountPerYear"] = $taskData["taskCountPerYear"];
         $data["labels"] = $taskData["labels"];
+        $data["hoursHomeGlobalPerTask"] = $taskData["hoursHomeGlobalPerTask"];
 
         // Generate the view
         $referenceView->generer($data);
@@ -336,34 +337,34 @@ class MainController {
      * Calculates the task data for the FollowUp.
      * @return array
      */
-    private function calculateTaskDataF( $monthChoose = null, $yearChoose = null) {
+    private function calculateTaskDataF($monthChoose = null, $yearChoose = null)
+    {
         $taskDurations = [];
         $labels = [];
         $tempT = 0;
         $taskDates = [];
         $taskCountPerYearMonth = [];
         $taskCountPerYear = [];
-      
+        $hoursHomeGlobalPerTask = [];
 
-        if (isset($_SESSION['tasks'])) {                         
+        if (isset($_SESSION['tasks'])) {
             foreach ($_SESSION['tasks'] as $task) {
-                
+
                 // Get name, duration and date of the task
                 $taskName = $task->getNameTask();
                 $taskDuration = $task->getDuration();
                 $taskDate = $task->getDateAdded();
 
                 // Separate the date in year and month
-                if ($monthChoose == null && $yearChoose == null){
+                if ($monthChoose == null && $yearChoose == null) {
                     $year = date('Y', strtotime($taskDate));
                     $month = date('n', strtotime($taskDate));
-                }
-                else{
+                } else {
                     $year = $yearChoose;
                     $month = $monthChoose;
                 }
 
-                if (($month == date('n'))  || ($month == $monthChoose)){
+                if (($month == date('n')) || ($month == $monthChoose)) {
                     // If taskname is not in labels
                     if (!in_array($taskName, $labels)) {
                         // For detail part
@@ -384,8 +385,7 @@ class MainController {
                         } else {
                             $taskCountPerYearMonth[$year][$month][$taskName]++;
                         }
-                    } 
-                    else {
+                    } else {
                         // For detail part
                         $taskDurations[$taskName] += $taskDuration;
                         $tempT += $taskDuration;
@@ -409,31 +409,29 @@ class MainController {
 
             foreach ($labels as $label) {
                 // For detail part
-                $taskPercent[$label] = ceil(($taskDurations[$label]*100) / $tempT);      
-                
+                $taskPercent[$label] = ceil(($taskDurations[$label] * 100) / $tempT);
+                $hoursHomeGlobalPerTask[$label] = round($taskDurations[$label] / 4); // Convert quarter of hour to hours and round to the nearest integer
             }
 
-            if(isset($_SESSION['times'])){
-
+            if (isset($_SESSION['times'])) {
 
                 // Vider la liste taskPercent
                 unset($taskPercent);
-    
-                foreach ($_SESSION['times'] as $time) {
-                    $taskPercent[$time->getNameTask()] = ceil(($time->getDuration()*100) / $tempT);
-                }
-            } 
-        }
+                $taskPercent = [];
 
-        
-        
+                foreach ($_SESSION['times'] as $time) {
+                    $taskPercent[$time->getNameTask()] = ceil(($time->getDuration() * 100) / $tempT);
+                }
+            }
+        }
 
         return [
             "taskPercent" => $taskPercent,
             "taskDurations" => $taskDurations,
             "taskCountPerYearMonth" => $taskCountPerYearMonth,
             "taskCountPerYear" => $taskCountPerYear,
-            "labels" => $labels
+            "labels" => $labels,
+            "hoursHomeGlobalPerTask" => $hoursHomeGlobalPerTask,
         ];
     }
 
