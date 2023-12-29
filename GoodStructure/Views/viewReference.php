@@ -1,7 +1,7 @@
 <!-- author: Théo Cornu
 author : Lola Cohidon-->
 <?php require 'translations.php' ?>
-<link rel="stylesheet" href="Public/css/reference4.css">
+<link rel="stylesheet" href="Public/css/reference6.css">
 <?php include 'companion.php'; ?>
 <div id="ContaintReference">
     <!--Search bar-->

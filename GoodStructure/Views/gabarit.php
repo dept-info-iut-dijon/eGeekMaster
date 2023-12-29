@@ -30,9 +30,7 @@
             <div class="icon" id="logoH" ></div>
         
         </a>
-        <a class="lien-header" href="">
-            <div class="icon" id="search"></div>
-        </a>
+        
         
         <?php if (isset($_SESSION['IdLogin']) && !isset(($_SESSION["IdMyHome"])))  : ?>
             <a class="lien-header" href="index.php?action=MyHome" > 
@@ -50,11 +48,11 @@
     <ul>
         <?php if (isset($_SESSION['IdLogin'])) : ?>
             <li><a class="lien-header" href="index.php?action=Index" ><?= $translations[$language]['gabarit_button_home']?></a></li>
-            <li><a class="lien-header" href="index.php?action=Registration&IdLogin=<?=$_SESSION['IdLogin']?>"  ><?= $translations[$language]['gabarit_button_update']?></a></li>
-            <li><a class="lien-header" href="index.php?action=Disconnect"  ><?= $translations[$language]['gabarit_button_disconnect']?></a></li>
             <li><a class="lien-header" href="index.php?action=InfoDashBoard"><?= $translations[$language]['gabarit_button_dashboard']?></a></li>
             <li><a class="lien-header" href="index.php?action=Reference"><?= $translations[$language]['gabarit_button_reference']?></a></li>
             <li><a class="lien-header" href="index.php?action=InfoFollowUp"><?= $translations[$language]['gabarit_button_followUp']?></a></li>
+            <li><a class="lien-header" href="index.php?action=Registration&IdLogin=<?=$_SESSION['IdLogin']?>"  ><?= $translations[$language]['gabarit_button_update']?></a></li>
+            <li><a class="lien-header" href="index.php?action=Disconnect"  ><?= $translations[$language]['gabarit_button_disconnect']?></a></li>
         <?php else : ?>
             <li><a class="lien-header" href="index.php?action=Connection"  ><?= $translations[$language]['gabarit_button_login']?></a></li> 
             <li><a class="lien-header" href="index.php?action=Registration"  ><?= $translations[$language]['gabarit_button_register']?></a></li> 
