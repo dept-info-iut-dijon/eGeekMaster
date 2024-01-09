@@ -17,9 +17,9 @@ author : Théo Cornu
     </div>
     <!--Buttons-->
     <div class="buttons">
-        <button class=selectData id="suiviD" >Detailed tracking</button>
+        <button class=selectData id="suiviD" ><?= $translations[$language]['followUp_button_suiviD']?></button>
         <div class="line"></div>
-        <button class=selectData id="suiviG" >Overall tracking</button>
+        <button class=selectData id="suiviG" ><?= $translations[$language]['followUp_button_suiviG']?></button>
     </div>
     <!--Detailed tracking-->
     <input type="hidden" id="data2" value="<?= htmlspecialchars(json_encode($taskCountPerYearMonth)) ?>">
