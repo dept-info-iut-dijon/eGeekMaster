@@ -58,10 +58,6 @@ footer {
     margin-right: 120px;
 }
 
-.linkTitle a {
-    font-weight: bold;
-}
-
 .linkTitle a,
 .linkSubstitle a {
     text-decoration: none;

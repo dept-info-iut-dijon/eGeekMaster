@@ -174,7 +174,7 @@ td {
   background-color: #fff; /*Table background color*/
 }
 
-/* Styles for the table header */
+
 
 #activityColumn {
   background-color: #9966ff; /* Couleur pour l'option Cleaning */
@@ -268,25 +268,6 @@ td {
   .extra-info.visible {
     max-height: 700px; /* approximate max height */
   }
-
-/* Styles for the table header */
-
-  .descriptionTitle {
-    color: #FF9F40; 
-  }
-  .descriptionQuarter-hour {
-    color: #36A2EB; 
-  }
-  .descriptionMonetary {
-    color: #FF6384; 
-  }
-  .descriptionExample1 {
-    color: #FFCD56; 
-  }
-  .descriptionExample2 {
-    color: #4BC0C0; 
-  }
-  
 }
 
 /* Styles for normal-sized screens */

@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= $titre ?></title>
     <link rel="stylesheet" href="Public/css/header3.css"/>
-    <link rel="stylesheet" href="Public/css/footer2.css"/>
+    <link rel="stylesheet" href="Public/css/footer1.css"/>
     <link rel="stylesheet" href="Public/css/erreur.css"/>
     <link rel="stylesheet" href="Public/css/companion2.css"/>
     <link rel="stylesheet" href="Public/css/mentionLegal.css"/>
@@ -80,12 +80,19 @@
         </div>
         <div id="shortcuts" class="link">
             <ul>
-                <li class="linkTitle" ><a href="#">Shortcuts</a></li>
-                <li class="linkSubstitle"><a href="index.php?action=InfoDashBoard">DashBord</a></li>
-                <li class="linkSubstitle"><a href="index.php?action=Reference">Reference</a></li>
-                <li class="linkSubstitle"><a href="index.php?action=InfoFollowUp">Follow Up</a></li>
-                <li class="linkSubstitle"><a href="index.php?action=ExportPDF">Export PDF</a></li>
-                <li class="linkSubstitle"><a href="index.php?action=Registration&IdLogin=83">Update my account</a></li>
+                <li class="linkTitle" ><a href="#"><?= $translations[$language]['gabarit_shortcuts']?></a></li>
+                <li class="linkSubstitle"><a href="#">New link 1</a></li>
+                <li class="linkSubstitle"><a href="#">New link 2</a></li>
+                <li class="linkSubstitle"><a href="#">New link 3</a></li>
+                <li class="linkSubstitle"><a href="#">New link 4</a></li>
+            </ul>
+        </div>
+        <div id="services" class="link">
+            <ul>
+                <li class="linkTitle"><a href="#"><?= $translations[$language]['gabarit_services']?></a></li>
+                <li class="linkSubstitle"><a href="#">New link 1</a></li>
+                <li class="linkSubstitle"><a href="#">New link 2</a></li>
+                <li class="linkSubstitle"><a href="#">New link 3</a></li>
             </ul>
         </div>
         <div id="legalNotice" class="link">
@@ -95,13 +102,6 @@
                 <li class="linkSubstitle" ><a href="index.php?action=TermsConditions"><?= $translations[$language]['gabarit_termsConditions']?></a></li>
                 <li class="linkSubstitle" ><a href="index.php?action=LegalNotice"><?= $translations[$language]['gabarit_legalMention']?></a></li>
                 <li class="linkSubstitle" ><a href="index.php?action=CookiePolicy"><?= $translations[$language]['gabarit_cookiePolicy']?></a></li>
-            </ul>
-        </div>
-        <div id="services" class="link">
-            <ul>
-                <li class="linkTitle"><a href="#">Services</a></li>
-                <li class="linkSubstitle"><a href="#">Contact</a></li>
-                <li class="linkSubstitle"><a href="#">Who are we?</a></li>
             </ul>
         </div>
         <div class="footer-social">
