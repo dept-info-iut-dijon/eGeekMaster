@@ -1,5 +1,4 @@
-<!-- author : Théo Cornu 
-author : Lola Cohidon -->
+<!-- author : Théo Cornu -->
 <!DOCTYPE html>
 <html lang="fr">
 
