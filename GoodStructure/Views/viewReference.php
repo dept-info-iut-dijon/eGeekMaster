@@ -8,23 +8,22 @@ author : Lola Cohidon-->
     <div class="search">
         <div class="search-box">
             <div class="search-field">
-                <input list="TaskProp" placeholder="<?= $translations[$language]['reference_searchbox_search']?>" id="research" class="input" type="text">
+                <input list="TaskProp" placeholder="Search..." id="research" class="input" type="text">
                 <datalist id="TaskProp">
-                    <option value="<?= $translations[$language]['reference_searchbox_cleaning']?>">                              
-                    <option value="<?= $translations[$language]['reference_searchbox_shopping']?>"> 
-                    <option value="<?= $translations[$language]['reference_searchbox_cooking']?>"> 
-                    <option value="<?= $translations[$language]['reference_searchbox_dishes']?>">
-                    <option value="<?= $translations[$language]['reference_searchbox_laundry']?>">
-                    <option value="<?= $translations[$language]['reference_searchbox_childrenCare']?>">                               
-                    <option value="<?= $translations[$language]['reference_searchbox_childsPlay']?>">
-                    <option value="<?= $translations[$language]['reference_searchbox_childrensJourney']?>">
-                    <option value="<?= $translations[$language]['reference_searchbox_parentJourney']?>">                                 
-                    <option value="<?= $translations[$language]['reference_searchbox_parentCare']?>">
-                    <option value="<?= $translations[$language]['reference_searchbox_administrative']?>">
-                    <option value="<?= $translations[$language]['reference_searchbox_petCare']?>">
-                    <option value="<?= $translations[$language]['reference_searchbox_gardening']?>">                             
-                    <option value="<?= $translations[$language]['reference_searchbox_diy']?>">
-                    <option value="<?= $translations[$language]['reference_searchbox_householdManagement']?>">
+                    <option value="Cleaning">                                
+                    <option value="Shopping">
+                    <option value="Cooking">
+                    <option value="Dishes">
+                    <option value="Laundry">                                
+                    <option value="ChildsPlay">
+                    <option value="ChildrensJourney">                                
+                    <option value="ParentJourney">                                
+                    <option value="ParentCare">
+                    <option value="Administrative">
+                    <option value="PetCare">
+                    <option value="Gardening">                               
+                    <option value="DIY">
+                    <option value="HouseholdManagement">
                 </datalist> 
                 <div class="search-box-icon">
                     <button id="btn-icon-content">
@@ -55,28 +54,28 @@ author : Lola Cohidon-->
                         <img class="icon" src="Public/image/page_reference/img_cleaning.png" alt="">
                     </div>
                     <div>
-                        <p id="<?= $translations[$language]['reference_searchbox_cleaning']?>"><?= $translations[$language]['reference_searchbox_cleaning']?></p>
+                        <p id="Cleaning">Cleaning</p>
                     </div>
                 </div>
                 <div class="extra-info">
-                <h2><?= $translations[$language]['reference_table_description']?></h2>
-                    <p class="description"><?= $translations[$language]['reference_desc_cleaning']?></p>
-                    <h2><?= $translations[$language]['reference_table_quarter']?></h2>
+                <h2>Description:</h2>
+                    <p class="description">Cleaning surfaces, floors, sinks, toilets and household appliances.</p>
+                    <h2>Quarter-hour value:</h2>
                     <p class="value">4</p>
-                    <h2><?= $translations[$language]['reference_table_monetary']?></h2>
+                    <h2>Monetary value:</h2>
                     <p class="money">15€</p>
-                    <h2><?= $translations[$language]['reference_table_exemple1']?></h2>
-                    <p class="exampleMinutes"><?= $translations[$language]['reference_exemple1']?></p>
-                    <h2><?= $translations[$language]['reference_table_exemple2']?></h2>
-                    <p class="exampleMoney"><?= $translations[$language]['reference_exemple2']?></p>
+                    <h2>Example - Quarter-hour value:</h2>
+                    <p class="exampleMinutes">Cleaning will take 1 hour, so the value is 4 (because 15 minutes multiplied by 4 equals 60 minutes or 1 hour)</p>
+                    <h2>Example - Monetary value:</h2>
+                    <p class="exampleMoney">The monetary value of one hour of cleaning is 15€</p>
                     </div>
                 </div>
             </td>
-            <td class="tdToNotDisplay"><?= $translations[$language]['reference_desc_cleaning']?></td>
+            <td class="tdToNotDisplay">Cleaning surfaces, floors, sinks, toilets and household appliances.</td>
             <td class="tdToNotDisplay">4</td>
             <td class="tdToNotDisplay">15€</td>
-            <td class ="tdToNotDisplay"><?= $translations[$language]['reference_exemple1']?></td>
-            <td class ="tdToNotDisplay"><?= $translations[$language]['reference_exemple2']?></td>
+            <td class ="tdToNotDisplay">Cleaning will take 1 hour, so the value is 4 (because 15 minutes multiplied by 4 equals 60 minutes or 1 hour)</td>
+            <td class ="tdToNotDisplay">The monetary value of one hour of cleaning is 15€</td>
         </tr>
         <!-- Shopping -->
         <tr>
@@ -86,24 +85,24 @@ author : Lola Cohidon-->
                         <img class="icon" src="Public/image/page_reference/img_shopping.png" alt="">
                     </div>
                     <div>
-                        <p id="<?= $translations[$language]['reference_searchbox_shopping']?>"><?= $translations[$language]['reference_searchbox_shopping']?></p>
+                        <p id="Shopping">Shopping</p>
                     </div>
                 </div>
                 <div class="extra-info">
-                    <h2><?= $translations[$language]['reference_table_description']?></h2>
-                    <p class="description"><?= $translations[$language]['reference_desc_shopping']?></p>
-                    <h2><?= $translations[$language]['reference_table_quarter']?></h2>
+                    <h2>Description:</h2>
+                    <p class="description">Purchase of all supplies necessary for the household (food, medications, furniture, DIY and garden equipment, children's clothing, etc.).</p>
+                    <h2>Quarter-hour value:</h2>
                     <p class="value">4</p>
-                    <h2><?= $translations[$language]['reference_table_monetary']?></h2>
+                    <h2>Monetary value:</h2>
                     <p class="money">15€</p>
-                    <h2><?= $translations[$language]['reference_table_exemple1']?></h2>
+                    <h2>Example - Quarter-hour value:</h2>
                     <p class="exampleMinutes">4</p>
-                    <h2><?= $translations[$language]['reference_table_exemple2']?></h2>
+                    <h2>Example - Monetary value:</h2>
                     <p class="exampleMoney">15€</p>
                     </div>
                 </div>
             </td>
-            <td class="tdToNotDisplay"><?= $translations[$language]['reference_desc_shopping']?></td>
+            <td class="tdToNotDisplay">Purchase of all supplies necessary for the household (food, medications, furniture, DIY and garden equipment, children's clothing, etc.).</td>
             <td class="tdToNotDisplay">4</td>
             <td class="tdToNotDisplay">15€</td>
             <td class ="tdToNotDisplay">4</td>
@@ -117,26 +116,26 @@ author : Lola Cohidon-->
                         <img class="icon" src="Public/image/page_reference/img_cooking.png" alt="">
                     </div>
                     <div>
-                        <p id="<?= $translations[$language]['reference_searchbox_cooking']?>"><?= $translations[$language]['reference_searchbox_cooking']?></p>
+                        <p id="Cooking">Cooking</p>
                     </div>
                 </div>
                 <div class="extra-info">
-                    <h2><?= $translations[$language]['reference_table_description']?></h2>
-                    <p class="description"><?= $translations[$language]['reference_desc_cooking']?></p>
-                    <h2><?= $translations[$language]['reference_table_quarter']?></h2>
+                    <h2>Description:</h2>
+                    <p class="description">Creation of weekly menus, Meal preparation, Table setting and clearing.</p>
+                    <h2>Quarter-hour value:</h2>
                     <p class="value">4</p>
-                    <h2><?= $translations[$language]['reference_table_monetary']?></h2>
+                    <h2>Monetary value:</h2>
                     <p class="money">15€</p>
-                    <h2><?= $translations[$language]['reference_table_exemple1']?></h2>
-                    <p class="exampleMinutes"><?= $translations[$language]['reference_exemple3']?></p>
-                    <h2><?= $translations[$language]['reference_table_exemple2']?></h2>
-                    <p class="exampleMoney"> 3,75€</p>
+                    <h2>Example - Quarter-hour value:</h2>
+                    <p class="exampleMinutes"> Example : 1 (a quarter of an hour = 15 minutes)</p>
+                    <h2>Example - Monetary value:</h2>
+                    <p class="exampleMoney"> Example :3,75€</p>
                 </div>
             </td>
-            <td class="tdToNotDisplay"><?= $translations[$language]['reference_desc_cooking']?></td>
+            <td class="tdToNotDisplay">Creation of weekly menus, Meal preparation, Table setting and clearing.</td>
             <td class="tdToNotDisplay">4</td>
             <td class="tdToNotDisplay">15€</td>
-            <td class ="tdToNotDisplay"><?= $translations[$language]['reference_table_exemple2']?></td>
+            <td class ="tdToNotDisplay">1 (a quarter of an hour = 15 minutes)</td>
             <td class ="tdToNotDisplay">3,75€</td>
         </tr>
         <!-- Dishes -->
@@ -147,23 +146,23 @@ author : Lola Cohidon-->
                         <img class="icon" src="Public/image/page_reference/img_dishes.png" alt="">
                     </div>
                     <div>
-                        <p id="<?= $translations[$language]['reference_searchbox_dishes']?>"><?= $translations[$language]['reference_searchbox_dishes']?></p>
+                        <p id="Dishes">Dishes</p>
                     </div>
                 </div>
                 <div class="extra-info">
-                    <h2><?= $translations[$language]['reference_table_description']?></h2>
-                    <p class="description"><?= $translations[$language]['reference_desc_dishes']?></p>
-                    <h2><?= $translations[$language]['reference_table_quarter']?></h2>
+                    <h2>Description:</h2>
+                    <p class="description">By hand or using the dishwasher (loading and unloading). Storage in cupboards.</p>
+                    <h2>Quarter-hour value:</h2>
                     <p class="value">4</p>
-                    <h2><?= $translations[$language]['reference_table_monetary']?></h2>
+                    <h2>Monetary value:</h2>
                     <p class="money">15€</p>
-                    <h2><?= $translations[$language]['reference_table_exemple1']?></h2>
+                    <h2>Example - Quarter-hour value:</h2>
                     <p class="exampleMinutes">2 (30 minutes)</p>
-                    <h2><?= $translations[$language]['reference_table_exemple2']?></h2>
+                    <h2>Example - Monetary value:</h2>
                     <p class="exampleMoney">7,5€</p>
                 </div>
             </td>
-            <td class="tdToNotDisplay"><?= $translations[$language]['reference_desc_dishes']?></td>
+            <td class="tdToNotDisplay">By hand or using the dishwasher (loading and unloading). Storage in cupboards.</td>
             <td class="tdToNotDisplay">4</td>
             <td class="tdToNotDisplay">15€</td>
             <td class ="tdToNotDisplay">2 (30 minutes)</td>
@@ -177,23 +176,23 @@ author : Lola Cohidon-->
                         <img class="icon" src="Public/image/page_reference/img_laundry.png" alt="">
                     </div>
                     <div>
-                        <p id="<?= $translations[$language]['reference_searchbox_laundry']?>"><?= $translations[$language]['reference_searchbox_laundry']?></p>
+                        <p id="Laundry">Laundry</p>
                     </div>
                 </div>
                 <div class="extra-info">
-                    <h2><?= $translations[$language]['reference_table_description']?></h2>
-                    <p class="description"><?= $translations[$language]['reference_desc_laundry']?></p>
-                    <h2><?= $translations[$language]['reference_table_quarter']?></h2>
+                    <h2>Description:</h2>
+                    <p class="description">Collecting (putting in the basket), sorting, washing, drying, ironing, and storing.</p>
+                    <h2>Quarter-hour value:</h2>
                     <p class="value">4</p>
-                    <h2><?= $translations[$language]['reference_table_monetary']?></h2>
+                    <h2>Monetary value:</h2>
                     <p class="money">15€</p>
-                    <h2><?= $translations[$language]['reference_table_exemple1']?></h2>
+                    <h2>Example - Quarter-hour value:</h2>
                     <p class="exampleMinutes">4</p>
-                    <h2><?= $translations[$language]['reference_table_exemple2']?></h2>
+                    <h2>Example - Monetary value:</h2>
                     <p class="exampleMoney">15€</p>
                 </div>
             </td>
-            <td class="tdToNotDisplay"><?= $translations[$language]['reference_desc_laundry']?></td>
+            <td class="tdToNotDisplay">Collecting (putting in the basket), sorting, washing, drying, ironing, and storing.</td>
             <td class="tdToNotDisplay">4</td>
             <td class="tdToNotDisplay">15€</td>
             <td class ="tdToNotDisplay">4</td>
@@ -207,23 +206,23 @@ author : Lola Cohidon-->
                         <img class="icon" src="Public/image/page_reference/img_childrenCare.png" alt="">
                     </div>
                     <div>
-                        <p id="<?= $translations[$language]['reference_searchbox_childrenCare']?>"><?= $translations[$language]['reference_searchbox_childrenCare']?></p>
+                        <p id="ChildrensCare">ChildrensCare</p>
                     </div>
                 </div>
                 <div class="extra-info">
-                    <h2><?= $translations[$language]['reference_table_description']?></h2>
-                    <p class="description"><?= $translations[$language]['reference_desc_childrenCare']?></p>
-                    <h2><?= $translations[$language]['reference_table_quarter']?></h2>
+                    <h2>Description:</h2>
+                    <p class="description">Physiological needs (getting up, washing, feeding, dressing, caring, and putting to bed).</p>
+                    <h2>Quarter-hour value:</h2>
                     <p class="value">4</p>
-                    <h2><?= $translations[$language]['reference_table_monetary']?></h2>
+                    <h2>Monetary value:</h2>
                     <p class="money">15€</p>
-                    <h2><?= $translations[$language]['reference_table_exemple1']?></h2>
+                    <h2>Example - Quarter-hour value:</h2>
                     <p class="exampleMinutes">8</p>
-                    <h2><?= $translations[$language]['reference_table_exemple2']?></h2>
+                    <h2>Example - Monetary value:</h2>
                     <p class="exampleMoney">30€</p>
                 </div>
             </td>
-            <td class="tdToNotDisplay"><?= $translations[$language]['reference_desc_childrenCare']?></td>
+            <td class="tdToNotDisplay">Physiological needs (getting up, washing, feeding, dressing, caring, and putting to bed).</td>
             <td class="tdToNotDisplay">4</td>
             <td class="tdToNotDisplay">15€</td>
             <td class ="tdToNotDisplay">8</td>
@@ -237,23 +236,23 @@ author : Lola Cohidon-->
                         <img class="icon" src="Public/image/page_reference/img_childsPlay.png" alt="">
                     </div>
                     <div>
-                        <p id="<?= $translations[$language]['reference_searchbox_childsPlay']?>"><?= $translations[$language]['reference_searchbox_childsPlay']?></p>
+                        <p id="ChildsPlay">ChildsPlay</p>
                     </div>
                 </div>
                 <div class="extra-info">
-                    <h2><?= $translations[$language]['reference_table_description']?></h2>
-                    <p class="description"><?= $translations[$language]['reference_desc_childsPlay']?></p>
-                    <h2><?= $translations[$language]['reference_table_quarter']?></h2>
+                    <h2>Description:</h2>
+                    <p class="description">Organization (choosing the game, setting up), participation in activities (starting the game, overall participation, and cleaning up the game).</p>
+                    <h2>Quarter-hour value:</h2>
                     <p class="value">4</p>
-                    <h2><?= $translations[$language]['reference_table_monetary']?></h2>
+                    <h2>Monetary value:</h2>
                     <p class="money">15€</p>
-                    <h2><?= $translations[$language]['reference_table_exemple1']?></h2>
+                    <h2>Example - Quarter-hour value:</h2>
                     <p class="exampleMinutes">4</p>
-                    <h2><?= $translations[$language]['reference_table_exemple2']?></h2>
+                    <h2>Example - Monetary value:</h2>
                     <p class="exampleMoney">15€</p>
                 </div>
             </td>
-            <td class="tdToNotDisplay"><?= $translations[$language]['reference_desc_childsPlay']?></td>
+            <td class="tdToNotDisplay">Organization (choosing the game, setting up), participation in activities (starting the game, overall participation, and cleaning up the game).</td>
             <td class="tdToNotDisplay">4</td>
             <td class="tdToNotDisplay">15€</td>
             <td class ="tdToNotDisplay">4</td>
@@ -267,23 +266,23 @@ author : Lola Cohidon-->
                         <img class="icon" src="Public/image/page_reference/img_childrensJourney.png" alt="">
                     </div>
                     <div>
-                        <p id="<?= $translations[$language]['reference_searchbox_childrensJourney']?>"><?= $translations[$language]['reference_searchbox_childrensJourney']?></p>
+                        <p id="ChildrensJourney">ChildrensJourney</p>
                     </div>
                 </div>
                 <div class="extra-info">
-                    <h2><?= $translations[$language]['reference_table_description']?></h2>
-                    <p class="description"></p>
-                    <h2><?= $translations[$language]['reference_table_quarter']?></h2>
+                    <h2>Description:</h2>
+                    <p class="description">Accompanying and collecting children from school, extracurricular activities, medical appointments, etc.</p>
+                    <h2>Quarter-hour value:</h2>
                     <p class="value">4</p>
-                    <h2><?= $translations[$language]['reference_table_monetary']?></h2>
+                    <h2>Monetary value:</h2>
                     <p class="money">15€</p>
-                    <h2><?= $translations[$language]['reference_table_exemple1']?></h2>
+                    <h2>Example - Quarter-hour value:</h2>
                     <p class="exampleMinutes">1</p>
-                    <h2><?= $translations[$language]['reference_table_exemple2']?></h2>
+                    <h2>Example - Monetary value:</h2>
                     <p class="exampleMoney">3,75€</p>
                 </div>
             </td>
-            <td class="tdToNotDisplay"><?= $translations[$language]['reference_desc_childrensJourney']?></td>
+            <td class="tdToNotDisplay">To school, after-school care (recreation center + cafeteria), babysitter, friends, doctor, leisure activities (sports/culture).</td>
             <td class="tdToNotDisplay">4</td>
             <td class="tdToNotDisplay">15€</td>
             <td class ="tdToNotDisplay">8</td>
@@ -297,23 +296,23 @@ author : Lola Cohidon-->
                         <img class="icon" src="Public/image/page_reference/img_parentJourney.png" alt="">
                     </div>
                     <div>
-                        <p id="<?= $translations[$language]['reference_searchbox_parentJourney']?>"><?= $translations[$language]['reference_searchbox_parentJourney']?></p>
+                        <p id="ParentJourney">ParentJourney</p>
                     </div>
                 </div>
                 <div class="extra-info">
-                    <h2><?= $translations[$language]['reference_table_description']?></h2>
-                    <p class="description"><?= $translations[$language]['reference_desc_parentJourney']?></p>
-                    <h2><?= $translations[$language]['reference_table_quarter']?></h2>
+                    <h2>Description:</h2>
+                    <p class="description">For accompanying and supporting a dependent parent, including travel, medical appointments, etc.</p>
+                    <h2>Quarter-hour value:</h2>
                     <p class="value">4</p>
-                    <h2><?= $translations[$language]['reference_table_monetary']?></h2>
+                    <h2>Monetary value:</h2>
                     <p class="money">15€</p>
-                    <h2><?= $translations[$language]['reference_table_exemple1']?></h2>
+                    <h2>Example - Quarter-hour value:</h2>
                     <p class="exampleMinutes">3</p>
-                    <h2><?= $translations[$language]['reference_table_exemple2']?></h2>
+                    <h2>Example - Monetary value:</h2>
                     <p class="exampleMoney">11,25€</p>
                 </div>
             </td>
-            <td class="tdToNotDisplay"><?= $translations[$language]['reference_desc_parentJourney']?></td>
+            <td class="tdToNotDisplay">For dependent parent.</td>
             <td class="tdToNotDisplay">4</td>
             <td class="tdToNotDisplay">15€</td>
             <td class ="tdToNotDisplay">3</td>
@@ -327,23 +326,23 @@ author : Lola Cohidon-->
                         <img class="icon" src="Public/image/page_reference/img_parentCare.png" alt="">
                     </div>
                     <div>
-                        <p id="<?= $translations[$language]['reference_searchbox_parentCare']?>"><?= $translations[$language]['reference_searchbox_parentCare']?></p>
+                        <p id="ParentCare">ParentCare</p>
                     </div>
                 </div>
                 <div class="extra-info">
-                    <h2><?= $translations[$language]['reference_table_description']?></h2>
-                    <p class="description"><?= $translations[$language]['reference_desc_parentCare']?></p>
-                    <h2><?= $translations[$language]['reference_table_quarter']?></h2>
+                    <h2>Description:</h2>
+                    <p class="description">Assistance, care for a dependent parent, administrative management of files (health, home care, etc.), transportation (health, leisure).</p>
+                    <h2>Quarter-hour value:</h2>
                     <p class="value">4</p>
-                    <h2><?= $translations[$language]['reference_table_monetary']?></h2>
+                    <h2>Monetary value:</h2>
                     <p class="money">15€</p>
-                    <h2><?= $translations[$language]['reference_table_exemple1']?></h2>
+                    <h2>Example - Quarter-hour value:</h2>
                     <p class="exampleMinutes">5</p>
-                    <h2><?= $translations[$language]['reference_table_exemple2']?></h2>
+                    <h2>Example - Monetary value:</h2>
                     <p class="exampleMoney">18,75€</p>
                 </div>
             </td>
-            <td class="tdToNotDisplay"><?= $translations[$language]['reference_desc_parentCare']?></td>
+            <td class="tdToNotDisplay">Assistance, care for a dependent parent, administrative management of files (health, home care, etc.), transportation (health, leisure).</td>
             <td class="tdToNotDisplay">4</td>
             <td class="tdToNotDisplay">15€</td>
             <td class ="tdToNotDisplay">5</td>
@@ -357,23 +356,23 @@ author : Lola Cohidon-->
                         <img class="icon" src="Public/image/page_reference/img_administrative.png" alt="">
                     </div>
                     <div>
-                        <p id="<?= $translations[$language]['reference_searchbox_administrative']?>"><?= $translations[$language]['reference_searchbox_administrative']?></p>
+                        <p id="Administrative">Administrative</p>
                     </div>
                 </div>
                 <div class="extra-info">
-                    <h2><?= $translations[$language]['reference_table_description']?></h2>
-                    <p class="description"><?= $translations[$language]['reference_desc_administrative']?></p>
-                    <h2><?= $translations[$language]['reference_table_quarter']?></h2>
+                    <h2>Description:</h2>
+                    <p class="description">Taxes, bills, administrative registrations, health insurance management, bank account management, subscriptions, mail posting, and making reservations.</p>
+                    <h2>Quarter-hour value:</h2>
                     <p class="value">4</p>
-                    <h2><?= $translations[$language]['reference_table_monetary']?></h2>
+                    <h2>Monetary value:</h2>
                     <p class="money">15€</p>
-                    <h2><?= $translations[$language]['reference_table_exemple1']?></h2>
+                    <h2>Example - Quarter-hour value:</h2>
                     <p class="exampleMinutes">4</p>
-                    <h2><?= $translations[$language]['reference_table_exemple2']?></h2>
+                    <h2>Example - Monetary value:</h2>
                     <p class="exampleMoney">15€</p>
                 </div>
             </td>
-            <td class="tdToNotDisplay"><?= $translations[$language]['reference_desc_administrative']?></td>
+            <td class="tdToNotDisplay">Taxes, bills, administrative registrations, health insurance management, bank account management, subscriptions, mail posting, and making reservations.</td>
             <td class="tdToNotDisplay">4</td>
             <td class="tdToNotDisplay">15€</td>
             <td class ="tdToNotDisplay">4</td>
@@ -387,23 +386,23 @@ author : Lola Cohidon-->
                         <img class="icon" src="Public/image/page_reference/img_petCare.png" alt="">
                     </div>
                     <div>
-                        <p id="<?= $translations[$language]['reference_searchbox_petCare']?>"><?= $translations[$language]['reference_searchbox_petCare']?></p>
+                        <p id="PetCare">PetCare</p>
                     </div>
                 </div>
                 <div class="extra-info">
-                    <h2><?= $translations[$language]['reference_table_description']?></h2>
-                    <p class="description"><?= $translations[$language]['reference_desc_petCare']?></p>
-                    <h2><?= $translations[$language]['reference_table_quarter']?></h2>
+                    <h2>Description:</h2>
+                    <p class="description">Food, Washing/Brushing, Walk, Litter change, Vet appointment, Care for.</p>
+                    <h2>Quarter-hour value:</h2>
                     <p class="value">4</p>
-                    <h2><?= $translations[$language]['reference_table_monetary']?></h2>
+                    <h2>Monetary value:</h2>
                     <p class="money">15€</p>
-                    <h2><?= $translations[$language]['reference_table_exemple1']?></h2>
+                    <h2>Example - Quarter-hour value:</h2>
                     <p class="exampleMinutes">4</p>
-                    <h2><?= $translations[$language]['reference_table_exemple2']?></h2>
+                    <h2>Example - Monetary value:</h2>
                     <p class="exampleMoney">15€</p>
                 </div>
             </td>
-            <td class="tdToNotDisplay"><?= $translations[$language]['reference_desc_petCare']?></td>
+            <td class="tdToNotDisplay">Food, Washing/Brushing, Walk, Litter change, Vet appointment, Care for.</td>
             <td class="tdToNotDisplay">4</td>
             <td class="tdToNotDisplay">15€</td>
             <td class ="tdToNotDisplay">4</td>
@@ -417,23 +416,23 @@ author : Lola Cohidon-->
                         <img class="icon" src="Public/image/page_reference/img_gardening.png" alt="">
                     </div>
                     <div>
-                        <p id="<?= $translations[$language]['reference_searchbox_gardening']?>"><?= $translations[$language]['reference_searchbox_gardening']?></p>
+                        <p id="Gardening">Gardening</p>
                     </div>
                 </div>
                 <div class="extra-info">
-                    <h2><?= $translations[$language]['reference_table_description']?></h2>
-                    <p class="description"><?= $translations[$language]['reference_desc_gardening']?></p>
-                    <h2><?= $translations[$language]['reference_table_quarter']?></h2>
+                    <h2>Description:</h2>
+                    <p class="description">Any necessary outdoor tasks: mow, prune, treat, water, harvest.</p>
+                    <h2>Quarter-hour value:</h2>
                     <p class="value">4</p>
-                    <h2><?= $translations[$language]['reference_table_monetary']?></h2>
+                    <h2>Monetary value:</h2>
                     <p class="money">15€</p>
-                    <h2><?= $translations[$language]['reference_table_exemple1']?></h2>
+                    <h2>Example - Quarter-hour value:</h2>
                     <p class="exampleMinutes">6</p>
-                    <h2><?= $translations[$language]['reference_table_exemple2']?></h2>
+                    <h2>Example - Monetary value:</h2>
                     <p class="exampleMoney">22,5€</p>
                 </div>
             </td>
-            <td class="tdToNotDisplay"><?= $translations[$language]['reference_desc_gardening']?></td>
+            <td class="tdToNotDisplay">Any necessary outdoor tasks: mow, prune, treat, water, harvest.</td>
             <td class="tdToNotDisplay">4</td>
             <td class="tdToNotDisplay">15€</td>
             <td class ="tdToNotDisplay">6</td>
@@ -447,23 +446,23 @@ author : Lola Cohidon-->
                         <img class="icon" src="Public/image/page_reference/img_diy.png" alt="">
                     </div>
                     <div>
-                        <p id="<?= $translations[$language]['reference_searchbox_diy']?>"><?= $translations[$language]['reference_searchbox_diy']?></p>
+                        <p id="DIY">DIY</p>
                     </div>
                 </div>
                 <div class="extra-info">
-                    <h2><?= $translations[$language]['reference_table_description']?></h2>
-                    <p class="description"><?= $translations[$language]['reference_desc_diy']?></p>
-                    <h2><?= $translations[$language]['reference_table_quarter']?></h2>
+                    <h2>Description:</h2>
+                    <p class="description">Repairs, necessary minor work (plaster, painting, plumbing, etc.).</p>
+                    <h2>Quarter-hour value:</h2>
                     <p class="value">4</p>
-                    <h2><?= $translations[$language]['reference_table_monetary']?></h2>
+                    <h2>Monetary value:</h2>
                     <p class="money">15€</p>
-                    <h2><?= $translations[$language]['reference_table_exemple1']?></h2>
+                    <h2>Example - Quarter-hour value:</h2>
                     <p class="exampleMinutes">4</p>
-                    <h2><?= $translations[$language]['reference_table_exemple2']?></h2>
+                    <h2>Example - Monetary value:</h2>
                     <p class="exampleMoney">15€</p>
                 </div>
             </td>
-            <td class="tdToNotDisplay"><?= $translations[$language]['reference_desc_diy']?></td>
+            <td class="tdToNotDisplay">Repairs, necessary minor work (plaster, painting, plumbing, etc.).</td>
             <td class="tdToNotDisplay">4</td>
             <td class="tdToNotDisplay">15€</td>
             <td class ="tdToNotDisplay">4</td>
@@ -477,23 +476,23 @@ author : Lola Cohidon-->
                         <img class="icon" src="Public/image/page_reference/img_householdManagement.png" alt="">
                     </div>
                     <div>
-                        <p id="<?= $translations[$language]['reference_searchbox_householdManagement']?>"><?= $translations[$language]['reference_searchbox_householdManagement']?></p>
+                        <p id="HouseholdManagement">HouseholdManagement</p>
                     </div>
                 </div>
                 <div class="extra-info">
-                    <h2><?= $translations[$language]['reference_table_description']?></h2>
-                    <p class="description"><?= $translations[$language]['reference_desc_householdManagement']?></p>
-                    <h2><?= $translations[$language]['reference_table_quarter']?></h2>
+                    <h2>Description:</h2>
+                    <p class="description">Service provider management (search, hiring, follow-up), availability management for parcel reception, leisure management.</p>
+                    <h2>Quarter-hour value:</h2>
                     <p class="value">4</p>
-                    <h2><?= $translations[$language]['reference_table_monetary']?></h2>
+                    <h2>Monetary value:</h2>
                     <p class="money">15€</p>
-                    <h2><?= $translations[$language]['reference_table_exemple1']?></h2>
+                    <h2>Example - Quarter-hour value:</h2>
                     <p class="exampleMinutes">2</p>
-                    <h2><?= $translations[$language]['reference_table_exemple2']?></h2>
+                    <h2>Example - Monetary value:</h2>
                     <p class="exampleMoney">7,5€</p>
                 </div>
             </td>
-            <td class="tdToNotDisplay"><?= $translations[$language]['reference_desc_householdManagement']?></td>
+            <td class="tdToNotDisplay">Service provider management (search, hiring, follow-up), availability management for parcel reception, leisure management.</td>
             <td class="tdToNotDisplay">4</td>
             <td class="tdToNotDisplay">15€</td>
             <td class ="tdToNotDisplay">2</td>

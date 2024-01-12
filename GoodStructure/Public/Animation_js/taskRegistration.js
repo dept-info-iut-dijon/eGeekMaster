@@ -29,7 +29,7 @@ function DisplayTaskRegistration() {
         } else {
             // Open the task registration part
             taskR.style.right = "4%";
-            titleTask.textContent = "REGISTRATION A TASK"; // Change the content of the h1 element
+            titleTask.textContent = "Registration A TASK"; // Change the content of the h1 element
             submit.value = "Register";
             formTask.action = "index.php?action=TaskRegistration";
             searchTask.value = "";

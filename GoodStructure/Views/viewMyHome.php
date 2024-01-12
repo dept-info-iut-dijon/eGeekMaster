@@ -1,6 +1,5 @@
 <!-- author: Théo Cornu-->
-<?php require 'translations.php' ?>
-<link rel="stylesheet" href="Public/css/connection1.css">
+<link rel="stylesheet" href="Public/css/myhome2.css">
 <script src="Public/Animation_js/myhome.js"></script>    
 
 <div id="page">
@@ -19,27 +18,27 @@
                 </div>
             <?php endif; ?>
             <div id="HeadForm">
-                <h1><?= $translations[$language]['myHome_title']?></h1>
-                <p><?= $translations[$language]['myHome_desc']?></p>
+                <h1>Join Home</h1>
+                <p>Join a home to be with your family</p>
             </div>
             <div>
                 <form id="HomeForm" action="index.php?action=MyHomeConnect" method="post">
                     <fieldset>
                         <div class="formConnect">   
                             <div class="infoSend">
-                                <label id="labelcode" for="CodeHome"><?= $translations[$language]['myHome_codeHome']?></label><br>
+                                <label id="labelcode" for="CodeHome">Code Home</label><br>
                                 <input type="text" id="CodeHome" name="CodeHome" class="inputs" autofocus required>
                             </div>
                                    
                             <div id="submitDiv">
-                                <input type="submit" value="<?= $translations[$language]['myHome_submit']?>" id="submitbutton">
+                                <input type="submit" value="Validate" id="submitbutton">
                             </div>
                         </div>
                     </fieldset>
                 </form>
             </div>
             <div id="FootForm">
-                <p ><?= $translations[$language]['myHome_submit']?> <input type="button" id="lienCreatHome" value="<?= $translations[$language]['myHome_submit']?>"></p>
+                <p >Don't have a home ? <input type="button" id="lienCreatHome" value="Create one here"></p>
             </div>    
         </div>
     </div>
