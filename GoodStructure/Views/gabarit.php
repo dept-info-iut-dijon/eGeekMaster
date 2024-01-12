@@ -50,12 +50,12 @@
     <ul>
         <?php if (isset($_SESSION['IdLogin'])) : ?>
             <li><a class="lien-header" href="index.php?action=Index" ><?= $translations[$language]['gabarit_button_home']?></a></li>
-            <li><a class="lien-header" href="index.php?action=Registration&IdLogin=<?=$_SESSION['IdLogin']?>"  ><?= $translations[$language]['gabarit_button_update']?></a></li>
-            <li><a class="lien-header" href="index.php?action=Disconnect"  ><?= $translations[$language]['gabarit_button_disconnect']?></a></li>
             <li><a class="lien-header" href="index.php?action=InfoDashBoard"><?= $translations[$language]['gabarit_button_dashboard']?></a></li>
             <li><a class="lien-header" href="index.php?action=Reference"><?= $translations[$language]['gabarit_button_reference']?></a></li>
             <li><a class="lien-header" href="index.php?action=InfoFollowUp"><?= $translations[$language]['gabarit_button_followUp']?></a></li>
             <li><a class="lien-header" href="index.php?action=ExportPDF">Export PDF</a></li>
+            <li><a class="lien-header" href="index.php?action=Registration&IdLogin=<?=$_SESSION['IdLogin']?>"  ><?= $translations[$language]['gabarit_button_update']?></a></li>
+            <li><a class="lien-header" href="index.php?action=Disconnect"  ><?= $translations[$language]['gabarit_button_disconnect']?></a></li>
         <?php else : ?>
             <li><a class="lien-header" href="index.php?action=Connection"  ><?= $translations[$language]['gabarit_button_login']?></a></li> 
             <li><a class="lien-header" href="index.php?action=Registration"  ><?= $translations[$language]['gabarit_button_register']?></a></li> 
@@ -91,14 +91,7 @@
                 <li class="linkSubstitle"><a href="index.php?action=Registration&IdLogin=83">Update my account</a></li>
             </ul>
         </div>
-        <div id="services" class="link">
-            <ul>
-                <li class="linkTitle"><a href="#"><?= $translations[$language]['gabarit_services']?></a></li>
-                <li class="linkSubstitle"><a href="#">New link 1</a></li>
-                <li class="linkSubstitle"><a href="#">New link 2</a></li>
-                <li class="linkSubstitle"><a href="#">New link 3</a></li>
-            </ul>
-        </div>
+        
         <div id="legalNotice" class="link">
             <ul>
                 <li class="linkTitle" ><a href="#"><?= $translations[$language]['gabarit_legalNotice']?></a></li>
@@ -106,13 +99,6 @@
                 <li class="linkSubstitle" ><a href="index.php?action=TermsConditions"><?= $translations[$language]['gabarit_termsConditions']?></a></li>
                 <li class="linkSubstitle" ><a href="index.php?action=LegalNotice"><?= $translations[$language]['gabarit_legalMention']?></a></li>
                 <li class="linkSubstitle" ><a href="index.php?action=CookiePolicy"><?= $translations[$language]['gabarit_cookiePolicy']?></a></li>
-            </ul>
-        </div>
-        <div id="services" class="link">
-            <ul>
-                <li class="linkTitle"><a href="#">Services</a></li>
-                <li class="linkSubstitle"><a href="#">Contact</a></li>
-                <li class="linkSubstitle"><a href="#">Who are we?</a></li>
             </ul>
         </div>
         <div id="services" class="link">
