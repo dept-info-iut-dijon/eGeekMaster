@@ -1,4 +1,5 @@
-<!-- author : Théo Cornu -->
+<!-- author : Théo Cornu 
+author : Lola Cohidon -->
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -8,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= $titre ?></title>
     <link rel="stylesheet" href="Public/css/header3.css"/>
-    <link rel="stylesheet" href="Public/css/footer1.css"/>
+    <link rel="stylesheet" href="Public/css/footer2.css"/>
     <link rel="stylesheet" href="Public/css/erreur.css"/>
     <link rel="stylesheet" href="Public/css/companion2.css"/>
     <link rel="stylesheet" href="Public/css/mentionLegal.css"/>
@@ -49,12 +50,12 @@
     <ul>
         <?php if (isset($_SESSION['IdLogin'])) : ?>
             <li><a class="lien-header" href="index.php?action=Index" >Home</a></li>
-            <li><a class="lien-header" href="index.php?action=Registration&IdLogin=<?=$_SESSION['IdLogin']?>"  >Upadte my account</a></li>
-            <li><a class="lien-header" href="index.php?action=Disconnect"  >Disconnect</a></li>
             <li><a class="lien-header" href="index.php?action=InfoDashBoard">DashBoard</a></li>
             <li><a class="lien-header" href="index.php?action=Reference">Reference</a></li>
             <li><a class="lien-header" href="index.php?action=InfoFollowUp">Follow up</a></li>
             <li><a class="lien-header" href="index.php?action=ExportPDF">Export PDF</a></li>
+            <li><a class="lien-header" href="index.php?action=Registration&IdLogin=<?=$_SESSION['IdLogin']?>"  >Upadte my account</a></li>
+            <li><a class="lien-header" href="index.php?action=Disconnect"  >Disconnect</a></li>
         <?php else : ?>
             <li><a class="lien-header" href="index.php?action=Connection"  >Login</a></li> 
             <li><a class="lien-header" href="index.php?action=Registration"  >Register</a></li> 
@@ -86,18 +87,11 @@
         <div id="shortcuts" class="link">
             <ul>
                 <li class="linkTitle" ><a href="#">Shortcuts</a></li>
-                <li class="linkSubstitle"><a href="#">New link 1</a></li>
-                <li class="linkSubstitle"><a href="#">New link 2</a></li>
-                <li class="linkSubstitle"><a href="#">New link 3</a></li>
-                <li class="linkSubstitle"><a href="#">New link 4</a></li>
-            </ul>
-        </div>
-        <div id="services" class="link">
-            <ul>
-                <li class="linkTitle"><a href="#">Services</a></li>
-                <li class="linkSubstitle"><a href="#">New link 1</a></li>
-                <li class="linkSubstitle"><a href="#">New link 2</a></li>
-                <li class="linkSubstitle"><a href="#">New link 3</a></li>
+                <li class="linkSubstitle"><a href="index.php?action=InfoDashBoard">DashBord</a></li>
+                <li class="linkSubstitle"><a href="index.php?action=Reference">Reference</a></li>
+                <li class="linkSubstitle"><a href="index.php?action=InfoFollowUp">Follow Up</a></li>
+                <li class="linkSubstitle"><a href="index.php?action=ExportPDF">Export PDF</a></li>
+                <li class="linkSubstitle"><a href="index.php?action=Registration&IdLogin=83">Update my account</a></li>
             </ul>
         </div>
         <div id="legalNotice" class="link">
@@ -107,6 +101,13 @@
                 <li class="linkSubstitle" ><a href="index.php?action=TermsConditions">Terms and Conditions</a></li>
                 <li class="linkSubstitle" ><a href="index.php?action=LegalNotice">Legal Notice</a></li>
                 <li class="linkSubstitle" ><a href="index.php?action=CookiePolicy">Cookie Policy</a></li>
+            </ul>
+        </div>
+        <div id="services" class="link">
+            <ul>
+                <li class="linkTitle"><a href="#">Services</a></li>
+                <li class="linkSubstitle"><a href="#">Contact</a></li>
+                <li class="linkSubstitle"><a href="#">Who are we?</a></li>
             </ul>
         </div>
         <div class="footer-social">
