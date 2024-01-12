@@ -48,11 +48,11 @@
     <ul>
         <?php if (isset($_SESSION['IdLogin'])) : ?>
             <li><a class="lien-header" href="index.php?action=Index" >Home</a></li>
-            <li><a class="lien-header" href="index.php?action=Registration&IdLogin=<?=$_SESSION['IdLogin']?>"  >Upadte my account</a></li>
-            <li><a class="lien-header" href="index.php?action=Disconnect"  >Disconnect</a></li>
             <li><a class="lien-header" href="index.php?action=InfoDashBoard">DashBoard</a></li>
             <li><a class="lien-header" href="index.php?action=Reference">Reference</a></li>
             <li><a class="lien-header" href="index.php?action=InfoFollowUp">Follow up</a></li>
+            <li><a class="lien-header" href="index.php?action=Registration&IdLogin=<?=$_SESSION['IdLogin']?>"  >Upadte my account</a></li>
+            <li><a class="lien-header" href="index.php?action=Disconnect"  >Disconnect</a></li>
             <li><a class="lien-header" href="index.php?action=ExportPDF">Export PDF</a></li>
         <?php else : ?>
             <li><a class="lien-header" href="index.php?action=Connection"  >Login</a></li> 

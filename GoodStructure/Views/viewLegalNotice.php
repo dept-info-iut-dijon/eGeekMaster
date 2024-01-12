@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="Public/css/mentionLegal.css"/>
+<link rel="stylesheet" href="Public/css/mentionLegal1.css"/>
 <div class="mentionLegal">
     <h1>Legal Notice for Famil'Easy</h1>
     <h2>Introduction:</h2>

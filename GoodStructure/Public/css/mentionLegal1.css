@@ -5,27 +5,27 @@ body{
 .mentionLegal {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: black;
     max-width: 75%;
     margin: auto;
     padding: 20px;
 }
 
 .mentionLegal h1 {
-    color: #0056b3;
+    color: #1B058A;
     font-size: 28px;
     margin-bottom: 20px;
 }
 
 .mentionLegal h2 {
-    color: #0066cc;
+    color: #0E2FC5;
     font-size: 24px;
     margin-top: 20px;
     margin-bottom: 10px;
 }
 
 .mentionLegal h3 {
-    color: #0077cc;
+    color: #0059FF;
     font-size: 20px;
     margin-top: 15px;
     margin-bottom: 5px;
