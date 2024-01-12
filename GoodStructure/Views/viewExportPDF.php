@@ -3,6 +3,7 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="Public/Animation_js/ExportPDF1.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+<?php require 'translations.php' ?>
 <div id="PDFpage">
     <!--Title of the page-->
     <div id="titlePDF">

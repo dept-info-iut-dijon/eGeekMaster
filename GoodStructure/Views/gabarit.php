@@ -1,4 +1,5 @@
 <!-- author : Théo Cornu -->
+<?php require 'translations.php' ?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -48,24 +49,21 @@
 <div id="menu">
     <ul>
         <?php if (isset($_SESSION['IdLogin'])) : ?>
-            <li><a class="lien-header" href="index.php?action=Index" >Home</a></li>
-            <li><a class="lien-header" href="index.php?action=InfoDashBoard">DashBoard</a></li>
-            <li><a class="lien-header" href="index.php?action=Reference">Reference</a></li>
-            <li><a class="lien-header" href="index.php?action=InfoFollowUp">Follow up</a></li>
+            <li><a class="lien-header" href="index.php?action=Index" ><?= $translations[$language]['gabarit_button_home']?></a></li>
+            <li><a class="lien-header" href="index.php?action=Registration&IdLogin=<?=$_SESSION['IdLogin']?>"  ><?= $translations[$language]['gabarit_button_update']?></a></li>
+            <li><a class="lien-header" href="index.php?action=Disconnect"  ><?= $translations[$language]['gabarit_button_disconnect']?></a></li>
+            <li><a class="lien-header" href="index.php?action=InfoDashBoard"><?= $translations[$language]['gabarit_button_dashboard']?></a></li>
+            <li><a class="lien-header" href="index.php?action=Reference"><?= $translations[$language]['gabarit_button_reference']?></a></li>
+            <li><a class="lien-header" href="index.php?action=InfoFollowUp"><?= $translations[$language]['gabarit_button_followUp']?></a></li>
             <li><a class="lien-header" href="index.php?action=ExportPDF">Export PDF</a></li>
-            <li><a class="lien-header" href="index.php?action=Registration&IdLogin=<?=$_SESSION['IdLogin']?>"  >Upadte my account</a></li>
-            <li><a class="lien-header" href="index.php?action=Disconnect"  >Disconnect</a></li>
         <?php else : ?>
-            <li><a class="lien-header" href="index.php?action=Connection"  >Login</a></li> 
-            <li><a class="lien-header" href="index.php?action=Registration"  >Register</a></li> 
+            <li><a class="lien-header" href="index.php?action=Connection"  ><?= $translations[$language]['gabarit_button_login']?></a></li> 
+            <li><a class="lien-header" href="index.php?action=Registration"  ><?= $translations[$language]['gabarit_button_register']?></a></li> 
         <?php endif; ?>
     </ul>
 </div>
 <div id="menuF"></div>
 
-<!-- Partie Compagnon -->
-<!-- author : Théo Deguin -->
-<!-- author : Lola Cohidon  -->
 
 
 <!-- #contenu -->
@@ -85,7 +83,7 @@
         </div>
         <div id="shortcuts" class="link">
             <ul>
-                <li class="linkTitle" ><a href="#">Shortcuts</a></li>
+                <li class="linkTitle" ><a href="#"><?= $translations[$language]['gabarit_shortcuts']?></a></li>
                 <li class="linkSubstitle"><a href="index.php?action=InfoDashBoard">DashBord</a></li>
                 <li class="linkSubstitle"><a href="index.php?action=Reference">Reference</a></li>
                 <li class="linkSubstitle"><a href="index.php?action=InfoFollowUp">Follow Up</a></li>
@@ -93,13 +91,28 @@
                 <li class="linkSubstitle"><a href="index.php?action=Registration&IdLogin=83">Update my account</a></li>
             </ul>
         </div>
+        <div id="services" class="link">
+            <ul>
+                <li class="linkTitle"><a href="#"><?= $translations[$language]['gabarit_services']?></a></li>
+                <li class="linkSubstitle"><a href="#">New link 1</a></li>
+                <li class="linkSubstitle"><a href="#">New link 2</a></li>
+                <li class="linkSubstitle"><a href="#">New link 3</a></li>
+            </ul>
+        </div>
         <div id="legalNotice" class="link">
             <ul>
-                <li class="linkTitle" ><a href="#">Legal notices</a></li>
-                <li class="linkSubstitle" ><a href="index.php?action=PrivacyPolicy">Privacy Policy</a></li>
-                <li class="linkSubstitle" ><a href="index.php?action=TermsConditions">Terms and Conditions</a></li>
-                <li class="linkSubstitle" ><a href="index.php?action=LegalNotice">Legal Notice</a></li>
-                <li class="linkSubstitle" ><a href="index.php?action=CookiePolicy">Cookie Policy</a></li>
+                <li class="linkTitle" ><a href="#"><?= $translations[$language]['gabarit_legalNotice']?></a></li>
+                <li class="linkSubstitle" ><a href="index.php?action=PrivacyPolicy"><?= $translations[$language]['gabarit_privacyPolicy']?></a></li>
+                <li class="linkSubstitle" ><a href="index.php?action=TermsConditions"><?= $translations[$language]['gabarit_termsConditions']?></a></li>
+                <li class="linkSubstitle" ><a href="index.php?action=LegalNotice"><?= $translations[$language]['gabarit_legalMention']?></a></li>
+                <li class="linkSubstitle" ><a href="index.php?action=CookiePolicy"><?= $translations[$language]['gabarit_cookiePolicy']?></a></li>
+            </ul>
+        </div>
+        <div id="services" class="link">
+            <ul>
+                <li class="linkTitle"><a href="#">Services</a></li>
+                <li class="linkSubstitle"><a href="#">Contact</a></li>
+                <li class="linkSubstitle"><a href="#">Who are we?</a></li>
             </ul>
         </div>
         <div id="services" class="link">
@@ -111,7 +124,7 @@
         </div>
         <div class="footer-social">
             <div id="follow-text-div">
-                <p id="follow-text">Follow us !</p>
+                <p id="follow-text"><?= $translations[$language]['gabarit_followUs']?></p>
             </div>
             <div id="ResLogo">
                 <a class="Facebook" href="#"><img src="Public/image/page_footer/facebook.png" alt="Facebook"></a>
