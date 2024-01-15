@@ -1,5 +1,5 @@
 <?php require 'translations.php' ?>
-<link rel="stylesheet" href="Public/css/mentionLegal.css"/>
+<link rel="stylesheet" href="Public/css/mentionLegal1.css"/>
 <div class="mentionLegal">
 <h1><?= $translations[$language]['termsConditions_title']?></h1>
     <p>
