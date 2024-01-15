@@ -21,9 +21,10 @@
          */
         public function AddMyHome(MyHome $myHome) : MyHome {
             try {
-                $sql = "INSERT INTO myhome (nameMyHome) VALUES (:value1)";
+                $sql = "INSERT INTO myhome (nameMyHome, codeMyHome) VALUES (:value1, :value2)";
                 $this->executerRequete($sql, [
-                    ":value1"=> $myHome->GetNameMyHome()
+                    ":value1"=> $myHome->GetNameMyHome(),
+                    ":value2"=> $myHome->GetCodeMyHome()
                 ]);
                 $myHome->SetIdMyHome($this->GetLastIdMyHome());
                 return $myHome;
