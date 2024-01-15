@@ -52,11 +52,6 @@
             <li><a class="lien-header" href="index.php?action=Reference"><?= $translations[$language]['gabarit_button_reference']?></a></li>
             <li><a class="lien-header" href="index.php?action=InfoFollowUp"><?= $translations[$language]['gabarit_button_followUp']?></a></li>
             <li><a class="lien-header" href="index.php?action=ExportPDF">Export PDF</a></li>
-            <li><a class="lien-header" href="index.php?action=Registration&IdLogin=<?=$_SESSION['IdLogin']?>"  ><?= $translations[$language]['gabarit_button_update']?></a></li>
-            <li><a class="lien-header" href="index.php?action=Disconnect"  ><?= $translations[$language]['gabarit_button_disconnect']?></a></li>
-            <li><a class="lien-header" href="index.php?action=ExportPDF">Export PDF</a></li>
-            <li><a class="lien-header" href="index.php?action=Registration&IdLogin=<?=$_SESSION['IdLogin']?>"  ><?= $translations[$language]['gabarit_button_update']?></a></li>
-            <li><a class="lien-header" href="index.php?action=Disconnect"  ><?= $translations[$language]['gabarit_button_disconnect']?></a></li>
         <?php else : ?>
             <li><a class="lien-header" href="index.php?action=Connection"  ><?= $translations[$language]['gabarit_button_login']?></a></li> 
             <li><a class="lien-header" href="index.php?action=Registration"  ><?= $translations[$language]['gabarit_button_register']?></a></li> 
@@ -91,9 +86,6 @@
                 <li class="linkSubstitle"><a href="index.php?action=InfoFollowUp">Follow Up</a></li>
                 <li class="linkSubstitle"><a href="index.php?action=ExportPDF">Export PDF</a></li>
                 <li class="linkSubstitle"><a href="index.php?action=Registration&IdLogin=83">Update my account</a></li>
-            </ul>
-        </div>
-        
             </ul>
         </div>
         <div id="legalNotice" class="link">
