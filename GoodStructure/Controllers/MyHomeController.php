@@ -147,7 +147,7 @@
             // Set the properties of the MyHome object
             $this->myHome->SetNameMyHome($_POST["NameHome"]);
             $this->myHome->SetCodeMyHome(strval($_POST["CodeHome"]));
-            var_dump($this->myHome);
+        
 
         }
         
