@@ -95,7 +95,7 @@
                                 <input type="radio" id="man" name="Gender" value="man" class="inputs" required>
                             </div>
                             <div class="gender">
-                                <label for="other"><?= $translations[$language]['registration_gender_other']?></label>
+                                <label for="other">other</label>
                                 <input type="radio" id="other" name="Gender" value="other" class="inputs" required>
                             </div>                
                         </div>

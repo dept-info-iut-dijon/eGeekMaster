@@ -39,7 +39,7 @@
                 </form>
             </div>
             <div id="FootForm">
-                <p ><?= $translations[$language]['myHome_submit']?> <input type="button" id="lienCreatHome" value="<?= $translations[$language]['myHome_submit']?>"></p>
+                <p >No Home?<input type="button" id="lienCreatHome" value="Create one"></p>
             </div>    
         </div>
     </div>
