@@ -257,6 +257,9 @@ class MainController {
                 case 'InfoFollowUp':
                     $prop = "You are on the Follow Up page. Here, you can access information about task tracking.";
                     break;
+                case 'AddUser' :
+                    $prop = "Welcome to Famil'Easy! You're now logged in and ready to explore our website. Enjoy!";
+                    break;
                 default:
                     $prop = 'Action non reconnue';
                     break;
