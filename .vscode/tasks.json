@@ -11,7 +11,7 @@
             //"C:/Users/ttmdu/OneDrive/Bureau/Navigateur/Navigateur Opera GX.lnk",
 
             "args": [
-                    "C:/Program Files/Mozilla Firefox/firefox.exe",
+                    "msedge",
                     "http://localhost/eGeekMaster/GoodStructure/index.php"
                 
                 ],
