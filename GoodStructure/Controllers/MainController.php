@@ -196,11 +196,11 @@ class MainController {
         if (isset($_SESSION['IdLogin'])) {
             switch ($_GET['action']) {
                 case 'Index':
-                    $prop = "You're on the Homepage. Explore information about the website, its usage, and read customer reviews here.";
+                    $prop = $translations[$language]['gabarit_companion_index'];
                     $imagePath = "Public/image/companion/companion5.png";
                     break;
                 case 'ConnectLogin':
-                    $prop = "You have just logged into your account. Welcome or welcome back among us.";
+                    $prop = $translations[$language]['gabarit_companion_connectLogin'];
                     break;
                 case 'InfoDashBoard':
                     if ((isset($_SESSION['tasks'])) && ((end($_SESSION['tasks']))->getId() != null)) {
@@ -214,79 +214,75 @@ class MainController {
                             $durationC += $task->getDuration();
                         }
                         if ($lastTaskDateD <= $oneWeekAgo) {
-                            $prop = "It seems you haven't recorded any tasks in a week or more. Consider updating your task log to stay organized.";
-                            $imagePath = "Public/image/companion/companion7.png";
+                            $prop = $translations[$language]['gabarit_companion_infoDashBoard1'];
                         } elseif ($durationC >= 8) {
-                            $prop = "You've accomplished quite a few tasks this week. Great job!";
-                            $imagePath = "Public/image/companion/companion4.png";
+                            $prop = $translations[$language]['gabarit_companion_infoDashBoard2'];
                         } elseif ($durationC <= 4) {
-                            $prop = "It seems like you haven't completed enough tasks this week. Consider taking on a few more to stay on track.";
-                            $imagePath = "Public/image/companion/companion6.png";
+                            $prop = $translations[$language]['gabarit_companion_infoDashBoard3'];
                         } else {
-                            $prop = "It looks like you've completed a decent number of tasks this week. Keep it up!";
-                            $imagePath = "Public/image/companion/companion8.png";
+                            $prop = $translations[$language]['gabarit_companion_infoDashBoard4'];
                         }
                     } else {
-                        $prop = "You're on the dashboard page. Here, you can view information about tasks completed in the last week.";
+                        $prop = $translations[$language]['gabarit_companion_infoDashBoard5'];
                     }
                     break;
                 case 'Reference':
-                    $prop = "You're on the Reference page. Here, you can check the value reference for each possible task.";
+                    $prop = $translations[$language]['gabarit_companion_reference'];
                     break;
                 case 'Registration':
-                    $prop = "You're on the Update My Account page. Here, you can modify the information associated with your account.";
+                    $prop = $translations[$language]['gabarit_companion_registration'];
                     break;
                 case 'TaskRegistration':
-                    $prop = "You've just added a completed task to the dashboard.";
-                    $imagePath = "Public/image/companion/companion2.png";
+                    $prop = $translations[$language]['gabarit_companion_taskRegistration'];
                     break;
                 case 'TaskSupression':
                     if (!isset($_SESSION['tasks']) || (end($_SESSION['tasks']))->getId() == null) {
-                        $prop = "Unable to delete tasks as there are currently none recorded.";
+                        $prop =$translations[$language]['gabarit_companion_taskSuppression1'] ;
                     } else {
-                        $prop = "You've just removed the last added task.";
+                        $prop =$translations[$language]['gabarit_companion_taskSuppression2'] ;
                     }
                     break;
                 case 'TaskModification':
                     if (!isset($_SESSION['tasks']) || (end($_SESSION['tasks']))->getId() == null) {
-                        $prop = "Unable to modify tasks as there are currently none recorded.";
+                        $prop =$translations[$language]['gabarit_companion_taskModification1'] ;
                     } else {
-                        $prop = "You've just modified the last added task.";
+                        $prop =$translations[$language]['gabarit_companion_taskModification2'];
                     }
                     break;
                 case 'InfoFollowUp':
                     $prop = "You are on the Follow Up page. Here, you can access information about task tracking.";
                     break;
                 case 'AddUser' :
-                    $prop = "Welcome to Famil'Easy! You're now logged in and ready to explore our website. Enjoy!";
+                    $prop =$translations[$language]['gabarit_companion_connectLogin'];
                     break;
                 case 'HomeRegistration':
                     $prop = "You created a new home, now you could invite your family ? ";
                     break;
                 default:
-                    $prop = 'Action non reconnue';
+                    $prop =$translations[$language]['gabarit_companion_unknowAction'];
                     break;
             }
         } else {
             switch ($_GET['action']) {
                 case 'Index':
-                    $prop = "Welcome to Family'Easy, your new tool for household task management. You're on the homepage. Explore information about the website, its usage, and read customer reviews here.";
+                    $prop = 'Bienvenue sur Family\'Easy, votre nouvel outil de gestion des tâches ménagères. Vous êtes sur la page d\'accueil. Explorez les informations sur le site, son utilisation et lisez les avis des clients ici.';
                     $imagePath = "Public/image/companion/companion5.png";
                     break;
                 case 'Connection':
-                    $prop = "You're on the Login page. Sign in here to access your account.";
+                    $prop = 'Vous êtes sur la page de connexion. Connectez-vous ici pour accéder à votre compte.';
                     break;
                 case 'Registration':
-                    $prop = "You're on the Registration page. Create your account here to get started.";
+                    $prop = 'Vous êtes sur la page d\'inscription. Créez votre compte ici pour commencer.';
                     break;
                 default:
-                    $prop = 'Action non reconnue';
+                    $prop = $translations[$language]['gabarit_companion_unknownAction'];
                     break;
             }
         }
     
         $affiche[1] = $prop;
         $affiche[2] = $imagePath;
+        
         return $affiche;
     }
 
