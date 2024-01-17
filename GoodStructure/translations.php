@@ -642,7 +642,7 @@
         ],
     ];
     $preferredLanguage = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
-    $allowedLanguages = ['en'];
+    $allowedLanguages = ['en', 'fr'];
     if (in_array($preferredLanguage, $allowedLanguages)) {
         $language = $preferredLanguage;
     } else {

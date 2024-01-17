@@ -260,6 +260,9 @@ class MainController {
                 case 'AddUser' :
                     $prop = "Welcome to Famil'Easy! You're now logged in and ready to explore our website. Enjoy!";
                     break;
+                case 'HomeRegistration':
+                    $prop = "You created a new home, now you could invite your family ? ";
+                    break;
                 default:
                     $prop = 'Action non reconnue';
                     break;

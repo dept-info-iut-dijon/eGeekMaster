@@ -24,7 +24,7 @@ author : Théo Cornu
     <!--Detailed tracking-->
     <input type="hidden" id="data2" value="<?= htmlspecialchars(json_encode($taskCountPerYearMonth)) ?>">
     <input type="hidden" id="data3" value="<?= htmlspecialchars(json_encode($taskPercent)) ?>">
-    <input type="" id="data4" value="<?= htmlspecialchars(json_encode($hoursHomeGlobalPerTask)) ?>">
+    <input type="hidden" id="data4" value="<?= htmlspecialchars(json_encode($hoursHomeGlobalPerTask)) ?>">
 
     
 </div>

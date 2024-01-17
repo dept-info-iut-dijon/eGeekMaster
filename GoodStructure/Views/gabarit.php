@@ -30,9 +30,6 @@
             <div class="icon" id="logoH" ></div>
         
         </a>
-        <a class="lien-header" href="">
-            <div class="icon" id="search"></div>
-        </a>
         
         <?php if (isset($_SESSION['IdLogin']) && !isset(($_SESSION["IdMyHome"])))  : ?>
             <a class="lien-header" href="index.php?action=MyHome" > 
