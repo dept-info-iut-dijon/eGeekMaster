@@ -90,21 +90,27 @@ class TaskManager extends Model
      * Add a new Task to the database.
      *
      * @param Task $Task The Task to add.
-     * @return Task The Task object, or null if not found.
      * @throws Exception
      */
-    public function AddTask(Task $Task): Task
+    public function AddTask(Task $Task) //: Task
     {
         try {
-            $sql = 'INSERT INTO task (Name, Duration, Date, DashBoardidDashboard) VALUES (:value1, :value2, :value3, :value4)';
+            $sql = ("INSERT INTO task (Name, Duration, Date, DashBoardidDashboard)
+            VALUES (:value1, :value2, :value3, :value4)");
+
+            $value1 = $Task->getNameTask();
+            $value2 = $Task->getDuration();
+            $value3 = $Task->getDateAdded();
+            $value4 = $Task->getIdDashBoard();
+            
             $this->executerRequete($sql, [
-                ':value1' => $Task->getNameTask(),
-                ':value2' => $Task->getDuration(),
-                ':value3' =>  $Task->getDateAdded(),
-                ':value4' =>  $Task->getIdDashBoard()
+                ':value1' => $value1,
+                ':value2' => $value2,
+                ':value3' => $value3,
+                ':value4' => $value4,
             ]);
             //$Task->setId($this->getLastInsertID());
-            return $Task;
+            //return $Task;
         } catch (PDOException $e) {
             // In case of an error, redirect to the error page with a message
             $errorMessage = "An error occurred while adding the Task.";

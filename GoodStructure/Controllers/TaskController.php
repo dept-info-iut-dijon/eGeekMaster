@@ -14,6 +14,8 @@ class TaskController
 {
    private $mainController;
    private $UserController;
+   private $TaskManager;
+   private $UserManager;
 
    /**
     * TaskController constructor.
@@ -22,12 +24,16 @@ class TaskController
    {
       $this->mainController = new MainController();
       $this->UserController = new UserController();
+      $this->TaskManager = new TaskManager();
+      $this->UserManager = new UserManager();
    }
 
    public function addTask()
    {
-      $TaskManager = new TaskManager();
-      $UserManager = new UserManager();
-      $TaskManager->AddTask(new task(null,$_POST['searchTask'],($_POST['hours']*4*15)+$_POST['minutes'],$_POST['Date'],$UserManager->GetIdDashBoardByUserId($_SESSION['IdLogin'])));
+
+      //$this->TaskManager->AddTask(new task($_POST['searchTask'],($_POST['hours']*4*15)+$_POST['minutes'],$_POST['Date'],$this->UserManager->GetIdDashBoardByUserId($_SESSION['IdLogin'])));
+      $this->TaskManager->AddTask(new Task("zdzadza",5,"2000-01-01",15));
+      $this->mainController->Index('Tâches ajouté');
+
    }
 }
