@@ -1,6 +1,6 @@
 <?php return array(
     'root' => array(
-        'name' => '__root__',
+        'name' => 'egeekmaster/testunitaire',
         'pretty_version' => '1.0.0+no-version-set',
         'version' => '1.0.0.0',
         'reference' => NULL,
@@ -10,7 +10,7 @@
         'dev' => true,
     ),
     'versions' => array(
-        '__root__' => array(
+        'egeekmaster/testunitaire' => array(
             'pretty_version' => '1.0.0+no-version-set',
             'version' => '1.0.0.0',
             'reference' => NULL,
@@ -18,6 +18,12 @@
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
             'dev_requirement' => false,
+        ),
+        'malkusch/php-mock' => array(
+            'dev_requirement' => true,
+            'replaced' => array(
+                0 => '*',
+            ),
         ),
         'myclabs/deep-copy' => array(
             'pretty_version' => '1.11.1',
@@ -55,10 +61,37 @@
             'aliases' => array(),
             'dev_requirement' => true,
         ),
+        'php-mock/php-mock' => array(
+            'pretty_version' => '2.4.1',
+            'version' => '2.4.1.0',
+            'reference' => '6240b6f0a76d7b9d1ee4d70e686a7cc711619a9d',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../php-mock/php-mock',
+            'aliases' => array(),
+            'dev_requirement' => true,
+        ),
+        'php-mock/php-mock-integration' => array(
+            'pretty_version' => '2.2.1',
+            'version' => '2.2.1.0',
+            'reference' => '04f4a8d5442ca457b102b5204673f77323e3edb5',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../php-mock/php-mock-integration',
+            'aliases' => array(),
+            'dev_requirement' => true,
+        ),
+        'php-mock/php-mock-phpunit' => array(
+            'pretty_version' => '2.8.0',
+            'version' => '2.8.0.0',
+            'reference' => '56edee85ad3232caa0202f98f2a3c899ab16bdb7',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../php-mock/php-mock-phpunit',
+            'aliases' => array(),
+            'dev_requirement' => true,
+        ),
         'phpunit/php-code-coverage' => array(
-            'pretty_version' => '10.1.7',
-            'version' => '10.1.7.0',
-            'reference' => '355324ca4980b8916c18b9db29f3ef484078f26e',
+            'pretty_version' => '10.1.8',
+            'version' => '10.1.8.0',
+            'reference' => '84838eed9ded511f61dc3e8b5944a52d9017b297',
             'type' => 'library',
             'install_path' => __DIR__ . '/../phpunit/php-code-coverage',
             'aliases' => array(),
@@ -245,9 +278,9 @@
             'dev_requirement' => true,
         ),
         'theseer/tokenizer' => array(
-            'pretty_version' => '1.2.1',
-            'version' => '1.2.1.0',
-            'reference' => '34a41e998c2183e22995f158c581e7b5e755ab9e',
+            'pretty_version' => '1.2.2',
+            'version' => '1.2.2.0',
+            'reference' => 'b2ad5003ca10d4ee50a12da31de12a5774ba6b96',
             'type' => 'library',
             'install_path' => __DIR__ . '/../theseer/tokenizer',
             'aliases' => array(),

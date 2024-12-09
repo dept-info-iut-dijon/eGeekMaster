@@ -64,6 +64,12 @@
             return $this->getHash() == $password;
         }
 
+        // Compare parameter login and hash password with the attribut login and hash
+        public function attributesEquals(Login $login) {
+            return $this->getLogin() == $login->getLogin() &&
+             $this->getHash() == $login->getHash();
+        }
+
         public function hydrate(array $data)
         {
             $this->_id = $data['idLogin'];

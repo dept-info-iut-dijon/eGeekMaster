@@ -28,15 +28,14 @@ class UserManager extends Model
             $result = $this->executerRequete($sql);
             while ($line = $result->fetch(PDO::FETCH_ASSOC)) {
                 $User = new User(
-                    $line['login'],
-                    $line['password'],
-                    $line['firstName'],
-                    $line['lastName'],
-                    $line['email'],
-                    $line['gender'],
-                    $line['familyPlace'],
-                    $line['birthDate']
+                    $line['FirstName'],
+                    $line['LastName'],
+                    $line['Email'],
+                    $line['Gender'],
+                    $line['FamilyPlace'],
+                    $line['BirthDate'],
                 );
+                $User->setId($line['idUsers']);
 
                 $Users[] = $User;
             }
@@ -160,16 +159,38 @@ class UserManager extends Model
      */
     public function DeleteByID(int $id): void
     {
+        $LoginManager = new LoginManager();
+        $LoginidLogin = false;
+        
         try {
-            $sql = 'DELETE FROM users WHERE idUsers = ?';
-            $this->executerRequete($sql, [$id]);
+            $sql = 'SELECT LoginidLogin FROM users WHERE idUsers = ?';
+            $result = $this->executerRequete($sql, [$id]);
+            $line = $result->fetch();
+            $LoginidLogin = $line['LoginidLogin'];
+            
         } catch (PDOException $e) {
+            var_dump($e);
             // In case of an error, redirect to the error page with a message
             $errorMessage = "An error occurred while deleting the User.";
             header("Location: index.php?action=Registration&errorMessage=".urlencode($errorMessage));
             exit();
         }
+
+        try {
+            $sql = 'DELETE FROM users WHERE idUsers = ?';
+            $this->executerRequete($sql, [$id]);
+        } catch (PDOException $e) {
+            var_dump($e);
+            // In case of an error, redirect to the error page with a message
+            $errorMessage = "An error occurred while deleting the User.";
+            header("Location: index.php?action=Registration&errorMessage=".urlencode($errorMessage));
+            exit();
+        }
+
+        $LoginManager->DeleteByID($LoginidLogin);
     }
+        
+        
 
     /**
      * Update a User by its ID with a new username and password.

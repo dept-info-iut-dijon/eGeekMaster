@@ -1,5 +1,23 @@
 {
+    "name": "egeekmaster/testunitaire",
+    "authors": [
+        {
+            "name": "Nicolas Desertot"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "egeekmaster\\": "egeekmaster/",
+            "eGeekMaster\\GoodStructure\\": "eGeekMaster/GoodStructure/",
+            "eGeekMaster\\GoodStructure\\Controllers\\": "eGeekMaster/GoodStructure/Controllers/",
+            "eGeekMaster\\GoodStructure\\Controllers\\Router\\": "eGeekMaster/GoodStructure/Controllers/Router/",
+            "eGeekMaster\\GoodStructure\\Controllers\\Router\\Route\\": "eGeekMaster/GoodStructure/Controllers/Router/Route/",
+            "eGeekMaster\\GoodStructure\\Models\\": "eGeekMaster/GoodStructure/Models/",
+            "eGeekMaster\\GoodStructure\\Views\\": "eGeekMaster/GoodStructure/Views/"
+        }
+    },
     "require-dev": {
-        "phpunit/phpunit": "^10.4"
+        "phpunit/phpunit": "^10.4",
+        "php-mock/php-mock-phpunit": "^2.8"
     }
 }

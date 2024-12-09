@@ -16,7 +16,6 @@
         private $_gender;
         private $_familyPlace;
         private $_birthDate;
-
         
         public function __construct(string $firstName='', string $lastName='', string $email='', string $gender='', string $familyPlace='', string $birthDate='')
         {
@@ -128,6 +127,22 @@
         // Hash password and set hash
         public function setPassword(string $password) {
             $this->setHash(hash("sha256", $password));
+        }
+
+        // Compare two users
+        public function attributesEquals($otherUser) : bool
+        {
+            // Vérifier que l'objet comparé est une instance de la classe Person
+            if (!$otherUser instanceof User) {
+                return false;
+            }
+
+            return $this->getFirstName() == $otherUser->getFirstName() &&
+             $this->getLastName() == $otherUser->getLastName() &&
+              $this->getEmail() == $otherUser->getEmail() &&
+               $this->getGender() == $otherUser->getGender() &&
+                $this->getFamilyPlace() == $otherUser->getFamilyPlace() &&
+                 $this->getBirthDate() == $otherUser->getBirthDate();
         }
         
     }
